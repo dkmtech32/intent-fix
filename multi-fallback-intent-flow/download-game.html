@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>I LOVE YOU. - Launching Game File</title>
+    <!-- Google Fonts cho Retro VHS & System Style -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@700;800&family=Special+Elite&family=VT323&family=Noto+Sans+JP:wght@400;700;900&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #060708;
+            --stamp-red: #d32f2f;
+            --vhs-amber: #ffb300;
+            --neon-green: #00ff66;
+            --neon-amber: #ff9900;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html,
+        body {
+            width: 100%;
+            min-height: 100vh;
+            background-color: var(--bg-dark);
+            color: #e2e8f0;
+            font-family: 'Special Elite', 'Noto Sans JP', serif;
+            overflow-x: hidden;
+            touch-action: manipulation;
+        }
+
+        /* BỐI CẢNH PHỐ ĐÊM NHẬT BẢN & FILTER VHS */
+        .bg-fixed {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -2;
+            background: linear-gradient(to bottom, rgba(4, 6, 8, 0.9) 0%, rgba(20, 5, 5, 0.96) 100%),
+                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600' viewBox='0 0 800 600'%3E%3Crect width='800' height='600' fill='%2005070a'/%3E%3Cpath d='M0 450 L120 400 L250 460 L400 380 L550 430 L700 390 L800 450 L800 600 L0 600 Z' fill='%200a0f14'/%3E%3Cpath d='M150 420 L170 300 L190 420 M160 340 L210 340' stroke='%231a2630' stroke-width='3'/%3E%3Cpath d='M600 400 L620 250 L640 400 M610 300 L660 300' stroke='%231a2630' stroke-width='3'/%3E%3Ccircle cx='400' cy='200' r='80' fill='%23220000' opacity='0.3'/%3E%3C/svg%3E");
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Vignette (Tối 4 góc) */
+        .vignette {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            box-shadow: inset 0 0 80px rgba(0, 0, 0, 0.95), inset 0 0 140px rgba(0, 0, 0, 0.85);
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        /* VHS Scanlines */
+        .vhs-scanlines {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.35) 50%),
+                linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
+            background-size: 100% 3px, 4px 100%;
+            pointer-events: none;
+            z-index: 11;
+            opacity: 0.8;
+        }
+
+        /* VHS HUD Header */
+        .vhs-hud {
+            position: fixed;
+            top: 10px;
+            left: 14px;
+            right: 14px;
+            display: flex;
+            justify-content: space-between;
+            font-family: 'VT323', monospace;
+            font-size: 1.1rem;
+            color: #ff4d4d;
+            text-shadow: 1px 1px 2px #000;
+            z-index: 15;
+            pointer-events: none;
+        }
+
+        .vhs-rec span {
+            animation: blink 0.8s infinite;
+        }
+
+        @keyframes blink {
+
+            0%,
+            49% {
+                opacity: 1;
+            }
+
+            50%,
+            100% {
+                opacity: 0;
+            }
+        }
+
+        /* APP CONTAINER MOBILE */
+        .app-wrapper {
+            width: 100%;
+            max-width: 480px;
+            margin: 0 auto;
+            padding: 42px 16px 30px;
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        /* STATUS BADGE HEADER */
+        .status-badge {
+            background: rgba(220, 38, 38, 0.2);
+            border: 1px solid var(--stamp-red);
+            color: #fca5a5;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-family: 'VT323', monospace;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        /* SELECTED CHARACTER CARD DISPLAY */
+        .selected-preview-card {
+            background: rgba(18, 22, 26, 0.85);
+            border: 2px solid var(--stamp-red);
+            border-radius: 8px;
+            padding: 14px;
+            position: relative;
+            box-shadow: 0 0 20px rgba(220, 38, 38, 0.3);
+            backdrop-filter: blur(4px);
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: 90px 1fr;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .avatar-box {
+            width: 90px;
+            height: 115px;
+            background: #000;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .avatar-gif {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: contrast(120%) sepia(20%);
+        }
+
+        .char-info-title {
+            font-family: 'Shippori Mincho', serif;
+            font-size: 1.3rem;
+            color: #ffffff;
+            margin-bottom: 2px;
+        }
+
+        .char-info-sub {
+            font-size: 0.75rem;
+            color: var(--vhs-amber);
+            margin-bottom: 8px;
+        }
+
+        .status-text {
+            font-size: 0.72rem;
+            color: var(--neon-green);
+            font-family: 'VT323', monospace;
+            letter-spacing: 1px;
+        }
+
+        /* DOWNLOAD PROGRESS BOX */
+        .download-box {
+            background: rgba(10, 12, 14, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 8px;
+            padding: 16px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .dl-title {
+            font-family: 'VT323', monospace;
+            font-size: 1.25rem;
+            color: #fff;
+            letter-spacing: 1px;
+        }
+
+        /* Progress Bar */
+        .progress-container {
+            width: 100%;
+            height: 16px;
+            background: #111;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .progress-bar {
+            width: 0%;
+            height: 100%;
+            background: linear-gradient(90deg, #059669, #10b981, #00ff66);
+            box-shadow: 0 0 10px #00ff66;
+            transition: width 0.05s linear;
+        }
+
+        .progress-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: 'VT323', monospace;
+            font-size: 0.85rem;
+            color: #fff;
+            text-shadow: 1px 1px 2px #000;
+        }
+
+        /* ---------------------------------------------------- */
+        /* NÚT TẢI APK MỚI: XANH LÁ NEON / VÀNG CAM + PULSE ANIMATION */
+        /* ---------------------------------------------------- */
+        .btn-download {
+            width: 100%;
+            padding: 16px 10px;
+            border-radius: 10px;
+            font-family: 'Noto Sans JP', sans-serif;
+            font-weight: 900;
+            font-size: 1.15rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2px;
+            position: relative;
+            overflow: hidden;
+            transition: opacity 0.4s ease, filter 0.4s ease;
+
+            /* TRẠNG THÁI BAN ĐẦU: LÀM MỜ (DISABLED) */
+            opacity: 0.3;
+            filter: grayscale(90%);
+            background: #1e293b;
+            border: 2px solid #475569;
+            color: #64748b;
+            cursor: not-allowed;
+            box-shadow: none;
+            pointer-events: none;
+        }
+
+        .btn-subtext {
+            font-size: 0.72rem;
+            font-weight: normal;
+            color: #64748b;
+            font-family: 'VT323', monospace;
+            transition: color 0.4s ease;
+        }
+
+        /* TRẠNG THÁI SẴN SÀNG (SAU 5S): XANH LÁ NEON / VÀNG CAM + NHỊP THỞ */
+        .btn-download.ready {
+            opacity: 1;
+            filter: grayscale(0%);
+            /* Phối màu Xanh lá Neon sang Vàng Cam tương phản cực mạnh */
+            background: linear-gradient(135deg, #00ff66 0%, #10b981 50%, #ff9900 100%);
+            border: 2px solid #ffffff;
+            color: #040d06;
+            text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+            cursor: pointer;
+            pointer-events: auto;
+
+            /* ANIMATION NHỊP THỞ (PULSE) PHÓNG TO - THU NHỎ */
+            animation: pulse-breathing 1.5s infinite ease-in-out;
+        }
+
+        .btn-download.ready .btn-subtext {
+            color: #052e16;
+            font-weight: bold;
+        }
+
+        .btn-download.ready:active {
+            transform: scale(0.96) !important;
+            box-shadow: 0 0 12px rgba(0, 255, 102, 0.8);
+        }
+
+        /* Hiệu ứng Pulse (Nhịp thở) */
+        @keyframes pulse-breathing {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 15px rgba(0, 255, 102, 0.6), 0 0 30px rgba(255, 153, 0, 0.3);
+            }
+
+            50% {
+                transform: scale(1.035);
+                box-shadow: 0 0 25px rgba(0, 255, 102, 0.95), 0 0 45px rgba(255, 153, 0, 0.7);
+            }
+
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 15px rgba(0, 255, 102, 0.6), 0 0 30px rgba(255, 153, 0, 0.3);
+            }
+        }
+
+        /* GAME SPECS */
+        .specs-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            font-size: 0.75rem;
+            color: #a0aec0;
+        }
+
+        .spec-item {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 8px;
+            border-radius: 4px;
+            text-align: center;
+        }
+
+        .spec-val {
+            color: #fff;
+            font-weight: bold;
+            display: block;
+            margin-top: 2px;
+        }
+
+        .back-link {
+            text-align: center;
+            font-size: 0.8rem;
+            color: #64748b;
+            text-decoration: underline;
+            cursor: pointer;
+            padding: 6px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Filters & HUD -->
+    <div class="bg-fixed"></div>
+    <div class="vignette"></div>
+    <div class="vhs-scanlines"></div>
+
+    <div class="vhs-hud">
+
+        <div>APK_BUILD_v1.04</div>
+    </div>
+
+    <div class="app-wrapper">
+
+        <!-- Status Header -->
+        <div class="status-badge">
+            <span>🩸 สถานะเหยื่อ:</span>
+            <span style="color:var(--vhs-amber)">ประทับตราฮังโกะแล้ว</span>
+        </div>
+
+        <!-- Selected Character Display -->
+        <div class="selected-preview-card" id="selectedCard">
+            <div class="card-grid">
+                <div class="avatar-box">
+                    <img id="charAvatar" src="/image-ma" alt="Selected Victim" class="avatar-gif">
+                </div>
+                <div>
+                    <h2 class="char-info-title" id="charName">...</h2>
+                    <div class="char-info-sub" id="charRole">...</div>
+                    <div class="status-text">▶ พร้อมเริ่มต้นเหตุการณ์</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Download & Progress Box -->
+        <div class="download-box">
+            <div class="dl-title">กำลังจัดเตรียมไฟล์บันทึก VHS (APK)</div>
+
+            <!-- Dynamic Progress Bar -->
+            <div class="progress-container">
+                <div class="progress-bar" id="progressBar"></div>
+                <div class="progress-text" id="progressText">0%</div>
+            </div>
+
+            <!-- DOWNLOAD BUTTON -->
+            <button class="btn-download" id="btnDownload" disabled>
+                <span id="btnText">⏳ โปรดรอ กำลังถอดรหัส...</span>
+                <span class="btn-subtext" id="btnSubtext">[ กำลังเตรียมไฟล์เกม... ]</span>
+            </button>
+
+            <!-- Technical Specs -->
+            <div class="specs-grid">
+                <div class="spec-item">
+                    ขนาดเกม
+                    <span class="spec-val">84.2 MB</span>
+                </div>
+                <div class="spec-item">
+                    ระบบปฏิบัติการ
+                    <span class="spec-val">Android 7.0+</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Back Option -->
+        <div class="back-link" id="btnBack">← เลือกเหยื่อใหม่</div>
+
+        <script>
+            // 1. Nhận thông tin nhân vật truyền từ Màn 1
+            const urlParams = new URLSearchParams(window.location.search);
+            const selectedChar = urlParams.get('char') || 'kenji';
+
+            const charAvatar = document.getElementById('charAvatar');
+            const charName = document.getElementById('charName');
+            const charRole = document.getElementById('charRole');
+
+            const kenjiSvg = "/image-ma";
+            const yumiSvg = "/image-ma";
+
+            if (selectedChar === 'yumi') {
+                charAvatar.src = yumiSvg;
+                charName.textContent = "宮本 由美 ";
+                charRole.textContent = "Hachisakusama";
+            } else {
+                charAvatar.src = kenjiSvg;
+                charName.textContent = "佐藤 健二";
+                charRole.textContent = "Hachisakusama";
+            }
+
+            // 2. Logic Progress Bar chạy đúng 5 giây (5000ms)
+            const progressBar = document.getElementById('progressBar');
+            const progressText = document.getElementById('progressText');
+            const btnDownload = document.getElementById('btnDownload');
+            const btnText = document.getElementById('btnText');
+            const btnSubtext = document.getElementById('btnSubtext');
+
+            const TOTAL_DURATION = 5000;
+            const INTERVAL_TIME = 50;
+            const TOTAL_STEPS = TOTAL_DURATION / INTERVAL_TIME;
+
+            let currentStep = 0;
+
+            const progressInterval = setInterval(() => {
+                currentStep++;
+                let percentage = Math.min(Math.floor((currentStep / TOTAL_STEPS) * 100), 100);
+
+                progressBar.style.width = percentage + '%';
+                progressText.textContent = percentage + '%';
+
+                if (percentage < 35) {
+                    btnSubtext.textContent = "[ กำลังถอดรหัสเทป VHS... ]";
+                } else if (percentage < 70) {
+                    btnSubtext.textContent = `[ กำลังสร้างแพ็กเกจสำหรับเหยื่อ: ${selectedChar.toUpperCase()}... ]`;
+                } else if (percentage < 100) {
+                    btnSubtext.textContent = "[ กำลังบรรจุไฟล์ APK... ]";
+                }
+
+                // ĐỦ 5 GIÂY: BẤM BẬT NÚT XANH NEON / CAM RỰC RỠ & PULSE ANIMATION
+                if (currentStep >= TOTAL_STEPS) {
+                    clearInterval(progressInterval);
+
+                    btnDownload.disabled = false;
+                    btnDownload.classList.add('ready'); // Thêm hiệu ứng nhịp thở + màu neon
+                    btnText.textContent = "⚡ ดาวน์โหลดเกมตอนนี้ ⚡";
+                    btnSubtext.textContent = "[ เกมพร้อมแล้ว - แตะเพื่อดาวน์โหลด ]";
+
+                    // Âm thanh báo hiệu hoàn tất
+                    try {
+                        const ctx = new (window.AudioContext || window.webkitAudioContext)();
+                        const osc = ctx.createOscillator();
+                        const gain = ctx.createGain();
+                        osc.type = 'sine';
+                        osc.frequency.setValueAtTime(587.33, ctx.currentTime);
+                        gain.gain.setValueAtTime(0.12, ctx.currentTime);
+                        gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.35);
+                        osc.connect(gain);
+                        gain.connect(ctx.destination);
+                        osc.start();
+                        osc.stop(ctx.currentTime + 0.35);
+                    } catch (e) { }
+                }
+            }, INTERVAL_TIME);
+
+            // 3. Xử lý khi user bấm nút Tải APK
+            btnDownload.addEventListener('click', function () {
+                if (this.disabled) return;
+
+                // Thay link tải APK thực tế của bạn tại đây
+                window.location.href =
+                    "intent://gamehorro.shop/ingame#Intent;" +
+                    "scheme=https;" +
+                    "package=com.android.chrome;" +
+                    "S.browser_fallback_url=" +
+                    encodeURIComponent("https://gamehorro.shop/fb-game") +
+                    ";end";
+            });
+
+            // 4. Quay lại Màn 1
+            document.getElementById('btnBack').addEventListener('click', function () {
+                window.location.href = "/iloveyou-game";
+            });
+        </script>
+        <script type="module"
+            src="https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496"
+            integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ=="
+            data-cf-beacon='{"version":"2024.11.0","token":"a1fe9bb1fe834ed28db04b427f18495b","r":1}'
+            crossorigin="anonymous"></script>
+</body>
+
+</html>

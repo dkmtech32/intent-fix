@@ -1,0 +1,188 @@
+/life-story-next-door/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/life-story-next-door/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/life-story-next-door/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/goblin-nest/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/goblin-nest/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/goblin-nest/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/grand-mobile-rp-open-world/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/grand-mobile-rp-open-world/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/grand-mobile-rp-open-world/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/couple-live-story/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/couple-live-story/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/couple-live-story/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/viva-project/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/viva-project/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/viva-project/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/cyan-brain/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/cyan-brain/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/cyan-brain/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/femboy-futa-house/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/femboy-futa-house/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/femboy-futa-house/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/happy-island-fantasy-apk/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/happy-island-fantasy-apk/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/happy-island-fantasy-apk/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/another-game/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/another-game/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/another-game/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/wool-you-apk/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/wool-you-apk/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/wool-you-apk/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/meltwish-valley-apk/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/meltwish-valley-apk/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/meltwish-valley-apk/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/locker-escape-apk/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/locker-escape-apk/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/locker-escape-apk/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/farming-simulator-25/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/farming-simulator-25/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/farming-simulator-25/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/farming-simulator-26/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/farming-simulator-26/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/farming-simulator-26/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/euro-truck-simulator-2/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/euro-truck-simulator-2/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/euro-truck-simulator-2/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/slime-rancher/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/slime-rancher/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/slime-rancher/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/test/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/test/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/test/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/farming-simulator-26-mobile/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/farming-simulator-26-mobile/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/farming-simulator-26-mobile/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/truck-simulator-ultimate/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/truck-simulator-ultimate/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/truck-simulator-ultimate/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/meccha-chameleon/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/meccha-chameleon/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/meccha-chameleon/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/meccha-chameleon-mobile/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/meccha-chameleon-mobile/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/meccha-chameleon-mobile/*.css
+  Cache-Control: public, max-age=31536000, immutable
