@@ -1,399 +1,428 @@
 <!doctype html>
-<html lang="my">
+<html lang="th">
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <meta name="robots" content="noindex,nofollow">
-    <title>Sedia Untuk Muat Turun</title>
-    <meta name="theme-color" content="#fffaf0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="dark">
+    <meta name="theme-color" content="#060e08">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
+    <title>กำลังเตรียมดาวน์โหลด</title>
     <style>
-        * {
-            box-sizing: border-box
+        :root {
+            --bg: #060e08;
+            --bg2: #0b1e10;
+            --card: #0b1e10;
+            --muted-bg: #0f2a14;
+            --stroke: rgba(0, 229, 102, .15);
+            --text: #e8f5ea;
+            --muted: #7aab82;
+            --green: #00e566;
+            --green2: #02bb4d;
+            --gold: #ffd700;
+            --lime: #b6ff5e;
+            --red: #ff3b3b;
+            --black: #060e08;
+            --shadow: 0 18px 50px rgba(0, 0, 0, .55);
         }
 
-        :root {
-            --paper: #fffaf0;
-            --paper-deep: #fff2d5;
-            --white: #ffffff;
-            --ink: #173d5a;
-            --ink-soft: #527083;
-            --coral: #ff7064;
-            --coral-hover: #ff8176;
-            --yellow: #ffdd68;
-            --mint: #bfe9d0;
-            --sky: #cbeaf4;
-            --purple: #6f55dc;
-            --line: rgba(23, 61, 90, .16);
-            --shadow: 5px 6px 0 var(--ink);
-            --radius: 18px
+        * {
+            box-sizing: border-box;
         }
 
         html {
-            -webkit-text-size-adjust: 100%
+            min-height: 100%;
         }
 
         body {
             margin: 0;
             min-height: 100vh;
-            font-family: "Plus Jakarta Sans", "Segoe UI", sans-serif;
-            color: var(--ink);
-            background: linear-gradient(90deg, transparent 23px, rgba(255, 112, 100, .08) 24px, transparent 25px), linear-gradient(rgba(23, 61, 90, .045) 1px, transparent 1px), var(--paper);
-            background-size: 100% 100%, 100% 28px, auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 16px;
-            padding-top: max(16px, env(safe-area-inset-top));
-            padding-bottom: max(16px, env(safe-area-inset-bottom));
+            font-family: Kanit, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            color: var(--text);
+            background:
+                radial-gradient(circle at 12% 8%, rgba(0, 229, 102, .22), transparent 32%),
+                radial-gradient(circle at 88% 16%, rgba(255, 215, 0, .14), transparent 28%),
+                repeating-linear-gradient(135deg, rgba(0, 229, 102, .04) 0 1px, transparent 1px 16px),
+                linear-gradient(180deg, #060e08 0%, #0a1610 56%, #040a06 100%);
             overflow-x: hidden;
-            -webkit-font-smoothing: antialiased
+            -webkit-font-smoothing: antialiased;
         }
 
-        .wrap {
-            width: 100%;
-            max-width: 430px
+        .page {
+            width: min(100%, 1120px);
+            min-height: 100vh;
+            margin: 0 auto;
+            padding: 22px 18px 30px;
+            display: grid;
+            align-items: center;
         }
 
-        .card {
-            position: relative;
-            overflow: hidden;
-            border-radius: 20px;
-            background: linear-gradient(rgba(23, 61, 90, .05) 1px, transparent 1px), #fffdf7;
-            background-size: 100% 29px, auto;
-            border: 2px solid var(--ink);
-            box-shadow: var(--shadow)
+        .shell {
+            display: grid;
+            gap: 18px;
         }
 
         .hero {
-            position: relative;
-            padding: 26px 20px 18px;
-            text-align: center
-        }
-
-        .tag {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            margin-bottom: 18px;
-            padding: 7px 11px 6px;
-            border-radius: 999px;
-            background: var(--white);
-            border: 1.5px solid var(--line);
-            color: var(--ink);
-            font-size: 11px;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: .08em
-        }
-
-        .tag:before {
-            content: "";
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: #36b96d
-        }
-
-        .iconStage {
-            width: 112px;
-            height: 112px;
-            margin: 0 auto 15px;
-            padding: 6px;
+            padding: 24px 20px;
+            border: 1px solid var(--stroke);
             border-radius: 22px;
-            background: var(--yellow);
-            border: 2px solid var(--ink);
-            box-shadow: 3px 4px 0 var(--ink);
-            transform: rotate(-2deg)
+            background:
+                radial-gradient(circle at 10% 0%, rgba(0, 229, 102, .22), transparent 35%),
+                radial-gradient(circle at 88% 6%, rgba(255, 215, 0, .14), transparent 34%),
+                linear-gradient(135deg, rgba(11, 30, 16, .95), rgba(6, 14, 8, .92));
+            box-shadow: var(--shadow);
+            backdrop-filter: blur(18px);
         }
 
-        .iconStage img {
-            display: block;
+        .app-head {
+            display: grid;
+            grid-template-columns: 76px 1fr;
+            gap: 14px;
+            align-items: center;
+        }
+
+        .icon-wrap {
+            width: 76px;
+            height: 76px;
+            padding: 4px;
+            border-radius: 20px;
+            background: linear-gradient(135deg, var(--green), var(--gold));
+            box-shadow: 0 14px 38px rgba(0, 229, 102, .28);
+        }
+
+        .icon-wrap img {
             width: 100%;
             height: 100%;
-            border-radius: 16px;
+            display: block;
             object-fit: cover;
-            background: var(--sky);
-            transform: rotate(2deg)
+            border-radius: 17px;
+            background: #171717;
         }
 
-        .smallLabel {
-            margin: 0 0 7px;
-            color: var(--coral);
-            font-size: 11px;
-            font-weight: 800;
-            letter-spacing: .1em;
-            text-transform: uppercase
-        }
-
-        .appName {
-            min-height: 34px;
-            margin: 0;
-            font-family: Fredoka, "Arial Rounded MT Bold", sans-serif;
-            font-size: 32px;
-            line-height: 1.05;
-            font-weight: 700;
-            letter-spacing: -.04em;
-            color: var(--ink);
-            word-break: break-word
-        }
-
-        .status {
-            min-height: 24px;
-            margin: 12px 0 0;
-            color: var(--ink-soft);
-            font-size: 14px;
-            line-height: 1.65
-        }
-
-        .downloadPanel {
-            margin: 21px 0 0;
-            padding: 16px;
-            border-radius: 16px;
-            background: rgba(255, 255, 255, .9);
-            border: 1.5px solid var(--line)
-        }
-
-        .panelTitle {
-            margin: 0 0 12px;
-            color: var(--ink);
-            font-family: Fredoka, sans-serif;
-            font-size: 16px;
-            font-weight: 700
-        }
-
-        .timerRow {
-            display: flex;
+        .eyebrow {
+            display: inline-flex;
+            width: fit-content;
             align-items: center;
-            justify-content: center;
-            gap: 9px;
-            margin-bottom: 14px;
-            color: var(--ink-soft);
-            font-size: 13.5px;
-            font-weight: 700
-        }
-
-        .count {
-            display: inline-grid;
-            place-items: center;
-            min-width: 60px;
-            height: 54px;
-            padding: 0 13px;
-            border-radius: 50%;
-            background: var(--yellow);
-            border: 2px solid var(--ink);
-            color: var(--ink);
-            font-family: Fredoka, sans-serif;
-            font-size: 28px;
-            font-weight: 700;
-            line-height: 1;
-            box-shadow: 2px 2px 0 var(--ink)
-        }
-
-        .energyBar {
-            height: 11px;
+            gap: 8px;
+            margin: 0 0 8px;
+            padding: 6px 10px;
+            border: 1px solid rgba(255, 255, 255, .14);
             border-radius: 999px;
-            background: rgba(23, 61, 90, .1);
-            overflow: hidden;
-            position: relative;
-            border: 1.5px solid var(--line)
+            background: rgba(255, 255, 255, .06);
+            color: var(--muted);
+            font-size: .78rem;
+            line-height: 1.2;
         }
 
-        .energyBar:after {
+        .eyebrow::before {
             content: "";
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: -45%;
-            width: 45%;
+            width: 7px;
+            height: 7px;
             border-radius: 999px;
-            background: linear-gradient(90deg, var(--coral), var(--yellow), var(--mint));
-            animation: boost 1.65s ease-in-out infinite
+            background: var(--green);
+            box-shadow: 0 0 16px rgba(0, 229, 102, .85);
         }
 
-        @keyframes boost {
-            0% {
-                left: -45%
-            }
-
-            60% {
-                left: 105%
-            }
-
-            100% {
-                left: 105%
-            }
+        h1 {
+            margin: 0;
+            font-size: clamp(1.55rem, 8vw, 3.4rem);
+            line-height: 1.05;
+            font-weight: 900;
+            color: var(--text);
+            letter-spacing: 0;
+            overflow-wrap: anywhere;
         }
 
-        .actions {
-            padding: 0 20px 22px
-        }
-
-        .btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            width: 100%;
-            min-height: 56px;
-            padding: 14px 16px;
-            border-radius: 16px;
-            border: 2px solid var(--ink);
-            background: var(--coral);
-            color: var(--white);
-            text-decoration: none;
-            font-family: Fredoka, sans-serif;
-            font-size: 18px;
-            font-weight: 700;
-            letter-spacing: .01em;
-            box-shadow: var(--shadow);
-            transition: transform 170ms ease, box-shadow 170ms ease, background 170ms ease
-        }
-
-        .btn:hover {
-            background: var(--coral-hover);
-            box-shadow: 3px 4px 0 var(--ink);
-            transform: translate(2px, 2px)
-        }
-
-        .btn:active {
-            box-shadow: none;
-            transform: translate(5px, 6px)
-        }
-
-        .btn:empty:before {
+        h1::after {
             content: "";
             display: block;
-            width: 45%;
-            height: 14px;
+            width: 76px;
+            height: 4px;
+            margin-top: 10px;
             border-radius: 999px;
-            background: rgba(255, 255, 255, .42)
+            background: linear-gradient(90deg, #fff, var(--green), var(--gold));
+            box-shadow: 0 0 24px rgba(0, 229, 102, .48);
         }
 
-        .help {
-            padding: 20px;
-            background: var(--paper-deep);
-            border-top: 2px solid var(--ink)
+        .lead {
+            margin: 20px 0 0;
+            color: var(--muted);
+            font-size: 1rem;
+            line-height: 1.75;
         }
 
-        .help h2 {
-            margin: 0 0 12px;
-            font-family: Fredoka, sans-serif;
-            font-size: 20px;
-            font-weight: 700;
-            letter-spacing: -.02em
+        .status-card {
+            padding: 18px;
+            border: 1px solid var(--stroke);
+            border-radius: 22px;
+            background:
+                radial-gradient(circle at 16% 0%, rgba(0, 229, 102, .16), transparent 34%),
+                linear-gradient(180deg, rgba(11, 30, 16, .98), rgba(6, 14, 8, .92));
+            box-shadow: 0 26px 90px rgba(0, 0, 0, .65);
+        }
+
+        .loading-row {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 14px;
+            align-items: center;
+        }
+
+        .loading-copy p {
+            margin: 0;
+            color: var(--muted);
+            line-height: 1.6;
+        }
+
+        .loading-copy strong {
+            display: block;
+            margin-bottom: 3px;
+            color: var(--text);
+            font-size: 1.02rem;
+        }
+
+        .countdown-ring {
+            width: 74px;
+            height: 74px;
+            display: grid;
+            place-items: center;
+            border-radius: 999px;
+            background:
+                linear-gradient(var(--bg2), var(--bg2)) padding-box,
+                conic-gradient(from 0deg, var(--green), var(--gold), var(--lime), var(--green)) border-box;
+            border: 3px solid transparent;
+            box-shadow: 0 0 30px rgba(0, 229, 102, .28);
+        }
+
+        .countdown-ring span {
+            color: var(--text);
+            font-size: 1.55rem;
+            font-weight: 900;
+            line-height: 1;
+        }
+
+        .countdown-label {
+            margin-top: 8px;
+            color: var(--muted);
+            font-size: .78rem;
+            text-align: center;
+        }
+
+        .action {
+            margin-top: 16px;
+        }
+
+        .download-button,
+        .download-again {
+            min-height: 52px;
+            width: 100%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 14px 18px;
+            border: 0;
+            border-radius: 18px;
+            color: var(--black);
+            background: linear-gradient(90deg, #02e263 10%, #02bb4d 90%);
+            box-shadow: 0px 4px 20px 0px rgba(2, 217, 95, 0.84);
+            font-weight: 900;
+            font-size: 1rem;
+            text-decoration: none;
+            text-align: center;
+            line-height: 1.25;
+            transition: transform .18s ease, box-shadow .18s ease, filter .18s ease;
+        }
+
+        .download-button:hover,
+        .download-again:hover {
+            transform: translateY(-2px);
+            filter: saturate(1.08);
+            box-shadow: 0 0 32px #00e566aa, 0 0 64px #00e56655;
+        }
+
+        .safety-note {
+            margin: 10px 2px 0;
+            color: var(--lime);
+            font-size: .84rem;
+            line-height: 1.55;
+        }
+
+        .complete-panel {
+            margin-top: 16px;
+            padding: 16px;
+            border: 1px solid rgba(0, 229, 102, .28);
+            border-radius: 18px;
+            background:
+                radial-gradient(circle at 12% 0%, rgba(0, 229, 102, .18), transparent 35%),
+                rgba(11, 30, 16, .7);
+        }
+
+        .complete-title {
+            margin: 0 0 6px;
+            color: var(--text);
+            font-weight: 900;
+            font-size: 1rem;
+        }
+
+        .download-status {
+            margin: 0;
+            color: var(--muted);
+            line-height: 1.65;
+            font-size: .95rem;
+        }
+
+        .downloads-hint {
+            margin-top: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 12px;
+            border: 1px solid rgba(255, 255, 255, .14);
+            border-radius: 16px;
+            background: rgba(0, 0, 0, .22);
+            color: var(--text);
+            line-height: 1.45;
+            font-size: .9rem;
+        }
+
+        .downloads-hint svg {
+            flex: 0 0 28px;
+            width: 28px;
+            height: 28px;
+            color: var(--green);
+            filter: drop-shadow(0 0 10px rgba(0, 229, 102, .35));
+        }
+
+        .download-again {
+            margin-top: 12px;
+            background: linear-gradient(90deg, #fdd400 10%, #e7ab00 90%);
+        }
+
+        .help,
+        .install-guide {
+            padding: 20px 18px;
+            border: 1px solid var(--stroke);
+            border-radius: 22px;
+            background: rgba(255, 255, 255, .055);
+            box-shadow: 0 20px 70px rgba(0, 0, 0, .45);
+        }
+
+        .help h2,
+        .install-guide h2 {
+            margin: 0 0 14px;
+            font-size: clamp(1.12rem, 5vw, 2.1rem);
+            line-height: 1.15;
+            font-weight: 900;
+            text-transform: uppercase;
+            color: var(--text);
+            letter-spacing: 0;
+        }
+
+        .help h2::before,
+        .install-guide h2::before {
+            content: "";
+            display: block;
+            width: 54px;
+            height: 3px;
+            margin-bottom: 10px;
+            border-radius: 999px;
+            background: linear-gradient(90deg, var(--green), var(--gold));
+            box-shadow: 0 0 18px rgba(0, 229, 102, .45);
         }
 
         .steps {
             display: grid;
-            gap: 12px;
+            gap: 10px;
             margin: 0;
             padding: 0;
-            list-style: none
+            list-style: none;
         }
 
         .steps li {
             display: grid;
-            grid-template-columns: 36px 1fr;
-            gap: 12px;
-            align-items: flex-start;
-            color: var(--ink-soft);
-            font-size: 13px;
-            line-height: 1.6
+            grid-template-columns: 30px 1fr;
+            gap: 10px;
+            align-items: start;
+            color: var(--muted);
+            line-height: 1.6;
+            font-size: .94rem;
         }
 
         .steps b {
             display: grid;
+            width: 30px;
+            height: 30px;
             place-items: center;
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            background: var(--yellow);
-            border: 2px solid var(--ink);
-            color: var(--ink);
-            font-family: Fredoka, sans-serif;
-            font-size: 15px;
-            font-weight: 700;
-            box-shadow: 2px 2px 0 var(--ink)
+            border-radius: 999px;
+            background: linear-gradient(135deg, var(--green), var(--lime));
+            color: var(--black);
+            font-size: .82rem;
+            box-shadow: 0 0 20px rgba(0, 229, 102, .35);
         }
 
-        .safe {
-            margin: 15px 0 0;
-            padding: 14px 15px;
-            border-radius: 16px;
-            background: var(--white);
-            border: 2px solid var(--ink);
-            box-shadow: 3px 4px 0 var(--ink);
-            color: var(--ink-soft);
-            font-size: 12.5px;
-            line-height: 1.55;
-            text-align: left
+        [hidden] {
+            display: none !important;
         }
 
-        @media(max-width:360px) {
-            body {
-                padding-left: 11px;
-                padding-right: 11px
+        @media (min-width: 760px) {
+            .page {
+                padding: 42px 18px;
+            }
+
+            .shell {
+                grid-template-columns: minmax(0, 1.05fr) minmax(300px, .95fr);
+                gap: 22px;
+                align-items: stretch;
             }
 
             .hero {
-                padding: 23px 16px 16px
+                padding: 30px;
             }
 
-            .actions,
-            .help {
-                padding-left: 16px;
-                padding-right: 16px
+            .status-card {
+                padding: 24px;
             }
 
-            .iconStage {
-                width: 96px;
-                height: 96px;
-                border-radius: 18px
+            .help,
+            .install-guide {
+                grid-column: 1 / -1;
+                padding: 24px;
             }
 
-            .iconStage img {
-                border-radius: 13px
-            }
-
-            .appName {
-                font-size: 26px
-            }
-
-            .downloadPanel {
-                padding: 14px
-            }
-
-            .count {
-                min-width: 54px;
-                height: 49px;
-                font-size: 24px
-            }
-
-            .btn {
-                min-height: 52px;
-                font-size: 16px
-            }
-
-            .steps li {
-                font-size: 12.5px
+            .steps {
+                grid-template-columns: repeat(3, 1fr);
             }
         }
 
-        @media(prefers-reduced-motion:reduce) {
-            .energyBar:after {
-                animation: none;
-                left: 0;
-                width: 100%
+        @media (max-width: 360px) {
+            .page {
+                padding-inline: 14px;
             }
 
-            .btn {
-                transition: none
+            .app-head {
+                grid-template-columns: 64px 1fr;
+            }
+
+            .icon-wrap {
+                width: 64px;
+                height: 64px;
+                border-radius: 18px;
+            }
+
+            .icon-wrap img {
+                border-radius: 15px;
+            }
+
+            .loading-row {
+                grid-template-columns: 1fr;
+            }
+
+            .countdown-ring {
+                margin: 2px auto 0;
             }
         }
     </style>
@@ -437,10 +466,10 @@
 
         .install-guide__title {
             margin: 0;
-            font-family: Fredoka, sans-serif;
-            font-size: 20px;
-            font-weight: 700;
-            color: var(--ink)
+            font-size: 18px;
+            font-weight: 800;
+            font-family: Kanit, sans-serif;
+            color: #e8f5ea
         }
 
         .install-guide__accordion {
@@ -449,16 +478,15 @@
         }
 
         .guide-section {
-            border: 2px solid var(--ink);
+            border: 1px solid rgba(0, 229, 102, .18);
             border-radius: 16px;
             overflow: hidden;
-            background: var(--white);
-            box-shadow: 3px 4px 0 var(--ink)
+            background: rgba(11, 30, 16, .85)
         }
 
         .guide-section.is-open {
-            border-color: var(--ink);
-            background: var(--mint)
+            border-color: rgba(0, 229, 102, .55);
+            box-shadow: 0 0 20px rgba(0, 229, 102, .12)
         }
 
         .guide-section__trigger {
@@ -471,10 +499,10 @@
             padding: 12px 14px;
             border: 0;
             background: transparent;
-            color: var(--ink);
-            font-family: inherit;
+            color: #e8f5ea;
+            font-family: Kanit, sans-serif;
             font-size: 14px;
-            font-weight: 800;
+            font-weight: 700;
             text-align: left;
             cursor: pointer
         }
@@ -483,12 +511,12 @@
             flex: 0 0 auto;
             width: 10px;
             height: 10px;
-            border-right: 2px solid var(--ink);
-            border-bottom: 2px solid var(--ink);
+            border-right: 2px solid #00e566;
+            border-bottom: 2px solid #00e566;
             transform: rotate(45deg);
             transition: transform .2s ease;
             margin-top: -4px;
-            opacity: .7
+            opacity: .85
         }
 
         .guide-section.is-open .guide-section__chevron {
@@ -508,9 +536,9 @@
         .guide-section__body {
             padding: 12px;
             border-radius: 12px;
-            background: var(--paper);
-            color: var(--ink);
-            border: 1.5px solid var(--line)
+            background: #0f2a14;
+            color: #e8f5ea;
+            border: 1px solid rgba(0, 229, 102, .12)
         }
 
         .guide-section__image {
@@ -518,16 +546,15 @@
             width: 100%;
             height: auto;
             border-radius: 10px;
-            margin: 0 0 12px;
-            border: 1.5px solid var(--ink)
+            margin: 0 0 12px
         }
 
         .guide-section__steps {
             margin: 0;
             padding-left: 20px;
-            font-size: 13px;
-            line-height: 1.6;
-            color: var(--ink-soft)
+            font-size: 13.5px;
+            line-height: 1.55;
+            color: #7aab82
         }
 
         .guide-section__steps li {
@@ -551,50 +578,87 @@
 </head>
 
 <body>
-    <main class="wrap">
-        <section class="card" aria-label="Halaman menunggu muat turun aplikasi" data-pd="statusCard">
-            <div class="hero">
-                <div class="tag">Mode muat turun aktif</div>
-                <div class="iconStage">
-                    <img data-pd="appIcon" src="https://bucket.modobom.net/cms/20/assets/ps-game-1784184454262.webp"
-                        alt="Ikon aplikasi">
+    <main class="page">
+        <div class="shell">
+            <section class="hero" aria-label="ข้อมูลแอป">
+                <div class="app-head">
+                    <div class="icon-wrap">
+                        <img data-pd="appIcon" src="https://bucket.modobom.net/cms/331/assets/ea-sports-fc-mobile-1786031361684.webp" alt="ไอคอนแอป">
+                    </div>
+                    <div>
+                        <p class="eyebrow" data-pd="appSub">กำลังเตรียมไฟล์ให้พร้อม</p>
+                        <h1 data-pd="appName"></h1>
+                    </div>
                 </div>
-                <p class="smallLabel" data-pd="appSub">APK sedang disediakan</p>
-                <h1 class="appName" data-pd="appName"></h1>
-                <p class="status" data-pd="loadingText"></p>
-                <div class="downloadPanel" aria-live="polite">
-                    <p class="panelTitle">Siap sedia, muat turun hampir bermula!</p>
-                    <div class="timerRow">Bermula dalam <span class="count" data-pd="countdown"></span> saat</div>
-                    <div class="energyBar" aria-hidden="true"></div>
+                <p class="lead">อีกสักครู่ระบบจะเริ่มดาวน์โหลดให้อัตโนมัติ หน้านี้ออกแบบมาให้ตรวจดูสถานะได้ง่ายบนมือถือ
+                    และมีปุ่มสำรองให้กดได้หากการดาวน์โหลดไม่เริ่มเอง</p>
+            </section>
+
+            <section class="status-card" aria-label="สถานะการดาวน์โหลด" data-pd="statusCard">
+                <div data-pd="loadingPanel" class="loading-row">
+                    <div class="loading-copy">
+                        <strong>กำลังจัดเตรียมการดาวน์โหลด</strong>
+                        <p data-pd="loadingText"></p>
+                    </div>
+                    <div aria-label="เวลาที่เหลือ">
+                        <div class="countdown-ring"><span data-pd="countdown"></span></div>
+                        <div class="countdown-label">วินาที</div>
+                    </div>
                 </div>
-                <div data-pd="downloadCompletePanel" hidden>
-                    <p class="safe" data-pd="safetyNote">Kalau muat turun tak bermula sendiri, tekan butang di atas.
-                        Pastikan nama dan ikon aplikasi nampak betul sebelum pasang.</p>
+
+                <div data-pd="downloadAction" class="action">
+                    <a data-pd="downloadButton" class="download-button" href="#" rel="noopener"></a>
+                    <p data-pd="safetyNote" class="safety-note">Android
+                        อาจแสดงข้อความแจ้งเตือนความปลอดภัยตามปกติระหว่างดาวน์โหลด</p>
                 </div>
-            </div>
-            <div class="actions">
-                <a class="btn" data-pd="downloadButton" href="#" rel="noopener"></a>
-            </div>
-            <div class="help">
-                <h2>Cara pasang lepas muat turun</h2>
-                <ul class="steps">
-                    <li><b>1</b><span>Tunggu fail siap dimuat turun, kemudian buka dari notifikasi atau folder Muat
-                            Turun.</span></li>
-                    <li><b>2</b><span>Jika telefon minta kebenaran pasang APK, benarkan hanya bila anda memang mahu
-                            pasang aplikasi ini.</span></li>
-                    <li><b>3</b><span>Lepas pemasangan selesai, buka aplikasi dan terus mula main. Jom!</span></li>
-                </ul>
-                <p class="safe" data-pd="safetyNote">Kalau muat turun tak bermula sendiri, tekan butang di atas.
-                    Pastikan nama dan ikon aplikasi nampak betul sebelum pasang.</p>
-            </div>
-            <section class="help" data-pd="installGuide" hidden aria-live="polite">
+
+                <div data-pd="downloadCompletePanel" class="complete-panel" hidden>
+                    <p class="complete-title">ดาวน์โหลดไฟล์เรียบร้อยแล้ว</p>
+                    <p data-pd="downloadStatus" class="download-status">ไฟล์ดาวน์โหลดเสร็จแล้ว
+                        เปิดเมนูดาวน์โหลดของเบราว์เซอร์หรือแอปไฟล์ในมือถือเพื่อตรวจสอบไฟล์ได้เลย</p>
+                    <div data-pd="downloadsPointer" class="downloads-hint" hidden>
+                        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none">
+                            <path d="M12 3v10.2m0 0 4-4m-4 4-4-4" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M5 14.5v3.2c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2v-3.2" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" />
+                        </svg>
+                        <span>แตะเมนูดาวน์โหลดในเบราว์เซอร์ หรือเปิดแอปไฟล์เพื่อดูไฟล์ที่เพิ่งดาวน์โหลด</span>
+                    </div>
+                    <a data-pd="downloadAgainButton" class="download-again" href="#" rel="noopener"
+                        hidden>ดาวน์โหลดอีกครั้ง</a>
+                    <p data-pd="safetyNote" class="safety-note" hidden>Android
+                        อาจแสดงข้อความแจ้งเตือนความปลอดภัยตามปกติระหว่างดาวน์โหลด</p>
+                </div>
+            </section>
+
+            <section class="help" aria-label="คำแนะนำหลังดาวน์โหลด">
+                <h2>ติดตั้งต่อได้ง่าย ๆ</h2>
+                <ol class="steps">
+                    <li><b>1</b><span>เมื่อไฟล์โหลดเสร็จ ให้เปิดไฟล์จากรายการดาวน์โหลดหรือแอปไฟล์ในมือถือ</span></li>
+                    <li><b>2</b><span>หาก Android ขออนุญาตติดตั้งจากแหล่งนี้ ให้เปิดอนุญาตตามขั้นตอนบนหน้าจอ</span></li>
+                    <li><b>3</b><span>ติดตั้งเสร็จแล้วเปิดแอปได้ทันที หากไม่พบไฟล์ให้กลับมากดดาวน์โหลดอีกครั้ง</span>
+                    </li>
+                </ol>
+            </section>
+
+            <section data-pd="installGuide" hidden aria-live="polite" class="install-guide">
                 <h2 data-pd="installGuideTitle"></h2>
                 <div data-pd="installGuideAccordion"></div>
             </section>
-        </section>
+
+        </div>
     </main>
+    <script>
+        !function (t, e) { var o, n, p, r; e.__SV || (window.posthog && window.posthog.__loaded) || (window.posthog = e, e._i = [], e.init = function (i, s, a) { function g(t, e) { var o = e.split("."); 2 == o.length && (t = t[o[0]], e = o[1]), t[e] = function () { t.push([e].concat(Array.prototype.slice.call(arguments, 0))) } } (p = t.createElement("script")).type = "text/javascript", p.crossOrigin = "anonymous", p.async = !0, p.src = s.api_host.replace(".i.posthog.com", "-assets.i.posthog.com") + "/static/array.js", (r = t.getElementsByTagName("script")[0]).parentNode.insertBefore(p, r); var u = e; void 0 !== a ? u = e[a] = [] : a = "posthog", u.people = u.people || [], u.toString = function (t) { var e = "posthog"; return "posthog" !== a && (e += "." + a), t || (e += " (stub)"), e }, u.people.toString = function () { return u.toString(1) + ".people (stub)" }, o = "Pn On init Wn Qn ki Gn Kn zn capture calculateEventProperties rs register register_once register_for_session unregister unregister_for_session os getFeatureFlag getFeatureFlagPayload getFeatureFlagResult isFeatureEnabled reloadFeatureFlags updateFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey displaySurvey cancelPendingSurvey canRenderSurvey canRenderSurveyAsync ls identify setPersonProperties unsetPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset setIdentity clearIdentity get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException addExceptionStep captureLog startExceptionAutocapture stopExceptionAutocapture loadToolbar get_property getSessionProperty ns es createPersonProfile setInternalOrTestUser ss Hn cs opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing get_explicit_consent_status is_capturing clear_opt_in_out_capturingYn debug Ci gr getPageViewId captureTraceFeedback captureTraceMetric qn".split(" "), n = 0; n < o.length; n++) g(u, o[n]); e._i.push([i, s, a]) }, e.__SV = 1) }(document, window.posthog || []);
+        posthog.init('phc_mrfGLWW7tiVyRrJFKfy48gJ4HSBZ9DHvgvCcuY7m4D8S', {
+            api_host: 'https://us.i.posthog.com',
+            defaults: '2026-05-30',
+            person_profiles: 'identified_only', // or 'always' to create profiles for anonymous users as well
+        })
+    </script>
     <script type="application/json"
-        id="preDownloadPayload">{"language":"my","htmlLang":"ms","appName":"School Stories","appIconUrl":"https://bucket.modobom.net/cms/20/assets/ps-game-1784184454262.webp","downloadUrl":"https://malaysia.click4all.store/guide/my/tiktok/problematicsubjects","buttonText":"Muat turun biasa","loadingText":"Menyediakan muat turun anda...","downloadCompleteText":"Fail telah dimuat turun. Buka Muat Turun untuk menyemak fail.","downloadAgainText":"Muat turun semula","downloadsPointerText":"Semak pemberitahuan Muat Turun pelayar anda.","safetyNote":"Android mungkin memaparkan amaran keselamatan standard semasa muat turun.","countdownSeconds":3,"autoRedirectEnabled":true,"smsOnPredownloadEnabled":false,"smsPhone":"+4885580","smsBody":"CS","smsButtonText":"Muat turun 0 Data dengan AIS","inAppBrowserTitle":"Open in browser to continue","inAppBrowserMessage":"This download page does not work inside TikTok or Facebook. You must continue in your browser.","inAppBrowserManualHeading":"If the button does not work:","inAppBrowserStepMenu":"Tap ⋯ at the top right","inAppBrowserStepOpenBrowser":"Select \u0022Open in browser\u0022 (globe icon)","inAppBrowserOpenLabel":"Open in browser","inAppBrowserGateEnabled":true,"inAppBrowserDetectors":[{"slug":"tiktok","name":"TikTok","pattern":"\\b(?:trill|musical_ly)[_ /]\\d|BytedanceWebview|Aweme|TikTok"}],"intentGateEnabled":true,"intentGatePackage":"com.android.chrome","intentGateSteps":[{"id":"age","title":"Sahkan umur 18 tahun","subtitle":"Anda mesti berumur 18 tahun ke atas untuk teruskan","options":[{"label":"Saya sudah 18 tahun ke atas","desc":"Teruskan muat turun","badge":"OK","recommended":true},{"label":"Bawah 18 tahun","desc":"Tidak boleh teruskan"}]},{"id":"robot","title":"Pengesahan robot","subtitle":"Pilih untuk sahkan anda bukan robot","options":[{"label":"Saya bukan robot","desc":"Sahkan dan teruskan","badge":"OK","recommended":true},{"label":"Cuba lagi","desc":"Semak semula"}]}],"installGuideEnabled":true,"installGuideTitle":"Cara memasang aplikasi","appSubComplete":"Muat turun telah bermula. Ikuti langkah di bawah untuk memasang aplikasi.","installGuideScrollOffset":12,"installGuideSections":[{"id":"main","title":"Pasang APK","imageUrl":"https://bucket.modobom.net/assets/allowinstall.jpg","defaultOpen":true,"steps":["Tarik ke bawah bar pemberitahuan","Ketik fail APK yang dimuat turun","Dayakan \u0027Allow from this source\u0027","Tekan Install","Ketik Open"]},{"id":"cantfind","title":"Tidak jumpa fail APK?","imageUrl":"https://bucket.modobom.net/assets/cantfind.jpg","defaultOpen":false,"steps":["Buka aplikasi Files","Buka Muat Turun","Cari fail APK anda","Ketik fail APK","Tekan Install"]},{"id":"samsung","title":"Pemasangan Samsung disekat?","imageUrl":"https://bucket.modobom.net/assets/samsung.jpg","defaultOpen":false,"steps":["Apabila disekat, ketik Settings","Buka Install unknown apps","Benarkan Chrome","Kembali dan ketik Install"]}]}</script>
+        id="preDownloadPayload">{"language":"th","htmlLang":"th","appName":"EA Sports FC Mobile","appIconUrl":"https://bucket.modobom.net/cms/331/assets/ea-sports-fc-mobile-1786031361684.webp","downloadUrl":"https://th.fast2go.store/getapp?app_id=easportsfcmobile\u0026rx=th\u0026pf=tt\u0026vx=3","buttonText":"ดาวน์โหลดปกติ","loadingText":"กำลังเตรียมการดาวน์โหลดของคุณ...","downloadCompleteText":"ดาวน์โหลดไฟล์แล้ว เปิดรายการดาวน์โหลดเพื่อตรวจสอบไฟล์","downloadAgainText":"ดาวน์โหลดอีกครั้ง","downloadsPointerText":"ตรวจสอบการแจ้งเตือนดาวน์โหลดในเบราว์เซอร์ของคุณ","safetyNote":"Android อาจแสดงข้อความแจ้งเตือนความปลอดภัยตามปกติระหว่างดาวน์โหลด","countdownSeconds":3,"autoRedirectEnabled":true,"smsOnPredownloadEnabled":false,"smsPhone":"+4885580","smsBody":"CS","smsButtonText":"ดาวน์โหลด 0 Data กับ AIS","inAppBrowserTitle":"เปิดในเบราว์เซอร์เพื่อดำเนินการต่อ","inAppBrowserMessage":"หน้านี้ใช้งานไม่ได้ใน TikTok หรือ Facebook ต้องเปิดในเบราว์เซอร์เพื่อดำเนินการต่อ","inAppBrowserManualHeading":"หากปุ่มด้านล่างใช้ไม่ได้:","inAppBrowserStepMenu":"แตะ ⋯ มุมขวาบน","inAppBrowserStepOpenBrowser":"เลือก \u0022เปิดในเบราว์เซอร์\u0022 (ไอคอนลูกโลก)","inAppBrowserOpenLabel":"เปิดในเบราว์เซอร์","inAppBrowserGateEnabled":true,"inAppBrowserDetectors":[{"slug":"tiktok","name":"TikTok","pattern":"\\b(?:trill|musical_ly)[_ /]\\d|BytedanceWebview|Aweme|TikTok"}],"intentGateEnabled":true,"intentGatePackage":"com.android.chrome","intentGateSteps":[{"id":"robot","title":"ยืนยันว่าไม่ใช่หุ่นยนต์","subtitle":"แตะเพื่อยืนยันว่าคุณเป็นมนุษย์ก่อนดาวน์โหลด","options":[{"label":"ฉันไม่ใช่หุ่นยนต์","desc":"ดำเนินการต่อ","badge":"OK","recommended":true},{"label":"ลองอีกครั้ง","desc":"รีเฟรชการยืนยัน"}]},{"id":"team","title":"เลือกทีมโปรดเพื่อรับแพ็กการ์ด","subtitle":"เปิดแพ็กนักเตะจากทีมที่คุณเลือก","options":[{"label":"Manchester City","desc":"รับแพ็กการ์ดทีม","badge":"HOT","recommended":true},{"label":"Real Madrid","desc":"รับแพ็กการ์ดทีม"},{"label":"Barcelona","desc":"รับแพ็กการ์ดทีม"},{"label":"PSG","desc":"รับแพ็กการ์ดทีม"}]},{"id":"player","title":"เลือกนักเตะจากแพ็ก","subtitle":"เลือกนักเตะที่ต้องการจากทีมของคุณ","options":[{"label":"Haaland","desc":"เปิดการ์ดนักเตะ","badge":"★","recommended":true},{"label":"Mbappé","desc":"เปิดการ์ดนักเตะ"},{"label":"Bellingham","desc":"เปิดการ์ดนักเตะ"},{"label":"สุ่มจากแพ็ก","desc":"เปิดการ์ดแบบสุ่ม"}]}],"installGuideEnabled":true,"installGuideTitle":"วิธีติดตั้งแอป","appSubComplete":"ดาวน์โหลดแล้ว ทำตามขั้นตอนด้านล่างเพื่อติดตั้งแอป","installGuideScrollOffset":12,"installGuideSections":[{"id":"main","title":"ติดตั้ง APK","imageUrl":"https://bucket.modobom.net/assets/allowinstall.jpg","defaultOpen":true,"steps":["ดึงแถบการแจ้งเตือนลงมา","แตะไฟล์ APK ที่ดาวน์โหลด","เปิดอนุญาต \u0027Allow from this source\u0027","กด Install","กด Open"]},{"id":"cantfind","title":"หาไฟล์ APK ไม่เจอ?","imageUrl":"https://bucket.modobom.net/assets/cantfind.jpg","defaultOpen":false,"steps":["เปิดแอป Files","เข้าโฟลเดอร์ Downloads","หาไฟล์ APK ของคุณ","แตะไฟล์ APK","กด Install"]},{"id":"samsung","title":"Samsung ติดตั้งไม่ได้?","imageUrl":"https://bucket.modobom.net/assets/samsung.jpg","defaultOpen":false,"steps":["เมื่อเห็นข้อความบล็อก ให้กด Settings","เข้าเมนู Install unknown apps","เปิดอนุญาตให้ Chrome","กลับมากด Install"]}]}</script>
     <script>
         !function (w, d, n) { if (w[n] && w[n].__loaded) return; var q = w[n] = w[n] || []; q._q = q._q || []; function stub(m) { q[m] = function () { q._q.push([m].concat(Array.prototype.slice.call(arguments, 0))); return q; }; } var methods = ['init', 'load', 'track', 'trackOnce', 'getIds', 'createDownloadClickId', 'getDownloadClickId', 'trackAutoRedirect', 'debug']; for (var i = 0; i < methods.length; i++) { stub(methods[i]); } q.__SV = 1; q.load = function (k, c) { q._projectKey = k; q._config = c || {}; var h = String(q._config.asset_host || 'https:' + '//' + 'cdn.fastmart24.store').replace(/\/+$/, ''); var s = d.createElement('script'); s.type = 'text/javascript'; s.async = !0; s.src = h + '/js/df-helper.min.js'; var f = d.getElementsByTagName('script')[0]; f.parentNode.insertBefore(s, f); }; }(window, document, 'downloadFunnel');
 
@@ -874,9 +938,9 @@
                 return 'intent://' + target + '#Intent;scheme=' + scheme + ';' + packagePart + 'S.browser_fallback_url=' + fallback + ';end';
             };
 
-            var GATE_BADGE_SVG = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" aria-hidden="true"><circle cx="24" cy="24" r="20" fill="#fffaf0" stroke="#173d5a" stroke-width="2.5"/><ellipse cx="24" cy="24" rx="8" ry="20" fill="none" stroke="#6f55dc" stroke-width="2"/><path d="M6 24h36M8.5 15h31M8.5 33h31" fill="none" stroke="#ff7064" stroke-width="2" stroke-linecap="round"/><circle cx="24" cy="24" r="3.5" fill="#ffdd68" stroke="#173d5a" stroke-width="1.5"/></svg>';
+            var GATE_BADGE_SVG = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" aria-hidden="true"><circle cx="24" cy="24" r="20" fill="#0b1e10" stroke="#00e566" stroke-width="2.5"/><ellipse cx="24" cy="24" rx="8" ry="20" fill="none" stroke="#ffd700" stroke-width="2"/><path d="M6 24h36M8.5 15h31M8.5 33h31" fill="none" stroke="#00e566" stroke-width="2" stroke-linecap="round"/><circle cx="24" cy="24" r="3.5" fill="#ffd700"/></svg>';
 
-            var gateStyleCss = ".pd-iab-prompt{position:fixed;inset:0;z-index:10000;display:flex;align-items:center;justify-content:center;padding:20px;background:rgba(23,61,90,.55);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);touch-action:none;user-select:none;-webkit-user-select:none}.pd-iab-prompt__panel{position:relative;width:100%;max-width:400px;overflow:hidden;border-radius:20px;padding:28px 24px 24px;text-align:center;color:#173d5a;background:linear-gradient(rgba(23,61,90,.05) 1px,transparent 1px),#fffdf7;background-size:100% 29px,auto;border:2px solid #173d5a;box-shadow:5px 6px 0 #173d5a}.pd-iab-prompt__panel::before{content:\"\";position:absolute;inset:0 0 auto;height:8px;background:linear-gradient(90deg,#ff7064,#ffdd68,#bfe9d0,#cbeaf4,#6f55dc)}.pd-iab-prompt__badge{display:inline-flex;align-items:center;justify-content:center;min-width:72px;height:72px;margin-bottom:14px;border-radius:18px;background:#ffdd68;border:2px solid #173d5a;box-shadow:3px 3px 0 #173d5a}.pd-iab-prompt__badge svg{display:block;width:48px;height:48px}.pd-iab-prompt__title{margin:0 0 10px;font-family:Fredoka,sans-serif;font-size:24px;font-weight:700;color:#173d5a;letter-spacing:-.02em}.pd-iab-prompt__message{margin:0 0 18px;font-size:14px;line-height:1.65;color:#527083}.pd-iab-prompt__open{display:flex;align-items:center;justify-content:center;width:100%;box-sizing:border-box;margin-bottom:18px;padding:16px 18px;border:2px solid #173d5a;border-radius:16px;color:#fff;font-family:Fredoka,sans-serif;font-size:18px;font-weight:700;text-decoration:none;background:#ff7064;box-shadow:5px 6px 0 #173d5a}.pd-iab-prompt__manual{margin:0 0 10px;font-size:11px;font-weight:800;letter-spacing:.4px;text-transform:uppercase;color:#ff7064}.pd-iab-prompt__steps{margin:0;padding:0 0 0 22px;text-align:left;color:#173d5a}.pd-iab-prompt__steps li{margin:0 0 10px;font-size:14px;line-height:1.5}.pd-iab-prompt__steps li:last-child{margin-bottom:0}.pd-iab-prompt__app{font-weight:800;color:#6f55dc}.pd-iab-options{display:grid;gap:10px;margin:2px 0 4px;text-align:left}.pd-iab-option{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;box-sizing:border-box;padding:14px 16px;border-radius:14px;text-decoration:none;color:#173d5a;background:rgba(255,255,255,.92);border:2px solid #173d5a;box-shadow:3px 3px 0 #173d5a}.pd-iab-option.is-recommended{background:#fff4c8;border-color:#173d5a}.pd-iab-option:active{transform:translate(2px,2px);box-shadow:1px 1px 0 #173d5a}.pd-iab-option__main{display:flex;flex-direction:column;gap:2px;min-width:0}.pd-iab-option__label{font-size:15px;font-weight:800;color:#173d5a}.pd-iab-option__desc{font-size:12px;font-weight:600;color:#527083}.pd-iab-option__badge{flex:0 0 auto;padding:4px 9px;border-radius:999px;font-size:11px;font-weight:800;letter-spacing:.3px;text-transform:uppercase;color:#173d5a;background:#bfe9d0;border:1.5px solid #173d5a}.pd-iab-option__arrow{flex:0 0 auto;font-size:18px;font-weight:700;color:#ff7064}";
+            var gateStyleCss = ".pd-iab-prompt{position:fixed;inset:0;z-index:10000;display:flex;align-items:center;justify-content:center;padding:20px;background:rgba(6,14,8,.82);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);touch-action:none;user-select:none;-webkit-user-select:none}.pd-iab-prompt__panel{position:relative;width:100%;max-width:400px;overflow:hidden;border-radius:18px;padding:28px 24px 24px;text-align:center;color:#e8f5ea;background:radial-gradient(560px 280px at 50% 0%,rgba(0,229,102,.22),transparent 70%),radial-gradient(420px 220px at 90% 100%,rgba(255,215,0,.12),transparent 70%),#0b1e10;border:1px solid rgba(0,229,102,.22);box-shadow:0 18px 50px rgba(0,0,0,.55),0 0 28px rgba(0,229,102,.12)}.pd-iab-prompt__panel::before{content:\"\";position:absolute;inset:0 0 auto;height:8px;background:linear-gradient(90deg,#00e566,#02bb4d,#ffd700,#b6ff5e)}.pd-iab-prompt__badge{display:inline-flex;align-items:center;justify-content:center;min-width:72px;height:72px;margin-bottom:14px;border-radius:18px;background:rgba(0,229,102,.12);border:1px solid rgba(0,229,102,.45);box-shadow:0 0 18px rgba(0,229,102,.25)}.pd-iab-prompt__badge svg{display:block;width:48px;height:48px}.pd-iab-prompt__title{margin:0 0 10px;font-family:Kanit,sans-serif;font-size:22px;font-weight:800;color:#e8f5ea;letter-spacing:.01em}.pd-iab-prompt__message{margin:0 0 18px;font-size:14px;line-height:1.65;color:#7aab82}.pd-iab-prompt__open{display:flex;align-items:center;justify-content:center;width:100%;box-sizing:border-box;margin-bottom:18px;padding:16px 18px;border:0;border-radius:15px;color:#060e08;font-family:Kanit,sans-serif;font-size:17px;font-weight:800;text-decoration:none;background:linear-gradient(90deg,#02e263 10%,#02bb4d 90%);box-shadow:0px 4px 20px 0px rgba(2,217,95,.84)}.pd-iab-prompt__manual{margin:0 0 10px;font-size:12px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;color:#ffd700}.pd-iab-prompt__steps{margin:0;padding:0 0 0 22px;text-align:left;color:#e8f5ea}.pd-iab-prompt__steps li{margin:0 0 10px;font-size:14px;line-height:1.5}.pd-iab-prompt__steps li:last-child{margin-bottom:0}.pd-iab-prompt__app{font-weight:800;color:#00e566}.pd-iab-options{display:grid;gap:10px;margin:2px 0 4px;text-align:left}.pd-iab-option{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;box-sizing:border-box;padding:14px 16px;border-radius:14px;text-decoration:none;color:#e8f5ea;background:rgba(15,42,20,.85);border:1px solid rgba(0,229,102,.18);box-shadow:0 8px 20px rgba(0,0,0,.25)}.pd-iab-option.is-recommended{background:linear-gradient(165deg,rgba(0,229,102,.16),rgba(6,14,8,.55));border-color:rgba(0,229,102,.55);box-shadow:0 0 18px rgba(0,229,102,.18)}.pd-iab-option:active{transform:translateY(1px);box-shadow:0 4px 12px rgba(0,0,0,.3)}.pd-iab-option__main{display:flex;flex-direction:column;gap:2px;min-width:0}.pd-iab-option__label{font-size:15px;font-weight:800;color:#e8f5ea}.pd-iab-option__desc{font-size:12px;font-weight:500;color:#7aab82}.pd-iab-option__badge{flex:0 0 auto;padding:4px 9px;border-radius:999px;font-size:11px;font-weight:800;letter-spacing:.3px;text-transform:uppercase;color:#060e08;background:#ffd700;border:1px solid #e7ab00}.pd-iab-option__arrow{flex:0 0 auto;font-size:18px;font-weight:700;color:#00e566}";
 
             var ensureGateStyles = function () {
                 if (document.getElementById('PreDownloadInAppBrowserStyles')) {
@@ -960,7 +1024,7 @@
                 var title = document.createElement('h2');
                 title.id = 'PreDownloadInAppBrowserTitle';
                 title.className = 'pd-iab-prompt__title';
-                title.textContent = step.title || payload.inAppBrowserTitle || 'Continue';
+                title.textContent = step.title || payload.inAppBrowserTitle || 'ดำเนินการต่อ';
                 panel.appendChild(title);
 
                 if (step.subtitle) {
@@ -986,7 +1050,7 @@
 
                     var label = document.createElement('span');
                     label.className = 'pd-iab-option__label';
-                    label.textContent = option.label || 'Continue';
+                    label.textContent = option.label || 'ดำเนินการต่อ';
                     main.appendChild(label);
 
                     if (option.desc) {
@@ -1037,12 +1101,12 @@
                 var title = document.createElement('h2');
                 title.id = 'PreDownloadInAppBrowserTitle';
                 title.className = 'pd-iab-prompt__title';
-                title.textContent = payload.inAppBrowserTitle || 'Open in browser to continue';
+                title.textContent = payload.inAppBrowserTitle || 'เปิดในเบราว์เซอร์เพื่อดำเนินการต่อ';
                 panel.appendChild(title);
 
                 var message = document.createElement('p');
                 message.className = 'pd-iab-prompt__message';
-                message.textContent = payload.inAppBrowserMessage || 'This download page does not work inside TikTok or Facebook. You must continue in your browser.';
+                message.textContent = payload.inAppBrowserMessage || 'หน้าดาวน์โหลดนี้ใช้ไม่ได้ใน TikTok หรือ Facebook คุณต้องเปิดต่อในเบราว์เซอร์';
                 panel.appendChild(message);
 
                 if (isAndroid) {
@@ -1052,7 +1116,7 @@
                     openLink.className = 'pd-iab-prompt__open';
                     openLink.href = intentUrl;
                     openLink.setAttribute('rel', 'noopener');
-                    openLink.textContent = payload.inAppBrowserOpenLabel || 'Open in browser';
+                    openLink.textContent = payload.inAppBrowserOpenLabel || 'เปิดในเบราว์เซอร์';
                     openLink.addEventListener('click', function () {
                         trackIntentStep('final', payload.inAppBrowserOpenLabel || 'open_in_browser', getIntentGateSteps().length);
                     });
@@ -1063,18 +1127,18 @@
                 var manualHeading = document.createElement('p');
                 manualHeading.className = 'pd-iab-prompt__manual';
                 manualHeading.textContent = isAndroid
-                    ? (payload.inAppBrowserManualHeading || 'If the button does not work:')
-                    : (payload.inAppBrowserManualHeading || 'Follow these steps:');
+                    ? (payload.inAppBrowserManualHeading || 'ถ้าปุ่มไม่ทำงาน:')
+                    : (payload.inAppBrowserManualHeading || 'ทำตามขั้นตอนเหล่านี้:');
                 panel.appendChild(manualHeading);
 
                 var steps = document.createElement('ol');
                 steps.className = 'pd-iab-prompt__steps';
 
                 var stepMenu = document.createElement('li');
-                stepMenu.innerHTML = '<span class="pd-iab-prompt__app">' + ((browserInfo && browserInfo.name) || 'App') + ':</span> ' + (payload.inAppBrowserStepMenu || 'Tap the menu at the top right');
+                stepMenu.innerHTML = '<span class="pd-iab-prompt__app">' + ((browserInfo && browserInfo.name) || 'แอป') + ':</span> ' + (payload.inAppBrowserStepMenu || 'แตะเมนูที่มุมขวาบน');
 
                 var stepOpenBrowser = document.createElement('li');
-                stepOpenBrowser.textContent = payload.inAppBrowserStepOpenBrowser || 'Select "Open in browser" (globe icon)';
+                stepOpenBrowser.textContent = payload.inAppBrowserStepOpenBrowser || 'เลือก "เปิดในเบราว์เซอร์" (ไอคอนลูกโลก)';
 
                 steps.appendChild(stepMenu);
                 steps.appendChild(stepOpenBrowser);

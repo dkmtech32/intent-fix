@@ -1,0 +1,1888 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+  <title>EA SPORTS FC 26 – เกมฟุตบอลอันดับ 1</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
+  <meta name="robots" content="index,follow">
+  <meta name="generator" content="GrapesJS Studio">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800;900&amp;display=swap"
+    rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0 auto;
+      font-family: 'Kanit', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      max-width: 430px;
+      overflow-x: hidden;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --bg: #060e08;
+      --card: #0b1e10;
+      --muted: #0f2a14;
+      --text: #e8f5ea;
+      --sub: #7aab82;
+      --green: #00e566;
+      --gold: #ffd700;
+      --lime: #b6ff5e;
+      --red: #ff3b3b;
+      --border: rgba(0, 229, 102, 0.15);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      display: block;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 16px;
+      transition: background .3s, backdrop-filter .3s, border-bottom .3s;
+    }
+
+    nav.scrolled {
+      background: rgba(6, 14, 8, .96);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .ticker-wrap {
+      background: var(--gold);
+      overflow: hidden;
+      white-space: nowrap;
+      padding: 6px 0;
+      position: relative;
+      z-index: 2;
+      margin-top: 56px;
+    }
+
+    .ticker-inner {
+      display: inline-block;
+      animation: ticker 22s linear infinite;
+    }
+
+    .ticker-inner span {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      color: #060e08;
+      padding: 0 24px;
+    }
+
+    .hero {
+      position: relative;
+      min-height: calc(100svh - 72px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      padding: 32px 24px 56px;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: url('https://images.unsplash.com/photo-1489944440615-453fc2b6a9a9?w=800&h=1200&fit=crop&auto=format') center/cover no-repeat;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(6, 14, 8, .4) 0%, rgba(6, 14, 8, .55) 35%, rgba(6, 14, 8, .92) 78%, #060e08 100%);
+    }
+
+    .hero-vignette {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 40%, rgba(0, 229, 102, .06) 0%, transparent 65%);
+    }
+
+    .pitch-lines {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+      opacity: .12;
+    }
+
+    .pitch-lines::before {
+      content: '';
+      position: absolute;
+      top: 30%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 180px;
+      height: 100px;
+      border: 2px solid var(--green);
+      border-radius: 50%;
+      animation: pitchPulse 3s ease-in-out infinite;
+    }
+
+    .pitch-lines::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 2px;
+      height: 100%;
+      background: var(--green);
+      animation: pitchPulse 3s ease-in-out infinite;
+    }
+
+    .scan {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .scan::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, rgba(0, 229, 102, .3), transparent);
+      animation: scanLine 4s linear infinite;
+    }
+
+    .hero-ball {
+      position: absolute;
+      top: 18%;
+      right: 12%;
+      font-size: 48px;
+      animation: ballBounce 2.4s ease-in-out infinite;
+      filter: drop-shadow(0 8px 24px rgba(0, 229, 102, .4));
+    }
+
+    .hero-content {
+      position: relative;
+      width: 100%;
+    }
+
+    .wc-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      background: rgba(255, 215, 0, .1);
+      border-radius: 999px;
+      padding: 6px 14px;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 14px;
+      animation: fadeIn .6s .2s both;
+    }
+
+    .hero-title {
+      margin-bottom: 10px;
+      animation: fadeIn .6s .4s both;
+    }
+
+    .hero-title .ea {
+      display: block;
+      font-size: 15px;
+      font-weight: 700;
+      color: rgba(255, 255, 255, .6);
+      letter-spacing: .3em;
+      text-transform: uppercase;
+      margin-bottom: -4px;
+    }
+
+    .hero-title .fc {
+      display: block;
+      font-size: 88px;
+      font-weight: 900;
+      line-height: .9;
+      letter-spacing: -.04em;
+      background: linear-gradient(135deg, #fff 0%, var(--green) 50%, #fff 100%);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shimmer 3s linear infinite;
+      filter: drop-shadow(0 0 32px rgba(0, 229, 102, .45));
+    }
+
+    .hero-title .num {
+      display: block;
+      font-size: 88px;
+      font-weight: 900;
+      line-height: .9;
+      letter-spacing: -.04em;
+      background: linear-gradient(135deg, var(--gold) 0%, #fff 50%, var(--gold) 100%);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shimmer 3s .5s linear infinite;
+      filter: drop-shadow(0 0 32px rgba(255, 215, 0, .4));
+    }
+
+    .hero-sub {
+      font-size: 17px;
+      font-weight: 600;
+      color: rgba(255, 255, 255, .88);
+      margin-bottom: 6px;
+      animation: fadeInUp .6s .55s both;
+    }
+
+    .hero-desc {
+      font-size: 13px;
+      font-weight: 300;
+      color: rgba(255, 255, 255, .55);
+      line-height: 1.7;
+      max-width: 290px;
+      margin: 0 auto 26px;
+      animation: fadeInUp .6s .65s both;
+    }
+
+    .hero-btns {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      animation: fadeInUp .6s .78s both;
+    }
+
+    .scroll-hint span {
+      font-size: 11px;
+      color: rgba(255, 255, 255, .3);
+    }
+
+    .scroll-hint svg {
+      color: rgba(255, 255, 255, .3);
+      animation: bounceY 1.4s ease-in-out infinite;
+    }
+
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      margin: 0 16px 28px;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+
+    .stat-cell {
+      background: rgba(11, 30, 16, .9);
+      padding: 14px 8px;
+      text-align: center;
+    }
+
+    .stat-val {
+      font-size: 22px;
+      font-weight: 900;
+      background: linear-gradient(135deg, var(--green), var(--lime));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .stat-label {
+      font-size: 10px;
+      color: var(--sub);
+      line-height: 1.3;
+      margin-top: 2px;
+    }
+
+    section {
+      padding: 0 16px 40px;
+    }
+
+    .stag {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .stag-line {
+      height: 2px;
+      width: 32px;
+      border-radius: 2px;
+    }
+
+    .stag-txt {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .sec-title {
+      font-size: 28px;
+      font-weight: 900;
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+
+    .sec-title em {
+      font-style: normal;
+    }
+
+    .sec-body {
+      font-size: 13px;
+      line-height: 1.85;
+      color: var(--sub);
+    }
+
+    .wc-banner {
+      margin: 0 16px 32px;
+      border-radius: 20px;
+      overflow: hidden;
+      position: relative;
+      border: 1px solid rgba(255, 215, 0, .3);
+    }
+
+    .wc-banner img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      opacity: .65;
+    }
+
+    .wc-banner-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(255, 215, 0, .55) 0%, rgba(6, 14, 8, .6) 100%);
+    }
+
+    .wc-banner-body {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .wc-banner-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--gold);
+      color: #060e08;
+      border-radius: 999px;
+      padding: 4px 12px;
+      font-size: 11px;
+      font-weight: 800;
+      width: fit-content;
+      margin-bottom: 8px;
+    }
+
+    .wc-banner-title {
+      font-size: 22px;
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.2;
+      margin-bottom: 6px;
+    }
+
+    .wc-banner-sub {
+      font-size: 12px;
+      color: rgba(255, 255, 255, .8);
+    }
+
+    .wc-host {
+      display: flex;
+      gap: 8px;
+      margin-top: 10px;
+      flex-wrap: wrap;
+    }
+
+    .feat-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .feat-card {
+      border-radius: 16px;
+      padding: 16px;
+      transition: transform .2s;
+    }
+
+    .feat-card:active {
+      transform: scale(.97);
+    }
+
+    .feat-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 12px;
+      font-size: 20px;
+    }
+
+    .feat-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+
+    .feat-desc {
+      font-size: 11px;
+      line-height: 1.6;
+      color: var(--sub);
+    }
+
+    .ss-section {
+      padding: 0 0 40px;
+    }
+
+    .ss-tag {
+      padding: 0 16px 18px;
+    }
+
+    .ss-rail {
+      display: flex;
+      overflow-x: auto;
+      gap: 12px;
+      padding: 0 16px;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .ss-rail::-webkit-scrollbar {
+      display: none;
+    }
+
+    .ss-card {
+      flex-shrink: 0;
+      width: 280px;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(0, 229, 102, .15);
+      scroll-snap-align: start;
+      position: relative;
+      background: #0b1e10;
+    }
+
+    .ss-card img {
+      width: 100%;
+      height: 170px;
+      object-fit: cover;
+    }
+
+    .ss-card-cap {
+      padding: 10px 12px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    .ss-card-sub {
+      font-size: 10px;
+      color: var(--sub);
+      margin-top: 2px;
+    }
+
+    .mods-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .mod-card {
+      border-radius: 16px;
+      overflow: hidden;
+      background: rgba(11, 30, 16, .9);
+    }
+
+    .mod-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: .65;
+    }
+
+    .mod-badge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      border-radius: 999px;
+      padding: 4px 10px;
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .mod-body {
+      padding: 14px;
+    }
+
+    .mod-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 4px;
+    }
+
+    .mod-name {
+      font-size: 15px;
+      font-weight: 800;
+      color: #fff;
+    }
+
+    .stars {
+      display: flex;
+      gap: 2px;
+    }
+
+    .stars svg {
+      width: 12px;
+      height: 12px;
+    }
+
+    .mod-desc {
+      font-size: 12px;
+      line-height: 1.6;
+      color: var(--sub);
+    }
+
+    .mod-tags {
+      display: flex;
+      gap: 6px;
+      margin-top: 8px;
+      flex-wrap: wrap;
+    }
+
+    .mod-tag-pill {
+      border-radius: 999px;
+      padding: 3px 8px;
+      font-size: 10px;
+      font-weight: 600;
+      background: rgba(0, 229, 102, .1);
+      border: 1px solid rgba(0, 229, 102, .2);
+      color: var(--green);
+    }
+
+    .reviews-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .rev-card {
+      background: rgba(11, 30, 16, .8);
+      border: 1px solid rgba(0, 229, 102, .1);
+      border-radius: 16px;
+      padding: 16px;
+    }
+
+    .rev-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+
+    .rev-avatar {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+      font-weight: 800;
+      color: #060e08;
+      flex-shrink: 0;
+    }
+
+    .rev-user {
+      font-size: 13px;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .rev-sub {
+      font-size: 10px;
+      color: var(--sub);
+    }
+
+    .rev-text {
+      font-size: 12px;
+      line-height: 1.75;
+      color: #a8d5b0;
+    }
+
+    .cta-wrap {
+      padding: 0 16px 72px;
+    }
+
+    .cta-box {
+      position: relative;
+      overflow: hidden;
+      border-radius: 24px;
+      padding: 28px 20px;
+      text-align: center;
+      background: linear-gradient(160deg, #0b2e14, #061608);
+      border: 1px solid rgba(0, 229, 102, .25);
+    }
+
+    .cta-glow-top {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--green), var(--gold), var(--green), transparent);
+    }
+
+    .cta-bg-radial {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: radial-gradient(ellipse at 50% -10%, rgba(0, 229, 102, .2) 0%, transparent 60%);
+    }
+
+    .cta-inner {
+      position: relative;
+    }
+
+    .cta-title {
+      font-size: 24px;
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.25;
+      margin-bottom: 10px;
+    }
+
+    .cta-title em {
+      color: var(--green);
+      font-style: normal;
+    }
+
+    .cta-desc {
+      font-size: 13px;
+      color: var(--sub);
+      line-height: 1.75;
+      margin-bottom: 20px;
+    }
+
+    .cta-note {
+      margin-top: 12px;
+      font-size: 12px;
+      color: var(--sub);
+    }
+
+    footer {
+      border-top: 1px solid rgba(0, 229, 102, .1);
+      padding: 24px 16px;
+      text-align: center;
+    }
+
+    .foot-logo {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: var(--green);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 900;
+      color: #060e08;
+      margin: 0 auto 10px;
+    }
+
+    .foot-copy {
+      font-size: 12px;
+      color: var(--sub);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity .6s ease, transform .6s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-left {
+      opacity: 0;
+      transform: translateX(-24px);
+      transition: opacity .5s ease, transform .5s ease;
+    }
+
+    .reveal-left.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .reveal-scale {
+      opacity: 0;
+      transform: scale(.9);
+      transition: opacity .5s ease, transform .5s ease;
+    }
+
+    .reveal-scale.visible {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .sticky-download-button {
+      min-height: 44px;
+      max-width: 600px !important;
+      width: calc(100% - 32px) !important;
+      margin: 20px auto !important;
+      box-sizing: border-box;
+      position: relative;
+      transform: none !important;
+      z-index: 1000;
+    }
+
+    .sticky-download-button.is-sticky {
+      position: fixed !important;
+      top: 10px !important;
+      left: 50% !important;
+      transform: translateX(-50%) !important;
+      margin-top: 0 !important;
+      z-index: 999999 !important;
+    }
+
+    .sticky-download-button:hover {
+      background: linear-gradient(90deg, #F50057, #C51162);
+    }
+
+    .sticky-download-button:not(.is-sticky) {
+      transform: none !important;
+      left: auto !important;
+      right: auto !important;
+      position: relative !important;
+    }
+
+    .sticky-download-button:not(.is-sticky):hover {
+      background: linear-gradient(90deg, #F50057, #C51162);
+    }
+
+    .sticky-download-button.is-sticky:hover {
+      transform: translateX(-50%) !important;
+      background: linear-gradient(90deg, #F50057, #C51162);
+    }
+
+    .loading-content p {
+      margin-top: 16px;
+      font-size: 18px;
+      font-weight: 500;
+    }
+
+    #iddw92 {
+      background: var(--green);
+    }
+
+    #iqfsxu {
+      color: var(--green);
+    }
+
+    #iea6bk {
+      color: var(--green);
+    }
+
+    #i16lfi {
+      background: var(--gold);
+    }
+
+    #i13u6f {
+      color: var(--gold);
+    }
+
+    #id1ft8 {
+      background: rgba(0, 229, 102, .15);
+    }
+
+    #im97bi {
+      background: linear-gradient(135deg, rgba(0, 229, 102, .1), rgba(0, 184, 77, .1));
+      border: 1px solid rgba(0, 229, 102, .2);
+    }
+
+    #imwvf8 {
+      background: rgba(255, 215, 0, .15);
+    }
+
+    #i3r5kh {
+      background: linear-gradient(135deg, rgba(255, 215, 0, .1), rgba(230, 168, 0, .1));
+      border: 1px solid rgba(255, 215, 0, .2);
+    }
+
+    #injx4w {
+      background: rgba(182, 255, 94, .15);
+    }
+
+    #i99ggv {
+      background: linear-gradient(135deg, rgba(182, 255, 94, .1), rgba(0, 229, 102, .1));
+      border: 1px solid rgba(182, 255, 94, .2);
+    }
+
+    #if8nmo {
+      background: rgba(255, 59, 59, .15);
+    }
+
+    #iix3wd {
+      background: linear-gradient(135deg, rgba(255, 59, 59, .1), rgba(200, 0, 0, .1));
+      border: 1px solid rgba(255, 59, 59, .2);
+    }
+
+    #i22zso {
+      background: rgba(100, 149, 237, .15);
+    }
+
+    #ikm83p {
+      background: linear-gradient(135deg, rgba(100, 149, 237, .1), rgba(65, 105, 225, .1));
+      border: 1px solid rgba(100, 149, 237, .2);
+    }
+
+    #ibzbek {
+      background: rgba(255, 165, 0, .15);
+    }
+
+    #il8brc {
+      background: linear-gradient(135deg, rgba(255, 165, 0, .1), rgba(200, 120, 0, .1));
+      border: 1px solid rgba(255, 165, 0, .2);
+    }
+
+    #is4hpg {
+      background: #a78bfa;
+    }
+
+    #is5wpq {
+      color: #a78bfa;
+    }
+
+    #ickypl {
+      background: var(--gold);
+    }
+
+    #ig2tqo {
+      color: var(--gold);
+    }
+
+    #i1uagr {
+      color: var(--gold);
+    }
+
+    #iz2huj {
+      margin-bottom: 20px;
+    }
+
+    #ify1lb {
+      background: var(--gold);
+      color: #060e08;
+    }
+
+    #ichbau {
+      border: 1px solid rgba(255, 215, 0, .35);
+    }
+
+    #ikv2ln {
+      background: var(--green);
+      color: #060e08;
+    }
+
+    #iekizr {
+      border: 1px solid rgba(0, 229, 102, .3);
+    }
+
+    #itxyx5 {
+      background: var(--lime);
+      color: #060e08;
+    }
+
+    #ilztqr {
+      border: 1px solid rgba(182, 255, 94, .3);
+    }
+
+    #iraadx {
+      background: #6495ed;
+    }
+
+    #icj6c6 {
+      border: 1px solid rgba(100, 149, 237, .3);
+    }
+
+    #ifrgs5 {
+      background: var(--red);
+    }
+
+    #ii4l76 {
+      border: 1px solid rgba(255, 59, 59, .3);
+    }
+
+    #ivt1ew {
+      background: #a78bfa;
+    }
+
+    #i6u59k {
+      color: #a78bfa;
+    }
+
+    #ihbqlk {
+      background: var(--green);
+    }
+
+    #idnxq9 {
+      background: var(--gold);
+    }
+
+    #itd5g6 {
+      background: #a78bfa;
+    }
+
+    .gjs-image-box {
+      height: 200px;
+      width: 100%;
+    }
+
+    #iofkd4 {
+      background-image: url('https://bucket.modobom.net/cms/560/assets/fc-26-1783054170414.webp');
+      background-size: contain;
+      background-position: center center;
+      background-attachment: scroll;
+      background-repeat: no-repeat;
+    }
+
+    #i8mne5 {
+      background-image: url('https://bucket.modobom.net/cms/560/assets/fc-26-1783054313936.webp');
+      background-size: contain;
+      background-position: center center;
+      background-attachment: scroll;
+      background-repeat: no-repeat;
+    }
+
+    #i737ct {
+      background-image: url('https://bucket.modobom.net/cms/560/assets/fc-26-1783054436671.webp');
+      background-size: contain;
+      background-position: center center;
+      background-attachment: scroll;
+      background-repeat: no-repeat;
+    }
+
+    #ikcfb8 {
+      background-image: url('https://bucket.modobom.net/cms/560/assets/fc-26-1783054478850.webp');
+      background-size: contain;
+      background-position: center center;
+      background-attachment: scroll;
+      background-repeat: no-repeat;
+    }
+
+    #i9fsjg {
+      background-image: url('https://bucket.modobom.net/cms/560/assets/fc-26-1783054543117.webp');
+      background-size: contain;
+      background-position: center center;
+      background-attachment: scroll;
+      background-repeat: no-repeat;
+    }
+
+    #ifasw6 {
+      background-image: url('https://bucket.modobom.net/cms/560/assets/fc-26-1783054956497.webp');
+      background-size: contain;
+      background-position: center center;
+      background-attachment: scroll;
+      background-repeat: no-repeat;
+      display: inline-block;
+    }
+
+    #Download {
+      color: rgba(0, 0, 0, 1);
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      background-image: linear-gradient(90deg, #02e263 10%, #02bb4d 90%);
+      background-position: 0px 0px;
+      background-size: 100% 100%;
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
+      border-bottom-left-radius: 15px;
+      border-bottom-right-radius: 15px;
+      box-shadow: 0px 4px 20px 0px rgba(2, 217, 95, 0.84);
+    }
+
+    #Download-2 {
+      color: rgba(0, 0, 0, 1);
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      background-image: linear-gradient(90deg, #fdd400 10%, #e7ab00 90%);
+      background-position: 0px 0px;
+      background-size: 100% 100%;
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
+      border-bottom-left-radius: 15px;
+      border-bottom-right-radius: 15px;
+      box-shadow: 0 4px 20px 0 rgba(247, 202, 0, 0.91);
+    }
+
+    #Download-3 {
+      color: rgba(0, 0, 0, 1);
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      background-image: linear-gradient(90deg, #02e263 10%, #02bb4d 90%);
+      background-position: 0px 0px;
+      background-size: 100% 100%;
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
+      border-bottom-left-radius: 15px;
+      border-bottom-right-radius: 15px;
+      box-shadow: 0px 4px 20px 0px rgba(2, 217, 95, 0.84);
+    }
+
+    #iezj4h {
+      background-image: url('https://bucket.modobom.net/cms/560/assets/fc-26-1783061796857.webp');
+      background-size: contain;
+      background-position: center center;
+      background-attachment: scroll;
+      background-repeat: no-repeat;
+    }
+
+    @keyframes pitchPulse {
+
+      0%,
+      100% {
+        opacity: .18;
+      }
+
+      50% {
+        opacity: .32;
+      }
+    }
+
+    @keyframes ballBounce {
+
+      0%,
+      100% {
+        transform: translateY(0) rotate(0deg);
+      }
+
+      40% {
+        transform: translateY(-14px) rotate(180deg);
+      }
+
+      70% {
+        transform: translateY(-6px) rotate(270deg);
+      }
+    }
+
+    @keyframes glowGreen {
+
+      0%,
+      100% {
+        box-shadow: 0 0 20px #00e56666, 0 0 40px #00e56633;
+      }
+
+      50% {
+        box-shadow: 0 0 32px #00e566aa, 0 0 64px #00e56655;
+      }
+    }
+
+    @keyframes glowGold {
+
+      0%,
+      100% {
+        box-shadow: 0 0 20px #ffd70066, 0 0 40px #ffd70033;
+      }
+
+      50% {
+        box-shadow: 0 0 32px #ffd700aa, 0 0 64px #ffd70055;
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(28px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes bounceY {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(6px);
+      }
+    }
+
+    @keyframes scanLine {
+      0% {
+        transform: translateY(-100%);
+      }
+
+      100% {
+        transform: translateY(100vh);
+      }
+    }
+
+    @keyframes ticker {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    @keyframes shimmer {
+      0% {
+        background-position: -200% center;
+      }
+
+      100% {
+        background-position: 200% center;
+      }
+    }
+
+    @keyframes countUp {
+      from {
+        opacity: 0;
+        transform: scale(.8);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .sticky-download-button {
+        transition: none;
+      }
+
+      .sticky-download-button:hover {
+        transform: none !important;
+      }
+
+      .sticky-download-button:active {
+        transform: none !important;
+      }
+
+      .sticky-download-button.is-sticky:hover {
+        transform: translateX(-50%) !important;
+      }
+
+      .sticky-download-button.is-sticky:active {
+        transform: translateX(-50%) !important;
+      }
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .sticky-download-button {
+        background: linear-gradient(90deg, #E91E63, #AD1457);
+        box-shadow: 0 4px 20px rgba(233, 30, 99, 0.3);
+      }
+
+      .sticky-download-button:hover {
+        background: linear-gradient(90deg, #F50057, #C2185B);
+      }
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    @media (max-width: 1023px) and (min-width: 768px) {
+      .sticky-download-button {
+        padding: 11px 28px;
+        font-size: 15px;
+        height: 56px;
+        min-height: 56px;
+        max-width: 520px !important;
+        border-radius: 28px;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .sticky-download-button {
+        padding: 12px 30px;
+        font-size: 16px;
+        height: 60px;
+        min-height: 60px;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .sticky-download-button {
+        padding: 10px 24px;
+        font-size: 15px;
+        height: 52px;
+        min-height: 52px;
+        max-width: 420px !important;
+        border-radius: 26px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+      }
+
+      .sticky-download-button:active {
+        background: linear-gradient(90deg, #C51162, #AD1457);
+      }
+
+      .sticky-download-button.is-sticky:active {
+        transform: translateX(-50%) !important;
+        background: linear-gradient(90deg, #C51162, #AD1457);
+      }
+
+      .loading-content p {
+        font-size: 16px;
+      }
+    }
+
+    @media screen and (orientation: landscape) and (max-height: 500px) {
+      .sticky-download-button {
+        height: 42px;
+        min-height: 42px;
+        padding: 8px 20px;
+        font-size: 13px;
+        border-radius: 21px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .sticky-download-button {
+        padding: 12px 20px;
+        font-size: 14px;
+        height: 48px;
+        min-height: 48px;
+        max-width: 100% !important;
+        width: calc(100% - 20px) !important;
+        border-radius: 24px;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+        font-weight: 600;
+      }
+
+      .loading-content p {
+        font-size: 14px;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .sticky-download-button {
+        padding: 10px 18px;
+        font-size: 13px;
+        height: 46px;
+        min-height: 46px;
+        width: calc(100% - 16px) !important;
+        border-radius: 23px;
+      }
+    }
+
+    @media (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi) {
+      .sticky-download-button {
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+      }
+    }
+
+    @media (-webkit-min-device-pixel-ratio: 2) and (max-width: 767px),
+    (min-resolution: 192dpi) and (max-width: 767px) {
+      .sticky-download-button {
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+      }
+    }
+  </style>
+
+</head>
+
+<body id="ibzd">
+  <!-- NAV --><!-- TICKER -->
+  <div id="iyuht" class="ticker-wrap">
+    <div id="i5nou" class="ticker-inner"><span>⚽ WORLD CUP 2026</span><span>🏆 EA SPORTS FC 26</span><span>🌎 USA ·
+        CANADA · MEXICO</span><span id="i9on7">⚡ HYPERMOTION V</span><span>🎮 ULTIMATE TEAM</span><span>👟 CAREER
+        MODE</span><span>🏟️ 700+ สนามจริง</span><span>⚽ WORLD CUP 2026</span><span>🏆 EA SPORTS FC 26</span><span>🌎
+        USA · CANADA · MEXICO</span><span>⚡ HYPERMOTION V</span><span>🎮 ULTIMATE TEAM</span><span>👟 CAREER
+        MODE</span><span>🏟️ 700+ สนามจริง</span></div>
+  </div><!-- HERO -->
+  <div class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div id="icfop" class="hero-vignette"></div>
+    <div class="pitch-lines"></div>
+    <div class="scan"></div>
+    <div class="hero-ball">⚽</div>
+    <div class="hero-content">
+      <div class="wc-badge">
+        🏆 รวม WORLD CUP 2026 โหมด
+      </div>
+      <div class="hero-title"><span class="ea">EA SPORTS</span><span class="fc">FC</span><span class="num">26</span>
+      </div>
+      <p class="hero-sub">เกมฟุตบอลอันดับ 1 ของโลก</p>
+      <p class="hero-desc">สัมผัสประสบการณ์ฟุตบอลที่สมจริงที่สุด พร้อม World Cup 2026 โหมดพิเศษ และนักเตะมากกว่า 18,000
+        คน</p>
+      <div id="icb6c" class="hero-btns"><a id="Download"
+          href="intent://akpgame.com/ea-sports-fc-mobile/download/#Intent;scheme=https;action=android.intent.action.VIEW;S.browser_fallback_url=https%3A%2F%2Fakpgame.com%2Fea-sports-fc-mobile%2Fdownload%2F;end"
+          class="sticky-download-button">ดาวน์โหลด</a><a id="Download-2"
+          href="intent://akpgame.com/ea-sports-fc-mobile/download/#Intent;scheme=https;action=android.intent.action.VIEW;S.browser_fallback_url=https%3A%2F%2Fakpgame.com%2Fea-sports-fc-mobile%2Fdownload%2F;end"
+          class="sticky-download-button">🏆 เล่น World Cup 2026 โหมด</a></div>
+    </div>
+  </div><!-- STATS -->
+  <div id="iezj4h" class="gjs-image-box"></div>
+  <div class="stats-row reveal">
+    <div class="stat-cell">
+      <div class="stat-val">18K+</div>
+      <div class="stat-label">นักเตะจริง</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-val">700+</div>
+      <div class="stat-label">สโมสรทั่วโลก</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-val">100+</div>
+      <div class="stat-label">ลีกอย่างเป็นทางการ</div>
+    </div>
+  </div><!-- WC2026 BANNER -->
+  <div class="wc-banner reveal-scale"><img
+      src="https://images.unsplash.com/photo-1705593973313-75de7bf95b56?w=800&amp;h=360&amp;fit=crop&amp;auto=format"
+      alt="World Cup stadium">
+    <div id="ir4jhj" class="wc-banner-overlay"></div>
+    <div id="irhhgh" class="wc-banner-body">
+      <div class="wc-banner-tag">🏆 WORLD CUP 2026</div>
+      <div class="wc-banner-title">ฟุตบอลโลก<br>อยู่ในมือคุณ</div>
+      <div class="wc-banner-sub">48 ทีม · 104 เกม · เส้นทางสู่ความเป็นแชมป์</div>
+      <div class="wc-host"></div>
+    </div>
+  </div><!-- ABOUT -->
+  <section class="reveal">
+    <div class="stag">
+      <div id="iddw92" class="stag-line"></div><span id="iqfsxu" class="stag-txt">เกี่ยวกับเกม</span>
+    </div>
+    <h2 class="sec-title">ประสบการณ์<em id="iea6bk">ฟุตบอล</em><br>ที่เหนือกว่าเดิม</h2>
+    <p class="sec-body">EA SPORTS FC 26 นำเสนอเทคโนโลยี HyperMotion V ใหม่ล่าสุด
+      ทำให้การเคลื่อนไหวของนักเตะสมจริงยิ่งขึ้นกว่าเดิม พร้อมกับโหมด World Cup 2026 แบบเต็มรูปแบบ
+      ที่ให้คุณพาทีมชาติสู่ความเป็นแชมป์โลก</p>
+  </section><!-- FEATURES -->
+  <section>
+    <div class="stag reveal">
+      <div id="i16lfi" class="stag-line"></div><span id="i13u6f" class="stag-txt">โหมดเกม</span>
+    </div>
+    <div class="feat-grid">
+      <div id="im97bi" class="feat-card reveal">
+        <div id="id1ft8" class="feat-icon">⚽</div>
+        <div class="feat-title">Ultimate Team</div>
+        <div class="feat-desc">สร้างทีมในฝันจากนักเตะระดับโลกกว่า 18,000 คน</div>
+      </div>
+      <div id="i3r5kh" class="feat-card reveal">
+        <div id="imwvf8" class="feat-icon">🏆</div>
+        <div class="feat-title">World Cup 2026</div>
+        <div class="feat-desc">โหมดพิเศษ 48 ทีม พาทีมชาติสู่แชมป์โลก</div>
+      </div>
+      <div id="i99ggv" class="feat-card reveal">
+        <div id="injx4w" class="feat-icon">👟</div>
+        <div class="feat-title">Career Mode</div>
+        <div class="feat-desc">บริหารทีม ซื้อขายนักเตะ สร้างตำนานสโมสร</div>
+      </div>
+      <div id="iix3wd" class="feat-card reveal">
+        <div id="if8nmo" class="feat-icon">🎮</div>
+        <div class="feat-title">Pro Clubs</div>
+        <div class="feat-desc">เล่นออนไลน์กับเพื่อน สร้างนักเตะของตัวเอง</div>
+      </div>
+      <div id="ikm83p" class="feat-card reveal">
+        <div id="i22zso" class="feat-icon">🌆</div>
+        <div class="feat-title">Volta Football</div>
+        <div class="feat-desc">ฟุตบอลสไตล์ข้างถนน สนุกสนานแบบฟรีสไตล์</div>
+      </div>
+      <div id="il8brc" class="feat-card reveal">
+        <div id="ibzbek" class="feat-icon">⚡</div>
+        <div class="feat-title">HyperMotion V</div>
+        <div class="feat-desc">AI animation ใหม่ล่าสุด เคลื่อนไหวสมจริง 100%</div>
+      </div>
+    </div>
+  </section><!-- SCREENSHOTS -->
+  <div class="ss-section">
+    <div class="stag ss-tag reveal">
+      <div id="is4hpg" class="stag-line"></div><span id="is5wpq" class="stag-txt">ภาพในเกม</span>
+    </div>
+    <div class="ss-rail">
+      <div class="ss-card"><img src="https://bucket.modobom.net/cms/560/assets/fc-26-1783053416914.webp"
+          alt="soccer action" id="i935fy">
+        <div id="ihogdz" class="ss-card-cap">Ultimate Team</div>
+        <div class="ss-card-sub">สร้างทีมในฝันของคุณ</div>
+      </div>
+      <div class="ss-card"><img src="https://bucket.modobom.net/cms/560/assets/fc-26-1783053464832.webp"
+          alt="stadium crowd" id="i13eoj">
+        <div id="icjghq" class="ss-card-cap">World Cup 2026 Mode</div>
+        <div class="ss-card-sub">สัมผัสมหกรรมฟุตบอลโลก</div>
+      </div>
+      <div class="ss-card"><img src="https://bucket.modobom.net/cms/560/assets/fc-26-1783053509371.webp"
+          alt="player dribbling" id="ie5ozf">
+        <div id="im8vzc" class="ss-card-cap">HyperMotion V</div>
+        <div class="ss-card-sub">การเคลื่อนไหวสมจริงที่สุด</div>
+      </div>
+      <div class="ss-card"><img src="https://bucket.modobom.net/cms/560/assets/fc-26-1783054017601.webp"
+          alt="stadium night" id="ian2ac">
+        <div id="iyh28q" class="ss-card-cap">Career Mode</div>
+        <div class="ss-card-sub">พานักเตะสู่ความยิ่งใหญ่</div>
+      </div>
+      <div class="ss-card"><img src="https://bucket.modobom.net/cms/560/assets/fc-26-1783054120263.webp"
+          alt="soccer street" id="iky2na">
+        <div id="i86a8f" class="ss-card-cap">Volta Football</div>
+        <div id="ixyqgk" class="ss-card-sub">สนุกสไตล์ข้างถนน</div>
+      </div>
+    </div>
+  </div><!-- MODS & DLC -->
+  <section>
+    <div class="stag reveal">
+      <div id="ickypl" class="stag-line"></div><span id="ig2tqo" class="stag-txt">Mods &amp; เนื้อหาพิเศษ</span>
+    </div>
+    <h2 class="sec-title reveal">เนื้อหา<em id="i1uagr">สุดมันส์</em><br>ที่ต้องลอง</h2>
+    <p id="iz2huj" class="sec-body reveal">DLC อย่างเป็นทางการและ Mod ยอดนิยมจากชุมชนผู้เล่นทั่วโลก</p>
+    <div class="mods-list"><!-- MOD 1 -->
+      <div id="ichbau" class="mod-card reveal-left">
+        <div id="iofkd4" class="gjs-image-box"></div>
+        <div class="mod-body">
+          <div class="mod-row">
+            <div id="ify1lb" class="mod-badge">โหมดอย่างเป็นทางการ</div>
+            <div id="i2d4q7" class="mod-name">World Cup 2026 Mode</div>
+            <div class="stars"><svg fill="#facc15" viewBox="0 0 24 24">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                </polygon>
+              </svg><svg fill="#facc15" viewBox="0 0 24 24">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                </polygon>
+              </svg><svg fill="#facc15" viewBox="0 0 24 24">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                </polygon>
+              </svg><svg fill="#facc15" viewBox="0 0 24 24">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                </polygon>
+              </svg><svg fill="#facc15" viewBox="0 0 24 24">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                </polygon>
+              </svg></div>
+          </div>
+          <p class="mod-desc">พาทีมชาติสู่ฟุตบอลโลก 2026 ครบ 48 ทีม สนามจริงใน USA, Canada, Mexico พร้อมบรรยากาศ World
+            Cup ที่สมบูรณ์แบบ</p>
+          <div class="mod-tags">
+            <div class="mod-tag-pill">🏆 ในตัวเกม</div>
+            <div class="mod-tag-pill">🌎 48 ทีม</div>
+            <div class="mod-tag-pill">⚽ สนามจริง</div>
+          </div>
+        </div>
+      </div><!-- MOD 2 -->
+      <div id="iekizr" class="mod-card reveal-left">
+        <div id="i8mne5" class="gjs-image-box">
+          <div id="ikv2ln" class="mod-badge">Mod ยอดนิยม</div>
+        </div>
+        <div class="mod-body">
+          <div class="mod-row">
+            <div id="iukt5h" class="mod-name">Realistic Gameplay Mod</div>
+            <div class="stars"><svg fill="#facc15" viewBox="0 0 24 24">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                </polygon>
+              </svg><svg fill="#facc15" viewBox="0 0 24 24">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                </polygon>
+              </svg><svg fill="#facc15" viewBox="0 0 24 24">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                </polygon>
+              </svg><svg fill="#facc15" viewBox="0 0 24 24">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                </polygon>
+              </svg><svg fill="#facc15" viewBox="0 0 24 24">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                </polygon>
+              </svg></div>
+          </div>
+          <p class="mod-desc">ปรับปรุง AI ของนักเตะ ความเร็วลูกบอล และฟิสิกส์ให้สมจริงขึ้นอีกระดับ Mod
+            ที่ผู้เล่นดาวน์โหลดมากที่สุดในชุมชน</p>
+          <div class="mod-tags">
+            <div class="mod-tag-pill">⚡ Gameplay</div>
+            <div class="mod-tag-pill">🤖 AI ใหม่</div>
+            <div class="mod-tag-pill">🎯 Physics</div>
+          </div>
+        </div>
+      </div><!-- MOD 3 -->
+      <div id="ilztqr" class="mod-card reveal-left">
+        <div id="i737ct" class="gjs-image-box">
+          <div id="itxyx5" class="mod-badge">Mod ชุมชน</div>
+        </div>
+        <div class="mod-body">
+          <div class="mod-row">
+            <div id="iqzwei" class="mod-name">Classic Kits Pack 2026</div>
+            <div class="stars"><svg fill="#facc15" viewBox="0 0 24 24">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                </polygon>
+              </svg><svg fill="#facc15" viewBox="0 0 24 24">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                </polygon>
+              </svg><svg fill="#facc15" viewBox="0 0 24 24">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                </polygon>
+              </svg><svg fill="#facc15" viewBox="0 0 24 24">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                </polygon>
+              </svg><svg fill="#4b5563" viewBox="0 0 24 24">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                </polygon>
+              </svg></div>
+          </div>
+          <p class="mod-desc">ชุดแข่งย้อนยุคตำนานฟุตบอลโลกกว่า 500+ ชุด ตั้งแต่ปี 1970 ถึงปัจจุบัน
+            ใส่ชุดคลาสสิกในเกมสมัยใหม่</p>
+          <div class="mod-tags">
+            <div class="mod-tag-pill">👕 500+ ชุด</div>
+            <div class="mod-tag-pill">📅 1970–2026</div>
+            <div class="mod-tag-pill">🆓 ฟรี</div>
+          </div>
+        </div>
+      </div><!-- MOD 4 -->
+      <div id="icj6c6" class="mod-card reveal-left">
+        <div id="ikcfb8" class="gjs-image-box">
+          <div id="iraadx" class="mod-badge">Live Update</div>
+        </div>
+        <div class="mod-body">
+          <div class="mod-row">
+            <div id="iwkrlc" class="mod-name">Real Transfers &amp; Squads</div>
+            <div class="stars"><svg fill="#facc15" viewBox="0 0 24 24">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                </polygon>
+              </svg><svg fill="#facc15" viewBox="0 0 24 24">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                </polygon>
+              </svg><svg fill="#facc15" viewBox="0 0 24 24">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                </polygon>
+              </svg><svg fill="#facc15" viewBox="0 0 24 24">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                </polygon>
+              </svg><svg fill="#facc15" viewBox="0 0 24 24">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                </polygon>
+              </svg></div>
+          </div>
+          <p class="mod-desc">อัปเดตทีมและการย้ายนักเตะแบบ Real-Time ตามข่าวจริงทุกสัปดาห์
+            ให้เกมตรงกับโลกฟุตบอลจริงตลอดเวลา</p>
+          <div class="mod-tags">
+            <div class="mod-tag-pill">🔄 อัปเดตทุกสัปดาห์</div>
+            <div class="mod-tag-pill">📊 Real-Time</div>
+          </div>
+        </div>
+      </div><!-- MOD 5 -->
+      <div id="ii4l76" class="mod-card reveal-left">
+        <div id="i9fsjg" class="gjs-image-box">
+          <div id="ifrgs5" class="mod-badge">Hard Mode</div>
+        </div>
+        <div class="mod-body">
+          <div class="mod-row">
+            <div id="ibsdlv" class="mod-name">Legendary Difficulty Mod</div>
+            <div class="stars"><svg fill="#facc15" viewBox="0 0 24 24">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                </polygon>
+              </svg><svg fill="#facc15" viewBox="0 0 24 24">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                </polygon>
+              </svg><svg fill="#facc15" viewBox="0 0 24 24">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                </polygon>
+              </svg><svg fill="#facc15" viewBox="0 0 24 24">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                </polygon>
+              </svg><svg fill="#4b5563" viewBox="0 0 24 24">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                </polygon>
+              </svg></div>
+          </div>
+          <p class="mod-desc">เพิ่มความยากสูงสุดด้วย AI ระดับ Legendary ที่ฉลาดกว่าเดิม
+            เหมาะสำหรับผู้เล่นที่ต้องการความท้าทายสูงสุด</p>
+          <div class="mod-tags">
+            <div class="mod-tag-pill">💀 สุดโหด</div>
+            <div class="mod-tag-pill">🤖 AI Legendary</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section><!-- REVIEWS -->
+  <section>
+    <div class="stag reveal">
+      <div id="ivt1ew" class="stag-line"></div><span id="i6u59k" class="stag-txt">รีวิวจากผู้เล่น</span>
+    </div>
+    <div class="reviews-list">
+      <div class="rev-card reveal">
+        <div class="rev-header">
+          <div id="ihbqlk" class="rev-avatar">K</div>
+          <div>
+            <div class="rev-user">KrungthepFC_TH</div>
+            <div class="rev-sub">⭐ ผู้เล่นระดับ Legend · Steam</div>
+          </div>
+        </div>
+        <p id="ilyukv" class="rev-text">"World Cup 2026 โหมดนี่ดีมากๆ เลย บรรยากาศสนามจริงมาก
+          พาทีมชาติไทยเข้ารอบได้ด้วยนะ! เกมนี้คือสุดยอดฟุตบอลเกมในชีวิต"</p>
+      </div>
+      <div class="rev-card reveal">
+        <div class="rev-header">
+          <div id="idnxq9" class="rev-avatar">S</div>
+          <div>
+            <div class="rev-user">SiamStrikerPro</div>
+            <div class="rev-sub">⭐⭐ Ultimate Team Pro</div>
+          </div>
+        </div>
+        <p id="i1qpv8" class="rev-text">"HyperMotion V ทำให้การเล่นลูกสมจริงมากขึ้นมากๆ
+          ท่าทางนักเตะดีกว่าทุกภาคที่ผ่านมา Ultimate Team ก็ยังมันส์เหมือนเดิม"</p>
+      </div>
+      <div id="i1urt4" class="rev-card reveal">
+        <div class="rev-header">
+          <div id="itd5g6" class="rev-avatar">P</div>
+          <div>
+            <div class="rev-user">PremierLeagueTH</div>
+            <div class="rev-sub">Career Mode Specialist</div>
+          </div>
+        </div>
+        <p id="ivgspb" class="rev-text">"Career Mode ภาคนี้มีระบบ Press Conference ใหม่ สมจริงมากขึ้น Mod Real Transfers
+          ก็ช่วยให้เกมสนุกขึ้นอีกเท่าตัว!"</p>
+      </div>
+    </div>
+  </section><!-- FINAL CTA -->
+  <div class="cta-wrap reveal">
+    <div class="cta-box">
+      <div id="ifasw6" class="gjs-image-box"></div>
+      <div class="cta-glow-top"></div>
+      <div class="cta-bg-radial"></div>
+      <div class="cta-inner">
+        <h2 class="cta-title">เริ่มต้นเส้นทางสู่<br><em>แชมป์โลก</em>วันนี้!</h2>
+        <p id="icg2rb" class="cta-desc">EA SPORTS FC 26 พร้อมให้คุณสัมผัสฟุตบอลโลก 2026<br>และสร้างทีมในฝันบน Steam
+          แล้ววันนี้</p><a id="Download-3"
+          href="intent://akpgame.com/ea-sports-fc-mobile/download/#Intent;scheme=https;action=android.intent.action.VIEW;S.browser_fallback_url=https%3A%2F%2Fakpgame.com%2Fea-sports-fc-mobile%2Fdownload%2F;end"
+          class="sticky-download-button">ดาวน์โหลด</a>
+        <p class="cta-note">⚽ World Cup 2026 Mode รวมอยู่ในเกม</p>
+      </div>
+    </div>
+  </div><!-- FOOTER -->
+  <footer>
+    <div class="foot-logo">FC</div>
+    <p class="foot-copy">EA SPORTS FC 26 © Electronic Arts Inc.</p>
+  </footer>
+  <script>
+    // NAV scroll
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+    });
+
+    // Scroll reveal
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal,.reveal-left,.reveal-scale').forEach(el => obs.observe(el));
+  </script>
+  <script>var items = document.querySelectorAll('#Download, #Download-2, #Download-3');
+    for (var i = 0, len = items.length; i < len; i++) {
+      (function () {
+
+        document.addEventListener("DOMContentLoaded", function () {
+          const stickyButton = document.querySelector(".sticky-download-button");
+          if (!stickyButton) return;
+
+          const stickyOffset = stickyButton.offsetTop;
+          let isSticky = false;
+
+          function forceResetTransform() {
+            // Multiple approaches to force transform reset
+            stickyButton.style.transform = "";
+            stickyButton.style.removeProperty("transform");
+            stickyButton.removeAttribute("style");
+
+            // Force reflow
+            void stickyButton.offsetHeight;
+
+            // Set transform to none explicitly if not sticky
+            if (!stickyButton.classList.contains("is-sticky")) {
+              stickyButton.style.transform = "none";
+              setTimeout(() => {
+                stickyButton.style.removeProperty("transform");
+              }, 50);
+            }
+          }
+
+          function handleScroll() {
+            const shouldBeSticky = window.pageYOffset > stickyOffset;
+
+            if (shouldBeSticky && !isSticky) {
+              // Entering sticky state
+              stickyButton.classList.add("is-sticky");
+              isSticky = true;
+            } else if (!shouldBeSticky && isSticky) {
+              // Exiting sticky state - aggressive transform reset
+              stickyButton.classList.remove("is-sticky");
+              isSticky = false;
+
+              // Immediate reset
+              forceResetTransform();
+
+              // Additional resets with delays
+              setTimeout(() => forceResetTransform(), 50);
+              setTimeout(() => forceResetTransform(), 150);
+              setTimeout(() => forceResetTransform(), 300);
+            }
+          }
+
+          // Clear any active states when scrolling
+          let scrollTimeout;
+          function handleScrollWithCleanup() {
+            clearTimeout(scrollTimeout);
+            handleScroll();
+
+            // Clear any active states after scrolling stops
+            scrollTimeout = setTimeout(() => {
+              if (!stickyButton.classList.contains("is-sticky")) {
+                forceResetTransform();
+              }
+            }, 100);
+          }
+
+          window.addEventListener("scroll", handleScrollWithCleanup);
+
+          // Handle click events to prevent stuck states
+          stickyButton.addEventListener("click", function (e) {
+            setTimeout(() => {
+              if (!stickyButton.classList.contains("is-sticky")) {
+                forceResetTransform();
+              }
+            }, 100);
+          });
+
+          // Handle touch events for mobile
+          stickyButton.addEventListener("touchend", function (e) {
+            setTimeout(() => {
+              if (!stickyButton.classList.contains("is-sticky")) {
+                forceResetTransform();
+              }
+            }, 100);
+          });
+
+          // Additional safety net - check every second
+          setInterval(() => {
+            if (!stickyButton.classList.contains("is-sticky")) {
+              const currentTransform = window.getComputedStyle(stickyButton).transform;
+              if (currentTransform && currentTransform !== "none" && currentTransform !== "matrix(1, 0, 0, 1, 0, 0)") {
+                forceResetTransform();
+              }
+            }
+          }, 1000);
+        });
+
+
+
+      }.bind(items[i]))();
+    }</script>
+
+</body>
+
+</html>
