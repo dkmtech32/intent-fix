@@ -4,12 +4,31 @@
 
 | Key | Type | Purpose |
 | --- | --- | --- |
+| `downloadUrl` | string | APK / getapp / guide URL after countdown — **optional**; offer if missing |
+| `appIconUrl` | string | App icon image URL — **optional**; offer if missing; sync to `[data-pd="appIcon"]` |
 | `inAppBrowserGateEnabled` | boolean | Master switch (already present on most pages) |
 | `inAppBrowserDetectors` | array | UA regex detectors (e.g. tiktok) |
 | `intentGateEnabled` | boolean | Multi-step choice flow; if false/empty steps → final popup only |
 | `intentGatePackage` | string | Usually `com.android.chrome`; `""` omits `package=` |
 | `intentGateSteps` | array | Ordered choice screens — **chosen by the user** per product |
 | `inAppBrowserTitle` / `Message` / `ManualHeading` / `StepMenu` / `StepOpenBrowser` / `OpenLabel` | string | **Final** manual popup copy (often left English) |
+
+### Optional URL resolution (`downloadUrl`, `appIconUrl`)
+
+Both fields are **optional**. Offer when creating `download/` or when a value is missing/empty; the user may skip.
+
+| Field | Runtime use | If skipped |
+| --- | --- | --- |
+| `downloadUrl` | Button href + auto-redirect | Leave unset/`#`; download won’t start until set later |
+| `appIconUrl` | Icon `src` via payload / `data-pd="appIcon"` | Keep existing img src, or use landing hero icon if obvious |
+
+| Situation | What to do |
+| --- | --- |
+| No `{product}/download/` | Create page from sibling reference; optionally ask for both URLs |
+| Payload lacks either field or value is `""` / `"#"` | Optionally ask for that field; write only what the user provides |
+| Valid value already set | Leave unchanged unless user gives a new one |
+
+Never invent `downloadUrl` or reuse another product’s links. Landing `intent://…/download/` hrefs are **not** `downloadUrl`. Inferring `appIconUrl` from the landing icon is OK when the user skips.
 
 ### `intentGateSteps` item
 
@@ -179,6 +198,7 @@ Payload:
 ```js
 // node: parse #preDownloadPayload JSON
 // require intentGateEnabled, intentGatePackage, intentGateSteps length/ids/titles
+// optional: downloadUrl, appIconUrl (only assert if user supplied them)
 ```
 
 Symbols:
