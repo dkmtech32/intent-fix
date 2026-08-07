@@ -116,6 +116,62 @@ Map landing → download:
 - Legacy light panel: `#f3ffe8`, `#e5f8d5`
 - Unrelated dark-cyber download look if landing is paper/coral (or vice versa)
 
+## Tracking inventory
+
+Download pages use **two** trackers. Keep both when applying the intent gate.
+
+### 1. PostHog (page analytics)
+
+| Item | Value |
+| --- | --- |
+| Placement | `<head>`, before `</head>` |
+| Project key | `phc_QvB9SGMiDA8dFUIy69OPF9n4YayJG81RWbf62mrsSvm` |
+| `api_host` | `https://z.vainglory24.site` (managed reverse proxy) |
+| `ui_host` | `https://us.posthog.com` (required with proxy) |
+| `defaults` | `2026-05-30` |
+| `person_profiles` | `identified_only` |
+
+- Autocapture / pageviews via PostHog defaults — **no custom `posthog.capture` in the gate runtime**
+- Canonical snippet: `meccha-chameleon/download/index.html` (also school-stories, gta-fivem)
+- Do not replace with a different PostHog project unless the user asks
+- Note: some older pages may still have a second/legacy PostHog init; prefer the proxy key above as the skill standard
+
+### 2. downloadFunnel (funnel events)
+
+| Item | Value |
+| --- | --- |
+| Placement | Body, stub + `load` immediately before the predownload runtime IIFE |
+| Project key | `dfpk_t1k9su6ium5n7ztlqxfyevz6nscdagde` |
+| `api_host` | `https://onesignal5.fastmart24.store` |
+| `asset_host` | `https://cdn.fastmart24.store` |
+| Script | `{asset_host}/js/df-helper.min.js` |
+
+Stub methods: `init`, `load`, `track`, `trackOnce`, `getIds`, `createDownloadClickId`, `getDownloadClickId`, `trackAutoRedirect`, `debug`.
+
+#### Explicit events fired by the download runtime
+
+| Event | When | Props |
+| --- | --- | --- |
+| `predownload_button_click` | Manual download / again button | `button_id`, `download_click_id`, `dedupe_key` |
+| `predownload_auto_redirect` | Countdown auto-start (via `trackAutoRedirect()` or fallback `track`) | `dedupe_key: predownload_auto_redirect:<pathname>` |
+| `predownload_intent_step` | Gate option tap or final “Open in browser” | `step_id`, `option_label`, `step_index` |
+
+`predownload_intent_step` details:
+
+- Choice screens: `step_id` = step `id`, `step_index` = 0-based index, `option_label` = tapped label
+- Final popup: `step_id` = `'final'`, `option_label` = open label, `step_index` = `intentGateSteps.length`
+- Tracking is best-effort; never `preventDefault` on the intent link
+
+#### Helpers (not events)
+
+| Helper | Role |
+| --- | --- |
+| `getIds()` | Read funnel / click ids for URL params |
+| `createDownloadClickId()` / `getDownloadClickId()` | Stable click id for button tracking |
+| `trackAutoRedirect()` | Preferred auto-redirect track; falls back to `predownload_auto_redirect` |
+
+Clean success URLs drop `iabStep` but **preserve** tracking query params from `buildGateQuery`.
+
 ## Verification snippets
 
 Payload:
@@ -128,8 +184,10 @@ Payload:
 Symbols:
 
 ```js
-// require: renderIntentGate, buildStepIntentUrl, renderIntentStep, renderFinalPopup
+// require: renderIntentGate, buildStepIntentUrl, renderIntentStep, renderFinalPopup, trackIntentStep
 // forbid: showInAppBrowserPrompt, syncInAppBrowserPrompt
+// require head: posthog.init with api_host z.vainglory24.site
+// require body: downloadFunnel.load + track('predownload_intent_step'…)
 ```
 
 Browser:

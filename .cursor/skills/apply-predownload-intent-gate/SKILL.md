@@ -3,11 +3,12 @@ name: apply-predownload-intent-gate
 description: >-
   Surgically ports the multi-step in-app-browser intent gate from
   predownload-flow/meccha-download.html into a product download page, lets the
-  user choose intentGateSteps (count, titles, options, language), and restyles
-  the download page plus overlays to match that product's landing theme. Use
-  when updating */download/ to the new predownload flow, applying
-  docs/new-predownload-flow.md, adding iabStep/intentGateSteps, or matching
-  download UI to a landing page.
+  user choose intentGateSteps (count, titles, options, language), restyles the
+  download page plus overlays to match that product's landing theme, and keeps
+  PostHog + downloadFunnel tracking. Use when updating */download/ to the new
+  predownload flow, applying docs/new-predownload-flow.md, adding
+  iabStep/intentGateSteps, matching download UI to a landing page, or ensuring
+  PostHog/downloadFunnel on download pages.
 ---
 
 # Apply Predownload Intent Gate
@@ -36,6 +37,7 @@ page without replacing its download runtime, funnel, or install guide.
 - Every option on a step shares the **same** `intent://` URL; labels only affect tracking
 - Theme overlays to the **product landing**, not Meccha neon and not the old light-green popup
 - **User chooses the steps** — do not invent or force a fixed step set; confirm with the user before writing `intentGateSteps`
+- **Keep both trackers** — PostHog (head) + `downloadFunnel` (body); do not remove or replace either when porting the gate
 
 ## User chooses steps (required gate)
 
@@ -69,9 +71,10 @@ Copy and track:
 - [ ] 2. Read landing tokens + current download gate block
 - [ ] 3. Add payload keys (intentGate* with user-chosen steps)
 - [ ] 4. Replace legacy single-popup runtime with multi-step helpers
-- [ ] 5. Restyle page CSS + install-guide CSS to landing theme
-- [ ] 6. Restyle injected gate CSS + badge SVG to landing theme
-- [ ] 7. Verify payload / symbols / browser smoke
+- [ ] 5. Ensure PostHog head snippet + downloadFunnel body loader
+- [ ] 6. Restyle page CSS + install-guide CSS to landing theme
+- [ ] 7. Restyle injected gate CSS + badge SVG to landing theme
+- [ ] 8. Verify payload / symbols / tracking / browser smoke
 ```
 
 ### 1. Inventory
@@ -81,6 +84,8 @@ From the download file, locate:
 - `#preDownloadPayload` JSON
 - Legacy `showInAppBrowserPrompt` / `syncInAppBrowserPrompt` (or existing gate)
 - Main `<style>` and `#install-guide-injected` styles
+- PostHog `<script>` in `<head>` (`posthog.init`)
+- `downloadFunnel` stub + `downloadFunnel.load` before the runtime IIFE
 
 From the landing, extract tokens (example School Stories):
 
@@ -122,7 +127,30 @@ Keep `inAppBrowserBlocked` suppressing `maybeStartAutoDownload()`.
 
 Details: [reference.md](reference.md).
 
-### 4. Theme match (page + overlays)
+### 4. Tracking (PostHog + downloadFunnel)
+
+Ensure both trackers are present. Copy PostHog from a known-good product download
+(e.g. `meccha-chameleon/download/index.html`) into `</head>` if missing:
+
+```html
+<script>
+    !function (t, e) { var o, n, p, r; e.__SV || (window.posthog && window.posthog.__loaded) || (window.posthog = e, e._i = [], e.init = function (i, s, a) { function g(t, e) { var o = e.split("."); 2 == o.length && (t = t[o[0]], e = o[1]), t[e] = function () { t.push([e].concat(Array.prototype.slice.call(arguments, 0))) } } p || ((p = t.createElement("script")).type = "text/javascript", p.crossOrigin = "anonymous", p.async = !0, p.src = s.api_host.replace(".i.posthog.com", "-assets.i.posthog.com") + "/static/array.js", p.onerror = function () { p = null }, (r = t.getElementsByTagName("script")[0]).parentNode.insertBefore(p, r)); var u = e; for (void 0 !== a ? u = e[a] = [] : a = "posthog", u.people = u.people || [], u.toString = function (t) { var e = "posthog"; return "posthog" !== a && (e += "." + a), t || (e += " (stub)"), e }, u.people.toString = function () { return u.toString(1) + ".people (stub)" }, o = "an ln init xn Cn Br kn In capture Fn nn calculateEventProperties On register register_once register_for_session unregister unregister_for_session Ln getFeatureFlag getFeatureFlagPayload getFeatureFlagResult getAllFeatureFlags isFeatureEnabled reloadFeatureFlags updateFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey displaySurvey cancelPendingSurvey canRenderSurvey canRenderSurveyAsync Dn identify setPersonProperties unsetPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset shutdown setIdentity clearIdentity get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException addExceptionStep captureLog startExceptionAutocapture stopExceptionAutocapture loadToolbar get_property getSessionProperty An Rn createPersonProfile setInternalOrTestUser $n yn jn opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing get_explicit_consent_status is_capturing clear_opt_in_out_capturing Tn debug Ur Rt getPageViewId captureTraceFeedback captureTraceMetric pn".split(" "), n = 0; n < o.length; n++)g(u, o[n]); e._i.push([i, s, a]) }, e.__SV = 1) }(document, window.posthog || []);
+    posthog.init('phc_QvB9SGMiDA8dFUIy69OPF9n4YayJG81RWbf62mrsSvm', {
+        api_host: 'https://z.vainglory24.site', // managed reverse proxy
+        ui_host: 'https://us.posthog.com', // required when using a proxy
+        defaults: '2026-05-30',
+        person_profiles: 'identified_only',
+    })
+</script>
+```
+
+Keep the existing `downloadFunnel` stub + `downloadFunnel.load(...)` before the runtime
+IIFE. Do **not** invent custom `posthog.capture` calls in the gate — PostHog is
+autocapture / page analytics; funnel events stay on `downloadFunnel.track`.
+
+Full event list: [reference.md](reference.md#tracking-inventory).
+
+### 5. Theme match (page + overlays)
 
 Restyle so the first viewport could only belong to this product:
 
@@ -137,12 +165,13 @@ Restyle so the first viewport could only belong to this product:
 
 Add Google Fonts `<link>`s if the landing names fonts that are not loaded.
 
-### 5. Verify
+### 6. Verify
 
 ```bash
 # Payload: intentGateEnabled, package, step count/ids/titles
 # Symbols: renderIntentGate present; showInAppBrowserPrompt absent
 # Theme: landing accent hexes present in page + gateStyleCss; Meccha greens absent from gate CSS
+# Tracking: posthog.init (proxy key) in <head>; downloadFunnel.load + trackIntentStep / button / auto_redirect
 ```
 
 Manual:
@@ -151,6 +180,7 @@ Manual:
 2. Spoof TikTok UA → step 0 → tap → `?iabStep=1` → … → final English popup
 3. `intentGateEnabled: false` → final popup only
 4. Visual: download + overlays match landing
+5. Network: PostHog + downloadFunnel assets load; option tap fires `predownload_intent_step`
 
 ## Example (School Stories — user chose these steps)
 
