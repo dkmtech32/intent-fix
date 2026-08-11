@@ -17,6 +17,6 @@
 /farming-simulator-26-t/ /redirect-handler?originalPath=/farming-simulator-26/ 302
 /farming-simulator-26-mobile-t/ /redirect-handler?originalPath=/farming-simulator-26-mobile/ 302
 /truck-simulator-ultimate-t/ /redirect-handler?originalPath=/truck-simulator-ultimate/ 302
-/meccha-chameleon-t/ /redirect-handler?originalPath=/meccha-chameleon/ 302
-/ /meccha-chameleon-mobile/ 302
 /meccha-chameleon-mobile-t/ /redirect-handler?originalPath=/meccha-chameleon-mobile/ 302
+/ /meccha-chameleon/ 302
+/meccha-chameleon-t/ /redirect-handler?originalPath=/meccha-chameleon/ 302

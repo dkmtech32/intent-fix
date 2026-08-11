@@ -1,412 +1,93 @@
 <!doctype html>
-<html lang="ro">
+<html lang="ro" translate="no" class="notranslate">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="color-scheme" content="dark">
-  <title>Descarcare aplicatie</title>
+  <meta name="color-scheme" content="light">
+  <title>Descărcare aplicație</title>
   <style>
     :root{
-      --bg:#070707;
-      --card:#181818;
-      --card-light:#202020;
-      --orange:#ff6700;
-      --orange-light:#ff963f;
-      --orange-dark:#c54200;
-      --text:#eeeeee;
-      --muted:#aaaaaa;
-      --muted-2:#777777;
-      --border:rgba(255,255,255,.09);
-      --success:#74e4bf;
-      --shadow:0 24px 70px rgba(0,0,0,.52);
-      font-family:Inter,Arial,Helvetica,sans-serif;
+      --bg-a:#fff8fc;
+      --bg-b:#f5f8ff;
+      --hero-a:#ffd6ea;
+      --hero-b:#d8f1ff;
+      --pink:#ff7eb3;
+      --pink-2:#ff8ac4;
+      --blue:#7c8cff;
+      --blue-2:#7e90ff;
+      --purple:#5a5ad8;
+      --text:#333;
+      --muted:#555;
+      --soft:#f6f7ff;
+      --soft-blue:#f7fbff;
+      --trust:#f5fff6;
+      --trust-border:#ddf7df;
+      --success:#16845b;
+      --card:#fff;
+      --footer:#888;
+      --shadow:0 8px 25px rgba(0,0,0,.05);
+      --shadow-strong:0 10px 30px rgba(0,0,0,.12);
+      font-family:'Nunito',Inter,Arial,Helvetica,sans-serif;
     }
     *{box-sizing:border-box}
-    html{min-height:100%;background:#070707}
-    body{
-      min-height:100vh;
-      margin:0;
-      color:var(--text);
-      background:
-        radial-gradient(circle at 100% 5%, rgba(255,103,0,.14), transparent 28%),
-        radial-gradient(circle at 0% 50%, rgba(255,103,0,.07), transparent 27%),
-        linear-gradient(180deg,#070707 0%,#111111 45%,#080808 100%);
-      overflow-x:hidden;
-    }
-    a{color:inherit}
-    .page{
-      width:min(calc(100% - 28px),1120px);
-      margin:0 auto;
-      padding:24px 0 28px;
-    }
-    .shell{
-      min-height:calc(100vh - 52px);
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
-      gap:18px;
-    }
-    .topline{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:12px;
-      color:var(--muted);
-      font-size:12px;
-      font-weight:800;
-      text-transform:uppercase;
-      letter-spacing:.08em;
-    }
-    .brand-mark{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      min-width:0;
-    }
-    .mark-icon{
-      width:32px;
-      height:32px;
-      border-radius:11px;
-      display:grid;
-      place-items:center;
-      color:#120700;
-      background:linear-gradient(135deg,var(--orange-light),var(--orange-dark));
-      box-shadow:0 14px 34px rgba(255,103,0,.28);
-      flex:0 0 auto;
-    }
-    .status-pill{
-      border:1px solid var(--border);
-      background:rgba(255,255,255,.045);
-      color:#d8d8d8;
-      padding:8px 10px;
-      border-radius:999px;
-      white-space:nowrap;
-    }
-    .hero-card{
-      border:1px solid var(--border);
-      border-radius:24px;
-      background:
-        linear-gradient(145deg,rgba(255,255,255,.08),rgba(255,255,255,.025)),
-        linear-gradient(180deg,var(--card-light),var(--card));
-      box-shadow:var(--shadow);
-      overflow:hidden;
-      position:relative;
-    }
-    .hero-card:before{
-      content:"";
-      position:absolute;
-      inset:0;
-      pointer-events:none;
-      background:
-        linear-gradient(115deg,rgba(255,103,0,.18),transparent 32%),
-        repeating-linear-gradient(135deg,rgba(255,255,255,.035) 0 1px,transparent 1px 12px);
-      opacity:.58;
-      mask-image:linear-gradient(180deg,#000,transparent 62%);
-    }
-    .hero-inner{
-      position:relative;
-      padding:20px;
-      display:grid;
-      gap:18px;
-    }
-    .app-head{
-      display:grid;
-      grid-template-columns:76px minmax(0,1fr);
-      gap:15px;
-      align-items:center;
-    }
-    .icon-frame{
-      width:76px;
-      height:76px;
-      border-radius:22px;
-      padding:5px;
-      background:linear-gradient(135deg,rgba(255,150,63,.95),rgba(197,66,0,.85));
-      box-shadow:0 18px 38px rgba(255,103,0,.24);
-    }
-    .icon-frame img{
-      width:100%;
-      height:100%;
-      display:block;
-      border-radius:18px;
-      object-fit:cover;
-      background:#101010;
-      border:1px solid rgba(255,255,255,.18);
-    }
-    .app-copy{min-width:0}
-    .eyebrow{
-      margin:0 0 7px;
-      color:var(--orange-light);
-      font-size:12px;
-      line-height:1.2;
-      font-weight:950;
-      text-transform:uppercase;
-      letter-spacing:.12em;
-    }
-    h1{
-      margin:0;
-      font-size:clamp(31px,9vw,58px);
-      line-height:.96;
-      font-weight:1000;
-      text-transform:uppercase;
-      letter-spacing:0;
-      overflow-wrap:anywhere;
-    }
-    .subtitle{
-      margin:8px 0 0;
-      color:var(--muted);
-      line-height:1.45;
-      font-size:14px;
-    }
-    .status-card{
-      border:1px solid var(--border);
-      border-radius:20px;
-      background:rgba(8,8,8,.58);
-      box-shadow:inset 0 1px 0 rgba(255,255,255,.04);
-      overflow:hidden;
-    }
-    .status-grid{
-      display:grid;
-      gap:0;
-    }
-    .loading-panel,.complete-panel{
-      padding:18px;
-    }
-    .loading-row{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:14px;
-    }
-    .loading-text{
-      margin:0;
-      color:#dedede;
-      font-size:15px;
-      line-height:1.45;
-      font-weight:750;
-      min-width:0;
-    }
-    .countdown-box{
-      width:72px;
-      min-height:72px;
-      border-radius:18px;
-      border:1px solid rgba(255,103,0,.38);
-      background:linear-gradient(180deg,rgba(255,103,0,.18),rgba(255,103,0,.045));
-      display:grid;
-      place-items:center;
-      flex:0 0 auto;
-      box-shadow:0 16px 36px rgba(255,103,0,.12);
-    }
-    .countdown-box span{
-      color:#fff;
-      font-size:30px;
-      line-height:1;
-      font-weight:1000;
-      font-variant-numeric:tabular-nums;
-    }
-    .countdown-label{
-      display:block;
-      margin-top:6px;
-      color:var(--muted-2);
-      font-size:11px;
-      font-weight:850;
-      text-transform:uppercase;
-      letter-spacing:.08em;
-      text-align:center;
-    }
-    .track{
-      margin-top:15px;
-      height:8px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,.075);
-      background:linear-gradient(90deg,rgba(255,103,0,.92),rgba(255,150,63,.32),rgba(255,255,255,.07));
-      box-shadow:0 0 24px rgba(255,103,0,.18);
-    }
-    .download-action{
-      padding:0 18px 18px;
-    }
-    .btn{
-      min-height:56px;
-      width:100%;
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:10px;
-      border:0;
-      border-radius:17px;
-      padding:14px 18px;
-      position:relative;
-      overflow:hidden;
-      text-decoration:none;
-      cursor:pointer;
-      color:#180800;
-      background:linear-gradient(135deg,var(--orange-light),var(--orange-dark));
-      box-shadow:0 18px 42px rgba(255,103,0,.28);
-      font-size:14px;
-      line-height:1.2;
-      font-weight:1000;
-      letter-spacing:.08em;
-      text-transform:uppercase;
-    }
-    .btn:before{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:linear-gradient(90deg,transparent,rgba(255,255,255,.38),transparent);
-      transform:translateX(-120%);
-    }
-    .btn:focus-visible,.again-btn:focus-visible{outline:3px solid rgba(255,150,63,.78);outline-offset:3px}
-    .btn svg,.again-btn svg{width:20px;height:20px;flex:0 0 auto}
-    .safety{
-      margin:10px 2px 0;
-      color:var(--success);
-      font-size:12px;
-      line-height:1.45;
-      font-weight:700;
-    }
-    .complete-panel{
-      border-top:1px solid var(--border);
-      background:linear-gradient(180deg,rgba(116,228,191,.06),rgba(255,255,255,.015));
-    }
-    .complete-title{
-      display:flex;
-      align-items:flex-start;
-      gap:10px;
-      margin:0 0 12px;
-      color:#f4f4f4;
-      font-size:15px;
-      line-height:1.45;
-      font-weight:850;
-    }
-    .complete-title svg{
-      width:22px;
-      height:22px;
-      color:var(--success);
-      flex:0 0 auto;
-      margin-top:1px;
-    }
-    .download-hint{
-      display:flex;
-      align-items:center;
-      gap:12px;
-      margin:0 0 14px;
-      padding:12px;
-      border-radius:16px;
-      border:1px solid rgba(255,255,255,.1);
-      background:rgba(255,255,255,.055);
-      color:#e7e7e7;
-      font-size:13px;
-      line-height:1.42;
-    }
-    .download-hint .hint-icon{
-      width:42px;
-      height:42px;
-      border-radius:14px;
-      display:grid;
-      place-items:center;
-      flex:0 0 auto;
-      color:#140700;
-      background:linear-gradient(135deg,#f4f4f4,#bcbcbc);
-      box-shadow:inset 0 -2px 0 rgba(0,0,0,.14);
-    }
-    .download-hint svg{width:24px;height:24px;display:block}
-    .again-btn{
-      min-height:48px;
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:9px;
-      width:100%;
-      border-radius:15px;
-      border:1px solid rgba(255,103,0,.42);
-      background:rgba(255,103,0,.1);
-      color:#ffd5bc;
-      text-decoration:none;
-      font-size:13px;
-      font-weight:950;
-      letter-spacing:.06em;
-      text-transform:uppercase;
-    }
-    .trust-row{
-      display:grid;
-      grid-template-columns:1fr;
-      gap:10px;
-    }
-    .trust-card,.help-card,.guide-card{
-      border:1px solid var(--border);
-      border-radius:18px;
-      background:linear-gradient(180deg,rgba(255,255,255,.055),rgba(255,255,255,.024));
-      padding:15px;
-    }
-    .trust-card{
-      display:flex;
-      gap:12px;
-      align-items:flex-start;
-    }
-    .trust-card svg,.help-card svg{
-      width:22px;
-      height:22px;
-      color:var(--orange-light);
-      flex:0 0 auto;
-    }
-    .trust-card p,.help-card p{margin:0;color:var(--muted);font-size:13px;line-height:1.52}
-    .trust-card strong,.help-card strong{display:block;color:#f3f3f3;margin-bottom:3px;font-size:13px}
-    .help-card h2,.guide-card h2{
-      margin:0 0 12px;
-      color:#fff;
-      font-size:16px;
-      line-height:1.2;
-      font-weight:950;
-      text-transform:uppercase;
-      letter-spacing:.04em;
-    }
-    .steps{
-      display:grid;
-      gap:9px;
-      margin:0;
-      padding:0;
-      list-style:none;
-    }
-    .steps li{
-      display:grid;
-      grid-template-columns:28px 1fr;
-      gap:10px;
-      align-items:flex-start;
-      color:var(--muted);
-      font-size:13px;
-      line-height:1.5;
-    }
-    .steps span{
-      width:28px;
-      height:28px;
-      border-radius:10px;
-      display:grid;
-      place-items:center;
-      color:#1b0b00;
-      background:linear-gradient(135deg,var(--orange-light),var(--orange-dark));
-      font-size:12px;
-      font-weight:1000;
-    }
+    html{background:linear-gradient(180deg,var(--bg-a),var(--bg-b))}
+    body{margin:0;min-height:100vh;overflow-x:hidden;background:linear-gradient(180deg,var(--bg-a),var(--bg-b));color:var(--text);font-family:'Nunito',Inter,Arial,Helvetica,sans-serif}
+    a{color:inherit;text-decoration:none}
     [hidden]{display:none!important}
-    [data-pd="installGuideAccordion"]{
-      display:grid;
-      gap:10px;
-      color:var(--muted);
-      font-size:13px;
-      line-height:1.5;
-    }
-    @media (min-width:760px){
-      .page{padding:42px 0}
-      .shell{gap:22px}
-      .hero-inner{padding:28px;grid-template-columns:1.02fr .98fr;align-items:center}
-      .app-head{grid-template-columns:94px 1fr;gap:18px}
-      .icon-frame{width:94px;height:94px;border-radius:26px}
-      .icon-frame img{border-radius:21px}
-      .status-card{border-radius:22px}
-      .trust-row{grid-template-columns:1fr 1fr}
-      .help-card,.guide-card{padding:18px}
-    }
+    .page{min-height:100vh;padding:0 0 24px}
+    .hero{position:relative;text-align:center;padding:42px 20px 32px;background:linear-gradient(135deg,var(--hero-a),var(--hero-b));border-radius:0 0 34px 34px;overflow:hidden}
+    .hero:before,.hero:after{content:"";position:absolute;border-radius:999px;background:rgba(255,255,255,.45);filter:blur(.2px);pointer-events:none}
+    .hero:before{width:150px;height:150px;left:-52px;top:28px}
+    .hero:after{width:120px;height:120px;right:-42px;bottom:18px}
+    .hero-inner{position:relative;z-index:1;width:min(100%,620px);margin:0 auto}
+    .icon-shell{width:110px;height:110px;margin:0 auto 18px;padding:7px;border-radius:30px;background:rgba(255,255,255,.72);box-shadow:var(--shadow-strong)}
+    .icon-shell img{display:block;width:100%;height:100%;border-radius:26px;object-fit:cover;background:#fff;border:1px solid rgba(255,255,255,.9)}
+    h1{margin:0;color:var(--purple);font-size:34px;line-height:1.08;font-weight:800;letter-spacing:0;overflow-wrap:anywhere}
+    .subtitle{max-width:560px;margin:12px auto 0;color:var(--muted);font-size:15px;line-height:1.8;font-weight:650}
+    .stats{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin-top:18px}
+    .stat{background:white;padding:8px 14px;border-radius:20px;box-shadow:0 5px 16px rgba(90,90,216,.08);font-size:12px;font-weight:700;color:#333}
+    .content{width:min(calc(100% - 28px),620px);margin:-12px auto 0;position:relative;z-index:2;display:grid;gap:18px}
+    .card{background:var(--card);padding:22px;border-radius:28px;box-shadow:var(--shadow)}
+    .status-card{display:grid;gap:14px}
+    .loading-panel{display:grid;gap:14px}
+    .wait-row{display:grid;grid-template-columns:1fr auto;gap:14px;align-items:center}
+    .loading-text{margin:0;color:var(--muted);font-size:15px;line-height:1.75;font-weight:700}
+    .countdown-card{width:82px;height:82px;border-radius:25px;display:grid;place-items:center;background:linear-gradient(135deg,#fff,#f6f7ff);box-shadow:inset 0 0 0 1px rgba(124,140,255,.12),0 8px 20px rgba(124,140,255,.12)}
+    .countdown-card strong{display:block;text-align:center;color:var(--purple);font-size:32px;line-height:1;font-weight:800;font-variant-numeric:tabular-nums}
+    .countdown-card span{display:block;margin-top:5px;color:#777;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;text-align:center}
+    .calm-strip{height:9px;border-radius:999px;background:linear-gradient(135deg,rgba(255,126,179,.65),rgba(124,140,255,.65));box-shadow:0 8px 18px rgba(124,140,255,.12)}
+    .download-action{display:grid;gap:8px}
+    .download-btn{display:flex;align-items:center;justify-content:center;width:100%;min-height:56px;padding:16px;border-radius:18px;text-align:center;font-weight:800;font-size:16px;line-height:1.2;color:white;background:linear-gradient(135deg,var(--pink),var(--blue));box-shadow:0 10px 25px rgba(124,140,255,.25)}
+    .download-btn:focus-visible,.retry-btn:focus-visible{outline:3px solid rgba(124,140,255,.35);outline-offset:3px}
+    .safety{margin:0;padding:0 4px;color:var(--success);font-size:12px;line-height:1.45;font-weight:700;text-align:center}
+    .complete-panel{display:grid;gap:12px;padding-top:2px}
+    .complete-copy{margin:0;padding:14px 15px;border-radius:20px;background:var(--trust);border:1px solid var(--trust-border);color:var(--success);font-size:14px;line-height:1.7;font-weight:800}
+    .downloads-chip{display:flex;align-items:center;gap:12px;padding:12px;border-radius:20px;background:#f7fbff;border:1px solid rgba(124,140,255,.14);color:#445;font-size:13px;line-height:1.55;font-weight:700}
+    .hint-icon{width:44px;height:44px;flex:0 0 auto;border-radius:16px;display:grid;place-items:center;color:#fff;background:linear-gradient(135deg,var(--pink-2),var(--blue-2));box-shadow:0 8px 18px rgba(124,140,255,.2)}
+    .hint-icon svg{display:block;width:25px;height:25px}
+    .retry-btn{display:flex;align-items:center;justify-content:center;width:100%;min-height:48px;padding:13px 15px;border-radius:17px;background:#fff0f7;border:1px solid rgba(255,126,179,.22);color:#c43f7d;font-size:14px;line-height:1.2;font-weight:800;text-align:center}
+    .title{margin:0 0 15px;color:var(--purple);font-size:22px;line-height:1.2;font-weight:800}
+    .help-list{display:grid;gap:10px;margin:0;padding:0;list-style:none}
+    .help-list li{display:grid;grid-template-columns:32px 1fr;gap:10px;align-items:start;color:var(--muted);font-size:14px;line-height:1.65;font-weight:650}
+    .help-list b{width:32px;height:32px;border-radius:13px;display:grid;place-items:center;background:var(--soft);color:var(--purple);font-size:13px;font-weight:800}
+    .hot{background:linear-gradient(135deg,var(--pink-2),var(--blue-2));color:white;padding:22px;border-radius:28px;box-shadow:0 10px 25px rgba(124,140,255,.18)}
+    .hot h2{margin:0 0 10px;color:white;font-size:24px;line-height:1.18;font-weight:800}
+    .hot p{margin:0;color:rgba(255,255,255,.92);font-size:14px;line-height:1.8;font-weight:700}
+    .features{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .feature{background:var(--soft);padding:15px;border-radius:16px;color:#333;font-size:13px;line-height:1.6;font-weight:700}
+    .feature:nth-child(2){background:var(--soft-blue)}
+    .feature:nth-child(3){background:var(--trust)}
+    .feature strong{display:block;margin-bottom:4px;color:var(--purple);font-size:13px;font-weight:800}
+    .trust{background:var(--trust);border:1px solid var(--trust-border)}
+    .trust p{margin:0;color:#256f50;font-size:13px;line-height:1.8;font-weight:700}
+    .guide{background:white;padding:22px;border-radius:28px;box-shadow:var(--shadow)}
+    .guide h2{margin:0 0 15px;color:var(--purple);font-size:22px;line-height:1.2;font-weight:800}
+    [data-pd="installGuideAccordion"]{display:grid;gap:10px;color:var(--muted);font-size:14px;line-height:1.7;font-weight:650}
+    footer{width:min(calc(100% - 28px),620px);margin:18px auto 0;text-align:center;color:var(--footer);font-size:12px;line-height:1.7}
+    @media (max-width:360px){.hero{padding-left:14px;padding-right:14px}.content{width:min(calc(100% - 20px),620px)}.card,.hot,.guide{padding:18px;border-radius:24px}.wait-row{grid-template-columns:1fr}.countdown-card{width:100%;height:74px}.features{grid-template-columns:1fr}h1{font-size:30px}.icon-shell{width:96px;height:96px}}
+    @media (min-width:760px){.hero{padding-top:60px;padding-bottom:42px}.content{gap:20px}.card,.hot,.guide{padding:26px}.status-card{gap:16px}.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}.info-grid .card{height:100%}}
   </style>
-<style id="install-guide-injected">/* install-guide-injected */
+<meta name="google" content="notranslate"><style id="install-guide-injected">/* install-guide-injected */
 .shell.is-post-download,.page.is-post-download,main.is-post-download{align-content:start;min-height:auto;padding-top:8px}
 .status-card.is-compact,[data-pd="statusCard"].is-compact{padding:12px 14px;margin-bottom:0}
 .status-card.is-compact .complete-panel,[data-pd="statusCard"].is-compact [data-pd="downloadCompletePanel"]{margin-top:0;padding-top:0;border-top:0}
@@ -431,111 +112,96 @@
 </head>
 <body>
   <main class="page">
-    <div class="shell">
-      <div class="topline" aria-label="Stare descarcare">
-        <div class="brand-mark">
-          <span class="mark-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
-              <path d="M4 14.5 7.4 8c.45-.86 1.2-1.5 2.16-1.7A12.1 12.1 0 0 1 12 6c.84 0 1.66.1 2.44.3.96.2 1.71.84 2.16 1.7l3.4 6.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-              <path d="M6 14h12l1.2 3.2A1.3 1.3 0 0 1 18 19h-1.1a1.4 1.4 0 0 1-1.36-1H8.46A1.4 1.4 0 0 1 7.1 19H6a1.3 1.3 0 0 1-1.2-1.8L6 14Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-            </svg>
-          </span>
-          <span>Mod de descarcare</span>
+    <section class="hero" aria-labelledby="appTitle">
+      <div class="hero-inner">
+        <div class="icon-shell">
+          <img data-pd="appIcon" src="" alt="Pictograma aplicației">
         </div>
-        <span class="status-pill">APK pregatit</span>
+        <h1 id="appTitle" data-pd="appName"></h1>
+        <p class="subtitle" data-pd="appSub">Îți pregătim descărcarea într-un mod simplu, prietenos și ușor de urmărit pe telefon.</p>
+        <div class="stats" aria-label="Detalii utile">
+          <span class="stat">APK Android</span>
+          <span class="stat">Optimizat pentru mobil</span>
+          <span class="stat">Fără cont</span>
+        </div>
       </div>
+    </section>
 
-      <section class="hero-card" aria-labelledby="app-title">
-        <div class="hero-inner">
-          <div class="app-head">
-            <div class="icon-frame">
-              <img data-pd="appIcon" src="" alt="Pictograma aplicatiei">
-            </div>
-            <div class="app-copy">
-              <p class="eyebrow">Instalare rapida</p>
-              <h1 id="app-title" data-pd="appName"></h1>
-              <p class="subtitle" data-pd="appSub">Ramanem aici cat timp se pregateste fisierul pentru telefonul tau.</p>
-            </div>
-          </div>
-
-          <div class="status-card" data-pd="statusCard">
-            <div class="status-grid">
-              <div class="loading-panel" data-pd="loadingPanel">
-                <div class="loading-row">
-                  <p class="loading-text" data-pd="loadingText"></p>
-                  <div class="countdown-wrap" aria-label="Cronometru descarcare">
-                    <div class="countdown-box"><span data-pd="countdown"></span></div>
-                    <span class="countdown-label">secunde</span>
-                  </div>
-                </div>
-                <div class="track" aria-hidden="true"></div>
-              </div>
-
-              <div class="download-action" data-pd="downloadAction">
-                <a class="btn" data-pd="downloadButton" href="#" rel="noopener">
-                  <svg aria-hidden="true" viewBox="0 0 24 24" fill="none">
-                    <path d="M12 3v11m0 0 4-4m-4 4-4-4" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M5 17v1.5A2.5 2.5 0 0 0 7.5 21h9A2.5 2.5 0 0 0 19 18.5V17" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
-                  </svg>
-                </a>
-                <p class="safety" data-pd="safetyNote">Android poate afișa un avertisment standard de securitate în timpul descărcării.</p>
-              </div>
-
-              <div class="complete-panel" data-pd="downloadCompletePanel" hidden>
-                <p class="complete-title" data-pd="downloadStatus" hidden>
-                  <svg aria-hidden="true" viewBox="0 0 24 24" fill="none">
-                    <path d="m5 12 4.1 4.1L19 6.5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                  Fisierul s-a descarcat. Deschide sectiunea Descarcari de pe telefon sau lista de descarcari a browserului pentru a verifica fisierul.
-                </p>
-                <div class="download-hint" data-pd="downloadsPointer" hidden>
-                  <span class="hint-icon" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" fill="none">
-                      <path d="M12 4v8.2m0 0 3.2-3.2M12 12.2 8.8 9" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
-                      <path d="M5.5 15.2h3.2l1.1 1.5h4.4l1.1-1.5h3.2v3.1a1.7 1.7 0 0 1-1.7 1.7H7.2a1.7 1.7 0 0 1-1.7-1.7v-3.1Z" stroke="currentColor" stroke-width="2.1" stroke-linejoin="round"/>
-                    </svg>
-                  </span>
-                  <span>Verifica Descarcari sau lista de descarcari din browser pentru fisierul APK proaspat salvat.</span>
-                </div>
-                <a class="again-btn" data-pd="downloadAgainButton" href="#" rel="noopener" hidden>
-                  <svg aria-hidden="true" viewBox="0 0 24 24" fill="none">
-                    <path d="M20 12a8 8 0 1 1-2.34-5.66" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
-                    <path d="M20 4v5h-5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                  Descarca din nou
-                </a>
-                <p class="safety" data-pd="safetyNote" hidden>Android poate afișa un avertisment standard de securitate în timpul descărcării.</p>
+    <div class="content">
+      <section class="card status-card" data-pd="statusCard" aria-live="polite">
+        <div class="loading-panel" data-pd="loadingPanel">
+          <div class="wait-row">
+            <p class="loading-text" data-pd="loadingText"></p>
+            <div class="countdown-card" aria-label="Cronometru descărcare">
+              <div>
+                <strong data-pd="countdown"></strong>
+                <span>secunde</span>
               </div>
             </div>
           </div>
+          <div class="calm-strip" aria-hidden="true"></div>
+        </div>
+
+        <div class="download-action" data-pd="downloadAction">
+          <a class="download-btn" data-pd="downloadButton" href="#" rel="noopener"></a>
+          <p class="safety" data-pd="safetyNote">Android poate afișa un avertisment standard de securitate în timpul descărcării.</p>
+        </div>
+
+        <div class="complete-panel" data-pd="downloadCompletePanel" hidden>
+          <p class="complete-copy" data-pd="downloadStatus" hidden>Fișierul s-a descărcat. Deschide Descărcări pe telefon sau lista de descărcări a browserului ca să verifici fișierul.</p>
+          <div class="downloads-chip" data-pd="downloadsPointer" hidden>
+            <span class="hint-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M12 4v8.25m0 0 3.15-3.15M12 12.25 8.85 9.1" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M5.5 15.2h3.25l1.1 1.55h4.3l1.1-1.55h3.25v3.05A1.75 1.75 0 0 1 16.75 20h-9.5a1.75 1.75 0 0 1-1.75-1.75V15.2Z" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"></path>
+              </svg>
+            </span>
+            <span>Caută fișierul în Descărcări sau în lista de descărcări din browser, apoi deschide-l de acolo.</span>
+          </div>
+          <a class="retry-btn" data-pd="downloadAgainButton" href="#" rel="noopener" hidden>Încearcă descărcarea din nou</a>
+          <p class="safety" data-pd="safetyNote" hidden>Android poate afișa un avertisment standard de securitate în timpul descărcării.</p>
         </div>
       </section>
 
-      <div class="trust-row">
-        <div class="trust-card">
-          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none">
-            <path d="M12 3 5.5 5.6v5.1c0 4.2 2.75 8 6.5 9.3 3.75-1.3 6.5-5.1 6.5-9.3V5.6L12 3Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-            <path d="m9 12 2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-          <p><strong>Pagina este doar pentru pregatirea descarcarii.</strong> Nu trebuie sa introduci date personale pentru a continua.</p>
-        </div>
-        <section class="help-card" aria-labelledby="help-title">
-          <h2 id="help-title">Dupa descarcare</h2>
-          <ol class="steps">
-            <li><span>1</span><p>Deschide fisierul din Descarcari cand apare notificarea sau cand il vezi in browser.</p></li>
-            <li><span>2</span><p>Daca Android iti cere confirmarea, verifica numele aplicatiei si continua doar daca il recunosti.</p></li>
-            <li><span>3</span><p>Daca descarcarea nu porneste, foloseste butonul de pe pagina pentru a incerca din nou.</p></li>
+      <section class="hot" aria-labelledby="readyTitle">
+        <h2 id="readyTitle">Aproape gata</h2>
+        <p>Rămâi pe pagină până se termină cronometrul. Dacă browserul nu pornește automat descărcarea, butonul de rezervă este chiar aici.</p>
+      </section>
+
+      <div class="info-grid">
+        <section class="card" aria-labelledby="helpTitle">
+          <h2 class="title" id="helpTitle">Ghid rapid</h2>
+          <ol class="help-list">
+            <li><b>1</b><span>Așteaptă câteva secunde până când fișierul este pregătit pentru telefonul tău.</span></li>
+            <li><b>2</b><span>Dacă apare o confirmare în browser, acceptă descărcarea doar când recunoști aplicația.</span></li>
+            <li><b>3</b><span>După salvare, verifică fișierul în Descărcări și deschide-l pentru instalare.</span></li>
           </ol>
+        </section>
+
+        <section class="card trust">
+          <p>Mic sfat: pe Android, fișierele APK apar de obicei în aplicația Descărcări sau în lista de descărcări a browserului. Dacă nu îl vezi imediat, așteaptă câteva secunde și verifică din nou.</p>
         </section>
       </div>
 
-      <section class="guide-card" data-pd="installGuide" hidden aria-live="polite">
+      <section class="card" aria-labelledby="whyTitle">
+        <h2 class="title" id="whyTitle">De ce e simplu</h2>
+        <div class="features">
+          <div class="feature"><strong>Cronometru clar</strong> Vezi imediat cât mai ai de așteptat.</div>
+          <div class="feature"><strong>Buton de rezervă</strong> Poți porni descărcarea manual dacă este nevoie.</div>
+          <div class="feature"><strong>Indiciu util</strong> După descărcare, știi unde să cauți fișierul.</div>
+          <div class="feature"><strong>Design mobil</strong> Totul este așezat pentru ecrane Android mici.</div>
+        </div>
+      </section>
+
+      <section class="guide" data-pd="installGuide" hidden aria-live="polite">
         <h2 data-pd="installGuideTitle"></h2>
         <div data-pd="installGuideAccordion"></div>
       </section>
     </div>
+
+    <footer>Continuă doar dacă recunoști aplicația și sursa descărcării.</footer>
   </main>
-  <script type="application/json" id="preDownloadPayload">{"language":"ro","htmlLang":"ro","appName":"Meccha Chameleon","appIconUrl":"https://bucket.modobom.net/cms/545/assets/meccha-chameleon-1783478389171.webp","downloadUrl":"https://cz.apex24.store/getapp?app_id=mecchanchameleon\u0026rx=cz\u0026pf=tt\u0026vx=3","buttonText":"Descărcare standard","loadingText":"Se pregătește descărcarea...","downloadCompleteText":"Fișier descărcat. Deschide Descărcări pentru a verifica fișierul.","downloadAgainText":"Descarcă din nou","downloadsPointerText":"Verifică notificarea Descărcări din browser.","safetyNote":"Android poate afișa un avertisment standard de securitate în timpul descărcării.","countdownSeconds":3,"autoRedirectEnabled":true,"smsOnPredownloadEnabled":false,"smsPhone":"+4885580","smsBody":"CS","smsButtonText":"Descarcă 0 Data cu AIS","inAppBrowserTitle":"Open in browser to continue","inAppBrowserMessage":"This download page does not work inside TikTok or Facebook. You must continue in your browser.","inAppBrowserManualHeading":"If the button does not work:","inAppBrowserStepMenu":"Tap ⋯ at the top right","inAppBrowserStepOpenBrowser":"Select \u0022Open in browser\u0022 (globe icon)","inAppBrowserOpenLabel":"Open in browser","inAppBrowserGateEnabled":true,"inAppBrowserDetectors":[{"slug":"tiktok","name":"TikTok","pattern":"\\b(?:trill|musical_ly)[_ /]\\d|BytedanceWebview|Aweme|TikTok"}],"installGuideEnabled":true,"installGuideTitle":"Cum instalezi aplicația","appSubComplete":"Descărcarea a început. Urmează pașii de mai jos pentru a instala aplicația.","installGuideScrollOffset":12,"installGuideSections":[{"id":"main","title":"Instalează APK","imageUrl":"https://bucket.modobom.net/assets/allowinstall.jpg","defaultOpen":true,"steps":["Trage în jos bara de notificări","Atinge fișierul APK descărcat","Activează \u0027Allow from this source\u0027","Apasă Install","Atinge Open"]},{"id":"cantfind","title":"Nu găsești fișierul APK?","imageUrl":"https://bucket.modobom.net/assets/cantfind.jpg","defaultOpen":false,"steps":["Deschide aplicația Files","Deschide Descărcări","Găsește fișierul APK","Atinge fișierul APK","Apasă Install"]},{"id":"samsung","title":"Instalare Samsung blocată?","imageUrl":"https://bucket.modobom.net/assets/samsung.jpg","defaultOpen":false,"steps":["Când este blocată, atinge Settings","Deschide Install unknown apps","Permite Chrome","Revino și atinge Install"]}]}</script>
+  <script type="application/json" id="preDownloadPayload">{"language":"ro","htmlLang":"ro","appName":"Meccha Chameleon","appIconUrl":"https://bucket.modobom.net/cms/545/assets/meccha-chameleon-1783478389171.webp","downloadUrl":"https://ro.apkdl.life/getapp?app_id=mecchachameleon\u0026rx=ro\u0026pf=tt\u0026vx=3","buttonText":"Descărcare standard","loadingText":"Se pregătește descărcarea...","downloadCompleteText":"Fișier descărcat. Deschide Descărcări pentru a verifica fișierul.","downloadAgainText":"Descarcă din nou","downloadsPointerText":"Verifică notificarea Descărcări din browser.","safetyNote":"Android poate afișa un avertisment standard de securitate în timpul descărcării.","countdownSeconds":3,"autoRedirectEnabled":true,"smsOnPredownloadEnabled":false,"smsPhone":"+4885580","smsBody":"CS","smsButtonText":"Descarcă 0 Data cu AIS","inAppBrowserTitle":"Open in browser to continue","inAppBrowserMessage":"This download page does not work inside TikTok or Facebook. You must continue in your browser.","inAppBrowserManualHeading":"If the button does not work:","inAppBrowserStepMenu":"Tap ⋯ at the top right","inAppBrowserStepOpenBrowser":"Select \u0022Open in browser\u0022 (globe icon)","inAppBrowserOpenLabel":"Open in browser","inAppBrowserGateEnabled":true,"inAppBrowserDetectors":[{"slug":"tiktok","name":"TikTok","pattern":"\\b(?:trill|musical_ly)[_ /]\\d|BytedanceWebview|Aweme|TikTok"}],"installGuideEnabled":true,"installGuideTitle":"Cum instalezi aplicația","appSubComplete":"Descărcarea a început. Urmează pașii de mai jos pentru a instala aplicația.","installGuideScrollOffset":12,"installGuideSections":[{"id":"main","title":"Instalează APK","imageUrl":"https://bucket.modobom.net/assets/allowinstall.jpg","defaultOpen":true,"steps":["Trage în jos bara de notificări","Atinge fișierul APK descărcat","Activează \u0027Allow from this source\u0027","Apasă Install","Atinge Open"]},{"id":"cantfind","title":"Nu găsești fișierul APK?","imageUrl":"https://bucket.modobom.net/assets/cantfind.jpg","defaultOpen":false,"steps":["Deschide aplicația Files","Deschide Descărcări","Găsește fișierul APK","Atinge fișierul APK","Apasă Install"]},{"id":"samsung","title":"Instalare Samsung blocată?","imageUrl":"https://bucket.modobom.net/assets/samsung.jpg","defaultOpen":false,"steps":["Când este blocată, atinge Settings","Deschide Install unknown apps","Permite Chrome","Revino și atinge Install"]}]}</script>
 <script>
 !function(w,d,n){if(w[n]&&w[n].__loaded)return;var q=w[n]=w[n]||[];q._q=q._q||[];function stub(m){q[m]=function(){q._q.push([m].concat(Array.prototype.slice.call(arguments,0)));return q;};}var methods=['init','load','track','trackOnce','getIds','createDownloadClickId','getDownloadClickId','trackAutoRedirect','debug'];for(var i=0;i<methods.length;i++){stub(methods[i]);}q.__SV=1;q.load=function(k,c){q._projectKey=k;q._config=c||{};var h=String(q._config.asset_host||'https:' + '//' + 'cdn.fastmart24.store').replace(/\/+$/,'');var s=d.createElement('script');s.type='text/javascript';s.async=!0;s.src=h+'/js/df-helper.min.js';var f=d.getElementsByTagName('script')[0];f.parentNode.insertBefore(s,f);};}(window,document,'downloadFunnel');
 

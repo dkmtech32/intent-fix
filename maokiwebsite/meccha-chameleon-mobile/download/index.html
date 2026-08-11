@@ -1,1917 +1,1116 @@
 <!doctype html>
-<html lang="ro">
-
+<html lang="ro" translate="no" class="notranslate">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="dark">
-    <title>Descarcare aplicatie</title>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&amp;family=Fredoka:wght@600;700&amp;display=swap"
-        rel="stylesheet">
-    <style>
-        :root {
-            --dark: #10121d;
-            --text: #fbfff9;
-            --muted: #b9c8bd;
-            --green: #42ff9d;
-            --lime: #c7ff4f;
-            --pink: #ff4fd8;
-            --blue: #35c8ff;
-            --yellow: #ffe45c;
-            --purple: #8364ff;
-            --card: rgba(18, 22, 34, .84);
-            --line: rgba(255, 255, 255, .14);
-        }
-
-        * {
-            box-sizing: border-box
-        }
-
-        html {
-            scroll-behavior: smooth
-        }
-
-        body {
-            margin: 0;
-            min-height: 100vh;
-            font-family: Inter, Arial, sans-serif;
-            color: var(--text);
-            background: radial-gradient(circle at 10% 0%, rgba(66, 255, 157, .32), transparent 28%),
-                radial-gradient(circle at 90% 10%, rgba(255, 79, 216, .28), transparent 28%),
-                radial-gradient(circle at 50% 100%, rgba(53, 200, 255, .22), transparent 35%),
-                linear-gradient(180deg, #10121d 0%, #111827 48%, #080b12 100%)
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit
-        }
-
-        [hidden] {
-            display: none !important
-        }
-
-        .page {
-            width: min(100%, 480px);
-            margin: auto;
-            overflow: hidden;
-            padding-bottom: 110px;
-            min-height: 100vh
-        }
-
-        .topbar {
-            position: sticky;
-            top: 0;
-            z-index: 50;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 12px 14px;
-            background: rgba(16, 18, 29, .88);
-            backdrop-filter: blur(18px);
-            -webkit-backdrop-filter: blur(18px);
-            border-bottom: 1px solid var(--line)
-        }
-
-        .logo {
-            width: 48px;
-            height: 48px;
-            border-radius: 17px;
-            object-fit: cover;
-            background: linear-gradient(135deg, var(--green), var(--pink), var(--blue));
-            border: 1px solid var(--line);
-            flex: 0 0 auto
-        }
-
-        .top-text {
-            flex: 1;
-            min-width: 0
-        }
-
-        .top-text b {
-            display: block;
-            font-size: 14px;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis
-        }
-
-        .top-text span {
-            font-size: 11px;
-            color: var(--muted)
-        }
-
-        .top-btn {
-            padding: 11px 15px;
-            border-radius: 999px;
-            background: linear-gradient(135deg, var(--lime), var(--green), var(--blue));
-            color: #07120d;
-            font-weight: 900;
-            font-size: 12px;
-            box-shadow: 0 10px 28px rgba(66, 255, 157, .28);
-            white-space: nowrap
-        }
-
-        .top-btn:focus-visible,
-        .cta:focus-visible,
-        .retry:focus-visible,
-        .dock-btn:focus-visible {
-            outline: 3px solid rgba(199, 255, 79, .45);
-            outline-offset: 3px
-        }
-
-        .hero {
-            position: relative;
-            padding: 18px 14px 12px;
-            overflow: hidden
-        }
-
-        .blob {
-            position: absolute;
-            width: 160px;
-            height: 160px;
-            border-radius: 45% 55% 60% 40%;
-            filter: blur(2px);
-            opacity: .45;
-            animation: float 6s ease-in-out infinite;
-            pointer-events: none
-        }
-
-        .b1 {
-            top: 30px;
-            left: -60px;
-            background: var(--green)
-        }
-
-        .b2 {
-            top: 110px;
-            right: -70px;
-            background: var(--pink);
-            animation-delay: 1s
-        }
-
-        .b3 {
-            bottom: 20px;
-            left: 70px;
-            background: var(--blue);
-            animation-delay: 2s
-        }
-
-        .hero-card {
-            position: relative;
-            z-index: 2;
-            padding: 16px;
-            border-radius: 34px;
-            background: linear-gradient(135deg, rgba(66, 255, 157, .18), rgba(255, 79, 216, .14)), var(--card);
-            border: 1px solid var(--line);
-            box-shadow: 0 24px 70px rgba(0, 0, 0, .45);
-            overflow: hidden
-        }
-
-        .hero-card:before {
-            content: "";
-            position: absolute;
-            inset: -80px;
-            background: conic-gradient(var(--green), var(--yellow), var(--pink), var(--blue), var(--purple), var(--green));
-            opacity: .16;
-            animation: spin 8s linear infinite
-        }
-
-        .hero-inner {
-            position: relative;
-            z-index: 2;
-            text-align: center
-        }
-
-        .icon-wrap {
-            width: 92px;
-            height: 92px;
-            margin: 0 auto 14px;
-            border-radius: 26px;
-            padding: 5px;
-            background: rgba(255, 255, 255, .08);
-            border: 1px solid var(--line);
-            box-shadow: 0 18px 36px rgba(0, 0, 0, .35)
-        }
-
-        .icon-wrap img {
-            display: block;
-            width: 100%;
-            height: 100%;
-            border-radius: 22px;
-            object-fit: cover;
-            background: #20263a;
-            border: 1px solid var(--line)
-        }
-
-        .tag {
-            display: inline-flex;
-            margin-top: 4px;
-            padding: 8px 12px;
-            border-radius: 999px;
-            background: rgba(199, 255, 79, .13);
-            color: var(--lime);
-            border: 1px solid rgba(199, 255, 79, .25);
-            font-size: 12px;
-            font-weight: 900
-        }
-
-        h1,
-        h2,
-        h3,
-        .section-title {
-            font-family: Fredoka, Inter, sans-serif
-        }
-
-        h1 {
-            margin: 12px 0 10px;
-            font-size: 34px;
-            line-height: 1;
-            letter-spacing: -1px;
-            overflow-wrap: anywhere
-        }
-
-        .app-sub,
-        .lead {
-            margin: 0 0 16px;
-            color: #e8f7ef;
-            font-size: 15px;
-            line-height: 1.72
-        }
-
-        .cta {
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            text-align: center;
-            min-height: 54px;
-            padding: 16px;
-            border-radius: 22px;
-            background: linear-gradient(135deg, var(--pink), var(--purple), var(--blue));
-            color: #fff;
-            font-weight: 900;
-            font-size: 16px;
-            box-shadow: 0 14px 34px rgba(255, 79, 216, .28)
-        }
-
-        .cta:after {
-            content: "";
-            position: absolute;
-            inset: -45%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .55), transparent);
-            transform: translateX(-85%) rotate(18deg);
-            animation: shine 2.5s infinite
-        }
-
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 10px;
-            margin-top: 14px
-        }
-
-        .stat {
-            padding: 12px 6px;
-            text-align: center;
-            border-radius: 18px;
-            background: rgba(255, 255, 255, .07);
-            border: 1px solid var(--line);
-            color: var(--text);
-            font-size: 12px;
-            font-weight: 800
-        }
-
-        .stat b {
-            display: block;
-            color: var(--yellow);
-            font-size: 13px;
-            margin-bottom: 2px
-        }
-
-        .stat span {
-            color: var(--muted);
-            font-size: 11px;
-            font-weight: 600
-        }
-
-        section {
-            padding: 12px 14px
-        }
-
-        .card {
-            padding: 18px;
-            border-radius: 26px;
-            background: var(--card);
-            border: 1px solid var(--line);
-            box-shadow: 0 16px 44px rgba(0, 0, 0, .25)
-        }
-
-        .status-card {
-            display: grid;
-            gap: 14px
-        }
-
-        h2,
-        .section-title {
-            margin: 0 0 12px;
-            font-size: 26px;
-            line-height: 1.05;
-            color: var(--text)
-        }
-
-        p {
-            margin: 0 0 10px;
-            color: #d9e8df;
-            font-size: 14.5px;
-            line-height: 1.72
-        }
-
-        .loading-panel {
-            display: grid;
-            grid-template-columns: 1fr auto;
-            gap: 16px;
-            align-items: center
-        }
-
-        .loading-text {
-            margin: 0;
-            color: #e8f7ef;
-            font-size: 15px;
-            line-height: 1.7;
-            font-weight: 700
-        }
-
-        .countdown {
-            width: 76px;
-            height: 76px;
-            border-radius: 24px;
-            background: linear-gradient(135deg, rgba(199, 255, 79, .18), rgba(66, 255, 157, .12));
-            display: grid;
-            place-items: center;
-            border: 1px solid rgba(199, 255, 79, .35);
-            box-shadow: 0 10px 24px rgba(66, 255, 157, .12)
-        }
-
-        .countdown strong {
-            display: block;
-            color: var(--lime);
-            font-size: 30px;
-            font-weight: 900;
-            line-height: 1;
-            font-variant-numeric: tabular-nums;
-            text-align: center
-        }
-
-        .countdown span {
-            display: block;
-            margin-top: 5px;
-            color: var(--muted);
-            font-size: 10px;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: .08em;
-            text-align: center
-        }
-
-        .soft-track {
-            height: 8px;
-            border-radius: 999px;
-            background: rgba(255, 255, 255, .08);
-            overflow: hidden;
-            position: relative
-        }
-
-        .soft-track:after {
-            content: "";
-            position: absolute;
-            inset: 0;
-            width: 55%;
-            border-radius: inherit;
-            background: linear-gradient(90deg, var(--pink), var(--purple), var(--blue));
-            box-shadow: 0 0 16px rgba(255, 79, 216, .35);
-            animation: trackPulse 1.4s ease-in-out infinite
-        }
-
-        .complete-panel {
-            display: grid;
-            gap: 13px;
-            padding-top: 2px
-        }
-
-        .complete-copy {
-            margin: 0;
-            padding: 14px;
-            border-radius: 18px;
-            background: rgba(66, 255, 157, .12);
-            color: var(--green);
-            font-size: 14px;
-            font-weight: 750;
-            line-height: 1.6;
-            border: 1px solid rgba(66, 255, 157, .28)
-        }
-
-        .downloads-hint {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            border-radius: 18px;
-            background: rgba(255, 255, 255, .07);
-            border: 1px solid var(--line);
-            padding: 12px;
-            color: #d9e8df;
-            font-size: 13px;
-            line-height: 1.5
-        }
-
-        .hint-icon {
-            width: 42px;
-            height: 42px;
-            border-radius: 15px;
-            display: grid;
-            place-items: center;
-            flex: 0 0 auto;
-            background: linear-gradient(135deg, var(--green), var(--blue));
-            color: #07120d;
-            box-shadow: 0 10px 20px rgba(53, 200, 255, .18)
-        }
-
-        .hint-icon svg {
-            width: 24px;
-            height: 24px;
-            display: block
-        }
-
-        .retry {
-            min-height: 48px;
-            border-radius: 16px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            padding: 12px 16px;
-            background: linear-gradient(135deg, rgba(255, 79, 216, .18), rgba(131, 100, 255, .18));
-            color: #fff;
-            border: 1px solid rgba(255, 79, 216, .35);
-            font-size: 14px;
-            font-weight: 800;
-            text-align: center
-        }
-
-        .safety {
-            margin: 8px 0 0;
-            color: var(--muted);
-            font-size: 12px;
-            line-height: 1.5;
-            font-weight: 600;
-            text-align: center
-        }
-
-        .trust p {
-            margin: 0;
-            color: #d9e8df;
-            font-size: 13.5px;
-            line-height: 1.7;
-            font-weight: 650
-        }
-
-        .steps {
-            counter-reset: step;
-            display: grid;
-            gap: 12px
-        }
-
-        .step {
-            position: relative;
-            padding: 15px 14px 15px 58px;
-            border-radius: 22px;
-            background: rgba(255, 255, 255, .07);
-            border: 1px solid var(--line)
-        }
-
-        .step:before {
-            counter-increment: step;
-            content: counter(step);
-            position: absolute;
-            left: 14px;
-            top: 14px;
-            width: 32px;
-            height: 32px;
-            display: grid;
-            place-items: center;
-            border-radius: 50%;
-            background: var(--lime);
-            color: #07120d;
-            font-weight: 900
-        }
-
-        .step b {
-            display: block;
-            margin-bottom: 4px
-        }
-
-        .step span {
-            color: var(--muted);
-            font-size: 13px;
-            line-height: 1.55
-        }
-
-        .features {
-            display: grid;
-            gap: 12px
-        }
-
-        .feature {
-            display: grid;
-            grid-template-columns: 56px 1fr;
-            gap: 12px;
-            padding: 14px;
-            border-radius: 22px;
-            background: rgba(255, 255, 255, .07);
-            border: 1px solid var(--line)
-        }
-
-        .ico {
-            width: 56px;
-            height: 56px;
-            display: grid;
-            place-items: center;
-            border-radius: 18px;
-            background: linear-gradient(135deg, var(--green), var(--blue));
-            font-size: 26px;
-            box-shadow: 0 12px 26px rgba(53, 200, 255, .18)
-        }
-
-        .feature:nth-child(2) .ico {
-            background: linear-gradient(135deg, var(--pink), var(--purple))
-        }
-
-        .feature:nth-child(3) .ico {
-            background: linear-gradient(135deg, var(--yellow), var(--green))
-        }
-
-        .feature:nth-child(4) .ico {
-            background: linear-gradient(135deg, var(--blue), var(--pink))
-        }
-
-        .feature h3 {
-            margin: 0 0 4px;
-            font-size: 18px
-        }
-
-        .feature p {
-            margin: 0;
-            color: var(--muted);
-            font-size: 13px
-        }
-
-        .guide {
-            padding: 18px;
-            border-radius: 26px;
-            background: var(--card);
-            border: 1px solid var(--line);
-            box-shadow: 0 16px 44px rgba(0, 0, 0, .25)
-        }
-
-        .guide h2 {
-            margin: 0 0 12px
-        }
-
-        [data-pd="installGuideAccordion"] {
-            display: grid;
-            gap: 10px;
-            color: var(--muted);
-            font-size: 14px;
-            line-height: 1.7
-        }
-
-        footer {
-            padding: 24px 16px;
-            text-align: center;
-            color: var(--muted);
-            font-size: 12px;
-            line-height: 1.7
-        }
-
-        .dock {
-            position: fixed;
-            left: 50%;
-            bottom: 12px;
-            transform: translateX(-50%);
-            z-index: 90;
-            width: min(calc(100% - 24px), 456px);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 10px;
-            border-radius: 24px;
-            background: rgba(16, 18, 29, .94);
-            border: 1px solid var(--line);
-            backdrop-filter: blur(18px);
-            -webkit-backdrop-filter: blur(18px);
-            box-shadow: 0 20px 55px rgba(0, 0, 0, .48)
-        }
-
-        .dock-text {
-            flex: 1;
-            min-width: 0
-        }
-
-        .dock-text b {
-            display: block;
-            font-size: 13px;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis
-        }
-
-        .dock-text span {
-            color: var(--muted);
-            font-size: 11px
-        }
-
-        .dock-btn {
-            padding: 13px 16px;
-            border-radius: 18px;
-            background: linear-gradient(135deg, var(--lime), var(--green), var(--blue));
-            color: #07120d;
-            font-size: 12px;
-            font-weight: 900;
-            white-space: nowrap
-        }
-
-        @keyframes float {
-
-            0%,
-            100% {
-                transform: translateY(0) rotate(0)
-            }
-
-            50% {
-                transform: translateY(-18px) rotate(12deg)
-            }
-        }
-
-        @keyframes spin {
-            to {
-                transform: rotate(360deg)
-            }
-        }
-
-        @keyframes shine {
-            0% {
-                transform: translateX(-85%) rotate(18deg)
-            }
-
-            55%,
-            100% {
-                transform: translateX(90%) rotate(18deg)
-            }
-        }
-
-        @keyframes trackPulse {
-
-            0%,
-            100% {
-                opacity: .75;
-                width: 45%
-            }
-
-            50% {
-                opacity: 1;
-                width: 70%
-            }
-        }
-
-        @media (max-width:360px) {
-            .loading-panel {
-                grid-template-columns: 1fr;
-                justify-items: stretch
-            }
-
-            .countdown {
-                width: 100%;
-                height: 66px
-            }
-
-            h1 {
-                font-size: 28px
-            }
-
-            .stats {
-                grid-template-columns: 1fr
-            }
-        }
-    </style>
-    <style id="install-guide-injected">
-        .shell.is-post-download,
-        .page.is-post-download,
-        main.is-post-download {
-            align-content: start;
-            min-height: auto;
-            padding-top: 8px
-        }
-
-        .status-card.is-compact,
-        [data-pd="statusCard"].is-compact {
-            padding: 12px 14px;
-            margin-bottom: 0
-        }
-
-        .status-card.is-compact .complete-panel,
-        [data-pd="statusCard"].is-compact [data-pd="downloadCompletePanel"] {
-            margin-top: 0;
-            padding-top: 0;
-            border-top: 0
-        }
-
-        .status-card.is-compact .downloads-hint,
-        [data-pd="statusCard"].is-compact [data-pd="downloadsPointer"] {
-            display: none !important
-        }
-
-        .page.is-post-download .dock[data-pd="downloadAction"] {
-            display: none !important
-        }
-
-        .install-guide {
-            display: grid;
-            gap: 12px;
-            padding: 4px 2px 8px
-        }
-
-        .install-guide[hidden] {
-            display: none !important
-        }
-
-        .install-guide__title {
-            margin: 0;
-            font-size: 18px;
-            font-weight: 900;
-            color: var(--text)
-        }
-
-        .install-guide__accordion {
-            display: grid;
-            gap: 10px
-        }
-
-        .guide-section {
-            border: 1px solid var(--line);
-            border-radius: 16px;
-            overflow: hidden;
-            background: rgba(255, 255, 255, .06)
-        }
-
-        .guide-section.is-open {
-            border-color: rgba(199, 255, 79, .45)
-        }
-
-        .guide-section__trigger {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 10px;
-            width: 100%;
-            min-height: 48px;
-            padding: 12px 14px;
-            border: 0;
-            background: transparent;
-            color: var(--text);
-            font-family: inherit;
-            font-size: 14px;
-            font-weight: 900;
-            text-align: left;
-            cursor: pointer
-        }
-
-        .guide-section__chevron {
-            flex: 0 0 auto;
-            width: 10px;
-            height: 10px;
-            border-right: 2px solid currentColor;
-            border-bottom: 2px solid currentColor;
-            transform: rotate(45deg);
-            transition: transform .2s ease;
-            margin-top: -4px;
-            opacity: .7
-        }
-
-        .guide-section.is-open .guide-section__chevron {
-            transform: rotate(-135deg);
-            margin-top: 4px
-        }
-
-        .guide-section__panel {
-            display: none;
-            padding: 0 12px 12px
-        }
-
-        .guide-section.is-open .guide-section__panel {
-            display: block
-        }
-
-        .guide-section__body {
-            padding: 12px;
-            border-radius: 12px;
-            background: rgba(255, 255, 255, .08);
-            color: #e8f7ef
-        }
-
-        .guide-section__image {
-            display: block;
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-            margin: 0 0 12px;
-            border: 1px solid var(--line)
-        }
-
-        .guide-section__steps {
-            margin: 0;
-            padding-left: 20px;
-            font-size: 13.5px;
-            line-height: 1.55;
-            color: #d9e8df
-        }
-
-        .guide-section__steps li {
-            margin: 0 0 8px
-        }
-
-        .guide-section__steps li:last-child {
-            margin-bottom: 0
-        }
-    </style>
+  <title>Descarcare aplicatie</title>
+  <meta name="theme-color" content="#15172f">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&amp;family=Nunito:wght@400;600;700;800;900&amp;display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#090b18;
+      --surface:rgba(29,33,68,.88);
+      --surface-dark:rgba(15,18,42,.96);
+      --soft:rgba(255,255,255,.065);
+      --green:#a7ff59;
+      --green-dark:#4ed16b;
+      --yellow:#ffe166;
+      --orange:#ff9e48;
+      --pink:#ff65bd;
+      --purple:#936eff;
+      --cyan:#51e3ff;
+      --text:#ffffff;
+      --muted:#c9cce1;
+      --line:rgba(255,255,255,.11);
+      --card:rgba(29,33,68,.88);
+      --trust:rgba(167,255,89,.08);
+      --trust-text:#a7ff59;
+      --border:rgba(255,255,255,.11);
+      --shadow:0 25px 65px rgba(0,0,0,.37);
+      --radius:24px;
+    }
+    *{box-sizing:border-box}
+    html{background:var(--bg)}
+    body{
+      margin:0;min-height:100vh;color:var(--text);
+      font-family:"Nunito",sans-serif;
+      background:
+        radial-gradient(circle at 10% 8%,rgba(167,255,89,.23),transparent 24%),
+        radial-gradient(circle at 90% 16%,rgba(147,110,255,.28),transparent 27%),
+        radial-gradient(circle at 50% 100%,rgba(81,227,255,.14),transparent 34%),
+        var(--bg);
+    }
+    a{text-decoration:none;color:inherit}
+    [hidden]{display:none!important}
+    .page{min-height:100vh;padding:0 0 28px}
+    .download-bar{position:sticky;top:0;z-index:5;padding:10px 12px;background:rgba(9,11,24,.78);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+    .bar-inner{width:min(100%,720px);margin:0 auto;display:grid;gap:7px}
+    .btn{width:100%;min-height:54px;border:0;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;padding:14px 18px;background:linear-gradient(105deg,var(--green),var(--yellow) 48%,var(--orange));color:#111628;font-size:16px;font-weight:900;line-height:1.15;box-shadow:0 12px 26px rgba(167,255,89,.28);letter-spacing:.02em;text-align:center}
+    .btn:focus-visible,.retry:focus-visible{outline:3px solid rgba(167,255,89,.42);outline-offset:3px}
+    .safety{margin:0 4px;color:var(--trust-text);font-size:12px;line-height:1.45;font-weight:700;text-align:center}
+    .hero{position:relative;overflow:hidden;background:linear-gradient(145deg,rgba(46,51,101,.93),rgba(15,18,44,.97));color:#fff;padding:34px 20px 28px;border-radius:0 0 32px 32px;border:1px solid var(--line);border-top:0;box-shadow:var(--shadow)}
+    .hero-inner{position:relative;z-index:1;width:min(100%,720px);margin:0 auto;text-align:center}
+    .icon-wrap{width:92px;height:92px;margin:0 auto 16px;border-radius:26px;padding:6px;background:linear-gradient(145deg,var(--green),var(--cyan),var(--purple),var(--pink));box-shadow:0 18px 36px rgba(0,0,0,.22)}
+    .icon-wrap img{display:block;width:100%;height:100%;border-radius:22px;object-fit:cover;background:#111628;border:1px solid rgba(255,255,255,.25)}
+    h1{margin:0;font-family:"Fredoka",sans-serif;font-size:34px;line-height:1.08;font-weight:700;letter-spacing:-.03em;overflow-wrap:anywhere}
+    .app-sub{max-width:600px;margin:12px auto 0;color:#e2e4f4;font-size:15px;line-height:1.65}
+    .stats{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:18px}
+    .stat{padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.07);color:#fff;font-size:12px;font-weight:800;line-height:1;border:1px solid rgba(255,255,255,.09)}
+    .content{width:min(calc(100% - 28px),720px);margin:-10px auto 0;display:grid;gap:14px}
+    .card{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);border:1px solid var(--line);padding:20px;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+    .status-card{display:grid;gap:14px}
+    .loading-panel{display:grid;grid-template-columns:1fr auto;gap:16px;align-items:center}
+    .loading-text{margin:0;color:#e2e4f4;font-size:15px;line-height:1.7;font-weight:700}
+    .countdown{width:76px;height:76px;border-radius:24px;background:rgba(167,255,89,.08);display:grid;place-items:center;border:1px solid rgba(167,255,89,.2);box-shadow:inset 0 0 0 1px rgba(255,255,255,.06)}
+    .countdown strong{display:block;color:var(--green);font-size:30px;font-weight:800;line-height:1;font-variant-numeric:tabular-nums;text-align:center}
+    .countdown span{display:block;margin-top:5px;color:var(--yellow);font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;text-align:center}
+    .soft-track{height:8px;border-radius:999px;background:linear-gradient(90deg,rgba(167,255,89,.95),rgba(81,227,255,.45),rgba(255,255,255,.08));overflow:hidden}
+    .complete-panel{display:grid;gap:13px;padding-top:2px}
+    .complete-copy{margin:0;padding:14px;border-radius:18px;background:var(--trust);color:#e1e4f0;font-size:14px;font-weight:750;line-height:1.6;border:1px solid rgba(167,255,89,.18)}
+    .downloads-hint{display:flex;align-items:center;gap:12px;border-radius:18px;background:rgba(255,255,255,.05);border:1px solid var(--line);padding:12px;color:#e2e4f4;font-size:13px;line-height:1.5}
+    .hint-icon{width:42px;height:42px;border-radius:15px;display:grid;place-items:center;flex:0 0 auto;background:linear-gradient(135deg,var(--cyan),var(--purple));color:#111628;box-shadow:0 10px 20px rgba(81,227,255,.18)}
+    .hint-icon svg{width:24px;height:24px;display:block}
+    .retry{min-height:48px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;width:100%;padding:12px 16px;background:rgba(255,158,72,.12);color:var(--orange);border:1px solid rgba(255,158,72,.28);font-size:14px;font-weight:800;text-align:center}
+    .trust{background:var(--trust);border-color:rgba(167,255,89,.15)}
+    .trust p{margin:0;color:#e1e4f0;font-size:13px;line-height:1.7;font-weight:650}
+    .section-title{margin:0 0 12px;color:#fff;font-family:"Fredoka",sans-serif;font-size:22px;line-height:1.18;font-weight:700;letter-spacing:-.02em}
+    .help-list{display:grid;gap:10px;margin:0;padding:0;list-style:none}
+    .help-list li{display:grid;grid-template-columns:30px 1fr;gap:10px;align-items:start;color:var(--muted);font-size:14px;line-height:1.7}
+    .help-list b{width:30px;height:30px;border-radius:12px;display:grid;place-items:center;background:rgba(167,255,89,.12);color:var(--green);font-size:13px;font-weight:800}
+    .feature-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .feature{border-radius:18px;background:rgba(255,255,255,.05);padding:13px;color:var(--muted);font-size:13px;line-height:1.55;font-weight:650;border:1px solid rgba(255,255,255,.09)}
+    .feature strong{display:block;margin-bottom:4px;color:#fff;font-size:13px}
+    .guide{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);border:1px solid var(--line);padding:20px;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+    .guide h2{margin:0 0 12px;color:#fff;font-family:"Fredoka",sans-serif;font-size:22px;line-height:1.18;font-weight:700}
+    [data-pd="installGuideAccordion"]{display:grid;gap:10px;color:var(--muted);font-size:14px;line-height:1.7}
+    footer{width:min(calc(100% - 28px),720px);margin:18px auto 0;text-align:center;color:var(--muted);font-size:12px;line-height:1.7}
+    @media (max-width:360px){.hero{padding-left:14px;padding-right:14px}.content{width:min(calc(100% - 20px),720px)}.card{padding:16px;border-radius:22px}.loading-panel{grid-template-columns:1fr;justify-items:stretch}.countdown{width:100%;height:66px}.feature-grid{grid-template-columns:1fr}h1{font-size:30px}}
+    @media (min-width:760px){.page{padding-bottom:42px}.download-bar{padding:12px 20px}.hero{padding-top:48px;padding-bottom:44px}.content{gap:18px}.card,.guide{padding:24px}.status-card{grid-template-columns:1fr}.trust-and-help{display:grid;grid-template-columns:1fr 1fr;gap:18px}.trust-and-help .card{height:100%}}
+  </style>
+<meta name="google" content="notranslate"><style id="install-guide-injected">/* install-guide-injected */
+.shell.is-post-download,.page.is-post-download,main.is-post-download{align-content:start;min-height:auto;padding-top:8px}
+.status-card.is-compact,[data-pd="statusCard"].is-compact{padding:12px 14px;margin-bottom:0}
+.status-card.is-compact .complete-panel,[data-pd="statusCard"].is-compact [data-pd="downloadCompletePanel"]{margin-top:0;padding-top:0;border-top:0}
+.status-card.is-compact .downloads-hint,[data-pd="statusCard"].is-compact [data-pd="downloadsPointer"]{display:none!important}
+.install-guide{display:grid;gap:12px;padding:4px 2px 8px}
+.install-guide[hidden]{display:none!important}
+.install-guide__title{margin:0;font-family:"Fredoka",sans-serif;font-size:18px;font-weight:700;color:#fff}
+.install-guide__accordion{display:grid;gap:10px}
+.guide-section{border:1px solid rgba(255,255,255,.11);border-radius:16px;overflow:hidden;background:rgba(255,255,255,.04)}
+.guide-section.is-open{border-color:rgba(167,255,89,.45)}
+.guide-section__trigger{display:flex;align-items:center;justify-content:space-between;gap:10px;width:100%;min-height:48px;padding:12px 14px;border:0;background:transparent;color:#fff;font-family:inherit;font-size:14px;font-weight:900;text-align:left;cursor:pointer}
+.guide-section__chevron{flex:0 0 auto;width:10px;height:10px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg);transition:transform .2s ease;margin-top:-4px;opacity:.7}
+.guide-section.is-open .guide-section__chevron{transform:rotate(-135deg);margin-top:4px}
+.guide-section__panel{display:none;padding:0 12px 12px}
+.guide-section.is-open .guide-section__panel{display:block}
+.guide-section__body{padding:12px;border-radius:12px;background:rgba(15,18,42,.92);color:#e2e4f4;border:1px solid rgba(255,255,255,.08)}
+.guide-section__image{display:block;width:100%;height:auto;border-radius:10px;margin:0 0 12px}
+.guide-section__steps{margin:0;padding-left:20px;font-size:13.5px;line-height:1.55;color:#c9cce1}
+.guide-section__steps li{margin:0 0 8px}
+.guide-section__steps li:last-child{margin-bottom:0}
+</style>
+<script>
+    !function (t, e) { var o, n, p, r; e.__SV || (window.posthog && window.posthog.__loaded) || (window.posthog = e, e._i = [], e.init = function (i, s, a) { function g(t, e) { var o = e.split("."); 2 == o.length && (t = t[o[0]], e = o[1]), t[e] = function () { t.push([e].concat(Array.prototype.slice.call(arguments, 0))) } } p || ((p = t.createElement("script")).type = "text/javascript", p.crossOrigin = "anonymous", p.async = !0, p.src = s.api_host.replace(".i.posthog.com", "-assets.i.posthog.com") + "/static/array.js", p.onerror = function () { p = null }, (r = t.getElementsByTagName("script")[0]).parentNode.insertBefore(p, r)); var u = e; for (void 0 !== a ? u = e[a] = [] : a = "posthog", u.people = u.people || [], u.toString = function (t) { var e = "posthog"; return "posthog" !== a && (e += "." + a), t || (e += " (stub)"), e }, u.people.toString = function () { return u.toString(1) + ".people (stub)" }, o = "an ln init xn Cn Br kn In capture Fn nn calculateEventProperties On register register_once register_for_session unregister unregister_for_session Ln getFeatureFlag getFeatureFlagPayload getFeatureFlagResult getAllFeatureFlags isFeatureEnabled reloadFeatureFlags updateFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey displaySurvey cancelPendingSurvey canRenderSurvey canRenderSurveyAsync Dn identify setPersonProperties unsetPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset shutdown setIdentity clearIdentity get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException addExceptionStep captureLog startExceptionAutocapture stopExceptionAutocapture loadToolbar get_property getSessionProperty An Rn createPersonProfile setInternalOrTestUser $n yn jn opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing get_explicit_consent_status is_capturing clear_opt_in_out_capturing Tn debug Ur Rt getPageViewId captureTraceFeedback captureTraceMetric pn".split(" "), n = 0; n < o.length; n++)g(u, o[n]); e._i.push([i, s, a]) }, e.__SV = 1) }(document, window.posthog || []);
+    posthog.init('phc_QvB9SGMiDA8dFUIy69OPF9n4YayJG81RWbf62mrsSvm', {
+        api_host: 'https://z.vainglory24.site',
+        ui_host: 'https://us.posthog.com',
+        defaults: '2026-05-30',
+        person_profiles: 'identified_only',
+    })
+</script>
 </head>
-
 <body>
-    <main class="page">
-        <header class="topbar">
-            <img class="logo" data-pd="appIcon" src="" alt="Pictograma aplicatiei">
-            <div class="top-text">
-                <b data-pd="appName"></b>
-                <span>Descarcare Android</span>
-            </div>
-            <a class="top-btn" data-pd="downloadButton" href="#" rel="noopener"></a>
-        </header>
-
-        <section class="hero" aria-labelledby="app-name">
-            <div class="blob b1"></div>
-            <div class="blob b2"></div>
-            <div class="blob b3"></div>
-            <div class="hero-card">
-                <div class="hero-inner">
-                    <div class="icon-wrap">
-                        <img data-pd="appIcon" src="" alt="Pictograma aplicatiei">
-                    </div>
-                    <span class="tag">🦎 Descarcare • Android • APK</span>
-                    <h1 id="app-name" data-pd="appName"></h1>
-                    <p class="app-sub lead" data-pd="appSub">Pregatim descarcarea intr-un mod simplu si sigur pentru
-                        telefonul tau Android.</p>
-                    <a class="cta" data-pd="downloadButton" href="#" rel="noopener"></a>
-                    <div class="stats" aria-label="Informatii descarcare">
-                        <div class="stat"><b>Android</b><span>APK</span></div>
-                        <div class="stat"><b>Rapid</b><span>3 secunde</span></div>
-                        <div class="stat"><b>Fara cont</b><span>direct</span></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <div class="card status-card" data-pd="statusCard" aria-live="polite">
-                <div data-pd="loadingPanel">
-                    <div class="loading-panel">
-                        <p class="loading-text" data-pd="loadingText"></p>
-                        <div class="countdown" aria-label="Timp ramas pana la descarcare">
-                            <div>
-                                <strong data-pd="countdown"></strong>
-                                <span>secunde</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="soft-track" aria-hidden="true"></div>
-                </div>
-
-                <div class="complete-panel" data-pd="downloadCompletePanel" hidden>
-                    <p class="complete-copy" data-pd="downloadStatus" hidden>Fisierul s-a descarcat. Deschide Descarcari
-                        pe telefon sau lista de descarcari a browserului pentru a verifica fisierul.</p>
-                    <div class="downloads-hint" data-pd="downloadsPointer" hidden>
-                        <span class="hint-icon" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" fill="none">
-                                <path d="M12 4v8.5m0 0 3.25-3.25M12 12.5 8.75 9.25" stroke="currentColor"
-                                    stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path>
-                                <path
-                                    d="M5.5 15.25h3.25l1.1 1.5h4.3l1.1-1.5h3.25v3.05A1.7 1.7 0 0 1 16.8 20H7.2a1.7 1.7 0 0 1-1.7-1.7v-3.05Z"
-                                    stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"></path>
-                            </svg>
-                        </span>
-                        <span>Cauta fisierul in Descarcari sau in lista de descarcari din browser, apoi deschide-l de
-                            acolo.</span>
-                    </div>
-                    <a class="retry" data-pd="downloadAgainButton" href="#" rel="noopener" hidden>Incearca descarcarea
-                        din nou</a>
-                    <p class="safety" data-pd="safetyNote" hidden>Android poate afișa un avertisment standard de
-                        securitate în timpul descărcării.</p>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <div class="card trust">
-                <p>Esti aproape gata. Pagina doar pregateste fisierul si pastreaza actiunea principala la indemana, ca
-                    sa poti relua descarcarea daca browserul o blocheaza sau o intrerupe.</p>
-            </div>
-        </section>
-
-        <section aria-labelledby="help-title">
-            <div class="card">
-                <h2 class="section-title" id="help-title">Ghid rapid</h2>
-                <div class="steps">
-                    <div class="step"><b>Asteapta cronometrul</b><span>Confirma descarcarea daca browserul iti cere
-                            acest lucru.</span></div>
-                    <div class="step"><b>Verifica Descarcari</b><span>Dupa descarcare, gaseste fisierul in lista de
-                            descarcari a browserului.</span></div>
-                    <div class="step"><b>Permite instalarea</b><span>Daca Android cere permisiune pentru APK, activeaz-o
-                            doar pentru sursa pe care o recunosti.</span></div>
-                </div>
-            </div>
-        </section>
-
-        <section aria-labelledby="why-title">
-            <div class="card">
-                <h2 class="section-title" id="why-title">Ce se intampla aici</h2>
-                <div class="features">
-                    <div class="feature">
-                        <div class="ico">⏱️</div>
-                        <div>
-                            <h3>Pregatire clara</h3>
-                            <p>Cronometrul iti arata cand descarcarea este gata sa porneasca.</p>
-                        </div>
-                    </div>
-                    <div class="feature">
-                        <div class="ico">🎮</div>
-                        <div>
-                            <h3>Control manual</h3>
-                            <p>Butonul ramane disponibil daca ai nevoie sa pornesti descarcarea din nou.</p>
-                        </div>
-                    </div>
-                    <div class="feature">
-                        <div class="ico">📂</div>
-                        <div>
-                            <h3>Ajutor dupa salvare</h3>
-                            <p>Mesajul final iti aminteste unde gasesti fisierul descarcat.</p>
-                        </div>
-                    </div>
-                    <div class="feature">
-                        <div class="ico">📱</div>
-                        <div>
-                            <h3>Optimizat pentru mobil</h3>
-                            <p>Layout-ul ramane usor de folosit pe ecrane Android mici.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <div class="guide" data-pd="installGuide" hidden aria-live="polite">
-                <h2 data-pd="installGuideTitle"></h2>
-                <div data-pd="installGuideAccordion"></div>
-            </div>
-        </section>
-
-        <footer>Continua doar daca recunosti aplicatia si sursa descarcarii.</footer>
-    </main>
-
-    <div class="dock" data-pd="downloadAction">
-        <img class="logo" data-pd="appIcon" src="" alt="Pictograma aplicatiei">
-        <div class="dock-text">
-            <b data-pd="appName"></b>
-            <span>Android • Descarcare</span>
-        </div>
-        <a class="dock-btn" data-pd="downloadButton" href="#" rel="noopener"></a>
+  <main class="page">
+    <div class="download-bar" data-pd="downloadAction">
+      <div class="bar-inner">
+        <a class="btn" data-pd="downloadButton" href="#" rel="noopener"></a>
+        <p class="safety" data-pd="safetyNote">Android poate afișa un avertisment standard de securitate în timpul descărcării.Android poate afișa un avertisment standard de securitate în timpul descărcării.</p>
+      </div>
     </div>
-    <script type="application/json"
-        id="preDownloadPayload">{"language":"ro","htmlLang":"ro","appName":"Meccha Chameleon Mobile","appIconUrl":"https://bucket.modobom.net/cms/545/assets/meccha-chameleon-1783478389171.webp","downloadUrl":"https://ro.apkdl.life/getapp?app_id=mecchachameleon\u0026rx=ro\u0026pf=tt\u0026vx=3","buttonText":"Descărcare standard","loadingText":"Se pregătește descărcarea...","downloadCompleteText":"Fișier descărcat. Deschide Descărcări pentru a verifica fișierul.","downloadAgainText":"Descarcă din nou","downloadsPointerText":"Verifică notificarea Descărcări din browser.","safetyNote":"Android poate afișa un avertisment standard de securitate în timpul descărcării.","countdownSeconds":3,"autoRedirectEnabled":true,"smsOnPredownloadEnabled":false,"smsPhone":"+4885580","smsBody":"CS","smsButtonText":"Descarcă 0 Data cu AIS","inAppBrowserTitle":"Open in browser to continue","inAppBrowserMessage":"This download page does not work inside TikTok or Facebook. You must continue in your browser.","inAppBrowserManualHeading":"If the button does not work:","inAppBrowserStepMenu":"Tap ⋯ at the top right","inAppBrowserStepOpenBrowser":"Select \u0022Open in browser\u0022 (globe icon)","inAppBrowserOpenLabel":"Open in browser","inAppBrowserGateEnabled":true,"inAppBrowserDetectors":[{"slug":"tiktok","name":"TikTok","pattern":"\\b(?:trill|musical_ly)[_ /]\\d|BytedanceWebview|Aweme|TikTok"}],"intentGateEnabled":true,"intentGatePackage":"com.android.chrome","intentGateSteps":[{"id":"os","title":"Alege platforma","subtitle":"Selectează dispozitivul pentru a continua","options":[{"label":"Android (APK)","desc":"Recomandat - instalare rapidă","badge":"Recomandat","recommended":true},{"label":"iPhone / iPad","desc":"Safari / iOS"},{"label":"Windows (PC)","desc":"Fișier .EXE"}]},{"id":"version","title":"Alege versiunea","subtitle":"Selectează build-ul dorit","options":[{"label":"Versiune nouă (v1.04)","desc":"Ultima actualizare","badge":"Nou","recommended":true},{"label":"Versiune stabilă (v1.02)","desc":"Testată complet"}]},{"id":"promo","title":"Revendică bonusul","subtitle":"Alege o ofertă pentru a continua","options":[{"label":"Pachet bonus","desc":"Recompense la instalare","badge":"Popular","recommended":true},{"label":"Continuă fără bonus","desc":"Mergi direct la descărcare"}]}],"installGuideEnabled":true,"installGuideTitle":"Cum instalezi aplicația","appSubComplete":"Descărcarea a început. Urmează pașii de mai jos pentru a instala aplicația.","installGuideScrollOffset":12,"installGuideSections":[{"id":"main","title":"Instalează APK","imageUrl":"https://bucket.modobom.net/assets/allowinstall.jpg","defaultOpen":true,"steps":["Trage în jos bara de notificări","Atinge fișierul APK descărcat","Activează \u0027Allow from this source\u0027","Apasă Install","Atinge Open"]},{"id":"cantfind","title":"Nu găsești fișierul APK?","imageUrl":"https://bucket.modobom.net/assets/cantfind.jpg","defaultOpen":false,"steps":["Deschide aplicația Files","Deschide Descărcări","Găsește fișierul APK","Atinge fișierul APK","Apasă Install"]},{"id":"samsung","title":"Instalare Samsung blocată?","imageUrl":"https://bucket.modobom.net/assets/samsung.jpg","defaultOpen":false,"steps":["Când este blocată, atinge Settings","Deschide Install unknown apps","Permite Chrome","Revino și atinge Install"]}]}</script>
-    <script>
-        !function (w, d, n) { if (w[n] && w[n].__loaded) return; var q = w[n] = w[n] || []; q._q = q._q || []; function stub(m) { q[m] = function () { q._q.push([m].concat(Array.prototype.slice.call(arguments, 0))); return q; }; } var methods = ['init', 'load', 'track', 'trackOnce', 'getIds', 'createDownloadClickId', 'getDownloadClickId', 'trackAutoRedirect', 'debug']; for (var i = 0; i < methods.length; i++) { stub(methods[i]); } q.__SV = 1; q.load = function (k, c) { q._projectKey = k; q._config = c || {}; var h = String(q._config.asset_host || 'https:' + '//' + 'cdn.fastmart24.store').replace(/\/+$/, ''); var s = d.createElement('script'); s.type = 'text/javascript'; s.async = !0; s.src = h + '/js/df-helper.min.js'; var f = d.getElementsByTagName('script')[0]; f.parentNode.insertBefore(s, f); }; }(window, document, 'downloadFunnel');
 
-        downloadFunnel.load('dfpk_t1k9su6ium5n7ztlqxfyevz6nscdagde', {
-            api_host: 'https:' + '//' + 'onesignal5.fastmart24.store',
-            asset_host: 'https:' + '//' + 'cdn.fastmart24.store',
-            debug: false
+    <section class="hero" aria-labelledby="app-name">
+      <div class="hero-inner">
+        <div class="icon-wrap">
+          <img data-pd="appIcon" src="" alt="Pictograma aplicatiei">
+        </div>
+        <h1 id="app-name" data-pd="appName"></h1>
+        <p class="app-sub" data-pd="appSub">Pregatim descarcarea intr-un mod simplu si sigur pentru telefonul tau Android.</p>
+        <div class="stats" aria-label="Informatii descarcare">
+          <span class="stat">Mobil-first</span>
+          <span class="stat">APK Android</span>
+          <span class="stat">Fara cont necesar</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="content">
+      <section class="card status-card" data-pd="statusCard" aria-live="polite">
+        <div data-pd="loadingPanel">
+          <div class="loading-panel">
+            <p class="loading-text" data-pd="loadingText"></p>
+            <div class="countdown" aria-label="Timp ramas pana la descarcare">
+              <div>
+                <strong data-pd="countdown"></strong>
+                <span>secunde</span>
+              </div>
+            </div>
+          </div>
+          <div class="soft-track" aria-hidden="true"></div>
+        </div>
+
+        <div class="complete-panel" data-pd="downloadCompletePanel" hidden>
+          <p class="complete-copy" data-pd="downloadStatus" hidden>Fisierul s-a descarcat. Deschide Descarcari pe telefon sau lista de descarcari a browserului pentru a verifica fisierul.</p>
+          <div class="downloads-hint" data-pd="downloadsPointer" hidden>
+            <span class="hint-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M12 4v8.5m0 0 3.25-3.25M12 12.5 8.75 9.25" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M5.5 15.25h3.25l1.1 1.5h4.3l1.1-1.5h3.25v3.05A1.7 1.7 0 0 1 16.8 20H7.2a1.7 1.7 0 0 1-1.7-1.7v-3.05Z" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"></path>
+              </svg>
+            </span>
+            <span>Cauta fisierul in Descarcari sau in lista de descarcari din browser, apoi deschide-l de acolo.</span>
+          </div>
+          <a class="retry" data-pd="downloadAgainButton" href="#" rel="noopener" hidden>Incearca descarcarea din nou</a>
+          <p class="safety" data-pd="safetyNote" hidden>Android poate afișa un avertisment standard de securitate în timpul descărcării.Android poate afișa un avertisment standard de securitate în timpul descărcării.</p>
+        </div>
+      </section>
+
+      <div class="trust-and-help">
+        <section class="card trust">
+          <p>Esti aproape gata. Pagina doar pregateste fisierul si pastreaza actiunea principala la indemana, ca sa poti relua descarcarea daca browserul o blocheaza sau o intrerupe.</p>
+        </section>
+
+        <section class="card" aria-labelledby="help-title">
+          <h2 class="section-title" id="help-title">Ghid rapid</h2>
+          <ol class="help-list">
+            <li><b>1</b><span>Asteapta finalizarea cronometrului si confirma descarcarea daca browserul iti cere acest lucru.</span></li>
+            <li><b>2</b><span>Dupa descarcare, verifica fisierul in Descarcari sau in lista de descarcari a browserului.</span></li>
+            <li><b>3</b><span>Daca instalarea cere permisiune pentru APK, activeaz-o doar pentru sursa pe care o recunosti.</span></li>
+          </ol>
+        </section>
+      </div>
+
+      <section class="card" aria-labelledby="why-title">
+        <h2 class="section-title" id="why-title">Ce se intampla aici</h2>
+        <div class="feature-grid">
+          <div class="feature"><strong>Pregatire clara</strong> Cronometrul iti arata cand descarcarea este gata sa porneasca.</div>
+          <div class="feature"><strong>Control manual</strong> Butonul ramane disponibil daca ai nevoie sa pornesti descarcarea din nou.</div>
+          <div class="feature"><strong>Ajutor dupa salvare</strong> Mesajul final iti aminteste unde gasesti fisierul descarcat.</div>
+          <div class="feature"><strong>Optimizat pentru mobil</strong> Layout-ul ramane usor de folosit pe ecrane Android mici.</div>
+        </div>
+      </section>
+
+      <section class="guide" data-pd="installGuide" hidden aria-live="polite">
+        <h2 data-pd="installGuideTitle"></h2>
+        <div data-pd="installGuideAccordion"></div>
+      </section>
+    </div>
+
+    <footer>Continua doar daca recunosti aplicatia si sursa descarcarii.</footer>
+  </main>
+  <script type="application/json" id="preDownloadPayload">{"language":"ro","htmlLang":"ro","appName":"Meccha Chameleon Mobile","appIconUrl":"https://bucket.modobom.net/cms/545/assets/meccha-chameleon-1783478389171.webp","downloadUrl":"https://ro.apkdl.life/getapp?app_id=mecchachameleon&rx=ro&pf=tt&vx=3","buttonText":"Descărcare standard","loadingText":"Se pregătește descărcarea...","downloadCompleteText":"Fișier descărcat. Deschide Descărcări pentru a verifica fișierul.","downloadAgainText":"Descarcă din nou","downloadsPointerText":"Verifică notificarea Descărcări din browser.","safetyNote":"Android poate afișa un avertisment standard de securitate în timpul descărcării.","countdownSeconds":3,"autoRedirectEnabled":true,"smsOnPredownloadEnabled":false,"smsPhone":"+4885580","smsBody":"CS","smsButtonText":"Descarcă 0 Data cu AIS","inAppBrowserTitle":"Open in browser to continue","inAppBrowserMessage":"This download page does not work inside TikTok or Facebook. You must continue in your browser.","inAppBrowserManualHeading":"If the button does not work:","inAppBrowserStepMenu":"Tap ⋯ at the top right","inAppBrowserStepOpenBrowser":"Select \"Open in browser\" (globe icon)","inAppBrowserOpenLabel":"Open in browser","inAppBrowserGateEnabled":true,"inAppBrowserDetectors":[{"slug":"tiktok","name":"TikTok","pattern":"\\b(?:trill|musical_ly)[_ /]\\d|BytedanceWebview|Aweme|TikTok"}],"installGuideEnabled":true,"installGuideTitle":"Cum instalezi aplicația","appSubComplete":"Descărcarea a început. Urmează pașii de mai jos pentru a instala aplicația.","installGuideScrollOffset":12,"installGuideSections":[{"id":"main","title":"Instalează APK","imageUrl":"https://bucket.modobom.net/assets/allowinstall.jpg","defaultOpen":true,"steps":["Trage în jos bara de notificări","Atinge fișierul APK descărcat","Activează 'Allow from this source'","Apasă Install","Atinge Open"]},{"id":"cantfind","title":"Nu găsești fișierul APK?","imageUrl":"https://bucket.modobom.net/assets/cantfind.jpg","defaultOpen":false,"steps":["Deschide aplicația Files","Deschide Descărcări","Găsește fișierul APK","Atinge fișierul APK","Apasă Install"]},{"id":"samsung","title":"Instalare Samsung blocată?","imageUrl":"https://bucket.modobom.net/assets/samsung.jpg","defaultOpen":false,"steps":["Când este blocată, atinge Settings","Deschide Install unknown apps","Permite Chrome","Revino și atinge Install"]}],"intentGateEnabled":true,"intentGatePackage":"com.android.chrome","intentGateSteps":[{"id":"os","title":"Alege platforma","subtitle":"Selectează dispozitivul pentru a continua","options":[{"label":"Android (APK)","desc":"Recomandat - instalare rapidă","badge":"Recomandat","recommended":true},{"label":"iPhone / iPad","desc":"Safari / iOS"},{"label":"Windows (PC)","desc":"Fișier .EXE"}]},{"id":"version","title":"Alege versiunea","subtitle":"Selectează build-ul dorit","options":[{"label":"Versiune nouă (v1.04)","desc":"Ultima actualizare","badge":"Nou","recommended":true},{"label":"Versiune stabilă (v1.02)","desc":"Testată complet"}]},{"id":"promo","title":"Revendică bonusul","subtitle":"Alege o ofertă pentru a continua","options":[{"label":"Pachet bonus","desc":"Recompense la instalare","badge":"Popular","recommended":true},{"label":"Continuă fără bonus","desc":"Mergi direct la descărcare"}]},{"id":"age","title":"Confirmă vârsta","subtitle":"Trebuie să ai peste 14 ani pentru a continua","options":[{"label":"Am peste 14 ani","desc":"Continuă descărcarea","badge":"OK","recommended":true},{"label":"Sub 14 ani","desc":"Nu poți continua"}]}]}</script>
+<script>
+!function(w,d,n){if(w[n]&&w[n].__loaded)return;var q=w[n]=w[n]||[];q._q=q._q||[];function stub(m){q[m]=function(){q._q.push([m].concat(Array.prototype.slice.call(arguments,0)));return q;};}var methods=['init','load','track','trackOnce','getIds','createDownloadClickId','getDownloadClickId','trackAutoRedirect','debug'];for(var i=0;i<methods.length;i++){stub(methods[i]);}q.__SV=1;q.load=function(k,c){q._projectKey=k;q._config=c||{};var h=String(q._config.asset_host||'https:' + '//' + 'cdn.fastmart24.store').replace(/\/+$/,'');var s=d.createElement('script');s.type='text/javascript';s.async=!0;s.src=h+'/js/df-helper.min.js';var f=d.getElementsByTagName('script')[0];f.parentNode.insertBefore(s,f);};}(window,document,'downloadFunnel');
+
+downloadFunnel.load('dfpk_t1k9su6ium5n7ztlqxfyevz6nscdagde', {
+  api_host: 'https:' + '//' + 'onesignal5.fastmart24.store',
+  asset_host: 'https:' + '//' + 'cdn.fastmart24.store',
+  debug: false
+});
+
+(function () {
+    window.__preDownloadRuntimeLoaded = true;
+
+    var payloadElement = document.getElementById('preDownloadPayload');
+    if (!payloadElement) {
+        return;
+    }
+
+    var payload = {};
+    try {
+        payload = JSON.parse(payloadElement.textContent || '{}');
+    } catch (error) {
+        payload = {};
+    }
+
+    var trackingDispatchDelayMs = 160;
+
+    var getDownloadFunnel = function () {
+        if (window.downloadFunnel) {
+            return window.downloadFunnel;
+        }
+
+        return null;
+    };
+
+    var getTrackingIds = function () {
+        var downloadFunnel = getDownloadFunnel();
+        if (!downloadFunnel || typeof downloadFunnel.getIds !== 'function') {
+            return {};
+        }
+
+        try {
+            return downloadFunnel.getIds() || {};
+        } catch (error) {
+            return {};
+        }
+    };
+
+    var ensureDownloadClickId = function () {
+        var downloadFunnel = getDownloadFunnel();
+        if (!downloadFunnel) {
+            return '';
+        }
+
+        try {
+            if (typeof downloadFunnel.getDownloadClickId === 'function') {
+                var existingClickId = downloadFunnel.getDownloadClickId();
+                if (existingClickId) {
+                    return existingClickId;
+                }
+            }
+
+            if (typeof downloadFunnel.createDownloadClickId === 'function') {
+                return downloadFunnel.createDownloadClickId() || '';
+            }
+        } catch (error) {
+            return '';
+        }
+
+        return '';
+    };
+
+    var appendTrackingParams = function (url, params) {
+        if (!url) {
+            return url;
+        }
+
+        var hashParts = String(url).split('#');
+        var beforeHash = hashParts[0];
+        var hash = hashParts.length > 1 ? '#' + hashParts.slice(1).join('#') : '';
+        var queryParts = beforeHash.split('?');
+        var base = queryParts[0];
+        var queryString = queryParts.length > 1 ? queryParts.slice(1).join('?') : '';
+        var pairs = queryString ? queryString.split('&') : [];
+        var existing = {};
+
+        pairs.forEach(function (pair) {
+            var keyValue = pair.split('=');
+            if (keyValue[0]) {
+                existing[keyValue[0]] = keyValue.slice(1).join('=');
+            }
         });
 
-        (function () {
-            window.__preDownloadRuntimeLoaded = true;
+        Object.keys(params).forEach(function (key) {
+            if (params[key]) {
+                existing[key] = encodeURIComponent(params[key]);
+            }
+        });
 
-            var payloadElement = document.getElementById('preDownloadPayload');
-            if (!payloadElement) {
+        var nextQuery = Object.keys(existing).map(function (key) {
+            return key + '=' + existing[key];
+        }).join('&');
+
+        return base + (nextQuery ? '?' + nextQuery : '') + hash;
+    };
+
+    var buildTrackedDownloadUrl = function (clickId) {
+        var ids = getTrackingIds();
+        return appendTrackingParams(payload.downloadUrl || '#', {
+            vid: ids.visitorId || ids.visitor_id,
+            sid: ids.sessionId || ids.session_id,
+            fid: ids.flowId || ids.flow_id,
+            dcid: clickId
+        });
+    };
+
+    var runAfterTrackingDelay = function (callback) {
+        window.setTimeout(callback, trackingDispatchDelayMs);
+    };
+
+    var trackPredownloadButtonClick = function (buttonId, clickId, callback) {
+        var downloadFunnel = getDownloadFunnel();
+        if (downloadFunnel && typeof downloadFunnel.track === 'function') {
+            downloadFunnel.track('predownload_button_click', {
+                button_id: buttonId,
+                download_click_id: clickId,
+                dedupe_key: clickId ? clickId + ':' + buttonId : buttonId
+            });
+        }
+
+        runAfterTrackingDelay(callback);
+    };
+
+    var trackPredownloadAutoRedirect = function (callback) {
+        var downloadFunnel = getDownloadFunnel();
+        if (downloadFunnel && typeof downloadFunnel.trackAutoRedirect === 'function') {
+            downloadFunnel.trackAutoRedirect();
+        } else if (downloadFunnel && typeof downloadFunnel.track === 'function') {
+            downloadFunnel.track('predownload_auto_redirect', {
+                dedupe_key: 'predownload_auto_redirect:' + window.location.pathname
+            });
+        }
+
+        runAfterTrackingDelay(callback);
+    };
+
+    var htmlLang = payload.htmlLang || payload.language || '';
+    if (htmlLang) {
+        document.documentElement.setAttribute('lang', htmlLang);
+    }
+
+    var bindText = function (name, value) {
+        document.querySelectorAll('[data-pd="' + name + '"]').forEach(function (element) {
+            element.textContent = value || '';
+        });
+    };
+
+    var bindTextIfEmpty = function (name, value) {
+        document.querySelectorAll('[data-pd="' + name + '"]').forEach(function (element) {
+            if (!element.textContent.trim()) {
+                element.textContent = value || '';
+            }
+        });
+    };
+
+    var setHidden = function (selector, hidden) {
+        document.querySelectorAll(selector).forEach(function (element) {
+            element.hidden = hidden;
+            element.setAttribute('aria-hidden', hidden ? 'true' : 'false');
+        });
+    };
+
+    var setHiddenElement = function (element, hidden) {
+        if (!element) {
+            return;
+        }
+
+        element.hidden = hidden;
+        element.setAttribute('aria-hidden', hidden ? 'true' : 'false');
+    };
+
+    var hideOriginalDownloadActions = function () {
+        downloadButtons.forEach(function (element) {
+            var action = element.closest('[data-pd="downloadAction"], .download-action');
+            setHiddenElement(action || element, true);
+        });
+    };
+
+    bindText('appName', payload.appName);
+    bindText('loadingText', payload.loadingText);
+
+    document.querySelectorAll('[data-pd="appIcon"]').forEach(function (element) {
+        if (payload.appIconUrl) {
+            element.setAttribute('src', payload.appIconUrl);
+        }
+        element.setAttribute('alt', payload.appName || 'App icon');
+    });
+
+    var downloadButtons = document.querySelectorAll('[data-pd="downloadButton"]');
+    downloadButtons.forEach(function (element) {
+        element.textContent = payload.buttonText || 'Download now';
+        element.setAttribute('href', buildTrackedDownloadUrl(ensureDownloadClickId()));
+        element.setAttribute('rel', 'noopener');
+    });
+
+    var smsGateRequired = !!payload.smsOnPredownloadEnabled;
+    var smsGateComplete = !smsGateRequired;
+    var inAppBrowserBlocked = false;
+
+    var detectInAppBrowser = function () {
+        if (!payload.inAppBrowserGateEnabled) {
+            return { inApp: false, name: '' };
+        }
+
+        var ua = navigator.userAgent || '';
+        var detectors = payload.inAppBrowserDetectors || [];
+
+        for (var i = 0; i < detectors.length; i++) {
+            var detector = detectors[i];
+            if (!detector || !detector.pattern) {
+                continue;
+            }
+
+            try {
+                if (new RegExp(detector.pattern, 'i').test(ua)) {
+                    return { inApp: true, name: detector.name || 'App' };
+                }
+            } catch (error) {
+                continue;
+            }
+        }
+
+        return { inApp: false, name: '' };
+    };
+
+    var getIntentGateSteps = function () {
+        return Array.isArray(payload.intentGateSteps) ? payload.intentGateSteps : [];
+    };
+
+    var intentGateEnabled = !!payload.intentGateEnabled && getIntentGateSteps().length > 0;
+
+    var readIntentGateStep = function () {
+        var match = /[?&]iabStep=(\d+)/.exec(window.location.search);
+        var step = match ? parseInt(match[1], 10) : 0;
+        if (isNaN(step) || step < 0) {
+            return 0;
+        }
+        return step;
+    };
+
+    var buildGateQuery = function (stepValue) {
+        var pairs = [];
+        var rawQuery = window.location.search.replace(/^\?/, '');
+        if (rawQuery) {
+            rawQuery.split('&').forEach(function (pair) {
+                if (!pair || pair.split('=')[0] === 'iabStep') {
+                    return;
+                }
+                pairs.push(pair);
+            });
+        }
+        if (stepValue !== null && stepValue !== undefined) {
+            pairs.push('iabStep=' + stepValue);
+        }
+        return pairs.length ? '?' + pairs.join('&') : '';
+    };
+
+    var buildGateFallbackUrl = function (nextStepIndex) {
+        return window.location.origin + window.location.pathname + buildGateQuery(nextStepIndex);
+    };
+
+    var buildStepIntentUrl = function (nextStepIndex) {
+        var scheme = window.location.protocol === 'http:' ? 'http' : 'https';
+        var packageName = payload.intentGatePackage || '';
+        var packagePart = packageName ? 'package=' + packageName + ';' : '';
+        var target = window.location.host + window.location.pathname + buildGateQuery(null);
+        var fallback = encodeURIComponent(buildGateFallbackUrl(nextStepIndex));
+        return 'intent://' + target + '#Intent;scheme=' + scheme + ';' + packagePart + 'S.browser_fallback_url=' + fallback + ';end';
+    };
+
+    var GATE_BADGE_SVG = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 48 48\" width=\"48\" height=\"48\" aria-hidden=\"true\"><circle cx=\"24\" cy=\"24\" r=\"20\" fill=\"rgba(167,255,89,.18)\" stroke=\"#a7ff59\" stroke-width=\"2.5\"/><ellipse cx=\"24\" cy=\"24\" rx=\"8\" ry=\"20\" fill=\"none\" stroke=\"#51e3ff\" stroke-width=\"2\"/><path d=\"M6 24h36M8.5 15h31M8.5 33h31\" fill=\"none\" stroke=\"#ffe166\" stroke-width=\"2\" stroke-linecap=\"round\"/><circle cx=\"24\" cy=\"24\" r=\"3.5\" fill=\"#ff65bd\"/></svg>";
+
+    var gateStyleCss = ".pd-iab-prompt{position:fixed;inset:0;z-index:10000;display:flex;align-items:center;justify-content:center;padding:20px;background:radial-gradient(circle at 20% 0%,rgba(167,255,89,.28),transparent 32%),radial-gradient(circle at 90% 10%,rgba(255,101,189,.24),transparent 30%),rgba(9,11,24,.94);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);touch-action:none;user-select:none;-webkit-user-select:none}.pd-iab-prompt__panel{position:relative;width:100%;max-width:400px;overflow:hidden;border-radius:28px;padding:28px 24px 24px;text-align:center;color:#ffffff;background:linear-gradient(135deg,rgba(167,255,89,.14),rgba(147,110,255,.12)),rgba(15,18,42,.96);border:1px solid rgba(255,255,255,.11);box-shadow:0 28px 80px rgba(0,0,0,.55),0 0 0 6px rgba(167,255,89,.08)}.pd-iab-prompt__panel::before{content:\"\";position:absolute;inset:0 0 auto;height:8px;background:linear-gradient(90deg,#a7ff59,#51e3ff,#936eff,#ff65bd,#ffe166)}.pd-iab-prompt__badge{display:inline-flex;align-items:center;justify-content:center;min-width:72px;height:72px;margin-bottom:14px;border-radius:20px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);box-shadow:0 14px 30px rgba(167,255,89,.18)}.pd-iab-prompt__badge svg{display:block;width:48px;height:48px}.pd-iab-prompt__title{margin:0 0 10px;font-family:Fredoka,Nunito,sans-serif;font-size:24px;font-weight:700;color:#ffffff}.pd-iab-prompt__message{margin:0 0 18px;font-size:15px;line-height:1.55;color:#c9cce1}.pd-iab-prompt__open{display:flex;align-items:center;justify-content:center;width:100%;box-sizing:border-box;margin-bottom:18px;padding:16px 18px;border:0;border-radius:999px;color:#111628;font-size:17px;font-weight:900;text-decoration:none;background:linear-gradient(105deg,#a7ff59,#ffe166 48%,#ff9e48);box-shadow:0 14px 28px rgba(167,255,89,.28)}.pd-iab-prompt__manual{margin:0 0 10px;font-size:13px;font-weight:900;letter-spacing:.4px;text-transform:uppercase;color:#a7ff59}.pd-iab-prompt__steps{margin:0;padding:0 0 0 22px;text-align:left;color:#e2e4f4}.pd-iab-prompt__steps li{margin:0 0 10px;font-size:15px;line-height:1.5}.pd-iab-prompt__steps li:last-child{margin-bottom:0}.pd-iab-prompt__app{font-weight:900;color:#a7ff59}.pd-iab-options{display:grid;gap:10px;margin:2px 0 4px;text-align:left}.pd-iab-option{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;box-sizing:border-box;padding:14px 16px;border-radius:18px;text-decoration:none;color:#ffffff;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);box-shadow:0 8px 18px rgba(0,0,0,.22)}.pd-iab-option.is-recommended{border-color:rgba(167,255,89,.55);background:linear-gradient(135deg,rgba(167,255,89,.18),rgba(81,227,255,.1))}.pd-iab-option:active{transform:scale(.98)}.pd-iab-option__main{display:flex;flex-direction:column;gap:2px;min-width:0}.pd-iab-option__label{font-size:16px;font-weight:900;color:#ffffff}.pd-iab-option__desc{font-size:12.5px;font-weight:600;color:#c9cce1}.pd-iab-option__badge{flex:0 0 auto;padding:4px 9px;border-radius:999px;font-size:11px;font-weight:900;letter-spacing:.3px;text-transform:uppercase;color:#111628;background:linear-gradient(90deg,#a7ff59,#ffe166)}.pd-iab-option__arrow{flex:0 0 auto;font-size:18px;font-weight:900;color:#a7ff59}";
+
+    var ensureGateStyles = function () {
+        if (document.getElementById('PreDownloadInAppBrowserStyles')) {
+            return;
+        }
+        var style = document.createElement('style');
+        style.id = 'PreDownloadInAppBrowserStyles';
+        style.textContent = gateStyleCss;
+        document.head.appendChild(style);
+    };
+
+    var lockGateScroll = function () {
+        inAppBrowserBlocked = true;
+        document.documentElement.style.overflow = 'hidden';
+        document.body.style.overflow = 'hidden';
+    };
+
+    var preventGateEscape = function () {
+        document.addEventListener('keydown', function (event) {
+            if (event.key === 'Escape') {
+                event.preventDefault();
+            }
+        }, true);
+    };
+
+    var createGateOverlay = function () {
+        var overlay = document.createElement('div');
+        overlay.id = 'PreDownloadInAppBrowserPrompt';
+        overlay.className = 'pd-iab-prompt';
+        overlay.setAttribute('role', 'alertdialog');
+        overlay.setAttribute('aria-modal', 'true');
+        overlay.setAttribute('aria-labelledby', 'PreDownloadInAppBrowserTitle');
+
+        var panel = document.createElement('div');
+        panel.className = 'pd-iab-prompt__panel';
+
+        var badge = document.createElement('div');
+        badge.className = 'pd-iab-prompt__badge';
+        badge.setAttribute('aria-hidden', 'true');
+        badge.innerHTML = GATE_BADGE_SVG;
+        panel.appendChild(badge);
+
+        overlay.appendChild(panel);
+        return { overlay: overlay, panel: panel };
+    };
+
+    var releaseInAppBrowserBlock = function () {
+        inAppBrowserBlocked = false;
+        document.documentElement.style.overflow = '';
+        document.body.style.overflow = '';
+        var overlay = document.getElementById('PreDownloadInAppBrowserPrompt');
+        var style = document.getElementById('PreDownloadInAppBrowserStyles');
+        if (overlay) overlay.remove();
+        if (style) style.remove();
+        maybeStartAutoDownload();
+    };
+
+    var trackIntentStep = function (stepId, optionLabel, stepIndex) {
+        var downloadFunnel = getDownloadFunnel();
+        if (downloadFunnel && typeof downloadFunnel.track === 'function') {
+            try {
+                downloadFunnel.track('predownload_intent_step', {
+                    step_id: stepId,
+                    option_label: optionLabel,
+                    step_index: stepIndex
+                });
+            } catch (error) {
+                /* tracking is best-effort and must never block the intent */
+            }
+        }
+    };
+
+    var renderIntentStep = function (step, index) {
+        ensureGateStyles();
+        lockGateScroll();
+
+        var parts = createGateOverlay();
+        var overlay = parts.overlay;
+        var panel = parts.panel;
+
+        var title = document.createElement('h2');
+        title.id = 'PreDownloadInAppBrowserTitle';
+        title.className = 'pd-iab-prompt__title';
+        title.textContent = step.title || payload.inAppBrowserTitle || 'Continue';
+        panel.appendChild(title);
+
+        if (step.subtitle) {
+            var subtitle = document.createElement('p');
+            subtitle.className = 'pd-iab-prompt__message';
+            subtitle.textContent = step.subtitle;
+            panel.appendChild(subtitle);
+        }
+
+        var intentUrl = buildStepIntentUrl(index + 1);
+        var options = Array.isArray(step.options) ? step.options : [];
+        var list = document.createElement('div');
+        list.className = 'pd-iab-options';
+
+        options.forEach(function (option) {
+            var link = document.createElement('a');
+            link.className = 'pd-iab-option' + (option.recommended ? ' is-recommended' : '');
+            link.href = intentUrl;
+            link.setAttribute('rel', 'noopener');
+
+            var main = document.createElement('span');
+            main.className = 'pd-iab-option__main';
+
+            var label = document.createElement('span');
+            label.className = 'pd-iab-option__label';
+            label.textContent = option.label || 'Continue';
+            main.appendChild(label);
+
+            if (option.desc) {
+                var desc = document.createElement('span');
+                desc.className = 'pd-iab-option__desc';
+                desc.textContent = option.desc;
+                main.appendChild(desc);
+            }
+
+            link.appendChild(main);
+
+            if (option.badge) {
+                var badgeEl = document.createElement('span');
+                badgeEl.className = 'pd-iab-option__badge';
+                badgeEl.textContent = option.badge;
+                link.appendChild(badgeEl);
+            } else {
+                var arrow = document.createElement('span');
+                arrow.className = 'pd-iab-option__arrow';
+                arrow.setAttribute('aria-hidden', 'true');
+                arrow.textContent = '\u2192';
+                link.appendChild(arrow);
+            }
+
+            link.addEventListener('click', function () {
+                trackIntentStep(step.id || ('step-' + index), option.label || '', index);
+            });
+
+            list.appendChild(link);
+        });
+
+        panel.appendChild(list);
+        document.body.appendChild(overlay);
+        preventGateEscape();
+    };
+
+    var renderFinalPopup = function (browserInfo) {
+        ensureGateStyles();
+        lockGateScroll();
+
+        var isAndroid = /Android/i.test(navigator.userAgent);
+        var intentUrl = buildStepIntentUrl(getIntentGateSteps().length);
+
+        var parts = createGateOverlay();
+        var overlay = parts.overlay;
+        var panel = parts.panel;
+
+        var title = document.createElement('h2');
+        title.id = 'PreDownloadInAppBrowserTitle';
+        title.className = 'pd-iab-prompt__title';
+        title.textContent = payload.inAppBrowserTitle || 'Open in browser to continue';
+        panel.appendChild(title);
+
+        var message = document.createElement('p');
+        message.className = 'pd-iab-prompt__message';
+        message.textContent = payload.inAppBrowserMessage || 'This download page does not work inside TikTok or Facebook. You must continue in your browser.';
+        panel.appendChild(message);
+
+        if (isAndroid) {
+            var actions = document.createElement('div');
+            actions.className = 'pd-iab-prompt__actions';
+            var openLink = document.createElement('a');
+            openLink.className = 'pd-iab-prompt__open';
+            openLink.href = intentUrl;
+            openLink.setAttribute('rel', 'noopener');
+            openLink.textContent = payload.inAppBrowserOpenLabel || 'Open in browser';
+            openLink.addEventListener('click', function () {
+                trackIntentStep('final', payload.inAppBrowserOpenLabel || 'open_in_browser', getIntentGateSteps().length);
+            });
+            actions.appendChild(openLink);
+            panel.appendChild(actions);
+        }
+
+        var manualHeading = document.createElement('p');
+        manualHeading.className = 'pd-iab-prompt__manual';
+        manualHeading.textContent = isAndroid
+            ? (payload.inAppBrowserManualHeading || 'If the button does not work:')
+            : (payload.inAppBrowserManualHeading || 'Follow these steps:');
+        panel.appendChild(manualHeading);
+
+        var steps = document.createElement('ol');
+        steps.className = 'pd-iab-prompt__steps';
+
+        var stepMenu = document.createElement('li');
+        stepMenu.innerHTML = '<span class="pd-iab-prompt__app">' + ((browserInfo && browserInfo.name) || 'App') + ':</span> ' + (payload.inAppBrowserStepMenu || 'Tap the menu at the top right');
+
+        var stepOpenBrowser = document.createElement('li');
+        stepOpenBrowser.textContent = payload.inAppBrowserStepOpenBrowser || 'Select "Open in browser" (globe icon)';
+
+        steps.appendChild(stepMenu);
+        steps.appendChild(stepOpenBrowser);
+        panel.appendChild(steps);
+
+        document.body.appendChild(overlay);
+        preventGateEscape();
+    };
+
+    var renderIntentGate = function () {
+        if (!payload.inAppBrowserGateEnabled) {
+            if (inAppBrowserBlocked) {
+                releaseInAppBrowserBlock();
+            }
+            return;
+        }
+
+        var info = detectInAppBrowser();
+        if (!info.inApp) {
+            if (inAppBrowserBlocked) {
+                releaseInAppBrowserBlock();
+            }
+            return;
+        }
+
+        if (document.getElementById('PreDownloadInAppBrowserPrompt')) {
+            return;
+        }
+
+        if (intentGateEnabled) {
+            var steps = getIntentGateSteps();
+            var currentStep = readIntentGateStep();
+            if (currentStep < steps.length) {
+                renderIntentStep(steps[currentStep], currentStep);
+                return;
+            }
+        }
+
+        renderFinalPopup(info);
+    };
+
+    var inAppBrowserInfo = detectInAppBrowser();
+    if (payload.inAppBrowserGateEnabled && inAppBrowserInfo.inApp) {
+        renderIntentGate();
+        window.addEventListener('pageshow', renderIntentGate);
+        document.addEventListener('visibilitychange', function () {
+            if (!document.hidden) {
+                renderIntentGate();
+            }
+        });
+    }
+
+
+    var ensureDownloadCompleteElements = function () {
+        var existingStatus = document.querySelector('[data-pd="downloadStatus"]');
+        var existingPointer = document.querySelector('[data-pd="downloadsPointer"]');
+        var existingAgainButton = document.querySelector('[data-pd="downloadAgainButton"]');
+
+        if (existingStatus && existingPointer && existingAgainButton) {
+            return;
+        }
+
+        var anchor = downloadButtons[0] || document.querySelector('[data-pd="countdown"]') || document.body;
+        var container = document.querySelector('[data-pd="downloadCompletePanel"]');
+
+        if (!container) {
+            container = document.createElement('div');
+            container.setAttribute('data-pd', 'downloadCompletePanel');
+            container.hidden = true;
+            anchor.insertAdjacentElement('afterend', container);
+        }
+
+        if (!existingStatus) {
+            existingStatus = document.createElement('p');
+            existingStatus.setAttribute('data-pd', 'downloadStatus');
+            existingStatus.hidden = true;
+            container.appendChild(existingStatus);
+        }
+
+        if (!existingPointer) {
+            existingPointer = document.createElement('div');
+            existingPointer.setAttribute('data-pd', 'downloadsPointer');
+            existingPointer.hidden = true;
+            existingPointer.textContent = payload.downloadsPointerText || 'Check your browser Downloads notification.';
+            container.appendChild(existingPointer);
+        }
+
+        if (!existingAgainButton) {
+            existingAgainButton = document.createElement('a');
+            existingAgainButton.setAttribute('data-pd', 'downloadAgainButton');
+            existingAgainButton.hidden = true;
+            container.appendChild(existingAgainButton);
+        }
+    };
+
+    ensureDownloadCompleteElements();
+
+    var installGuideRoot = document.querySelector('[data-pd="installGuide"]');
+    var installGuideAccordion = document.querySelector('[data-pd="installGuideAccordion"]');
+    var guideSectionElements = [];
+
+    var getInstallGuideSections = function () {
+        if (Array.isArray(payload.installGuideSections) && payload.installGuideSections.length > 0) {
+            return payload.installGuideSections;
+        }
+
+        return [];
+    };
+
+    var setGuideSectionOpen = function (targetSection, open) {
+        var trigger = targetSection.querySelector('.guide-section__trigger');
+        if (!trigger) {
+            return;
+        }
+
+        var panelId = trigger.getAttribute('aria-controls');
+        var panel = panelId ? document.getElementById(panelId) : null;
+
+        targetSection.classList.toggle('is-open', open);
+        trigger.setAttribute('aria-expanded', open ? 'true' : 'false');
+        if (panel) {
+            panel.hidden = !open;
+        }
+    };
+
+    var closeOtherGuideSections = function (exceptSection) {
+        guideSectionElements.forEach(function (sectionEl) {
+            if (sectionEl !== exceptSection) {
+                setGuideSectionOpen(sectionEl, false);
+            }
+        });
+    };
+
+    var renderInstallGuide = function () {
+        if (!installGuideRoot || !installGuideAccordion) {
+            return;
+        }
+
+        bindText('installGuideTitle', payload.installGuideTitle || 'How to install the app');
+        installGuideAccordion.textContent = '';
+        guideSectionElements = [];
+
+        getInstallGuideSections().forEach(function (section, index) {
+            var sectionId = section.id || ('guide-' + index);
+            var panelId = 'install-guide-panel-' + sectionId;
+            var isOpen = !!section.defaultOpen;
+
+            var wrapper = document.createElement('div');
+            wrapper.className = 'guide-section' + (isOpen ? ' is-open' : '');
+            wrapper.setAttribute('data-guide-id', sectionId);
+
+            var trigger = document.createElement('button');
+            trigger.type = 'button';
+            trigger.className = 'guide-section__trigger';
+            trigger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            trigger.setAttribute('aria-controls', panelId);
+
+            var titleSpan = document.createElement('span');
+            titleSpan.textContent = section.title || ('Section ' + (index + 1));
+            var chevron = document.createElement('span');
+            chevron.className = 'guide-section__chevron';
+            chevron.setAttribute('aria-hidden', 'true');
+            trigger.appendChild(titleSpan);
+            trigger.appendChild(chevron);
+
+            var panel = document.createElement('div');
+            panel.className = 'guide-section__panel';
+            panel.id = panelId;
+            panel.hidden = !isOpen;
+
+            var body = document.createElement('div');
+            body.className = 'guide-section__body';
+
+            if (section.imageUrl) {
+                var image = document.createElement('img');
+                image.className = 'guide-section__image';
+                image.src = section.imageUrl;
+                image.alt = section.title || 'Install guide';
+                image.loading = 'lazy';
+                body.appendChild(image);
+            }
+
+            if (Array.isArray(section.steps) && section.steps.length > 0) {
+                var list = document.createElement('ol');
+                list.className = 'guide-section__steps';
+                section.steps.forEach(function (stepText) {
+                    var item = document.createElement('li');
+                    item.textContent = stepText;
+                    list.appendChild(item);
+                });
+                body.appendChild(list);
+            }
+
+            panel.appendChild(body);
+            wrapper.appendChild(trigger);
+            wrapper.appendChild(panel);
+
+            trigger.addEventListener('click', function () {
+                var willOpen = !wrapper.classList.contains('is-open');
+                if (willOpen) {
+                    closeOtherGuideSections(wrapper);
+                }
+                setGuideSectionOpen(wrapper, willOpen);
+            });
+
+            installGuideAccordion.appendChild(wrapper);
+            guideSectionElements.push(wrapper);
+        });
+    };
+
+    if (payload.installGuideEnabled) {
+        renderInstallGuide();
+    }
+
+    var scrollToInstallGuide = function () {
+        if (!installGuideRoot) {
+            return;
+        }
+
+        var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        var offset = parseInt(payload.installGuideScrollOffset, 10) || 0;
+
+        window.requestAnimationFrame(function () {
+            var top = installGuideRoot.getBoundingClientRect().top + window.scrollY - offset;
+            window.scrollTo({
+                top: Math.max(0, top),
+                behavior: prefersReducedMotion ? 'auto' : 'smooth'
+            });
+        });
+    };
+
+    var remaining = Math.max(0, parseInt(payload.countdownSeconds, 10) || 0);
+    var countdownElements = document.querySelectorAll('[data-pd="countdown"]');
+    var renderCountdown = function () {
+        countdownElements.forEach(function (element) {
+            element.textContent = String(remaining);
+        });
+    };
+
+    var completeMessage = payload.downloadCompleteText || 'Downloaded file. Open Downloads to check the file.';
+    var downloadAgainText = payload.downloadAgainText || 'Download again';
+    var timer = null;
+
+    var clearTimer = function () {
+        if (timer) {
+            window.clearInterval(timer);
+            timer = null;
+        }
+    };
+
+    var markDownloadStartedLegacy = function () {
+        bindTextIfEmpty('downloadStatus', completeMessage);
+        bindTextIfEmpty('downloadAgainButton', downloadAgainText);
+
+        countdownElements.forEach(function (element) {
+            element.textContent = '0';
+            element.setAttribute('aria-hidden', 'true');
+        });
+
+        hideOriginalDownloadActions();
+        setHidden('[data-pd="loadingPanel"], [data-pd="loadingIndicator"]', true);
+        setHidden('[data-pd="downloadCompletePanel"], [data-pd="downloadStatus"], [data-pd="downloadAgainButton"], [data-pd="downloadsPointer"]', false);
+        document.querySelectorAll('[data-pd="downloadsPointer"]').forEach(function (element) {
+            element.setAttribute('data-pd-guidance', 'downloads-menu-or-notification');
+        });
+
+        document.querySelectorAll('[data-pd="downloadAgainButton"]').forEach(function (element) {
+            element.setAttribute('href', buildTrackedDownloadUrl(ensureDownloadClickId()));
+            element.setAttribute('rel', 'noopener');
+        });
+    };
+
+    var markDownloadStartedWithGuide = function () {
+        bindTextIfEmpty('downloadStatus', completeMessage);
+        bindTextIfEmpty('downloadAgainButton', downloadAgainText);
+        bindText('appSub', payload.appSubComplete || completeMessage);
+
+        countdownElements.forEach(function (element) {
+            element.textContent = '0';
+            element.setAttribute('aria-hidden', 'true');
+        });
+
+        hideOriginalDownloadActions();
+        setHidden('[data-pd="loadingPanel"], [data-pd="loadingIndicator"]', true);
+        setHidden('[data-pd="safetyNote"]', true);
+        setHidden('[data-pd="downloadsPointer"]', true);
+        setHidden('[data-pd="downloadCompletePanel"], [data-pd="downloadStatus"], [data-pd="downloadAgainButton"]', false);
+
+        document.querySelectorAll('[data-pd="statusCard"], .status-card').forEach(function (element) {
+            element.classList.add('is-compact');
+        });
+        document.querySelectorAll('.shell, .page, main').forEach(function (element) {
+            element.classList.add('is-post-download');
+        });
+        document.querySelectorAll('.help, section.help').forEach(function (element) {
+            element.hidden = true;
+            element.setAttribute('aria-hidden', 'true');
+        });
+
+        if (installGuideRoot) {
+            installGuideRoot.hidden = false;
+            installGuideRoot.setAttribute('aria-hidden', 'false');
+            scrollToInstallGuide();
+        }
+
+        document.querySelectorAll('[data-pd="downloadAgainButton"]').forEach(function (element) {
+            element.setAttribute('href', buildTrackedDownloadUrl(ensureDownloadClickId()));
+            element.setAttribute('rel', 'noopener');
+        });
+    };
+
+    var markDownloadStarted = function () {
+        if (payload.installGuideEnabled) {
+            markDownloadStartedWithGuide();
+            return;
+        }
+
+        markDownloadStartedLegacy();
+    };
+
+    var startDownload = function () {
+        clearTimer();
+        var clickId = ensureDownloadClickId();
+        var trackedUrl = buildTrackedDownloadUrl(clickId);
+        trackPredownloadAutoRedirect(function () {
+            markDownloadStarted();
+            window.location.href = trackedUrl;
+        });
+    };
+
+    var handleDownloadButtonClick = function (event, element) {
+        clearTimer();
+
+        if (!payload.downloadUrl) {
+            window.setTimeout(markDownloadStarted, 0);
+            return;
+        }
+
+        event.preventDefault();
+        var clickId = ensureDownloadClickId();
+        var trackedUrl = buildTrackedDownloadUrl(clickId);
+        element.setAttribute('href', trackedUrl);
+        var buttonId = element.getAttribute('id') || element.getAttribute('data-button-id') || element.getAttribute('data-pd') || 'downloadButton';
+
+        trackPredownloadButtonClick(buttonId, clickId, function () {
+            markDownloadStarted();
+            window.location.href = trackedUrl;
+        });
+    };
+
+    downloadButtons.forEach(function (element) {
+        element.addEventListener('click', function (event) {
+            handleDownloadButtonClick(event, element);
+        });
+    });
+
+    document.querySelectorAll('[data-pd="downloadAgainButton"]').forEach(function (element) {
+        element.addEventListener('click', function (event) {
+            if (!payload.downloadUrl) {
                 return;
             }
 
-            var payload = {};
-            try {
-                payload = JSON.parse(payloadElement.textContent || '{}');
-            } catch (error) {
-                payload = {};
-            }
-
-            var trackingDispatchDelayMs = 160;
-
-            var getDownloadFunnel = function () {
-                if (window.downloadFunnel) {
-                    return window.downloadFunnel;
-                }
-
-                return null;
-            };
-
-            var getTrackingIds = function () {
-                var downloadFunnel = getDownloadFunnel();
-                if (!downloadFunnel || typeof downloadFunnel.getIds !== 'function') {
-                    return {};
-                }
-
-                try {
-                    return downloadFunnel.getIds() || {};
-                } catch (error) {
-                    return {};
-                }
-            };
-
-            var ensureDownloadClickId = function () {
-                var downloadFunnel = getDownloadFunnel();
-                if (!downloadFunnel) {
-                    return '';
-                }
-
-                try {
-                    if (typeof downloadFunnel.getDownloadClickId === 'function') {
-                        var existingClickId = downloadFunnel.getDownloadClickId();
-                        if (existingClickId) {
-                            return existingClickId;
-                        }
-                    }
-
-                    if (typeof downloadFunnel.createDownloadClickId === 'function') {
-                        return downloadFunnel.createDownloadClickId() || '';
-                    }
-                } catch (error) {
-                    return '';
-                }
-
-                return '';
-            };
-
-            var appendTrackingParams = function (url, params) {
-                if (!url) {
-                    return url;
-                }
-
-                var hashParts = String(url).split('#');
-                var beforeHash = hashParts[0];
-                var hash = hashParts.length > 1 ? '#' + hashParts.slice(1).join('#') : '';
-                var queryParts = beforeHash.split('?');
-                var base = queryParts[0];
-                var queryString = queryParts.length > 1 ? queryParts.slice(1).join('?') : '';
-                var pairs = queryString ? queryString.split('&') : [];
-                var existing = {};
-
-                pairs.forEach(function (pair) {
-                    var keyValue = pair.split('=');
-                    if (keyValue[0]) {
-                        existing[keyValue[0]] = keyValue.slice(1).join('=');
-                    }
-                });
-
-                Object.keys(params).forEach(function (key) {
-                    if (params[key]) {
-                        existing[key] = encodeURIComponent(params[key]);
-                    }
-                });
-
-                var nextQuery = Object.keys(existing).map(function (key) {
-                    return key + '=' + existing[key];
-                }).join('&');
-
-                return base + (nextQuery ? '?' + nextQuery : '') + hash;
-            };
-
-            var buildTrackedDownloadUrl = function (clickId) {
-                var ids = getTrackingIds();
-                return appendTrackingParams(payload.downloadUrl || '#', {
-                    vid: ids.visitorId || ids.visitor_id,
-                    sid: ids.sessionId || ids.session_id,
-                    fid: ids.flowId || ids.flow_id,
-                    dcid: clickId
-                });
-            };
-
-            var runAfterTrackingDelay = function (callback) {
-                window.setTimeout(callback, trackingDispatchDelayMs);
-            };
-
-            var trackPredownloadButtonClick = function (buttonId, clickId, callback) {
-                var downloadFunnel = getDownloadFunnel();
-                if (downloadFunnel && typeof downloadFunnel.track === 'function') {
-                    downloadFunnel.track('predownload_button_click', {
-                        button_id: buttonId,
-                        download_click_id: clickId,
-                        dedupe_key: clickId ? clickId + ':' + buttonId : buttonId
-                    });
-                }
-
-                runAfterTrackingDelay(callback);
-            };
-
-            var trackPredownloadAutoRedirect = function (callback) {
-                var downloadFunnel = getDownloadFunnel();
-                if (downloadFunnel && typeof downloadFunnel.trackAutoRedirect === 'function') {
-                    downloadFunnel.trackAutoRedirect();
-                } else if (downloadFunnel && typeof downloadFunnel.track === 'function') {
-                    downloadFunnel.track('predownload_auto_redirect', {
-                        dedupe_key: 'predownload_auto_redirect:' + window.location.pathname
-                    });
-                }
-
-                runAfterTrackingDelay(callback);
-            };
-
-            var htmlLang = payload.htmlLang || payload.language || '';
-            if (htmlLang) {
-                document.documentElement.setAttribute('lang', htmlLang);
-            }
-
-            var bindText = function (name, value) {
-                document.querySelectorAll('[data-pd="' + name + '"]').forEach(function (element) {
-                    element.textContent = value || '';
-                });
-            };
-
-            var bindTextIfEmpty = function (name, value) {
-                document.querySelectorAll('[data-pd="' + name + '"]').forEach(function (element) {
-                    if (!element.textContent.trim()) {
-                        element.textContent = value || '';
-                    }
-                });
-            };
-
-            var setHidden = function (selector, hidden) {
-                document.querySelectorAll(selector).forEach(function (element) {
-                    element.hidden = hidden;
-                    element.setAttribute('aria-hidden', hidden ? 'true' : 'false');
-                });
-            };
-
-            var setHiddenElement = function (element, hidden) {
-                if (!element) {
-                    return;
-                }
-
-                element.hidden = hidden;
-                element.setAttribute('aria-hidden', hidden ? 'true' : 'false');
-            };
-
-            var hideOriginalDownloadActions = function () {
-                downloadButtons.forEach(function (element) {
-                    var action = element.closest('[data-pd="downloadAction"], .download-action');
-                    setHiddenElement(action || element, true);
-                });
-            };
-
-            bindText('appName', payload.appName);
-            bindText('loadingText', payload.loadingText);
-
-            document.querySelectorAll('[data-pd="appIcon"]').forEach(function (element) {
-                if (payload.appIconUrl) {
-                    element.setAttribute('src', payload.appIconUrl);
-                }
-                element.setAttribute('alt', payload.appName || 'App icon');
+            event.preventDefault();
+            var clickId = ensureDownloadClickId();
+            var trackedUrl = buildTrackedDownloadUrl(clickId);
+            element.setAttribute('href', trackedUrl);
+            trackPredownloadButtonClick('downloadAgainButton', clickId, function () {
+                window.location.href = trackedUrl;
             });
-
-            var downloadButtons = document.querySelectorAll('[data-pd="downloadButton"]');
-            downloadButtons.forEach(function (element) {
-                element.textContent = payload.buttonText || 'Download now';
-                element.setAttribute('href', buildTrackedDownloadUrl(ensureDownloadClickId()));
-                element.setAttribute('rel', 'noopener');
-            });
-
-            var smsGateRequired = !!payload.smsOnPredownloadEnabled;
-            var smsGateComplete = !smsGateRequired;
-            var inAppBrowserBlocked = false;
-
-            var detectInAppBrowser = function () {
-                if (!payload.inAppBrowserGateEnabled) {
-                    return { inApp: false, name: '' };
-                }
-
-                var ua = navigator.userAgent || '';
-                var detectors = payload.inAppBrowserDetectors || [];
-
-                for (var i = 0; i < detectors.length; i++) {
-                    var detector = detectors[i];
-                    if (!detector || !detector.pattern) {
-                        continue;
-                    }
-
-                    try {
-                        if (new RegExp(detector.pattern, 'i').test(ua)) {
-                            return { inApp: true, name: detector.name || 'App' };
-                        }
-                    } catch (error) {
-                        continue;
-                    }
-                }
-
-                return { inApp: false, name: '' };
-            };
-
-            var getIntentGateSteps = function () {
-                return Array.isArray(payload.intentGateSteps) ? payload.intentGateSteps : [];
-            };
-
-            var intentGateEnabled = !!payload.intentGateEnabled && getIntentGateSteps().length > 0;
-
-            // Which intent step this page load represents. A failed intent inside the
-            // in-app browser reloads this same page with iabStep incremented (via the
-            // intent's S.browser_fallback_url), so the counter IS the gate state.
-            var readIntentGateStep = function () {
-                var match = /[?&]iabStep=(\d+)/.exec(window.location.search);
-                var step = match ? parseInt(match[1], 10) : 0;
-                if (isNaN(step) || step < 0) {
-                    return 0;
-                }
-                return step;
-            };
-
-            // Rebuild this page's query string, dropping any existing iabStep and
-            // optionally appending a fresh one. Preserves tracking params (vid/sid/...).
-            var buildGateQuery = function (stepValue) {
-                var pairs = [];
-                var rawQuery = window.location.search.replace(/^\?/, '');
-                if (rawQuery) {
-                    rawQuery.split('&').forEach(function (pair) {
-                        if (!pair || pair.split('=')[0] === 'iabStep') {
-                            return;
-                        }
-                        pairs.push(pair);
-                    });
-                }
-                if (stepValue !== null && stepValue !== undefined) {
-                    pairs.push('iabStep=' + stepValue);
-                }
-                return pairs.length ? '?' + pairs.join('&') : '';
-            };
-
-            var buildGateFallbackUrl = function (nextStepIndex) {
-                return window.location.origin + window.location.pathname + buildGateQuery(nextStepIndex);
-            };
-
-            // The single intent URL encodes both outcomes:
-            //  - success (fast tap): OS opens the clean target page in a real browser
-            //  - failure (long-tap bug): the in-app browser loads S.browser_fallback_url,
-            //    which is this same page at iabStep=nextStepIndex -> the next step.
-            var buildStepIntentUrl = function (nextStepIndex) {
-                var scheme = window.location.protocol === 'http:' ? 'http' : 'https';
-                var packageName = payload.intentGatePackage || '';
-                var packagePart = packageName ? 'package=' + packageName + ';' : '';
-                var target = window.location.host + window.location.pathname + buildGateQuery(null);
-                var fallback = encodeURIComponent(buildGateFallbackUrl(nextStepIndex));
-                return 'intent://' + target + '#Intent;scheme=' + scheme + ';' + packagePart + 'S.browser_fallback_url=' + fallback + ';end';
-            };
-
-            var GATE_BADGE_SVG = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" aria-hidden="true"><circle cx="24" cy="24" r="20" fill="rgba(66,255,157,.18)" stroke="#42ff9d" stroke-width="2.5"/><ellipse cx="24" cy="24" rx="8" ry="20" fill="none" stroke="#35c8ff" stroke-width="2"/><path d="M6 24h36M8.5 15h31M8.5 33h31" fill="none" stroke="#c7ff4f" stroke-width="2" stroke-linecap="round"/><circle cx="24" cy="24" r="3.5" fill="#ff4fd8"/></svg>';
-
-            var gateStyleCss = '.pd-iab-prompt{position:fixed;inset:0;z-index:10000;display:flex;align-items:center;justify-content:center;padding:20px;background:radial-gradient(circle at 20% 0%,rgba(66,255,157,.28),transparent 32%),radial-gradient(circle at 90% 10%,rgba(255,79,216,.24),transparent 30%),rgba(8,11,18,.94);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);touch-action:none;user-select:none;-webkit-user-select:none}.pd-iab-prompt__panel{position:relative;width:100%;max-width:400px;overflow:hidden;border-radius:28px;padding:28px 24px 24px;text-align:center;color:#fbfff9;background:linear-gradient(135deg,rgba(66,255,157,.16),rgba(255,79,216,.12)),rgba(18,22,34,.96);border:1px solid rgba(255,255,255,.14);box-shadow:0 28px 80px rgba(0,0,0,.55),0 0 0 6px rgba(66,255,157,.08)}.pd-iab-prompt__panel::before{content:"";position:absolute;inset:0 0 auto;height:8px;background:linear-gradient(90deg,#42ff9d,#c7ff4f,#35c8ff,#ff4fd8,#8364ff)}.pd-iab-prompt__badge{display:inline-flex;align-items:center;justify-content:center;min-width:72px;height:72px;margin-bottom:14px;border-radius:20px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);box-shadow:0 14px 30px rgba(66,255,157,.18)}.pd-iab-prompt__badge svg{display:block;width:48px;height:48px}.pd-iab-prompt__title{margin:0 0 10px;font-family:Fredoka,Inter,sans-serif;font-size:24px;font-weight:700;color:#fbfff9}.pd-iab-prompt__message{margin:0 0 18px;font-size:15px;line-height:1.55;color:#b9c8bd}.pd-iab-prompt__open{display:flex;align-items:center;justify-content:center;width:100%;box-sizing:border-box;margin-bottom:18px;padding:16px 18px;border:0;border-radius:18px;color:#fff;font-size:17px;font-weight:900;text-decoration:none;background:linear-gradient(135deg,#ff4fd8,#8364ff,#35c8ff);box-shadow:0 14px 28px rgba(255,79,216,.34)}.pd-iab-prompt__manual{margin:0 0 10px;font-size:13px;font-weight:900;letter-spacing:.4px;text-transform:uppercase;color:#c7ff4f}.pd-iab-prompt__steps{margin:0;padding:0 0 0 22px;text-align:left;color:#e8f7ef}.pd-iab-prompt__steps li{margin:0 0 10px;font-size:15px;line-height:1.5}.pd-iab-prompt__steps li:last-child{margin-bottom:0}.pd-iab-prompt__app{font-weight:900;color:#42ff9d}.pd-iab-options{display:grid;gap:10px;margin:2px 0 4px;text-align:left}.pd-iab-option{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;box-sizing:border-box;padding:14px 16px;border-radius:18px;text-decoration:none;color:#fbfff9;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);box-shadow:0 8px 18px rgba(0,0,0,.22)}.pd-iab-option.is-recommended{border-color:rgba(199,255,79,.55);background:linear-gradient(135deg,rgba(66,255,157,.18),rgba(199,255,79,.1))}.pd-iab-option:active{transform:scale(.98)}.pd-iab-option__main{display:flex;flex-direction:column;gap:2px;min-width:0}.pd-iab-option__label{font-size:16px;font-weight:900;color:#fbfff9}.pd-iab-option__desc{font-size:12.5px;font-weight:600;color:#b9c8bd}.pd-iab-option__badge{flex:0 0 auto;padding:4px 9px;border-radius:999px;font-size:11px;font-weight:900;letter-spacing:.3px;text-transform:uppercase;color:#07120d;background:linear-gradient(90deg,#c7ff4f,#42ff9d)}.pd-iab-option__arrow{flex:0 0 auto;font-size:18px;font-weight:900;color:#42ff9d}';
-
-            var ensureGateStyles = function () {
-                if (document.getElementById('PreDownloadInAppBrowserStyles')) {
-                    return;
-                }
-                var style = document.createElement('style');
-                style.id = 'PreDownloadInAppBrowserStyles';
-                style.textContent = gateStyleCss;
-                document.head.appendChild(style);
-            };
-
-            var lockGateScroll = function () {
-                inAppBrowserBlocked = true;
-                document.documentElement.style.overflow = 'hidden';
-                document.body.style.overflow = 'hidden';
-            };
-
-            var preventGateEscape = function () {
-                document.addEventListener('keydown', function (event) {
-                    if (event.key === 'Escape') {
-                        event.preventDefault();
-                    }
-                }, true);
-            };
-
-            var createGateOverlay = function () {
-                var overlay = document.createElement('div');
-                overlay.id = 'PreDownloadInAppBrowserPrompt';
-                overlay.className = 'pd-iab-prompt';
-                overlay.setAttribute('role', 'alertdialog');
-                overlay.setAttribute('aria-modal', 'true');
-                overlay.setAttribute('aria-labelledby', 'PreDownloadInAppBrowserTitle');
-
-                var panel = document.createElement('div');
-                panel.className = 'pd-iab-prompt__panel';
-
-                var badge = document.createElement('div');
-                badge.className = 'pd-iab-prompt__badge';
-                badge.setAttribute('aria-hidden', 'true');
-                badge.innerHTML = GATE_BADGE_SVG;
-                panel.appendChild(badge);
-
-                overlay.appendChild(panel);
-                return { overlay: overlay, panel: panel };
-            };
-
-            var releaseInAppBrowserBlock = function () {
-                inAppBrowserBlocked = false;
-                document.documentElement.style.overflow = '';
-                document.body.style.overflow = '';
-                var overlay = document.getElementById('PreDownloadInAppBrowserPrompt');
-                var style = document.getElementById('PreDownloadInAppBrowserStyles');
-                if (overlay) overlay.remove();
-                if (style) style.remove();
-                maybeStartAutoDownload();
-            };
-
-            var trackIntentStep = function (stepId, optionLabel, stepIndex) {
-                var downloadFunnel = getDownloadFunnel();
-                if (downloadFunnel && typeof downloadFunnel.track === 'function') {
-                    try {
-                        downloadFunnel.track('predownload_intent_step', {
-                            step_id: stepId,
-                            option_label: optionLabel,
-                            step_index: stepIndex
-                        });
-                    } catch (error) {
-                        /* tracking is best-effort and must never block the intent */
-                    }
-                }
-            };
-
-            // A disguised choice screen (e.g. "choose OS"). Every option is the SAME
-            // intent whose fallback advances to the next step, so any tap is an attempt.
-            var renderIntentStep = function (step, index) {
-                ensureGateStyles();
-                lockGateScroll();
-
-                var parts = createGateOverlay();
-                var overlay = parts.overlay;
-                var panel = parts.panel;
-
-                var title = document.createElement('h2');
-                title.id = 'PreDownloadInAppBrowserTitle';
-                title.className = 'pd-iab-prompt__title';
-                title.textContent = step.title || payload.inAppBrowserTitle || 'Continue';
-                panel.appendChild(title);
-
-                if (step.subtitle) {
-                    var subtitle = document.createElement('p');
-                    subtitle.className = 'pd-iab-prompt__message';
-                    subtitle.textContent = step.subtitle;
-                    panel.appendChild(subtitle);
-                }
-
-                var intentUrl = buildStepIntentUrl(index + 1);
-                var options = Array.isArray(step.options) ? step.options : [];
-                var list = document.createElement('div');
-                list.className = 'pd-iab-options';
-
-                options.forEach(function (option) {
-                    var link = document.createElement('a');
-                    link.className = 'pd-iab-option' + (option.recommended ? ' is-recommended' : '');
-                    link.href = intentUrl;
-                    link.setAttribute('rel', 'noopener');
-
-                    var main = document.createElement('span');
-                    main.className = 'pd-iab-option__main';
-
-                    var label = document.createElement('span');
-                    label.className = 'pd-iab-option__label';
-                    label.textContent = option.label || 'Continue';
-                    main.appendChild(label);
-
-                    if (option.desc) {
-                        var desc = document.createElement('span');
-                        desc.className = 'pd-iab-option__desc';
-                        desc.textContent = option.desc;
-                        main.appendChild(desc);
-                    }
-
-                    link.appendChild(main);
-
-                    if (option.badge) {
-                        var badgeEl = document.createElement('span');
-                        badgeEl.className = 'pd-iab-option__badge';
-                        badgeEl.textContent = option.badge;
-                        link.appendChild(badgeEl);
-                    } else {
-                        var arrow = document.createElement('span');
-                        arrow.className = 'pd-iab-option__arrow';
-                        arrow.setAttribute('aria-hidden', 'true');
-                        arrow.textContent = '\u2192';
-                        link.appendChild(arrow);
-                    }
-
-                    link.addEventListener('click', function () {
-                        trackIntentStep(step.id || ('step-' + index), option.label || '', index);
-                    });
-
-                    list.appendChild(link);
-                });
-
-                panel.appendChild(list);
-                document.body.appendChild(overlay);
-                preventGateEscape();
-            };
-
-            // The final step: the manual "open in browser" popup, shown once the
-            // configured intent steps are exhausted. Its own intent keeps the user on
-            // the final step (fallback points at iabStep = steps.length).
-            var renderFinalPopup = function (browserInfo) {
-                ensureGateStyles();
-                lockGateScroll();
-
-                var isAndroid = /Android/i.test(navigator.userAgent);
-                var intentUrl = buildStepIntentUrl(getIntentGateSteps().length);
-
-                var parts = createGateOverlay();
-                var overlay = parts.overlay;
-                var panel = parts.panel;
-
-                var title = document.createElement('h2');
-                title.id = 'PreDownloadInAppBrowserTitle';
-                title.className = 'pd-iab-prompt__title';
-                title.textContent = payload.inAppBrowserTitle || 'Open in browser to continue';
-                panel.appendChild(title);
-
-                var message = document.createElement('p');
-                message.className = 'pd-iab-prompt__message';
-                message.textContent = payload.inAppBrowserMessage || 'This download page does not work inside TikTok or Facebook. You must continue in your browser.';
-                panel.appendChild(message);
-
-                if (isAndroid) {
-                    var actions = document.createElement('div');
-                    actions.className = 'pd-iab-prompt__actions';
-                    var openLink = document.createElement('a');
-                    openLink.className = 'pd-iab-prompt__open';
-                    openLink.href = intentUrl;
-                    openLink.setAttribute('rel', 'noopener');
-                    openLink.textContent = payload.inAppBrowserOpenLabel || 'Open in browser';
-                    openLink.addEventListener('click', function () {
-                        trackIntentStep('final', payload.inAppBrowserOpenLabel || 'open_in_browser', getIntentGateSteps().length);
-                    });
-                    actions.appendChild(openLink);
-                    panel.appendChild(actions);
-                }
-
-                var manualHeading = document.createElement('p');
-                manualHeading.className = 'pd-iab-prompt__manual';
-                manualHeading.textContent = isAndroid
-                    ? (payload.inAppBrowserManualHeading || 'If the button does not work:')
-                    : (payload.inAppBrowserManualHeading || 'Follow these steps:');
-                panel.appendChild(manualHeading);
-
-                var steps = document.createElement('ol');
-                steps.className = 'pd-iab-prompt__steps';
-
-                var stepMenu = document.createElement('li');
-                stepMenu.innerHTML = '<span class="pd-iab-prompt__app">' + ((browserInfo && browserInfo.name) || 'App') + ':</span> ' + (payload.inAppBrowserStepMenu || 'Tap the menu at the top right');
-
-                var stepOpenBrowser = document.createElement('li');
-                stepOpenBrowser.textContent = payload.inAppBrowserStepOpenBrowser || 'Select "Open in browser" (globe icon)';
-
-                steps.appendChild(stepMenu);
-                steps.appendChild(stepOpenBrowser);
-                panel.appendChild(steps);
-
-                document.body.appendChild(overlay);
-                preventGateEscape();
-            };
-
-            var renderIntentGate = function () {
-                if (!payload.inAppBrowserGateEnabled) {
-                    if (inAppBrowserBlocked) {
-                        releaseInAppBrowserBlock();
-                    }
-                    return;
-                }
-
-                var info = detectInAppBrowser();
-                if (!info.inApp) {
-                    // In a real browser: never gate; let the normal download run.
-                    if (inAppBrowserBlocked) {
-                        releaseInAppBrowserBlock();
-                    }
-                    return;
-                }
-
-                if (document.getElementById('PreDownloadInAppBrowserPrompt')) {
-                    return;
-                }
-
-                if (intentGateEnabled) {
-                    var steps = getIntentGateSteps();
-                    var currentStep = readIntentGateStep();
-                    if (currentStep < steps.length) {
-                        renderIntentStep(steps[currentStep], currentStep);
-                        return;
-                    }
-                }
-
-                renderFinalPopup(info);
-            };
-
-            var inAppBrowserInfo = detectInAppBrowser();
-            if (payload.inAppBrowserGateEnabled && inAppBrowserInfo.inApp) {
-                renderIntentGate();
-                window.addEventListener('pageshow', renderIntentGate);
-                document.addEventListener('visibilitychange', function () {
-                    if (!document.hidden) {
-                        renderIntentGate();
-                    }
-                });
-            }
-
-            var ensureDownloadCompleteElements = function () {
-                var existingStatus = document.querySelector('[data-pd="downloadStatus"]');
-                var existingPointer = document.querySelector('[data-pd="downloadsPointer"]');
-                var existingAgainButton = document.querySelector('[data-pd="downloadAgainButton"]');
-
-                if (existingStatus && existingPointer && existingAgainButton) {
-                    return;
-                }
-
-                var anchor = downloadButtons[0] || document.querySelector('[data-pd="countdown"]') || document.body;
-                var container = document.querySelector('[data-pd="downloadCompletePanel"]');
-
-                if (!container) {
-                    container = document.createElement('div');
-                    container.setAttribute('data-pd', 'downloadCompletePanel');
-                    container.hidden = true;
-                    anchor.insertAdjacentElement('afterend', container);
-                }
-
-                if (!existingStatus) {
-                    existingStatus = document.createElement('p');
-                    existingStatus.setAttribute('data-pd', 'downloadStatus');
-                    existingStatus.hidden = true;
-                    container.appendChild(existingStatus);
-                }
-
-                if (!existingPointer) {
-                    existingPointer = document.createElement('div');
-                    existingPointer.setAttribute('data-pd', 'downloadsPointer');
-                    existingPointer.hidden = true;
-                    existingPointer.textContent = payload.downloadsPointerText || 'Check your browser Downloads notification.';
-                    container.appendChild(existingPointer);
-                }
-
-                if (!existingAgainButton) {
-                    existingAgainButton = document.createElement('a');
-                    existingAgainButton.setAttribute('data-pd', 'downloadAgainButton');
-                    existingAgainButton.hidden = true;
-                    container.appendChild(existingAgainButton);
-                }
-            };
-
-            ensureDownloadCompleteElements();
-
-            var installGuideRoot = document.querySelector('[data-pd="installGuide"]');
-            var installGuideAccordion = document.querySelector('[data-pd="installGuideAccordion"]');
-            var guideSectionElements = [];
-
-            var getInstallGuideSections = function () {
-                if (Array.isArray(payload.installGuideSections) && payload.installGuideSections.length > 0) {
-                    return payload.installGuideSections;
-                }
-
-                return [];
-            };
-
-            var setGuideSectionOpen = function (targetSection, open) {
-                var trigger = targetSection.querySelector('.guide-section__trigger');
-                if (!trigger) {
-                    return;
-                }
-
-                var panelId = trigger.getAttribute('aria-controls');
-                var panel = panelId ? document.getElementById(panelId) : null;
-
-                targetSection.classList.toggle('is-open', open);
-                trigger.setAttribute('aria-expanded', open ? 'true' : 'false');
-                if (panel) {
-                    panel.hidden = !open;
-                }
-            };
-
-            var closeOtherGuideSections = function (exceptSection) {
-                guideSectionElements.forEach(function (sectionEl) {
-                    if (sectionEl !== exceptSection) {
-                        setGuideSectionOpen(sectionEl, false);
-                    }
-                });
-            };
-
-            var renderInstallGuide = function () {
-                if (!installGuideRoot || !installGuideAccordion) {
-                    return;
-                }
-
-                bindText('installGuideTitle', payload.installGuideTitle || 'How to install the app');
-                installGuideAccordion.textContent = '';
-                guideSectionElements = [];
-
-                getInstallGuideSections().forEach(function (section, index) {
-                    var sectionId = section.id || ('guide-' + index);
-                    var panelId = 'install-guide-panel-' + sectionId;
-                    var isOpen = !!section.defaultOpen;
-
-                    var wrapper = document.createElement('div');
-                    wrapper.className = 'guide-section' + (isOpen ? ' is-open' : '');
-                    wrapper.setAttribute('data-guide-id', sectionId);
-
-                    var trigger = document.createElement('button');
-                    trigger.type = 'button';
-                    trigger.className = 'guide-section__trigger';
-                    trigger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-                    trigger.setAttribute('aria-controls', panelId);
-
-                    var titleSpan = document.createElement('span');
-                    titleSpan.textContent = section.title || ('Section ' + (index + 1));
-                    var chevron = document.createElement('span');
-                    chevron.className = 'guide-section__chevron';
-                    chevron.setAttribute('aria-hidden', 'true');
-                    trigger.appendChild(titleSpan);
-                    trigger.appendChild(chevron);
-
-                    var panel = document.createElement('div');
-                    panel.className = 'guide-section__panel';
-                    panel.id = panelId;
-                    panel.hidden = !isOpen;
-
-                    var body = document.createElement('div');
-                    body.className = 'guide-section__body';
-
-                    if (section.imageUrl) {
-                        var image = document.createElement('img');
-                        image.className = 'guide-section__image';
-                        image.src = section.imageUrl;
-                        image.alt = section.title || 'Install guide';
-                        image.loading = 'lazy';
-                        body.appendChild(image);
-                    }
-
-                    if (Array.isArray(section.steps) && section.steps.length > 0) {
-                        var list = document.createElement('ol');
-                        list.className = 'guide-section__steps';
-                        section.steps.forEach(function (stepText) {
-                            var item = document.createElement('li');
-                            item.textContent = stepText;
-                            list.appendChild(item);
-                        });
-                        body.appendChild(list);
-                    }
-
-                    panel.appendChild(body);
-                    wrapper.appendChild(trigger);
-                    wrapper.appendChild(panel);
-
-                    trigger.addEventListener('click', function () {
-                        var willOpen = !wrapper.classList.contains('is-open');
-                        if (willOpen) {
-                            closeOtherGuideSections(wrapper);
-                        }
-                        setGuideSectionOpen(wrapper, willOpen);
-                    });
-
-                    installGuideAccordion.appendChild(wrapper);
-                    guideSectionElements.push(wrapper);
-                });
-            };
-
-            if (payload.installGuideEnabled) {
-                renderInstallGuide();
-            }
-
-            var scrollToInstallGuide = function () {
-                if (!installGuideRoot) {
-                    return;
-                }
-
-                var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-                var offset = parseInt(payload.installGuideScrollOffset, 10) || 0;
-
-                window.requestAnimationFrame(function () {
-                    var top = installGuideRoot.getBoundingClientRect().top + window.scrollY - offset;
-                    window.scrollTo({
-                        top: Math.max(0, top),
-                        behavior: prefersReducedMotion ? 'auto' : 'smooth'
-                    });
-                });
-            };
-
-            var remaining = Math.max(0, parseInt(payload.countdownSeconds, 10) || 0);
-            var countdownElements = document.querySelectorAll('[data-pd="countdown"]');
-            var renderCountdown = function () {
-                countdownElements.forEach(function (element) {
-                    element.textContent = String(remaining);
-                });
-            };
-
-            var completeMessage = payload.downloadCompleteText || 'Downloaded file. Open Downloads to check the file.';
-            var downloadAgainText = payload.downloadAgainText || 'Download again';
-            var timer = null;
-
-            var clearTimer = function () {
-                if (timer) {
-                    window.clearInterval(timer);
-                    timer = null;
-                }
-            };
-
-            var markDownloadStartedLegacy = function () {
-                bindTextIfEmpty('downloadStatus', completeMessage);
-                bindTextIfEmpty('downloadAgainButton', downloadAgainText);
-
-                countdownElements.forEach(function (element) {
-                    element.textContent = '0';
-                    element.setAttribute('aria-hidden', 'true');
-                });
-
-                hideOriginalDownloadActions();
-                setHidden('[data-pd="loadingPanel"], [data-pd="loadingIndicator"]', true);
-                setHidden('[data-pd="downloadCompletePanel"], [data-pd="downloadStatus"], [data-pd="downloadAgainButton"], [data-pd="downloadsPointer"]', false);
-                document.querySelectorAll('[data-pd="downloadsPointer"]').forEach(function (element) {
-                    element.setAttribute('data-pd-guidance', 'downloads-menu-or-notification');
-                });
-
-                document.querySelectorAll('[data-pd="downloadAgainButton"]').forEach(function (element) {
-                    element.setAttribute('href', buildTrackedDownloadUrl(ensureDownloadClickId()));
-                    element.setAttribute('rel', 'noopener');
-                });
-            };
-
-            var markDownloadStartedWithGuide = function () {
-                bindTextIfEmpty('downloadStatus', completeMessage);
-                bindTextIfEmpty('downloadAgainButton', downloadAgainText);
-                bindText('appSub', payload.appSubComplete || completeMessage);
-
-                countdownElements.forEach(function (element) {
-                    element.textContent = '0';
-                    element.setAttribute('aria-hidden', 'true');
-                });
-
-                hideOriginalDownloadActions();
-                setHidden('[data-pd="loadingPanel"], [data-pd="loadingIndicator"]', true);
-                setHidden('[data-pd="safetyNote"]', true);
-                setHidden('[data-pd="downloadsPointer"]', true);
-                setHidden('[data-pd="downloadCompletePanel"], [data-pd="downloadStatus"], [data-pd="downloadAgainButton"]', false);
-
-                document.querySelectorAll('[data-pd="statusCard"], .status-card').forEach(function (element) {
-                    element.classList.add('is-compact');
-                });
-                document.querySelectorAll('.shell, .page, main').forEach(function (element) {
-                    element.classList.add('is-post-download');
-                });
-                document.querySelectorAll('.help, section.help').forEach(function (element) {
-                    element.hidden = true;
-                    element.setAttribute('aria-hidden', 'true');
-                });
-
-                if (installGuideRoot) {
-                    installGuideRoot.hidden = false;
-                    installGuideRoot.setAttribute('aria-hidden', 'false');
-                    scrollToInstallGuide();
-                }
-
-                document.querySelectorAll('[data-pd="downloadAgainButton"]').forEach(function (element) {
-                    element.setAttribute('href', buildTrackedDownloadUrl(ensureDownloadClickId()));
-                    element.setAttribute('rel', 'noopener');
-                });
-            };
-
-            var markDownloadStarted = function () {
-                if (payload.installGuideEnabled) {
-                    markDownloadStartedWithGuide();
-                    return;
-                }
-
-                markDownloadStartedLegacy();
-            };
-
-            var startDownload = function () {
-                clearTimer();
-                var clickId = ensureDownloadClickId();
-                var trackedUrl = buildTrackedDownloadUrl(clickId);
-                trackPredownloadAutoRedirect(function () {
-                    markDownloadStarted();
-                    window.location.href = trackedUrl;
-                });
-            };
-
-            var handleDownloadButtonClick = function (event, element) {
-                clearTimer();
-
-                if (!payload.downloadUrl) {
-                    window.setTimeout(markDownloadStarted, 0);
-                    return;
-                }
-
-                event.preventDefault();
-                var clickId = ensureDownloadClickId();
-                var trackedUrl = buildTrackedDownloadUrl(clickId);
-                element.setAttribute('href', trackedUrl);
-                var buttonId = element.getAttribute('id') || element.getAttribute('data-button-id') || element.getAttribute('data-pd') || 'downloadButton';
-
-                trackPredownloadButtonClick(buttonId, clickId, function () {
-                    markDownloadStarted();
-                    window.location.href = trackedUrl;
-                });
-            };
-
-            downloadButtons.forEach(function (element) {
-                element.addEventListener('click', function (event) {
-                    handleDownloadButtonClick(event, element);
-                });
-            });
-
-            document.querySelectorAll('[data-pd="downloadAgainButton"]').forEach(function (element) {
-                element.addEventListener('click', function (event) {
-                    if (!payload.downloadUrl) {
-                        return;
-                    }
-
-                    event.preventDefault();
-                    var clickId = ensureDownloadClickId();
-                    var trackedUrl = buildTrackedDownloadUrl(clickId);
-                    element.setAttribute('href', trackedUrl);
-                    trackPredownloadButtonClick('downloadAgainButton', clickId, function () {
-                        window.location.href = trackedUrl;
-                    });
-                });
-            });
-
-            var startAutoDownloadCountdown = function () {
-                if (!payload.downloadUrl) {
-                    return;
-                }
-
-                if (remaining <= 0) {
-                    startDownload();
-                    return;
-                }
-
-                timer = window.setInterval(function () {
-                    remaining -= 1;
-                    renderCountdown();
-
-                    if (remaining <= 0) {
-                        startDownload();
-                    }
-                }, 1000);
-            };
-
-            var maybeStartAutoDownload = function () {
-                if (!payload.downloadUrl) {
-                    return;
-                }
-
-                if (inAppBrowserBlocked) {
-                    return;
-                }
-
-                if (smsGateRequired && !smsGateComplete) {
-                    return;
-                }
-
-                if (!smsGateRequired && !payload.autoRedirectEnabled) {
-                    return;
-                }
-
-                startAutoDownloadCountdown();
-            };
-
-            window.addEventListener('preDownloadSmsGateComplete', function () {
-                smsGateComplete = true;
-                maybeStartAutoDownload();
-            });
-
+        });
+    });
+
+    var startAutoDownloadCountdown = function () {
+        if (!payload.downloadUrl) {
+            return;
+        }
+
+        if (remaining <= 0) {
+            startDownload();
+            return;
+        }
+
+        timer = window.setInterval(function () {
+            remaining -= 1;
             renderCountdown();
-            maybeStartAutoDownload();
-        })();
-    </script>
-</body>
 
+            if (remaining <= 0) {
+                startDownload();
+            }
+        }, 1000);
+    };
+
+    var maybeStartAutoDownload = function () {
+        if (!payload.downloadUrl) {
+            return;
+        }
+
+        if (inAppBrowserBlocked) {
+            return;
+        }
+
+        if (smsGateRequired && !smsGateComplete) {
+            return;
+        }
+
+        if (!smsGateRequired && !payload.autoRedirectEnabled) {
+            return;
+        }
+
+        startAutoDownloadCountdown();
+    };
+
+    window.addEventListener('preDownloadSmsGateComplete', function () {
+        smsGateComplete = true;
+        maybeStartAutoDownload();
+    });
+
+    renderCountdown();
+    maybeStartAutoDownload();
+})();
+</script>
+</body>
 </html>

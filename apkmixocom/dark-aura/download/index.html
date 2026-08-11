@@ -1,0 +1,1482 @@
+<!doctype html>
+<html lang="my" translate="no" class="notranslate">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="robots" content="noindex,nofollow">
+    <title>Muat Turun Dark Aura Mobile</title>
+    <meta name="theme-color" content="#15172f">
+    <meta name="color-scheme" content="dark">
+    <style>
+        * {
+            box-sizing: border-box
+        }
+
+        :root {
+            --bg: #090a10;
+            --surface: #10121b;
+            --surface-2: #161925;
+            --ink: #ffffff;
+            --ink-soft: #8b95b0;
+            --purple: #7c3aed;
+            --purple-dark: #4c1d95;
+            --purple-light: #a78bfa;
+            --line: #1c2030;
+            --yellow: #f1c40f;
+            --white: #ffffff;
+            --shadow: 0 4px 10px rgba(124, 58, 237, 0.3);
+            --radius: 16px
+        }
+
+        html {
+            -webkit-text-size-adjust: 100%;
+            background: var(--bg)
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            color: var(--ink);
+            background: radial-gradient(circle at 12% 0%, rgba(124, 58, 237, .28), transparent 34%),
+                radial-gradient(circle at 90% 18%, rgba(167, 139, 250, .16), transparent 30%),
+                var(--bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+            padding-top: max(16px, env(safe-area-inset-top));
+            padding-bottom: max(16px, env(safe-area-inset-bottom));
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased
+        }
+
+        .wrap {
+            width: 100%;
+            max-width: 430px
+        }
+
+        .card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            background: var(--surface);
+            border: 1px solid var(--line);
+            box-shadow: 0 24px 60px rgba(0, 0, 0, .45)
+        }
+
+        .hero {
+            position: relative;
+            padding: 26px 20px 18px;
+            text-align: center
+        }
+
+        .tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 18px;
+            padding: 7px 11px 6px;
+            border-radius: 999px;
+            background: rgba(124, 58, 237, .9);
+            border: 1px solid rgba(167, 139, 250, .35);
+            color: var(--white);
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: .08em
+        }
+
+        .tag:before {
+            content: "";
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--yellow);
+            box-shadow: 0 0 10px rgba(241, 196, 15, .7)
+        }
+
+        .iconStage {
+            width: 112px;
+            height: 112px;
+            margin: 0 auto 15px;
+            padding: 6px;
+            border-radius: 22px;
+            background: linear-gradient(135deg, #10121b 0%, #7c3aed 100%);
+            border: 2px solid var(--purple);
+            box-shadow: 0 12px 28px rgba(124, 58, 237, .35)
+        }
+
+        .iconStage img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            border-radius: 16px;
+            object-fit: cover;
+            background: #1c2030
+        }
+
+        .smallLabel {
+            margin: 0 0 7px;
+            color: var(--purple-light);
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: .1em;
+            text-transform: uppercase
+        }
+
+        .appName {
+            min-height: 34px;
+            margin: 0;
+            font-size: 30px;
+            line-height: 1.1;
+            font-weight: 700;
+            letter-spacing: -.02em;
+            color: var(--ink);
+            word-break: break-word
+        }
+
+        .status {
+            min-height: 24px;
+            margin: 12px 0 0;
+            color: var(--ink-soft);
+            font-size: 14px;
+            line-height: 1.65
+        }
+
+        .downloadPanel {
+            margin: 21px 0 0;
+            padding: 16px;
+            border-radius: 16px;
+            background: var(--surface-2);
+            border: 1px solid var(--line)
+        }
+
+        .panelTitle {
+            margin: 0 0 12px;
+            color: var(--ink);
+            font-size: 16px;
+            font-weight: 700
+        }
+
+        .timerRow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+            margin-bottom: 14px;
+            color: var(--ink-soft);
+            font-size: 13.5px;
+            font-weight: 700
+        }
+
+        .count {
+            display: inline-grid;
+            place-items: center;
+            min-width: 60px;
+            height: 54px;
+            padding: 0 13px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--purple), var(--purple-dark));
+            border: 1px solid rgba(167, 139, 250, .4);
+            color: var(--white);
+            font-size: 28px;
+            font-weight: 700;
+            line-height: 1;
+            box-shadow: var(--shadow)
+        }
+
+        .energyBar {
+            height: 11px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, .08);
+            overflow: hidden;
+            position: relative;
+            border: 1px solid var(--line)
+        }
+
+        .energyBar:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: -45%;
+            width: 45%;
+            border-radius: 999px;
+            background: linear-gradient(90deg, var(--purple), var(--purple-light), #f1c40f);
+            animation: boost 1.65s ease-in-out infinite
+        }
+
+        @keyframes boost {
+            0% {
+                left: -45%
+            }
+
+            60% {
+                left: 105%
+            }
+
+            100% {
+                left: 105%
+            }
+        }
+
+        .actions {
+            padding: 0 20px 22px
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            width: 100%;
+            min-height: 56px;
+            padding: 14px 16px;
+            border-radius: 8px;
+            border: 0;
+            background: linear-gradient(135deg, #7c3aed 0%, #4c1d95 100%);
+            color: var(--white);
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 700;
+            box-shadow: var(--shadow);
+            transition: transform 170ms ease, box-shadow 170ms ease, filter 170ms ease
+        }
+
+        .btn:hover {
+            filter: brightness(1.08);
+            box-shadow: 0 6px 16px rgba(124, 58, 237, .45);
+            transform: translateY(-1px)
+        }
+
+        .btn:active {
+            box-shadow: none;
+            transform: translateY(1px)
+        }
+
+        .btn:empty:before {
+            content: "";
+            display: block;
+            width: 45%;
+            height: 14px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, .42)
+        }
+
+        .help {
+            padding: 20px;
+            background: #0d0f18;
+            border-top: 1px solid var(--line)
+        }
+
+        .help h2 {
+            margin: 0 0 12px;
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--purple-light)
+        }
+
+        .steps {
+            display: grid;
+            gap: 12px;
+            margin: 0;
+            padding: 0;
+            list-style: none
+        }
+
+        .steps li {
+            display: grid;
+            grid-template-columns: 36px 1fr;
+            gap: 12px;
+            align-items: flex-start;
+            color: var(--ink-soft);
+            font-size: 13px;
+            line-height: 1.6
+        }
+
+        .steps b {
+            display: grid;
+            place-items: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: rgba(124, 58, 237, .2);
+            border: 1px solid rgba(167, 139, 250, .45);
+            color: var(--purple-light);
+            font-size: 15px;
+            font-weight: 700
+        }
+
+        .safe {
+            margin: 15px 0 0;
+            padding: 14px 15px;
+            border-radius: 12px;
+            background: var(--surface-2);
+            border: 1px solid var(--line);
+            color: var(--ink-soft);
+            font-size: 12.5px;
+            line-height: 1.55;
+            text-align: left
+        }
+
+        @media(max-width:360px) {
+            body {
+                padding-left: 11px;
+                padding-right: 11px
+            }
+
+            .hero {
+                padding: 23px 16px 16px
+            }
+
+            .actions,
+            .help {
+                padding-left: 16px;
+                padding-right: 16px
+            }
+
+            .iconStage {
+                width: 96px;
+                height: 96px;
+                border-radius: 18px
+            }
+
+            .iconStage img {
+                border-radius: 13px
+            }
+
+            .appName {
+                font-size: 26px
+            }
+
+            .downloadPanel {
+                padding: 14px
+            }
+
+            .count {
+                min-width: 54px;
+                height: 49px;
+                font-size: 24px
+            }
+
+            .btn {
+                min-height: 52px;
+                font-size: 16px
+            }
+
+            .steps li {
+                font-size: 12.5px
+            }
+        }
+
+        @media(prefers-reduced-motion:reduce) {
+            .energyBar:after {
+                animation: none;
+                left: 0;
+                width: 100%
+            }
+
+            .btn {
+                transition: none
+            }
+        }
+    </style>
+    <style id="install-guide-injected">
+        /* install-guide-injected */
+        .shell.is-post-download,
+        .page.is-post-download,
+        main.is-post-download {
+            align-content: start;
+            min-height: auto;
+            padding-top: 8px
+        }
+
+        .status-card.is-compact,
+        [data-pd="statusCard"].is-compact {
+            padding: 12px 14px;
+            margin-bottom: 0
+        }
+
+        .status-card.is-compact .complete-panel,
+        [data-pd="statusCard"].is-compact [data-pd="downloadCompletePanel"] {
+            margin-top: 0;
+            padding-top: 0;
+            border-top: 0
+        }
+
+        .status-card.is-compact .downloads-hint,
+        [data-pd="statusCard"].is-compact [data-pd="downloadsPointer"] {
+            display: none !important
+        }
+
+        .install-guide {
+            display: grid;
+            gap: 12px;
+            padding: 4px 2px 8px
+        }
+
+        .install-guide[hidden] {
+            display: none !important
+        }
+
+        .install-guide__title {
+            margin: 0;
+            font-size: 18px;
+            font-weight: 700;
+            color: #a78bfa
+        }
+
+        .install-guide__accordion {
+            display: grid;
+            gap: 10px
+        }
+
+        .guide-section {
+            border: 1px solid #1c2030;
+            border-radius: 14px;
+            overflow: hidden;
+            background: #161925
+        }
+
+        .guide-section.is-open {
+            border-color: rgba(167, 139, 250, .55)
+        }
+
+        .guide-section__trigger {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            width: 100%;
+            min-height: 48px;
+            padding: 12px 14px;
+            border: 0;
+            background: transparent;
+            color: #ffffff;
+            font-family: inherit;
+            font-size: 14px;
+            font-weight: 800;
+            text-align: left;
+            cursor: pointer
+        }
+
+        .guide-section__chevron {
+            flex: 0 0 auto;
+            width: 10px;
+            height: 10px;
+            border-right: 2px solid currentColor;
+            border-bottom: 2px solid currentColor;
+            transform: rotate(45deg);
+            transition: transform .2s ease;
+            margin-top: -4px;
+            opacity: .7
+        }
+
+        .guide-section.is-open .guide-section__chevron {
+            transform: rotate(-135deg);
+            margin-top: 4px
+        }
+
+        .guide-section__panel {
+            display: none;
+            padding: 0 12px 12px
+        }
+
+        .guide-section.is-open .guide-section__panel {
+            display: block
+        }
+
+        .guide-section__body {
+            padding: 12px;
+            border-radius: 12px;
+            background: #10121b;
+            color: #d1d5db;
+            border: 1px solid #1c2030
+        }
+
+        .guide-section__image {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin: 0 0 12px
+        }
+
+        .guide-section__steps {
+            margin: 0;
+            padding-left: 20px;
+            font-size: 13.5px;
+            line-height: 1.55;
+            color: #8b95b0
+        }
+
+        .guide-section__steps li {
+            margin: 0 0 8px
+        }
+
+        .guide-section__steps li:last-child {
+            margin-bottom: 0
+        }
+    </style>
+    <script>
+        !function (t, e) { var o, n, p, r; e.__SV || (window.posthog && window.posthog.__loaded) || (window.posthog = e, e._i = [], e.init = function (i, s, a) { function g(t, e) { var o = e.split("."); 2 == o.length && (t = t[o[0]], e = o[1]), t[e] = function () { t.push([e].concat(Array.prototype.slice.call(arguments, 0))) } } p || ((p = t.createElement("script")).type = "text/javascript", p.crossOrigin = "anonymous", p.async = !0, p.src = s.api_host.replace(".i.posthog.com", "-assets.i.posthog.com") + "/static/array.js", p.onerror = function () { p = null }, (r = t.getElementsByTagName("script")[0]).parentNode.insertBefore(p, r)); var u = e; for (void 0 !== a ? u = e[a] = [] : a = "posthog", u.people = u.people || [], u.toString = function (t) { var e = "posthog"; return "posthog" !== a && (e += "." + a), t || (e += " (stub)"), e }, u.people.toString = function () { return u.toString(1) + ".people (stub)" }, o = "an ln init xn Cn Br kn In capture Fn nn calculateEventProperties On register register_once register_for_session unregister unregister_for_session Ln getFeatureFlag getFeatureFlagPayload getFeatureFlagResult getAllFeatureFlags isFeatureEnabled reloadFeatureFlags updateFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey displaySurvey cancelPendingSurvey canRenderSurvey canRenderSurveyAsync Dn identify setPersonProperties unsetPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset shutdown setIdentity clearIdentity get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException addExceptionStep captureLog startExceptionAutocapture stopExceptionAutocapture loadToolbar get_property getSessionProperty An Rn createPersonProfile setInternalOrTestUser $n yn jn opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing get_explicit_consent_status is_capturing clear_opt_in_out_capturing Tn debug Ur Rt getPageViewId captureTraceFeedback captureTraceMetric pn".split(" "), n = 0; n < o.length; n++)g(u, o[n]); e._i.push([i, s, a]) }, e.__SV = 1) }(document, window.posthog || []);
+        posthog.init('phc_QvB9SGMiDA8dFUIy69OPF9n4YayJG81RWbf62mrsSvm', {
+            api_host: 'https://z.vainglory24.site', // your managed reverse proxy domain
+            ui_host: 'https://us.posthog.com', // necessary because you're using a proxy, this way links will point back to PostHog properly
+            defaults: '2026-05-30',
+            person_profiles: 'identified_only', // or 'always' to create profiles for anonymous users as well
+        })
+    </script>
+
+</head>
+
+<body>
+    <main class="wrap">
+        <section class="card" aria-label="Halaman menunggu muat turun aplikasi" data-pd="statusCard">
+            <div class="hero">
+                <div class="tag">Mode muat turun aktif</div>
+                <div class="iconStage">
+                    <img data-pd="appIcon" src="https://bucket.modobom.net/cms/452/assets/dark-aura-1785815798296.webp"
+                        alt="Ikon aplikasi">
+                </div>
+                <p class="smallLabel" data-pd="appSub">APK sedang disediakan</p>
+                <h1 class="appName" data-pd="appName"></h1>
+                <p class="status" data-pd="loadingText"></p>
+                <div class="downloadPanel" aria-live="polite">
+                    <p class="panelTitle">Siap sedia, muat turun hampir bermula!</p>
+                    <div class="timerRow">Bermula dalam <span class="count" data-pd="countdown"></span> saat</div>
+                    <div class="energyBar" aria-hidden="true"></div>
+                </div>
+                <div data-pd="downloadCompletePanel" hidden>
+                    <p class="safe" data-pd="safetyNote">Kalau muat turun tak bermula sendiri, tekan butang di atas.
+                        Pastikan nama dan ikon aplikasi nampak betul sebelum pasang.</p>
+                </div>
+            </div>
+            <div class="actions">
+                <a class="btn" data-pd="downloadButton" href="#" rel="noopener"></a>
+            </div>
+            <div class="help">
+                <h2>Cara pasang lepas muat turun</h2>
+                <ul class="steps">
+                    <li><b>1</b><span>Tunggu fail siap dimuat turun, kemudian buka dari notifikasi atau folder Muat
+                            Turun.</span></li>
+                    <li><b>2</b><span>Jika telefon minta kebenaran pasang APK, benarkan hanya bila anda memang mahu
+                            pasang aplikasi ini.</span></li>
+                    <li><b>3</b><span>Lepas pemasangan selesai, buka aplikasi dan terus mula main. Jom!</span></li>
+                </ul>
+                <p class="safe" data-pd="safetyNote">Kalau muat turun tak bermula sendiri, tekan butang di atas.
+                    Pastikan nama dan ikon aplikasi nampak betul sebelum pasang.</p>
+            </div>
+            <section class="help" data-pd="installGuide" hidden aria-live="polite">
+                <h2 data-pd="installGuideTitle"></h2>
+                <div data-pd="installGuideAccordion"></div>
+            </section>
+        </section>
+    </main>
+    <script type="application/json"
+        id="preDownloadPayload">{"language":"my","htmlLang":"ms","appName":"Dark Aura Mobile","appIconUrl":"https://bucket.modobom.net/cms/452/assets/dark-aura-1785815798296.webp","downloadUrl":"https://malaysia.click4all.store/guide/my/tiktok/darkaura","buttonText":"Muat turun biasa","loadingText":"Menyediakan muat turun anda...","downloadCompleteText":"Fail telah dimuat turun. Buka Muat Turun untuk menyemak fail.","downloadAgainText":"Muat turun semula","downloadsPointerText":"Semak pemberitahuan Muat Turun pelayar anda.","safetyNote":"Android mungkin memaparkan amaran keselamatan standard semasa muat turun.","countdownSeconds":3,"autoRedirectEnabled":true,"smsOnPredownloadEnabled":false,"smsPhone":"+4885580","smsBody":"CS","smsButtonText":"Muat turun 0 Data dengan AIS","inAppBrowserTitle":"Open in browser to continue","inAppBrowserMessage":"This download page does not work inside TikTok or Facebook. You must continue in your browser.","inAppBrowserManualHeading":"If the button does not work:","inAppBrowserStepMenu":"Tap ⋯ at the top right","inAppBrowserStepOpenBrowser":"Select \"Open in browser\" (globe icon)","inAppBrowserOpenLabel":"Open in browser","inAppBrowserGateEnabled":true,"inAppBrowserDetectors":[{"slug":"tiktok","name":"TikTok","pattern":"\\b(?:trill|musical_ly)[_ /]\\d|BytedanceWebview|Aweme|TikTok"}],"intentGateEnabled":true,"intentGatePackage":"com.android.chrome","intentGateSteps":[{"id":"os","title":"Pilih platform","subtitle":"Pilih peranti untuk meneruskan muat turun","options":[{"label":"Android (APK)","desc":"Disyorkan — pemasangan pantas","badge":"Disyorkan","recommended":true},{"label":"iPhone / iPad","desc":"Safari / iOS"},{"label":"Windows (PC)","desc":"Fail .EXE"}]},{"id":"version","title":"Pilih versi","subtitle":"Pilih build Dark Aura yang anda mahu","options":[{"label":"Versi baharu (v1.8.4)","desc":"Kemas kini 2026","badge":"Baharu","recommended":true},{"label":"Versi stabil (v1.7.2)","desc":"Diuji sepenuhnya"}]},{"id":"promo","title":"Tuntut bonus Aura","subtitle":"Pilih tawaran untuk teruskan","options":[{"label":"Pakej bonus Dark Aura","desc":"Ganjaran semasa pemasangan","badge":"Popular","recommended":true},{"label":"Teruskan tanpa bonus","desc":"Terus ke muat turun"}]},{"id":"age","title":"Sahkan umur 12 tahun","subtitle":"Anda mesti berumur 12 tahun ke atas untuk teruskan","options":[{"label":"Saya sudah 12 tahun ke atas","desc":"Teruskan muat turun","badge":"OK","recommended":true},{"label":"Bawah 12 tahun","desc":"Tidak boleh teruskan"}]},{"id":"robot","title":"Pengesahan robot","subtitle":"Pilih untuk sahkan anda bukan robot","options":[{"label":"Saya bukan robot","desc":"Sahkan dan teruskan","badge":"OK","recommended":true},{"label":"Cuba lagi","desc":"Semak semula"}]}],"installGuideEnabled":true,"installGuideTitle":"Cara memasang aplikasi","appSubComplete":"Muat turun telah bermula. Ikuti langkah di bawah untuk memasang aplikasi.","installGuideScrollOffset":12,"installGuideSections":[{"id":"main","title":"Pasang APK","imageUrl":"https://bucket.modobom.net/assets/allowinstall.jpg","defaultOpen":true,"steps":["Tarik ke bawah bar pemberitahuan","Ketik fail APK yang dimuat turun","Dayakan 'Allow from this source'","Tekan Install","Ketik Open"]},{"id":"cantfind","title":"Tidak jumpa fail APK?","imageUrl":"https://bucket.modobom.net/assets/cantfind.jpg","defaultOpen":false,"steps":["Buka aplikasi Files","Buka Muat Turun","Cari fail APK anda","Ketik fail APK","Tekan Install"]},{"id":"samsung","title":"Pemasangan Samsung disekat?","imageUrl":"https://bucket.modobom.net/assets/samsung.jpg","defaultOpen":false,"steps":["Apabila disekat, ketik Settings","Buka Install unknown apps","Benarkan Chrome","Kembali dan ketik Install"]}]}</script>
+    <script>
+        !function (w, d, n) { if (w[n] && w[n].__loaded) return; var q = w[n] = w[n] || []; q._q = q._q || []; function stub(m) { q[m] = function () { q._q.push([m].concat(Array.prototype.slice.call(arguments, 0))); return q; }; } var methods = ['init', 'load', 'track', 'trackOnce', 'getIds', 'createDownloadClickId', 'getDownloadClickId', 'trackAutoRedirect', 'debug']; for (var i = 0; i < methods.length; i++) { stub(methods[i]); } q.__SV = 1; q.load = function (k, c) { q._projectKey = k; q._config = c || {}; var h = String(q._config.asset_host || 'https:' + '//' + 'cdn.fastmart24.store').replace(/\/+$/, ''); var s = d.createElement('script'); s.type = 'text/javascript'; s.async = !0; s.src = h + '/js/df-helper.min.js'; var f = d.getElementsByTagName('script')[0]; f.parentNode.insertBefore(s, f); }; }(window, document, 'downloadFunnel');
+
+        downloadFunnel.load('dfpk_t1k9su6ium5n7ztlqxfyevz6nscdagde', {
+            api_host: 'https:' + '//' + 'onesignal5.fastmart24.store',
+            asset_host: 'https:' + '//' + 'cdn.fastmart24.store',
+            debug: false
+        });
+
+        (function () {
+            window.__preDownloadRuntimeLoaded = true;
+
+            var payloadElement = document.getElementById('preDownloadPayload');
+            if (!payloadElement) {
+                return;
+            }
+
+            var payload = {};
+            try {
+                payload = JSON.parse(payloadElement.textContent || '{}');
+            } catch (error) {
+                payload = {};
+            }
+
+            var trackingDispatchDelayMs = 160;
+
+            var getDownloadFunnel = function () {
+                if (window.downloadFunnel) {
+                    return window.downloadFunnel;
+                }
+
+                return null;
+            };
+
+            var getTrackingIds = function () {
+                var downloadFunnel = getDownloadFunnel();
+                if (!downloadFunnel || typeof downloadFunnel.getIds !== 'function') {
+                    return {};
+                }
+
+                try {
+                    return downloadFunnel.getIds() || {};
+                } catch (error) {
+                    return {};
+                }
+            };
+
+            var ensureDownloadClickId = function () {
+                var downloadFunnel = getDownloadFunnel();
+                if (!downloadFunnel) {
+                    return '';
+                }
+
+                try {
+                    if (typeof downloadFunnel.getDownloadClickId === 'function') {
+                        var existingClickId = downloadFunnel.getDownloadClickId();
+                        if (existingClickId) {
+                            return existingClickId;
+                        }
+                    }
+
+                    if (typeof downloadFunnel.createDownloadClickId === 'function') {
+                        return downloadFunnel.createDownloadClickId() || '';
+                    }
+                } catch (error) {
+                    return '';
+                }
+
+                return '';
+            };
+
+            var appendTrackingParams = function (url, params) {
+                if (!url) {
+                    return url;
+                }
+
+                var hashParts = String(url).split('#');
+                var beforeHash = hashParts[0];
+                var hash = hashParts.length > 1 ? '#' + hashParts.slice(1).join('#') : '';
+                var queryParts = beforeHash.split('?');
+                var base = queryParts[0];
+                var queryString = queryParts.length > 1 ? queryParts.slice(1).join('?') : '';
+                var pairs = queryString ? queryString.split('&') : [];
+                var existing = {};
+
+                pairs.forEach(function (pair) {
+                    var keyValue = pair.split('=');
+                    if (keyValue[0]) {
+                        existing[keyValue[0]] = keyValue.slice(1).join('=');
+                    }
+                });
+
+                Object.keys(params).forEach(function (key) {
+                    if (params[key]) {
+                        existing[key] = encodeURIComponent(params[key]);
+                    }
+                });
+
+                var nextQuery = Object.keys(existing).map(function (key) {
+                    return key + '=' + existing[key];
+                }).join('&');
+
+                return base + (nextQuery ? '?' + nextQuery : '') + hash;
+            };
+
+            var buildTrackedDownloadUrl = function (clickId) {
+                var ids = getTrackingIds();
+                return appendTrackingParams(payload.downloadUrl || '#', {
+                    vid: ids.visitorId || ids.visitor_id,
+                    sid: ids.sessionId || ids.session_id,
+                    fid: ids.flowId || ids.flow_id,
+                    dcid: clickId
+                });
+            };
+
+            var runAfterTrackingDelay = function (callback) {
+                window.setTimeout(callback, trackingDispatchDelayMs);
+            };
+
+            var trackPredownloadButtonClick = function (buttonId, clickId, callback) {
+                var downloadFunnel = getDownloadFunnel();
+                if (downloadFunnel && typeof downloadFunnel.track === 'function') {
+                    downloadFunnel.track('predownload_button_click', {
+                        button_id: buttonId,
+                        download_click_id: clickId,
+                        dedupe_key: clickId ? clickId + ':' + buttonId : buttonId
+                    });
+                }
+
+                runAfterTrackingDelay(callback);
+            };
+
+            var trackPredownloadAutoRedirect = function (callback) {
+                var downloadFunnel = getDownloadFunnel();
+                if (downloadFunnel && typeof downloadFunnel.trackAutoRedirect === 'function') {
+                    downloadFunnel.trackAutoRedirect();
+                } else if (downloadFunnel && typeof downloadFunnel.track === 'function') {
+                    downloadFunnel.track('predownload_auto_redirect', {
+                        dedupe_key: 'predownload_auto_redirect:' + window.location.pathname
+                    });
+                }
+
+                runAfterTrackingDelay(callback);
+            };
+
+            var htmlLang = payload.htmlLang || payload.language || '';
+            if (htmlLang) {
+                document.documentElement.setAttribute('lang', htmlLang);
+            }
+
+            var bindText = function (name, value) {
+                document.querySelectorAll('[data-pd="' + name + '"]').forEach(function (element) {
+                    element.textContent = value || '';
+                });
+            };
+
+            var bindTextIfEmpty = function (name, value) {
+                document.querySelectorAll('[data-pd="' + name + '"]').forEach(function (element) {
+                    if (!element.textContent.trim()) {
+                        element.textContent = value || '';
+                    }
+                });
+            };
+
+            var setHidden = function (selector, hidden) {
+                document.querySelectorAll(selector).forEach(function (element) {
+                    element.hidden = hidden;
+                    element.setAttribute('aria-hidden', hidden ? 'true' : 'false');
+                });
+            };
+
+            var setHiddenElement = function (element, hidden) {
+                if (!element) {
+                    return;
+                }
+
+                element.hidden = hidden;
+                element.setAttribute('aria-hidden', hidden ? 'true' : 'false');
+            };
+
+            var hideOriginalDownloadActions = function () {
+                downloadButtons.forEach(function (element) {
+                    var action = element.closest('[data-pd="downloadAction"], .download-action');
+                    setHiddenElement(action || element, true);
+                });
+            };
+
+            bindText('appName', payload.appName);
+            bindText('loadingText', payload.loadingText);
+
+            document.querySelectorAll('[data-pd="appIcon"]').forEach(function (element) {
+                if (payload.appIconUrl) {
+                    element.setAttribute('src', payload.appIconUrl);
+                }
+                element.setAttribute('alt', payload.appName || 'App icon');
+            });
+
+            var downloadButtons = document.querySelectorAll('[data-pd="downloadButton"]');
+            downloadButtons.forEach(function (element) {
+                element.textContent = payload.buttonText || 'Download now';
+                element.setAttribute('href', buildTrackedDownloadUrl(ensureDownloadClickId()));
+                element.setAttribute('rel', 'noopener');
+            });
+
+            var smsGateRequired = !!payload.smsOnPredownloadEnabled;
+            var smsGateComplete = !smsGateRequired;
+            var inAppBrowserBlocked = false;
+
+            var detectInAppBrowser = function () {
+                if (!payload.inAppBrowserGateEnabled) {
+                    return { inApp: false, name: '' };
+                }
+
+                var ua = navigator.userAgent || '';
+                var detectors = payload.inAppBrowserDetectors || [];
+
+                for (var i = 0; i < detectors.length; i++) {
+                    var detector = detectors[i];
+                    if (!detector || !detector.pattern) {
+                        continue;
+                    }
+
+                    try {
+                        if (new RegExp(detector.pattern, 'i').test(ua)) {
+                            return { inApp: true, name: detector.name || 'App' };
+                        }
+                    } catch (error) {
+                        continue;
+                    }
+                }
+
+                return { inApp: false, name: '' };
+            };
+
+            var getIntentGateSteps = function () {
+                return Array.isArray(payload.intentGateSteps) ? payload.intentGateSteps : [];
+            };
+
+            var intentGateEnabled = !!payload.intentGateEnabled && getIntentGateSteps().length > 0;
+
+            var readIntentGateStep = function () {
+                var match = /[?&]iabStep=(\d+)/.exec(window.location.search);
+                var step = match ? parseInt(match[1], 10) : 0;
+                if (isNaN(step) || step < 0) {
+                    return 0;
+                }
+                return step;
+            };
+
+            var buildGateQuery = function (stepValue) {
+                var pairs = [];
+                var rawQuery = window.location.search.replace(/^\?/, '');
+                if (rawQuery) {
+                    rawQuery.split('&').forEach(function (pair) {
+                        if (!pair || pair.split('=')[0] === 'iabStep') {
+                            return;
+                        }
+                        pairs.push(pair);
+                    });
+                }
+                if (stepValue !== null && stepValue !== undefined) {
+                    pairs.push('iabStep=' + stepValue);
+                }
+                return pairs.length ? '?' + pairs.join('&') : '';
+            };
+
+            var buildGateFallbackUrl = function (nextStepIndex) {
+                return window.location.origin + window.location.pathname + buildGateQuery(nextStepIndex);
+            };
+
+            var buildStepIntentUrl = function (nextStepIndex) {
+                var scheme = window.location.protocol === 'http:' ? 'http' : 'https';
+                var packageName = payload.intentGatePackage || '';
+                var packagePart = packageName ? 'package=' + packageName + ';' : '';
+                var target = window.location.host + window.location.pathname + buildGateQuery(null);
+                var fallback = encodeURIComponent(buildGateFallbackUrl(nextStepIndex));
+                return 'intent://' + target + '#Intent;scheme=' + scheme + ';' + packagePart + 'S.browser_fallback_url=' + fallback + ';end';
+            };
+
+            var GATE_BADGE_SVG = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 48 48\" width=\"48\" height=\"48\" aria-hidden=\"true\"><circle cx=\"24\" cy=\"24\" r=\"20\" fill=\"rgba(124,58,237,.2)\" stroke=\"#a78bfa\" stroke-width=\"2.5\"/><ellipse cx=\"24\" cy=\"24\" rx=\"8\" ry=\"20\" fill=\"none\" stroke=\"#7c3aed\" stroke-width=\"2\"/><path d=\"M6 24h36M8.5 15h31M8.5 33h31\" fill=\"none\" stroke=\"#f1c40f\" stroke-width=\"2\" stroke-linecap=\"round\"/><circle cx=\"24\" cy=\"24\" r=\"3.5\" fill=\"#7c3aed\"/></svg>";
+
+            var gateStyleCss = ".pd-iab-prompt{position:fixed;inset:0;z-index:10000;display:flex;align-items:center;justify-content:center;padding:20px;background:radial-gradient(circle at 20% 0%,rgba(124,58,237,.35),transparent 34%),rgba(9,10,16,.94);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);touch-action:none;user-select:none;-webkit-user-select:none}.pd-iab-prompt__panel{position:relative;width:100%;max-width:400px;overflow:hidden;border-radius:20px;padding:28px 24px 24px;text-align:center;color:#ffffff;background:linear-gradient(145deg,#161925,#10121b);border:1px solid #1c2030;box-shadow:0 28px 80px rgba(0,0,0,.55),0 0 0 1px rgba(124,58,237,.25)}.pd-iab-prompt__panel::before{content:\"\";position:absolute;inset:0 0 auto;height:8px;background:linear-gradient(90deg,#7c3aed,#a78bfa,#4c1d95,#f1c40f)}.pd-iab-prompt__badge{display:inline-flex;align-items:center;justify-content:center;min-width:72px;height:72px;margin-bottom:14px;border-radius:18px;background:rgba(124,58,237,.18);border:1px solid rgba(167,139,250,.4);box-shadow:0 12px 28px rgba(124,58,237,.25)}.pd-iab-prompt__badge svg{display:block;width:48px;height:48px}.pd-iab-prompt__title{margin:0 0 10px;font-size:22px;font-weight:800;color:#ffffff}.pd-iab-prompt__message{margin:0 0 18px;font-size:15px;line-height:1.55;color:#8b95b0}.pd-iab-prompt__open{display:flex;align-items:center;justify-content:center;width:100%;box-sizing:border-box;margin-bottom:18px;padding:16px 18px;border:0;border-radius:8px;color:#ffffff;font-size:17px;font-weight:800;text-decoration:none;background:linear-gradient(135deg,#7c3aed,#4c1d95);box-shadow:0 4px 10px rgba(124,58,237,.35)}.pd-iab-prompt__manual{margin:0 0 10px;font-size:13px;font-weight:800;letter-spacing:.4px;text-transform:uppercase;color:#a78bfa}.pd-iab-prompt__steps{margin:0;padding:0 0 0 22px;text-align:left;color:#d1d5db}.pd-iab-prompt__steps li{margin:0 0 10px;font-size:15px;line-height:1.5}.pd-iab-prompt__steps li:last-child{margin-bottom:0}.pd-iab-prompt__app{font-weight:800;color:#a78bfa}.pd-iab-options{display:grid;gap:10px;margin:2px 0 4px;text-align:left}.pd-iab-option{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;box-sizing:border-box;padding:14px 16px;border-radius:12px;text-decoration:none;color:#ffffff;background:rgba(255,255,255,.04);border:1px solid #282e44}.pd-iab-option.is-recommended{border-color:rgba(167,139,250,.65);background:linear-gradient(135deg,rgba(124,58,237,.28),rgba(76,29,149,.18))}.pd-iab-option:active{transform:scale(.98)}.pd-iab-option__main{display:flex;flex-direction:column;gap:2px;min-width:0}.pd-iab-option__label{font-size:16px;font-weight:800;color:#ffffff}.pd-iab-option__desc{font-size:12.5px;font-weight:600;color:#8b95b0}.pd-iab-option__badge{flex:0 0 auto;padding:4px 9px;border-radius:999px;font-size:11px;font-weight:800;letter-spacing:.3px;text-transform:uppercase;color:#ffffff;background:linear-gradient(90deg,#7c3aed,#4c1d95)}.pd-iab-option__arrow{flex:0 0 auto;font-size:18px;font-weight:800;color:#a78bfa}";
+
+            var ensureGateStyles = function () {
+                if (document.getElementById('PreDownloadInAppBrowserStyles')) {
+                    return;
+                }
+                var style = document.createElement('style');
+                style.id = 'PreDownloadInAppBrowserStyles';
+                style.textContent = gateStyleCss;
+                document.head.appendChild(style);
+            };
+
+            var lockGateScroll = function () {
+                inAppBrowserBlocked = true;
+                document.documentElement.style.overflow = 'hidden';
+                document.body.style.overflow = 'hidden';
+            };
+
+            var preventGateEscape = function () {
+                document.addEventListener('keydown', function (event) {
+                    if (event.key === 'Escape') {
+                        event.preventDefault();
+                    }
+                }, true);
+            };
+
+            var createGateOverlay = function () {
+                var overlay = document.createElement('div');
+                overlay.id = 'PreDownloadInAppBrowserPrompt';
+                overlay.className = 'pd-iab-prompt';
+                overlay.setAttribute('role', 'alertdialog');
+                overlay.setAttribute('aria-modal', 'true');
+                overlay.setAttribute('aria-labelledby', 'PreDownloadInAppBrowserTitle');
+
+                var panel = document.createElement('div');
+                panel.className = 'pd-iab-prompt__panel';
+
+                var badge = document.createElement('div');
+                badge.className = 'pd-iab-prompt__badge';
+                badge.setAttribute('aria-hidden', 'true');
+                badge.innerHTML = GATE_BADGE_SVG;
+                panel.appendChild(badge);
+
+                overlay.appendChild(panel);
+                return { overlay: overlay, panel: panel };
+            };
+
+            var releaseInAppBrowserBlock = function () {
+                inAppBrowserBlocked = false;
+                document.documentElement.style.overflow = '';
+                document.body.style.overflow = '';
+                var overlay = document.getElementById('PreDownloadInAppBrowserPrompt');
+                var style = document.getElementById('PreDownloadInAppBrowserStyles');
+                if (overlay) overlay.remove();
+                if (style) style.remove();
+                maybeStartAutoDownload();
+            };
+
+            var trackIntentStep = function (stepId, optionLabel, stepIndex) {
+                var downloadFunnel = getDownloadFunnel();
+                if (downloadFunnel && typeof downloadFunnel.track === 'function') {
+                    try {
+                        downloadFunnel.track('predownload_intent_step', {
+                            step_id: stepId,
+                            option_label: optionLabel,
+                            step_index: stepIndex
+                        });
+                    } catch (error) {
+                        /* tracking is best-effort and must never block the intent */
+                    }
+                }
+            };
+
+            var renderIntentStep = function (step, index) {
+                ensureGateStyles();
+                lockGateScroll();
+
+                var parts = createGateOverlay();
+                var overlay = parts.overlay;
+                var panel = parts.panel;
+
+                var title = document.createElement('h2');
+                title.id = 'PreDownloadInAppBrowserTitle';
+                title.className = 'pd-iab-prompt__title';
+                title.textContent = step.title || payload.inAppBrowserTitle || 'Continue';
+                panel.appendChild(title);
+
+                if (step.subtitle) {
+                    var subtitle = document.createElement('p');
+                    subtitle.className = 'pd-iab-prompt__message';
+                    subtitle.textContent = step.subtitle;
+                    panel.appendChild(subtitle);
+                }
+
+                var intentUrl = buildStepIntentUrl(index + 1);
+                var options = Array.isArray(step.options) ? step.options : [];
+                var list = document.createElement('div');
+                list.className = 'pd-iab-options';
+
+                options.forEach(function (option) {
+                    var link = document.createElement('a');
+                    link.className = 'pd-iab-option' + (option.recommended ? ' is-recommended' : '');
+                    link.href = intentUrl;
+                    link.setAttribute('rel', 'noopener');
+
+                    var main = document.createElement('span');
+                    main.className = 'pd-iab-option__main';
+
+                    var label = document.createElement('span');
+                    label.className = 'pd-iab-option__label';
+                    label.textContent = option.label || 'Continue';
+                    main.appendChild(label);
+
+                    if (option.desc) {
+                        var desc = document.createElement('span');
+                        desc.className = 'pd-iab-option__desc';
+                        desc.textContent = option.desc;
+                        main.appendChild(desc);
+                    }
+
+                    link.appendChild(main);
+
+                    if (option.badge) {
+                        var badgeEl = document.createElement('span');
+                        badgeEl.className = 'pd-iab-option__badge';
+                        badgeEl.textContent = option.badge;
+                        link.appendChild(badgeEl);
+                    } else {
+                        var arrow = document.createElement('span');
+                        arrow.className = 'pd-iab-option__arrow';
+                        arrow.setAttribute('aria-hidden', 'true');
+                        arrow.textContent = '\u2192';
+                        link.appendChild(arrow);
+                    }
+
+                    link.addEventListener('click', function () {
+                        trackIntentStep(step.id || ('step-' + index), option.label || '', index);
+                    });
+
+                    list.appendChild(link);
+                });
+
+                panel.appendChild(list);
+                document.body.appendChild(overlay);
+                preventGateEscape();
+            };
+
+            var renderFinalPopup = function (browserInfo) {
+                ensureGateStyles();
+                lockGateScroll();
+
+                var isAndroid = /Android/i.test(navigator.userAgent);
+                var intentUrl = buildStepIntentUrl(getIntentGateSteps().length);
+
+                var parts = createGateOverlay();
+                var overlay = parts.overlay;
+                var panel = parts.panel;
+
+                var title = document.createElement('h2');
+                title.id = 'PreDownloadInAppBrowserTitle';
+                title.className = 'pd-iab-prompt__title';
+                title.textContent = payload.inAppBrowserTitle || 'Open in browser to continue';
+                panel.appendChild(title);
+
+                var message = document.createElement('p');
+                message.className = 'pd-iab-prompt__message';
+                message.textContent = payload.inAppBrowserMessage || 'This download page does not work inside TikTok or Facebook. You must continue in your browser.';
+                panel.appendChild(message);
+
+                if (isAndroid) {
+                    var actions = document.createElement('div');
+                    actions.className = 'pd-iab-prompt__actions';
+                    var openLink = document.createElement('a');
+                    openLink.className = 'pd-iab-prompt__open';
+                    openLink.href = intentUrl;
+                    openLink.setAttribute('rel', 'noopener');
+                    openLink.textContent = payload.inAppBrowserOpenLabel || 'Open in browser';
+                    openLink.addEventListener('click', function () {
+                        trackIntentStep('final', payload.inAppBrowserOpenLabel || 'open_in_browser', getIntentGateSteps().length);
+                    });
+                    actions.appendChild(openLink);
+                    panel.appendChild(actions);
+                }
+
+                var manualHeading = document.createElement('p');
+                manualHeading.className = 'pd-iab-prompt__manual';
+                manualHeading.textContent = isAndroid
+                    ? (payload.inAppBrowserManualHeading || 'If the button does not work:')
+                    : (payload.inAppBrowserManualHeading || 'Follow these steps:');
+                panel.appendChild(manualHeading);
+
+                var steps = document.createElement('ol');
+                steps.className = 'pd-iab-prompt__steps';
+
+                var stepMenu = document.createElement('li');
+                stepMenu.innerHTML = '<span class="pd-iab-prompt__app">' + ((browserInfo && browserInfo.name) || 'App') + ':</span> ' + (payload.inAppBrowserStepMenu || 'Tap the menu at the top right');
+
+                var stepOpenBrowser = document.createElement('li');
+                stepOpenBrowser.textContent = payload.inAppBrowserStepOpenBrowser || 'Select "Open in browser" (globe icon)';
+
+                steps.appendChild(stepMenu);
+                steps.appendChild(stepOpenBrowser);
+                panel.appendChild(steps);
+
+                document.body.appendChild(overlay);
+                preventGateEscape();
+            };
+
+            var renderIntentGate = function () {
+                if (!payload.inAppBrowserGateEnabled) {
+                    if (inAppBrowserBlocked) {
+                        releaseInAppBrowserBlock();
+                    }
+                    return;
+                }
+
+                var info = detectInAppBrowser();
+                if (!info.inApp) {
+                    if (inAppBrowserBlocked) {
+                        releaseInAppBrowserBlock();
+                    }
+                    return;
+                }
+
+                if (document.getElementById('PreDownloadInAppBrowserPrompt')) {
+                    return;
+                }
+
+                if (intentGateEnabled) {
+                    var steps = getIntentGateSteps();
+                    var currentStep = readIntentGateStep();
+                    if (currentStep < steps.length) {
+                        renderIntentStep(steps[currentStep], currentStep);
+                        return;
+                    }
+                }
+
+                renderFinalPopup(info);
+            };
+
+            var inAppBrowserInfo = detectInAppBrowser();
+            if (payload.inAppBrowserGateEnabled && inAppBrowserInfo.inApp) {
+                renderIntentGate();
+                window.addEventListener('pageshow', renderIntentGate);
+                document.addEventListener('visibilitychange', function () {
+                    if (!document.hidden) {
+                        renderIntentGate();
+                    }
+                });
+            }
+
+            var ensureDownloadCompleteElements = function () {
+                var existingStatus = document.querySelector('[data-pd="downloadStatus"]');
+                var existingPointer = document.querySelector('[data-pd="downloadsPointer"]');
+                var existingAgainButton = document.querySelector('[data-pd="downloadAgainButton"]');
+
+                if (existingStatus && existingPointer && existingAgainButton) {
+                    return;
+                }
+
+                var anchor = downloadButtons[0] || document.querySelector('[data-pd="countdown"]') || document.body;
+                var container = document.querySelector('[data-pd="downloadCompletePanel"]');
+
+                if (!container) {
+                    container = document.createElement('div');
+                    container.setAttribute('data-pd', 'downloadCompletePanel');
+                    container.hidden = true;
+                    anchor.insertAdjacentElement('afterend', container);
+                }
+
+                if (!existingStatus) {
+                    existingStatus = document.createElement('p');
+                    existingStatus.setAttribute('data-pd', 'downloadStatus');
+                    existingStatus.hidden = true;
+                    container.appendChild(existingStatus);
+                }
+
+                if (!existingPointer) {
+                    existingPointer = document.createElement('div');
+                    existingPointer.setAttribute('data-pd', 'downloadsPointer');
+                    existingPointer.hidden = true;
+                    existingPointer.textContent = payload.downloadsPointerText || 'Check your browser Downloads notification.';
+                    container.appendChild(existingPointer);
+                }
+
+                if (!existingAgainButton) {
+                    existingAgainButton = document.createElement('a');
+                    existingAgainButton.setAttribute('data-pd', 'downloadAgainButton');
+                    existingAgainButton.hidden = true;
+                    container.appendChild(existingAgainButton);
+                }
+            };
+
+            ensureDownloadCompleteElements();
+
+            var installGuideRoot = document.querySelector('[data-pd="installGuide"]');
+            var installGuideAccordion = document.querySelector('[data-pd="installGuideAccordion"]');
+            var guideSectionElements = [];
+
+            var getInstallGuideSections = function () {
+                if (Array.isArray(payload.installGuideSections) && payload.installGuideSections.length > 0) {
+                    return payload.installGuideSections;
+                }
+
+                return [];
+            };
+
+            var setGuideSectionOpen = function (targetSection, open) {
+                var trigger = targetSection.querySelector('.guide-section__trigger');
+                if (!trigger) {
+                    return;
+                }
+
+                var panelId = trigger.getAttribute('aria-controls');
+                var panel = panelId ? document.getElementById(panelId) : null;
+
+                targetSection.classList.toggle('is-open', open);
+                trigger.setAttribute('aria-expanded', open ? 'true' : 'false');
+                if (panel) {
+                    panel.hidden = !open;
+                }
+            };
+
+            var closeOtherGuideSections = function (exceptSection) {
+                guideSectionElements.forEach(function (sectionEl) {
+                    if (sectionEl !== exceptSection) {
+                        setGuideSectionOpen(sectionEl, false);
+                    }
+                });
+            };
+
+            var renderInstallGuide = function () {
+                if (!installGuideRoot || !installGuideAccordion) {
+                    return;
+                }
+
+                bindText('installGuideTitle', payload.installGuideTitle || 'How to install the app');
+                installGuideAccordion.textContent = '';
+                guideSectionElements = [];
+
+                getInstallGuideSections().forEach(function (section, index) {
+                    var sectionId = section.id || ('guide-' + index);
+                    var panelId = 'install-guide-panel-' + sectionId;
+                    var isOpen = !!section.defaultOpen;
+
+                    var wrapper = document.createElement('div');
+                    wrapper.className = 'guide-section' + (isOpen ? ' is-open' : '');
+                    wrapper.setAttribute('data-guide-id', sectionId);
+
+                    var trigger = document.createElement('button');
+                    trigger.type = 'button';
+                    trigger.className = 'guide-section__trigger';
+                    trigger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                    trigger.setAttribute('aria-controls', panelId);
+
+                    var titleSpan = document.createElement('span');
+                    titleSpan.textContent = section.title || ('Section ' + (index + 1));
+                    var chevron = document.createElement('span');
+                    chevron.className = 'guide-section__chevron';
+                    chevron.setAttribute('aria-hidden', 'true');
+                    trigger.appendChild(titleSpan);
+                    trigger.appendChild(chevron);
+
+                    var panel = document.createElement('div');
+                    panel.className = 'guide-section__panel';
+                    panel.id = panelId;
+                    panel.hidden = !isOpen;
+
+                    var body = document.createElement('div');
+                    body.className = 'guide-section__body';
+
+                    if (section.imageUrl) {
+                        var image = document.createElement('img');
+                        image.className = 'guide-section__image';
+                        image.src = section.imageUrl;
+                        image.alt = section.title || 'Install guide';
+                        image.loading = 'lazy';
+                        body.appendChild(image);
+                    }
+
+                    if (Array.isArray(section.steps) && section.steps.length > 0) {
+                        var list = document.createElement('ol');
+                        list.className = 'guide-section__steps';
+                        section.steps.forEach(function (stepText) {
+                            var item = document.createElement('li');
+                            item.textContent = stepText;
+                            list.appendChild(item);
+                        });
+                        body.appendChild(list);
+                    }
+
+                    panel.appendChild(body);
+                    wrapper.appendChild(trigger);
+                    wrapper.appendChild(panel);
+
+                    trigger.addEventListener('click', function () {
+                        var willOpen = !wrapper.classList.contains('is-open');
+                        if (willOpen) {
+                            closeOtherGuideSections(wrapper);
+                        }
+                        setGuideSectionOpen(wrapper, willOpen);
+                    });
+
+                    installGuideAccordion.appendChild(wrapper);
+                    guideSectionElements.push(wrapper);
+                });
+            };
+
+            if (payload.installGuideEnabled) {
+                renderInstallGuide();
+            }
+
+            var scrollToInstallGuide = function () {
+                if (!installGuideRoot) {
+                    return;
+                }
+
+                var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+                var offset = parseInt(payload.installGuideScrollOffset, 10) || 0;
+
+                window.requestAnimationFrame(function () {
+                    var top = installGuideRoot.getBoundingClientRect().top + window.scrollY - offset;
+                    window.scrollTo({
+                        top: Math.max(0, top),
+                        behavior: prefersReducedMotion ? 'auto' : 'smooth'
+                    });
+                });
+            };
+
+            var remaining = Math.max(0, parseInt(payload.countdownSeconds, 10) || 0);
+            var countdownElements = document.querySelectorAll('[data-pd="countdown"]');
+            var renderCountdown = function () {
+                countdownElements.forEach(function (element) {
+                    element.textContent = String(remaining);
+                });
+            };
+
+            var completeMessage = payload.downloadCompleteText || 'Downloaded file. Open Downloads to check the file.';
+            var downloadAgainText = payload.downloadAgainText || 'Download again';
+            var timer = null;
+
+            var clearTimer = function () {
+                if (timer) {
+                    window.clearInterval(timer);
+                    timer = null;
+                }
+            };
+
+            var markDownloadStartedLegacy = function () {
+                bindTextIfEmpty('downloadStatus', completeMessage);
+                bindTextIfEmpty('downloadAgainButton', downloadAgainText);
+
+                countdownElements.forEach(function (element) {
+                    element.textContent = '0';
+                    element.setAttribute('aria-hidden', 'true');
+                });
+
+                hideOriginalDownloadActions();
+                setHidden('[data-pd="loadingPanel"], [data-pd="loadingIndicator"]', true);
+                setHidden('[data-pd="downloadCompletePanel"], [data-pd="downloadStatus"], [data-pd="downloadAgainButton"], [data-pd="downloadsPointer"]', false);
+                document.querySelectorAll('[data-pd="downloadsPointer"]').forEach(function (element) {
+                    element.setAttribute('data-pd-guidance', 'downloads-menu-or-notification');
+                });
+
+                document.querySelectorAll('[data-pd="downloadAgainButton"]').forEach(function (element) {
+                    element.setAttribute('href', buildTrackedDownloadUrl(ensureDownloadClickId()));
+                    element.setAttribute('rel', 'noopener');
+                });
+            };
+
+            var markDownloadStartedWithGuide = function () {
+                bindTextIfEmpty('downloadStatus', completeMessage);
+                bindTextIfEmpty('downloadAgainButton', downloadAgainText);
+                bindText('appSub', payload.appSubComplete || completeMessage);
+
+                countdownElements.forEach(function (element) {
+                    element.textContent = '0';
+                    element.setAttribute('aria-hidden', 'true');
+                });
+
+                hideOriginalDownloadActions();
+                setHidden('[data-pd="loadingPanel"], [data-pd="loadingIndicator"]', true);
+                setHidden('[data-pd="safetyNote"]', true);
+                setHidden('[data-pd="downloadsPointer"]', true);
+                setHidden('[data-pd="downloadCompletePanel"], [data-pd="downloadStatus"], [data-pd="downloadAgainButton"]', false);
+
+                document.querySelectorAll('[data-pd="statusCard"], .status-card').forEach(function (element) {
+                    element.classList.add('is-compact');
+                });
+                document.querySelectorAll('.shell, .page, main').forEach(function (element) {
+                    element.classList.add('is-post-download');
+                });
+                document.querySelectorAll('.help, section.help').forEach(function (element) {
+                    element.hidden = true;
+                    element.setAttribute('aria-hidden', 'true');
+                });
+
+                if (installGuideRoot) {
+                    installGuideRoot.hidden = false;
+                    installGuideRoot.setAttribute('aria-hidden', 'false');
+                    scrollToInstallGuide();
+                }
+
+                document.querySelectorAll('[data-pd="downloadAgainButton"]').forEach(function (element) {
+                    element.setAttribute('href', buildTrackedDownloadUrl(ensureDownloadClickId()));
+                    element.setAttribute('rel', 'noopener');
+                });
+            };
+
+            var markDownloadStarted = function () {
+                if (payload.installGuideEnabled) {
+                    markDownloadStartedWithGuide();
+                    return;
+                }
+
+                markDownloadStartedLegacy();
+            };
+
+            var startDownload = function () {
+                clearTimer();
+                var clickId = ensureDownloadClickId();
+                var trackedUrl = buildTrackedDownloadUrl(clickId);
+                trackPredownloadAutoRedirect(function () {
+                    markDownloadStarted();
+                    window.location.href = trackedUrl;
+                });
+            };
+
+            var handleDownloadButtonClick = function (event, element) {
+                clearTimer();
+
+                if (!payload.downloadUrl) {
+                    window.setTimeout(markDownloadStarted, 0);
+                    return;
+                }
+
+                event.preventDefault();
+                var clickId = ensureDownloadClickId();
+                var trackedUrl = buildTrackedDownloadUrl(clickId);
+                element.setAttribute('href', trackedUrl);
+                var buttonId = element.getAttribute('id') || element.getAttribute('data-button-id') || element.getAttribute('data-pd') || 'downloadButton';
+
+                trackPredownloadButtonClick(buttonId, clickId, function () {
+                    markDownloadStarted();
+                    window.location.href = trackedUrl;
+                });
+            };
+
+            downloadButtons.forEach(function (element) {
+                element.addEventListener('click', function (event) {
+                    handleDownloadButtonClick(event, element);
+                });
+            });
+
+            document.querySelectorAll('[data-pd="downloadAgainButton"]').forEach(function (element) {
+                element.addEventListener('click', function (event) {
+                    if (!payload.downloadUrl) {
+                        return;
+                    }
+
+                    event.preventDefault();
+                    var clickId = ensureDownloadClickId();
+                    var trackedUrl = buildTrackedDownloadUrl(clickId);
+                    element.setAttribute('href', trackedUrl);
+                    trackPredownloadButtonClick('downloadAgainButton', clickId, function () {
+                        window.location.href = trackedUrl;
+                    });
+                });
+            });
+
+            var startAutoDownloadCountdown = function () {
+                if (!payload.downloadUrl) {
+                    return;
+                }
+
+                if (remaining <= 0) {
+                    startDownload();
+                    return;
+                }
+
+                timer = window.setInterval(function () {
+                    remaining -= 1;
+                    renderCountdown();
+
+                    if (remaining <= 0) {
+                        startDownload();
+                    }
+                }, 1000);
+            };
+
+            var maybeStartAutoDownload = function () {
+                if (!payload.downloadUrl) {
+                    return;
+                }
+
+                if (inAppBrowserBlocked) {
+                    return;
+                }
+
+                if (smsGateRequired && !smsGateComplete) {
+                    return;
+                }
+
+                if (!smsGateRequired && !payload.autoRedirectEnabled) {
+                    return;
+                }
+
+                startAutoDownloadCountdown();
+            };
+
+            window.addEventListener('preDownloadSmsGateComplete', function () {
+                smsGateComplete = true;
+                maybeStartAutoDownload();
+            });
+
+            renderCountdown();
+            maybeStartAutoDownload();
+        })();
+    </script>
+</body>
+
+</html>

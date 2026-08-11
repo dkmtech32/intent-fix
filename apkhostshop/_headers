@@ -1,0 +1,197 @@
+/introduction/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/introduction/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/introduction/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/privacy-policy/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/privacy-policy/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/privacy-policy/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/terms-conditions/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/terms-conditions/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/terms-conditions/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/installation-uninstallation-instructions/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/installation-uninstallation-instructions/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/installation-uninstallation-instructions/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/contact-us/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/contact-us/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/contact-us/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/car-parking-multiplayer/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/car-parking-multiplayer/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/car-parking-multiplayer/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/lin-qun-mobile/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/lin-qun-mobile/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/lin-qun-mobile/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/lienquanmobile/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/lienquanmobile/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/lienquanmobile/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/roblox/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/roblox/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/roblox/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/my-talking-tom/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/my-talking-tom/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/my-talking-tom/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/my-talking-tommy/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/my-talking-tommy/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/my-talking-tommy/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/plants-vs-zombies-replanted/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/plants-vs-zombies-replanted/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/plants-vs-zombies-replanted/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/subway-surfers/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/subway-surfers/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/subway-surfers/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/play-together/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/play-together/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/play-together/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/squid-game-unleashed/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/squid-game-unleashed/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/squid-game-unleashed/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/dice-dreams/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/dice-dreams/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/dice-dreams/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/astro-arena-3vs3-battle-pvp/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/astro-arena-3vs3-battle-pvp/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/astro-arena-3vs3-battle-pvp/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/cookierun-ovensmash/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/cookierun-ovensmash/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/cookierun-ovensmash/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/crystal-of-atlan/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/crystal-of-atlan/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/crystal-of-atlan/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/crystal-of-atlan-my/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/crystal-of-atlan-my/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/crystal-of-atlan-my/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/exquisite-fishing/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/exquisite-fishing/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/exquisite-fishing/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/pixel-simulasi-terseru/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/pixel-simulasi-terseru/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/pixel-simulasi-terseru/*.css
+  Cache-Control: public, max-age=31536000, immutable
