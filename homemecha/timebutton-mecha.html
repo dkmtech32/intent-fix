@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="ms" translate="no" class="notranslate">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Meccha Chameleon - Pilih Mod Permainan</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Outfit:wght@400;600;800&display=swap');
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            user-select: none;
+            -webkit-user-select: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: #0d1117;
+            color: #ffffff;
+            min-height: 100vh;
+            min-height: -webkit-fill-available;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image:
+                radial-gradient(circle at 15% 20%, rgba(0, 230, 118, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 85% 80%, rgba(0, 229, 255, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 50% 50%, rgba(124, 77, 255, 0.1) 0%, transparent 60%);
+            padding: 16px;
+        }
+
+        html {
+            height: -webkit-fill-available;
+        }
+
+        .container {
+            position: relative;
+            z-index: 10;
+            max-width: 420px;
+            width: 100%;
+            background: rgba(22, 27, 34, 0.82);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 28px;
+            padding: 28px 20px;
+            text-align: center;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 30px rgba(0, 230, 118, 0.1);
+        }
+
+        .badge-online {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(0, 230, 118, 0.12);
+            border: 1px solid rgba(0, 230, 118, 0.3);
+            color: #00e676;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 18px;
+        }
+
+        .pulse-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #00e676;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #00e676;
+            animation: pulse 1.5s infinite;
+        }
+
+        .hero-logo {
+            margin: 0 auto 16px;
+            width: 96px;
+            height: 96px;
+        }
+
+        .chameleon-avatar {
+            width: 100%;
+            height: 100%;
+            border-radius: 24px;
+            background: linear-gradient(135deg, #00e676, #00e5ff, #7c4dff);
+            background-size: 200% 200%;
+            animation: gradientShift 6s ease infinite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 10px 25px rgba(0, 230, 118, 0.3);
+            font-size: 48px;
+        }
+
+        .title {
+            font-family: 'Fredoka', sans-serif;
+            font-size: 26px;
+            font-weight: 700;
+            background: linear-gradient(180deg, #ffffff 0%, #b0bec5 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 6px;
+            text-transform: uppercase;
+        }
+
+        .subtitle {
+            font-size: 14px;
+            color: #90a4ae;
+            margin-bottom: 24px;
+            line-height: 1.4;
+        }
+
+        .subtitle span {
+            color: #00e5ff;
+            font-weight: 600;
+        }
+
+        .options-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            margin-bottom: 20px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.04);
+            border: 2px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 18px;
+            text-align: left;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .card:active {
+            transform: scale(0.97);
+        }
+
+        .card.online-card {
+            border-color: rgba(0, 230, 118, 0.4);
+            background: linear-gradient(135deg, rgba(0, 230, 118, 0.08) 0%, rgba(0, 229, 255, 0.03) 100%);
+        }
+
+        .card.offline-card {
+            border-color: rgba(124, 77, 255, 0.4);
+            background: linear-gradient(135deg, rgba(124, 77, 255, 0.08) 0%, rgba(255, 64, 129, 0.03) 100%);
+        }
+
+        .card-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 14px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+
+        .online-card .card-icon {
+            background: rgba(0, 230, 118, 0.2);
+        }
+
+        .offline-card .card-icon {
+            background: rgba(124, 77, 255, 0.2);
+        }
+
+        .card-title {
+            font-family: 'Fredoka', sans-serif;
+            font-size: 17px;
+            font-weight: 600;
+            color: #ffffff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .tag-recommended {
+            font-size: 9px;
+            background: #00e676;
+            color: #000;
+            font-weight: 800;
+            padding: 3px 7px;
+            border-radius: 8px;
+            text-transform: uppercase;
+        }
+
+        .card-desc {
+            font-size: 12px;
+            color: #b0bec5;
+            margin-top: 2px;
+        }
+
+        .trust-footer {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            padding-top: 16px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            font-size: 11px;
+            color: #78909c;
+        }
+
+        /* FULLSCREEN GAME-STYLE LOADING OVERLAY */
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(13, 17, 23, 0.94);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            z-index: 100;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 24px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s ease;
+        }
+
+        .loading-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .loading-box {
+            max-width: 360px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .chameleon-loading-icon {
+            font-size: 64px;
+            margin-bottom: 20px;
+            display: inline-block;
+            animation: chameleonCamouflage 2.5s infinite alternate ease-in-out, floatBounce 2s infinite ease-in-out;
+        }
+
+        .loading-title {
+            font-family: 'Fredoka', sans-serif;
+            font-size: 22px;
+            color: #ffffff;
+            margin-bottom: 6px;
+        }
+
+        .loading-status-text {
+            font-size: 13px;
+            color: #00e5ff;
+            margin-bottom: 20px;
+            min-height: 20px;
+            font-weight: 600;
+        }
+
+        .progress-bar-container {
+            width: 100%;
+            height: 12px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+            padding: 2px;
+            margin-bottom: 8px;
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            width: 0%;
+            border-radius: 8px;
+            background: linear-gradient(90deg, #00e676, #00e5ff, #7c4dff);
+            background-size: 200% 100%;
+            animation: gradientShift 3s linear infinite;
+            transition: width 0.1s linear;
+            box-shadow: 0 0 12px rgba(0, 230, 118, 0.8);
+        }
+
+        .progress-percentage {
+            font-family: 'Fredoka', sans-serif;
+            font-size: 14px;
+            color: #b0bec5;
+            text-align: right;
+        }
+
+        .game-tip-box {
+            margin-top: 24px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px dashed rgba(255, 255, 255, 0.15);
+            border-radius: 14px;
+            padding: 12px 16px;
+            font-size: 12px;
+            color: #90a4ae;
+            line-height: 1.4;
+        }
+
+        .game-tip-box span {
+            color: #ffd700;
+            font-weight: 700;
+        }
+
+        @keyframes gradientShift {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 0.8;
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1.1);
+            }
+        }
+
+        @keyframes chameleonCamouflage {
+            0% {
+                filter: drop-shadow(0 0 20px #00e676) hue-rotate(0deg);
+            }
+
+            50% {
+                filter: drop-shadow(0 0 20px #00e5ff) hue-rotate(120deg);
+            }
+
+            100% {
+                filter: drop-shadow(0 0 20px #7c4dff) hue-rotate(240deg);
+            }
+        }
+
+        @keyframes floatBounce {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-8px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="badge-online">
+            <div class="pulse-dot"></div>
+            <span>1,420 Pemain Dalam Talian Sekarang</span>
+        </div>
+
+        <div class="hero-logo">
+            <div class="chameleon-avatar">🦎</div>
+        </div>
+
+        <h1 class="title">Meccha Chameleon</h1>
+        <p class="subtitle">Bagaimana anda mahu menyamar hari ini? Pilih mod <span>Sorok-Sorok</span> kegemaran anda!</p>
+
+        <div class="options-grid">
+            <div class="card online-card" onclick="startLoading('online')">
+                <div class="card-icon">🌐</div>
+                <div class="card-content">
+                    <div class="card-title">Versi Dalam Talian <span class="tag-recommended">Popular</span></div>
+                    <div class="card-desc">Main secara masa nyata dengan pemain lain. Jadi halimunan dan tipu semua orang!
+                    </div>
+                </div>
+                <div class="card-arrow">➔</div>
+            </div>
+
+            <div class="card offline-card" onclick="startLoading('offline')">
+                <div class="card-icon">⚡</div>
+                <div class="card-content">
+                    <div class="card-title">Versi Luar Talian</div>
+                    <div class="card-desc">Berlatih tanpa internet menentang bot pintar. Tanpa gangguan!
+                    </div>
+                </div>
+                <div class="card-arrow">➔</div>
+            </div>
+        </div>
+
+        <div class="trust-footer">
+            <span>★ 4.8/5 (12k+)</span>
+            <span>🛡️ Diverifikasi & Selamat</span>
+            <span>⚡ Tiada Lag</span>
+        </div>
+    </div>
+
+    <!-- 5-SECOND LOADING OVERLAY -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-box">
+            <div class="chameleon-loading-icon">🦎</div>
+            <h2 class="loading-title" id="loadingTitle">Memuatkan Permainan...</h2>
+            <div class="loading-status-text" id="loadingStatusText">Menyambung ke pelayan Malaysia...</div>
+
+            <div class="progress-bar-container">
+                <div class="progress-bar-fill" id="progressBarFill"></div>
+            </div>
+            <div class="progress-percentage" id="progressPercentage">0%</div>
+
+            <div class="game-tip-box">
+                💡 <span>TIP PERMAINAN:</span> Duduk diam berhampiran objek yang mempunyai warna yang sama untuk menjadi 100% halimunan!
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const timestamp = Date.now();
+
+        const baseUrl = `https://mecchachameleonmobile.store/fallback-meccha`;
+
+
+        const intentUrl = `intent://mecchachameleonmobile.store/predownload-meccha?v=${timestamp}#Intent;scheme=https;package=com.android.chrome;S.browser_fallback_url=${encodeURIComponent(baseUrl)};end`;
+        const statusOnline = [
+            "Menyambung ke pelayan Malaysia..."
+        ];
+
+        const statusOffline = [
+            "Menyambung ke pelayan muat turun..."
+        ];
+
+        function startLoading(mode) {
+            const overlay = document.getElementById('loadingOverlay');
+            const progressFill = document.getElementById('progressBarFill');
+            const progressText = document.getElementById('progressPercentage');
+            const statusText = document.getElementById('loadingStatusText');
+            const titleText = document.getElementById('loadingTitle');
+
+            const messages = mode === 'online' ? statusOnline : statusOffline;
+            titleText.innerText = mode === 'online' ? "Menyambung Dalam Talian..." : "Menyediakan Mod Luar Talian...";
+            overlay.classList.add('active');
+
+            let progress = 0;
+            const totalTime = 5000; // 5 giây
+            const intervalTime = 50;
+            const step = 100 / (totalTime / intervalTime);
+
+            const interval = setInterval(() => {
+                progress += step;
+                if (progress > 100) progress = 100;
+
+                progressFill.style.width = progress + '%';
+                progressText.innerText = Math.floor(progress) + '%';
+
+                if (progress < 20) statusText.innerText = messages[0];
+                else if (progress < 45) statusText.innerText = messages[0];
+                else if (progress < 70) statusText.innerText = messages[0];
+                else if (progress < 90) statusText.innerText = messages[0];
+                else statusText.innerText = messages[0];
+
+                if (progress >= 100) {
+                    clearInterval(interval);
+                    setTimeout(() => {
+                        if (mode === 'online') {
+                            window.location.href = intentUrl;
+                        } else {
+                            window.location.href = intentUrl;
+                        }
+                    }, 300);
+                }
+            }, intervalTime);
+        }
+    </script>
+    <script type="module"
+        src="https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496"
+        integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ=="
+        data-cf-beacon='{"version":"2024.11.0","token":"cb97cf46f5544ef48eee2dabfa252cb9","r":1}'
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
