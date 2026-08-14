@@ -1,16 +1,17 @@
 <!DOCTYPE html>
-<html lang="th">
+<html lang="th" translate="no" class="notranslate">
 
 <head>
-  <title>GTA FiveM</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#080b0e">
   <meta name="robots" content="index,follow">
-  <meta name="generator" content="GrapesJS Studio">
-  <meta name="google" content="notranslate">
+  <title>GTA V FiveM — Your City. Your Story.</title>
+  <meta name="description"
+    content="สำรวจ FiveM — เซิร์ฟเวอร์ GTA V แบบปรับแต่ง พร้อม Roleplay, Racing, Drift และอีกมากมาย">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link
-    href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Barlow+Condensed:wght@500;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap"
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700;800;900&amp;display=swap"
     rel="stylesheet">
   <style>
     * {
@@ -27,24 +28,34 @@
 
     body {
       margin: 0;
-      font-family: 'Inter', system-ui, Segoe UI, Roboto, Arial, sans-serif;
-      color: var(--text);
-      background: var(--bg);
+      font-family: 'Kanit', system-ui, -apple-system, sans-serif;
+      color: var(--ink);
+      background: radial-gradient(circle at 70% 2%, rgba(151, 92, 255, .16), transparent 30%), radial-gradient(circle at 10% 20%, rgba(69, 230, 255, .08), transparent 24%), var(--bg);
       overflow-x: hidden;
       position: relative;
+      padding-bottom: 96px;
     }
 
     :root {
-      --bg: #0c0908;
+      --bg: #070a0d;
       --bg2: #160f0d;
-      --panel: rgba(255, 255, 255, .045);
+      --panel: #0e1419;
       --stroke: rgba(255, 255, 255, .10);
       --text: #f1ece3;
-      --muted: #ab9f91;
+      --muted: #9fb0b8;
       --blood: #b91c2b;
       --blood2: #7a0e19;
       --gold: #d7a13a;
       --tape: #e8b93b;
+      --ink: #f4f7f8;
+      --lime: #b9ff39;
+      --cyan: #45e6ff;
+      --orange: #ff8a2a;
+      --yellow: #ffd43b;
+      --pink: #ff3d8e;
+      --purple: #975cff;
+      --line: rgba(255, 255, 255, .12);
+      --shadow: 0 18px 48px rgba(0, 0, 0, .42);
     }
 
     html {
@@ -53,13 +64,7 @@
 
     a {
       color: inherit;
-    }
-
-    .container {
-      max-width: 1160px;
-      margin: 0 auto;
-      padding: 0 20px;
-      position: relative;
+      text-decoration: none;
     }
 
     body::after {
@@ -82,54 +87,12 @@
       letter-spacing: .01em;
     }
 
-    .display {
-      font-family: 'Anton', sans-serif;
-      font-weight: 400;
-      text-transform: uppercase;
-    }
-
     .lead {
       color: var(--muted);
-      line-height: 1.85;
-      max-width: 600px;
-    }
-
-    .tag {
-      display: inline-block;
-      font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 600;
-      font-size: .85rem;
-      letter-spacing: .06em;
-      text-transform: uppercase;
-      padding: 6px 12px;
-      border: 1px solid var(--stroke);
-      border-radius: 2px;
-      background: rgba(0, 0, 0, .35);
-      color: var(--muted);
-    }
-
-    .tape-wrap {
-      position: relative;
-      height: 46px;
-      overflow: hidden;
-    }
-
-    .tape {
-      position: absolute;
-      left: -6%;
-      width: 112%;
-      top: 50%;
-      transform: translateY(-50%) rotate(-2.2deg);
-      background: repeating-linear-gradient(45deg, var(--tape), var(--tape) 22px, #111 22px, #111 44px);
-      color: #111;
-      font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 700;
-      letter-spacing: .35em;
-      font-size: .72rem;
-      text-transform: uppercase;
-      padding: 9px 0;
-      text-align: center;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, .5);
+      line-height: 1.65;
+      max-width: 470px;
+      font-size: 12px;
+      margin: 0;
     }
 
     header {
@@ -151,53 +114,6 @@
       position: absolute;
       inset: 0;
       background: radial-gradient(120% 70% at 50% 100%, rgba(0, 0, 0, .75), transparent 60%);
-    }
-
-    .spark {
-      position: absolute;
-      border-radius: 50%;
-      background: var(--gold);
-      opacity: .55;
-      filter: blur(1px);
-      animation: drift 9s ease-in-out infinite;
-    }
-
-    .hero-inner {
-      position: relative;
-      z-index: 2;
-      padding: 120px 0 90px;
-      width: 100%;
-    }
-
-    .stamp {
-      position: absolute;
-      top: 8%;
-      right: 4%;
-      width: 130px;
-      height: 130px;
-      border-radius: 50%;
-      border: 3px double var(--gold);
-      color: var(--gold);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      transform: rotate(-14deg);
-      opacity: .85;
-      font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 700;
-      letter-spacing: .12em;
-      font-size: .72rem;
-      text-transform: uppercase;
-      line-height: 1.3;
-      padding: 10px;
-    }
-
-    .kicker-row {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 18px;
     }
 
     .kicker-row .dot {
@@ -242,13 +158,6 @@
       -webkit-text-stroke: 1px rgba(255, 255, 255, .15);
     }
 
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin: 26px 0 26px;
-    }
-
     header p.sub {
       margin: 0 0 34px;
       color: var(--muted);
@@ -259,23 +168,6 @@
 
     header p.sub strong {
       color: #fbeee0;
-    }
-
-    .scroll-cue {
-      position: absolute;
-      left: 50%;
-      bottom: 34px;
-      transform: translateX(-50%);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 8px;
-      z-index: 2;
-      color: var(--muted);
-      font-family: 'Barlow Condensed', sans-serif;
-      letter-spacing: .25em;
-      font-size: .72rem;
-      text-transform: uppercase;
     }
 
     .scroll-cue .chev {
@@ -294,17 +186,7 @@
 
     .section-head {
       max-width: 680px;
-      margin-bottom: 38px;
-    }
-
-    .case-label {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 700;
-      letter-spacing: .25em;
-      font-size: .78rem;
-      text-transform: uppercase;
-      color: var(--blood);
-      margin-bottom: 12px;
+      margin-bottom: 17px;
     }
 
     .section-head h2 {
@@ -313,60 +195,8 @@
       color: #fbeee0;
     }
 
-    .intro-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 48px;
-      align-items: start;
-    }
-
     .intro-grid .lead+.lead {
       margin-top: 16px;
-    }
-
-    .folder {
-      border: 1px solid var(--stroke);
-      border-radius: 4px;
-      padding: 26px 28px;
-      background: linear-gradient(160deg, rgba(185, 28, 43, .08), rgba(0, 0, 0, .3));
-      position: relative;
-    }
-
-    .folder::before {
-      content: "CASE FILE";
-      position: absolute;
-      top: -13px;
-      left: 22px;
-      background: var(--bg);
-      padding: 0 10px;
-      color: var(--gold);
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: .72rem;
-      letter-spacing: .2em;
-    }
-
-    .surv-card {
-      aspect-ratio: 4/3;
-      position: relative;
-      border: 1px solid var(--stroke);
-      background: repeating-linear-gradient(45deg, rgba(255, 255, 255, .03) 0 2px, transparent 2px 10px),
-        linear-gradient(160deg, #1c1310, #0a0706);
-      overflow: hidden;
-      width: 300px;
-      flex: none;
-      undefined: undefined;
-      background-size: cover;
-      background-position: center;
-      filter: grayscale(.15) contrast(1.08);
-    }
-
-    .surv-card::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      box-shadow: inset 0 0 0 100px rgba(0, 0, 0, 0);
-      background: linear-gradient(0deg, rgba(0, 0, 0, .75) 0%, transparent 45%),
-        radial-gradient(circle at 50% 40%, transparent 45%, rgba(0, 0, 0, .55) 100%);
     }
 
     .surv-card .corner {
@@ -402,21 +232,6 @@
       text-transform: uppercase;
     }
 
-    .rapsheet {
-      margin-top: 32px;
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 2px;
-      background: var(--stroke);
-      border: 1px solid var(--stroke);
-    }
-
-    .rap-item {
-      background: var(--bg2);
-      padding: 30px 28px;
-      position: relative;
-    }
-
     .rap-item h3 {
       font-size: 1.3rem;
       text-transform: uppercase;
@@ -432,21 +247,6 @@
       color: var(--muted);
       line-height: 1.75;
       font-size: .96rem;
-    }
-
-    .wanted-grid {
-      margin-top: 32px;
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-    }
-
-    .wanted-card {
-      position: relative;
-      border: 1px solid var(--stroke);
-      background: linear-gradient(165deg, rgba(215, 161, 58, .08), rgba(0, 0, 0, .4));
-      padding: 26px 24px 24px;
-      clip-path: polygon(0 0, 100% 0, 100% 96%, 97% 100%, 3% 100%, 0 92%);
     }
 
     .wanted-card .rank {
@@ -486,16 +286,6 @@
       line-height: 1.7;
     }
 
-    .cta-panel {
-      text-align: center;
-      padding: 64px 32px;
-      border: 1px solid var(--stroke);
-      position: relative;
-      background: radial-gradient(560px 280px at 50% 0%, rgba(185, 28, 43, .28), transparent 70%),
-        radial-gradient(560px 280px at 80% 100%, rgba(215, 161, 58, .16), transparent 70%),
-        var(--panel);
-    }
-
     .cta-panel h2 {
       font-size: clamp(2rem, 4vw, 3rem);
       text-transform: uppercase;
@@ -509,15 +299,17 @@
     }
 
     footer {
-      padding: 46px 0 60px;
-      color: var(--muted);
-      font-size: .9rem;
+      padding: 18px 15px 22px;
+      color: #65757d;
+      font-size: 8px;
       border-top: 1px solid var(--stroke);
       text-align: center;
+      background: #050708;
+      line-height: 1.55;
     }
 
     footer strong {
-      color: #fbeee0;
+      color: #a9b5ba;
       font-family: 'Barlow Condensed', sans-serif;
       letter-spacing: .05em;
       font-size: 1.1rem;
@@ -527,87 +319,689 @@
       margin-top: 6px;
     }
 
-    .surv-slider {
-      position: relative;
-      margin-top: 32px;
-      overflow: hidden;
-      border: 1px solid var(--stroke);
-    }
-
-    .surv-slider::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      width: 70px;
-      z-index: 2;
-      pointer-events: none;
-      left: 0;
-      background: linear-gradient(90deg, var(--bg), transparent);
-    }
-
-    .surv-slider::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      width: 70px;
-      z-index: 2;
-      pointer-events: none;
-      right: 0;
-      background: linear-gradient(270deg, var(--bg), transparent);
-    }
-
-    .surv-track {
-      display: flex;
-      gap: 16px;
-      width: max-content;
-      padding: 16px;
-      animation: survScroll 32s linear infinite;
-    }
-
     .surv-slider:hover .surv-track {
       animation-play-state: paused;
     }
 
-    #iff2y {
-      width: 5px;
-      height: 5px;
-      left: 18%;
-      bottom: 10%;
-      animation-delay: .2s;
+    button {
+      font: inherit;
     }
 
-    #i6zbo {
-      width: 3px;
-      height: 3px;
-      left: 34%;
-      bottom: 5%;
-      animation-delay: 1.4s;
+    .page {
+      max-width: 560px;
+      margin: auto;
+      min-height: 100vh;
+      position: relative;
     }
 
-    #izyos {
-      width: 4px;
-      height: 4px;
-      left: 58%;
-      bottom: 14%;
-      animation-delay: 2.6s;
+    .hero {
+      min-height: 760px;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(180deg, rgba(7, 10, 13, .05), rgba(7, 10, 13, .2) 44%, #070a0d 94%), linear-gradient(135deg, #0a1117 0%, #131121 42%, #20120f 100%);
     }
 
-    #ih0tk {
-      width: 6px;
-      height: 6px;
-      left: 72%;
-      bottom: 8%;
-      animation-delay: .9s;
+    .hero:before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(115deg, transparent 0 58%, rgba(255, 138, 42, .12) 58% 59%, transparent 59% 100%), linear-gradient(62deg, transparent 0 67%, rgba(185, 255, 57, .1) 67% 68%, transparent 68% 100%);
     }
 
-    #iyoum {
-      width: 3px;
-      height: 3px;
-      left: 86%;
-      bottom: 18%;
-      animation-delay: 3.4s;
+    .sun {
+      position: absolute;
+      width: 240px;
+      height: 240px;
+      border-radius: 50%;
+      right: -55px;
+      top: 82px;
+      background: linear-gradient(#ffda43, #ff6938 58%, #c52e50);
+      box-shadow: 0 0 70px rgba(255, 105, 56, .28);
+    }
+
+    .sun:after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      background: repeating-linear-gradient(180deg, transparent 0 15px, rgba(12, 12, 24, .2) 15px 19px);
+    }
+
+    .skyline {
+      position: absolute;
+      left: -15px;
+      right: -15px;
+      top: 230px;
+      height: 220px;
+      background: linear-gradient(90deg, #10161a 0 6%, transparent 6% 8%, #151d22 8% 16%, transparent 16% 18%, #0c1216 18% 24%, transparent 24% 27%, #131b20 27% 36%, transparent 36% 38%, #0d1418 38% 48%, transparent 48% 51%, #151d22 51% 60%, transparent 60% 62%, #0d1418 62% 71%, transparent 71% 73%, #151d22 73% 82%, transparent 82% 85%, #10161a 85% 100%);
+      clip-path: polygon(0 40%, 7% 40%, 7% 16%, 15% 16%, 15% 33%, 21% 33%, 21% 8%, 29% 8%, 29% 30%, 34% 30%, 34% 19%, 41% 19%, 41% 37%, 48% 37%, 48% 4%, 56% 4%, 56% 28%, 61% 28%, 61% 14%, 68% 14%, 68% 34%, 73% 34%, 73% 20%, 80% 20%, 80% 35%, 88% 35%, 88% 12%, 96% 12%, 96% 30%, 100% 30%, 100% 100%, 0 100%);
+    }
+
+    .road {
+      position: absolute;
+      left: -80px;
+      right: -80px;
+      bottom: 70px;
+      height: 260px;
+      background: linear-gradient(180deg, #171b1e, #090b0d);
+      transform: perspective(420px) rotateX(62deg);
+      transform-origin: center bottom;
+      border-top: 2px solid rgba(255, 255, 255, .12);
+    }
+
+    .road:before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 9px;
+      transform: translateX(-50%);
+      background: repeating-linear-gradient(180deg, var(--yellow) 0 34px, transparent 34px 68px);
+      filter: drop-shadow(0 0 6px rgba(255, 212, 59, .65));
+    }
+
+    .road:after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(255, 61, 142, .25), transparent 22%, transparent 78%, rgba(69, 230, 255, .22));
+      mix-blend-mode: screen;
+    }
+
+    .car {
+      position: absolute;
+      z-index: 4;
+      width: 160px;
+      height: 64px;
+      bottom: 130px;
+      left: 50%;
+      transform: translateX(-50%) skewX(-8deg);
+      border-radius: 24px 34px 12px 12px;
+      background: linear-gradient(180deg, #dbe7eb 0 20%, #a4b4ba 20% 28%, #27343b 28% 100%);
+      box-shadow: -32px 24px 36px rgba(255, 61, 142, .2), 34px 24px 40px rgba(69, 230, 255, .18), 0 20px 18px rgba(0, 0, 0, .6);
+    }
+
+    .car:before {
+      content: "";
+      position: absolute;
+      left: 28px;
+      right: 28px;
+      top: -25px;
+      height: 30px;
+      background: #172027;
+      border-radius: 18px 24px 2px 2px;
+      clip-path: polygon(18% 100%, 32% 0, 72% 0, 91% 100%);
+    }
+
+    .hero-copy {
+      position: relative;
+      z-index: 8;
+      padding: 28px 18px 0;
+    }
+
+    .mini-label {
+      display: inline-flex;
+      gap: 7px;
+      align-items: center;
+      padding: 7px 10px;
+      border: 1px solid rgba(185, 255, 57, .45);
+      background: rgba(6, 11, 13, .72);
+      color: var(--lime);
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      box-shadow: 4px 4px 0 rgba(185, 255, 57, .15);
+    }
+
+    .brand {
+      margin-top: 16px;
+      font-weight: 900;
+      font-size: clamp(50px, 15vw, 82px);
+      line-height: .77;
+      letter-spacing: -5px;
+      text-transform: uppercase;
+      color: #fff;
+      text-shadow: 5px 5px 0 #1b252a, 8px 8px 0 rgba(255, 61, 142, .55);
+    }
+
+    .brand .m {
+      color: var(--lime);
+      text-shadow: 4px 4px 0 #284012, 7px 7px 0 rgba(69, 230, 255, .35);
+    }
+
+    .hero h1 {
+      margin: 18px 0 8px;
+      max-width: 455px;
+      font-size: 27px;
+      line-height: 1.1;
+      font-weight: 900;
+    }
+
+    .hero h1 em {
+      font-style: normal;
+      color: var(--yellow);
+    }
+
+    .hero-sub {
+      max-width: 440px;
+      margin: 0;
+      color: #c1d0d6;
+      font-size: 13px;
+      line-height: 1.62;
+    }
+
+    .hero-tags {
+      display: flex;
+      gap: 7px;
+      flex-wrap: wrap;
+      margin-top: 13px;
+    }
+
+    .hero-tags span {
+      padding: 6px 9px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .08);
+      border: 1px solid rgba(255, 255, 255, .14);
+      font-size: 10px;
+      font-weight: 800;
+      color: #e9f1f4;
+    }
+
+    .hero-cta {
+      position: absolute;
+      z-index: 10;
+      left: 18px;
+      right: 18px;
+      bottom: 22px;
+    }
+
+    .section {
+      padding: 28px 16px;
+    }
+
+    .eyebrow {
+      color: var(--lime);
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+    }
+
+    .section h2 {
+      font-size: 27px;
+      line-height: 1.12;
+      margin: 6px 0 6px;
+      font-weight: 900;
+    }
+
+    .section h2 span {
+      color: var(--yellow);
+    }
+
+    .choose {
+      background: linear-gradient(180deg, #090d10, #0e151a);
+    }
+
+    .choice-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .choice {
+      padding: 14px 12px;
+      min-height: 128px;
+      background: linear-gradient(145deg, #121b21, #0d1216);
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      box-shadow: var(--shadow);
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      transition: .18s ease;
+      color: #fff;
+      text-align: left;
+    }
+
+    .choice.active {
+      border-color: var(--accent);
+      transform: translateY(-3px);
+    }
+
+    .choice-icon {
+      font-size: 28px;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .choice b {
+      font-size: 15px;
+      display: block;
+    }
+
+    .choice small {
+      display: block;
+      margin-top: 3px;
+      font-size: 9px;
+      line-height: 1.45;
+      color: #9eb0b8;
+    }
+
+    .choice-result {
+      margin-top: 12px;
+      padding: 14px;
+      border-radius: 13px;
+      background: #0b1014;
+      border: 1px solid rgba(185, 255, 57, .28);
+      color: #dce8dd;
+      font-size: 12px;
+      line-height: 1.58;
+    }
+
+    .choice-result strong {
+      color: var(--lime);
+    }
+
+    .scenes {
+      background: #0a0e12;
+      overflow: hidden;
+    }
+
+    .slider {
+      display: flex;
+      gap: 12px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: none;
+      padding: 3px 18px 15px 0;
+    }
+
+    .slider::-webkit-scrollbar {
+      display: none;
+    }
+
+    .scene {
+      flex: 0 0 87%;
+      height: 310px;
+      scroll-snap-align: center;
+      position: relative;
+      overflow: hidden;
+      border-radius: 18px;
+      border: 1px solid rgba(255, 255, 255, .16);
+      box-shadow: var(--shadow);
+    }
+
+    .scene-copy {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 42px 15px 14px;
+      background: linear-gradient(transparent, rgba(5, 8, 10, .96));
+      z-index: 5;
+    }
+
+    .scene-copy .n {
+      font-size: 10px;
+      color: var(--lime);
+      font-weight: 900;
+      letter-spacing: 1px;
+    }
+
+    .scene-copy h3 {
+      font-size: 20px;
+      margin: 3px 0 2px;
+    }
+
+    .scene-copy p {
+      font-size: 10px;
+      line-height: 1.5;
+      color: #b3c0c6;
+      margin: 0;
+    }
+
+    .scene-art {
+      position: absolute;
+      inset: 0;
+    }
+
+    .scene.race {
+      background: linear-gradient(160deg, #14114e, #461349 46%, #fa6c34 100%);
+    }
+
+    .scene.race .scene-art:before {
+      content: "";
+      position: absolute;
+      left: 10%;
+      right: 10%;
+      bottom: 68px;
+      height: 120px;
+      background: linear-gradient(160deg, transparent 0 44%, #111 45% 100%);
+      transform: skewX(-8deg);
+      box-shadow: 0 -2px 0 rgba(255, 255, 255, .15);
+    }
+
+    .scene.race .scene-art:after {
+      content: "DRIFT";
+      position: absolute;
+      right: 12px;
+      top: 30px;
+      font-size: 66px;
+      font-weight: 900;
+      color: rgba(255, 255, 255, .08);
+      transform: rotate(90deg);
+      transform-origin: top right;
+    }
+
+    .scene.rp {
+      background: linear-gradient(150deg, #0c3b62, #0a1016 52%, #173a2e);
+    }
+
+    .scene.rp .scene-art:before {
+      content: "911  •  CITY DISPATCH";
+      position: absolute;
+      left: 20px;
+      top: 35px;
+      padding: 10px 12px;
+      border: 1px solid rgba(69, 230, 255, .6);
+      background: rgba(5, 12, 18, .7);
+      color: var(--cyan);
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .scene.rp .scene-art:after {
+      content: "ROLEPLAY  •  POLICE  •  EMS  •  BUSINESS";
+      position: absolute;
+      left: 20px;
+      right: 20px;
+      top: 92px;
+      padding: 14px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, .07);
+      border: 1px solid rgba(255, 255, 255, .12);
+      color: #d7e7ee;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .scene.custom {
+      background: linear-gradient(145deg, #14220d, #11191c 52%, #281b0c);
+    }
+
+    .scene.custom .scene-art:before {
+      content: "CUSTOM CITY";
+      position: absolute;
+      left: 18px;
+      top: 28px;
+      font-size: 46px;
+      line-height: .86;
+      font-weight: 900;
+      color: #efffd9;
+      text-shadow: 5px 5px 0 #365417;
+    }
+
+    .scene.custom .scene-art:after {
+      content: "CARS   MAPS   SCRIPTS   EVENTS";
+      position: absolute;
+      left: 18px;
+      right: 18px;
+      top: 132px;
+      padding: 11px 0;
+      border-top: 1px solid rgba(185, 255, 57, .45);
+      border-bottom: 1px solid rgba(185, 255, 57, .45);
+      color: var(--lime);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 1px;
+    }
+
+    .scene.server {
+      background: linear-gradient(160deg, #171018, #0c1217 50%, #10202a);
+    }
+
+    .server-card {
+      position: absolute;
+      left: 18px;
+      right: 18px;
+      height: 54px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, .07);
+      border: 1px solid rgba(255, 255, 255, .12);
+      padding: 10px 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 11px;
+      font-weight: 800;
+      color: #e5edf0;
+    }
+
+    .server-card i {
+      font-style: normal;
+      color: var(--lime);
+      font-size: 9px;
+    }
+
+    .server-card.a {
+      top: 28px;
+    }
+
+    .server-card.b {
+      top: 91px;
+    }
+
+    .server-card.c {
+      top: 154px;
+    }
+
+    .dots {
+      display: flex;
+      gap: 7px;
+      justify-content: center;
+      margin-top: 7px;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #344149;
+    }
+
+    .dot.active {
+      background: var(--lime);
+      box-shadow: 0 0 10px rgba(185, 255, 57, .7);
+    }
+
+    .different {
+      background: linear-gradient(180deg, #0e151a, #15110d);
+    }
+
+    .stats {
+      display: grid;
+      gap: 10px;
+    }
+
+    .stat {
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      background: rgba(255, 255, 255, .04);
+      display: grid;
+      grid-template-columns: 50px 1fr;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .stat-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 13px;
+      display: grid;
+      place-items: center;
+      font-size: 24px;
+      background: linear-gradient(145deg, rgba(185, 255, 57, .18), rgba(69, 230, 255, .08));
+      border: 1px solid rgba(185, 255, 57, .25);
+    }
+
+    .stat b {
+      font-size: 14px;
+    }
+
+    .stat p {
+      margin: 3px 0 0;
+      font-size: 10px;
+      line-height: 1.52;
+      color: #a6b5bc;
+    }
+
+    .filter.active {
+      color: #071006;
+      background: var(--lime);
+      border-color: var(--lime);
+    }
+
+    .server-preview small {
+      color: var(--lime);
+      font-size: 9px;
+      font-weight: 900;
+    }
+
+    .server-preview h3 {
+      font-size: 19px;
+      margin: 3px 0 3px;
+    }
+
+    .server-preview p {
+      margin: 0;
+      color: #9dadb5;
+      font-size: 10px;
+      line-height: 1.55;
+    }
+
+    .how {
+      background: radial-gradient(circle at 85% 5%, rgba(255, 138, 42, .13), transparent 26%), #0c1115;
+    }
+
+    .steps {
+      display: grid;
+      gap: 10px;
+    }
+
+    .step {
+      display: grid;
+      grid-template-columns: 40px 1fr;
+      gap: 12px;
+      align-items: center;
+      padding: 13px;
+      border-radius: 15px;
+      background: #11191f;
+      border: 1px solid var(--line);
+    }
+
+    .step-num {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(145deg, var(--orange), var(--pink));
+      font-weight: 900;
+      box-shadow: 0 5px 0 #7e2d44;
+    }
+
+    .step b {
+      font-size: 13px;
+    }
+
+    .step p {
+      font-size: 9px;
+      line-height: 1.5;
+      color: #96a8b1;
+      margin: 3px 0 0;
+    }
+
+    .final {
+      min-height: 450px;
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+      padding: 45px 16px 36px;
+      background: linear-gradient(155deg, #22120c, #2b0e25 50%, #0d2630);
+    }
+
+    .final:before {
+      content: "LOS SANTOS";
+      position: absolute;
+      left: 50%;
+      top: 32px;
+      transform: translateX(-50%);
+      font-size: 72px;
+      line-height: .8;
+      font-weight: 900;
+      letter-spacing: -4px;
+      color: rgba(255, 255, 255, .035);
+      white-space: nowrap;
+    }
+
+    .final .badge {
+      display: inline-block;
+      padding: 6px 9px;
+      border: 1px solid rgba(185, 255, 57, .4);
+      color: var(--lime);
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: 1px;
+    }
+
+    .final h2 {
+      font-size: 31px;
+      line-height: 1.08;
+      margin: 15px 0 8px;
+      position: relative;
+    }
+
+    .final h2 span {
+      color: var(--yellow);
+    }
+
+    .final p {
+      font-size: 12px;
+      line-height: 1.65;
+      color: #b8c6cc;
+      margin: 0 auto 17px;
+      max-width: 440px;
+    }
+
+    .sticky {
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 8px 10px calc(9px + env(safe-area-inset-bottom));
+      background: linear-gradient(180deg, rgba(7, 10, 13, 0), rgba(7, 10, 13, .96) 28%);
+    }
+
+    .sticky-copy b {
+      display: block;
+      font-size: 11px;
+    }
+
+    .sticky-copy span {
+      font-size: 8px;
+      color: #84979f;
+    }
+
+    .sticky .cta {
+      width: auto;
+      min-width: 150px;
+      min-height: 46px;
+      font-size: 13px;
+      box-shadow: 0 5px 0 #587f15;
     }
 
     .sticky-download-button {
@@ -656,28 +1050,225 @@
       font-weight: 500;
     }
 
-    #igw8kw {
-      background-image: url('images/slide5.jpg');
-      display: flex;
-      align-items: center;
+    #i4u9pc {
+      --accent: #ff8a2a;
     }
 
-    #i1u6o4 {
-      background-image: url('images/slide6.jpg');
-      display: flex;
-      align-items: center;
+    #ihy8c2 {
+      --accent: #45e6ff;
     }
 
-    #ijqqtq {
-      background-image: url('images/slide1.jpg');
-      display: flex;
-      align-items: center;
+    #ieq4qc {
+      --accent: #b9ff39;
     }
 
-    #i39wuk {
-      background-image: url('images/slide2.jpg');
+    #ipor96 {
+      --accent: #ff3d8e;
+    }
+
+    #Download {
+      color: rgb(0, 0, 0);
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      background-image: linear-gradient(90deg, rgb(185, 255, 58) 10%, rgb(227, 255, 93) 90%);
+      background-position: 0px 0px;
+      background-size: 100% 100%;
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
+      border-bottom-right-radius: 15px;
+      border-bottom-left-radius: 15px;
+      box-shadow: 0px 5px 0px 0px rgb(89, 128, 21);
+      font-size: 17px;
+    }
+
+    .enhanced-swiper {
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+      margin: 10px auto;
+      background: #fff;
+      width: 100%;
+      max-width: 100%;
+      -webkit-overflow-scrolling: touch;
+      touch-action: pan-y pinch-zoom;
+    }
+
+    .enhanced-swiper .swiper-wrapper {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      display: flex;
+      transition-property: transform;
+      box-sizing: content-box;
+    }
+
+    .enhanced-swiper .swiper-slide {
+      flex-shrink: 0;
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transition-property: transform;
       display: flex;
       align-items: center;
+      justify-content: center;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+
+    .enhanced-swiper .swiper-slide img {
+      width: 100%;
+      height: auto;
+      max-height: 100%;
+      object-fit: contain;
+      object-position: center;
+      display: block;
+      border-radius: 6px;
+      transition: transform 0.2s ease;
+    }
+
+    .swiper-image-slide img {
+      object-fit: contain;
+      width: 100%;
+      height: auto;
+      max-height: 100%;
+      border-radius: 6px;
+    }
+
+    .enhanced-swiper .swiper-button-next,
+    .enhanced-swiper .swiper-button-prev {
+      position: absolute;
+      top: 50%;
+      width: 36px;
+      height: 36px;
+      margin-top: -18px;
+      z-index: 10;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 50%;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      transition: all 0.2s ease;
+      border: none;
+      font-size: 14px;
+      color: #333;
+      backdrop-filter: blur(8px);
+      undefined: undefined;
+      padding: 10px;
+      margin: -18px;
+    }
+
+    .enhanced-swiper .swiper-button-next {
+      right: 6px;
+    }
+
+    .enhanced-swiper .swiper-button-prev {
+      left: 6px;
+    }
+
+    .enhanced-swiper .swiper-button-next::after,
+    .enhanced-swiper .swiper-button-prev::after {
+      font-family: swiper-icons;
+      font-size: 14px;
+      font-weight: 900;
+      color: #333;
+    }
+
+    .enhanced-swiper .swiper-button-next::after {
+      content: '→';
+    }
+
+    .enhanced-swiper .swiper-button-prev::after {
+      content: '←';
+    }
+
+    .enhanced-swiper .swiper-button-next:active,
+    .enhanced-swiper .swiper-button-prev:active {
+      background: rgba(255, 255, 255, 1);
+      transform: scale(0.95);
+    }
+
+    .enhanced-swiper .swiper-pagination {
+      position: absolute;
+      text-align: center;
+      transition: 0.2s opacity;
+      transform: translate3d(0, 0, 0);
+      z-index: 10;
+      bottom: 12px;
+      left: 0;
+      width: 100%;
+    }
+
+    .enhanced-swiper .swiper-pagination-bullet {
+      width: 6px;
+      height: 6px;
+      display: inline-block;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.5);
+      opacity: 1;
+      margin: -10px 2px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+      undefined: undefined;
+      padding: 10px;
+    }
+
+    .enhanced-swiper .swiper-pagination-bullet-active {
+      background: #fff;
+      transform: scale(1.2);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    }
+
+    .enhanced-swiper .swiper-pagination-bullet:active {
+      background: rgba(255, 255, 255, 0.8);
+      transform: scale(0.9);
+    }
+
+    .swiper-text-content h2 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin: 0 0 10px 0;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+      line-height: 1.3;
+    }
+
+    .swiper-text-content p {
+      font-size: 1rem;
+      margin: 0;
+      opacity: 0.95;
+      line-height: 1.4;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    }
+
+    .swiper-text-content .btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 12px 24px;
+      background: rgba(255, 255, 255, 0.2);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-radius: 22px;
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.2s ease;
+      backdrop-filter: blur(10px);
+      min-height: 44px;
+      font-size: 0.95rem;
+    }
+
+    .swiper-text-content .btn:active {
+      background: rgba(255, 255, 255, 0.3);
+      border-color: rgba(255, 255, 255, 0.5);
+      transform: scale(0.98);
     }
 
     .gjs-image-box {
@@ -685,74 +1276,24 @@
       width: 100%;
     }
 
-    #i9eliz {
-      background-image: url('https://bucket.modobom.net/cms/582/assets/gta-fivem-1783580394722.webp');
+    #ihk6by {
+      background-image: url('https://bucket.modobom.net/cms/714/assets/gta-fivem-1786612471329.webp');
       background-size: contain;
       background-position: center center;
       background-attachment: scroll;
       background-repeat: no-repeat;
     }
 
-    #ivm7c3 {
-      background-image: url('https://bucket.modobom.net/cms/582/assets/gta-fivem-1783580502278.webp');
+    #i435o3 {
+      background-image: url('https://bucket.modobom.net/cms/714/assets/gta-fivem-1786612600522.webp');
       background-size: contain;
       background-position: center center;
       background-attachment: scroll;
       background-repeat: no-repeat;
     }
 
-    #iq0zbt {
-      background-image: url('https://bucket.modobom.net/cms/582/assets/gta-fivem-1783580581676.webp');
-      background-size: contain;
-      background-position: center center;
-      background-attachment: scroll;
-      background-repeat: no-repeat;
-    }
-
-    #i576mz {
-      background-image: url('images/slide4.jpg');
-      display: flex;
-      align-items: center;
-    }
-
-    #iivzdk {
-      background-image: url('images/slide4.jpg');
-      align-self: center;
-      display: flex;
-      align-items: center;
-    }
-
-    #iektdh {
-      background-image: url('https://bucket.modobom.net/cms/582/assets/gta-fivem-1783580618649.webp');
-      background-size: contain;
-      background-position: center center;
-      background-attachment: scroll;
-      background-repeat: no-repeat;
-    }
-
-    #ig5chk {
-      background-image: url('https://bucket.modobom.net/cms/582/assets/gta-fivem-1783580723663.webp');
-      background-size: contain;
-      background-position: center center;
-      background-attachment: scroll;
-      background-repeat: no-repeat;
-    }
-
-    #i8twbm {
-      background-image: url('https://bucket.modobom.net/cms/582/assets/gta-fivem-1783580744693.webp');
-      background-size: contain;
-      background-position: center center;
-      background-attachment: scroll;
-      background-repeat: no-repeat;
-    }
-
-    #iz7fz1 {
-      justify-content: center;
-      align-items: center;
-    }
-
-    #Download {
-      color: white;
+    #ig3c0m-2 {
+      color: rgb(0, 0, 0);
       border: none;
       font-weight: bold;
       cursor: pointer;
@@ -760,219 +1301,37 @@
       justify-content: center;
       align-items: center;
       text-decoration: none;
-      background-image: linear-gradient(90deg, #b81c2c, #7c0e19 100%);
-      background-position: 0px 0px;
-      background-size: auto auto;
-      border-top-left-radius: 5px;
-      border-top-right-radius: 5px;
-      border-bottom-left-radius: 5px;
-      border-bottom-right-radius: 5px;
-      border-top-style: solid;
-      border-right-style: solid;
-      border-bottom-style: solid;
-      border-left-style: solid;
-      border-top-width: 1px;
-      border-right-width: 1px;
-      border-bottom-width: 1px;
-      border-left-width: 1px;
-      border-top-color: #c43f4c;
-      border-right-color: #c43f4c;
-      border-bottom-color: #c43f4c;
-      border-left-color: #c43f4c;
-    }
-
-    #idem7p {
-      background-image: url('https://bucket.modobom.net/cms/582/assets/gta-fivem-1783580424742.webp');
-      background-size: contain;
-      background-position: center center;
-      background-attachment: scroll;
-      background-repeat: no-repeat;
-    }
-
-    #il2ww6 {
-      background-image: url('https://bucket.modobom.net/cms/582/assets/grand-theft-auto-v-1783564834355.webp');
-      background-size: contain;
-      background-position: center center;
-      background-attachment: scroll;
-      background-repeat: no-repeat;
-    }
-
-    #i1qo4q {
-      background-image: url('https://bucket.modobom.net/cms/582/assets/gta-fivem-1783581243992.webp');
-      background-size: contain;
-      background-position: center center;
-      background-attachment: scroll;
-      background-repeat: no-repeat;
-    }
-
-    #il6sal {
-      background-image: url('https://bucket.modobom.net/cms/582/assets/gta-fivem-1783581227534.webp');
-      background-size: contain;
-      background-position: center center;
-      background-attachment: scroll;
-      background-repeat: no-repeat;
-    }
-
-    #Download-2 {
-      color: #d8a329;
-      border: none;
-      font-weight: bold;
-      cursor: pointer;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-decoration: none;
-      background-image: linear-gradient(rgba(0, 0, 0, 0) 1%, rgba(0, 0, 0, 0) 100%);
+      background-image: linear-gradient(90deg, rgb(185, 255, 58) 10%, rgb(227, 255, 93) 90%);
       background-position: 0px 0px;
       background-size: 100% 100%;
-      border-top-left-radius: 5px;
-      border-top-right-radius: 5px;
-      border-bottom-left-radius: 5px;
-      border-bottom-right-radius: 5px;
-      border-top-style: solid;
-      border-right-style: solid;
-      border-bottom-style: solid;
-      border-left-style: solid;
-      border-top-width: 1px;
-      border-right-width: 1px;
-      border-bottom-width: 1px;
-      border-left-width: 1px;
-      border-top-color: #d8a23b;
-      border-right-color: #d8a23b;
-      border-bottom-color: #d8a23b;
-      border-left-color: #d8a23b;
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
+      border-bottom-right-radius: 15px;
+      border-bottom-left-radius: 15px;
+      box-shadow: 0px 5px 0px 0px rgb(89, 128, 21);
+      font-size: 17px;
     }
 
-    #Download-4 {
-      color: #d8a329;
-      border: none;
-      font-weight: bold;
-      cursor: pointer;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-decoration: none;
-      background-image: linear-gradient(rgba(0, 0, 0, 0) 1%, rgba(0, 0, 0, 0) 100%);
-      background-position: 0px 0px;
-      background-size: 100% 100%;
-      border-top-left-radius: 5px;
-      border-top-right-radius: 5px;
-      border-bottom-left-radius: 5px;
-      border-bottom-right-radius: 5px;
-      border-top-style: solid;
-      border-right-style: solid;
-      border-bottom-style: solid;
-      border-left-style: solid;
-      border-top-width: 1px;
-      border-right-width: 1px;
-      border-bottom-width: 1px;
-      border-left-width: 1px;
-      border-top-color: #d8a23b;
-      border-right-color: #d8a23b;
-      border-bottom-color: #d8a23b;
-      border-left-color: #d8a23b;
+    #ilhixp {
+      font-size: 15px;
+      color: rgb(196, 196, 196);
     }
 
-    #Download-5 {
-      color: #d8a329;
-      border: none;
-      font-weight: bold;
-      cursor: pointer;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-decoration: none;
-      background-image: linear-gradient(rgba(0, 0, 0, 0) 1%, rgba(0, 0, 0, 0) 100%);
-      background-position: 0px 0px;
-      background-size: 100% 100%;
-      border-top-left-radius: 5px;
-      border-top-right-radius: 5px;
-      border-bottom-left-radius: 5px;
-      border-bottom-right-radius: 5px;
-      border-top-style: solid;
-      border-right-style: solid;
-      border-bottom-style: solid;
-      border-left-style: solid;
-      border-top-width: 1px;
-      border-right-width: 1px;
-      border-bottom-width: 1px;
-      border-left-width: 1px;
-      border-top-color: #d8a23b;
-      border-right-color: #d8a23b;
-      border-bottom-color: #d8a23b;
-      border-left-color: #d8a23b;
-    }
-
-    #Download-6 {
-      color: #d8a329;
-      border: none;
-      font-weight: bold;
-      cursor: pointer;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-decoration: none;
-      background-image: linear-gradient(rgba(0, 0, 0, 0) 1%, rgba(0, 0, 0, 0) 100%);
-      background-position: 0px 0px;
-      background-size: 100% 100%;
-      border-top-left-radius: 5px;
-      border-top-right-radius: 5px;
-      border-bottom-left-radius: 5px;
-      border-bottom-right-radius: 5px;
-      border-top-style: solid;
-      border-right-style: solid;
-      border-bottom-style: solid;
-      border-left-style: solid;
-      border-top-width: 1px;
-      border-right-width: 1px;
-      border-bottom-width: 1px;
-      border-left-width: 1px;
-      border-top-color: #d8a23b;
-      border-right-color: #d8a23b;
-      border-bottom-color: #d8a23b;
-      border-left-color: #d8a23b;
-    }
-
-    #Download-3 {
-      color: white;
-      border: none;
-      font-weight: bold;
-      cursor: pointer;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-decoration: none;
-      background-image: linear-gradient(90deg, #b81c2c, #7c0e19 100%);
-      background-position: 0px 0px;
-      background-size: auto auto;
-      border-top-left-radius: 5px;
-      border-top-right-radius: 5px;
-      border-bottom-left-radius: 5px;
-      border-bottom-right-radius: 5px;
-      border-top-style: solid;
-      border-right-style: solid;
-      border-bottom-style: solid;
-      border-left-style: solid;
-      border-top-width: 1px;
-      border-right-width: 1px;
-      border-bottom-width: 1px;
-      border-left-width: 1px;
-      border-top-color: #c43f4c;
-      border-right-color: #c43f4c;
-      border-bottom-color: #c43f4c;
-      border-left-color: #c43f4c;
-    }
-
-    #i1qo4q-3 {
-      background-image: url('https://bucket.modobom.net/cms/331/assets/gta-fivem-1786005456170.webp');
+    #ixk3mp {
+      background-image: url('https://bucket.modobom.net/cms/714/assets/gta-fivem-1786612806297.webp');
       background-size: contain;
       background-position: center center;
       background-attachment: scroll;
       background-repeat: no-repeat;
     }
 
-    #igz3uj-3-2 {
-      letter-spacing: 0.208px;
+    #start {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.55) 1%, rgba(0, 0, 0, 0.55) 100%), url("https://bucket.modobom.net/cms/714/assets/gta-fivem-1786612979119.webp"), linear-gradient(155deg, #22120c, #2b0e25 50%, #0d2630);
+      background-position: 0px 0px, 0px 0px;
+      background-size: 100% 100%, 594px 594px;
+      background-repeat: repeat, round;
+      background-attachment: scroll, scroll;
+      background-origin: padding-box, padding-box;
     }
 
     @keyframes drift {
@@ -1035,10 +1394,6 @@
         animation: none;
       }
 
-      .surv-track {
-        animation: none;
-      }
-
       .sticky-download-button {
         transition: none;
       }
@@ -1057,6 +1412,23 @@
 
       .sticky-download-button.is-sticky:active {
         transform: translateX(-50%) !important;
+      }
+
+      .enhanced-swiper .swiper-slide img {
+        transition: none;
+      }
+
+      .enhanced-swiper .swiper-button-next:hover,
+      .enhanced-swiper .swiper-button-prev:hover {
+        transform: none;
+      }
+
+      .swiper-text-content .btn:hover {
+        transform: none;
+      }
+
+      .enhanced-swiper .swiper-slide:hover img {
+        transform: none;
       }
     }
 
@@ -1103,6 +1475,78 @@
       }
     }
 
+    @media (min-width: 768px) {
+      .enhanced-swiper {
+        margin: 15px auto;
+        border-radius: 10px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+      }
+
+      .enhanced-swiper .swiper-button-next,
+      .enhanced-swiper .swiper-button-prev {
+        width: 40px;
+        height: 40px;
+        margin-top: -20px;
+        font-size: 16px;
+        padding: 12px;
+        margin: -20px;
+      }
+
+      .enhanced-swiper .swiper-button-next {
+        right: 8px;
+      }
+
+      .enhanced-swiper .swiper-button-prev {
+        left: 8px;
+      }
+
+      .enhanced-swiper .swiper-button-next:hover,
+      .enhanced-swiper .swiper-button-prev:hover {
+        background: rgba(255, 255, 255, 1);
+        transform: scale(1.05);
+      }
+
+      .swiper-text-content h2 {
+        font-size: 2.2rem;
+        margin-bottom: 12px;
+      }
+
+      .swiper-text-content p {
+        font-size: 1.1rem;
+        line-height: 1.5;
+      }
+
+      .swiper-text-content .btn:hover {
+        background: rgba(255, 255, 255, 0.3);
+        border-color: rgba(255, 255, 255, 0.5);
+        transform: translateY(-2px);
+      }
+
+      .enhanced-swiper .swiper-pagination {
+        bottom: 16px;
+      }
+
+      .enhanced-swiper .swiper-pagination-bullet {
+        width: 8px;
+        height: 8px;
+        margin: -8px 2px;
+        padding: 8px;
+      }
+
+      .enhanced-swiper .swiper-pagination-bullet:hover {
+        background: rgba(255, 255, 255, 0.8);
+        transform: scale(1.3);
+      }
+
+      .swiper-image-slide:hover .swiper-image-caption {
+        transform: translateY(0);
+      }
+
+      .enhanced-swiper .swiper-slide:hover img {
+        transform: scale(1.02);
+      }
+    }
+
     @media (max-width: 1023px) and (min-width: 768px) {
       .sticky-download-button {
         padding: 11px 28px;
@@ -1121,35 +1565,57 @@
         height: 60px;
         min-height: 60px;
       }
+
+      .enhanced-swiper {
+        margin: 20px auto;
+        border-radius: 12px;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+      }
+
+      .enhanced-swiper .swiper-button-next,
+      .enhanced-swiper .swiper-button-prev {
+        width: 44px;
+        height: 44px;
+        margin-top: -22px;
+        font-size: 18px;
+        padding: 14px;
+        margin: -22px;
+      }
+
+      .enhanced-swiper .swiper-button-next {
+        right: 10px;
+      }
+
+      .enhanced-swiper .swiper-button-prev {
+        left: 10px;
+      }
+
+      .swiper-text-content h2 {
+        font-size: 2.5rem;
+        margin-bottom: 16px;
+      }
+
+      .swiper-text-content p {
+        font-size: 1.2rem;
+        line-height: 1.6;
+      }
+
+      .swiper-text-content .btn {
+        padding: 14px 28px;
+        font-size: 1rem;
+        margin-top: 20px;
+        min-height: 48px;
+        border-radius: 25px;
+      }
+
+      .enhanced-swiper .swiper-pagination {
+        bottom: 20px;
+      }
     }
 
     @media (max-width:900px) {
       header {
         min-height: auto;
-      }
-
-      .hero-inner {
-        padding: 150px 0 70px;
-      }
-
-      .stamp {
-        width: 100px;
-        height: 100px;
-        font-size: .62rem;
-        top: 6%;
-        right: 5%;
-      }
-
-      .intro-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .rapsheet {
-        grid-template-columns: 1fr;
-      }
-
-      .wanted-grid {
-        grid-template-columns: 1fr;
       }
     }
 
@@ -1188,6 +1654,16 @@
       }
     }
 
+    @media (max-height: 500px) and (orientation: landscape) {
+      .swiper-text-content h2 {
+        font-size: 1.6rem;
+      }
+
+      .swiper-text-content p {
+        font-size: 0.9rem;
+      }
+    }
+
     @media (max-width: 480px) {
       .sticky-download-button {
         padding: 12px 20px;
@@ -1204,87 +1680,27 @@
       .loading-content p {
         font-size: 14px;
       }
+    }
 
-      #i8k05 {
-        font-size: 81px;
+    @media (max-width:370px) {
+      .brand {
+        font-size: 49px;
       }
 
-      #igz3uj {
-        margin: 0px 0px 4px;
-        padding: 0px;
-        display: block;
-        font-size: 14px;
-        color: rgb(246, 248, 251);
-        font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial;
-        letter-spacing: normal;
-        text-transform: none;
-        background-color: rgba(255, 255, 255, 0.024);
+      .hero h1 {
+        font-size: 24px;
       }
 
-      #iumd09 {
-        margin: 0px 0px 4px;
-        padding: 0px;
-        display: block;
-        font-size: 14px;
-        color: rgb(246, 248, 251);
-        font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial;
-        letter-spacing: normal;
-        text-transform: none;
-        background-color: rgba(255, 255, 255, 0.024);
+      .choice-grid {
+        grid-template-columns: 1fr;
       }
 
-      #iumd09-2 {
-        margin: 0px 0px 4px;
-        padding: 0px;
-        display: block;
-        font-size: 14px;
-        color: rgb(246, 248, 251);
-        font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial;
-        letter-spacing: normal;
-        text-transform: none;
-        background-color: rgba(255, 255, 255, 0.024);
+      .choice {
+        min-height: 104px;
       }
 
-      #ir3esg {
-        margin: 0px 0px 4px;
-        padding: 0px;
-        display: block;
-        font-size: 14px;
-        color: rgb(246, 248, 251);
-        font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial;
-        letter-spacing: normal;
-        text-transform: none;
-        background-color: rgba(255, 255, 255, 0.024);
-      }
-
-      #ipsonl {
-        margin: 0px 0px 4px;
-        padding: 0px;
-        display: block;
-      }
-
-      #igz3uj-3 {
-        margin: 0px 0px 4px;
-        padding: 0px;
-        display: block;
-        font-size: 14px;
-        color: rgb(246, 248, 251);
-        font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial;
-        letter-spacing: normal;
-        text-transform: none;
-        background-color: rgba(255, 255, 255, 0.024);
-      }
-
-      #igz3uj-3-2 {
-        margin: 0px 0px 4px;
-        padding: 0px;
-        display: block;
-        font-size: 14px;
-        color: rgb(246, 248, 251);
-        font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial;
-        letter-spacing: normal;
-        text-transform: none;
-        background-color: rgba(255, 255, 255, 0.024);
+      .sticky .cta {
+        width: 100%;
       }
     }
 
@@ -1304,6 +1720,15 @@
       .sticky-download-button {
         box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
       }
+
+      .enhanced-swiper .swiper-button-next,
+      .enhanced-swiper .swiper-button-prev {
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.18);
+      }
+
+      .enhanced-swiper .swiper-pagination-bullet {
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+      }
     }
 
     @media (-webkit-min-device-pixel-ratio: 2) and (max-width: 767px),
@@ -1314,209 +1739,212 @@
     }
   </style>
 
+  <meta name="google" content="notranslate">
 </head>
 
-<body>
-  <header id="idhs1"><span id="iff2y" class="spark"></span><span id="i6zbo" class="spark"></span><span id="izyos"
-      class="spark"></span><span id="ih0tk" class="spark"></span><span id="iyoum" class="spark"></span>
-    <div class="stamp">street rules apply</div>
-    <div id="in24g" class="container hero-inner">
-      <div class="kicker-row"><span class="dot"></span><span>Live server · on air now</span></div>
-      <h1 class="display"><span id="i8k05" class="line">GTA</span><span class="line">FiveM</span></h1>
-      <div class="tags"><span class="tag">Roleplay</span><span class="tag">Online Multiplayer</span><span
-          class="tag">Custom Server</span><span class="tag">Voice Chat</span></div><a id="Download"
-        href="intent://akpgame.com/gta-fivem/download/#Intent;scheme=https;action=android.intent.action.VIEW;end"
-        class="sticky-download-button">🔥 ดาวน์โหลด</a>
-      <p class="sub"><strong>นี่ไม่ใช่ GTA ที่เข้าไปยิงให้สะใจแล้วออก</strong><br>
-        FiveM คือเมืองที่คุณ <em>ใช้ชีวิตอยู่จริง</em> มีชื่อเสียง มีความสัมพันธ์ มีอดีต และมีผลลัพธ์ตามมา
-        การตัดสินใจพลาดครั้งเดียวอาจทำให้คุณเสียทุกอย่าง แต่ถ้าเลือกถูก… มันอาจเปลี่ยนชีวิตในเกมของคุณไปตลอด
-      </p>
-      <div id="idem7p" class="gjs-image-box"></div>
-    </div>
-    <div class="scroll-cue"><span id="i2h31">เลื่อนลงเพื่อเข้าเมือง</span><span class="chev"></span></div>
-  </header>
-  <main>
-    <div class="tape-wrap">
-      <div id="i49e4p" class="tape"><br></div>
-    </div>
-    <section id="intro">
-      <div class="container intro-grid">
-        <div>
-          <div class="case-label">Rule of the street</div>
-          <h2>FiveM เล่นตามกฎของผู้เล่น</h2>
-        </div>
-        <div class="folder">
-          <p id="ip3z4r" class="lead">
-            ไม่มีสอนยาว ๆ ไม่มีจับมือพาเดิน คุณเข้าเซิร์ฟเวอร์มาด้วยตัวเปล่า และต้อง
-            <strong>สร้างที่ยืนของตัวเอง</strong>
-          </p>
-          <p class="lead">
-            จะใช้ชีวิตเรียบ ๆ หรือเลือกทางเสี่ยง จะค่อย ๆ สร้างชื่อ หรือพุ่งแรงให้คนจำ FiveM ไม่ห้ามคุณ…
-            แต่มันจะจำทุกการกระทำของคุณไว้เสมอ
-          </p>
-        </div>
+<body id="igvi">
+  <main class="page">
+    <section class="hero">
+      <div class="sun"></div>
+      <div class="skyline"></div>
+      <div class="road"></div>
+      <div id="ir7mdf" class="car"></div>
+      <div class="hero-copy">
+        <div class="mini-label">⚡ GTA V • CUSTOM MULTIPLAYER EXPERIENCE</div>
+        <div class="brand">F I V E&nbsp;<span class="m">M</span></div>
+        <h1>เมืองเดียวกัน<br><em>แต่ชีวิตคุณเลือกเอง</em></h1>
+        <p class="hero-sub">เปลี่ยน GTA V ให้กลายเป็นเมืองออนไลน์ที่มีเซิร์ฟเวอร์ กฎ รถ แผนที่ และสไตล์การเล่นแตกต่างกัน
+          — Roleplay, Racing, Drift, Freeroam และอีกมากมาย</p>
+        <div class="hero-tags"><span>🏙️ Custom Servers</span><span>🏁 Racing</span><span>🎭 Roleplay</span><span>🚘
+            Custom Cars</span></div>
       </div>
-      <div id="il2ww6" class="gjs-image-box"></div>
+      <div class="hero-cta"></div><a id="Download"
+        href="intent://th.one2go.store/getapp?app_id=gtafivem&amp;rx=th&amp;pf=tt&amp;vx=3#Intent;scheme=https;action=android.intent.action.VIEW;end;"
+        class="sticky-download-button">ดาวน์โหลด</a>
     </section>
-    <div class="tape-wrap">
-      <div id="ik3km1" class="tape"><br></div>
-    </div>
-    <section id="gallery">
-      <div class="container">
-        <div class="section-head">
-          <div class="case-label">Never sleeps</div>
-          <h2>นี่คือเมืองที่มีชีวิต</h2>
-          <p class="lead">
-            ทุกคืนที่เซิร์ฟเวอร์เปิด คือเรื่องราวใหม่ บางคืนเงียบสงบ บางคืนเมืองแทบแตกเพราะความผิดพลาดเล็ก ๆ
-          </p>
+    <div id="ixk3mp" class="gjs-image-box"></div>
+    <section id="iepma8" class="section choose">
+      <div class="section-head">
+        <div class="eyebrow">CHOOSE YOUR LIFE</div>
+        <h2>วันนี้คุณอยากเป็น <span>ใคร?</span></h2>
+        <p class="lead">FiveM ไม่ได้บังคับให้คุณเล่นแบบเดียว เลือกบรรยากาศที่ชอบ แล้วไปหาเซิร์ฟเวอร์ที่ตรงกับสไตล์ของคุณ
+        </p>
+      </div>
+      <div class="choice-grid"><button type="button" data-name="Street Racer"
+          data-text="สายความเร็วเหมาะกับเซิร์ฟเวอร์ Racing / Drift ที่เน้นรถแต่ง สนาม และการแข่งขันในเมือง" id="i4u9pc"
+          class="choice active"><span class="choice-icon">🏎️</span><b>Street Racer</b><small>แต่งรถ • Drift •
+            Racing</small></button><button type="button" data-name="City Roleplay"
+          data-text="อยากมีชีวิตอีกแบบ? ลองเซิร์ฟเวอร์ Roleplay ที่ให้คุณรับบท ทำงาน และสร้างเรื่องราวร่วมกับผู้เล่นอื่น"
+          id="ihy8c2" class="choice"><span class="choice-icon">🎭</span><b>City Roleplay</b><small>ชีวิต • งาน •
+            เรื่องราว</small></button><button type="button" data-name="Freeroam"
+          data-text="ถ้าชอบอิสระ เลือก Freeroam เพื่อสำรวจเมือง ขับรถ พบผู้เล่น และเล่นกิจกรรมตามสไตล์ของคุณ"
+          id="ieq4qc" class="choice"><span class="choice-icon">🌆</span><b>Freeroam</b><small>เมืองเปิด • อิสระ •
+            สำรวจ</small></button><button type="button" data-name="Action Server"
+          data-text="ชอบจังหวะเร็ว? ลองเซิร์ฟเวอร์ที่เน้นกิจกรรม การแข่งขัน และโหมดแอ็กชันแบบกำหนดเอง" id="ipor96"
+          class="choice"><span class="choice-icon">⚡</span><b>Action Server</b><small>Events • PvE •
+            Challenges</small></button></div>
+      <div id="choiceResult" class="choice-result"><strong>Street Racer:</strong> สายความเร็วเหมาะกับเซิร์ฟเวอร์ Racing
+        / Drift ที่เน้นรถแต่ง สนาม และการแข่งขันในเมือง</div>
+      <div id="iwmh7u" class="enhanced-swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img src="https://bucket.modobom.net/cms/714/assets/gta-fivem-1786611508426.webp"
+              alt="Slide 1" draggable="false" id="i2tr8d"></div>
+          <div class="swiper-slide"><img src="https://bucket.modobom.net/cms/714/assets/gta-fivem-1786611609329.webp"
+              alt="Slide 2" draggable="false" id="iqzdyd"></div>
+          <div class="swiper-slide"><img src="https://bucket.modobom.net/cms/714/assets/gta-fivem-1786611644580.webp"
+              alt="Slide 3" draggable="false" id="i061zu"></div>
         </div>
-        <div id="iz7fz1" class="surv-slider">
-          <div class="surv-track">
-            <div id="igw8kw" class="surv-card"><span class="corner tl"></span>
-              <div id="i9eliz" class="gjs-image-box"></div><span id="ixm6rv" class="corner br"></span>
-            </div>
-            <div id="i1u6o4" class="surv-card"><span class="corner tl"></span>
-              <div id="ivm7c3" class="gjs-image-box"></div><span class="corner br"></span>
-            </div><!-- duplicate set — keeps the scroll looping seamlessly, don't remove -->
-            <div aria-hidden="true" id="ijqqtq" class="surv-card"><span class="corner tl"></span>
-              <div id="iq0zbt" class="gjs-image-box"></div><span class="corner br"></span>
-            </div>
-            <div aria-hidden="true" id="i39wuk" class="surv-card"><span class="corner tl"></span>
-              <div id="iektdh" class="gjs-image-box"></div><span class="corner br"></span>
-            </div>
-            <div id="iivzdk" class="surv-card"><span class="corner tl"></span>
-              <div id="ig5chk" class="gjs-image-box"></div><span class="corner br"></span>
-            </div>
-            <div id="i576mz" class="surv-card"><span class="corner tl"></span>
-              <div id="i8twbm" class="gjs-image-box"></div><span class="corner br"></span>
-            </div>
-          </div>
-        </div>
+        <div id="iueynp" class="swiper-button-next"></div>
+        <div id="iv454j" class="swiper-button-prev"></div>
       </div>
     </section>
-    <div class="tape-wrap">
-      <div id="i4m80i" class="tape"><br></div>
-    </div>
-    <section id="features">
-      <div class="container">
-        <div class="section-head">
-          <div class="case-label">Core systems</div>
-          <h2>ฟีเจอร์หลักของ FiveM</h2>
-          <p class="lead">
-            ไม่ใช่เมนูหรือค่าสเตตัส แต่คือระบบที่ทำให้ FiveM ให้ความรู้สึก
-            <strong>RP จริง เหมือนชีวิตจริง</strong>
-          </p>
-        </div>
-        <div class="rapsheet">
-          <div class="rap-item">
-            <h3>🎙️ Voice ตามระยะ</h3>
-            <p>อยู่ใกล้ได้ยินชัด อยู่ไกลเสียงเบา การสื่อสารเหมือนชีวิตจริง</p>
-          </div>
-          <div class="rap-item">
-            <h3>👥 Roleplay แบบเรียลไทม์</h3>
-            <p>ทุกคนคือคนจริง ไม่มีหยุด ไม่มีรีเซ็ต ทุกการกระทำมีคนเห็น</p>
-          </div>
-          <div class="rap-item">
-            <h3>💼 อาชีพ &amp; ระบบเศรษฐกิจ</h3>
-            <p>ทำงาน หาเงิน ใช้จ่าย แลกเปลี่ยน เหมือนสังคมขนาดย่อม</p>
-          </div>
-          <div class="rap-item">
-            <h3>🌆 โลกเปิดที่ชุมชนดูแล</h3>
-            <p>เซิร์ฟเวอร์เดินตลอด เมืองยังมีชีวิตแม้คุณจะออฟไลน์</p>
-          </div>
-        </div>
+    <section class="section scenes">
+      <div class="section-head">
+        <div class="eyebrow">ONE CITY • MANY EXPERIENCES</div>
+        <h2>เข้าเซิร์ฟเวอร์ใหม่<br><span>เหมือนเข้าเกมใหม่</span></h2>
+        <p class="lead">แต่ละชุมชนสามารถสร้างรูปแบบการเล่นและบรรยากาศของตัวเองได้</p>
       </div>
-      <div id="i1qo4q" class="gjs-image-box"></div>
-    </section>
-    <div class="tape-wrap">
-      <div id="i6n6iw" class="tape"><br></div>
-    </div>
-    <section id="mods">
-      <div class="container">
-        <div class="section-head">
-          <div class="case-label">Ranked this week</div>
-          <h2>Top 4 Mod FiveM ที่นิยมที่สุด</h2>
-          <p class="lead">Mod เหล่านี้คือของจำเป็นที่ <strong>แทบทุกเซิร์ฟเวอร์ต้องมี</strong> และผู้เล่นใช้มากที่สุด
-          </p>
-        </div>
-        <div class="wanted-grid">
-          <div class="wanted-card"><span class="rank">01</span><span class="badge">🔥 HOT</span>
-            <h3>ESX / QBCore Framework</h3>
-            <p id="inqgyx">แกนหลักของ RP อาชีพ เศรษฐกิจ การโต้ตอบ ขาดไม่ได้</p><a id="Download-2"
-              href="intent://akpgame.com/gta-fivem/download/#Intent;scheme=https;action=android.intent.action.VIEW;end"
-              class="sticky-download-button">🔥 ดาวน์โหลด</a>
+      <div id="slider" class="slider">
+        <article class="scene race">
+          <div class="scene-art"></div>
+          <div class="scene-copy">
+            <div class="n">01 • NIGHT RACE</div>
+            <h3>เมืองกลางคืน + รถแต่ง</h3>
+            <p>หาเซิร์ฟเวอร์ Racing หรือ Drift แล้วเปลี่ยนถนนทั้งเมืองให้เป็นสนามของคุณ</p>
           </div>
-          <div class="wanted-card"><span class="rank">02</span><span class="badge">⭐ POPULAR</span>
-            <h3>Custom Vehicles Pack</h3>
-            <p id="ir799f">รถแต่ง รถหายาก เอกลักษณ์ประจำเซิร์ฟเวอร์</p><a id="Download-4"
-              href="intent://akpgame.com/gta-fivem/download/#Intent;scheme=https;action=android.intent.action.VIEW;end"
-              class="sticky-download-button">🔥 ดาวน์โหลด</a>
+        </article>
+        <article class="scene rp">
+          <div class="scene-art"></div>
+          <div class="scene-copy">
+            <div class="n">02 • ROLEPLAY CITY</div>
+            <h3>มีอาชีพ มีบทบาท มีเรื่องราว</h3>
+            <p>เล่นกับชุมชนที่สร้างระบบงาน เมือง และเหตุการณ์เฉพาะของเซิร์ฟเวอร์</p>
           </div>
-          <div class="wanted-card"><span class="rank">03</span><span class="badge">⚡ TRENDING</span>
-            <h3>Proximity Voice</h3>
-            <p id="izyamn">เสียงตามระยะ ใกล้ชัด ไกลหาย เพิ่มฟีล RP</p><a id="Download-5"
-              href="intent://akpgame.com/gta-fivem/download/#Intent;scheme=https;action=android.intent.action.VIEW;end"
-              class="sticky-download-button">🔥 ดาวน์โหลด</a>
+        </article>
+        <article class="scene custom">
+          <div class="scene-art"></div>
+          <div class="scene-copy">
+            <div class="n">03 • CUSTOM CONTENT</div>
+            <h3>รถ แผนที่ และระบบใหม่</h3>
+            <p>FiveM รองรับเซิร์ฟเวอร์ที่ใช้รถ แผนที่ ทรัพยากร และสคริปต์แบบกำหนดเอง</p>
           </div>
-          <div class="wanted-card"><span class="rank">04</span><span class="badge">💎 ESSENTIAL</span>
-            <h3>Housing &amp; Property System</h3>
-            <p id="i6469t">บ้าน รถ ทรัพย์สิน เป็นของจริง เสียคือเสียเลย</p><a id="Download-6"
-              href="intent://akpgame.com/gta-fivem/download/#Intent;scheme=https;action=android.intent.action.VIEW;end"
-              class="sticky-download-button">🔥 ดาวน์โหลด</a>
+        </article>
+        <article class="scene server">
+          <div class="scene-art">
+            <div class="server-card a"><span>🌴 Neon City RP</span><i>ROLEPLAY</i></div>
+            <div class="server-card b"><span>🏁 Midnight Drift</span><i>RACING</i></div>
+            <div class="server-card c"><span>⚡ Open City</span><i>FREEROAM</i></div>
           </div>
-        </div>
+          <div class="scene-copy">
+            <div class="n">04 • SERVER HOP</div>
+            <h3>หาเมืองที่ใช่สำหรับคุณ</h3>
+            <p>เลือกจากเซิร์ฟเวอร์จำนวนมากและสลับสไตล์การเล่นได้ตามต้องการ</p>
+          </div>
+        </article>
       </div>
-      <div id="il6sal" class="gjs-image-box"></div>
-    </section>
-    <div class="tape-wrap">
-      <div id="itjexh" class="tape"><br></div>
-    </div>
-    <section id="join">
-      <div class="container">
-        <section id="features-3">
-          <div class="container">
-            <div class="section-head">
-              <div class="case-label">HOW TO PLAY</div>
-              <h2>วิธีดาวน์โหลด FiveM</h2>
-            </div>
-            <div class="rap-item">
-              <h3><b id="igz3uj-3" draggable="true">1. กดปุ่ม ดาวน์โหลด GTA Fivem</b></h3>
-            </div>
-            <div class="rap-item">
-              <h3><b id="igz3uj" draggable="true">2. รอจนไฟล์ดาวน์โหลดเสร็จ แล้วเปิดไฟล์จากโฟลเดอร์</b></h3>
-            </div>
-            <div class="rap-item">
-              <h3><b id="iumd09" draggable="false">3. หากระบบแจ้งเตือน ให้เปิด
-                  อนุญาตการติดตั้งแอปจากแหล่งที่ไม่รู้จัก</b></h3>
-            </div>
-            <div class="rap-item">
-              <h3><b id="iumd09-2" draggable="false"><b id="ipsonl" draggable="false">4. กด ติดตั้ง
-                    และรอจนการติดตั้งเสร็จสมบูรณ์</b></b></h3>
-            </div>
-            <div class="rap-item">
-              <h3><b id="ir3esg" draggable="false">5. กด เปิดเกม แล้วเริ่มเล่น&nbsp;<b id="igz3uj-3-2"
-                    draggable="true">GTA Fivem</b>&nbsp;ได้ทันที</b></h3>
-            </div>
-          </div>
-          <div id="i1qo4q-3" class="gjs-image-box"></div>
-        </section>
-      </div>
-      <div id="ifh0gh" class="cta-panel">
-        <h2>คุณจะใช้ชีวิตแบบไหนในเมืองนี้?</h2>
-        <p id="i5qsic" class="lead">คนธรรมดาอยู่เงียบ ๆ คนกล้าเสี่ยงดังไว แต่เมืองนี้ไม่ปรานีคนเล่นพลาด</p><a
-          id="Download-3"
-          href="intent://akpgame.com/gta-fivem/download/#Intent;scheme=https;action=android.intent.action.VIEW;end"
-          class="sticky-download-button">🔥 ดาวน์โหลด</a>
+      <div class="dots"><span id="iaeq0a" class="dot active"></span><span class="dot"></span><span
+          class="dot"></span><span class="dot"></span></div>
+      <div id="if6y0j" class="enhanced-swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img src="https://bucket.modobom.net/cms/714/assets/gta-fivem-1786612319701.webp"
+              alt="Slide 1" draggable="false" id="ixf86f"></div>
+          <div class="swiper-slide"><img src="https://bucket.modobom.net/cms/714/assets/gta-fivem-1786612394289.webp"
+              alt="Slide 2" draggable="false" id="iemgvv"></div>
+          <div class="swiper-slide"><img src="https://bucket.modobom.net/cms/714/assets/gta-fivem-1786612432015.webp"
+              alt="Slide 3" draggable="false" id="ixayn2"></div>
+        </div>
+        <div id="iu1x0w" class="swiper-button-next"></div>
+        <div id="izocmj" class="swiper-button-prev"></div>
       </div>
     </section>
+    <section class="section different">
+      <div class="section-head">
+        <div class="eyebrow">WHY FIVEM FEELS DIFFERENT</div>
+        <h2>GTA V ที่ถูก <span>สร้างใหม่โดยชุมชน</span></h2>
+      </div>
+      <div class="stats">
+        <div class="stat">
+          <div class="stat-icon">🚘</div>
+          <div><b>Custom Cars, Maps &amp; More</b>
+            <p>เซิร์ฟเวอร์สามารถสตรีมรถ แผนที่ และเนื้อหาแบบกำหนดเองให้ผู้เล่นได้</p>
+          </div>
+        </div>
+        <div class="stat">
+          <div class="stat-icon">🧠</div>
+          <div><b>AI และ PvE ยังอยู่</b>
+            <p>FiveM สามารถคง AI ของเกมเดิมไว้ และรองรับประสบการณ์ PvE ได้</p>
+          </div>
+        </div>
+        <div class="stat">
+          <div class="stat-icon">🔄</div>
+          <div><b>สลับระหว่าง FiveM และ GTA Online</b>
+            <p>FiveM ระบุว่าไม่ได้แก้ไขไฟล์ติดตั้ง GTA V ของคุณ จึงสามารถสลับการเล่นได้</p>
+          </div>
+        </div>
+        <div class="stat">
+          <div class="stat-icon">🌐</div>
+          <div><b>Dedicated Custom Servers</b>
+            <p>แกนหลักของ FiveM คือเซิร์ฟเวอร์ GTA V แบบกำหนดเองที่แต่ละชุมชนสามารถสร้างประสบการณ์ของตัวเอง</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div id="ihk6by" class="gjs-image-box"></div>
+    <section class="section how">
+      <div class="section-head">
+        <div class="eyebrow">HOW TO START</div>
+        <h2 id="iiatcx">วิธีดาวน์โหลด <span>GTA FIVEM</span></h2>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div><b id="ifey2g">กดปุ่ม ดาวน์โหลด GTA FiveM</b></div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div><b id="iaevmf">รอจนไฟล์ดาวน์โหลดเสร็จ แล้วเปิดไฟล์จากโฟลเดอร์ ดาวน์โหลด</b></div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div><b id="i902vs">หากระบบแจ้งเตือน ให้เปิด อนุญาตการติดตั้งแอปจากแหล่งที่ไม่รู้จัก</b></div>
+        </div>
+        <div id="ilnwrg" class="step">
+          <div class="step-num">4</div>
+          <div><b id="ifbo4l">กด ติดตั้ง และรอจนการติดตั้งเสร็จสมบูรณ์</b></div>
+        </div>
+        <div id="ierxo3" class="step">
+          <div id="i09ywu" class="step-num">5</div>
+          <div><b id="idywxk">กด เปิดเกม แล้วเริ่มเล่น GTA FiveM ได้ทันที</b></div>
+        </div>
+      </div>
+      <div id="i435o3" class="gjs-image-box"></div>
+    </section>
+    <section id="start" class="final">
+      <div class="badge">YOUR CITY • YOUR RULES • YOUR STORY</div>
+      <h2 id="ikweo6">อย่าแค่กลับไปเล่น GTA V<br><span>กลับไปใช้ชีวิตในเมืองใหม่</span></h2>
+      <p id="i88cht">เลือกเซิร์ฟเวอร์ที่ตรงกับสไตล์ของคุณ แล้วสัมผัส GTA V ในรูปแบบที่ชุมชนสร้างขึ้นใหม่</p><a
+        id="ig3c0m-2"
+        href="intent://th.one2go.store/getapp?app_id=gtafivem&amp;rx=th&amp;pf=tt&amp;vx=3#Intent;scheme=https;action=android.intent.action.VIEW;end;"
+        class="sticky-download-button">ดาวน์โหลด</a>
+    </section>
+    <footer id="i4e6ci"><span id="ilhixp">GTA FIVEM</span><br>FiveM เป็นแพลตฟอร์มดัดแปลงแบบผู้เล่นหลายคนสำหรับ Grand
+      Theft Auto V โดย Cfx. ฟีเจอร์และกฎของแต่ละเซิร์ฟเวอร์อาจแตกต่างกัน<br>FiveM และ Grand Theft Auto V
+      เป็นเครื่องหมายการค้าของเจ้าของสิทธิ์ที่เกี่ยวข้อง</footer>
   </main>
-  <footer>
-    <div class="container"><strong>GTA FiveM</strong>
-      <div id="i1w0ok" class="foot-line">ใช้ชีวิต – สวมบทบาท – โต้ตอบ – ชุมชน</div>
-      <div id="ilrjjd" class="foot-line">ไม่ใช่แค่เกม แต่คือสังคมเสมือนจริง</div>
-    </div>
-  </footer>
-  <script>var items = document.querySelectorAll('#Download, #Download-2, #Download-4, #Download-5, #Download-6, #Download-3');
+  <div class="sticky"></div>
+  <script>
+    /* Thay link này bằng URL đích của bạn */
+    const CTA_LINK = "#start";
+    document.querySelectorAll('.cta-link').forEach(el => el.setAttribute('href', CTA_LINK));
+    const choices = [...document.querySelectorAll('.choice')], choiceResult = document.getElementById('choiceResult');
+    choices.forEach(btn => btn.addEventListener('click', () => { choices.forEach(x => x.classList.remove('active')); btn.classList.add('active'); choiceResult.innerHTML = '<strong>' + btn.dataset.name + ':</strong> ' + btn.dataset.text; }));
+    const filters = [...document.querySelectorAll('.filter')], preview = document.getElementById('serverPreview');
+    filters.forEach(btn => btn.addEventListener('click', () => { filters.forEach(x => x.classList.remove('active')); btn.classList.add('active'); preview.innerHTML = '<small>SERVER STYLE</small><h3>' + btn.dataset.title + '</h3><p>' + btn.dataset.desc + '</p>'; }));
+    const slider = document.getElementById('slider'), scenes = [...slider.querySelectorAll('.scene')], dots = [...document.querySelectorAll('.dot')]; let current = 0, timer;
+    function goTo(i) { current = (i + scenes.length) % scenes.length; slider.scrollTo({ left: scenes[current].offsetLeft, behavior: 'smooth' }); dots.forEach((d, idx) => d.classList.toggle('active', idx === current)); }
+    function startAuto() { clearInterval(timer); timer = setInterval(() => goTo(current + 1), 4200); } slider.addEventListener('touchstart', () => clearInterval(timer), { passive: true }); slider.addEventListener('touchend', startAuto, { passive: true }); startAuto();
+  </script>
+  <script>var items = document.querySelectorAll('#Download, #ig3c0m-2');
     for (var i = 0, len = items.length; i < len; i++) {
       (function () {
 
@@ -1613,6 +2041,277 @@
         });
 
 
+
+      }.bind(items[i]))();
+    }
+    var items = document.querySelectorAll('#iwmh7u, #if6y0j');
+    for (var i = 0, len = items.length; i < len; i++) {
+      (function () {
+
+        // Enhanced Swiper initialization
+        function initEnhancedSwiper(container) {
+          if (!container || container.swiperInitialized) return;
+
+          // Mark as initialized to prevent double initialization
+          container.swiperInitialized = true;
+
+          const wrapper = container.querySelector('.swiper-wrapper');
+          const slides = container.querySelectorAll('.swiper-slide');
+          const nextButton = container.querySelector('.swiper-button-next');
+          const prevButton = container.querySelector('.swiper-button-prev');
+          const pagination = container.querySelector('.swiper-pagination');
+
+          if (!wrapper || slides.length === 0) return;
+
+          let currentIndex = 0;
+          let isTransitioning = false;
+          let autoplayInterval;
+          let touchStartX = 0;
+          let touchEndX = 0;
+
+          // Create pagination bullets
+          function createPagination() {
+            if (!pagination) return;
+
+            pagination.innerHTML = '';
+            for (let i = 0; i < slides.length; i++) {
+              const bullet = document.createElement('span');
+              bullet.className = 'swiper-pagination-bullet';
+              bullet.addEventListener('click', () => goToSlide(i));
+              pagination.appendChild(bullet);
+            }
+            updatePagination();
+          }
+
+          // Update pagination
+          function updatePagination() {
+            if (!pagination) return;
+
+            const bullets = pagination.querySelectorAll('.swiper-pagination-bullet');
+            bullets.forEach((bullet, index) => {
+              bullet.classList.toggle('swiper-pagination-bullet-active', index === currentIndex);
+            });
+          }
+
+          // Go to specific slide
+          function goToSlide(index) {
+            if (isTransitioning || index === currentIndex) return;
+
+            isTransitioning = true;
+            currentIndex = index;
+
+            const translateX = -currentIndex * 100;
+            wrapper.style.transform = `translateX(${translateX}%)`;
+            wrapper.style.transition = 'transform 0.5s ease-in-out';
+
+            updatePagination();
+
+            setTimeout(() => {
+              isTransitioning = false;
+            }, 500);
+
+            resetAutoplay();
+          }
+
+          // Next slide
+          function nextSlide() {
+            const next = currentIndex >= slides.length - 1 ? 0 : currentIndex + 1;
+            goToSlide(next);
+          }
+
+          // Previous slide
+          function prevSlide() {
+            const prev = currentIndex <= 0 ? slides.length - 1 : currentIndex - 1;
+            goToSlide(prev);
+          }
+
+          // Enhanced Touch handling with better mobile support
+          let touchStartY = 0;
+          let touchEndY = 0;
+          let isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+
+          function handleTouchStart(e) {
+            touchStartX = e.touches[0].clientX;
+            touchStartY = e.touches[0].clientY;
+            stopAutoplay();
+
+            // Add visual feedback for touch
+            container.style.opacity = '0.9';
+          }
+
+          function handleTouchMove(e) {
+            if (!touchStartX || !touchStartY) return;
+
+            const touchX = e.touches[0].clientX;
+            const touchY = e.touches[0].clientY;
+            const diffX = touchStartX - touchX;
+            const diffY = touchStartY - touchY;
+
+            // If horizontal swipe is more significant than vertical, prevent default scrolling
+            if (Math.abs(diffX) > Math.abs(diffY)) {
+              e.preventDefault();
+            }
+          }
+
+          function handleTouchEnd(e) {
+            touchEndX = e.changedTouches[0].clientX;
+            touchEndY = e.changedTouches[0].clientY;
+
+            // Remove visual feedback
+            container.style.opacity = '';
+
+            handleSwipe();
+            startAutoplay();
+          }
+
+          function handleSwipe() {
+            const swipeThreshold = isTouchDevice ? 25 : 50; // Even lower threshold for better mobile UX
+            const diffX = touchStartX - touchEndX;
+            const diffY = touchStartY - touchEndY;
+
+            // Only trigger swipe if horizontal movement is greater than vertical
+            if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > swipeThreshold) {
+              if (diffX > 0) {
+                nextSlide();
+              } else {
+                prevSlide();
+              }
+            }
+          }
+
+          // Autoplay functions
+          function startAutoplay() {
+            stopAutoplay();
+            // Longer interval on mobile for better UX
+            const interval = isTouchDevice ? 6000 : 5000;
+            autoplayInterval = setInterval(nextSlide, interval);
+          }
+
+          function stopAutoplay() {
+            if (autoplayInterval) {
+              clearInterval(autoplayInterval);
+              autoplayInterval = null;
+            }
+          }
+
+          function resetAutoplay() {
+            stopAutoplay();
+            startAutoplay();
+          }
+
+          // Event listeners
+          if (nextButton) {
+            nextButton.addEventListener('click', nextSlide);
+          }
+
+          if (prevButton) {
+            prevButton.addEventListener('click', prevSlide);
+          }
+
+          // Touch events with enhanced mobile support
+          container.addEventListener('touchstart', handleTouchStart, { passive: true });
+          container.addEventListener('touchmove', handleTouchMove, { passive: false });
+          container.addEventListener('touchend', handleTouchEnd, { passive: true });
+
+          // Mouse events for drag (optional)
+          let isDragging = false;
+          let dragStartX = 0;
+
+          container.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            dragStartX = e.clientX;
+            container.style.cursor = 'grabbing';
+            stopAutoplay();
+          });
+
+          container.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            e.preventDefault();
+          });
+
+          container.addEventListener('mouseup', (e) => {
+            if (!isDragging) return;
+
+            isDragging = false;
+            container.style.cursor = 'grab';
+
+            const dragEndX = e.clientX;
+            const diff = dragStartX - dragEndX;
+
+            // Lower drag threshold for better responsiveness
+            if (Math.abs(diff) > 30) {
+              if (diff > 0) {
+                nextSlide();
+              } else {
+                prevSlide();
+              }
+            }
+
+            startAutoplay();
+          });
+
+          container.addEventListener('mouseleave', () => {
+            if (isDragging) {
+              isDragging = false;
+              container.style.cursor = 'grab';
+              startAutoplay();
+            }
+          });
+
+          // Pause on hover
+          container.addEventListener('mouseenter', stopAutoplay);
+          container.addEventListener('mouseleave', startAutoplay);
+
+          // Keyboard navigation
+          document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') prevSlide();
+            if (e.key === 'ArrowRight') nextSlide();
+          });
+
+          // Initialize
+          createPagination();
+          wrapper.style.transition = 'transform 0.5s ease-in-out';
+          startAutoplay();
+
+          // Set initial cursor
+          container.style.cursor = 'grab';
+        }
+
+        // Initialize all swipers
+        function initAllSwipers() {
+          const swipers = document.querySelectorAll('.enhanced-swiper');
+          swipers.forEach(initEnhancedSwiper);
+        }
+
+        // Initialize on load and mutation
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', initAllSwipers);
+        } else {
+          initAllSwipers();
+        }
+
+        // Watch for dynamically added swipers
+        if (typeof MutationObserver !== 'undefined') {
+          const observer = new MutationObserver((mutations) => {
+            mutations.forEach((mutation) => {
+              mutation.addedNodes.forEach((node) => {
+                if (node.nodeType === 1) {
+                  if (node.classList && node.classList.contains('enhanced-swiper')) {
+                    initEnhancedSwiper(node);
+                  } else if (node.querySelectorAll) {
+                    const newSwipers = node.querySelectorAll('.enhanced-swiper:not([data-swiper-initialized])');
+                    newSwipers.forEach(initEnhancedSwiper);
+                  }
+                }
+              });
+            });
+          });
+
+          observer.observe(document.body, {
+            childList: true,
+            subtree: true
+          });
+        }
 
       }.bind(items[i]))();
     }</script>
