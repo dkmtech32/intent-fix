@@ -1,0 +1,89 @@
+/minecraft/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/minecraft/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/minecraft/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/sport/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/sport/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/sport/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/hytale-mobile/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/hytale-mobile/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/hytale-mobile/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/minecraft-bedrock-edition/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/minecraft-bedrock-edition/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/minecraft-bedrock-edition/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/euro-truck-simulator-2/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/euro-truck-simulator-2/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/euro-truck-simulator-2/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/deltarune/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/deltarune/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/deltarune/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/euro-truck-simulator-2-mobile/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/euro-truck-simulator-2-mobile/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/euro-truck-simulator-2-mobile/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/toca-boca-world/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/toca-boca-world/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/toca-boca-world/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/testing/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/testing/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/testing/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/brawl-stars/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/brawl-stars/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/brawl-stars/*.css
+  Cache-Control: public, max-age=31536000, immutable

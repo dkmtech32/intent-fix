@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="th" translate="no" class="notranslate">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"><title>Nightgamer - 3D Night Gaming Simulator</title><link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; } body {margin: 0;}*{box-sizing:border-box;}html{scroll-behavior:smooth;}:root{--bg:#050716;--card:#11162c;--text:#ffffff;--muted:#dfeaff;--sub:#9fb0d0;--cyan:#38e8ff;--blue:#4f8cff;--purple:#8b5cff;--pink:#ff5fb7;--green:#00ff9d;--yellow:#ffe66d;--line:rgba(255,255,255,.14);--shadow:0 26px 80px rgba(0,0,0,.52);}body{margin:0;font-family:"Kanit", sans-serif;color:var(--text);background:radial-gradient(circle at 50% -160px, rgba(56,232,255,.34), transparent 430px),
+        radial-gradient(circle at 12% 18%, rgba(139,92,255,.24), transparent 280px),
+        radial-gradient(circle at 90% 12%, rgba(255,95,183,.18), transparent 280px),
+        linear-gradient(180deg, #050716 0%, #101633 55%, #050716 100%);padding-bottom:100px;overflow-x:hidden;}a{color:inherit;text-decoration:none;}.noise{position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.28;background-image:linear-gradient(rgba(255,255,255,.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.045) 1px, transparent 1px);background-size:38px 38px;mask-image:linear-gradient(to bottom, black 0%, transparent 86%);}.wrap{max-width:560px;margin:auto;padding:0 14px;position:relative;z-index:2;}.hero-content{position:relative;z-index:3;text-align:center;max-width:560px;margin:auto;padding-top:22px;}.badge{display:inline-flex;align-items:center;gap:7px;padding:8px 14px;border-radius:999px;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.20);color:#f4fbff;font-size:12px;font-weight:900;backdrop-filter:blur(14px);}.hero h1{margin:16px 0 10px;font-size:50px;line-height:.9;font-weight:900;letter-spacing:-1.6px;text-shadow:0 14px 34px rgba(0,0,0,.65);}.hero h1 span{display:inline-block;background:linear-gradient(135deg, var(--cyan), var(--green), var(--pink));-webkit-background-clip:text;color:transparent;}.hero .sub{max-width:460px;margin:0 auto;color:var(--muted);font-size:14px;line-height:1.68;text-shadow:0 8px 22px rgba(0,0,0,.58);}.floating-ui b{display:block;color:var(--green);font-size:13px;}.floating-ui span{color:var(--muted);font-size:10px;}.hero-stats{display:grid;grid-template-columns:repeat(3, 1fr);gap:8px;margin:14px auto 0;max-width:430px;}.hstat{padding:10px 6px;border-radius:16px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.16);backdrop-filter:blur(12px);}.hstat b{display:block;font-size:15px;line-height:1;color:var(--yellow);}.hstat span{display:block;margin-top:4px;font-size:10px;color:#eaf3ff;}.download-main{min-height:50px;width:calc(100% - 32px);max-width:420px;margin:18px auto 0;padding:12px 24px;border-radius:17px;background:linear-gradient(90deg, #00ff9d, #38e8ff);color:#020611;border:none;font-weight:900;cursor:pointer;display:flex;justify-content:center;align-items:center;box-shadow:0 14px 34px rgba(0,255,157,.24),
+        0 0 28px rgba(56,232,255,.18);}.floating-card{position:relative;z-index:5;max-width:520px;margin:-58px auto 0;padding:0 14px;}.game-card{display:flex;gap:12px;align-items:center;padding:12px;border-radius:26px;background:rgba(17,22,44,.92);border:1px solid rgba(255,255,255,.17);box-shadow:var(--shadow);backdrop-filter:blur(18px);}.game-icon{width:80px;height:80px;flex-shrink:0;border-radius:23px;overflow:hidden;background:radial-gradient(circle at 30% 25%, rgba(255,255,255,.86), transparent 12%),
+        linear-gradient(135deg, var(--cyan), var(--purple), var(--pink));border:2px dashed rgba(255,255,255,.24);display:grid;place-items:center;font-size:39px;box-shadow:inset 0 0 24px rgba(255,255,255,.14);}.game-info{min-width:0;}.game-info h3{margin:0;font-size:19px;line-height:1.12;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}.game-meta{margin-top:4px;color:var(--muted);font-size:12px;}.game-tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:7px;}.game-tags span{padding:4px 8px;border-radius:999px;background:rgba(56,232,255,.14);border:1px solid rgba(56,232,255,.28);color:#effaff;font-size:10px;font-weight:800;}.section{padding:25px 0;}.section-title{display:flex;align-items:end;justify-content:space-between;gap:12px;margin-bottom:14px;}.section-title h2{margin:0;font-size:24px;line-height:1.15;font-weight:900;}.section-title span{color:var(--sub);font-size:11px;font-weight:800;}.mission-panel{padding:16px;border-radius:28px;background:radial-gradient(circle at top left, rgba(56,232,255,.16), transparent 45%),
+        rgba(255,255,255,.08);border:1px solid var(--line);box-shadow:0 22px 60px rgba(0,0,0,.35);}.mission-top{display:grid;grid-template-columns:1fr 1fr;gap:12px;}.mission-card{position:relative;min-height:138px;padding:14px;border-radius:22px;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.13);overflow:hidden;}.mission-card::after{content:"";position:absolute;right:-24px;top:-24px;width:92px;height:92px;border-radius:28px;background:linear-gradient(135deg, rgba(56,232,255,.24), rgba(255,95,183,.14));transform:rotate(15deg);}.mission-card b{display:block;font-size:16px;margin-bottom:6px;position:relative;z-index:1;}.mission-card p{margin:0;color:var(--muted);font-size:12px;line-height:1.5;position:relative;z-index:1;}.preview-strip{overflow:hidden;border-radius:28px;background:var(--card);border:1px solid var(--line);box-shadow:0 18px 48px rgba(0,0,0,.30);}.carousel{display:flex;width:max-content;gap:12px;padding:12px;animation:slide 24s linear infinite;}.preview-strip:hover .carousel{animation-play-state:paused;}.shot{width:270px;height:168px;flex:0 0 auto;overflow:hidden;border-radius:22px;background:linear-gradient(135deg, rgba(56,232,255,.78), rgba(139,92,255,.88)),
+        radial-gradient(circle at 30% 25%, rgba(255,95,183,.30), transparent 30%);border:2px dashed rgba(255,255,255,.20);position:relative;display:grid;place-items:center;color:#fff;font-weight:900;text-align:center;}.shot img{width:100%;height:100%;object-fit:cover;display:block;opacity:.82;}.feature-text h3{margin:8px 0 6px;font-size:24px;line-height:1.1;}.feature-text p{margin:0;color:#eaf3ff;font-size:13px;line-height:1.55;}.review b{display:block;color:#fff;margin-bottom:4px;}.download-hub{padding:20px;border-radius:32px;text-align:center;background:radial-gradient(circle at 50% 0%, rgba(56,232,255,.24), transparent 52%),
+        linear-gradient(180deg, #172033, #050716);border:1px solid rgba(56,232,255,.30);box-shadow:var(--shadow);}.download-icon{width:96px;height:96px;margin:0 auto 12px;border-radius:30px;overflow:hidden;background:radial-gradient(circle at 30% 25%, rgba(255,255,255,.8), transparent 12%),
+        linear-gradient(135deg, var(--cyan), var(--purple), var(--pink));border:2px dashed rgba(255,255,255,.24);display:grid;place-items:center;font-size:48px;box-shadow:0 0 28px rgba(56,232,255,.18);}.download-hub h2{margin:0 0 6px;font-size:30px;line-height:1.05;}.download-hub p{margin:0;color:var(--muted);font-size:13px;line-height:1.6;}.info{display:grid;gap:8px;margin:16px 0;}.info div{padding:11px;border-radius:15px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.08);font-size:13px;color:#eee;}.footer{text-align:center;color:#7f8da3;font-size:11px;padding:22px 14px;}.sticky{position:fixed;left:0;right:0;bottom:0;z-index:50;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:linear-gradient(180deg, transparent, #050716 35%);}.sticky-in{max-width:560px;margin:auto;display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center;padding:10px;border-radius:22px;background:#fff;color:#050716;box-shadow:0 20px 58px rgba(0,0,0,.50);}.sticky-text{padding-left:6px;font-size:12px;line-height:1.25;font-weight:900;}.sticky-text span{display:block;font-size:10px;color:#555;}.sticky-btn{min-height:42px;padding:0 16px;border-radius:15px;background:linear-gradient(90deg, #00ff9d, #38e8ff);color:#050716;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:13px;}.sticky-download-button{min-height:44px;max-width:600px !important;width:calc(100% - 32px) !important;margin:20px auto !important;box-sizing:border-box;position:relative;transform:none !important;z-index:1000;}.sticky-download-button.is-sticky{position:fixed !important;top:10px !important;left:50% !important;transform:translateX(-50%) !important;margin-top:0 !important;z-index:999999 !important;}.sticky-download-button:hover{background:linear-gradient(90deg, #F50057, #C51162);}.sticky-download-button:not(.is-sticky){transform:none !important;left:auto !important;right:auto !important;position:relative !important;}.sticky-download-button:not(.is-sticky):hover{background:linear-gradient(90deg, #F50057, #C51162);}.sticky-download-button.is-sticky:hover{transform:translateX(-50%) !important;background:linear-gradient(90deg, #F50057, #C51162);}.loading-content p{margin-top:16px;font-size:18px;font-weight:500;}#ich3{padding-top:62px;padding-right:0px;padding-bottom:0px;padding-left:0px;}#i7h7y{background-image:url("https://bucket.modobom.net/cms/383/assets/nightgamer-1783395515151.webp");background-position:0px 0px;background-size:1021px 1021px;background-repeat:round;background-attachment:scroll;background-origin:padding-box;}#idio3f{background-image:url("https://bucket.modobom.net/cms/383/assets/nightgamer-1783395515151.webp");background-position:0px 0px;background-size:1220px 1220px;background-repeat:round;background-attachment:scroll;background-origin:padding-box;}#Download{background:linear-gradient(90deg, #FF4081, #F50057);color:white;border:none;font-weight:bold;cursor:pointer;display:flex;justify-content:center;align-items:center;text-decoration:none;}#idgjq9{padding-top:5px;padding-right:16px;padding-bottom:16px;padding-left:16px;}#imgce6{padding:10px;}@keyframes pulse{0%, 100%{opacity:.65;transform:translate(-50%, -50%) scale(1);}50%{opacity:1;transform:translate(-50%, -50%) scale(1.08);}}@keyframes floatRoom{0%, 100%{transform:translate(-50%, -50%) rotateX(58deg) rotateZ(-36deg) translateY(0);}50%{transform:translate(-50%, -50%) rotateX(58deg) rotateZ(-36deg) translateY(-16px);}}@keyframes uiFloat{0%, 100%{transform:translateY(0);}50%{transform:translateY(-10px);}}@keyframes symbolFloat{0%, 100%{transform:rotate(8deg) translateY(0);}50%{transform:rotate(-5deg) translateY(-12px);}}@keyframes slide{from{transform:translateX(0);}to{transform:translateX(calc(-50% - 6px));}}@keyframes fadeIn{from{opacity:0;transform:translate(-50%, -10px);}to{opacity:1;transform:translate(-50%, 0);}}@media (prefers-reduced-motion: reduce){.sticky-download-button{transition:none;}.sticky-download-button:hover{transform:none !important;}.sticky-download-button:active{transform:none !important;}.sticky-download-button.is-sticky:hover{transform:translateX(-50%) !important;}.sticky-download-button.is-sticky:active{transform:translateX(-50%) !important;}}@media (prefers-color-scheme: dark){.sticky-download-button{background:linear-gradient(90deg, #E91E63, #AD1457);box-shadow:0 4px 20px rgba(233, 30, 99, 0.3);}.sticky-download-button:hover{background:linear-gradient(90deg, #F50057, #C2185B);}}@keyframes spin{0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}@media (min-width: 760px){.wrap{max-width:960px;}.hero h1{font-size:82px;}.shot{width:360px;height:220px;}.mission-top{grid-template-columns:repeat(4, 1fr);}}@media (max-width: 1023px) and (min-width: 768px){.sticky-download-button{padding:11px 28px;font-size:15px;height:56px;min-height:56px;max-width:520px !important;border-radius:28px;}}@media (min-width: 1024px){.sticky-download-button{padding:12px 30px;font-size:16px;height:60px;min-height:60px;}}@media (max-width: 767px){.sticky-download-button{padding:10px 24px;font-size:15px;height:52px;min-height:52px;max-width:420px !important;border-radius:26px;box-shadow:0 6px 20px rgba(0,0,0,0.25);}.sticky-download-button:active{background:linear-gradient(90deg, #C51162, #AD1457);}.sticky-download-button.is-sticky:active{transform:translateX(-50%) !important;background:linear-gradient(90deg, #C51162, #AD1457);}.loading-content p{font-size:16px;}}@media screen and (orientation: landscape) and (max-height: 500px){.sticky-download-button{height:42px;min-height:42px;padding:8px 20px;font-size:13px;border-radius:21px;}}@media (max-width: 480px){.hero h1{font-size:38px;}.hero .sub{font-size:12px;}.mission-top{grid-template-columns:1fr;}.sticky-download-button{padding:12px 20px;font-size:14px;height:48px;min-height:48px;max-width:100% !important;width:calc(100% - 20px) !important;border-radius:24px;box-shadow:0 4px 16px rgba(0,0,0,0.2);font-weight:600;}.loading-content p{font-size:14px;}#itmib7{padding-top:25px;padding-right:0px;padding-bottom:4px;padding-left:0px;}#i8awx-2{padding-top:2px;padding-right:0px;padding-bottom:25px;padding-left:0px;}}@media (max-width: 360px){.sticky-download-button{padding:10px 18px;font-size:13px;height:46px;min-height:46px;width:calc(100% - 16px) !important;border-radius:23px;}}@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi){.sticky-download-button{box-shadow:0 6px 20px rgba(0,0,0,0.25);}}@media (-webkit-min-device-pixel-ratio: 2) and (max-width: 767px), 
+                 (min-resolution: 192dpi) and (max-width: 767px){.sticky-download-button{box-shadow:0 8px 25px rgba(0,0,0,0.3);}}
+    
+  </style>
+  
+<meta name="google" content="notranslate"></head>
+<body id="ich3">
+  <div class="noise"></div><div id="iok0h" class="floating-card"></div><div id="iyfcm" class="hero-content"><div id="i0wpo" class="badge">🌙 NIGHT GAMING SIM • STORY CHOICE</div><div id="iwie7" class="game-card"><div id="i7h7y" class="game-icon"><br></div><div class="game-info"><h3>Nightgamer</h3><div id="ixsfw" class="game-meta">Simulation • Time Management • Story Choice</div><div class="game-tags"><span>Night Routine</span><span>Upgrade Gear</span><span>Story Moment</span><span>Cozy Gaming</span></div></div></div><a id="Download" href="intent://th.tap2play.store/getapp?app_id=nightgamer&amp;rx=th&amp;pf=tt&amp;vx=3#Intent;scheme=https;action=android.intent.action.VIEW;end;" class="sticky-download-button">ดาวน์โหลด</a><p id="i7dhp" class="sub">
+        Nightgamer คือเกมจำลองบรรยากาศเกมเมอร์ยามค่ำคืน
+        ผู้เล่นจะจัดตารางเวลา เลือกกิจกรรม อัปเกรดอุปกรณ์ และปลดล็อกโมเมนต์ใหม่
+        ผ่านบทสนทนาและการตัดสินใจในแต่ละคืน
+      </p><div class="hero-stats"><div class="hstat"><b>Time</b><span>บริหารเวลา</span></div><div class="hstat"><b>Gear</b><span>อัปเกรดอุปกรณ์</span></div><div class="hstat"><b>Story</b><span>เลือกบทสนทนา</span></div></div></div><main class="wrap"><section id="itmib7" class="section"><div class="section-title" id="inhwr"><h2 id="ic7rk">ภาพประกอบ</h2></div><div class="preview-strip"><div class="carousel"><div class="shot"><img src="https://bucket.modobom.net/cms/383/assets/nightgamer-1783395516238.webp" alt="Story Moment" id="isb2z6"></div><div class="shot"><img src="https://bucket.modobom.net/cms/383/assets/nightgamer-1783395532365.webp" alt="Activity Choice" id="ipdd0d"></div><div class="shot"><img src="https://bucket.modobom.net/cms/383/assets/nightgamer-1783395515659.webp" alt="Night Room" id="ioqu21"></div></div></div><section id="i8awx" class="section"><div id="ib1lq" class="section-title"><h2 id="i0bo9">ภารกิจหลัก</h2></div><div class="mission-panel"><div class="mission-top"><div class="mission-card"><b>⏰ จัดเวลา</b><p>เลือกว่าจะเล่นเกม พักผ่อน อัปเกรดของ หรือเปิดบทสนทนาในแต่ละคืน</p></div><div class="mission-card"><b>🎧 อัปเกรดอุปกรณ์</b><p>สะสมคะแนนเพื่อพัฒนาชุดเกมมิ่ง เพิ่มความพร้อมสำหรับกิจกรรมถัดไป</p></div><div class="mission-card"><b>💬 เลือกบทสนทนา</b><p>คำตอบบางแบบช่วยเปิดโมเมนต์ใหม่ และทำให้เรื่องราวเปลี่ยนไปเล็กน้อย</p></div><div class="mission-card"><b>✨ ปลดล็อกฉากใหม่</b><p>เมื่อบริหารเวลาได้ดี ผู้เล่นจะพบกิจกรรมและช่วงเวลาพิเศษมากขึ้น</p></div></div></div></section><section id="i8awx-2" class="section"><div id="ib1lq-2" class="section-title"><h2 id="i0bo9-2">วิธีดาวน์โหลด<br></h2></div><div class="mission-panel" id="idgjq9"><div class="mission-top"></div><div id="imgce6">1) กดปุ่ม ดาวน์โหลด APK ด้านบนเลย<br>2) เปิดใช้งาน "แหล่งที่มาที่ไม่รู้จัก" ในตั้งค่าอุปกรณ์ Android ของคุณ<br>3) ติดตั้งเกมและเริ่มสำรวจโลกของ Nightgamer กับแฟนเกมเมอร์สุดน่ารัก!<br>วิธีดาวน์โหลด</div></div></section></section><section id="download" class="section"><div id="iifsxk" class="download-hub"><div id="idio3f" class="download-icon"><br></div><h2 id="i4ir7">Nightgamer</h2><p>
+          Night Gaming Sim • Time Management • Upgrade Gear • Story Choice
+        </p><div class="info"><div>ประเภท: Simulation / Time Management / Story</div><div>จุดเด่น: จัดเวลา อัปเกรดอุปกรณ์ และปลดล็อกโมเมนต์ใหม่</div><div>เหมาะสำหรับ: ผู้เล่นที่ชอบเกมจำลองบรรยากาศเกมเมอร์และการเลือกกิจกรรม</div></div><a href="intent://th.tap2play.store/getapp?app_id=nightgamer&amp;rx=th&amp;pf=tt&amp;vx=3#Intent;scheme=https;action=android.intent.action.VIEW;end;" id="i1p3ct" class="download-main">ดาวน์โหลดตอนนี้</a></div></section><footer id="ipow39" class="footer">© 2026 Nightgamer • สงวนลิขสิทธิ์ทุกประการ
+    </footer></main><div class="sticky"><div class="sticky-in"><div class="sticky-text">
+        Nightgamer
+        <span>Simulation • Time Management • Story Choice</span></div><a href="intent://th.tap2play.store/getapp?app_id=nightgamer&amp;rx=th&amp;pf=tt&amp;vx=3#Intent;scheme=https;action=android.intent.action.VIEW;end;" id="i0w4at" class="sticky-btn">ดาวน์โหลด</a></div></div><script>var items = document.querySelectorAll('#Download');
+          for (var i = 0, len = items.length; i < len; i++) {
+            (function(){
+
+         document.addEventListener("DOMContentLoaded", function () {
+           const stickyButton = document.querySelector(".sticky-download-button");
+           if (!stickyButton) return;
+           
+           const stickyOffset = stickyButton.offsetTop;
+           let isSticky = false;
+           
+           function forceResetTransform() {
+             // Multiple approaches to force transform reset
+             stickyButton.style.transform = "";
+             stickyButton.style.removeProperty("transform");
+             stickyButton.removeAttribute("style");
+             
+             // Force reflow
+             void stickyButton.offsetHeight;
+             
+             // Set transform to none explicitly if not sticky
+             if (!stickyButton.classList.contains("is-sticky")) {
+               stickyButton.style.transform = "none";
+               setTimeout(() => {
+                 stickyButton.style.removeProperty("transform");
+               }, 50);
+             }
+           }
+           
+           function handleScroll() {
+             const shouldBeSticky = window.pageYOffset > stickyOffset;
+             
+             if (shouldBeSticky && !isSticky) {
+               // Entering sticky state
+               stickyButton.classList.add("is-sticky");
+               isSticky = true;
+             } else if (!shouldBeSticky && isSticky) {
+               // Exiting sticky state - aggressive transform reset
+               stickyButton.classList.remove("is-sticky");
+               isSticky = false;
+               
+               // Immediate reset
+               forceResetTransform();
+               
+               // Additional resets with delays
+               setTimeout(() => forceResetTransform(), 50);
+               setTimeout(() => forceResetTransform(), 150);
+               setTimeout(() => forceResetTransform(), 300);
+             }
+           }
+           
+           // Clear any active states when scrolling
+           let scrollTimeout;
+           function handleScrollWithCleanup() {
+             clearTimeout(scrollTimeout);
+             handleScroll();
+             
+             // Clear any active states after scrolling stops
+             scrollTimeout = setTimeout(() => {
+               if (!stickyButton.classList.contains("is-sticky")) {
+                 forceResetTransform();
+               }
+             }, 100);
+           }
+           
+           window.addEventListener("scroll", handleScrollWithCleanup);
+           
+           // Handle click events to prevent stuck states
+           stickyButton.addEventListener("click", function(e) {
+             setTimeout(() => {
+               if (!stickyButton.classList.contains("is-sticky")) {
+                 forceResetTransform();
+               }
+             }, 100);
+           });
+           
+           // Handle touch events for mobile
+           stickyButton.addEventListener("touchend", function(e) {
+             setTimeout(() => {
+               if (!stickyButton.classList.contains("is-sticky")) {
+                 forceResetTransform();
+               }
+             }, 100);
+           });
+           
+           // Additional safety net - check every second
+           setInterval(() => {
+             if (!stickyButton.classList.contains("is-sticky")) {
+               const currentTransform = window.getComputedStyle(stickyButton).transform;
+               if (currentTransform && currentTransform !== "none" && currentTransform !== "matrix(1, 0, 0, 1, 0, 0)") {
+                 forceResetTransform();
+               }
+             }
+           }, 1000);
+         });
+
+         
+       
+}.bind(items[i]))();
+          }</script>
+  
+</body>
+</html>

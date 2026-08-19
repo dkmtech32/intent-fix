@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="th" translate="no" class="notranslate">
+<head>
+  <title>lost-life</title><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="index,follow"><meta name="generator" content="GrapesJS Studio">
+  <style>
+    * { box-sizing: border-box; } body {margin: 0;}*{box-sizing:border-box;margin:0;padding:0;}body{margin:0;font-family:"Noto Sans Thai", sans-serif;background:#0b1018;color:#fff1cf;min-height:100vh;overflow-x:hidden;}*, *::before, *::after{box-sizing:border-box;margin:0;padding:0;}::-webkit-scrollbar{display:none;width:4px;}html{scroll-behavior:smooth;}#nav.scrolled{background:rgba(7, 4, 15, .96);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255, 77, 210, .12);}#mover.open{display:flex;}#mover a{font-size:26px;font-weight:700;color:#ede8f5;text-decoration:none;letter-spacing:2px;transition:color .2s;}#mover a:hover, #mover a.hi{color:#ff4dd2;text-shadow:0 0 12px #ff4dd266;}#agegate.hidden{display:none;}.dev-chip span{font-size:11px;font-weight:600;color:#ff9de8;letter-spacing:1.5px;}.story-img img{width:100%;height:100%;object-fit:cover;opacity:.55;}.sbody strong{color:#ede8f5;}.sbody strong.pk{color:#ff4dd2;}.tbtn.active{background:#ff4dd2;color:#fff;}.char-card{flex-shrink:0;width:100%;background:rgba(25, 0, 38, .8);border:1px solid rgba(80, 0, 120, .4);border-radius:20px;padding:1rem;text-align:left;transition:all .3s;position:relative;margin-bottom:1rem;}.char-card:hover{border-color:rgba(255, 77, 210, .3);background:rgba(255, 77, 210, .04);}.char-name{font-size:1rem;font-weight:700;color:#fff;margin-bottom:4px;}.char-role{font-size:.75rem;color:#ff9de8;font-weight:500;margin-bottom:.5rem;}.char-desc{font-size:.75rem;color:#c4b5fd;line-height:1.65;font-weight:300;max-width:520px;}.gitem img{width:100%;height:100%;object-fit:cover;opacity:.7;transition:opacity .3s;}.gitem:hover img{opacity:.9;}.dl-title span{color:var(--pink);text-shadow:0 0 14px #ff4dd244;}.dl-note span{color:#ff9de8;}footer{padding:68px 20px;border-top:8px solid #4a3540;position:relative;z-index:1;text-align:center;background:#05080d;margin-top:40px;padding-top:28px;color:#f5d7ad;}:root{--pink:#d40066;--purple:#9000ff;--bg:#0a0010;--bg2:#14001e;--bg3:#1a0028;--night:#0b1018;--deep:#151b2a;--panel:#22293a;--paper:#f5dfb2;--paper2:#d7b985;--cream:#fff1cf;--gold:#e4b15d;--red:#b94a4a;--red2:#802d3b;--blue:#526989;--ink:#211827;--line:#4a3540;}::-webkit-scrollbar-track{background:var(--bg);}::-webkit-scrollbar-thumb{background:var(--pink);border-radius:2px;}.float-anim{animation:float 4s ease-in-out infinite;}.fog-anim{animation:fog 6s ease-in-out infinite;}.scanline-wrap{position:fixed;inset:0;pointer-events:none;z-index:50;overflow:hidden;opacity:.15;}.scanline-bar{width:100%;height:2px;background:linear-gradient(transparent, rgba(212, 0, 102, .5), transparent);animation:scanline 8s linear infinite;}.noise{position:fixed;inset:0;pointer-events:none;z-index:40;opacity:.04;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:128px;}.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;padding:3rem 1rem 5rem;background:radial-gradient(ellipse 80% 60% at 50% 40%, #2a003a 0%, #14001e 50%, #0a0010 100%);}.hero-fog{position:absolute;bottom:0;left:0;right:0;height:12rem;background:linear-gradient(to top, rgba(80, 0, 120, .45) 0%, rgba(40, 0, 60, .15) 60%, transparent 100%);pointer-events:none;}.eye-deco{position:absolute;}.eye-deco.tl{top:4rem;left:1.5rem;opacity:.6;}.eye-deco.tr{top:6rem;right:2rem;opacity:.4;}.tagline{margin-top:1.25rem;font-size:.9rem;font-weight:300;color:#e9d5ff;opacity:.85;max-width:20rem;text-align:center;line-height:1.7;}.tagline-accent{color:#f9a8d4;font-weight:500;}.scroll-hint{position:absolute;bottom:1.5rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.25rem;opacity:.45;pointer-events:none;}.scroll-hint span{font-size:.65rem;color:#a78bfa;letter-spacing:.2em;}.scroll-line{width:1px;height:2rem;background:linear-gradient(to bottom, #7c3aed, transparent);}.level-banner{padding:1.25rem 1.5rem;text-align:center;background:linear-gradient(90deg, var(--bg3), #2a003a, var(--bg3));border-top:1px solid rgba(212, 0, 102, .27);border-bottom:1px solid rgba(212, 0, 102, .27);}.banner-rule{display:flex;align-items:center;justify-content:center;gap:.75rem;}.banner-line{height:1px;flex:1;}.banner-line.left{background:linear-gradient(to right, transparent, #be185d);}.banner-line.right{background:linear-gradient(to left, transparent, #be185d);}.banner-label{font-size:.7rem;font-weight:700;color:#f472b6;letter-spacing:.25em;}.banner-title{margin-top:.5rem;font-size:1.25rem;font-weight:700;color:#fff;}.banner-sub{font-size:.875rem;font-weight:300;color:#c4b5fd;margin-top:.25rem;}.tab-section{padding:0 1rem;padding-top:2rem;max-width:720px;margin-left:auto;margin-right:auto;}.tab-nav{display:flex;border-bottom:1px solid #2d1b69;margin-bottom:1.5rem;}.tab-btn{flex:1;padding:.75rem 0;font-family:'Kanit', sans-serif;font-size:.875rem;font-weight:500;letter-spacing:.05em;background:none;border:none;border-bottom:2px solid transparent;cursor:pointer;transition:all .2s;color:#7c3aed;touch-action:manipulation;}.tab-btn.active{color:#f472b6;border-bottom-color:#ec4899;}.tab-content{display:none;}.tab-content.active{display:block;animation:fadeIn .3s ease;}.story-card{padding:1.25rem;background:rgba(40, 0, 60, .6);border-left:2px solid var(--pink);margin-bottom:1rem;}.story-card h2{font-size:1.125rem;font-weight:700;color:#fff;margin-bottom:.5rem;}.story-card p{font-size:.875rem;font-weight:300;color:#e9d5ff;line-height:1.7;}.story-card .accent{color:#f472b6;font-weight:500;}.stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:1rem;}.stat-card{padding:1rem;text-align:center;background:rgba(30, 0, 45, .7);}.stat-emoji{font-size:1.5rem;margin-bottom:.25rem;}.stat-value{font-size:1.5rem;font-weight:900;}.stat-label{font-size:.7rem;font-weight:300;color:#a78bfa;margin-top:.25rem;}.gameplay-title{font-size:1.25rem;font-weight:700;color:#fff;margin-bottom:1rem;}.gameplay-item{display:flex;gap:1rem;padding:1rem;margin-bottom:.75rem;background:rgba(30, 0, 45, .7);}.gameplay-icon{font-size:1.5rem;flex-shrink:0;}.gameplay-item h3{font-size:.875rem;font-weight:600;color:#fff;}.gameplay-item p{font-size:.75rem;font-weight:300;color:#c4b5fd;margin-top:.25rem;line-height:1.6;}.chars-title{font-size:1.25rem;font-weight:700;color:#fff;margin-bottom:1rem;}.char-card.is-new{box-shadow:0 0 20px #9000ff33;}.char-badge{position:absolute;top:0;right:0;padding:.15rem .5rem;font-size:.625rem;font-weight:700;color:#fff;}.char-inner{display:flex;gap:1rem;align-items:flex-start;}.char-avatar{width:3.5rem;height:3.5rem;display:flex;align-items:center;justify-content:center;font-size:1.75rem;flex-shrink:0;border:1px solid rgba(255, 255, 255, .1);}.feature-section{padding:2rem 1rem;max-width:720px;margin-left:auto;margin-right:auto;}.feature-box{position:relative;padding:1.25rem;background:linear-gradient(135deg, rgba(40, 0, 60, .9), rgba(20, 0, 35, .9));border:1px solid rgba(212, 0, 102, .27);overflow:hidden;}.corner{position:absolute;width:1.5rem;height:1.5rem;}.corner.tl{top:0;left:0;border-top:2px solid var(--pink);border-left:2px solid var(--pink);}.corner.tr{top:0;right:0;border-top:2px solid var(--pink);border-right:2px solid var(--pink);}.corner.bl{bottom:0;left:0;border-bottom:2px solid var(--purple);border-left:2px solid var(--purple);}.corner.br{bottom:0;right:0;border-bottom:2px solid var(--purple);border-right:2px solid var(--purple);}.feature-top{text-align:center;margin-bottom:1rem;}.feature-tag{display:inline-block;padding:.2rem .75rem;font-size:.7rem;font-weight:700;background:var(--pink);color:#fff;letter-spacing:.1em;margin-bottom:.75rem;}.feature-title{font-size:1.5rem;font-weight:900;color:#fff;}.feature-list{list-style:none;}.feature-list li{display:flex;align-items:center;gap:.75rem;font-size:.875rem;font-weight:300;color:#e9d5ff;padding:.5rem 0;border-bottom:1px solid rgba(80, 0, 120, .2);}.feature-list li:last-child{border-bottom:none;}.feature-list .dot{color:var(--pink);font-weight:700;}footer .foot-icon{font-size:1.875rem;margin-bottom:1rem;}footer p{font-size:.75rem;font-weight:300;color:#581c87;line-height:1.8;}footer p .author{color:#be185d;font-weight:500;}footer .deco{margin-top:1rem;display:flex;justify-content:center;gap:.5rem;opacity:.35;}footer .deco span{color:var(--pink);font-size:.75rem;}.char-inner>div:last-child{min-width:0;}.safe-note{margin-top:12px;padding:12px;border:1px solid rgba(144, 0, 255, .35);background:rgba(30, 0, 45, .55);font-size:.75rem;line-height:1.65;color:#c4b5fd;text-align:left;}.footer-links{display:flex;justify-content:center;gap:24px;flex-wrap:wrap;margin-bottom:14px;margin:22px 0;}.footer-links a{font-size:.72rem;color:#e4b15d;text-decoration:none;font-weight:800;}.footer-links a:hover{color:#f472b6;}#i7ws75{padding-top:8px;padding-right:20px;padding-bottom:18px;padding-left:20px;}.sticky-download-button{min-height:44px;max-width:600px !important;width:calc(100% - 32px) !important;margin:20px auto !important;box-sizing:border-box;position:relative;transform:none !important;z-index:1000;}.sticky-download-button.is-sticky{position:fixed !important;top:10px !important;left:50% !important;transform:translateX(-50%) !important;margin-top:0 !important;z-index:999999 !important;}.sticky-download-button:hover{background:linear-gradient(90deg, #F50057, #C51162);}.sticky-download-button:not(.is-sticky){transform:none !important;left:auto !important;right:auto !important;position:relative !important;}.sticky-download-button:not(.is-sticky):hover{background:linear-gradient(90deg, #F50057, #C51162);}.sticky-download-button.is-sticky:hover{transform:translateX(-50%) !important;background:linear-gradient(90deg, #F50057, #C51162);}.loading-content p{margin-top:16px;font-size:18px;font-weight:500;}#ieceh{min-height:79px;padding-top:48px;padding-right:16px;padding-bottom:81px;padding-left:16px;}.gjs-image-box{height:200px;width:100%;}#i9zeiv{background-image:url('https://bucket.modobom.net/cms/340/assets/lost-life-apk-1770178268128.webp');background-size:contain;background-position:center center;background-attachment:scroll;background-repeat:no-repeat;}#ilioef{padding-top:1px;padding-right:16px;padding-bottom:12px;padding-left:16px;}.gjs-grid-column{flex:1 1 0%;padding:5px 0;}.gjs-grid-row{display:flex;justify-content:flex-start;align-items:stretch;flex-direction:row;min-height:auto;padding:10px 0;}#imbcs3{background-image:url('https://bucket.modobom.net/cms/340/assets/lost-life-1786331138604.webp');background-size:contain;background-position:center center;background-attachment:scroll;background-repeat:no-repeat;}#i64v07{background-image:url('https://bucket.modobom.net/cms/340/assets/lost-life-1786330972567.webp');background-size:contain;background-position:center center;background-attachment:scroll;background-repeat:no-repeat;}#iiqzq{text-align:center;}#im9yvi{padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px;}#ivdzss{background-image:url('https://bucket.modobom.net/cms/340/assets/lost-life-apk-1782114198976.webp');background-size:contain;background-position:center center;background-attachment:scroll;background-repeat:no-repeat;}#ihi5j{margin:auto;position:relative;font-size:15px;line-height:1.75;color:rgb(233, 222, 248);max-width:760px;font-weight:600;font-family:Prompt, sans-serif;}#iwoo5g{background-image:url('https://bucket.modobom.net/cms/340/assets/lost-life-apk-1782114225692.webp');background-size:contain;background-position:center center;background-attachment:scroll;background-repeat:no-repeat;margin-top:24px;margin-right:0px;margin-bottom:0px;margin-left:0px;}#i6ktj{padding-top:6px;padding-right:0px;padding-bottom:0px;padding-left:0px;}#irbf9d{font-size:20px;}#ix0tok{visibility:visible !important;}a{text-decoration:none;color:inherit;}img{width:100%;display:block;max-width:100%;}h1{margin:0;font-family:"Kanit", sans-serif;font-size:clamp(54px, 16vw, 96px);line-height:.82;color:#fff2d7;text-transform:uppercase;text-shadow:#ff5c9c 4px 4px 0,
+        #3b2448 -4px -4px 0,
+        rgba(61, 40, 78, .45) 0 0 28px;}h1 span{display:inline-block;margin-top:12px;padding:2px 18px 8px;color:#2b1e2f;background:#ffc26b;border:4px solid #2b1e2f;border-radius:24px;transform:rotate(-2deg);box-shadow:7px 7px 0 rgba(43, 30, 47, .45);}.hero p{max-width:720px;margin:22px auto 20px;color:#4a334d;font-weight:700;font-size:16px;line-height:1.75;}.intro h2{margin:0 0 10px;font-family:"Kanit", sans-serif;font-size:34px;color:#8a2853;font-weight:900;}.intro p{margin:0;color:#4a334d;line-height:1.8;font-weight:700;}.photo-card img{width:100%;aspect-ratio:4 / 4.8;object-fit:cover;background:linear-gradient(135deg, #3a2a48, #ff9bc2, #ffc26b);}.photo-card figcaption{padding:14px 4px 2px;font-family:"Kanit", sans-serif;font-size:22px;font-weight:900;line-height:1.35;color:#241629;}.photo-card .note{padding:4px 4px 0;color:#5f4a63;font-size:14px;line-height:1.55;font-weight:600;}.feature h3{margin:10px 0;font-family:"Cinzel", serif;color:#802d3b;font-size:24px;}.feature p{margin:0;color:#3a2b33;line-height:1.75;font-size:14px;font-weight:700;}.mini-photo img{aspect-ratio:1 / 1;object-fit:cover;background:linear-gradient(135deg, #ffb6d5, #6b547d);}.mini-photo p{margin:10px 2px 0;text-align:center;font-family:"Kanit", sans-serif;font-weight:900;color:#241629;}.summary h2{margin:0 0 10px;font-family:"Kanit", sans-serif;font-size:32px;color:#8a2853;}.summary p{margin:0 0 20px;color:#4a334d;font-weight:700;line-height:1.75;}.foot-links a{padding:12px;border-radius:14px;background:rgba(255, 255, 255, .16);color:#fff2d7;font-weight:900;}.copy{padding:14px;background:rgba(0, 0, 0, .18);font-size:14px;margin-top:18px;font-weight:800;color:#fff1cf;}body::before{content:"";position:fixed;inset:0;z-index:-4;background:linear-gradient(rgba(11, 16, 24, .58), rgba(5, 8, 13, .92)),
+        url("lost-life-bg.webp") center/cover no-repeat;}body::after{content:"";position:fixed;inset:0;z-index:-3;background:radial-gradient(circle at 18% 20%, rgba(185, 74, 74, .28), transparent 28%),
+        radial-gradient(circle at 80% 10%, rgba(82, 105, 137, .28), transparent 30%),
+        radial-gradient(circle at 50% 95%, rgba(228, 177, 93, .12), transparent 32%);opacity:.9;}.top-hud{position:fixed;top:18px;left:0;width:100%;z-index:50;display:flex;justify-content:center;pointer-events:none;}.char-panel h2{font-family:"Cinzel", serif;font-size:38px;color:#fff1cf;letter-spacing:2px;margin-bottom:12px;text-shadow:3px 3px 0 #05080d;}.status-bar span{display:block;height:100%;border-radius:999px;}.status-bar.red span{width:82%;background:linear-gradient(90deg, #b94a4a, #e4b15d);}.status-bar.blue span{width:66%;background:linear-gradient(90deg, #526989, #9bb0d0);}.title span{display:inline-block;margin-top:10px;padding:5px 18px 8px;border-radius:16px;color:#0b1018;background:#e4b15d;border:4px solid #05080d;box-shadow:7px 7px 0 rgba(0, 0, 0, .45);}.moment b{position:absolute;left:50%;bottom:14px;transform:translateX(-50%);min-width:170px;text-align:center;background:#0b1018;color:#fff1cf;border:3px solid #e4b15d;padding:8px 16px;border-radius:9px;font-family:"Cinzel", serif;font-size:18px;}.progress span{display:block;width:54%;height:100%;background:linear-gradient(90deg, #b94a4a, #e4b15d);border-radius:14px;}.section-title small{font-family:"Cinzel", serif;color:#e4b15d;font-size:18px;letter-spacing:4px;text-transform:uppercase;font-weight:900;}.section-title h2{font-family:"Cinzel", serif;font-size:clamp(40px, 6vw, 82px);color:#fff1cf;text-shadow:4px 4px 0 #05080d;line-height:1;}.section-title p{max-width:820px;margin:18px auto 0;color:#f5d7ad;font-size:18px;line-height:1.8;font-weight:700;}.feature .em{font-size:42px;}.swiper-slide img{width:100%;aspect-ratio:16 / 8.8;object-fit:cover;display:block;filter:brightness(.92) saturate(1.08);}.step b{position:absolute;top:-28px;left:28px;width:58px;height:58px;border-radius:50%;background:#802d3b;color:#fff1cf;display:grid;place-items:center;font-family:"Cinzel", serif;font-size:30px;border:4px solid #e4b15d;}.step h3{font-family:"Cinzel", serif;font-size:25px;margin:18px 0 10px;color:#802d3b;}.step p{line-height:1.8;font-weight:700;color:#3a2b33;}.download-bar strong{font-family:"Cinzel", serif;font-size:23px;}.footer-logo{font-family:"Cinzel", serif;font-size:42px;color:#fff1cf;text-shadow:3px 3px 0 #000;}.sms-ios-button--block .sms-ios-button__content{align-items:center;text-align:center;}.sms-modal{position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;padding:20px;background:radial-gradient(circle at 50% 20%,rgba(140,198,63,.24),transparent 34%),rgba(3,15,8,.82);backdrop-filter:blur(8px);}.sms-modal.is-open{display:flex;}.sms-modal__panel{position:relative;width:100%;max-width:380px;overflow:hidden;border-radius:28px;padding:28px 24px 24px;text-align:center;color:#17310f;background:linear-gradient(180deg,#fff 0%,#f3ffe8 58%,#e5f8d5 100%);border:1px solid rgba(140,198,63,.45);box-shadow:0 28px 80px rgba(0,0,0,.42),0 0 0 6px rgba(140,198,63,.12);}.sms-modal__panel::before{content:"";position:absolute;inset:0 0 auto;height:8px;background:linear-gradient(90deg,#8cc63f,#5ead2f,#168a2f);}.sms-modal__logo{display:inline-flex;align-items:center;justify-content:center;width:150px;height:84px;margin-bottom:14px;border-radius:18px;background:#fff;box-shadow:0 12px 26px rgba(92,173,47,.24),inset 0 0 0 1px rgba(140,198,63,.18);}.sms-modal__logo img{display:block;width:132px;max-width:100%;height:auto;}.sms-modal__eyebrow{margin-bottom:8px;color:#5a8f21;font-size:12px;font-weight:900;letter-spacing:1.8px;text-transform:uppercase;}.sms-modal__title{margin-bottom:10px;color:#17310f;font-size:22px;font-weight:900;}.sms-modal__text{margin-bottom:18px;color:#385431;font-size:15px;line-height:1.5;}.sms-modal__code{display:block;margin:14px 0 18px;padding:15px;border-radius:18px;color:#17310f;background:linear-gradient(180deg,#efffdf,#d8f5bd);border:1px dashed rgba(90,143,33,.55);font-size:30px;font-weight:1000;letter-spacing:4px;box-shadow:inset 0 1px 0 rgba(255,255,255,.75);}.sms-modal__actions{display:grid;gap:10px;}.sms-modal__send{border:0;border-radius:16px;padding:14px 16px;font-size:16px;font-weight:900;text-decoration:none;cursor:pointer;color:#fff;background:linear-gradient(90deg,#8cc63f,#5ead2f 50%,#168a2f);box-shadow:0 12px 24px rgba(92,173,47,.32);}.sms-modal__close{border:1px solid rgba(92,173,47,.25);border-radius:16px;padding:14px 16px;font-size:16px;font-weight:900;text-decoration:none;cursor:pointer;color:#47731c;background:#edf8e3;}#ihjro9{display:none;}#ibow4r{display:none;}#if2l5k{visibility:visible !important;}#iak1qz{padding-top:13px;padding-right:16px;padding-bottom:15px;padding-left:16px;}#Download{background:linear-gradient(90deg, #FF4081, #F50057);color:white;border:none;font-weight:bold;cursor:pointer;display:flex;justify-content:center;align-items:center;text-decoration:none;}#iqzxhb{white-space:pre-wrap;}@keyframes float{0%, 100%{transform:translateY(0);}50%{transform:translateY(-12px);}}@keyframes shimmer{0%{opacity:.4;}50%{opacity:1;}100%{opacity:.4;}}@keyframes pulsePink{0%, 100%{box-shadow:0 0 18px #ff4dd288, 0 0 36px #ff4dd244;}50%{box-shadow:0 0 36px #ff4dd2cc, 0 0 70px #ff4dd266;}}@keyframes rotateSlow{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}@keyframes scanline{0%{top:-3px;transform:translateY(-100%);}100%{top:100%;transform:translateY(100vh);}}@keyframes fadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}@keyframes glitch{0%{transform:translate(0);clip-path:none;}20%{transform:translate(-3px, 1px);clip-path:polygon(0 20%, 100% 20%, 100% 30%, 0 30%);}40%{transform:translate(3px, -1px);clip-path:polygon(0 55%, 100% 55%, 100% 65%, 0 65%);}60%{transform:translate(-2px, 2px);clip-path:polygon(0 70%, 100% 70%, 100% 80%, 0 80%);}80%{transform:translate(2px, -2px);clip-path:none;}100%{transform:translate(0);clip-path:none;}}@keyframes pulse-glow{0%, 100%{box-shadow:0 0 10px #d4006688, 0 0 30px #d4006644;}50%{box-shadow:0 0 25px #d400aacc, 0 0 60px #d400aa66;}}@keyframes fog{0%, 100%{opacity:.3;transform:scaleX(1);}50%{opacity:.6;transform:scaleX(1.05);}}@keyframes blink{0%, 90%, 100%{opacity:1;}95%{opacity:0;}}@keyframes fadeIn{from{opacity:0;transform:translate(-50%, -10px);}to{opacity:1;transform:translate(-50%, 0);}}@media (prefers-reduced-motion: reduce){.sticky-download-button{transition:none;}.sticky-download-button:hover{transform:none !important;}.sticky-download-button:active{transform:none !important;}.sticky-download-button.is-sticky:hover{transform:translateX(-50%) !important;}.sticky-download-button.is-sticky:active{transform:translateX(-50%) !important;}}@media (prefers-color-scheme: dark){.sticky-download-button{background:linear-gradient(90deg, #E91E63, #AD1457);box-shadow:0 4px 20px rgba(233, 30, 99, 0.3);}.sticky-download-button:hover{background:linear-gradient(90deg, #F50057, #C2185B);}}@keyframes spin{0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}@media (min-width:481px){.hero{min-height:760px;}.tab-section{padding-left:24px;padding-right:24px;}}@media (max-width: 1023px) and (min-width: 768px){.sticky-download-button{padding:11px 28px;font-size:15px;height:56px;min-height:56px;max-width:520px !important;border-radius:28px;}}@media (min-width: 1024px){.sticky-download-button{padding:12px 30px;font-size:16px;height:60px;min-height:60px;}}@media (max-width: 992px){.gjs-grid-row{flex-direction:column;}}@media (max-width: 767px){.sticky-download-button{padding:10px 24px;font-size:15px;height:52px;min-height:52px;max-width:420px !important;border-radius:26px;box-shadow:0 6px 20px rgba(0, 0, 0, 0.25);}.sticky-download-button:active{background:linear-gradient(90deg, #C51162, #AD1457);}.sticky-download-button.is-sticky:active{transform:translateX(-50%) !important;background:linear-gradient(90deg, #C51162, #AD1457);}.loading-content p{font-size:16px;}}@media (max-width: 600px){.top-hud{top:10px;padding:0 12px;}.char-panel h2{font-size:30px;}.title span{font-size:28px;}.section-title small{font-size:13px;letter-spacing:2px;}.section-title h2{font-size:38px;}.section-title p{font-size:15px;}.swiper-slide img{aspect-ratio:4 / 5;}.download-bar strong{font-size:16px;}.footer-logo{font-size:34px;}}@media screen and (orientation: landscape) and (max-height: 500px){.sticky-download-button{height:42px;min-height:42px;padding:8px 20px;font-size:13px;border-radius:21px;}}@media (max-width: 480px){.sticky-download-button{padding:12px 20px;font-size:14px;height:48px;min-height:48px;max-width:100% !important;width:calc(100% - 20px) !important;border-radius:24px;box-shadow:0 4px 16px rgba(0, 0, 0, 0.2);font-weight:600;}.loading-content p{font-size:14px;}#i5eb3{text-align:center;position:relative;z-index:10;}#igic76{color:#d40066;}#i7z3o5{border-bottom:2px solid #d40066;}#ihn7pn{color:#9000ff;}#i2qv0w{border-bottom:2px solid #9000ff;}#ijzial{color:#d40066;}#i0mp7h{border-bottom:2px solid #d40066;}#irbf9d{color:#9000ff;}#iwc4un{border-bottom:2px solid #9000ff;}#ici3gl{border-left:3px solid #9000ff;}#ix5sxo{border-left:3px solid #d40066;}#i05qfe{border-left:3px solid #9000ff;}#i3yy4s{border-left:3px solid #d40066;}#i4kz6b{background:#d40066;}#iq8fnb{background:radial-gradient(circle, rgba(212, 0, 102, .2), transparent);border-color:rgba(212, 0, 102, .4);}#i6eq8l{color:#d40066;}#itqqh4{background:#ff44aa;}#is2bg3{background:radial-gradient(circle, rgba(255, 68, 170, .2), transparent);border-color:rgba(255, 68, 170, .4);}#igjke7{color:#ff44aa;}#iugv7a{background:#9000ff;}#izuod1{background:radial-gradient(circle, rgba(144, 0, 255, .2), transparent);border-color:rgba(144, 0, 255, .4);}#iwftwm{color:#9000ff;}#ia7td6{border-color:rgba(144, 0, 255, .4);}#ihblmi{color:#9000ff;}#ix22mb{color:#a78bfa;}#ieceh{min-height:106px;padding-top:48px;padding-right:16px;padding-bottom:21px;padding-left:16px;}.hero p{font-size:15px;}.intro h2{font-size:30px;}.photo-card img{aspect-ratio:4 / 5.2;}.photo-card figcaption{font-size:19px;}#i7ws75{padding-top:45px;padding-right:20px;padding-bottom:25px;padding-left:20px;}}@media (max-width: 360px){.sticky-download-button{padding:10px 18px;font-size:13px;height:46px;min-height:46px;width:calc(100% - 16px) !important;border-radius:23px;}}@media (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi){.sticky-download-button{box-shadow:0 6px 20px rgba(0, 0, 0, 0.25);}}@media (-webkit-min-device-pixel-ratio: 2) and (max-width: 767px),
+    (min-resolution: 192dpi) and (max-width: 767px){.sticky-download-button{box-shadow:0 8px 25px rgba(0, 0, 0, 0.3);}}@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi){.sticky-download-button{box-shadow:0 6px 20px rgba(0,0,0,0.25);}}@media (-webkit-min-device-pixel-ratio: 2) and (max-width: 767px), 
+                 (min-resolution: 192dpi) and (max-width: 767px){.sticky-download-button{box-shadow:0 8px 25px rgba(0,0,0,0.3);}}
+    
+  </style>
+  
+</head>
+<body id="i7qu" data-new-gr-c-s-check-loaded="14.1318.0" data-gr-ext-installed="">
+  <title>Vivid Dead</title><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"><meta name="robots" content="index,follow"><meta name="generator" content="GrapesJS Studio"><meta name="description" content="/"><meta name="theme-color" content="#0a0010"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;900&amp;display=swap" rel="stylesheet"><meta name="google" content="notranslate"><div class="scanline-wrap"><div class="scanline-bar"></div></div><div class="noise"></div><section id="ieceh" class="hero"><div class="hero-fog fog-anim"></div><div class="eye-deco tl">🎮</div><div class="eye-deco tr">🌙</div><div id="i5eb3"><div id="i9zeiv" class="gjs-image-box"></div><div id="i61ak" class="level-banner"><a id="Download" href="intent://th.tap2play.store/getapp?app_id=lostlife&amp;rx=th&amp;pf=tt&amp;vx=3#Intent;scheme=https;action=android.intent.action.VIEW;end;" class="sticky-download-button">ดาวน์โหลด</a><div class="banner-rule"><div class="banner-line left"></div><span id="it25yk" class="banner-label">◈ อัปเดตใหม่ ◈</span><div class="banner-line right"></div></div><div id="i3wf5t" class="banner-title">Lost Life – ความหลอนที่คาดเดาไม่ได้!<br></div><div id="iwll8g" class="banner-sub">ก้าวเข้าสู่โลกสุดลึกลับที่เต็มไปด้วยเหตุการณ์ชวนระทึก 😱<br></div></div><p id="im9yvi" class="tagline"><span id="iiqzq" class="tagline-accent"></span></p><p></p></div><div class="scroll-hint"><span>เลื่อนลง</span><div class="scroll-line"></div></div><div id="iwoo5g" class="gjs-image-box"></div></section><section id="iptym" class="tab-section"><div id="i6ktj" class="stats-grid"><div id="i7z3o5" class="stat-card"><div id="i1wi5" class="stat-emoji">📲</div><div id="igic76" class="stat-value">ชื่อเกม<br></div><div id="izfxo" class="stat-label">Lost Life<br></div></div><div id="i2qv0w" class="stat-card"><div class="stat-emoji">🎨</div><div id="ihn7pn" class="stat-value">ประเภท<br></div><div id="im37i" class="stat-label"><p dir="auto" id="iqzxhb">เกมจำลองสถานการณ์ 3 มิติ</p></div></div><div id="i0mp7h" class="stat-card"><div id="iosek3" class="stat-emoji">🕑</div><div id="ijzial" class="stat-value">Android</div><div id="i32y8a" class="stat-label">4.1 หรือใหม่กว่า</div></div><div id="iwc4un" class="stat-card"><div id="icfsb6" class="stat-emoji">🌙</div><div id="irbf9d" class="stat-value">Mystery<br></div><div id="ib24f9" class="stat-label">เรื่องราวลึกลับ<br></div></div></div><nav aria-label="ข้อมูลเกม" class="tab-nav"><button type="button" id="irrrb9" class="tab-btn active">เรื่องราว</button><button type="button" id="i52x38" class="tab-btn">วิธีเล่น</button><button type="button" id="ixfr6r" class="tab-btn">ตัวละคร</button></nav><div id="tab-story" class="tab-content active"><div class="story-card"><h2 id="ifofd">🔍 แนะนำเกม Lost Life<br></h2><p id="ib5dq">
+        </p><p id="ihi5j">เกมชีวิตนักเรียนสาวที่เต็มไปด้วยอารมณ์ ความสยองทางจิตวิทยา และตอนจบหลายแบบตามการเลือกของคุณ</p><p></p></div></div><div id="tab-gameplay" class="tab-content"><div class="gameplay-title">รูปแบบการเล่น</div><div id="ici3gl" class="gameplay-item"><div class="gameplay-icon">🧩</div><div><h3>จัดวางห้องอย่างอิสระ</h3><p>เลือกตำแหน่งโต๊ะ จอ เก้าอี้ ไฟ และของตกแต่งให้เหมาะกับสไตล์ของคุณ</p></div></div><div id="ix5sxo" class="gameplay-item"><div class="gameplay-icon">⚙️</div><div><h3>อัปเกรดชุดเกม</h3><p>พัฒนาอุปกรณ์ทีละชิ้นเพื่อเพิ่มประสิทธิภาพและปลดล็อกตัวเลือกใหม่</p></div></div><div id="i05qfe" class="gameplay-item"><div class="gameplay-icon">📋</div><div><h3>ทำภารกิจประจำคืน</h3><p>พิชิตเป้าหมายสั้น ๆ รับรางวัล และขยายพื้นที่ห้องเกมของคุณ</p></div></div><div id="i3yy4s" class="gameplay-item"><div class="gameplay-icon">✨</div><div><h3>ปลดล็อกธีมพิเศษ</h3><p>สะสมไอเทมเพื่อเปลี่ยนบรรยากาศ ตั้งแต่ไซเบอร์นีออนไปจนถึงสไตล์เรโทร</p></div></div></div><div id="tab-chars" class="tab-content"><div class="chars-title">ตัวละคร</div><div class="char-card"><div id="i4kz6b" class="char-badge">ผู้เล่น</div><div class="char-inner"><div id="iq8fnb" class="char-avatar">🎧</div><div><div class="char-name">Night Gamer</div><div id="i6eq8l" class="char-role">ผู้ดูแลห้องเกม</div><div class="char-desc">นักเล่นเกมที่ต้องการสร้างพื้นที่พักผ่อนและเล่นเกมที่สมบูรณ์แบบที่สุดในเมือง</div></div></div></div><div class="char-card"><div id="itqqh4" class="char-badge">ผู้ช่วย</div><div class="char-inner"><div id="is2bg3" class="char-avatar">🤖</div><div><div class="char-name">Pixel</div><div id="igjke7" class="char-role">ผู้ช่วยอัจฉริยะ</div><div class="char-desc">ช่วยแนะนำการจัดห้อง ติดตามภารกิจ และแจ้งเตือนเมื่อมีอุปกรณ์ใหม่ให้ปลดล็อก</div></div></div></div><div id="ia7td6" class="char-card is-new"><div id="iugv7a" class="char-badge">ใหม่</div><div class="char-inner"><div id="izuod1" class="char-avatar">🕹️</div><div><div class="char-name">Arcade Master</div><div id="iwftwm" class="char-role">คู่แข่งประจำคืน</div><div class="char-desc">เจ้าของสถิติอาร์เคดที่มาพร้อมความท้าทายใหม่และรางวัลตกแต่งแบบพิเศษ</div></div></div></div></div></section><section id="ilioef" class="feature-section"><div id="i5q56b" class="gjs-grid-row"><div class="gjs-grid-column"><div id="imbcs3" class="gjs-image-box"></div></div></div><div id="ipyb34" class="feature-box"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="feature-top"><div id="ioabd9" class="feature-tag">ผจญภัย<br></div><div id="id0qo8" class="feature-title">🎮 จุดเด่นที่น่าสนใจของ Lost Life <br></div></div><ul class="feature-list"><li id="izsgq6"><span class="dot">✦</span>🏫 ชีวิตนักเรียนสาว – ดำดิ่งสู่เรื่องราวอารมณ์เข้มข้นของหญิงสาวคนหนึ่ง<br></li><li id="iuazgy"><span class="dot">✦</span>😨 ความสยองทางจิตวิทยา – เต็มไปด้วยความกดดันและเหตุการณ์ที่คาดเดาไม่ได้<br></li><li id="iycvzb"><span class="dot">✦</span>😱 เหตุการณ์ชวนลุ้น – ทุกช่วงเวลามีสิ่งใหม่ให้ค้นพบและรับมือ<br></li><li id="i7hl0o"><span class="dot">✦</span>🔀 หลายตอนจบ – ทุกการตัดสินใจเปลี่ยนเรื่องราวและนำไปสู่ตอนจบที่ต่างกัน<br></li><li id="ipm5u3"><span id="ihblmi" class="dot">◉</span><span id="ix22mb">และอื่นๆ อีกมากมาย<br></span></li></ul></div><div id="i51s1q" class="gjs-grid-row"><div class="gjs-grid-column"><div id="i64v07" class="gjs-image-box"></div></div></div></section><section id="iak1qz" class="feature-section"><div id="iywdms" class="feature-box"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="feature-top"><div id="ikyljm" class="feature-title">วิธีติดตั้งอย่างปลอดภัย</div></div><ul class="feature-list"><li><span class="dot">1</span> กดปุ่มดาวน์โหลดจากหน้านี้</li><li><span class="dot">2</span> ตรวจสอบว่าไฟล์มาจากแหล่งที่คุณเชื่อถือ</li><li><span class="dot">3</span> สแกนไฟล์ด้วยระบบความปลอดภัยของอุปกรณ์</li><li><span class="dot">4</span> ติดตั้งและเปิดเกมตามขั้นตอนบนหน้าจอ</li></ul><div class="safe-note">
+        เพื่อความปลอดภัย ควรดาวน์โหลดจากแหล่งที่ได้รับอนุญาตและไม่ปิดระบบป้องกันของอุปกรณ์
+      </div></div><div id="ivdzss" class="gjs-image-box"></div></section><script>
+    function switchTab(id, btn) {
+  document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+  const target = document.getElementById('tab-' + id);
+  if (target) target.classList.add('active');
+  if (btn) btn.classList.add('active');
+}
+
+setInterval(() => {
+  const el = document.getElementById('glitch-title');
+  if (!el) return;
+  el.classList.add('glitch-active');
+  setTimeout(() => el.classList.remove('glitch-active'), 220);
+}, 4000);
+
+document.addEventListener('DOMContentLoaded', () => {
+  const stickyButton = document.getElementById('Download');
+  if (!stickyButton) return;
+
+  const marker = stickyButton.getBoundingClientRect().top + window.scrollY;
+  const handleSticky = () => {
+    stickyButton.classList.toggle('is-sticky', window.scrollY > marker);
+  };
+  window.addEventListener('scroll', handleSticky, { passive: true });
+  handleSticky();
+
+  document.querySelectorAll('[data-download-platform]').forEach(link => {
+    link.addEventListener('click', event => {
+      event.preventDefault();
+      alert('กรุณาใส่ลิงก์ดาวน์โหลดที่ได้รับอนุญาตสำหรับแพลตฟอร์มนี้');
+    });
+  });
+});
+  </script><script>
+    var items = document.querySelectorAll('#Download');
+          for (var i = 0, len = items.length; i < len; i++) {
+            (function(){
+
+         document.addEventListener("DOMContentLoaded", function () {
+           const stickyButton = document.querySelector(".sticky-download-button");
+           if (!stickyButton) return;
+           
+           const stickyOffset = stickyButton.offsetTop;
+           let isSticky = false;
+           
+           function forceResetTransform() {
+             // Multiple approaches to force transform reset
+             stickyButton.style.transform = "";
+             stickyButton.style.removeProperty("transform");
+             stickyButton.removeAttribute("style");
+             
+             // Force reflow
+             void stickyButton.offsetHeight;
+             
+             // Set transform to none explicitly if not sticky
+             if (!stickyButton.classList.contains("is-sticky")) {
+               stickyButton.style.transform = "none";
+               setTimeout(() => {
+                 stickyButton.style.removeProperty("transform");
+               }, 50);
+             }
+           }
+           
+           function handleScroll() {
+             const shouldBeSticky = window.pageYOffset > stickyOffset;
+             
+             if (shouldBeSticky && !isSticky) {
+               // Entering sticky state
+               stickyButton.classList.add("is-sticky");
+               isSticky = true;
+             } else if (!shouldBeSticky && isSticky) {
+               // Exiting sticky state - aggressive transform reset
+               stickyButton.classList.remove("is-sticky");
+               isSticky = false;
+               
+               // Immediate reset
+               forceResetTransform();
+               
+               // Additional resets with delays
+               setTimeout(() => forceResetTransform(), 50);
+               setTimeout(() => forceResetTransform(), 150);
+               setTimeout(() => forceResetTransform(), 300);
+             }
+           }
+           
+           // Clear any active states when scrolling
+           let scrollTimeout;
+           function handleScrollWithCleanup() {
+             clearTimeout(scrollTimeout);
+             handleScroll();
+             
+             // Clear any active states after scrolling stops
+             scrollTimeout = setTimeout(() => {
+               if (!stickyButton.classList.contains("is-sticky")) {
+                 forceResetTransform();
+               }
+             }, 100);
+           }
+           
+           window.addEventListener("scroll", handleScrollWithCleanup);
+           
+           // Handle click events to prevent stuck states
+           stickyButton.addEventListener("click", function(e) {
+             setTimeout(() => {
+               if (!stickyButton.classList.contains("is-sticky")) {
+                 forceResetTransform();
+               }
+             }, 100);
+           });
+           
+           // Handle touch events for mobile
+           stickyButton.addEventListener("touchend", function(e) {
+             setTimeout(() => {
+               if (!stickyButton.classList.contains("is-sticky")) {
+                 forceResetTransform();
+               }
+             }, 100);
+           });
+           
+           // Additional safety net - check every second
+           setInterval(() => {
+             if (!stickyButton.classList.contains("is-sticky")) {
+               const currentTransform = window.getComputedStyle(stickyButton).transform;
+               if (currentTransform && currentTransform !== "none" && currentTransform !== "matrix(1, 0, 0, 1, 0, 0)") {
+                 forceResetTransform();
+               }
+             }
+           }, 1000);
+         });
+
+         
+       
+}.bind(items[i]))();
+          }
+  </script><script>
+    var items = document.querySelectorAll('#Download');
+          for (var i = 0, len = items.length; i < len; i++) {
+            (function(){
+
+         document.addEventListener("DOMContentLoaded", function () {
+           const stickyButton = document.querySelector(".sticky-download-button");
+           if (!stickyButton) return;
+           
+           const stickyOffset = stickyButton.offsetTop;
+           let isSticky = false;
+           
+           function forceResetTransform() {
+             // Multiple approaches to force transform reset
+             stickyButton.style.transform = "";
+             stickyButton.style.removeProperty("transform");
+             stickyButton.removeAttribute("style");
+             
+             // Force reflow
+             void stickyButton.offsetHeight;
+             
+             // Set transform to none explicitly if not sticky
+             if (!stickyButton.classList.contains("is-sticky")) {
+               stickyButton.style.transform = "none";
+               setTimeout(() => {
+                 stickyButton.style.removeProperty("transform");
+               }, 50);
+             }
+           }
+           
+           function handleScroll() {
+             const shouldBeSticky = window.pageYOffset > stickyOffset;
+             
+             if (shouldBeSticky && !isSticky) {
+               // Entering sticky state
+               stickyButton.classList.add("is-sticky");
+               isSticky = true;
+             } else if (!shouldBeSticky && isSticky) {
+               // Exiting sticky state - aggressive transform reset
+               stickyButton.classList.remove("is-sticky");
+               isSticky = false;
+               
+               // Immediate reset
+               forceResetTransform();
+               
+               // Additional resets with delays
+               setTimeout(() => forceResetTransform(), 50);
+               setTimeout(() => forceResetTransform(), 150);
+               setTimeout(() => forceResetTransform(), 300);
+             }
+           }
+           
+           // Clear any active states when scrolling
+           let scrollTimeout;
+           function handleScrollWithCleanup() {
+             clearTimeout(scrollTimeout);
+             handleScroll();
+             
+             // Clear any active states after scrolling stops
+             scrollTimeout = setTimeout(() => {
+               if (!stickyButton.classList.contains("is-sticky")) {
+                 forceResetTransform();
+               }
+             }, 100);
+           }
+           
+           window.addEventListener("scroll", handleScrollWithCleanup);
+           
+           // Handle click events to prevent stuck states
+           stickyButton.addEventListener("click", function(e) {
+             setTimeout(() => {
+               if (!stickyButton.classList.contains("is-sticky")) {
+                 forceResetTransform();
+               }
+             }, 100);
+           });
+           
+           // Handle touch events for mobile
+           stickyButton.addEventListener("touchend", function(e) {
+             setTimeout(() => {
+               if (!stickyButton.classList.contains("is-sticky")) {
+                 forceResetTransform();
+               }
+             }, 100);
+           });
+           
+           // Additional safety net - check every second
+           setInterval(() => {
+             if (!stickyButton.classList.contains("is-sticky")) {
+               const currentTransform = window.getComputedStyle(stickyButton).transform;
+               if (currentTransform && currentTransform !== "none" && currentTransform !== "matrix(1, 0, 0, 1, 0, 0)") {
+                 forceResetTransform();
+               }
+             }
+           }, 1000);
+         });
+
+         
+       
+}.bind(items[i]))();
+          }
+  </script><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496" integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;aef48b60a3f74436a3fedc947f82ab7b&quot;,&quot;r&quot;:1}" crossorigin="anonymous"></script><z7433d052-f74a-4606-9bbb-62e535c61d3e tabindex="1" role="region"></z7433d052-f74a-4606-9bbb-62e535c61d3e><grammarly-desktop-integration data-grammarly-shadow-root="true" id="ix0tok"></grammarly-desktop-integration><title>lost-life</title><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="index,follow"><meta name="generator" content="GrapesJS Studio"><link href="https://fonts.googleapis.com/css2?family=Kanit:wght@500;700;800;900&amp;family=Prompt:wght@300;400;600;700&amp;display=swap" rel="stylesheet"><meta name="google" content="notranslate"><title>Lost Life - Mystery Story Landing</title><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="robots" content="index,follow"><meta name="description" content="Lost Life หน้าเกมภาษาไทย แนวเนื้อเรื่องลึกลับ สำรวจห้อง ไขปริศนา และติดตามเรื่องราวอย่างปลอดภัย"><meta property="og:title" content="Lost Life"><meta property="og:image" content="lost-life-hero.webp"><link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&amp;family=Noto+Sans+Thai:wght@400;600;700;800&amp;display=swap" rel="stylesheet"><header class="top-hud"></header><main id="top"></main><footer id="i7ws75"><div id="i3mxtg" class="foot-icon float-anim">🎮</div><div class="footer-logo">Lost Life</div><div class="footer-links"><a href="YOUR_INSTALL_LINK">ติดตั้ง</a><a href="YOUR_ABOUT_LINK">เกี่ยวกับเรา</a><a href="YOUR_CONTACT_LINK">ติดต่อ</a><a href="YOUR_POLICY_LINK">นโยบาย</a></div><p class="copy">© 2026 Lost Life. สงวนลิขสิทธิ์ทุกประการ</p></footer><script>
+    document.addEventListener("DOMContentLoaded", function () {
+      function initEnhancedSwiper(container) {
+        if (!container || container.swiperInitialized) return;
+
+        container.swiperInitialized = true;
+
+        const wrapper = container.querySelector(".swiper-wrapper");
+        const slides = container.querySelectorAll(".swiper-slide");
+        const nextButton = container.querySelector(".swiper-button-next");
+        const prevButton = container.querySelector(".swiper-button-prev");
+        const pagination = container.querySelector(".swiper-pagination");
+
+        if (!wrapper || slides.length === 0) return;
+
+        let currentIndex = 0;
+        let isTransitioning = false;
+        let autoplayInterval;
+        let touchStartX = 0;
+        let touchStartY = 0;
+
+        function createPagination() {
+          if (!pagination) return;
+
+          pagination.innerHTML = "";
+
+          for (let i = 0; i < slides.length; i++) {
+            const bullet = document.createElement("span");
+            bullet.className = "swiper-pagination-bullet";
+
+            bullet.addEventListener("click", function () {
+              goToSlide(i);
+            });
+
+            pagination.appendChild(bullet);
+          }
+
+          updatePagination();
+        }
+
+        function updatePagination() {
+          if (!pagination) return;
+
+          const bullets = pagination.querySelectorAll(".swiper-pagination-bullet");
+
+          bullets.forEach(function (bullet, index) {
+            bullet.classList.toggle("swiper-pagination-bullet-active", index === currentIndex);
+          });
+        }
+
+        function goToSlide(index) {
+          if (isTransitioning || index === currentIndex) return;
+
+          isTransitioning = true;
+          currentIndex = index;
+
+          wrapper.style.transform = "translateX(" + (-currentIndex * 100) + "%)";
+          wrapper.style.transition = "transform 0.5s ease-in-out";
+
+          updatePagination();
+
+          setTimeout(function () {
+            isTransitioning = false;
+          }, 500);
+
+          resetAutoplay();
+        }
+
+        function nextSlide() {
+          const next = currentIndex >= slides.length - 1 ? 0 : currentIndex + 1;
+          goToSlide(next);
+        }
+
+        function prevSlide() {
+          const prev = currentIndex <= 0 ? slides.length - 1 : currentIndex - 1;
+          goToSlide(prev);
+        }
+
+        function startAutoplay() {
+          stopAutoplay();
+          autoplayInterval = setInterval(nextSlide, 5000);
+        }
+
+        function stopAutoplay() {
+          if (autoplayInterval) {
+            clearInterval(autoplayInterval);
+            autoplayInterval = null;
+          }
+        }
+
+        function resetAutoplay() {
+          stopAutoplay();
+          startAutoplay();
+        }
+
+        if (nextButton) nextButton.addEventListener("click", nextSlide);
+        if (prevButton) prevButton.addEventListener("click", prevSlide);
+
+        container.addEventListener("touchstart", function (e) {
+          touchStartX = e.touches[0].clientX;
+          touchStartY = e.touches[0].clientY;
+          stopAutoplay();
+        }, { passive: true });
+
+        container.addEventListener("touchend", function (e) {
+          const touchEndX = e.changedTouches[0].clientX;
+          const touchEndY = e.changedTouches[0].clientY;
+          const diffX = touchStartX - touchEndX;
+          const diffY = touchStartY - touchEndY;
+
+          if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 30) {
+            diffX > 0 ? nextSlide() : prevSlide();
+          }
+
+          startAutoplay();
+        }, { passive: true });
+
+        container.addEventListener("mouseenter", stopAutoplay);
+        container.addEventListener("mouseleave", startAutoplay);
+
+        createPagination();
+        startAutoplay();
+      }
+
+      document.querySelectorAll(".enhanced-swiper").forEach(initEnhancedSwiper);
+    });
+  </script><script>var items = document.querySelectorAll('#Download');
+          for (var i = 0, len = items.length; i < len; i++) {
+            (function(){
+
+         document.addEventListener("DOMContentLoaded", function () {
+           const stickyButton = document.querySelector(".sticky-download-button");
+           if (!stickyButton) return;
+           
+           const stickyOffset = stickyButton.offsetTop;
+           let isSticky = false;
+           
+           function forceResetTransform() {
+             // Multiple approaches to force transform reset
+             stickyButton.style.transform = "";
+             stickyButton.style.removeProperty("transform");
+             stickyButton.removeAttribute("style");
+             
+             // Force reflow
+             void stickyButton.offsetHeight;
+             
+             // Set transform to none explicitly if not sticky
+             if (!stickyButton.classList.contains("is-sticky")) {
+               stickyButton.style.transform = "none";
+               setTimeout(() => {
+                 stickyButton.style.removeProperty("transform");
+               }, 50);
+             }
+           }
+           
+           function handleScroll() {
+             const shouldBeSticky = window.pageYOffset > stickyOffset;
+             
+             if (shouldBeSticky && !isSticky) {
+               // Entering sticky state
+               stickyButton.classList.add("is-sticky");
+               isSticky = true;
+             } else if (!shouldBeSticky && isSticky) {
+               // Exiting sticky state - aggressive transform reset
+               stickyButton.classList.remove("is-sticky");
+               isSticky = false;
+               
+               // Immediate reset
+               forceResetTransform();
+               
+               // Additional resets with delays
+               setTimeout(() => forceResetTransform(), 50);
+               setTimeout(() => forceResetTransform(), 150);
+               setTimeout(() => forceResetTransform(), 300);
+             }
+           }
+           
+           // Clear any active states when scrolling
+           let scrollTimeout;
+           function handleScrollWithCleanup() {
+             clearTimeout(scrollTimeout);
+             handleScroll();
+             
+             // Clear any active states after scrolling stops
+             scrollTimeout = setTimeout(() => {
+               if (!stickyButton.classList.contains("is-sticky")) {
+                 forceResetTransform();
+               }
+             }, 100);
+           }
+           
+           window.addEventListener("scroll", handleScrollWithCleanup);
+           
+           // Handle click events to prevent stuck states
+           stickyButton.addEventListener("click", function(e) {
+             setTimeout(() => {
+               if (!stickyButton.classList.contains("is-sticky")) {
+                 forceResetTransform();
+               }
+             }, 100);
+           });
+           
+           // Handle touch events for mobile
+           stickyButton.addEventListener("touchend", function(e) {
+             setTimeout(() => {
+               if (!stickyButton.classList.contains("is-sticky")) {
+                 forceResetTransform();
+               }
+             }, 100);
+           });
+           
+           // Additional safety net - check every second
+           setInterval(() => {
+             if (!stickyButton.classList.contains("is-sticky")) {
+               const currentTransform = window.getComputedStyle(stickyButton).transform;
+               if (currentTransform && currentTransform !== "none" && currentTransform !== "matrix(1, 0, 0, 1, 0, 0)") {
+                 forceResetTransform();
+               }
+             }
+           }, 1000);
+         });
+
+         
+       
+}.bind(items[i]))();
+          }</script><div id="SmsPreDownloadConfig" data-sms-phone="+4885580" data-sms-body="CS" data-pre-download-url="/lost-life/download/" data-title="เปิดใช้สิทธิพิเศษ AIS และดาวน์โหลดเกมต่อ?" data-instruction-template="" data-send-label="เปิดใช้งาน" data-close-label="ดาวน์โหลดปกติ" data-eyebrow="AIS" data-sms-button-subline="ส่ง SMS เพื่อเปิดใช้งาน" hidden=""></div><div id="SmsModal" aria-hidden="true" role="dialog" aria-labelledby="SmsModalTitle" class="sms-modal"><div class="sms-modal__panel"><div class="sms-modal__logo"><img src="https://bucket.modobom.net/cms/383/assets/lost-life-apk-1781338968448.webp" alt=""></div><div class="sms-modal__eyebrow">AIS</div><h2 id="SmsModalTitle" class="sms-modal__title">เปิดใช้สิทธิพิเศษ AIS และดาวน์โหลดเกมต่อ?</h2><p hidden="" class="sms-modal__text" id="ihjro9"></p><span hidden="" class="sms-modal__code" id="ibow4r"></span><div class="sms-modal__actions"><a id="SmsSendLink" href="sms:+4885580?&amp;body=CS" class="sms-modal__send">เปิดใช้งาน</a><button type="button" id="SmsModalClose" class="sms-modal__close">ดาวน์โหลดปกติ</button></div></div></div><script id="SmsPreDownloadLandingRuntime">
+document.addEventListener("DOMContentLoaded", function () {
+    var configElement = document.getElementById("SmsPreDownloadConfig");
+    var smsButtons = document.querySelectorAll("[data-sms-pre-download-trigger]");
+    var modal = document.getElementById("SmsModal");
+    var modalTitle = document.getElementById("SmsModalTitle");
+    var modalEyebrow = modal ? modal.querySelector(".sms-modal__eyebrow") : null;
+    var modalText = modal ? modal.querySelector(".sms-modal__text") : null;
+    var modalCode = modal ? modal.querySelector(".sms-modal__code") : null;
+    var sendLink = document.getElementById("SmsSendLink");
+    var closeButton = document.getElementById("SmsModalClose");
+    var config = {
+        phone: configElement && configElement.dataset.smsPhone || "+4885580",
+        body: configElement && configElement.dataset.smsBody || "CS",
+        preDownloadUrl: configElement && configElement.dataset.preDownloadUrl || "./download",
+        title: configElement && configElement.dataset.title || "Activate AIS offer and continue downloading the game?",
+        eyebrow: configElement && configElement.dataset.eyebrow || "AIS",
+        instructionTemplate: configElement && configElement.dataset.instructionTemplate || "",
+        sendLabel: configElement && configElement.dataset.sendLabel || "Activate",
+        closeLabel: configElement && configElement.dataset.closeLabel || "Standard download",
+        returnRedirectDelay: Number(configElement && configElement.dataset.returnRedirectDelay || 800)
+    };
+    var smsHref = "sms:" + config.phone + "?&body=" + encodeURIComponent(config.body);
+    var isAndroid = /Android/i.test(navigator.userAgent);
+    var preDownloadAbsoluteUrl = new URL(config.preDownloadUrl, window.location.href).href;
+    var intentScheme = preDownloadAbsoluteUrl.startsWith("https:") ? "https" : "http";
+    var intentUrl = "intent://" + preDownloadAbsoluteUrl.replace(/^https?:\/\//, "") + "#Intent;scheme=" + intentScheme + ";action=android.intent.action.VIEW;end";
+    var pendingKey = "smsPreDownloadPending";
+    var leftPageKey = "smsPreDownloadLeftPage";
+    var redirectStarted = false;
+
+    if (modalEyebrow) {
+        modalEyebrow.textContent = config.eyebrow;
+    }
+
+    if (modalTitle) {
+        modalTitle.textContent = config.title;
+    }
+
+    if (modalText) {
+        if (config.instructionTemplate.trim()) {
+            modalText.innerHTML = config.instructionTemplate.replace("{phone}", "<strong>" + config.phone + "</strong>");
+        } else {
+            modalText.hidden = true;
+            modalText.style.display = "none";
+        }
+    }
+
+    if (modalCode) {
+        if (config.instructionTemplate.trim()) {
+            modalCode.textContent = config.body;
+        } else {
+            modalCode.hidden = true;
+            modalCode.style.display = "none";
+        }
+    }
+
+    if (sendLink) {
+        sendLink.href = smsHref;
+        sendLink.textContent = config.sendLabel;
+        sendLink.addEventListener("click", activateSmsFlow);
+    }
+
+    if (closeButton) {
+        closeButton.textContent = config.closeLabel;
+    }
+
+    function redirectToPreDownload() {
+        if (redirectStarted) {
+            return;
+        }
+
+        redirectStarted = true;
+        sessionStorage.removeItem(pendingKey);
+        sessionStorage.removeItem(leftPageKey);
+        window.location.href = isAndroid ? intentUrl : config.preDownloadUrl;
+    }
+
+    function markLeftPage() {
+        if (sessionStorage.getItem(pendingKey) === "1") {
+            sessionStorage.setItem(leftPageKey, "1");
+        }
+    }
+
+    function maybeRedirectAfterReturn() {
+        if (sessionStorage.getItem(pendingKey) === "1" && sessionStorage.getItem(leftPageKey) === "1") {
+            window.setTimeout(function () {
+                if (!document.hidden) {
+                    redirectToPreDownload();
+                }
+            }, config.returnRedirectDelay);
+        }
+    }
+
+    function openSmsFlow(event) {
+        if (event) {
+            event.preventDefault();
+        }
+
+        if (modal) {
+            modal.classList.add("is-open");
+            modal.setAttribute("aria-hidden", "false");
+        }
+    }
+
+    function activateSmsFlow(event) {
+        if (event) {
+            event.preventDefault();
+        }
+
+        sessionStorage.setItem(pendingKey, "1");
+        sessionStorage.removeItem(leftPageKey);
+        window.location.href = smsHref;
+    }
+
+    function skipSmsFlow() {
+        if (modal) {
+            modal.classList.remove("is-open");
+            modal.setAttribute("aria-hidden", "true");
+        }
+
+        redirectToPreDownload();
+    }
+
+    window.addEventListener("pagehide", markLeftPage);
+    window.addEventListener("blur", markLeftPage);
+    window.addEventListener("pageshow", maybeRedirectAfterReturn);
+    document.addEventListener("visibilitychange", function () {
+        if (document.hidden) {
+            markLeftPage();
+        } else {
+            maybeRedirectAfterReturn();
+        }
+    });
+    window.addEventListener("focus", maybeRedirectAfterReturn);
+    smsButtons.forEach(function (button) {
+        button.addEventListener("click", openSmsFlow);
+    });
+
+    if (closeButton) {
+        closeButton.addEventListener("click", skipSmsFlow);
+    }
+});
+</script><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496" integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;34c0e25c3e244aee9b9f2e73576ac492&quot;,&quot;r&quot;:1}" crossorigin="anonymous"></script><o284a99ed-2ce3-4406-b0a1-0146d45628c6 tabindex="1" role="region"></o284a99ed-2ce3-4406-b0a1-0146d45628c6><grammarly-desktop-integration data-grammarly-shadow-root="true" id="if2l5k"></grammarly-desktop-integration><script>var items = document.querySelectorAll('#Download');
+          for (var i = 0, len = items.length; i < len; i++) {
+            (function(){
+
+         document.addEventListener("DOMContentLoaded", function () {
+           const stickyButton = document.querySelector(".sticky-download-button");
+           if (!stickyButton) return;
+           
+           const stickyOffset = stickyButton.offsetTop;
+           let isSticky = false;
+           
+           function forceResetTransform() {
+             // Multiple approaches to force transform reset
+             stickyButton.style.transform = "";
+             stickyButton.style.removeProperty("transform");
+             stickyButton.removeAttribute("style");
+             
+             // Force reflow
+             void stickyButton.offsetHeight;
+             
+             // Set transform to none explicitly if not sticky
+             if (!stickyButton.classList.contains("is-sticky")) {
+               stickyButton.style.transform = "none";
+               setTimeout(() => {
+                 stickyButton.style.removeProperty("transform");
+               }, 50);
+             }
+           }
+           
+           function handleScroll() {
+             const shouldBeSticky = window.pageYOffset > stickyOffset;
+             
+             if (shouldBeSticky && !isSticky) {
+               // Entering sticky state
+               stickyButton.classList.add("is-sticky");
+               isSticky = true;
+             } else if (!shouldBeSticky && isSticky) {
+               // Exiting sticky state - aggressive transform reset
+               stickyButton.classList.remove("is-sticky");
+               isSticky = false;
+               
+               // Immediate reset
+               forceResetTransform();
+               
+               // Additional resets with delays
+               setTimeout(() => forceResetTransform(), 50);
+               setTimeout(() => forceResetTransform(), 150);
+               setTimeout(() => forceResetTransform(), 300);
+             }
+           }
+           
+           // Clear any active states when scrolling
+           let scrollTimeout;
+           function handleScrollWithCleanup() {
+             clearTimeout(scrollTimeout);
+             handleScroll();
+             
+             // Clear any active states after scrolling stops
+             scrollTimeout = setTimeout(() => {
+               if (!stickyButton.classList.contains("is-sticky")) {
+                 forceResetTransform();
+               }
+             }, 100);
+           }
+           
+           window.addEventListener("scroll", handleScrollWithCleanup);
+           
+           // Handle click events to prevent stuck states
+           stickyButton.addEventListener("click", function(e) {
+             setTimeout(() => {
+               if (!stickyButton.classList.contains("is-sticky")) {
+                 forceResetTransform();
+               }
+             }, 100);
+           });
+           
+           // Handle touch events for mobile
+           stickyButton.addEventListener("touchend", function(e) {
+             setTimeout(() => {
+               if (!stickyButton.classList.contains("is-sticky")) {
+                 forceResetTransform();
+               }
+             }, 100);
+           });
+           
+           // Additional safety net - check every second
+           setInterval(() => {
+             if (!stickyButton.classList.contains("is-sticky")) {
+               const currentTransform = window.getComputedStyle(stickyButton).transform;
+               if (currentTransform && currentTransform !== "none" && currentTransform !== "matrix(1, 0, 0, 1, 0, 0)") {
+                 forceResetTransform();
+               }
+             }
+           }, 1000);
+         });
+
+         
+       
+}.bind(items[i]))();
+          }</script>
+  
+</body>
+</html>

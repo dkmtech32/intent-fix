@@ -1,0 +1,476 @@
+/totally-reliable-delivery-service/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/totally-reliable-delivery-service/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/totally-reliable-delivery-service/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/intro-gta-mamaia-vice-mobile/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/intro-gta-mamaia-vice-mobile/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/intro-gta-mamaia-vice-mobile/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/intro-totally-reliable-delivery-service/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/intro-totally-reliable-delivery-service/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/intro-totally-reliable-delivery-service/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/introduction/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/introduction/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/introduction/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/privacy-policy/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/privacy-policy/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/privacy-policy/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/terms-conditions/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/terms-conditions/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/terms-conditions/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/contact-us/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/contact-us/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/contact-us/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/nostalgia-open-village-apk/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/nostalgia-open-village-apk/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/nostalgia-open-village-apk/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/gta-mamaia-vice-mobile/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/gta-mamaia-vice-mobile/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/gta-mamaia-vice-mobile/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/delivery-game/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/delivery-game/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/delivery-game/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/wobby-life/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/wobby-life/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/wobby-life/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/intro-wobby-life/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/intro-wobby-life/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/intro-wobby-life/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/wet-nightmares/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/wet-nightmares/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/wet-nightmares/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/udong-game/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/udong-game/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/udong-game/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/euro-truck/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/euro-truck/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/euro-truck/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/game-sleep/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/game-sleep/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/game-sleep/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/racing-master/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/racing-master/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/racing-master/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/pojavlauncher/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/pojavlauncher/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/pojavlauncher/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/school-street-clash/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/school-street-clash/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/school-street-clash/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/coco-nutshake-th/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/coco-nutshake-th/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/coco-nutshake-th/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/introduction-test/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/introduction-test/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/introduction-test/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/privacy-policy-test/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/privacy-policy-test/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/privacy-policy-test/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/terms-conditions-test/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/terms-conditions-test/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/terms-conditions-test/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/installation-uninstallation-instructions-test/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/installation-uninstallation-instructions-test/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/installation-uninstallation-instructions-test/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/contact-us-test/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/contact-us-test/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/contact-us-test/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/minecraft/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/minecraft/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/minecraft/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/minecraft-test2/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/minecraft-test2/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/minecraft-test2/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/driveoff-test/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/driveoff-test/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/driveoff-test/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/driveoff-test2/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/driveoff-test2/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/driveoff-test2/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/subway-surfers-test/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/subway-surfers-test/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/subway-surfers-test/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/subway-subfers-test-2/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/subway-subfers-test-2/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/subway-subfers-test-2/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/pubg-test/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/pubg-test/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/pubg-test/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/pubg-test21/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/pubg-test21/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/pubg-test21/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/sample-pubg/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/sample-pubg/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/sample-pubg/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/ohn/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/ohn/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/ohn/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/sonic-rumble-party/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/sonic-rumble-party/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/sonic-rumble-party/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/sonic-rumble-party-2/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/sonic-rumble-party-2/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/sonic-rumble-party-2/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/sonic-rumble-party-3/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/sonic-rumble-party-3/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/sonic-rumble-party-3/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/sonic-rumble-partysonic-4/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/sonic-rumble-partysonic-4/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/sonic-rumble-partysonic-4/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/grand-theft-auto-v/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/grand-theft-auto-v/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/grand-theft-auto-v/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/grand-thef-auto-v-2/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/grand-thef-auto-v-2/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/grand-thef-auto-v-2/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/grand-thef-auto-v-3/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/grand-thef-auto-v-3/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/grand-thef-auto-v-3/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/rivals-of/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/rivals-of/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/rivals-of/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/rivals-of-test/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/rivals-of-test/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/rivals-of-test/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/rivals-of-test2/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/rivals-of-test2/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/rivals-of-test2/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/overcooked/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/overcooked/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/overcooked/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/tales-of-seikyu/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/tales-of-seikyu/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/tales-of-seikyu/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/nightgamer/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/nightgamer/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/nightgamer/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/the-way-back-home-sinister-night/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/the-way-back-home-sinister-night/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/the-way-back-home-sinister-night/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/alice-in-the-nightmare-land/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/alice-in-the-nightmare-land/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/alice-in-the-nightmare-land/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/self-defense-dojo-secret-ntr-lesson/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/self-defense-dojo-secret-ntr-lesson/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/self-defense-dojo-secret-ntr-lesson/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/inari/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/inari/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/inari/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/moving-in-with-my-step-sister/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/moving-in-with-my-step-sister/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/moving-in-with-my-step-sister/*.css
+  Cache-Control: public, max-age=31536000, immutable

@@ -1,0 +1,89 @@
+/stick-war-legacy/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/stick-war-legacy/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/stick-war-legacy/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/privacy-policy/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/privacy-policy/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/privacy-policy/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/term-conditions/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/term-conditions/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/term-conditions/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/introduction/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/introduction/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/introduction/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/contact-us/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/contact-us/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/contact-us/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/instructions/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/instructions/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/instructions/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/fallen-elf-freya/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/fallen-elf-freya/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/fallen-elf-freya/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/ntraholic/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/ntraholic/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/ntraholic/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/peachy-sands-bay/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/peachy-sands-bay/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/peachy-sands-bay/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/life-stories/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/life-stories/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/life-stories/*.css
+  Cache-Control: public, max-age=31536000, immutable

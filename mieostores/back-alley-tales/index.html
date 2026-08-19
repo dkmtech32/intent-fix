@@ -1,0 +1,1267 @@
+<!DOCTYPE html>
+<html lang="th" translate="no" class="notranslate">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ดาวน์โหลด Back Alley Tales APK - Android</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Inter:wght@300;400;600;700&amp;family=Share+Tech+Mono&amp;display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+    }
+
+    :root {
+      --bg-black: #090a0d;
+      --bg-charcoal: #121318;
+      --card-bg: rgba(18, 19, 24, 0.92);
+      --accent-red: #8b0000;
+      --accent-red-bright: #e60000;
+      --neon-glow: rgba(230, 0, 0, 0.35);
+      --warm-yellow: #f5a623;
+      --text-main: #f0f0f5;
+      --text-muted: #a0a0b0;
+      --border-color: rgba(255, 255, 255, 0.1);
+      --font-heading: 'Bebas Neue', cursive, sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --font-mono: 'Share Tech Mono', monospace;
+      undefined: undefined;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg-black);
+      color: var(--text-main);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.12) 50%),
+        radial-gradient(circle, transparent 65%, rgba(0, 0, 0, 0.75) 100%);
+      pointer-events: none;
+      z-index: 99;
+      background-size: 100% 3px, 100% 100%;
+      undefined: undefined;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: var(--font-heading);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    p {
+      color: var(--text-muted);
+      font-size: 0.98rem;
+      margin-bottom: 1rem;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .btn-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      background: linear-gradient(135deg, var(--accent-red-bright) 0%, var(--accent-red) 100%);
+      color: #fff;
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      padding: 16px 36px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 0 20px var(--neon-glow);
+      transition: all 0.3s ease;
+      cursor: pointer;
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 30px rgba(230, 0, 0, 0.7);
+      background: linear-gradient(135deg, #ff1a1a 0%, var(--accent-red-bright) 100%);
+    }
+
+    .dark-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-radius: 8px;
+      padding: 2.2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+      transition: border-color 0.3s ease;
+    }
+
+    .section-title {
+      font-size: 2.4rem;
+      color: #fff;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border-bottom: 2px solid var(--accent-red);
+      padding-bottom: 8px;
+    }
+
+    .section-title i {
+      color: var(--accent-red-bright);
+      text-shadow: 0 0 10px var(--accent-red-bright);
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(230, 0, 0, 0.15);
+      border: 1px solid var(--accent-red-bright);
+      color: var(--accent-red-bright);
+      font-size: 0.85rem;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 3px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 1rem;
+      animation: pulse-border 2s infinite;
+    }
+
+    .hero h1 {
+      font-size: 4rem;
+      line-height: 1;
+      margin-bottom: 1rem;
+      text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+      color: #fff;
+    }
+
+    .hero h1 span {
+      color: var(--accent-red-bright);
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: #c4c4cc;
+      margin-bottom: 2rem;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .feature-box {
+      background: rgba(12, 13, 18, 0.8);
+      border: 1px solid var(--border-color);
+      padding: 1.5rem;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+    }
+
+    .feature-box:hover {
+      border-color: var(--accent-red);
+      transform: translateY(-3px);
+      background: rgba(25, 20, 24, 0.8);
+      box-shadow: 0 5px 20px rgba(230, 0, 0, 0.15);
+    }
+
+    .feature-icon {
+      font-size: 1.8rem;
+      color: var(--warm-yellow);
+      margin-bottom: 1rem;
+      transition: transform 0.3s ease;
+    }
+
+    .feature-box h3 {
+      font-size: 1.4rem;
+      color: #fff;
+      margin-bottom: 0.5rem;
+    }
+
+    .gallery-container {
+      display: flex;
+      gap: 1.5rem;
+      overflow-x: auto;
+      padding-bottom: 1.5rem;
+      scrollbar-width: thin;
+      scrollbar-color: var(--accent-red) var(--bg-charcoal);
+    }
+
+    .gallery-container::-webkit-scrollbar {
+      height: 6px;
+    }
+
+    .gallery-container::-webkit-scrollbar-thumb {
+      background: var(--accent-red);
+      border-radius: 3px;
+    }
+
+    .gallery-item {
+      min-width: 300px;
+      max-width: 350px;
+      background: var(--bg-charcoal);
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      overflow: hidden;
+      flex-shrink: 0;
+      position: relative;
+      transition: border-color 0.3s;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      filter: contrast(105%);
+      transition: transform 0.4s ease;
+    }
+
+    .gallery-item:hover img {
+      filter: grayscale(0%) contrast(100%);
+      transform: scale(1.05);
+    }
+
+    .gallery-caption {
+      padding: 1rem;
+      font-size: 0.9rem;
+      background: rgba(12, 13, 16, 0.95);
+      border-top: 1px solid var(--border-color);
+    }
+
+    .gallery-caption h4 {
+      color: var(--warm-yellow);
+      font-size: 1.2rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .steps-list {
+      list-style: none;
+      counter-reset: step-counter;
+    }
+
+    .steps-list li {
+      position: relative;
+      padding-left: 3.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .steps-list li::before {
+      content: counter(step-counter);
+      counter-increment: step-counter;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 2.5rem;
+      height: 2.5rem;
+      background: var(--bg-charcoal);
+      border: 1px solid var(--accent-red);
+      color: var(--accent-red-bright);
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 4px;
+      box-shadow: 0 0 10px rgba(230, 0, 0, 0.2);
+    }
+
+    .steps-list h4 {
+      font-size: 1.3rem;
+      color: #fff;
+    }
+
+    .cta-banner {
+      text-align: center;
+      padding: 3.5rem 1.5rem;
+      background: radial-gradient(circle, rgba(139, 0, 0, 0.2) 0%, rgba(9, 10, 13, 0.95) 100%);
+      border: 1px solid var(--accent-red);
+      border-radius: 8px;
+      margin: 3rem 0;
+      box-shadow: 0 0 30px rgba(139, 0, 0, 0.3);
+    }
+
+    .cta-banner h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #fff;
+    }
+
+    footer {
+      background-color: #040405;
+      border-top: 1px solid var(--border-color);
+      padding: 3rem 0 1.5rem 0;
+      margin-top: 4rem;
+      font-size: 0.85rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .footer-col h4 {
+      color: #fff;
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      border-left: 3px solid var(--accent-red);
+      padding-left: 8px;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col ul li {
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-col ul li a {
+      color: var(--text-muted);
+      transition: color 0.2s;
+    }
+
+    .footer-col ul li a:hover {
+      color: var(--accent-red-bright);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      color: #666;
+      font-family: var(--font-mono);
+    }
+
+    .age-rating {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid #d9534f;
+      color: #d9534f;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-weight: bold;
+      font-size: 0.8rem;
+      margin-bottom: 1rem;
+    }
+
+    img.hero-image {
+      width: 100%;
+      min-height: 85vh;
+      object-fit: cover;
+      display: block;
+      filter: brightness(0.5) contrast(1.1);
+    }
+
+    .hero-content-box {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 0;
+      width: 100%;
+      z-index: 3;
+      max-width: 650px;
+    }
+
+    .hero-text-container h1 {
+      font-size: 4rem;
+      line-height: 1;
+      margin-bottom: 1rem;
+      text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+      color: #fff;
+    }
+
+    .hero-text-container h1 span {
+      color: var(--accent-red-bright);
+    }
+
+    .hero-text-container p {
+      font-size: 1.1rem;
+      color: #c4c4cc;
+      margin-bottom: 2rem;
+    }
+
+    .hero-banner-wrapper {
+      position: relative;
+      width: 100%;
+      min-height: 85vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background-color: var(--bg-black);
+    }
+
+    img.hero-bg-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      undefined: undefined;
+      object-position: center;
+      z-index: 1;
+      filter: brightness(0.5) contrast(1.1);
+      transition: transform 10s ease;
+    }
+
+    .hero-overlay-dark {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to right, rgba(9, 10, 13, 0.95) 35%, rgba(9, 10, 13, 0.4) 100%),
+        linear-gradient(to top, var(--bg-black) 5%, transparent 35%);
+      z-index: 2;
+    }
+
+    .hero-content-wrapper {
+      position: relative;
+      z-index: 3;
+      width: 100%;
+      padding: 4rem 0;
+    }
+
+    .hero-content-box h1 {
+      font-size: 4rem;
+      line-height: 1;
+      margin-bottom: 1rem;
+      text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+      color: #fff;
+    }
+
+    .hero-content-box h1 span {
+      color: var(--accent-red-bright);
+    }
+
+    .hero-content-box p {
+      font-size: 1.1rem;
+      color: #c4c4cc;
+      margin-bottom: 2rem;
+    }
+
+    .intro-with-image {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+
+    .intro-image-box {
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+      position: relative;
+    }
+
+    .intro-image-box img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      display: block;
+      filter: brightness(0.9) contrast(1.1);
+      transition: transform 0.4s ease;
+    }
+
+    .scanline-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(230, 0, 0, 0.02) 50%, rgba(0, 0, 0, 0) 100%);
+      opacity: 0.15;
+      pointer-events: none;
+      z-index: 98;
+      animation: scanline 12s linear infinite;
+      undefined: undefined;
+    }
+
+    .cctv-hud {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 100;
+      font-family: var(--font-mono);
+      color: #00ff66;
+      font-size: 0.85rem;
+      text-shadow: 0 0 5px rgba(0, 255, 102, 0.5);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 6px 14px;
+      border: 1px solid rgba(0, 255, 102, 0.3);
+      border-radius: 4px;
+      pointer-events: none;
+    }
+
+    .rec-dot {
+      width: 10px;
+      height: 10px;
+      background-color: var(--accent-red-bright);
+      border-radius: 50%;
+      box-shadow: 0 0 8px var(--accent-red-bright);
+      animation: blink 1.2s step-start infinite;
+    }
+
+    .btn-cta::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(60deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transform: rotate(30deg);
+      transition: 0.8s;
+    }
+
+    .btn-cta:hover::after {
+      left: 100%;
+    }
+
+    .hero-banner-wrapper:hover img.hero-bg-image {
+      transform: scale(1.03);
+      undefined: undefined;
+    }
+
+    .glitch-title {
+      position: relative;
+      font-size: 4rem;
+      line-height: 1;
+      margin-bottom: 1rem;
+      color: #fff;
+    }
+
+    .glitch-title span {
+      color: var(--accent-red-bright);
+      text-shadow: 0 0 10px var(--accent-red);
+    }
+
+    .dark-card:hover {
+      border-color: rgba(230, 0, 0, 0.4);
+      box-shadow: 0 10px 35px rgba(230, 0, 0, 0.15);
+    }
+
+    .intro-image-box:hover img {
+      transform: scale(1.05);
+    }
+
+    .feature-box:hover .feature-icon {
+      transform: scale(1.2) rotate(5deg);
+    }
+
+    .gallery-item:hover {
+      border-color: var(--accent-red-bright);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease-out;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .loading-content p {
+      margin-top: 16px;
+      font-size: 18px;
+      font-weight: 500;
+    }
+
+    #izxgvpf {
+      display: none;
+    }
+
+    @keyframes scanline {
+      0% {
+        transform: translateY(-100%);
+      }
+
+      100% {
+        transform: translateY(100%);
+      }
+    }
+
+    @keyframes blink {
+      50% {
+        opacity: 0.2;
+      }
+    }
+
+    @keyframes pulse-border {
+
+      0%,
+      100% {
+        border-color: var(--accent-red-bright);
+        box-shadow: 0 0 5px rgba(230, 0, 0, 0.3);
+      }
+
+      50% {
+        border-color: rgba(230, 0, 0, 0.3);
+        box-shadow: 0 0 15px rgba(230, 0, 0, 0.8);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translate(-50%, -10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+      }
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.8rem;
+      }
+
+      .section-title {
+        font-size: 2rem;
+      }
+
+      .btn-cta {
+        font-size: 1.2rem;
+        padding: 14px 20px;
+        width: 100%;
+      }
+
+      .dark-card {
+        padding: 1.25rem;
+      }
+
+      img.hero-image {
+        min-height: 90vh;
+      }
+
+      .hero-content-box {
+        top: 45%;
+      }
+
+      .hero-text-container h1 {
+        font-size: 2.8rem;
+      }
+
+      .hero-banner-wrapper {
+        min-height: 90vh;
+      }
+
+      .hero-content-box h1 {
+        font-size: 2.8rem;
+      }
+
+      .intro-with-image {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .glitch-title {
+        font-size: 2.8rem;
+      }
+
+      .cctv-hud {
+        font-size: 0.75rem;
+        top: 10px;
+        right: 10px;
+      }
+
+      #cctv-time {
+        margin-left: 5px;
+      }
+
+      #izw8nwg {
+        color: #fff;
+      }
+
+      #iygc8wi {
+        color: #e1e1e6;
+        font-size: 1rem;
+        line-height: 1.7;
+        margin: 0;
+      }
+
+      #ik41yn7 {
+        color: var(--text-muted);
+      }
+
+      #ihp7id6 {
+        margin: 3rem 0;
+      }
+
+      #i0eq0pn {
+        margin-bottom: 2rem;
+      }
+
+      #ip3mztl {
+        color: var(--warm-yellow);
+        margin: 1.5rem 0 1rem 0;
+        font-size: 1.5rem;
+      }
+
+      #i8oiws8 {
+        border-color: var(--border-color);
+        margin: 2rem 0;
+      }
+
+      #i7miqrz {
+        color: #fff;
+        margin-bottom: 1rem;
+        font-size: 1.3rem;
+      }
+
+      #ig21i8r {
+        font-size: 1.8rem;
+      }
+
+      #ipdak64 {
+        color: #fff;
+      }
+
+      #io9ks1d {
+        margin-bottom: 1rem;
+      }
+
+      #ief1926 {
+        color: #fff;
+      }
+
+      #i9dn6k7 {
+        margin-bottom: 1rem;
+      }
+
+      #iw7vnzj {
+        color: #fff;
+      }
+
+      #izxae5q {
+        list-style: none;
+        color: var(--text-muted);
+        font-size: 0.95rem;
+      }
+
+      #iw1ekmh {
+        margin-bottom: 0;
+      }
+
+      #io3xfkn {
+        font-size: 1.8rem;
+      }
+
+      #i6bd6lj {
+        color: #fff;
+      }
+
+      #ihujz2s {
+        margin-bottom: 1rem;
+      }
+
+      #i4tkc3l {
+        color: #fff;
+      }
+
+      #i7d20un {
+        margin-bottom: 1rem;
+      }
+
+      #ir1gf6k {
+        color: #fff;
+      }
+
+      #irfkazi {
+        list-style: none;
+        color: var(--text-muted);
+        font-size: 0.95rem;
+      }
+
+      #ieyb8dp {
+        margin-bottom: 0;
+      }
+
+      #i070k5j {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+      }
+
+      #i61rld8 {
+        margin-top: 3rem;
+      }
+
+      #ika6fdw {
+        margin-top: 0.5rem;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .loading-content p {
+        font-size: 16px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .loading-content p {
+        font-size: 14px;
+      }
+    }
+
+    /* Loading overlay styles */
+    #download-loading-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      z-index: 10000;
+      display: none;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .loading-content {
+      text-align: center;
+      color: white;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    .loading-content p {
+      margin-top: 16px;
+      font-size: 18px;
+      font-weight: 500;
+    }
+
+    .loading-svg {
+      animation: spin 1.5s linear infinite;
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 767px) {
+      .loading-content p {
+        font-size: 16px;
+      }
+
+      .loading-svg {
+        width: 40px;
+        height: 40px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .loading-content p {
+        font-size: 14px;
+      }
+
+      .loading-svg {
+        width: 36px;
+        height: 36px;
+      }
+    }
+  </style>
+  <script>
+    // Hàm kiểm tra query parameter force=1 trên URL hiện tại
+    function updateDownloadLink() {
+      // Lấy query string hiện tại
+      const searchParams = new URLSearchParams(window.location.search);
+
+      // Kiểm tra nếu có force=1
+      if (searchParams.get('force') === '1') {
+        const downloadLink = document.getElementById("Download");
+        if (downloadLink) {
+          // Kiểm tra nếu link đã có query parameter
+          let href = downloadLink.href;
+          if (href.includes('?')) {
+            // Kiểm tra nếu force=1 chưa có trong href
+            if (!href.includes("force=1")) {
+              href += "&force=1";
+            }
+          } else {
+            href += "?force=1";
+          }
+          downloadLink.href = href;
+        }
+      }
+    }
+
+    // Function to handle download clicks
+    function handleDownloadClick(e) {
+      // Show loading overlay
+      showLoadingOverlay();
+
+      // Hide loading overlay after 3 seconds (adjust as needed)
+      setTimeout(() => {
+        hideLoadingOverlay();
+      }, 3000);
+
+      if (typeof gtag_report_conversion === "function") {
+        gtag_report_conversion();
+      }
+    }
+
+    // Initialize when DOM is loaded
+    document.addEventListener('DOMContentLoaded', function () {
+      // Update download links
+      updateDownloadLink();
+
+      // Add click handlers to all download links
+      const downloadLinks = document.querySelectorAll('.download');
+      downloadLinks.forEach(link => {
+        link.addEventListener('click', handleDownloadClick);
+      });
+
+      // Add click handler to Download button specifically
+      const downloadBtn = document.getElementById('Download');
+      if (downloadBtn) {
+        downloadBtn.addEventListener('click', handleDownloadClick);
+      }
+    });
+  </script>
+
+  <meta name="google" content="notranslate">
+</head>
+
+<body id="i89s">
+  <!-- OVERLAY SCANLINE (ĐÃ GIẢM MỜ NHẸ NHÀNG) -->
+  <div class="scanline-overlay"></div>
+  <div class="cctv-hud">
+    <div class="rec-dot"></div><span>REC [CAM 04]</span><span id="cctv-time">00:00:00</span>
+  </div><!-- 1. HERO SECTION -->
+  <div class="hero-banner-wrapper"><img
+      src="https://bucket.modobom.net/cms/321/assets/back-alley-tales-1786931528349.webp"
+      alt="Back Alley Tales Hero Banner" id="ic5z9cm" class="hero-bg-image">
+    <div id="izxgvpf" class="hero-overlay-dark"></div>
+    <div class="hero-content-wrapper">
+      <div class="container">
+        <div class="hero-content-box"><span class="badge"><i class="fa-solid fa-triangle-exclamation"></i> 18+ MATURE
+            CONTENT ONLY</span>
+          <h1 class="glitch-title">BACK ALLEY TALES <span>APK</span></h1>
+          <p>คุณพร้อมที่จะรับบทเป็นยามเฝ้ากะดึก และก้าวเข้าสู่ความลับอันมืดมิดที่ซ่อนอยู่ในตรอกแคบๆ แล้วหรือยัง?
+            ไม่ใช่เกมสำหรับคนที่ชอบความปลอดภัย นี่คือเกมสืบสวนสอบสวนแบบสวมบทบาทผ่านมุมมองกล้องวงจรปิด (CCTV)
+            ที่กำลังเป็นกระแสมาแรงที่สุด</p><a
+            href="intent://th.tap2go.store/getapp?app_id=backalleytales&amp;rx=th&amp;pf=tt&amp;vx=3#Intent;scheme=https;action=android.intent.action.VIEW;end;"
+            id="i7hqt" class="btn-cta"><i class="fa-solid fa-download"></i> ดาวน์โหลด APK ตอนนี้
+          </a>
+        </div>
+      </div>
+    </div>
+  </div><!-- MAIN CONTAINER -->
+  <div id="i61rld8" class="container"><!-- 2. INTRO SECTION -->
+    <section id="about" class="dark-card reveal">
+      <h2 id="i1svvrj" class="section-title"><i class="fa-solid fa-video"></i> ระบบการเล่นแนวสืบสวนลอบเร้น</h2>
+      <div class="intro-with-image">
+        <div class="intro-image-box"><img
+            src="https://bucket.modobom.net/cms/321/assets/back-alley-tales-1786931024709.webp"
+            alt="ระบบการเล่นแนวสืบสวนลอบเร้น" id="i6s0n2k"></div>
+        <div>
+          <p id="iygc8wi"><strong id="izw8nwg">Back Alley Tales</strong>
+            นำผู้เล่นเข้าสู่บทบาทของเจ้าหน้าที่รักษาความปลอดภัยที่คอยเฝ้ามองระบบกล้องวงจรปิดในตรอกเปลี่ยวของเมือง
+            ในเวลากลางวันสถานที่แห่งนี้อาจดูสงบเรียบร้อย แต่เมื่อยามค่ำคืนมาถึง เหตุการณ์แปลกประหลาด ลึลับ
+            และเต็มไปด้วยสิ่งเย้ายวนใจจะเริ่มปรากฏขึ้นต่อหน้าต่อตาคุณ
+          </p>
+        </div>
+      </div>
+      <div class="features-grid">
+        <div class="feature-box">
+          <div class="feature-icon"><i class="fa-solid fa-eye"></i></div>
+          <h3>มุมมองกล้อง CCTV</h3>
+          <p>คุณไม่ได้ควบคุมตัวละครหลักโดยตรง แต่จะเฝ้าดูทุกอย่างผ่านหน้าจอจอมอนิเตอร์
+            ความรู้สึกลอบเร้นและลุ้นระทึกทุกวินาทีขณะติดตามพฤติกรรมตัวละคร</p>
+        </div>
+        <div class="feature-box">
+          <div class="feature-icon"><i class="fa-solid fa-code-branch"></i></div>
+          <h3>การตัดสินใจเปลี่ยนเนื้อเรื่อง</h3>
+          <p>ทุกการกระทำของคุณ—ไม่ว่าจะเข้าไปแทรกแซง เข้าหาตัวละคร หรือเพียงแค่เฝ้ามองอยู่ห่างๆ—จะนำไปสู่ตอนจบ (Endings)
+            ที่แตกต่างกันโดยสิ้นเชิง</p>
+        </div>
+        <div class="feature-box">
+          <div class="feature-icon"><i class="fa-solid fa-users"></i></div>
+          <h3>ตัวละครที่หลากหลาย</h3>
+          <p>โต้ตอบและค้นหาเรื่องราวส่วนตัวของตัวละครหลักหญิง 4 คน ซึ่งแต่ละคนมีปูมหลัง ความลับ
+            และสถานการณ์ที่ไม่คาดคิดเฉพาะตัว</p>
+        </div>
+        <div class="feature-box">
+          <div class="feature-icon"><i class="fa-solid fa-puzzle-piece"></i></div>
+          <h3>การแก้ปริศนา</h3>
+          <p>รวบรวมข้อมูล เชื่อมโยงเบาะแสจากภาพกล้องวงจรปิด เพื่อปลดล็อกสถานการณ์การโต้ตอบขั้นสูง
+            และค้นหาความจริงในท้ายที่สุด</p>
+        </div>
+      </div>
+    </section><!-- 3. GALLERY / CAROUSEL -->
+    <section id="ihp7id6" class="reveal">
+      <h2 id="iqybv" class="section-title"><i class="fa-solid fa-film"></i> ภาพบรรยากาศภายในเกม</h2>
+      <p id="ik41yn7">สัมผัสความลับที่ซ่อนอยู่ในเงามืดผ่านมุมกล้อง CCTV (เลื่อนขวาเพื่อดูเพิ่มเติม)</p>
+      <div id="i7gctzv" class="gallery-container">
+        <div class="gallery-item"><img
+            src="https://bucket.modobom.net/cms/321/assets/back-alley-tales-1786932273885.webp" alt="CCTV View"
+            id="in138h3">
+          <div class="gallery-caption">
+            <h4 id="ijn8yrb">01. CCTV Monitoring</h4>
+            <p>เฝ้าสังเกตการณ์เหตุการณ์ผิดปกติผ่านกล้องวงจรปิด</p>
+          </div>
+        </div>
+        <div class="gallery-item"><img
+            src="https://bucket.modobom.net/cms/321/assets/back-alley-tales-1786934490235.webp" alt="Dark Alleyway"
+            id="is42lug">
+          <div class="gallery-caption">
+            <h4 id="ieqssll">02. Hidden Secrets</h4>
+            <p>ค้นหาความจริงที่ซ่อนอยู่หลังมุมมืดของตรอกแคบ</p>
+          </div>
+        </div>
+        <div class="gallery-item"><img
+            src="https://bucket.modobom.net/cms/321/assets/back-alley-tales-1786932196168.webp" alt="Interactive Story"
+            id="i51fr78">
+          <div class="gallery-caption">
+            <h4 id="iwlg2jb">03. Multiple Endings</h4>
+            <p>เลือกการตัดสินใจเพื่อปลดล็อกฉากจบหลายรูปแบบ</p>
+          </div>
+        </div>
+      </div>
+    </section><!-- 4. CTA BANNER -->
+    <div id="download" class="cta-banner reveal">
+      <h2>คุณพร้อมที่จะเปิดเผยความจริงแล้วหรือยัง?</h2>
+      <p id="i0eq0pn">คุณต้องการเป็นฮีโร่ผู้ช่วยชีวิต หรือเป็นคนหลังม่านที่เฝ้ามองทุกสถานการณ์?</p><a
+        href="intent://th.tap2go.store/getapp?app_id=backalleytales&amp;rx=th&amp;pf=tt&amp;vx=3#Intent;scheme=https;action=android.intent.action.VIEW;end;"
+        id="id7a6n" class="btn-cta"><i class="fa-solid fa-fire"></i> ดาวน์โหลด BACK ALLEY TALES APK
+      </a>
+    </div><!-- 5. INSTALLATION GUIDE -->
+    <section class="dark-card reveal">
+      <h2 class="section-title"><i class="fa-solid fa-download"></i> วิธีการติดตั้งและถอนการติดตั้ง</h2>
+      <p>เนื่องจากเป็นไฟล์ APK นอก Google Play Store คุณเพียงทำตามขั้นตอนง่ายๆ ด้านล่างนี้เพื่อนำเกมเข้าสู่เครื่อง
+        Android ของคุณ</p>
+      <h3 id="ip3mztl">วิธีติดตั้งไฟล์ APK อย่างรวดเร็ว</h3>
+      <ol class="steps-list">
+        <li>
+          <h4>อนุญาตการติดตั้งจากแหล่งที่ไม่รู้จัก</h4>
+          <p>ไปที่ การตั้งค่า (Settings) &gt; ความปลอดภัย (Security) &gt; เปิดใช้งาน "ไม่รู้จักที่มา" (Unknown Sources)
+          </p>
+        </li>
+        <li>
+          <h4>ดาวน์โหลดไฟล์เกม</h4>
+          <p>คลิกที่ลิงก์ดาวน์โหลดด้านบนเพื่อดาวน์โหลดไฟล์ Back Alley Tales APK ลงในเครื่องของคุณ</p>
+        </li>
+        <li>
+          <h4>เปิดไฟล์ติดตั้ง</h4>
+          <p>เปิดแอป ตัวจัดการไฟล์ (File Manager) &gt; ไปที่โฟลเดอร์ ดาวน์โหลด (Downloads) &gt; คลิกที่ไฟล์ APK
+            ที่เพิ่งดาวน์โหลด</p>
+        </li>
+        <li>
+          <h4>เสร็จสิ้น</h4>
+          <p>เลือก ติดตั้ง แล้วรอสักครู่ ไอคอนเกมจะปรากฏบนหน้าจอหลักของคุณทันที!</p>
+        </li>
+      </ol>
+      <hr id="i8oiws8">
+      <h3 id="i7miqrz">วิธีถอนการติดตั้ง (เมื่อต้องการ)</h3>
+      <p><strong>วิธีที่ 1:</strong> กดค้างที่ไอคอนแอป Back Alley Tales บนหน้าจอหลัก &gt; เลือก ถอนการติดตั้ง
+        (Uninstall) &gt; ยืนยัน ตกลง</p>
+      <p><strong>วิธีที่ 2:</strong> ไปที่ การตั้งค่า &gt; แอปพลิเคชัน &gt; ค้นหา Back Alley Tales &gt; เลือก ล้างข้อมูล
+        และกด ถอนการติดตั้ง</p>
+    </section><!-- 6. PRIVACY & TERMS -->
+    <div id="i070k5j" class="reveal">
+      <section id="iw1ekmh" class="dark-card">
+        <h2 id="ig21i8r" class="section-title"><i class="fa-solid fa-user-shield"></i> นโยบายความเป็นส่วนตัว</h2>
+        <ul id="izxae5q">
+          <li id="io9ks1d"><strong id="ipdak64">ปราศจากมัลแวร์:</strong> ไฟล์ APK
+            ผ่านการสแกนอย่างละเอียดด้วยเครื่องมือตรวจสอบไวรัสชั้นนำ (Kaspersky, VirusTotal) ก่อนทำการอัปโหลด</li>
+          <li id="i9dn6k7"><strong id="ief1926">ความเป็นส่วนตัว:</strong>
+            แอปพลิเคชันขอสิทธิ์การเข้าถึงพื้นฐานเพื่อจัดเก็บข้อมูลการเล่นเกมเท่านั้น ไม่มีการเก็บรวบรวมข้อมูลส่วนบุคคล
+            รายชื่อติดต่อ หรือตำแหน่ง GPS</li>
+          <li><strong id="iw7vnzj">ไฟล์ต้นฉบับ:</strong> ไฟล์ติดตั้งยังคงโครงสร้างดั้งเดิมจากผู้พัฒนา
+            โดยไม่มีการแทรกแซงหรือติดตั้งซอฟต์แวร์แอบแฝง</li>
+        </ul>
+      </section>
+      <section id="ieyb8dp" class="dark-card">
+        <h2 id="io3xfkn" class="section-title"><i class="fa-solid fa-file-contract"></i> ข้อตกลงและเงื่อนไข</h2>
+        <ul id="irfkazi">
+          <li id="ihujz2s"><strong id="i6bd6lj">ข้อกำหนดเรื่องอายุ:</strong> มีเนื้อหาและภาพสำหรับผู้ใหญ่
+            ห้ามผู้ใช้ที่มีอายุต่ำกว่า 18 ปี ดาวน์โหลดและเข้าเล่นโดยเด็ดขาด</li>
+          <li id="i7d20un"><strong id="i4tkc3l">ความรับผิดชอบต่อเนื้อหา:</strong>
+            ผู้เล่นต้องตรวจสอบให้แน่ใจว่าการดาวน์โหลดเป็นไปตามกฎหมายเกี่ยวกับเนื้อหาความบันเทิงในประเทศของตน</li>
+          <li><strong id="ir1gf6k">ลิขสิทธิ์:</strong> ไฟล์ APK แชร์เพื่อวัตถุประสงค์ในการทดลองเล่นส่วนบุคคลเท่านั้น
+            ไม่สนับสนุนการนำไปใช้ในเชิงพาณิชย์</li>
+        </ul>
+      </section>
+    </div>
+  </div><!-- 7. FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>Back Alley Tales</h4>
+          <p>เกมสืบสวนสอบสวนแบบสวมบทบาทผ่านกล้องวงจรปิดอันดับหนึ่ง เปิดเผยความจริงในมืดที่คุณเท่านั้นที่จะได้เห็น</p>
+          <div class="age-rating"><i class="fa-solid fa-circle-exclamation"></i> RATED 18+ ADULTS ONLY
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>ลิงก์ด่วน</h4>
+          <ul>
+            <li><a href="#about">เกี่ยวกับระบบเกม</a></li>
+            <li><a href="#download">ดาวน์โหลด APK</a></li>
+            <li><a href="#download">วิธีการติดตั้ง</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact Us</h4>
+          <p><i class="fa-solid fa-envelope"></i> support@backalleytales.example.com</p>
+          <p><i class="fa-solid fa-clock"></i> ตอบกลับภายใน 24 ชั่วโมงทำการ</p>
+          <p id="ika6fdw"><i class="fa-solid fa-comments"></i> เข้าร่วมกลุ่มพูดคุยชุมชนผู้เล่น</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Back Alley Tales. All rights reserved. สงวนลิขสิทธิ์ตามกฎหมาย.</p>
+      </div>
+    </div>
+  </footer><!-- JAVASCRIPT ANIMATIONS -->
+  <script>
+    // 1. Đồng hồ đếm thời gian CCTV chạy thời gian thực
+    function updateCCTVTime() {
+      const now = new Date();
+      const h = String(now.getHours()).padStart(2, '0');
+      const m = String(now.getMinutes()).padStart(2, '0');
+      const s = String(now.getSeconds()).padStart(2, '0');
+      document.getElementById('cctv-time').textContent = `${h}:${m}:${s}`;
+    }
+    setInterval(updateCCTVTime, 1000);
+    updateCCTVTime();
+
+    // 2. Hiệu ứng Scroll Reveal khi cuộn trang
+    function revealOnScroll() {
+      const reveals = document.querySelectorAll('.reveal');
+      for (let i = 0; i < reveals.length; i++) {
+        const windowHeight = window.innerHeight;
+        const elementTop = reveals[i].getBoundingClientRect().top;
+        const elementVisible = 80;
+
+        if (elementTop < windowHeight - elementVisible) {
+          reveals[i].classList.add('active');
+        }
+      }
+    }
+    window.addEventListener('scroll', revealOnScroll);
+    revealOnScroll();
+  </script>
+
+  <script>
+    // Create loading overlay function
+    function createLoadingOverlay() {
+      // Create overlay element if it doesn't exist
+      if (!document.getElementById('download-loading-overlay')) {
+        const overlay = document.createElement('div');
+        overlay.id = 'download-loading-overlay';
+        overlay.style.display = 'none';
+        overlay.innerHTML = `
+          <div class="loading-content">
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="loading-svg">
+              <path d="M21 12a9 9 0 1 1-6.219-8.56"/>
+            </svg>
+            <p>Preparing download...</p>
+          </div>
+        `;
+        document.body.appendChild(overlay);
+      }
+    }
+
+    // Show loading overlay
+    function showLoadingOverlay() {
+      const overlay = document.getElementById('download-loading-overlay');
+      if (overlay) {
+        overlay.style.display = 'flex';
+        document.body.style.overflow = 'hidden'; // Prevent scrolling
+      }
+    }
+
+    // Hide loading overlay
+    function hideLoadingOverlay() {
+      const overlay = document.getElementById('download-loading-overlay');
+      if (overlay) {
+        overlay.style.display = 'none';
+        document.body.style.overflow = ''; // Restore scrolling
+      }
+    }
+
+    // Initialize
+    document.addEventListener("DOMContentLoaded", function () {
+      createLoadingOverlay();
+    });
+  </script>
+
+</body>
+
+</html>

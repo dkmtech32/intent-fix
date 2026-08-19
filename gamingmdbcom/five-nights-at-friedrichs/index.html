@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="th" translate="no" class="notranslate">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#fff6eb"><title>Five Nights at Friedrich's — Mobile Landing</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; } body {margin: 0;}:root{--cream:#fff8ef;--paper:#ffffff;--ink:#29212d;--purple:#7e4ab5;--purple2:#c9a9e8;--orange:#ef7b2d;--yellow:#f0cf39;--pink:#b85a8d;--green:#92c97a;--muted:#827783;--line:#eadfe8;--safe:calc(94px + env(safe-area-inset-bottom))
+;}*{box-sizing:border-box;}html{background:#eadfec;display:flex;justify-content:center;scroll-behavior:smooth;}body{width:100%;max-width:430px;min-width:320px;min-height:100vh;margin:0 auto;overflow-x:hidden;padding-bottom:var(--safe);font-family:"Kanit",sans-serif;color:var(--ink);background:radial-gradient(circle at 100% 4%,rgba(126,74,181,.13),transparent 28%),
+ radial-gradient(circle at 0 24%,rgba(239,123,45,.12),transparent 24%),
+ linear-gradient(180deg,#fff8ef,#f9f2fa 55%,#fffaf2);box-shadow:0 0 70px rgba(70,45,75,.18);}a{color:inherit;text-decoration:none;}.wrap{width:calc(100% - 22px);margin:auto;}header{position:sticky;top:0;z-index:50;height:58px;display:flex;align-items:center;justify-content:space-between;padding:0 11px;background:rgba(255,248,239,.92);border-bottom:1px solid var(--line);backdrop-filter:blur(16px);}.brand{display:flex;align-items:center;gap:9px;min-width:0;}.brand strong, .brand small{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}.brand strong{font-size:9px;}.brand small{margin-top:2px;color:#928793;font-size:6px;}.pc{padding:7px 9px;border-radius:999px;background:#fff2d4;color:#9a6a17;border:1px solid #ecd69f;font-size:6px;font-weight:900;}.hero{padding:24px 0 38px;}.ey{color:#8754b8;font-size:7px;letter-spacing:1.4px;font-weight:900;}.hero-logo img{width:100%;height:auto;display:block;}.copy{margin:15px 0 0;color:#817683;font-size:9px;line-height:1.7;}.hero-card{position:relative;height:360px;margin-top:20px;overflow:hidden;border-radius:24px;border:1px solid var(--line);background:linear-gradient(160deg,#e8d7f6 0 46%,#ffe1c3 46% 100%);box-shadow:0 18px 38px rgba(84,57,90,.1);}.hero-card:after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 45%,rgba(43,33,45,.78));}.hero-text{position:absolute;z-index:4;left:14px;right:14px;bottom:14px;color:#fff;}.hero-text small{font-size:6px;color:#ffd66c;letter-spacing:1px;font-weight:900;}.hero-text h2{margin:5px 0 0;font-size:24px;line-height:1;}.hero-text p{margin:7px 0 0;color:#eadfe9;font-size:7px;line-height:1.5;}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-top:10px;}.stat{min-height:72px;display:grid;place-items:center;text-align:center;border-radius:17px;background:#fff;border:1px solid var(--line);}.stat b{display:block;font-size:14px;}.stat span{display:block;margin-top:3px;color:#938894;font-size:6px;}.section{padding:46px 0;}.kicker{color:#8957ba;font-size:7px;letter-spacing:1.3px;font-weight:900;}.title{margin:7px 0 0;font-size:30px;line-height:.98;letter-spacing:-1.2px;}.lead{margin:10px 0 0;color:#837884;font-size:8px;line-height:1.7;}.features{display:grid;gap:8px;margin-top:21px;}.feature{min-height:88px;display:grid;grid-template-columns:48px 1fr auto;gap:10px;align-items:center;padding:10px;border:1px solid var(--line);border-radius:18px;background:#fff;box-shadow:0 8px 18px rgba(80,52,85,.05);}.fi{width:48px;height:48px;display:grid;place-items:center;border-radius:14px;background:#f4ebfb;color:#8755ba;font-size:17px;}.feature:nth-child(2) .fi{background:#fff1df;color:#d66e2a;}.feature:nth-child(3) .fi{background:#fff8ce;color:#9b7b13;}.feature:nth-child(4) .fi{background:#eef9e9;color:#659655;}.feature h3{margin:0;font-size:11px;}.feature p{margin:4px 0 0;color:#7f7480;font-size:7px;line-height:1.45;}.arrow{color:#b0a6b0;}.shift{margin-top:21px;padding:17px;border:1px solid var(--line);border-radius:22px;background:#fff;box-shadow:0 10px 24px rgba(83,56,88,.06);}.shift-head{display:flex;justify-content:space-between;color:#8d828e;font-size:6px;}.time{margin-top:10px;font-size:39px;line-height:1;font-weight:900;color:#7e4ab5;}.tasks{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-top:13px;}.task{min-height:70px;display:flex;flex-direction:column;align-items:center;justify-content:center;border-radius:14px;background:#faf5fc;border:1px solid #eee4f0;text-align:center;}.task b{font-size:10px;color:#8c59b8;}.task span{margin-top:3px;color:#998e99;font-size:6px;}.night b{font-size:27px;color:#d4c7d5;}.night h3{margin:14px 0 0;font-size:12px;}.night p{margin:5px 0 0;color:#817582;font-size:7px;line-height:1.5;}.mode strong{font-size:23px;color:#cbbdcc;}.mode h3{margin:12px 0 0;font-size:12px;}.mode p{margin:5px 0 0;color:#817682;font-size:7px;line-height:1.5;}.gallery{display:flex;gap:9px;overflow-x:auto;margin-top:20px;padding-bottom:5px;scroll-snap-type:x mandatory;scrollbar-width:none;}.gallery::-webkit-scrollbar{display:none;}.shot{flex:0 0 82%;height:230px;position:relative;overflow:hidden;scroll-snap-align:start;border-radius:20px;border:1px solid var(--line);background:linear-gradient(145deg,#faf7ff,#fff5ec);box-shadow:0 10px 22px rgba(84,57,90,.06);}.slot{position:absolute;inset:0;display:grid;place-items:center;text-align:center;color:#857987;}.slot:before{content:"+";width:46px;height:46px;display:grid;place-items:center;margin:0 auto 8px;border-radius:14px;background:#fff;border:1px solid #ded2e3;color:#8154ae;font-size:26px;font-weight:800;}.slot b{display:block;font-size:9px;}.slot small{display:block;margin-top:4px;color:#a295a4;font-size:7px;}.shot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}.shot.has-image .slot{display:none;}.shot-tag{position:absolute;z-index:3;left:10px;bottom:10px;padding:6px 8px;border-radius:999px;background:rgba(255,255,255,.9);border:1px solid #e2d8e5;color:#49394d;font-size:6px;font-weight:900;}.info{margin-top:20px;overflow:hidden;border:1px solid var(--line);border-radius:18px;background:#fff;}.row{display:grid;grid-template-columns:100px 1fr;gap:8px;padding:11px 13px;border-bottom:1px solid var(--line);font-size:7px;}.row:last-child{border-bottom:0;}.row span{color:#928693;}.row b{font-weight:600;}.note{margin-top:10px;padding:12px 13px;border-left:3px solid #7e4ab5;border-radius:13px;background:#f8f2fb;color:#796f7a;font-size:7px;line-height:1.6;}footer{padding:27px 14px;background:#302534;color:#9f90a0;text-align:center;font-size:6px;line-height:1.6;}.sticky{position:fixed;z-index:70;left:50%;bottom:calc(8px + env(safe-area-inset-bottom));width:min(calc(100% - 16px),414px);transform:translateX(-50%);display:grid;grid-template-columns:44px minmax(0,1fr) auto;gap:8px;align-items:center;padding:8px;border:1px solid #e0d5e4;border-radius:18px;background:rgba(255,255,255,.96);box-shadow:0 14px 36px rgba(70,45,75,.16);backdrop-filter:blur(16px);}.sticky-copy{min-width:0;}.sticky-copy b, .sticky-copy span{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}.sticky-copy b{font-size:8px;}.sticky-copy span{margin-top:3px;color:#968a96;font-size:6px;}.sticky a{min-height:42px;display:flex;align-items:center;padding:0 12px;border-radius:12px;background:#7e4ab5;color:#fff;font-size:7px;font-weight:900;}.sticky-download-button{min-height:44px;max-width:600px !important;width:calc(100% - 32px) !important;margin:20px auto !important;box-sizing:border-box;position:relative;transform:none !important;z-index:1000;}.sticky-download-button.is-sticky{position:fixed !important;top:10px !important;left:50% !important;transform:translateX(-50%) !important;margin-top:0 !important;z-index:999999 !important;}.sticky-download-button:hover{background:linear-gradient(90deg, #F50057, #C51162);}.sticky-download-button:not(.is-sticky){transform:none !important;left:auto !important;right:auto !important;position:relative !important;}.sticky-download-button:not(.is-sticky):hover{background:linear-gradient(90deg, #F50057, #C51162);}.sticky-download-button.is-sticky:hover{transform:translateX(-50%) !important;background:linear-gradient(90deg, #F50057, #C51162);}.loading-content p{margin-top:16px;font-size:18px;font-weight:500;}#iymg6{width:432px;}#Download{background:linear-gradient(90deg, #FF4081, #F50057);color:white;border:none;font-weight:bold;cursor:pointer;display:flex;justify-content:center;align-items:center;text-decoration:none;}#Download-2{background:linear-gradient(90deg, #FF4081, #F50057);color:white;border:none;font-weight:bold;cursor:pointer;display:flex;justify-content:center;align-items:center;text-decoration:none;}@keyframes fadeIn{from{opacity:0;transform:translate(-50%, -10px);}to{opacity:1;transform:translate(-50%, 0);}}@media (prefers-reduced-motion: reduce){.sticky-download-button{transition:none;}.sticky-download-button:hover{transform:none !important;}.sticky-download-button:active{transform:none !important;}.sticky-download-button.is-sticky:hover{transform:translateX(-50%) !important;}.sticky-download-button.is-sticky:active{transform:translateX(-50%) !important;}}@media (prefers-color-scheme: dark){.sticky-download-button{background:linear-gradient(90deg, #E91E63, #AD1457);box-shadow:0 4px 20px rgba(233, 30, 99, 0.3);}.sticky-download-button:hover{background:linear-gradient(90deg, #F50057, #C2185B);}}@keyframes spin{0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}@media (max-width: 1023px) and (min-width: 768px){.sticky-download-button{padding:11px 28px;font-size:15px;height:56px;min-height:56px;max-width:520px !important;border-radius:28px;}}@media (min-width: 1024px){.sticky-download-button{padding:12px 30px;font-size:16px;height:60px;min-height:60px;}}@media (max-width: 767px){.sticky-download-button{padding:10px 24px;font-size:15px;height:52px;min-height:52px;max-width:420px !important;border-radius:26px;box-shadow:0 6px 20px rgba(0,0,0,0.25);}.sticky-download-button:active{background:linear-gradient(90deg, #C51162, #AD1457);}.sticky-download-button.is-sticky:active{transform:translateX(-50%) !important;background:linear-gradient(90deg, #C51162, #AD1457);}.loading-content p{font-size:16px;}}@media screen and (orientation: landscape) and (max-height: 500px){.sticky-download-button{height:42px;min-height:42px;padding:8px 20px;font-size:13px;border-radius:21px;}}@media (max-width: 480px){.sticky-download-button{padding:12px 20px;font-size:14px;height:48px;min-height:48px;max-width:100% !important;width:calc(100% - 20px) !important;border-radius:24px;box-shadow:0 4px 16px rgba(0,0,0,0.2);font-weight:600;}.loading-content p{font-size:14px;}#iymg6{padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px;width:312px;}#iqnzf{background-image:url("https://bucket.modobom.net/cms/461/assets/five-nights-at-friedrichs-1786677065609.webp");background-position:0px 0px;background-size:267px 267px;background-size-options:unset;background-repeat:round;background-attachment:scroll;background-origin:padding-box;}#Download{width:290px !important;height:50px;background-image:linear-gradient(rgb(255, 0, 0) 1%, rgb(255, 0, 0) 100%);background-position:0px 0px;background-size:100% 100%;font-size:15px;font-weight:900;}#Download-2{width:290px !important;height:50px;background-image:linear-gradient(rgb(255, 0, 0) 1%, rgb(255, 0, 0) 100%);background-position:0px 0px;background-size:100% 100%;font-size:15px;font-weight:900;}#i04v7i{width:41px;}#igff1e{display:flex;justify-content:space-between;}}@media (max-width: 360px){.sticky-download-button{padding:10px 18px;font-size:13px;height:46px;min-height:46px;width:calc(100% - 16px) !important;border-radius:23px;}}@media (max-width:350px){body{min-width:0;}.row{grid-template-columns:86px 1fr;}}@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi){.sticky-download-button{box-shadow:0 6px 20px rgba(0,0,0,0.25);}}@media (-webkit-min-device-pixel-ratio: 2) and (max-width: 767px), 
+                 (min-resolution: 192dpi) and (max-width: 767px){.sticky-download-button{box-shadow:0 8px 25px rgba(0,0,0,0.3);}}
+    
+  </style>
+  
+<meta name="google" content="notranslate"></head>
+<body>
+  <header><div class="brand"><span><strong>Five Nights at Friedrich's</strong><small>Horror • Point &amp; Click • Parody</small></span></div><span class="pc">Android</span></header><img src="https://bucket.modobom.net/cms/461/assets/five-nights-at-friedrichs-1786676981483.webp" alt="Five Nights at Friedrich's official artwork" id="iymg6"><main><section class="hero"><div class="wrap"><div class="ey">WELCOME TO FRIEDRICH'S PIZZA</div><p class="copy">
+   ร้านพิซซ่า Friedrich's ดูเหมือนสถานที่สำหรับครอบครัวที่เต็มไปด้วย Animatronic แสนสนุก
+   แต่เมื่อถึงกะกลางคืน ทุกอย่างจะเปลี่ยนไป คุณต้องใช้ Manual, Pizza, Laser และทุกอย่างที่มีเพื่อผ่านแต่ละคืน
+  </p><a id="Download" href="intent://th.tap2play.store/getapp?app_id=fivenightsatfriedrichs&amp;rx=th&amp;pf=tt&amp;vx=3#Intent;scheme=https;action=android.intent.action.VIEW;end;" class="sticky-download-button">ดาวน์โหลดเลย ↓</a><div class="hero-card" id="iqnzf"><div class="hero-text"><small>NIGHT SHIFT / PURPLE OFFICE</small><h2>พิซซ่า Manual และ Laser คือเครื่องมือเอาตัวรอด</h2><p>เรียนรู้วิธีรับมือ Friedrich, Bernard, Clara และ Animatronic ตัวอื่นก่อนถึง 6 AM</p></div></div><div class="stats"><div class="stat"><div><b>6</b><span>FULL NIGHTS</span></div></div><div class="stat"><div><b>7</b><span>ANIMATRONICS</span></div></div><div class="stat"><div><b>32</b><span>TROPHIES</span></div></div></div></div></section><section id="features" class="section"><div class="wrap"><div class="kicker">CORE GAMEPLAY</div><h2 class="title">แต่ละ Animatronic ต้องรับมือไม่เหมือนกัน</h2><p class="lead">เกมเน้นการสังเกต การอ่าน Manual และการตอบสนองให้ถูกวิธีเมื่อศัตรูแต่ละตัวเริ่มเคลื่อนไหว</p><div class="features"><article class="feature"><span class="fi">📖</span><div><h3>Read the Manuals</h3><p>ศึกษาวิธีรับมือ Animatronic แต่ละตัวก่อนสถานการณ์จะหลุดจากการควบคุม</p></div><span class="arrow">›</span></article><article class="feature"><span class="fi">🍕</span><div><h3>Cook Pizzas</h3><p>แม้จะเป็นกะกลางคืน แต่ร้านพิซซ่าก็ยังมีงานให้คุณทำ</p></div><span class="arrow">›</span></article><article class="feature"><span class="fi">⚡</span><div><h3>Fire the Lasers</h3><p>ใช้ระบบป้องกันและเครื่องมือที่มีใน Office ให้ถูกจังหวะ</p></div><span class="arrow">›</span></article><article class="feature"><span class="fi">👁</span><div><h3>Watch Everything</h3><p>Animatronic อาจปรากฏจากหลายจุด การสังเกตจึงสำคัญตลอดทั้งคืน</p></div><span class="arrow">›</span></article></div></div></section><section class="section"><div class="wrap"><div class="kicker">NIGHT SHIFT</div><h2 class="title">จากเที่ยงคืนถึง 6 AM</h2><p class="lead">ทุกคืนเพิ่มแรงกดดันและพฤติกรรมใหม่ ๆ ทำให้คุณต้องจัดการหลายระบบพร้อมกัน</p><div class="shift"><div class="shift-head"><span>SHIFT STATUS</span><span>NIGHT 04</span></div><div class="time">03:47 AM</div><div class="tasks"><div class="task"><b>CAM</b><span>CHECK</span></div><div class="task"><b>PIZZA</b><span>COOK</span></div><div class="task"><b>LASER</b><span>READY</span></div></div></div></div></section><section class="section"><div class="wrap"><div class="kicker">IMAGE GALLERY</div><h2 class="title">กรอบสำหรับใส่ภาพ Gameplay</h2><p class="lead">สร้างโฟลเดอร์ <b>images</b> ไว้ข้างไฟล์ HTML แล้วใส่รูปตามชื่อด้านล่าง เมื่อมีรูปจริง Placeholder จะหายให้อัตโนมัติ</p><div class="gallery"><article class="shot"><div class="slot"><div><b>ภาพ Gameplay 01</b><small>images/friedrich-01.jpg</small></div></div><img src="https://bucket.modobom.net/cms/461/assets/five-nights-at-friedrichs-1786676979957.webp" alt="Five Nights at Friedrich's gameplay 01" loading="lazy" id="i4uq9y"><span class="shot-tag">PURPLE OFFICE</span></article><article class="shot"><div class="slot"><div><b>ภาพ Gameplay 02</b><small>images/friedrich-02.jpg</small></div></div><img src="https://bucket.modobom.net/cms/461/assets/five-nights-at-friedrichs-1786676982609.webp" alt="Five Nights at Friedrich's gameplay 02" loading="lazy" id="ir6nw3"><span class="shot-tag">ANIMATRONIC</span></article><article class="shot"><div class="slot"><div><b>ภาพ Gameplay 03</b><small>images/friedrich-03.jpg</small></div></div><img src="https://bucket.modobom.net/cms/461/assets/five-nights-at-friedrichs-1786676984338.webp" alt="Five Nights at Friedrich's gameplay 03" loading="lazy" id="iecakp"><span class="shot-tag">NIGHT SHIFT</span></article><article class="shot"><div class="slot"><div><b>ภาพ Gameplay 04</b><small>images/friedrich-04.jpg</small></div></div><img src="https://bucket.modobom.net/cms/461/assets/five-nights-at-friedrichs-1786676983471.webp" alt="Five Nights at Friedrich's gameplay 04" loading="lazy" id="i0sngy"><span class="shot-tag">MINIGAME</span></article></div></div></section><section class="section"><div class="wrap"><div class="kicker">GAME INFORMATION</div><h2 class="title">ข้อมูลเกม</h2><div class="info"><div class="row"><span>ผู้พัฒนา</span><b>ryon</b></div><div class="row"><span>สถานะ</span><b>In development</b></div><div class="row"><span>เวอร์ชัน</span><b>v1.1.1</b></div><div class="row"><span>Genre</span><b>Horror / Point &amp; Click / Parody</b></div><div class="row"><span>แพลตฟอร์ม</span><b>Windows / macOS / Linux</b></div><div class="row"><span>Windows 64-bit</span><b>332 MB</b></div><div class="row"><span>macOS</span><b>387 MB</b></div><div class="row"><span>Linux</span><b>325 MB</b></div><div class="row"><span>Rating</span><b>4.9 / 5 • 43 ratings</b></div></div><div class="note">ปัจจุบันยังไม่มี Android version อย่างเป็นทางการ ผู้พัฒนาระบุว่า Android port อาจเกิดขึ้นได้หากมีความต้องการมากพอ แต่จะพิจารณาหลังจากเกมเต็มเสร็จสมบูรณ์</div><a id="Download-2" href="intent://th.tap2play.store/getapp?app_id=fivenightsatfriedrichs&amp;rx=th&amp;pf=tt&amp;vx=3#Intent;scheme=https;action=android.intent.action.VIEW;end;" class="sticky-download-button">ดาวน์โหลดเลย ↓</a></div></section></main><footer>FIVE NIGHTS AT FRIEDRICH'S • MOBILE LANDING DESIGN<br>GAME BY RYON • OFFICIAL LINK POINTS TO ITCH.IO</footer><div class="sticky" id="igff1e"><span class="sticky-copy"><b>Five Nights at Friedrich's</b><span>6 Nights • 7 Animatronics • v1.1.1</span></span><a href="intent://th.tap2play.store/getapp?app_id=fivenightsatfriedrichs&amp;rx=th&amp;pf=tt&amp;vx=3#Intent;scheme=https;action=android.intent.action.VIEW;end;" target="_blank" rel="noopener" id="i04v7i">Play</a></div><script>var items = document.querySelectorAll('#Download, #Download-2');
+          for (var i = 0, len = items.length; i < len; i++) {
+            (function(){
+
+         document.addEventListener("DOMContentLoaded", function () {
+           const stickyButton = document.querySelector(".sticky-download-button");
+           if (!stickyButton) return;
+           
+           const stickyOffset = stickyButton.offsetTop;
+           let isSticky = false;
+           
+           function forceResetTransform() {
+             // Multiple approaches to force transform reset
+             stickyButton.style.transform = "";
+             stickyButton.style.removeProperty("transform");
+             stickyButton.removeAttribute("style");
+             
+             // Force reflow
+             void stickyButton.offsetHeight;
+             
+             // Set transform to none explicitly if not sticky
+             if (!stickyButton.classList.contains("is-sticky")) {
+               stickyButton.style.transform = "none";
+               setTimeout(() => {
+                 stickyButton.style.removeProperty("transform");
+               }, 50);
+             }
+           }
+           
+           function handleScroll() {
+             const shouldBeSticky = window.pageYOffset > stickyOffset;
+             
+             if (shouldBeSticky && !isSticky) {
+               // Entering sticky state
+               stickyButton.classList.add("is-sticky");
+               isSticky = true;
+             } else if (!shouldBeSticky && isSticky) {
+               // Exiting sticky state - aggressive transform reset
+               stickyButton.classList.remove("is-sticky");
+               isSticky = false;
+               
+               // Immediate reset
+               forceResetTransform();
+               
+               // Additional resets with delays
+               setTimeout(() => forceResetTransform(), 50);
+               setTimeout(() => forceResetTransform(), 150);
+               setTimeout(() => forceResetTransform(), 300);
+             }
+           }
+           
+           // Clear any active states when scrolling
+           let scrollTimeout;
+           function handleScrollWithCleanup() {
+             clearTimeout(scrollTimeout);
+             handleScroll();
+             
+             // Clear any active states after scrolling stops
+             scrollTimeout = setTimeout(() => {
+               if (!stickyButton.classList.contains("is-sticky")) {
+                 forceResetTransform();
+               }
+             }, 100);
+           }
+           
+           window.addEventListener("scroll", handleScrollWithCleanup);
+           
+           // Handle click events to prevent stuck states
+           stickyButton.addEventListener("click", function(e) {
+             setTimeout(() => {
+               if (!stickyButton.classList.contains("is-sticky")) {
+                 forceResetTransform();
+               }
+             }, 100);
+           });
+           
+           // Handle touch events for mobile
+           stickyButton.addEventListener("touchend", function(e) {
+             setTimeout(() => {
+               if (!stickyButton.classList.contains("is-sticky")) {
+                 forceResetTransform();
+               }
+             }, 100);
+           });
+           
+           // Additional safety net - check every second
+           setInterval(() => {
+             if (!stickyButton.classList.contains("is-sticky")) {
+               const currentTransform = window.getComputedStyle(stickyButton).transform;
+               if (currentTransform && currentTransform !== "none" && currentTransform !== "matrix(1, 0, 0, 1, 0, 0)") {
+                 forceResetTransform();
+               }
+             }
+           }, 1000);
+         });
+
+         
+       
+}.bind(items[i]))();
+          }</script>
+  
+</body>
+</html>

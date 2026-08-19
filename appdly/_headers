@@ -1,0 +1,179 @@
+/wheelie-challenge/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/wheelie-challenge/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/wheelie-challenge/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/contact/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/contact/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/contact/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/about/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/about/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/about/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/privacy-policy/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/privacy-policy/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/privacy-policy/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/install-uninstall/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/install-uninstall/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/install-uninstall/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/wheelie-challenge-mu-c/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/wheelie-challenge-mu-c/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/wheelie-challenge-mu-c/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/another-girl-in-the-wall-mobile/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/another-girl-in-the-wall-mobile/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/another-girl-in-the-wall-mobile/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/another-girl-in-the-wall/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/another-girl-in-the-wall/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/another-girl-in-the-wall/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/wheelie-challenge-apk/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/wheelie-challenge-apk/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/wheelie-challenge-apk/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/delta-executor-apk/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/delta-executor-apk/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/delta-executor-apk/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/one-chump/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/one-chump/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/one-chump/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/hornycraft/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/hornycraft/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/hornycraft/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/happys-humble-burgatory/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/happys-humble-burgatory/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/happys-humble-burgatory/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/vivid-dead/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/vivid-dead/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/vivid-dead/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/ttt/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/ttt/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/ttt/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/butterfly-affection/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/butterfly-affection/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/butterfly-affection/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/room-801/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/room-801/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/room-801/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/harem-ranch-life/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/harem-ranch-life/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/harem-ranch-life/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/cosplay-house-alpha/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/cosplay-house-alpha/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/cosplay-house-alpha/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/time-freeze/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/time-freeze/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/time-freeze/*.css
+  Cache-Control: public, max-age=31536000, immutable

@@ -1,0 +1,449 @@
+/contact/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/contact/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/contact/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/privacy-policy/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/privacy-policy/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/privacy-policy/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/install-uninstall/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/install-uninstall/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/install-uninstall/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/power-chord/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/power-chord/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/power-chord/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/chrono-ark/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/chrono-ark/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/chrono-ark/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/ttt/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/ttt/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/ttt/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/half-life-alyx/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/half-life-alyx/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/half-life-alyx/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/foregone/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/foregone/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/foregone/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/hello-neighbor/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/hello-neighbor/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/hello-neighbor/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/hello-neighbor-apk/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/hello-neighbor-apk/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/hello-neighbor-apk/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/sweet-succubus-home/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/sweet-succubus-home/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/sweet-succubus-home/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/grounded/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/grounded/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/grounded/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/overcooked-2/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/overcooked-2/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/overcooked-2/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/ark-survival-evolved/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/ark-survival-evolved/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/ark-survival-evolved/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/pubg-mobile/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/pubg-mobile/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/pubg-mobile/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/jk-molester-train-seeding/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/jk-molester-train-seeding/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/jk-molester-train-seeding/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/microsoft-flight-simulator-2024/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/microsoft-flight-simulator-2024/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/microsoft-flight-simulator-2024/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/escape-from-her/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/escape-from-her/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/escape-from-her/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/cumpartment/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/cumpartment/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/cumpartment/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/sleep-grape-simulator/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/sleep-grape-simulator/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/sleep-grape-simulator/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/cumpartment-apk/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/cumpartment-apk/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/cumpartment-apk/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/tttt/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/tttt/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/tttt/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/apartment-secrets/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/apartment-secrets/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/apartment-secrets/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/room-801/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/room-801/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/room-801/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/spy/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/spy/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/spy/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/buchikome-high-kick/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/buchikome-high-kick/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/buchikome-high-kick/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/npc-capture-academy/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/npc-capture-academy/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/npc-capture-academy/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/room-801-apk/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/room-801-apk/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/room-801-apk/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/buchikome-high-kick-apk/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/buchikome-high-kick-apk/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/buchikome-high-kick-apk/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/train-touch/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/train-touch/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/train-touch/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/lala-and-the-bizarre-dungeon/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/lala-and-the-bizarre-dungeon/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/lala-and-the-bizarre-dungeon/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/udonge-in-interspecies-cave/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/udonge-in-interspecies-cave/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/udonge-in-interspecies-cave/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/lovecraft-locker/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/lovecraft-locker/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/lovecraft-locker/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/horror-book/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/horror-book/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/horror-book/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/ratqueen/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/ratqueen/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/ratqueen/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/countryside-life/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/countryside-life/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/countryside-life/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/la-vitalis/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/la-vitalis/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/la-vitalis/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/spooky-milk-life/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/spooky-milk-life/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/spooky-milk-life/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/spooky-milk-life-apk/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/spooky-milk-life-apk/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/spooky-milk-life-apk/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/nightgamer/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/nightgamer/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/nightgamer/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/parasite-in-city/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/parasite-in-city/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/parasite-in-city/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/the-nightmaretaker/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/the-nightmaretaker/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/the-nightmaretaker/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/vivid-dead/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/vivid-dead/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/vivid-dead/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/cute-reapers-in-my-room/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/cute-reapers-in-my-room/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/cute-reapers-in-my-room/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/lovecraft-locker-apk/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/lovecraft-locker-apk/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/lovecraft-locker-apk/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/thrust-8-apk/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/thrust-8-apk/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/thrust-8-apk/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/yakuza-rogue/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/yakuza-rogue/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/yakuza-rogue/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/nate-hand-gesture-apk/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/nate-hand-gesture-apk/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/nate-hand-gesture-apk/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/uncle-pantyhose-in-another-world/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/uncle-pantyhose-in-another-world/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/uncle-pantyhose-in-another-world/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/self-defense-dojo/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/self-defense-dojo/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/self-defense-dojo/*.css
+  Cache-Control: public, max-age=31536000, immutable

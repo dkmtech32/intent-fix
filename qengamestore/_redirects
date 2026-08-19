@@ -1,0 +1,10 @@
+/incredibox-t/ /redirect-handler?originalPath=/incredibox/ 302
+/android-auto-t/ /redirect-handler?originalPath=/android-auto/ 302
+/contact-t/ /redirect-handler?originalPath=/contact/ 302
+/privacy-policy-t/ /redirect-handler?originalPath=/privacy-policy/ 302
+/install-uninstall-t/ /redirect-handler?originalPath=/install-uninstall/ 302
+/wheelie-challenge-t/ /redirect-handler?originalPath=/wheelie-challenge/ 302
+/silver-prisoner-t/ /redirect-handler?originalPath=/silver-prisoner/ 302
+/ha-metro-jk-line-t/ /redirect-handler?originalPath=/ha-metro-jk-line/ 302
+/ /vivid-dead/ 302
+/vivid-dead-t/ /redirect-handler?originalPath=/vivid-dead/ 302

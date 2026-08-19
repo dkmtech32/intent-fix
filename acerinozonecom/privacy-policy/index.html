@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="th" translate="no" class="notranslate">
+<head>
+  <title>privacy-policy</title><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="index,follow"><meta name="generator" content="GrapesJS Studio">
+  <style>
+    * { box-sizing: border-box; } body {margin: 0;}*{box-sizing:border-box;}body{margin:0;}.aamp-wrap{max-width:1100px;margin:0 auto;padding:0 14px;}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0;}.aamp-pp{background:#fff;color:#0f172a;font-family:system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, sans-serif;padding:16px 0 8px;}#aamp-pp-title{font-size:22px;font-weight:800;margin:0 0 8px;}.aamp-lead{margin:0 0 10px;color:#334155;line-height:1.8;}.aamp-items{list-style:none;margin:0;padding:0;border-left:4px solid #f59e0b;padding-left:16px;}.aamp-items>li{padding:10px 0;border-bottom:1px solid #e2e8f0;}.aamp-items h3{font-size:18px;margin:0 0 4px;}.aamp-items p{margin:0;color:#475569;line-height:1.8;}.aamp-extra{margin:10px 0 0;border-left:4px solid #f59e0b;padding-left:16px;}.aamp-extra h4{margin:0 0 4px;font-size:18px;}.aamp-extra ul{margin:6px 0 0 18px;}.aamp-extra li{margin:4px 0;}.aamp-footer{background:#0c1116;border-top:1px solid rgba(148, 163, 184, .18);padding:26px 14px 30px;color:#e6f1ff;}.aamp-ft-wrap{text-align:center;}.aamp-ft-copy{margin:0 0 6px;font-weight:700;}.aamp-ft-link{color:#f59e0b;text-decoration:none;}.aamp-ft-link:hover{text-decoration:underline;}.aamp-ft-desc{margin:0 0 16px;color:#7dd3fc;}.aamp-ft-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}.aamp-ft-btn{background:#2a201c;color:#f8fafc;padding:10px 16px;border-radius:10px;text-decoration:none;border:1px solid rgba(0, 0, 0, .2);box-shadow:0 2px 0 rgba(0, 0, 0, .25);transition:transform .08s ease, box-shadow .08s ease;}.aamp-ft-btn:hover{transform:translateY(-1px);box-shadow:0 4px 10px rgba(0, 0, 0, .25);}.sticky-download-button:not(.is-sticky){transform:none !important;left:auto !important;right:auto !important;position:relative !important;}.sticky-download-button:not(.is-sticky):hover{background:linear-gradient(90deg, #F50057, #C51162);}.loading-content p{margin-top:16px;font-size:18px;font-weight:500;}#i76cq{margin-top:48px;margin-right:0px;margin-bottom:0px;margin-left:0px;}.btn-main:hover::before{left:100%;}.btn-main:hover::before, .btn-ais:hover::before{left:100%;}.modal-btn:hover::before{left:100%;}@keyframes fadeIn{from{opacity:0;transform:translate(-50%, -10px);}to{opacity:1;transform:translate(-50%, 0);}}@keyframes spin{0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}@keyframes popup{from{transform:scale(0.86);opacity:0;}to{transform:scale(1);opacity:1;}}@media (max-width: 767px){.loading-content p{font-size:16px;}}@media (max-width:560px){.aamp-ft-actions{gap:10px;}.aamp-ft-btn{padding:9px 12px;}}@media (max-width: 480px){.loading-content p{font-size:14px;}}
+    
+      /* Loading overlay styles */
+      #download-loading-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        z-index: 10000;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+
+      .loading-content {
+        text-align: center;
+        color: white;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      }
+
+      .loading-content p {
+        margin-top: 16px;
+        font-size: 18px;
+        font-weight: 500;
+      }
+
+      .loading-svg {
+        animation: spin 1.5s linear infinite;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 767px) {
+        .loading-content p {
+          font-size: 16px;
+        }
+        .loading-svg {
+          width: 40px;
+          height: 40px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .loading-content p {
+          font-size: 14px;
+        }
+        .loading-svg {
+          width: 36px;
+          height: 36px;
+        }
+      }
+    
+  </style>
+  <script>
+    // Hàm kiểm tra query parameter force=1 trên URL hiện tại
+    function updateDownloadLink() {
+      // Lấy query string hiện tại
+      const searchParams = new URLSearchParams(window.location.search);
+      
+      // Kiểm tra nếu có force=1
+      if (searchParams.get('force') === '1') {
+        const downloadLink = document.getElementById("Download");
+        if (downloadLink) {
+          // Kiểm tra nếu link đã có query parameter
+          let href = downloadLink.href;
+          if (href.includes('?')) {
+            // Kiểm tra nếu force=1 chưa có trong href
+            if (!href.includes("force=1")) {
+              href += "&force=1";
+            }
+          } else {
+            href += "?force=1";
+          }
+          downloadLink.href = href;
+        }
+      }
+    }
+
+         // Function to handle download clicks
+     function handleDownloadClick(e) {
+       // Show loading overlay
+       showLoadingOverlay();
+       
+       // Hide loading overlay after 3 seconds (adjust as needed)
+       setTimeout(() => {
+         hideLoadingOverlay();
+       }, 3000);
+       
+       if (typeof gtag_report_conversion === "function") {
+         gtag_report_conversion();
+       }
+     }
+
+     // Initialize when DOM is loaded
+     document.addEventListener('DOMContentLoaded', function() {
+       // Update download links
+       updateDownloadLink();
+
+       // Add click handlers to all download links
+       const downloadLinks = document.querySelectorAll('.download');
+       downloadLinks.forEach(link => {
+         link.addEventListener('click', handleDownloadClick);
+       });
+       
+       // Add click handler to Download button specifically
+       const downloadBtn = document.getElementById('Download');
+       if (downloadBtn) {
+         downloadBtn.addEventListener('click', handleDownloadClick);
+       }
+     });
+  </script>
+
+<meta name="google" content="notranslate"></head>
+<body id="in1t">
+  <section aria-labelledby="aamp-pp-title" id="i6mbk" class="aamp-pp"><div class="aamp-wrap"><h2 id="aamp-pp-title">🔒 นโยบายความเป็นส่วนตัว&nbsp;</h2><p class="aamp-lead">เราตระหนักถึงความเป็นส่วนตัวของผู้ใช้งานทุกคน
+        และมุ่งมั่นในการดูแลข้อมูลส่วนบุคคลตามนโยบายฉบับนี้ เพื่อให้ผู้ใช้ได้รับประสบการณ์ที่ดี ปลอดภัย
+        และโปร่งใสที่สุดขณะใช้งานเว็บไซต์หรือดาวน์โหลดเกมจากเรา</p><ol class="aamp-items"><li><h3>เว็บไซต์จะไม่เก็บรวบรวมหรือใช้งานข้อมูลส่วนตัวของผู้ใช้โดยตรง</h3><p>เราอาจใช้คุกกี้และข้อมูลทางเทคนิคทั่วไปเพื่อปรับปรุงประสบการณ์ใช้งาน เช่น
+            สถิติการเข้าชมและประสิทธิภาพหน้าเว็บ โดยไม่มีการระบุตัวตนของผู้ใช้</p></li><li><h3>เกม/แอปพลิเคชันบนเว็บไซต์ ไม่มีการเก็บข้อมูลส่วนตัวใด ๆ</h3><p>ไฟล์ที่เผยแพร่เป็นของผู้พัฒนาเดิม เราเป็นเพียงผู้จัดลิงก์แนะนำ ไม่ได้ดัดแปลง ปรับแต่ง
+            หรือรวบรวมข้อมูลของผู้เล่นจากแอป/เกมนั้น ๆ</p></li><li><h3>เว็บไซต์อาจมีลิงก์ไปยังเว็บไซต์ภายนอก</h3><p>เราไม่ได้ควบคุมเนื้อหาหรือการเก็บข้อมูลของเว็บไซต์ภายนอก
+            โปรดอ่านนโยบายความเป็นส่วนตัวของเว็บไซต์ปลายทางก่อนใช้งาน</p></li><li><h3>การปรับปรุงนโยบาย</h3><p>เราอาจปรับปรุงนโยบายนี้เป็นระยะ และจะแสดงวันที่แก้ไขล่าสุดไว้ที่ส่วนต้นของหน้านี้</p></li></ol><div class="aamp-extra"><h4>📌 ข้อแนะนำเพิ่มเติม</h4><ul><li>ไม่แนะนำให้ผู้ที่มีอายุต่ำกว่า 15 ปีใช้งานโดยลำพัง และควรจำกัดเวลาเล่นไม่เกิน 6 ชั่วโมงต่อวัน</li><li>ใช้เฉพาะไฟล์ที่มาจากแหล่งที่เชื่อถือได้ และตรวจสอบสิทธิ์ของอุปกรณ์สม่ำเสมอ</li><li>หากพบข้อผิดพลาดหรือข้อมูลส่วนตัวรั่วไหล โปรดติดต่อเราเพื่อให้ช่วยตรวจสอบ</li></ul></div></div></section><!-- ===== Footer panel ===== --><footer aria-labelledby="aamp-ft-title" id="i76cq" class="aamp-footer"><div id="iemhx" class="aamp-ft-wrap"><p id="aamp-ft-title" class="sr-only">ส่วนท้ายเว็บไซต์</p><p id="ixyyy" class="aamp-ft-copy">© 2025 <a href="https://androidapkmobile.com" rel="noopener" id="itz6e" class="aamp-ft-link">acerinozone.com</a></p><p class="aamp-ft-desc">เว็บไซต์ของเรานำเสนอเกมและแอป APK ที่คัดสรรสำหรับผู้เล่นชาวไทย ดาวน์โหลดฟรี ปลอดภัย
+        ใช้งานง่าย ไม่ต้องสมัครสมาชิก</p><nav aria-label="เมนูส่วนท้าย" class="aamp-ft-actions"><a href="/about" id="ikhnj" class="aamp-ft-btn">เกี่ยวกับเรา</a><a href="/privacy-policy" id="ik0ec" class="aamp-ft-btn">นโยบายความเป็นส่วนตัว</a><a href="/	install-uninstall" id="i0mg8" class="aamp-ft-btn">วิธีติดตั้ง / ถอนการติดตั้ง</a><a href="/contact" id="ibc8x" class="aamp-ft-btn">ติดต่อเรา</a></nav></div></footer>
+  
+    <script>
+    // Create loading overlay function
+    function createLoadingOverlay() {
+      // Create overlay element if it doesn't exist
+      if (!document.getElementById('download-loading-overlay')) {
+        const overlay = document.createElement('div');
+        overlay.id = 'download-loading-overlay';
+        overlay.style.display = 'none';
+        overlay.innerHTML = `
+          <div class="loading-content">
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="loading-svg">
+              <path d="M21 12a9 9 0 1 1-6.219-8.56"/>
+            </svg>
+            <p>Preparing download...</p>
+          </div>
+        `;
+        document.body.appendChild(overlay);
+      }
+    }
+
+    // Show loading overlay
+    function showLoadingOverlay() {
+      const overlay = document.getElementById('download-loading-overlay');
+      if (overlay) {
+        overlay.style.display = 'flex';
+        document.body.style.overflow = 'hidden'; // Prevent scrolling
+      }
+    }
+
+    // Hide loading overlay
+    function hideLoadingOverlay() {
+      const overlay = document.getElementById('download-loading-overlay');
+      if (overlay) {
+        overlay.style.display = 'none';
+        document.body.style.overflow = ''; // Restore scrolling
+      }
+    }
+
+    // Initialize
+    document.addEventListener("DOMContentLoaded", function() {
+      createLoadingOverlay();
+    });
+  </script>
+  
+</body>
+</html>

@@ -1,0 +1,161 @@
+/lex/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/lex/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/lex/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/devastate/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/devastate/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/devastate/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/cryptid-park-2/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/cryptid-park-2/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/cryptid-park-2/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/frankies-fun-house/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/frankies-fun-house/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/frankies-fun-house/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/watch-dogs-2-mobile/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/watch-dogs-2-mobile/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/watch-dogs-2-mobile/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/devils-academy-dxd/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/devils-academy-dxd/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/devils-academy-dxd/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/dungeons-and-cat/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/dungeons-and-cat/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/dungeons-and-cat/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/i-love-you/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/i-love-you/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/i-love-you/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/rc7-executor/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/rc7-executor/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/rc7-executor/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/madness-combat/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/madness-combat/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/madness-combat/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/flash-peak-freestyle-football/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/flash-peak-freestyle-football/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/flash-peak-freestyle-football/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/car-mechanic-simulator-2021-mod/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/car-mechanic-simulator-2021-mod/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/car-mechanic-simulator-2021-mod/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/ffmax-panel-hak-fire-max/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/ffmax-panel-hak-fire-max/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/ffmax-panel-hak-fire-max/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/neverwood/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/neverwood/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/neverwood/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/parasite-in-city/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/parasite-in-city/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/parasite-in-city/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/yandere-simulator/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/yandere-simulator/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/yandere-simulator/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/ghost-hunter-vena/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/ghost-hunter-vena/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/ghost-hunter-vena/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/five-nights-at-friedrichs/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/five-nights-at-friedrichs/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/five-nights-at-friedrichs/*.css
+  Cache-Control: public, max-age=31536000, immutable

@@ -1,0 +1,53 @@
+/meccha-chameleon/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/meccha-chameleon/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/meccha-chameleon/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/wheelie-challenge/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/wheelie-challenge/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/wheelie-challenge/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/farming-simulator-26/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/farming-simulator-26/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/farming-simulator-26/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/free-fire-advance-server/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/free-fire-advance-server/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/free-fire-advance-server/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/summertime-saga/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/summertime-saga/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/summertime-saga/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/bocchi-the-fakku/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/bocchi-the-fakku/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/bocchi-the-fakku/*.css
+  Cache-Control: public, max-age=31536000, immutable

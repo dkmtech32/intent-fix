@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="my" translate="no" class="notranslate">
+<head>
+  <title>seki</title><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="index,follow"><meta name="generator" content="GrapesJS Studio">
+  <style>
+    * { box-sizing: border-box; } body {margin: 0;}:root{--bg:#090909;--bg-soft:#111111;--card:#171717;--red:#e63946;--red-dark:#9d1d28;--orange:#ff9f1c;--white:#ffffff;--text:#eeeeee;--muted:#a8a8a8;--border:rgba(255, 255, 255, .08);--radius:18px;--shadow:0 15px 45px rgba(0, 0, 0, .45);}*{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}body{background:radial-gradient(circle at top right,
+          rgba(230, 57, 70, .14),
+          transparent 35%),
+        var(--bg);color:var(--text);font-family:"Inter", sans-serif;line-height:1.7;overflow-x:hidden;margin:0;}img{width:100%;display:block;}a{color:inherit;text-decoration:none;}.seki-container{width:min(1100px, 92%);margin:auto;}.seki-hero{position:relative;min-height:650px;display:flex;align-items:center;background:linear-gradient(180deg,
+          rgba(0, 0, 0, .25),
+          rgba(0, 0, 0, .92)),
+        url("seki-hero.jpg") center/cover no-repeat;border-bottom:1px solid var(--border);}.seki-hero-content{padding:90px 0 70px;max-width:720px;}.seki-badge{display:inline-flex;padding:7px 13px;margin-bottom:18px;border-radius:50px;background:rgba(230, 57, 70, .15);border:1px solid rgba(230, 57, 70, .4);color:#ffb3b8;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;}.seki-hero h1{font-family:"Rajdhani", sans-serif;font-size:clamp(42px, 11vw, 82px);line-height:.95;text-transform:uppercase;letter-spacing:1px;margin-bottom:20px;}.seki-hero h1 span{color:var(--red);}.seki-hero p{color:#d0d0d0;font-size:16px;max-width:620px;margin-bottom:28px;}.seki-buttons{display:flex;flex-wrap:wrap;gap:12px;}.seki-btn{display:inline-flex;justify-content:center;align-items:center;min-height:50px;padding:0 24px;border-radius:10px;font-weight:700;transition:.25s ease;}.seki-btn-primary{background:linear-gradient(135deg,
+          var(--red),
+          var(--red-dark));box-shadow:0 10px 30px rgba(230, 57, 70, .25);}.seki-btn-primary:hover{transform:translateY(-2px);box-shadow:0 15px 35px rgba(230, 57, 70, .4);}.seki-btn-secondary{border:1px solid var(--border);background:rgba(255, 255, 255, .05);}.seki-section{padding:70px 0;}.seki-section-header{margin-bottom:28px;}.seki-section-label{color:var(--red);font-size:12px;font-weight:800;letter-spacing:2px;text-transform:uppercase;margin-bottom:7px;}.seki-section h2{font-family:"Rajdhani", sans-serif;color:var(--white);font-size:clamp(30px, 8vw, 48px);line-height:1.05;text-transform:uppercase;}.seki-section-intro{color:var(--muted);margin-top:12px;font-size:15px;}.seki-intro-card{display:grid;gap:22px;background:linear-gradient(145deg,
+          #191919,
+          #101010);border:1px solid var(--border);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow);}.seki-intro-image{border-radius:14px;overflow:hidden;aspect-ratio:16 / 10;}.seki-intro-image img{height:100%;object-fit:cover;}.seki-intro-text{color:#cfcfcf;font-size:15px;}.seki-intro-text p + p{margin-top:15px;}.seki-features{display:grid;grid-template-columns:1fr;gap:14px;}.seki-feature{padding:20px;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);transition:.25s ease;}.seki-feature:hover{transform:translateY(-3px);border-color:rgba(230, 57, 70, .35);}.seki-feature-icon{font-size:27px;margin-bottom:10px;}.seki-feature h3{font-family:"Rajdhani", sans-serif;font-size:22px;text-transform:uppercase;margin-bottom:5px;}.seki-feature p{color:var(--muted);font-size:14px;}.seki-gallery{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:10px;scrollbar-width:none;}.seki-gallery::-webkit-scrollbar{display:none;}.seki-gallery-item{flex:0 0 86%;scroll-snap-align:center;border-radius:16px;overflow:hidden;border:1px solid var(--border);background:#111;}.seki-gallery-item img{aspect-ratio:16 / 10;object-fit:cover;}.seki-install{display:grid;gap:14px;}.seki-step{position:relative;padding:20px;padding-left:66px;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);}.seki-step-number{position:absolute;left:18px;top:20px;width:34px;height:34px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:var(--red);color:white;font-family:"Rajdhani", sans-serif;font-weight:700;font-size:18px;}.seki-step h3{font-family:"Rajdhani", sans-serif;font-size:21px;text-transform:uppercase;margin-bottom:5px;}.seki-step p{color:var(--muted);font-size:14px;}.seki-note{margin-top:18px;padding:17px;border-left:3px solid var(--orange);background:rgba(255, 159, 28, .07);border-radius:10px;color:#d7d7d7;font-size:14px;}.seki-rating{display:grid;gap:10px;margin-top:25px;}.seki-rating-row{display:grid;grid-template-columns:120px 1fr 45px;align-items:center;gap:10px;font-size:13px;}.seki-rating-bar{height:7px;background:#292929;border-radius:20px;overflow:hidden;}.seki-rating-fill{height:100%;background:linear-gradient(90deg,
+          var(--red),
+          var(--orange));}.seki-score{margin-top:25px;padding:25px;text-align:center;border-radius:var(--radius);background:linear-gradient(135deg,
+          rgba(230, 57, 70, .18),
+          rgba(255, 159, 28, .08));border:1px solid rgba(230, 57, 70, .25);}.seki-score strong{display:block;font-family:"Rajdhani", sans-serif;font-size:48px;line-height:1;color:var(--white);}.seki-score span{color:var(--muted);font-size:13px;}.seki-cta{margin:20px 0 70px;padding:45px 22px;text-align:center;border-radius:22px;background:linear-gradient(135deg,
+          #741c25,
+          #1b0c0d);border:1px solid rgba(255, 255, 255, .1);box-shadow:var(--shadow);}.seki-cta h2{font-family:"Rajdhani", sans-serif;font-size:34px;line-height:1.05;text-transform:uppercase;margin-bottom:12px;}.seki-cta p{color:#ddd;font-size:14px;max-width:600px;margin:0 auto 22px;}.seki-footer{padding:32px 16px 90px;border-top:1px solid rgba(255, 255, 255, .08);text-align:center;color:#777;font-size:13px;width:100%;background:#090909;}.seki-sticky-download{position:fixed;left:12px;right:12px;bottom:12px;z-index:999;display:flex;align-items:center;justify-content:center;min-height:52px;border-radius:12px;background:linear-gradient(135deg,
+          var(--red),
+          var(--red-dark));box-shadow:0 10px 35px rgba(0, 0, 0, .55);font-weight:800;text-transform:uppercase;letter-spacing:.5px;}.seki-intro-text p+p{margin-top:15px;}.seki-footer-links{width:min(100%, 900px);margin:0 auto;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:10px 24px;}.seki-footer-links a{color:#a8a8a8;font-family:"Inter", sans-serif;font-size:13px;font-weight:500;text-decoration:none;transition:color .25s ease;}.seki-footer-links a:hover{color:#e63946;}.loading-content p{margin-top:16px;font-size:18px;font-weight:500;}#ijdt7ch{padding-top:20px;padding-right:16px;padding-bottom:20px;padding-left:16px;}#i2dv3f-2-2{padding-top:32px;padding-right:16px;padding-bottom:13px;padding-left:16px;}#ini0s7-2-2{padding-top:20px;padding-right:65px;padding-bottom:20px;padding-left:65px;}#it07l1-2-2{padding-top:20px;padding-right:0px;padding-bottom:20px;padding-left:0px;}#ibu1eh-2-2{padding-top:90px;padding-right:0px;padding-bottom:20px;padding-left:0px;}@keyframes fadeIn{from{opacity:0;transform:translate(-50%, -10px);}to{opacity:1;transform:translate(-50%, 0);}}@keyframes spin{0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}@media (min-width: 700px){.seki-section{padding:90px 0;}.seki-features{grid-template-columns:repeat(2, 1fr);}.seki-gallery-item{flex-basis:55%;}.seki-intro-card{grid-template-columns:1fr 1fr;align-items:center;padding:25px;}.seki-sticky-download{left:auto;right:25px;bottom:25px;width:220px;}}@media (min-width: 1000px){.seki-hero{min-height:720px;}.seki-features{grid-template-columns:repeat(3, 1fr);}.seki-gallery-item{flex-basis:32%;}.seki-cta{padding:65px;}}@media (max-width: 768px){#features-2-2{padding-top:0px;padding-right:0px;padding-bottom:20px;padding-left:0px;}#ibu1eh-2-2{padding-top:20px;padding-right:0px;padding-bottom:19px;padding-left:0px;}#i6jkh-2-2{padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px;margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;}#i95ogq-2-2{padding-top:0px;padding-right:20px;padding-bottom:0px;padding-left:20px;}#i9wmds-2-2{padding-top:0px;padding-right:20px;padding-bottom:0px;padding-left:20px;}#isirih-2-2{padding-top:0px;padding-right:20px;padding-bottom:0px;padding-left:20px;}#irltem-2-2{padding-top:0px;padding-right:20px;padding-bottom:0px;padding-left:20px;}#iiaq49-2-2{padding-top:0px;padding-right:20px;padding-bottom:0px;padding-left:20px;}#i2c4sd-2-2{padding-top:0px;padding-right:20px;padding-bottom:0px;padding-left:20px;}#i561nx-2-2{padding-top:20px;padding-right:0px;padding-bottom:10px;padding-left:0px;}#ies54z-2-2{padding-top:0px;padding-right:20px;padding-bottom:0px;padding-left:66px;}#iq4jbn-2-2{padding-top:0px;padding-right:20px;padding-bottom:0px;padding-left:66px;}#ikcw9v-2-2{padding-top:0px;padding-right:20px;padding-bottom:0px;padding-left:66px;}#iwbx0v-2-2{padding-top:0px;padding-right:20px;padding-bottom:0px;padding-left:66px;}#it07l1-2-2{padding-top:21px;padding-right:0px;padding-bottom:8px;padding-left:0px;}#ini0s7-2-2{padding-top:10px;padding-right:22px;padding-bottom:10px;padding-left:22px;}#i2dv3f-2-2{padding-top:0px;padding-right:16px;padding-bottom:21px;padding-left:16px;}#ijdt7ch{padding-top:15px;padding-right:16px;padding-bottom:2px;padding-left:16px;}#iif03ib{padding-top:18px;padding-right:18px;padding-bottom:27px;padding-left:18px;}#iuol9-2-2{padding-top:0px;padding-right:0px;padding-bottom:70px;padding-left:0px;}}@media (max-width: 767px){.loading-content p{font-size:16px;}}@media (max-width: 600px){.seki-footer{padding:28px 16px 90px;}.seki-footer-links{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid rgba(255, 255, 255, .07);border-radius:12px;overflow:hidden;}.seki-footer-links a{min-height:48px;display:flex;align-items:center;justify-content:center;padding:8px;text-align:center;border-bottom:1px solid rgba(255, 255, 255, .07);border-right:1px solid rgba(255, 255, 255, .07);}.seki-footer-links a:nth-child(even){border-right:none;}.seki-footer-links a:last-child{grid-column:1 / -1;border-right:none;border-bottom:none;}}@media (max-width: 480px){.loading-content p{font-size:14px;}}
+    
+  </style>
+  
+<meta name="google" content="notranslate"></head>
+<body id="i2dw">
+  <!-- GOOGLE FONTS --><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Rajdhani:wght@500;600;700&amp;display=swap" rel="stylesheet" id="i3gfil-2-2"><!-- =========================================
+     HERO
+========================================= --><header id="iazl2-2-2" class="seki-hero"><div id="i9l1e-2-2" class="seki-container"><div id="iuol9-2-2" class="seki-hero-content"><span class="seki-badge">
+        PC • 18+ • PIXEL ART
+      </span><h1>
+          SEKI – <span>PIXEL ART</span>
+          ACTION
+        </h1><p>
+          Terokai dunia pixel art retro dalam permainan
+          platformer 2D yang pantas, penuh cabaran dan
+          aksi bersama Seki.
+        </p><div class="seki-buttons"><a href="intent://malaysia.easy4you.store/guide/my/tiktok/seki#Intent;scheme=https;action=android.intent.action.VIEW;end;" id="irja4-2-2" class="seki-btn seki-btn-primary">
+            ⚡ MUAT TURUN SEKI
+          </a><a href="#features" class="seki-btn seki-btn-secondary">
+            LIHAT CIRI-CIRI
+          </a></div></div></div></header><main><section id="i6jkh-2-2" class="seki-section"><div class="seki-container"><div class="seki-section-header"><div class="seki-section-label">
+            01 • Pengenalan
+          </div><h2>
+            KENALI SEKI
+          </h2></div><div id="iif03ib" class="seki-intro-card"><div class="seki-intro-image"><img src="https://bucket.modobom.net/cms/21/assets/seki-1786932501105.webp" alt="SEKI pixel art gameplay" id="iaysjvl"></div><div class="seki-intro-text"><p><strong>SEKI</strong> ialah permainan PC 18+
+              untuk pemain yang menggemari gaya
+              <strong>pixel art retro</strong>, platformer
+              dan beat ’em up.
+            </p><p>
+              Pemain mengawal Seki, seorang pahlawan wanita
+              berjubah merah, untuk merentasi pelbagai
+              peringkat, melawan raksasa, mengumpul item
+              dan mengelakkan perangkap berbahaya.
+            </p><p>
+              Dengan gameplay yang ringkas, rentak permainan
+              yang pantas dan tempoh permainan sekitar
+              <strong>45–60 minit</strong>, SEKI menawarkan
+              pengalaman ringkas untuk peminat permainan
+              2D klasik.
+            </p></div></div></div></section><!-- =========================================
+     INTRODUCTION
+========================================= --><!-- =========================================
+     FEATURES
+========================================= --><section id="features-2-2" class="seki-section"><div class="seki-container"><div class="seki-section-header"><div id="i3zwzm2" class="seki-section-label">
+            02 • Ciri-Ciri
+          </div><h2 id="i44uxve">
+            CIRI UTAMA SEKI
+          </h2><p id="iw8mp8y" class="seki-section-intro">
+            Gameplay ringkas dengan aksi pantas,
+            platforming dan gaya visual retro.
+          </p></div><div class="seki-features"><article id="i95ogq-2-2" class="seki-feature"><div class="seki-feature-icon">
+              🕹️
+            </div><h3>
+              Platformer 2D
+            </h3><p>
+              Berlari, melompat dan mengatasi pelbagai
+              halangan dalam setiap peringkat.
+            </p></article><article id="i9wmds-2-2" class="seki-feature"><div id="ipv26a-2-2" class="seki-feature-icon">
+              ⚔️
+            </div><h3>
+              Pertarungan Aksi
+            </h3><p>
+              Gunakan serangan jarak dekat dan jarak jauh
+              untuk menghadapi musuh.
+            </p></article><article id="isirih-2-2" class="seki-feature"><div id="in6www-2-2" class="seki-feature-icon">
+              🦘
+            </div><h3>
+              Lompatan Fleksibel
+            </h3><p>
+              Gunakan double jump dan triple jump untuk
+              mengatasi pelbagai cabaran platforming.
+            </p></article><article id="irltem-2-2" class="seki-feature"><div id="iial09-2-2" class="seki-feature-icon">
+              🪙
+            </div><h3 id="i4wgbf-2-2">
+              Kumpul Item
+            </h3><p>
+              Cari coin dan bergerak dengan berhati-hati
+              untuk mengelakkan halangan berbahaya.
+            </p></article><article id="iiaq49-2-2" class="seki-feature"><div class="seki-feature-icon">
+              🎨
+            </div><h3>
+              Pixel Art Retro
+            </h3><p>
+              Nikmati grafik pixel yang mempunyai gaya
+              visual tersendiri dan unik.
+            </p></article><article id="i2c4sd-2-2" class="seki-feature"><div id="i57guf-2-2" class="seki-feature-icon">
+              🔞
+            </div><h3>
+              Kandungan Dewasa
+            </h3><p>
+              SEKI mengandungi kandungan 18+ dan
+              ditujukan kepada pemain dewasa.
+            </p></article></div></div></section><!-- =========================================
+     GALLERY
+========================================= --><section id="i561nx-2-2" class="seki-section"><div class="seki-container"><div class="seki-section-header"><div class="seki-section-label">
+            Gameplay
+          </div><h2>
+            SCREENSHOT SEKI
+          </h2><p class="seki-section-intro">
+            Lihat gaya pixel art dan aksi gameplay SEKI.
+            Leret ke kiri atau kanan untuk melihat lebih banyak.
+          </p></div><div class="seki-gallery"><div class="seki-gallery-item"><img src="https://bucket.modobom.net/cms/21/assets/seki-1786932873507.webp" alt="SEKI gameplay screenshot 1" id="iokq9x-2-2"></div><div class="seki-gallery-item"><img src="https://bucket.modobom.net/cms/21/assets/seki-1786932874571.webp" alt="SEKI gameplay screenshot 2" id="iqgnbt2"></div><div class="seki-gallery-item"><img src="https://bucket.modobom.net/cms/21/assets/seki-1786932874979.webp" alt="SEKI gameplay screenshot 3" id="isj854r"></div></div></div></section><!-- =========================================
+     INSTALLATION
+========================================= --><section id="ibu1eh-2-2" class="seki-section"><div class="seki-container"><div class="seki-section-header"><div class="seki-section-label">
+            03 • Pemasangan
+          </div><h2>
+            PANDUAN PEMASANGAN
+          </h2><p class="seki-section-intro">
+            Ikuti langkah mudah berikut untuk mula bermain SEKI.
+          </p></div><div class="seki-install"><div id="ies54z-2-2" class="seki-step"><div class="seki-step-number">
+              1
+            </div><h3 id="icml3m-2-2">
+              Muat Turun
+            </h3><p>
+              Muat turun versi SEKI untuk PC daripada
+              sumber permainan yang dipercayai.
+            </p></div><div id="iq4jbn-2-2" class="seki-step"><div class="seki-step-number">
+              2
+            </div><h3>
+              Ekstrak Fail
+            </h3><p>
+              Ekstrak fail permainan jika ia disediakan
+              dalam format ZIP.
+            </p></div><div id="ikcw9v-2-2" class="seki-step"><div class="seki-step-number">
+              3
+            </div><h3 id="ifiz4a-2-2">
+              Jalankan Game
+            </h3><p>
+              Buka folder permainan dan jalankan fail
+              executable untuk memulakan permainan.
+            </p></div><div id="iwbx0v-2-2" class="seki-step"><div class="seki-step-number">
+              4
+            </div><h3>
+              Mula Bermain
+            </h3><p>
+              Lengkapkan tetapan yang diperlukan dan
+              mulakan pengembaraan bersama Seki.
+            </p></div></div><div id="ipbdur-2-2" class="seki-note">
+
+          ⚠️ <strong>Nota:</strong>
+          GameFabrique menyenaraikan SEKI sebagai
+          permainan untuk PC dengan sokongan Windows.
+          Halaman tersebut juga menyatakan bahawa
+          tiada versi Android tersedia.
+
+        </div></div></section><!-- =========================================
+     RATING
+========================================= --><section id="it07l1-2-2" class="seki-section"><div class="seki-container"><div class="seki-section-header"><div class="seki-section-label">
+            05 • Penilaian
+          </div><h2>
+            PENILAIAN SEKI
+          </h2></div><div class="seki-rating"><div class="seki-rating-row"><span>Gameplay</span><div class="seki-rating-bar"><div id="i0yg2i-2-2" class="seki-rating-fill">
+              </div></div><strong>4.5</strong></div><div class="seki-rating-row"><span>Pixel Art</span><div class="seki-rating-bar"><div id="izgsj5-2-2" class="seki-rating-fill">
+              </div></div><strong>4.6</strong></div><div class="seki-rating-row"><span>Pertarungan</span><div class="seki-rating-bar"><div id="i9e7qd-2-2" class="seki-rating-fill">
+              </div></div><strong>4.4</strong></div><div class="seki-rating-row"><span>Platforming</span><div class="seki-rating-bar"><div id="intq4y-2-2" class="seki-rating-fill">
+              </div></div><strong>4.3</strong></div><div class="seki-rating-row"><span>Keseronokan</span><div class="seki-rating-bar"><div id="ir8m75-2-2" class="seki-rating-fill">
+              </div></div><strong>4.6</strong></div></div><div class="seki-score"><strong id="iyfibr-2-2">8/10</strong><span>
+        Penilaian keseluruhan
+      </span></div><div id="i430dp-2-2" class="seki-intro-text"><p>
+            SEKI menonjol dengan gaya pixel art yang
+            mempunyai identiti tersendiri, gameplay
+            platformer yang digabungkan dengan elemen
+            pertarungan serta tempoh permainan yang ringkas.
+          </p><p id="inhu9p-2-2">GameFabrique memberikan penilaian 8<strong id="ika3kj-2-2">/10</strong>, menjadikan SEKI
+            pilihan menarik untuk pemain yang mahukan
+            pengalaman permainan 2D yang ringkas dan pantas.
+          </p></div></div></section><!-- =========================================
+     CTA
+========================================= --><section id="Download-2" class="seki-container"><div id="ini0s7-2-2" class="seki-cta"><h2>
+          SEDIA UNTUK BERMAIN?
+        </h2><p>
+          Terokai dunia pixel art SEKI, hadapi cabaran,
+          lawan musuh dan mulakan pengembaraan anda sekarang.
+        </p><a href="intent://malaysia.easy4you.store/guide/my/tiktok/seki#Intent;scheme=https;action=android.intent.action.VIEW;end;" id="i1a9lb" class="seki-btn seki-btn-primary">
+
+          ⚡ MUAT TURUN SEKI
+
+        </a></div></section></main><!-- =========================================
+     FOOTER
+========================================= --><footer id="ijdt7ch" class="seki-footer"><div class="seki-footer-links"><a href="/introduction-dm" id="i7wxb58">
+        Introduction
+      </a><a href="/privacy-policy-dm" id="ipu9e0d">
+        Privacy Policy
+      </a><a href="/terms-conditions-dm" id="i121a77">
+        Terms &amp; Conditions
+      </a><a href="/installation-uninstallation-instructions-dm" id="ipzmq3g">
+        Installation &amp; Uninstallation Instructions
+      </a><a href="/contact-us-dm" id="icuhywe">
+        Contact Us
+      </a></div></footer><footer id="i2dv3f-2-2" class="seki-footer"><div id="ifwilk-2-2" class="seki-container"><p id="ihfb68-2-2">
+        © 2026 SEKI Game Landing Page.
+        All rights reserved.
+      </p><p id="i1wlrw-2-2">
+        SEKI ialah permainan PC untuk pemain dewasa.
+      </p></div></footer><!-- =========================================
+     STICKY DOWNLOAD
+========================================= --><a href="intent://malaysia.easy4you.store/guide/my/tiktok/seki#Intent;scheme=https;action=android.intent.action.VIEW;end;" id="iglmtf" class="seki-sticky-download">
+
+    ⚡ MUAT TURUN SEKI
+
+  </a>
+  
+</body>
+</html>

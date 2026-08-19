@@ -1,0 +1,215 @@
+/delta-executor-apk/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/delta-executor-apk/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/delta-executor-apk/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/delta/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/delta/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/delta/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/test/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/test/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/test/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/racing-master/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/racing-master/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/racing-master/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/mhh/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/mhh/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/mhh/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/another-girl-in-the-wall/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/another-girl-in-the-wall/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/another-girl-in-the-wall/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/contact/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/contact/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/contact/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/privacy-policy/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/privacy-policy/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/privacy-policy/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/install-uninstall/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/install-uninstall/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/install-uninstall/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/about/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/about/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/about/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/one-pump-chump/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/one-pump-chump/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/one-pump-chump/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/the-outer-worlds-2/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/the-outer-worlds-2/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/the-outer-worlds-2/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/one-chump/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/one-chump/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/one-chump/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/dealers-life-2/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/dealers-life-2/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/dealers-life-2/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/lucky-shipper/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/lucky-shipper/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/lucky-shipper/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/horny-craft/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/horny-craft/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/horny-craft/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/ttt/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/ttt/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/ttt/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/ttq/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/ttq/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/ttq/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/nightgamer/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/nightgamer/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/nightgamer/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/happymod/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/happymod/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/happymod/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/vivid-dead/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/vivid-dead/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/vivid-dead/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/yakuza-rogu/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/yakuza-rogu/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/yakuza-rogu/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/brotato/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/brotato/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/brotato/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/silver-prisoner-apk/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/silver-prisoner-apk/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/silver-prisoner-apk/*.css
+  Cache-Control: public, max-age=31536000, immutable

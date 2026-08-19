@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="th" translate="no" class="notranslate">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Darling Touch APK – เกมอนิเมะแบบอินเทอร์แอคทีฟสำหรับ Android</title><meta name="description" content="Darling Touch APK เกมจำลองสถานการณ์แบบอินเทอร์แอคทีฟสไตล์อนิเมะสำหรับ Android พร้อมระบบสัมผัส มินิเกม ตัวละคร และเนื้อหาที่ปลดล็อกได้"><meta name="theme-color" content="#477ac8"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,600;1,700&amp;family=Prompt:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; } body {margin: 0;}:root{--pink-main:#df8fb8;--pink-dark:#c92d50;--pink-light:#f4dce8;--pink-soft:#e9b4cf;--pink-bg:#fff7f8;--pink-card:#ffffff;--text-main:#263d69;--text-soft:#66799d;--border:rgba(71,122,200,.13);--shadow:0 15px 40px rgba(39,75,135,.10);--shadow-hover:0 20px 50px rgba(39,75,135,.18);--blue-dark:#1e438d;--blue-deep:#17366f;--blue-main:#477ac8;--blue-light:#a9dcf2;--cream:#f8f0f1;--white:#ffffff;}*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}body{font-family:"Prompt", "Inter", sans-serif;background:linear-gradient(
+            180deg,
+            #f7e8ee 0%,
+            #f5f2f3 25%,
+            #edf7fb 65%,
+            #ffffff 100%
+        );color:var(--text-main);line-height:1.75;overflow-x:hidden;}img{max-width:100%;display:block;}a{text-decoration:none;color:inherit;}.container{width:min(
+        1080px,
+        calc(100% - 32px)
+    );margin:0 auto;}.section{padding:80px 0;}.section-heading{text-align:center;margin-bottom:42px;}.section-heading .eyebrow{display:inline-block;color:var(--blue-main);font-size:11px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;margin-bottom:8px;}.section-heading h2{font-family:"Playfair Display",
+        serif;font-size:clamp(
+            28px,
+            6vw,
+            46px
+        );line-height:1.15;font-weight:600;color:var(--blue-dark);text-transform:uppercase;}.section-heading h2::after{content:"";display:block;width:48px;height:3px;margin:15px auto 0;border-radius:50px;background:linear-gradient(
+            90deg,
+            var(--pink-soft),
+            var(--blue-main)
+        );}.section-heading p{max-width:680px;margin:16px auto 0;color:var(--text-soft);font-size:14px;}.hero{position:relative;min-height:690px;overflow:hidden;background:radial-gradient(
+            circle at 78% 45%,
+            rgba(255,255,255,.68) 0%,
+            rgba(255,255,255,.15) 25%,
+            transparent 43%
+        ),
+
+        linear-gradient(
+            100deg,
+
+            #e9b3cf 0%,
+
+            #f2dce6 27%,
+
+            #f8eeee 45%,
+
+            #b6e0f2 66%,
+
+            #6c9ed9 82%,
+
+            #1e438d 100%
+        );}.hero::before{content:"";position:absolute;width:550px;height:550px;border-radius:50%;background:radial-gradient(
+            circle,
+            rgba(255,255,255,.4),
+            transparent
+        );top:-270px;right:-170px;filter:blur(8px);}.hero::after{content:"";position:absolute;left:-180px;bottom:-220px;width:600px;height:350px;border-radius:50%;background:radial-gradient(
+            circle,
+            rgba(255,255,255,.32),
+            transparent 65%
+        );filter:blur(30px);}.hero-inner{position:relative;z-index:3;min-height:610px;display:grid;grid-template-columns:.9fr
+        1.1fr;align-items:center;gap:25px;}.hero-content{padding:45px 0;}.hero-label{display:inline-flex;align-items:center;gap:8px;padding:7px 14px;border-radius:50px;background:rgba(255,255,255,.45);border:1px solid
+        rgba(255,255,255,.75);color:var(--blue-dark);font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;box-shadow:0 8px 25px rgba(190,65,91,.08);backdrop-filter:blur(10px);}.hero-label::before{content:"18+";padding:2px 7px;border-radius:20px;color:#fff;background:linear-gradient(
+            135deg,
+            #df8fb8,
+            #477ac8
+        );font-size:9px;}.hero h1{margin-top:20px;font-family:"Playfair Display",
+        serif;font-size:clamp(
+            42px,
+            7vw,
+            72px
+        );line-height:1;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--blue-dark);text-shadow:0 4px 20px
+        rgba(255,255,255,.4);}.hero h1 span{display:block;color:#315fae;font-style:italic;}.hero-description{max-width:500px;margin-top:22px;color:#536b94;font-size:14px;line-height:1.8;}.hero-buttons{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:28px;}.download-btn{display:inline-flex;justify-content:center;align-items:center;min-height:52px;padding:0 29px;border-radius:50px;background:linear-gradient(
+            135deg,
+            #477ac8,
+            #1e438d
+        );color:#fff;font-size:13px;font-weight:800;letter-spacing:.5px;box-shadow:0 12px 30px
+        rgba(30,67,141,.25);transition:.3s ease;}.download-btn:hover{transform:translateY(-3px);box-shadow:0 18px 38px
+        rgba(30,67,141,.32);}.info-btn{display:inline-flex;justify-content:center;align-items:center;min-height:52px;padding:0 25px;border-radius:50px;background:rgba(255,255,255,.48);border:1px solid
+        rgba(255,255,255,.8);color:var(--blue-dark);font-size:13px;font-weight:700;backdrop-filter:blur(8px);}.hero-image{position:relative;display:flex;align-items:center;justify-content:center;min-height:560px;}.hero-image::before{content:"";position:absolute;width:440px;height:440px;border-radius:50%;background:radial-gradient(
+            circle,
+            rgba(255,255,255,.5),
+            transparent
+        );box-shadow:0 0 80px rgba(255,255,255,.65);}.hero-image img{position:relative;z-index:2;width:100%;max-width:540px;max-height:590px;object-fit:contain;filter:drop-shadow(
+            0 30px 35px
+            rgba(24,55,110,.2)
+        );}.feature-wrapper{position:relative;margin-top:-45px;z-index:10;}.feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}.feature-card{position:relative;min-height:135px;padding:22px;border-radius:16px;background:rgba(255,255,255,.88);border:1px solid
+        rgba(71,122,200,.12);box-shadow:var(--shadow);transition:.3s ease;backdrop-filter:blur(10px);}.feature-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-hover);}.feature-card:first-child{color:#fff;background:linear-gradient(
+            135deg,
+            #477ac8,
+            #1e438d
+        );}.feature-icon{width:34px;height:34px;display:flex;justify-content:center;align-items:center;margin-bottom:12px;border-radius:50%;background:linear-gradient(
+            135deg,
+            #e9b4cf,
+            #b6def1
+        );color:var(--blue-dark);font-size:14px;}.feature-card:first-child .feature-icon{background:rgba(255,255,255,.18);color:#fff;}.feature-card h3{font-size:14px;line-height:1.4;font-weight:800;color:var(--blue-dark);}.feature-card:first-child h3{color:#fff;}.feature-card p{margin-top:5px;font-size:11px;line-height:1.6;color:var(--text-soft);}.feature-card:first-child p{color:rgba(255,255,255,.85);}.about-image img{width:100%;min-height:350px;object-fit:cover;border-radius:18px;box-shadow:var(--shadow);}.about-content .mini-title{color:var(--pink-main);font-size:12px;font-weight:800;letter-spacing:2px;text-transform:uppercase;}.about-content h2{margin-top:8px;font-family:"Playfair Display", serif;font-size:clamp(28px, 5vw, 42px);line-height:1.15;text-transform:uppercase;color:#743344;}.about-content h2 span{color:var(--pink-main);}.about-content p{margin-top:16px;color:var(--text-soft);font-size:14px;}.about-list div{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:#8b4a5a;}.about-list div::before{content:"✓";flex-shrink:0;width:23px;height:23px;display:flex;justify-content:center;align-items:center;border-radius:50%;background:#ffe1e7;color:var(--pink-main);font-size:12px;font-weight:800;}.game-features{background:linear-gradient(
+            135deg,
+            #eef8fc 0%,
+            #f8edf2 100%
+        );}.game-feature-list{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;}.game-feature{padding:25px;border-radius:18px;background:rgba(255,255,255,.82);border:1px solid
+        rgba(71,122,200,.1);box-shadow:0 10px 30px
+        rgba(48,84,137,.07);backdrop-filter:blur(10px);transition:.3s ease;}.game-feature-top{display:flex;gap:13px;align-items:center;}.game-feature-number{width:42px;height:42px;flex-shrink:0;display:flex;align-items:center;justify-content:center;border-radius:13px;color:#fff;background:linear-gradient(
+            135deg,
+            #477ac8,
+            #1e438d
+        );font-size:13px;font-weight:800;}.game-feature h3{font-size:15px;color:var(--blue-dark);font-weight:800;}.game-feature p{margin-top:12px;color:var(--text-soft);font-size:13px;}.install-section{background:linear-gradient(
+            180deg,
+            #ffffff,
+            #f2f9fc
+        );}.install-box{max-width:900px;margin:0 auto;padding:25px;border-radius:22px;background:linear-gradient(
+            135deg,
+            #f8edf2,
+            #e9f6fb
+        );border:1px solid
+        rgba(71,122,200,.1);box-shadow:0 15px 40px
+        rgba(48,84,137,.07);}.install-step{position:relative;display:flex;gap:18px;padding:22px 10px;}.install-step:not(:last-child)::after{content:"";position:absolute;left:27px;top:72px;width:2px;height:calc(100% - 48px);background:linear-gradient(
+            180deg,
+            #7faee3,
+            #e0b4ca
+        );}.step-number{position:relative;z-index:2;width:38px;height:38px;flex-shrink:0;display:flex;justify-content:center;align-items:center;border-radius:50%;background:linear-gradient(
+            135deg,
+            #477ac8,
+            #1e438d
+        );color:#fff;font-size:12px;font-weight:800;box-shadow:0 8px 20px
+        rgba(30,67,141,.2);}.step-content h3{font-size:15px;color:var(--blue-dark);font-weight:800;}.step-content p{margin-top:5px;font-size:13px;color:var(--text-soft);}.info-section{background:linear-gradient(
+            135deg,
+            #edf8fc,
+            #f8eef3
+        );}.info-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;}.info-card{padding:22px 15px;text-align:center;background:rgba(255,255,255,.88);border-radius:16px;border:1px solid
+        rgba(71,122,200,.1);box-shadow:0 8px 25px
+        rgba(48,84,137,.06);}.info-card span{display:block;color:#7b8da9;font-size:9px;text-transform:uppercase;letter-spacing:1px;}.info-card strong{display:block;margin-top:5px;color:var(--blue-dark);font-size:14px;}.rating-section{background:linear-gradient(
+            180deg,
+            #ffffff,
+            #f4f9fb
+        );}.rating-card{max-width:850px;margin:0 auto;padding:32px;border-radius:22px;background:linear-gradient(
+            135deg,
+            #f9eef3,
+            #edf8fc
+        );border:1px solid
+        rgba(71,122,200,.1);box-shadow:0 15px 40px
+        rgba(48,84,137,.09);}.rating-top{display:flex;align-items:center;justify-content:space-between;gap:20px;}.rating-score{display:flex;align-items:center;gap:15px;}.score{font-family:"Playfair Display",
+        serif;font-size:50px;font-weight:700;color:var(--blue-main);line-height:1;}.stars{color:#e0a050;font-size:19px;letter-spacing:2px;}.rating-label{font-size:12px;color:var(--text-soft);}.pros-cons{display:grid;grid-template-columns:1fr
+        1fr;gap:25px;margin-top:30px;}.pros-cons h3{font-size:15px;color:var(--blue-dark);}.pros-cons ul{list-style:none;margin-top:12px;}.pros-cons li{position:relative;padding-left:24px;margin-bottom:9px;color:var(--text-soft);font-size:13px;}.pros li::before{content:"✓";position:absolute;left:0;color:var(--blue-main);font-weight:800;}.cons li::before{content:"−";position:absolute;left:0;color:var(--pink-main);font-weight:800;}.cta-section{position:relative;overflow:hidden;padding:85px 0;background:linear-gradient(
+            100deg,
+            #e8b3ce 0%,
+            #eac8dc 25%,
+            #a8d9ef 60%,
+            #4d80c9 82%,
+            #1e438d 100%
+        );}.cta-section::before{content:"";position:absolute;width:400px;height:400px;border-radius:50%;right:-120px;top:-200px;background:rgba(255,255,255,.15);}.cta-content{position:relative;z-index:2;text-align:center;color:#fff;}.cta-content .eyebrow{font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;opacity:.85;}.cta-content h2{margin-top:8px;font-family:"Playfair Display",
+        serif;font-size:clamp(
+            32px,
+            7vw,
+            52px
+        );line-height:1.12;text-transform:uppercase;}.cta-content p{max-width:600px;margin:15px auto 25px;font-size:14px;color:rgba(255,255,255,.92);}.cta-button{display:inline-flex;min-height:54px;align-items:center;justify-content:center;padding:0 32px;border-radius:50px;background:#fff;color:var(--blue-dark);font-size:13px;font-weight:800;box-shadow:0 12px 30px
+        rgba(25,56,112,.2);transition:.3s ease;}.cta-button:hover{transform:translateY(-3px);}footer{padding:55px 0 30px;background:linear-gradient(
+            180deg,
+            #f0f7fa,
+            #f8edf2
+        );border-top:1px solid
+        rgba(71,122,200,.1);}.footer-grid{display:grid;grid-template-columns:1.4fr
+        repeat(3,1fr);gap:35px;}.footer-brand h3{font-family:"Playfair Display",
+        serif;font-size:25px;color:var(--blue-dark);}.footer-brand p{margin-top:10px;max-width:320px;font-size:12px;color:var(--text-soft);}.footer-column h4{font-size:12px;color:var(--blue-dark);}.footer-column a{display:block;margin-top:8px;font-size:12px;color:#7486a2;transition:.2s ease;}.footer-column a:hover{color:var(--blue-main);}.footer-bottom{margin-top:35px;padding-top:20px;border-top:1px solid
+        rgba(71,122,200,.1);text-align:center;color:#8999b1;font-size:10px;}.mobile-download{display:none;}#installation{padding-top:20px;padding-right:0px;padding-bottom:20px;padding-left:0px;}button{font-family:inherit;}.navbar{position:relative;z-index:20;padding:22px 0;}.nav-inner{display:flex;align-items:center;justify-content:space-between;}.logo{display:flex;align-items:center;gap:9px;font-family:"Playfair Display",
+        serif;font-size:22px;font-weight:700;color:var(--blue-dark);}.logo-mark{width:32px;height:32px;display:flex;align-items:center;justify-content:center;border-radius:10px;color:#fff;background:linear-gradient(
+            135deg,
+            #477ac8,
+            #1e438d
+        );font-size:14px;}.nav-links{display:flex;align-items:center;gap:30px;}.nav-links a{font-size:11px;font-weight:600;color:#536b91;text-transform:uppercase;letter-spacing:.5px;transition:.25s ease;}.nav-links a:hover{color:var(--blue-dark);}.nav-download{padding:9px 18px;border-radius:50px;color:#fff !important;background:linear-gradient(
+            135deg,
+            #477ac8,
+            #1e438d
+        );box-shadow:0 8px 20px
+        rgba(30,67,141,.18);}.introduction{background:linear-gradient(
+            180deg,
+            #ffffff,
+            #f3f9fc
+        );}.intro-grid{display:grid;grid-template-columns:.9fr
+        1.1fr;gap:45px;align-items:center;}.intro-image{position:relative;}.intro-image img{width:100%;min-height:360px;object-fit:cover;border-radius:20px;box-shadow:0 18px 45px
+        rgba(40,76,135,.13);}.intro-image::after{content:"";position:absolute;width:85px;height:85px;right:-12px;bottom:-12px;border-radius:20px;background:linear-gradient(
+            135deg,
+            #e9b4cf,
+            #477ac8
+        );z-index:-1;}.intro-content .mini-title{color:var(--blue-main);font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;}.intro-content h2{margin-top:8px;font-family:"Playfair Display",
+        serif;font-size:clamp(
+            29px,
+            5vw,
+            43px
+        );line-height:1.15;color:var(--blue-dark);text-transform:uppercase;}.intro-content h2 span{color:var(--pink-main);}.intro-content p{margin-top:16px;color:var(--text-soft);font-size:14px;}.game-feature:hover{transform:translateY(-4px);}.gallery{background:linear-gradient(
+            180deg,
+            #ffffff,
+            #f4f9fb
+        );}.gallery-track{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}.gallery-item{overflow:hidden;border-radius:18px;background:#fff;border:1px solid
+        var(--border);box-shadow:0 12px 35px
+        rgba(39,75,135,.09);}.gallery-item img{width:100%;aspect-ratio:16 / 10;object-fit:cover;transition:.4s ease;}.gallery-item:hover img{transform:scale(1.05);}.gallery-caption{padding:14px;text-align:center;color:var(--text-main);font-size:12px;font-weight:700;}.note-box{margin-top:25px;padding:18px 20px;border-radius:15px;background:rgba(255,255,255,.8);border-left:4px solid
+        var(--pink-main);color:var(--text-soft);font-size:12px;}.conclusion{background:linear-gradient(
+            180deg,
+            #ffffff,
+            #f5fafd
+        );}.conclusion-box{max-width:850px;margin:0 auto;text-align:center;}.conclusion-box p{margin-top:15px;color:var(--text-soft);font-size:14px;}.loading-content p{margin-top:16px;font-size:18px;font-weight:500;}#iyvya13{padding-top:20px;padding-right:0px;padding-bottom:20px;padding-left:0px;}#download-2{padding-top:20px;padding-right:0px;padding-bottom:20px;padding-left:0px;}#features-2{padding-top:0px;padding-right:0px;padding-bottom:20px;padding-left:0px;}#introduction-2{padding-top:80px;padding-right:0px;padding-bottom:20px;padding-left:0px;}#irgcywj{padding-top:5px;padding-right:25px;padding-bottom:0px;padding-left:25px;}#imkwwvg{padding-top:5px;padding-right:25px;padding-bottom:0px;padding-left:25px;}#ipqreob{padding-top:5px;padding-right:25px;padding-bottom:5px;padding-left:25px;}#ikpvvta{padding-top:5px;padding-right:25px;padding-bottom:5px;padding-left:25px;}#i7a5i22{padding-top:5px;padding-right:25px;padding-bottom:5px;padding-left:25px;}#iz1yqsj{padding-top:5px;padding-right:25px;padding-bottom:5px;padding-left:25px;}#gallery-2{padding-top:20px;padding-right:0px;padding-bottom:20px;padding-left:0px;}#i7qm3xg{padding-top:0px;padding-right:10px;padding-bottom:0px;padding-left:10px;}#ifvadg8{padding-top:20px;padding-right:25px;padding-bottom:25px;padding-left:25px;}#ioqimp3{padding-top:20px;padding-right:0px;padding-bottom:20px;padding-left:0px;}#review-2{padding-top:20px;padding-right:0px;padding-bottom:20px;padding-left:0px;}#i8oahak{padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px;}#ipqhlo6{padding-top:0px;padding-right:32px;padding-bottom:32px;padding-left:32px;}#i2zrzrz{padding-top:0px;padding-right:0px;padding-bottom:20px;padding-left:0px;}#contact-2{padding-top:20px;padding-right:0px;padding-bottom:30px;padding-left:0px;}#i1i442b{padding-top:10px;padding-right:10px;padding-bottom:10px;padding-left:10px;}#ihqqqs7{padding-top:0px;padding-right:10px;padding-bottom:0px;padding-left:10px;}#i61zv4u{padding-top:10px;padding-right:10px;padding-bottom:10px;padding-left:10px;}#i86dzbf{padding-top:0px;padding-right:10px;padding-bottom:10px;padding-left:10px;}@keyframes fadeIn{from{opacity:0;transform:translate(-50%, -10px);}to{opacity:1;transform:translate(-50%, 0);}}@keyframes spin{0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}@media (max-width: 850px){.hero-inner{grid-template-columns:1fr;text-align:center;min-height:auto;}.hero{min-height:auto;}.hero-content{padding:60px 0 10px;}.hero-description{margin-left:auto;margin-right:auto;}.hero-buttons{justify-content:center;}.hero-image{min-height:430px;}.hero-image img{max-width:440px;max-height:460px;}.footer-grid{grid-template-columns:1fr 1fr;}.intro-grid{grid-template-columns:1fr;}.intro-content{text-align:center;}.gallery-track{grid-template-columns:repeat(3,1fr);}.info-grid{grid-template-columns:repeat(2,1fr);}}@media (max-width: 768px){#features-2{padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px;}#introduction-2{padding-top:20px;padding-right:0px;padding-bottom:24px;padding-left:0px;}#gallery-2{padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px;}#ioqimp3{padding-top:0px;padding-right:0px;padding-bottom:12px;padding-left:0px;}#i2zrzrz{padding-top:0px;padding-right:0px;padding-bottom:10px;padding-left:0px;}#review-2{padding-top:20px;padding-right:0px;padding-bottom:0px;padding-left:0px;}#download-2{padding-top:20px;padding-right:0px;padding-bottom:20px;padding-left:0px;}#contact-2{padding-top:20px;padding-right:0px;padding-bottom:10px;padding-left:0px;}#ipqhlo6{padding-top:0px;padding-right:18px;padding-bottom:22px;padding-left:18px;}#i2z5ksl{padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px;}#i1i442b{padding-top:0px;padding-right:10px;padding-bottom:10px;padding-left:10px;}#ifvadg8{padding-top:20px;padding-right:25px;padding-bottom:9px;padding-left:25px;}#i61zv4u{padding-top:10px;padding-right:10px;padding-bottom:10px;padding-left:10px;}#izgl1iv{padding-top:0px;padding-right:20px;padding-bottom:18px;padding-left:20px;}}@media (max-width: 767px){.loading-content p{font-size:16px;}}@media (max-width: 600px){body{padding-bottom:72px;}.container{width:calc(100% - 24px);}.section{padding:58px 0;}.section-heading{margin-bottom:28px;}.section-heading h2{font-size:28px;}.hero{min-height:auto;}.hero-inner{display:flex;flex-direction:column;gap:0;}.hero-content{padding:48px 0 0;}.hero-label{font-size:10px;}.hero h1{margin-top:15px;font-size:43px;line-height:1.02;}.hero-description{margin-top:16px;font-size:13px;line-height:1.7;}.hero-buttons{margin-top:22px;flex-direction:column;}.download-btn{width:100%;min-height:50px;}.info-btn{width:100%;min-height:50px;}.hero-image{min-height:350px;margin-top:0;}.hero-image::before{width:290px;height:290px;}.hero-image img{max-width:330px;max-height:380px;}.feature-wrapper{margin-top:-25px;}.feature-grid{grid-template-columns:1fr 1fr;gap:10px;}.feature-card{min-height:145px;padding:16px;border-radius:13px;}.feature-icon{width:30px;height:30px;font-size:13px;}.feature-card h3{font-size:12px;}.feature-card p{font-size:10px;}.about-image img{min-height:230px;}.about-content h2{font-size:29px;}.about-content p{font-size:13px;}.game-feature-list{grid-template-columns:1fr;gap:12px;}.game-feature{padding:20px;}.game-feature h3{font-size:14px;}.game-feature p{font-size:12px;}.install-box{padding:12px;border-radius:17px;}.install-step{padding:18px 7px;gap:13px;}.step-number{width:34px;height:34px;font-size:11px;}.install-step:not(:last-child)::after{left:23px;top:63px;}.step-content h3{font-size:13px;}.step-content p{font-size:11px;}.info-grid{grid-template-columns:1fr 1fr;gap:10px;}.info-card{padding:16px 10px;}.info-card span{font-size:9px;}.info-card strong{font-size:12px;}.rating-card{padding:22px 18px;}.rating-top{flex-direction:column;text-align:center;}.rating-score{flex-direction:column;}.score{font-size:44px;}.pros-cons{grid-template-columns:1fr;gap:25px;}.cta-section{padding:65px 0;}.cta-content h2{font-size:34px;}.cta-content p{font-size:12px;}.cta-button{width:100%;}footer{padding-bottom:25px;}.footer-grid{grid-template-columns:1fr 1fr;gap:25px 15px;}.footer-brand{grid-column:1 / -1;text-align:center;}.footer-brand p{margin-left:auto;margin-right:auto;}.mobile-download{position:fixed;z-index:999;left:12px;right:12px;bottom:10px;display:flex;align-items:center;justify-content:center;min-height:52px;border-radius:50px;background:linear-gradient(
+                135deg,
+                #477ac8,
+                #1e438d
+            );color:#fff;font-size:13px;font-weight:800;box-shadow:0 12px 30px
+            rgba(30,67,141,.28);}.navbar{padding:16px 0;}.nav-links{display:none;}.logo{font-size:19px;}.intro-grid{gap:28px;}.intro-image img{min-height:230px;}.intro-image::after{width:55px;height:55px;}.intro-content h2{font-size:29px;}.intro-content p{font-size:13px;}.gallery{overflow:hidden;}.gallery-track{display:flex;overflow-x:auto;gap:12px;scroll-snap-type:x mandatory;padding-bottom:8px;scrollbar-width:none;-webkit-overflow-scrolling:touch;}.gallery-track::-webkit-scrollbar{display:none;}.gallery-item{min-width:84%;scroll-snap-align:center;}}@media (max-width: 480px){.loading-content p{font-size:14px;}}@media (max-width: 380px){.hero h1{font-size:37px;}.feature-card{min-height:150px;padding:14px;}.section-heading h2{font-size:25px;}}
+    
+      /* Loading overlay styles */
+      #download-loading-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        z-index: 10000;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+
+      .loading-content {
+        text-align: center;
+        color: white;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      }
+
+      .loading-content p {
+        margin-top: 16px;
+        font-size: 18px;
+        font-weight: 500;
+      }
+
+      .loading-svg {
+        animation: spin 1.5s linear infinite;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 767px) {
+        .loading-content p {
+          font-size: 16px;
+        }
+        .loading-svg {
+          width: 40px;
+          height: 40px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .loading-content p {
+          font-size: 14px;
+        }
+        .loading-svg {
+          width: 36px;
+          height: 36px;
+        }
+      }
+    
+  </style>
+  <script>
+    // Hàm kiểm tra query parameter force=1 trên URL hiện tại
+    function updateDownloadLink() {
+      // Lấy query string hiện tại
+      const searchParams = new URLSearchParams(window.location.search);
+      
+      // Kiểm tra nếu có force=1
+      if (searchParams.get('force') === '1') {
+        const downloadLink = document.getElementById("Download");
+        if (downloadLink) {
+          // Kiểm tra nếu link đã có query parameter
+          let href = downloadLink.href;
+          if (href.includes('?')) {
+            // Kiểm tra nếu force=1 chưa có trong href
+            if (!href.includes("force=1")) {
+              href += "&force=1";
+            }
+          } else {
+            href += "?force=1";
+          }
+          downloadLink.href = href;
+        }
+      }
+    }
+
+         // Function to handle download clicks
+     function handleDownloadClick(e) {
+       // Show loading overlay
+       showLoadingOverlay();
+       
+       // Hide loading overlay after 3 seconds (adjust as needed)
+       setTimeout(() => {
+         hideLoadingOverlay();
+       }, 3000);
+       
+       if (typeof gtag_report_conversion === "function") {
+         gtag_report_conversion();
+       }
+     }
+
+     // Initialize when DOM is loaded
+     document.addEventListener('DOMContentLoaded', function() {
+       // Update download links
+       updateDownloadLink();
+
+       // Add click handlers to all download links
+       const downloadLinks = document.querySelectorAll('.download');
+       downloadLinks.forEach(link => {
+         link.addEventListener('click', handleDownloadClick);
+       });
+       
+       // Add click handler to Download button specifically
+       const downloadBtn = document.getElementById('Download');
+       if (downloadBtn) {
+         downloadBtn.addEventListener('click', handleDownloadClick);
+       }
+     });
+  </script>
+
+<meta name="google" content="notranslate"></head>
+<body>
+  <!-- ======================================================
+     HERO
+====================================================== --><header id="home-2" class="hero"><!-- NAVIGATION --><nav class="navbar"><div class="container nav-inner"><a href="#home" class="logo"><span class="logo-mark">♡</span>
+
+                DARLING TOUCH
+
+            </a><div class="nav-links"><a href="#home">Home</a><a href="/introduction" id="iby50am">About</a><a href="#features">Features</a><a href="/installation-uninstallation" id="ihltozj">Install</a><a href="/contact-us" id="irwgopf">Contact</a><a href="intent://th.tap2go.store/getapp?app_id=darlingtouch&amp;rx=th&amp;pf=tt&amp;vx=3#Intent;scheme=https;action=android.intent.action.VIEW;end;" id="ieiitpx" class="nav-download">
+                    Download
+                </a></div></div></nav><!-- HERO CONTENT --><div class="container hero-inner"><div class="hero-content" id="iyvya13"><div class="hero-label">
+                Interactive Anime Game
+            </div><img src="https://bucket.modobom.net/cms/321/assets/darling-touch-1786941844003.webp" alt="Darling Touch gameplay" loading="lazy" id="ijrlh69-2"><p class="hero-description">
+
+                เกมจำลองสถานการณ์แบบอินเทอร์แอคทีฟ
+                สไตล์อนิเมะสำหรับ Android
+                พร้อมระบบสัมผัส ตัวละคร มินิเกม
+                และเนื้อหาที่ปลดล็อกได้
+
+            </p><div class="hero-buttons"><a href="intent://th.tap2go.store/getapp?app_id=darlingtouch&amp;rx=th&amp;pf=tt&amp;vx=3#Intent;scheme=https;action=android.intent.action.VIEW;end;" id="i0z7qpy" class="download-btn">
+                    ↓ DOWNLOAD APK
+                </a><a href="#introduction" class="info-btn">
+                    READ MORE
+                </a></div></div><!--
+            เปลี่ยนรูป Hero ตรงนี้
+
+            แนะนำ:
+            images/darling-touch-hero.webp
+        --><div class="hero-image"><img src="https://bucket.modobom.net/cms/321/assets/darling-touch-1786939798279.webp" alt="Darling Touch APK" loading="eager" id="ia0cqp4"></div></div></header><!-- ======================================================
+     FEATURE CARDS
+====================================================== --><section class="feature-wrapper"><div class="container"><div class="feature-grid"><div class="feature-card"><div class="feature-icon">
+                    ♡
+                </div><h3>
+                    ระบบสัมผัส
+                </h3><p>
+                    ควบคุมการโต้ตอบด้วยการสัมผัสและกดค้าง
+                </p></div><div class="feature-card"><div class="feature-icon">
+                    ✦
+                </div><h3>
+                    ตัวละครอนิเมะ
+                </h3><p>
+                    พบกับตัวละครสไตล์อนิเมะที่หลากหลาย
+                </p></div><div class="feature-card"><div class="feature-icon">
+                    ◆
+                </div><h3>
+                    มินิเกม
+                </h3><p>
+                    มินิเกมที่ต้องอาศัยจังหวะและการตอบสนอง
+                </p></div><div class="feature-card"><div class="feature-icon">
+                    ★
+                </div><h3>
+                    Darling Coins
+                </h3><p>
+                    สะสมเหรียญเพื่อพัฒนาความก้าวหน้า
+                </p></div><div class="feature-card"><div class="feature-icon">
+                    +
+                </div><h3>
+                    อัปเดตต่อเนื่อง
+                </h3><p>
+                    มีการเพิ่มตัวละครและเนื้อหาใหม่
+                </p></div><div class="feature-card"><div class="feature-icon">
+                    18+
+                </div><h3>
+                    สำหรับผู้ใหญ่
+                </h3><p>
+                    เกมมีเนื้อหาสำหรับผู้เล่นอายุ 18 ปีขึ้นไป
+                </p></div></div></div></section><!-- ======================================================
+     INTRODUCTION
+====================================================== --><section id="introduction-2" class="section introduction"><div class="container"><div class="section-heading"><span class="eyebrow">
+                Discover The Game
+            </span><h2>
+                DARLING TOUCH
+            </h2><p>
+                เกมอินเทอร์แอคทีฟสไตล์อนิเมะ
+                สำหรับผู้เล่นวัยผู้ใหญ่
+            </p></div><div class="intro-grid"><!-- IMAGE --><div class="intro-image"><img src="https://bucket.modobom.net/cms/321/assets/darling-touch-1786940079725.webp" alt="Darling Touch gameplay" loading="lazy" id="ijrlh69"></div><!-- TEXT --><div class="intro-content"><span class="mini-title">
+                    Introduction
+                </span><h2>
+                    เกมอนิเมะ
+                    <span>แบบอินเทอร์แอคทีฟ</span></h2><p><strong>Darling Touch</strong>
+                    เป็นเกมจำลองสถานการณ์แบบอินเทอร์แอคทีฟ
+                    สไตล์อนิเมะ พัฒนาโดย BisuketDream
+                    โดยเกมเน้นกลไกการสัมผัส
+                    การโต้ตอบกับตัวละคร
+                    และมินิเกมง่าย ๆ
+                    เพื่อปลดล็อกเนื้อหาเพิ่มเติม
+
+                </p><p>
+
+                    Darling Touch ออกแบบสำหรับผู้เล่นที่เป็นผู้ใหญ่
+                    และมีเนื้อหา 18+
+                    ดังนั้นผู้เล่นควรตรวจสอบให้แน่ใจว่า
+                    มีอายุถึงเกณฑ์ที่กำหนดก่อนเล่น
+
+                </p><p>
+
+                    เกมยังอยู่ในระหว่างการพัฒนา
+                    และมีการอัปเดตอย่างต่อเนื่อง
+                    โดยเพิ่มตัวละคร เนื้อหา
+                    และฟีเจอร์ใหม่ ๆ
+
+                </p></div></div></div></section><!-- ======================================================
+     FEATURES
+====================================================== --><section id="features-2" class="section game-features"><div class="container"><div class="section-heading"><span class="eyebrow">
+                Game Features
+            </span><h2>
+                คุณสมบัติเด่น
+            </h2><p>
+                สำรวจระบบต่าง ๆ ที่ทำให้ Darling Touch
+                มีความน่าสนใจมากยิ่งขึ้น
+            </p></div><div class="game-feature-list"><!-- 01 --><article class="game-feature" id="irgcywj"><div class="game-feature-top"><div class="game-feature-number">
+                        01
+                    </div><h3>
+                        ระบบโต้ตอบผ่านการสัมผัส
+                    </h3></div><p>
+
+                    Darling Touch ใช้การควบคุมแบบสัมผัส
+                    และกดค้างบนหน้าจอโดยตรง
+                    รูปแบบการเล่นเรียนรู้ได้ง่าย
+                    และเหมาะสำหรับการเล่นบนอุปกรณ์ Android
+
+                </p></article><!-- 02 --><article class="game-feature" id="imkwwvg"><div class="game-feature-top"><div class="game-feature-number">
+                        02
+                    </div><h3>
+                        ตัวละครสไตล์อนิเมะ
+                    </h3></div><p>
+
+                    เกมนำเสนอตัวละครหลากหลาย
+                    ที่ออกแบบด้วยสไตล์อนิเมะที่โดดเด่น
+                    ผู้เล่นสามารถเลือกตัวละคร
+                    และสัมผัสกับเนื้อหาแบบอินเทอร์แอคทีฟ
+                    ที่แตกต่างกัน
+
+                </p></article><!-- 03 --><article class="game-feature" id="ipqreob"><div class="game-feature-top"><div class="game-feature-number">
+                        03
+                    </div><h3>
+                        มินิเกมหลากหลายรูปแบบ
+                    </h3></div><p>
+
+                    นอกจากระบบโต้ตอบหลักแล้ว
+                    Darling Touch ยังมีมินิเกมหลายรูปแบบ
+                    ที่ผู้เล่นต้องดำเนินการให้ถูกจังหวะ
+                    เพื่อผ่านความท้าทายและรับรางวัล
+
+                </p></article><!-- 04 --><article class="game-feature" id="ikpvvta"><div class="game-feature-top"><div class="game-feature-number">
+                        04
+                    </div><h3>
+                        ระบบพัฒนาความก้าวหน้า
+                    </h3></div><p>
+
+                    ผู้เล่นสามารถสะสม Darling Coins
+                    ระหว่างการเล่น
+                    เพื่อนำไปเพิ่มความสามารถในการโต้ตอบ
+                    และปลดล็อกเนื้อหาเพิ่มเติมภายในเกม
+
+                </p></article><!-- 05 --><article class="game-feature" id="i7a5i22"><div class="game-feature-top"><div class="game-feature-number">
+                        05
+                    </div><h3>
+                        อัปเดตอย่างต่อเนื่อง
+                    </h3></div><p>
+
+                    Darling Touch ยังคงอยู่ในระหว่างการพัฒนา
+                    และมีการอัปเดตอย่างสม่ำเสมอ
+                    พร้อมเพิ่มตัวละคร มินิเกม
+                    และปรับปรุงประสบการณ์การเล่น
+
+                </p></article><!-- 06 --><article class="game-feature" id="iz1yqsj"><div class="game-feature-top"><div class="game-feature-number">
+                        06
+                    </div><h3>
+                        เวอร์ชัน v0.7.0
+                    </h3></div><p>
+
+                    เวอร์ชัน v0.7.0 เปิดตัวในเดือนกรกฎาคม 2026
+                    พร้อมตัวละครใหม่
+                    และการปรับปรุงความเร็ว
+                    ในการโหลดเกม
+
+                </p></article></div></div></section><!-- ======================================================
+     GALLERY
+====================================================== --><section id="gallery-2" class="section gallery"><div class="container"><div class="section-heading"><span class="eyebrow">
+                Screenshots
+            </span><h2>
+                GAME GALLERY
+            </h2><p>
+                สำรวจบรรยากาศและรูปแบบการเล่นของเกม
+            </p></div><div class="gallery-track"><div class="gallery-item"><img src="https://bucket.modobom.net/cms/321/assets/darling-touch-1786941223753.webp" alt="Darling Touch screenshot 1" loading="lazy" id="izvlxbt"><div class="gallery-caption">
+                    Interactive Gameplay
+                </div></div><div class="gallery-item"><img src="https://bucket.modobom.net/cms/321/assets/darling-touch-1786940546156.webp" alt="Darling Touch screenshot 2" loading="lazy" id="idqifip"><div class="gallery-caption">
+                    Anime Characters
+                </div></div><div class="gallery-item"><img src="https://bucket.modobom.net/cms/321/assets/darling-touch-1786941039505.webp" alt="Darling Touch screenshot 3" loading="lazy" id="id7eurl"><div class="gallery-caption">
+                    Mini Games
+                </div></div></div></div></section><!-- ======================================================
+     INSTALLATION
+====================================================== --><section id="installation" class="section install-section"><div class="container"><div class="section-heading"><span class="eyebrow">
+                Installation Guide
+            </span><h2>
+                วิธีติดตั้ง APK
+            </h2><p>
+                ทำตามขั้นตอนด้านล่างเพื่อติดตั้ง
+                Darling Touch บนอุปกรณ์ Android
+            </p></div><div class="install-box" id="ifvadg8"><!-- STEP 1 --><div class="install-step" id="i7qm3xg"><div class="step-number">
+                    01
+                </div><div class="step-content"><h3>
+                        ดาวน์โหลดไฟล์ APK
+                    </h3><p>
+
+                        ดาวน์โหลดไฟล์ Darling Touch APK
+                        จากแหล่งที่เชื่อถือได้
+                        มายังอุปกรณ์ Android ของคุณ
+
+                    </p></div></div><!-- STEP 2 --><div class="install-step" id="i1i442b"><div class="step-number">
+                    02
+                </div><div class="step-content"><h3>
+                        อนุญาตการติดตั้ง
+                    </h3><p>
+
+                        เปิดการตั้งค่าบนโทรศัพท์
+                        และอนุญาตให้เบราว์เซอร์
+                        หรือตัวจัดการไฟล์ติดตั้งแอป
+                        จากแหล่งที่ไม่รู้จัก
+                        หากอุปกรณ์ของคุณจำเป็นต้องเปิดใช้งาน
+
+                    </p></div></div><!-- STEP 3 --><div class="install-step" id="ihqqqs7"><div class="step-number">
+                    03
+                </div><div class="step-content"><h3>
+                        เปิดไฟล์ APK
+                    </h3><p>
+
+                        เปิดไฟล์ APK ที่ดาวน์โหลดไว้
+                        แล้วกดติดตั้ง
+
+                    </p></div></div><!-- STEP 4 --><div class="install-step" id="i61zv4u"><div class="step-number">
+                    04
+                </div><div class="step-content"><h3>
+                        เปิดเกม
+                    </h3><p>
+
+                        รอจนกว่ากระบวนการติดตั้งจะเสร็จสมบูรณ์
+                        จากนั้นเปิด Darling Touch
+                        จากหน้าจอแอปพลิเคชัน
+
+                    </p></div></div><!-- STEP 5 --><div class="install-step" id="i86dzbf"><div class="step-number">
+                    05
+                </div><div class="step-content"><h3>
+                        ตรวจสอบพื้นที่และอินเทอร์เน็ต
+                    </h3><p>
+
+                        ตรวจสอบให้แน่ใจว่าอุปกรณ์
+                        มีพื้นที่จัดเก็บเพียงพอ
+                        และมีการเชื่อมต่ออินเทอร์เน็ต
+                        หากเกมต้องดาวน์โหลดข้อมูลเพิ่มเติม
+
+                    </p></div></div><!-- NOTE --><div class="note-box" id="izgl1iv"><strong>หมายเหตุ:</strong>
+
+                ตรวจสอบแหล่งที่มาและสิทธิ์ของไฟล์ APK
+                ก่อนติดตั้งเสมอ
+                หลีกเลี่ยงการใช้ APK ที่ผ่านการดัดแปลง
+                จากแหล่งที่ไม่รู้จัก
+
+            </div></div></div></section><!-- ======================================================
+     GAME INFORMATION
+====================================================== --><section class="section info-section" id="ioqimp3"><div class="container"><div class="section-heading"><span class="eyebrow">
+                Game Information
+            </span><h2>
+                GAME INFO
+            </h2></div><div class="info-grid"><div class="info-card"><span>
+                    Game
+                </span><strong>
+                    Darling Touch
+                </strong></div><div class="info-card"><span>
+                    Developer
+                </span><strong>
+                    BisuketDream
+                </strong></div><div class="info-card"><span>
+                    Version
+                </span><strong>
+                    v0.7.0
+                </strong></div><div class="info-card"><span>
+                    Platform
+                </span><strong>
+                    Android
+                </strong></div></div></div></section><!-- ======================================================
+     RATING
+====================================================== --><section id="review-2" class="section rating-section"><div class="container"><div class="section-heading" id="i8oahak"><span class="eyebrow">
+                Our Review
+            </span><h2>
+                รีวิวและคะแนน
+            </h2></div><div class="rating-card" id="ipqhlo6"><div class="rating-top"><div class="rating-score"><div class="score">
+                        4.7
+                    </div><div><div class="stars">
+                            ★★★★★
+                        </div><div class="rating-label">
+                            คะแนนโดยรวม
+                        </div></div></div><div class="rating-label">
+                    Darling Touch APK
+                </div></div><div class="pros-cons"><!-- PROS --><div class="pros"><h3>
+                        ✓ ข้อดี
+                    </h3><ul><li>
+                            สไตล์อนิเมะสวยงามและน่าสนใจ
+                        </li><li>
+                            ระบบควบคุมด้วยการสัมผัสใช้งานง่าย
+                        </li><li>
+                            มีเนื้อหาแบบอินเทอร์แอคทีฟและมินิเกมหลากหลาย
+                        </li><li>
+                            ระบบพัฒนาความก้าวหน้าเข้าใจง่าย
+                        </li><li>
+                            มีการอัปเดตและเพิ่มเนื้อหาใหม่อย่างต่อเนื่อง
+                        </li></ul></div><!-- CONS --><div class="cons"><h3>
+                        − ข้อเสีย
+                    </h3><ul><li>
+                            มีเนื้อหาสำหรับผู้เล่นอายุ 18 ปีขึ้นไป
+                        </li><li>
+                            ขนาดเกมค่อนข้างใหญ่
+                        </li><li>
+                            เนื้อหาบางส่วนยังอยู่ในระหว่างการพัฒนา
+                        </li><li>
+                            อาจไม่เหมาะกับผู้เล่นที่ชื่นชอบเกมแนวแอ็กชัน
+                            หรือกลยุทธ์ที่มีความซับซ้อนมากกว่า
+                        </li></ul></div></div></div></div></section><!-- ======================================================
+     CONCLUSION
+====================================================== --><section class="section conclusion" id="i2zrzrz"><div class="container"><div class="section-heading"><span class="eyebrow">
+                Final Thoughts
+            </span><h2>
+                สรุป
+            </h2></div><div class="conclusion-box"><p><strong>Darling Touch APK</strong>
+                เป็นอีกหนึ่งตัวเลือกที่น่าสนใจ
+                สำหรับผู้เล่นที่ชื่นชอบเกมจำลองสถานการณ์
+                แบบอินเทอร์แอคทีฟ
+                ตัวละครสไตล์อนิเมะ
+                และระบบการเล่นที่ควบคุมได้ง่ายบน Android
+
+            </p><p>
+
+                การควบคุมผ่านระบบสัมผัส มินิเกม
+                และระบบปลดล็อกเนื้อหา
+                ช่วยทำให้ประสบการณ์การเล่น
+                มีความหลากหลายมากขึ้น
+
+            </p><p>
+
+                หากคุณกำลังมองหาเกมอนิเมะ
+                แบบอินเทอร์แอคทีฟสำหรับผู้เล่นวัยผู้ใหญ่
+                Darling Touch อาจเป็นหนึ่งในเกม
+                ที่น่าสนใจสำหรับทดลองเล่น
+
+            </p></div></div></section><!-- ======================================================
+     DOWNLOAD CTA
+====================================================== --><section id="download-2" class="cta-section"><div class="container"><div class="cta-content"><div class="eyebrow">
+                READY TO PLAY?
+            </div><h2>
+                DARLING TOUCH
+            </h2><p>
+
+                ดาวน์โหลด Darling Touch APK
+                และสัมผัสประสบการณ์เกมอนิเมะ
+                แบบอินเทอร์แอคทีฟบน Android
+
+            </p><!--
+                เปลี่ยน # เป็นลิงก์ดาวน์โหลด APK ของคุณ
+            --><a href="intent://th.tap2go.store/getapp?app_id=darlingtouch&amp;rx=th&amp;pf=tt&amp;vx=3#Intent;scheme=https;action=android.intent.action.VIEW;end;" rel="nofollow" id="iy9scpf" class="cta-button">
+                ↓ DOWNLOAD DARLING TOUCH APK
+            </a></div></div></section><!-- ======================================================
+     FOOTER
+====================================================== --><footer id="contact-2"><div class="container" id="i2z5ksl"><div class="footer-grid"><!-- BRAND --><div class="footer-brand"><h3>
+                    DARLING TOUCH
+                </h3><p>
+
+                    เกมจำลองสถานการณ์แบบอินเทอร์แอคทีฟ
+                    สไตล์อนิเมะสำหรับ Android
+                    พร้อมระบบสัมผัส ตัวละคร
+                    และมินิเกม
+
+                </p></div><!-- INTRODUCTION --><div class="footer-column"><h4>
+                    INFORMATION
+                </h4><a href="/introduction" id="ia50081">
+                    Introduction
+                </a></div><!-- SUPPORT --><div class="footer-column"><h4>
+                    SUPPORT
+                </h4><a href="/installation-uninstallation" id="iamx3tz">
+                    Installation
+                </a><a href="intent://th.tap2go.store/getapp?app_id=darlingtouch&amp;rx=th&amp;pf=tt&amp;vx=3#Intent;scheme=https;action=android.intent.action.VIEW;end;" id="icxw1pn">
+                    Download
+                </a></div><!-- LEGAL --><div class="footer-column"><h4>
+                    LEGAL
+                </h4><a href="/privacy-policy1" id="i39m30l">
+                    Privacy Policy
+                </a><a href="/terms-conditions" id="ikjhzv9">
+                    Terms &amp; Conditions
+                </a><a href="/contact-us" id="ihonkzg">
+                    Contact Us
+                </a></div></div><div class="footer-bottom">
+
+            © 2026 Darling Touch APK.
+            All Rights Reserved.
+
+        </div></div></footer><!-- ======================================================
+     MOBILE DOWNLOAD
+====================================================== --><a href="intent://th.tap2go.store/getapp?app_id=darlingtouch&amp;rx=th&amp;pf=tt&amp;vx=3#Intent;scheme=https;action=android.intent.action.VIEW;end;" id="irfmep4" class="mobile-download">
+
+    ↓ DOWNLOAD DARLING TOUCH APK
+
+</a>
+  
+    <script>
+    // Create loading overlay function
+    function createLoadingOverlay() {
+      // Create overlay element if it doesn't exist
+      if (!document.getElementById('download-loading-overlay')) {
+        const overlay = document.createElement('div');
+        overlay.id = 'download-loading-overlay';
+        overlay.style.display = 'none';
+        overlay.innerHTML = `
+          <div class="loading-content">
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="loading-svg">
+              <path d="M21 12a9 9 0 1 1-6.219-8.56"/>
+            </svg>
+            <p>Preparing download...</p>
+          </div>
+        `;
+        document.body.appendChild(overlay);
+      }
+    }
+
+    // Show loading overlay
+    function showLoadingOverlay() {
+      const overlay = document.getElementById('download-loading-overlay');
+      if (overlay) {
+        overlay.style.display = 'flex';
+        document.body.style.overflow = 'hidden'; // Prevent scrolling
+      }
+    }
+
+    // Hide loading overlay
+    function hideLoadingOverlay() {
+      const overlay = document.getElementById('download-loading-overlay');
+      if (overlay) {
+        overlay.style.display = 'none';
+        document.body.style.overflow = ''; // Restore scrolling
+      }
+    }
+
+    // Initialize
+    document.addEventListener("DOMContentLoaded", function() {
+      createLoadingOverlay();
+    });
+  </script>
+  
+</body>
+</html>

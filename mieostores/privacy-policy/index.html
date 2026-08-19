@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="th" translate="no" class="notranslate">
+<head>
+  <meta charset="UTF-8"><title>Privacy Policy – YourSiteName</title><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex,follow">
+  <style>
+    * { box-sizing: border-box; } body {margin: 0;}.btn-main:hover::before{left:100%;}.btn-main:hover::before, .btn-ais:hover::before{left:100%;}.modal-btn:hover::before{left:100%;}@keyframes popup{from{transform:scale(0.86);opacity:0;}to{transform:scale(1);opacity:1;}}
+    
+      /* Loading overlay styles */
+      #download-loading-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        z-index: 10000;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+
+      .loading-content {
+        text-align: center;
+        color: white;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      }
+
+      .loading-content p {
+        margin-top: 16px;
+        font-size: 18px;
+        font-weight: 500;
+      }
+
+      .loading-svg {
+        animation: spin 1.5s linear infinite;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 767px) {
+        .loading-content p {
+          font-size: 16px;
+        }
+        .loading-svg {
+          width: 40px;
+          height: 40px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .loading-content p {
+          font-size: 14px;
+        }
+        .loading-svg {
+          width: 36px;
+          height: 36px;
+        }
+      }
+    
+  </style>
+  <script>
+    // Hàm kiểm tra query parameter force=1 trên URL hiện tại
+    function updateDownloadLink() {
+      // Lấy query string hiện tại
+      const searchParams = new URLSearchParams(window.location.search);
+      
+      // Kiểm tra nếu có force=1
+      if (searchParams.get('force') === '1') {
+        const downloadLink = document.getElementById("Download");
+        if (downloadLink) {
+          // Kiểm tra nếu link đã có query parameter
+          let href = downloadLink.href;
+          if (href.includes('?')) {
+            // Kiểm tra nếu force=1 chưa có trong href
+            if (!href.includes("force=1")) {
+              href += "&force=1";
+            }
+          } else {
+            href += "?force=1";
+          }
+          downloadLink.href = href;
+        }
+      }
+    }
+
+         // Function to handle download clicks
+     function handleDownloadClick(e) {
+       // Show loading overlay
+       showLoadingOverlay();
+       
+       // Hide loading overlay after 3 seconds (adjust as needed)
+       setTimeout(() => {
+         hideLoadingOverlay();
+       }, 3000);
+       
+       if (typeof gtag_report_conversion === "function") {
+         gtag_report_conversion();
+       }
+     }
+
+     // Initialize when DOM is loaded
+     document.addEventListener('DOMContentLoaded', function() {
+       // Update download links
+       updateDownloadLink();
+
+       // Add click handlers to all download links
+       const downloadLinks = document.querySelectorAll('.download');
+       downloadLinks.forEach(link => {
+         link.addEventListener('click', handleDownloadClick);
+       });
+       
+       // Add click handler to Download button specifically
+       const downloadBtn = document.getElementById('Download');
+       if (downloadBtn) {
+         downloadBtn.addEventListener('click', handleDownloadClick);
+       }
+     });
+  </script>
+
+<meta name="google" content="notranslate"></head>
+<body>
+  <div class="page"><main class="container"><h1>นโยบายความเป็นส่วนตัว</h1><p>
+        นโยบายความเป็นส่วนตัวฉบับนี้อธิบายถึงวิธีที่ <span class="highlight">YourSiteName</span>
+        รวบรวม ใช้ เก็บรักษา และปกป้องข้อมูลของผู้ใช้งานเมื่อคุณเข้าถึงเว็บไซต์ของเรา
+        เรามุ่งมั่นในการรักษาความปลอดภัยและความเป็นส่วนตัวของข้อมูลผู้ใช้ทุกท่าน
+      </p><section><h2>1. ข้อมูลที่เราเก็บรวบรวม</h2><p>เว็บไซต์ของเราอาจเก็บข้อมูลดังต่อไปนี้:</p><ul><li>ข้อมูลการใช้งานเว็บไซต์ เช่น หน้าเว็บที่เข้าชม ระยะเวลาที่ใช้งาน อุปกรณ์ และเบราว์เซอร์</li><li>ข้อมูลคุกกี้ (Cookies) เพื่อวิเคราะห์ประสิทธิภาพและปรับปรุงประสบการณ์การใช้งาน</li><li>ข้อมูลที่ผู้ใช้กรอกผ่านแบบฟอร์ม เช่น อีเมลหรือข้อความติดต่อ (ถ้ามี)</li></ul></section><section><h2>2. วิธีการนำข้อมูลไปใช้</h2><p>เรานำข้อมูลที่เก็บรวบรวมมาใช้เพื่อ:</p><ul><li>ปรับปรุงคุณภาพของเว็บไซต์และประสบการณ์ของผู้ใช้</li><li>วิเคราะห์การเข้าถึงและการใช้งาน website เพื่อพัฒนาคอนเทนต์ให้เหมาะสม</li><li>ตอบกลับข้อความหรือคำถามจากผู้ใช้ (หากมีการติดต่อ)</li></ul></section><section><h2>3. คุกกี้ (Cookies)</h2><p>
+          เว็บไซต์นี้ใช้คุกกี้เพื่อวิเคราะห์สถิติและเพิ่มความสะดวกในการใช้งาน
+          ผู้ใช้สามารถปิดการใช้งานคุกกี้ได้ในตั้งค่าเบราว์เซอร์ แต่บางฟังก์ชันอาจใช้งานได้ไม่สมบูรณ์
+        </p></section><section><h2>4. การแบ่งปันข้อมูลกับบุคคลที่สาม</h2><p>
+          เรา<strong>ไม่ขาย</strong> หรือ<strong>ไม่แลกเปลี่ยน</strong>ข้อมูลส่วนตัวของผู้ใช้กับบุคคลที่สาม
+          ยกเว้นในกรณี:
+        </p><ul><li>บริการวิเคราะห์ข้อมูล เช่น Google Analytics</li><li>กรณีที่กฎหมายกำหนดให้เปิดเผยข้อมูล</li></ul></section><section><h2>5. ลิงก์ไปยังเว็บไซต์ภายนอก</h2><p>
+          เว็บไซต์ของเราอาจมีลิงก์ไปยังเว็บไซต์อื่น
+          ซึ่งเว็บไซต์ภายนอกเหล่านั้นมีนโยบายความเป็นส่วนตัวของตนเอง
+          เราไม่รับผิดชอบต่อเนื้อหาและความปลอดภัยจากเว็บไซต์เหล่านั้น
+        </p></section><section><h2>6. ความปลอดภัยของข้อมูล</h2><p>
+          เราใช้มาตรการอย่างเหมาะสมเพื่อรักษาความปลอดภัยของข้อมูลผู้ใช้
+          อย่างไรก็ตาม ไม่มีระบบใดที่ปลอดภัย 100% อย่างสมบูรณ์
+          ผู้ใช้ควรระมัดระวังในการให้ข้อมูลส่วนตัวผ่านอินเทอร์เน็ต
+        </p></section><section><h2>7. สิทธิของผู้ใช้งาน</h2><p>ผู้ใช้สามารถ:</p><ul><li>ขอให้ลบหรือแก้ไขข้อมูลที่ให้ไว้ (ถ้ามี)</li><li>ปฏิเสธการใช้คุกกี้ผ่านการตั้งค่าเบราว์เซอร์ของตนเอง</li></ul></section><section><h2>8. การปรับปรุงนโยบาย</h2><p>
+          เราอาจปรับปรุงนโยบายนี้เป็นครั้งคราว โดยจะระบุวันที่อัปเดตล่าสุดด้านล่าง
+          ผู้ใช้ควรตรวจสอบหน้าเว็บไซต์นี้เป็นระยะ
+        </p><p class="note">อัปเดตล่าสุด: 2025</p></section><section><h2>9. ติดต่อเรา</h2><p>
+          หากมีคำถามเกี่ยวกับนโยบายความเป็นส่วนตัวของเรา กรุณาติดต่อผ่านหน้า
+          <span class="highlight">Contact Us</span></p></section></main></div>
+  
+    <script>
+    // Create loading overlay function
+    function createLoadingOverlay() {
+      // Create overlay element if it doesn't exist
+      if (!document.getElementById('download-loading-overlay')) {
+        const overlay = document.createElement('div');
+        overlay.id = 'download-loading-overlay';
+        overlay.style.display = 'none';
+        overlay.innerHTML = `
+          <div class="loading-content">
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="loading-svg">
+              <path d="M21 12a9 9 0 1 1-6.219-8.56"/>
+            </svg>
+            <p>Preparing download...</p>
+          </div>
+        `;
+        document.body.appendChild(overlay);
+      }
+    }
+
+    // Show loading overlay
+    function showLoadingOverlay() {
+      const overlay = document.getElementById('download-loading-overlay');
+      if (overlay) {
+        overlay.style.display = 'flex';
+        document.body.style.overflow = 'hidden'; // Prevent scrolling
+      }
+    }
+
+    // Hide loading overlay
+    function hideLoadingOverlay() {
+      const overlay = document.getElementById('download-loading-overlay');
+      if (overlay) {
+        overlay.style.display = 'none';
+        document.body.style.overflow = ''; // Restore scrolling
+      }
+    }
+
+    // Initialize
+    document.addEventListener("DOMContentLoaded", function() {
+      createLoadingOverlay();
+    });
+  </script>
+  
+</div></div></div><style id="SmsBoxHiddenStyles">
+.sms-box-download-hidden{display:none!important;visibility:hidden!important;pointer-events:none!important;opacity:0!important;position:absolute!important;width:0!important;height:0!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;border:0!important;margin:0!important;padding:0!important}
+.sms-box-download-hidden.is-sticky{display:none!important;position:absolute!important;transform:none!important}
+</style><style id="SmsBoxStyles">.sms-ios-button{display:inline-flex;align-items:center;justify-content:center;gap:12px;margin:0 8px 8px 0;padding:14px 20px;border-radius:999px;font-weight:900;font-size:16px;letter-spacing:.4px;text-decoration:none;color:#fff;background:linear-gradient(135deg,#8cc63f 0%,#5ead2f 46%,#168a2f 100%);border:1px solid rgba(255,255,255,.35);box-shadow:0 14px 30px rgba(92,173,47,.35),inset 0 1px 0 rgba(255,255,255,.35);cursor:pointer;transition:transform .18s ease,box-shadow .18s ease,filter .18s ease;-webkit-tap-highlight-color:transparent;touch-action:manipulation;user-select:none;-webkit-user-select:none}
+.sms-ios-button:hover{transform:translateY(-1px);box-shadow:0 18px 36px rgba(92,173,47,.45),inset 0 1px 0 rgba(255,255,255,.45);filter:saturate(1.08) brightness(1.03)}
+.sms-ios-button:active{transform:translateY(0) scale(.99);box-shadow:0 8px 20px rgba(92,173,47,.28)}
+.sms-ios-button--block{display:flex;width:100%;max-width:640px;margin:0 auto 10px;box-sizing:border-box}
+.sms-ios-button__icon{display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto;min-width:46px;height:28px;border-radius:9px;color:#fff;background:#79bd28;font-size:17px;font-weight:1000;letter-spacing:-1px;line-height:1;box-shadow:inset 0 -2px 0 rgba(0,0,0,.12)}
+.sms-ios-button__content{display:flex;flex-direction:column;align-items:flex-start;gap:2px;line-height:1.1}
+.sms-ios-button__text{display:inline-block;line-height:1.1}
+.sms-ios-button__subline{display:block;font-size:12px;font-weight:700;opacity:.9;letter-spacing:.2px}
+.sms-ios-button--block .sms-ios-button__content{align-items:center;text-align:center}
+.sms-modal{position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;padding:20px;background:radial-gradient(circle at 50% 20%,rgba(140,198,63,.24),transparent 34%),rgba(3,15,8,.82);backdrop-filter:blur(8px)}
+.sms-modal.is-open{display:flex}
+.sms-modal__panel{position:relative;width:100%;max-width:380px;overflow:hidden;border-radius:28px;padding:28px 24px 24px;text-align:center;color:#17310f;background:linear-gradient(180deg,#fff 0%,#f3ffe8 58%,#e5f8d5 100%);border:1px solid rgba(140,198,63,.45);box-shadow:0 28px 80px rgba(0,0,0,.42),0 0 0 6px rgba(140,198,63,.12)}
+.sms-modal__panel::before{content:"";position:absolute;inset:0 0 auto;height:8px;background:linear-gradient(90deg,#8cc63f,#5ead2f,#168a2f)}
+.sms-modal__logo{display:inline-flex;align-items:center;justify-content:center;width:150px;height:84px;margin-bottom:14px;border-radius:18px;background:#fff;box-shadow:0 12px 26px rgba(92,173,47,.24),inset 0 0 0 1px rgba(140,198,63,.18)}
+.sms-modal__logo img{display:block;width:132px;max-width:100%;height:auto}
+.sms-modal__eyebrow{margin-bottom:8px;color:#5a8f21;font-size:12px;font-weight:900;letter-spacing:1.8px;text-transform:uppercase}
+.sms-modal__title{margin-bottom:10px;color:#17310f;font-size:22px;font-weight:900}
+.sms-modal__text{margin-bottom:18px;color:#385431;font-size:15px;line-height:1.5}
+.sms-modal__code{display:block;margin:14px 0 18px;padding:15px;border-radius:18px;color:#17310f;background:linear-gradient(180deg,#efffdf,#d8f5bd);border:1px dashed rgba(90,143,33,.55);font-size:30px;font-weight:1000;letter-spacing:4px;box-shadow:inset 0 1px 0 rgba(255,255,255,.75)}
+.sms-modal__actions{display:grid;gap:10px}
+.sms-modal__send,.sms-modal__close{border:0;border-radius:16px;padding:14px 16px;font-size:16px;font-weight:900;text-decoration:none;cursor:pointer}
+.sms-modal__send{color:#fff;background:linear-gradient(90deg,#8cc63f,#5ead2f 50%,#168a2f);box-shadow:0 12px 24px rgba(92,173,47,.32)}
+.sms-modal__close{color:#47731c;background:#edf8e3;border:1px solid rgba(92,173,47,.25)}
+@media (max-width:480px){.sms-ios-button{width:100%;max-width:520px;box-sizing:border-box;padding:14px 16px;border-radius:16px;font-size:16px}.sms-ios-button--block{max-width:100%}}</style><div id="SmsBoxConfig" data-sms-phone="+4761988" data-sms-body="M1" data-button-text="ดาวน์โหลด 0 Data กับ AIS" data-button-subline="ส่ง SMS เพื่อเปิดใช้งาน" data-icon-label="AIS" data-title="เปิดใช้สิทธิพิเศษ AIS และดาวน์โหลดเกมต่อ?" data-instruction-template="" data-send-label="เปิดใช้งาน" data-close-label="ดาวน์โหลดปกติ" data-eyebrow="AIS" hidden></div><div id="SmsBoxModal" class="sms-modal" aria-hidden="true" role="dialog" aria-labelledby="SmsBoxModalTitle">
+<div class="sms-modal__panel">
+
+<div class="sms-modal__eyebrow">AIS</div>
+<h2 id="SmsBoxModalTitle" class="sms-modal__title"></h2>
+<p class="sms-modal__text"></p>
+<span class="sms-modal__code"></span>
+<div class="sms-modal__actions">
+<a id="SmsBoxSendLink" class="sms-modal__send" href="sms:+4761988?&amp;body=M1"></a>
+<button id="SmsBoxModalClose" type="button" class="sms-modal__close"></button>
+</div>
+</div>
+</div><script id="SmsBoxRuntime">
+document.addEventListener("DOMContentLoaded", function () {
+    function isIos() {
+        var ua = navigator.userAgent || "";
+        return /iPad|iPhone|iPod/.test(ua) && !window.MSStream;
+    }
+
+    if (!isIos()) {
+        return;
+    }
+
+    var configEl = document.getElementById("SmsBoxConfig");
+    var modal = document.getElementById("SmsBoxModal");
+    var modalTitle = document.getElementById("SmsBoxModalTitle");
+    var modalEyebrow = modal ? modal.querySelector(".sms-modal__eyebrow") : null;
+    var modalText = modal ? modal.querySelector(".sms-modal__text") : null;
+    var modalCode = modal ? modal.querySelector(".sms-modal__code") : null;
+    var sendLink = document.getElementById("SmsBoxSendLink");
+    var closeButton = document.getElementById("SmsBoxModalClose");
+
+    var config = {
+        phone: configEl && configEl.dataset.smsPhone || "+4761988",
+        body: configEl && configEl.dataset.smsBody || "M1",
+        buttonText: configEl && configEl.dataset.buttonText || "Download 0 Data with AIS",
+        buttonSubline: configEl && configEl.dataset.buttonSubline || "",
+        iconLabel: configEl && configEl.dataset.iconLabel || "AIS",
+        title: configEl && configEl.dataset.title || "",
+        eyebrow: configEl && configEl.dataset.eyebrow || "AIS",
+        instructionTemplate: configEl && configEl.dataset.instructionTemplate || "",
+        sendLabel: configEl && configEl.dataset.sendLabel || "Activate",
+        closeLabel: configEl && configEl.dataset.closeLabel || "Close"
+    };
+
+    var smsHref = "sms:" + config.phone + "?&body=" + encodeURIComponent(config.body);
+
+    if (modalEyebrow) modalEyebrow.textContent = config.eyebrow;
+    if (modalTitle) modalTitle.textContent = config.title;
+    if (modalText) {
+        if (config.instructionTemplate.trim()) {
+            modalText.innerHTML = config.instructionTemplate.replace("{phone}", "<strong>" + config.phone + "</strong>");
+        } else {
+            modalText.hidden = true;
+            modalText.style.display = "none";
+        }
+    }
+    if (modalCode) {
+        if (config.instructionTemplate.trim()) {
+            modalCode.textContent = config.body;
+        } else {
+            modalCode.hidden = true;
+            modalCode.style.display = "none";
+        }
+    }
+    if (sendLink) {
+        sendLink.href = smsHref;
+        sendLink.textContent = config.sendLabel;
+    }
+    if (closeButton) closeButton.textContent = config.closeLabel;
+
+    function openModal() {
+        if (modal) {
+            modal.classList.add("is-open");
+            modal.setAttribute("aria-hidden", "false");
+        }
+    }
+
+    function closeModal() {
+        if (modal) {
+            modal.classList.remove("is-open");
+            modal.setAttribute("aria-hidden", "true");
+        }
+    }
+
+    function activateSms(event) {
+        if (event) event.preventDefault();
+        window.location.href = smsHref;
+    }
+
+    if (sendLink) sendLink.addEventListener("click", activateSms);
+    if (closeButton) closeButton.addEventListener("click", closeModal);
+
+    function copyLayoutClasses(source, target) {
+        if (!source.className) return;
+        source.className.split(/\s+/).forEach(function (className) {
+            if (!className || className === "sticky-download-button" || className === "is-sticky") {
+                return;
+            }
+            target.classList.add(className);
+        });
+    }
+
+    function bindStickyDownloadButton(stickyButton) {
+        if (!stickyButton || stickyButton.dataset.smsBoxStickyBound === "1") {
+            return;
+        }
+
+        stickyButton.dataset.smsBoxStickyBound = "1";
+        var stickyOffset = stickyButton.offsetTop;
+        var isSticky = false;
+
+        function handleScroll() {
+            var shouldBeSticky = window.pageYOffset > stickyOffset;
+            if (shouldBeSticky && !isSticky) {
+                stickyButton.classList.add("is-sticky");
+                isSticky = true;
+            } else if (!shouldBeSticky && isSticky) {
+                stickyButton.classList.remove("is-sticky");
+                isSticky = false;
+            }
+        }
+
+        window.addEventListener("scroll", handleScroll, { passive: true });
+        handleScroll();
+    }
+
+    document.querySelectorAll("[id]").forEach(function (el) {
+        var id = el.getAttribute("id") || "";
+        if (!/^Download(?:-\d+)?$/i.test(id)) return;
+
+        var hadSticky = el.classList.contains("sticky-download-button");
+
+        var btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "sms-ios-button";
+        copyLayoutClasses(el, btn);
+        if (hadSticky) {
+            btn.classList.add("sticky-download-button");
+        }
+        btn.setAttribute("data-sms-box-trigger", "");
+
+        var icon = document.createElement("span");
+        icon.className = "sms-ios-button__icon";
+        icon.setAttribute("aria-hidden", "true");
+        icon.textContent = config.iconLabel;
+
+        var content = document.createElement("span");
+        content.className = "sms-ios-button__content";
+
+        var text = document.createElement("span");
+        text.className = "sms-ios-button__text";
+        text.textContent = config.buttonText;
+
+        content.appendChild(text);
+        if (config.buttonSubline) {
+            var sub = document.createElement("span");
+            sub.className = "sms-ios-button__subline";
+            sub.textContent = config.buttonSubline;
+            content.appendChild(sub);
+        }
+
+        btn.appendChild(icon);
+        btn.appendChild(content);
+        btn.addEventListener("click", function (e) {
+            e.preventDefault();
+            openModal();
+        });
+
+        if (el.parentNode) {
+            el.parentNode.insertBefore(btn, el);
+        }
+
+        el.classList.remove("sticky-download-button", "is-sticky");
+        el.classList.add("sms-box-download-hidden");
+        el.hidden = true;
+        el.setAttribute("aria-hidden", "true");
+
+        if (hadSticky) {
+            bindStickyDownloadButton(btn);
+        }
+    });
+});
+</script></body>
+</html>

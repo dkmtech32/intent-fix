@@ -1,0 +1,476 @@
+/introduction/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/introduction/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/introduction/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/privacy-policy/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/privacy-policy/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/privacy-policy/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/terms-conditions/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/terms-conditions/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/terms-conditions/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/installation-uninstallation-instructions/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/installation-uninstallation-instructions/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/installation-uninstallation-instructions/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/contact-us/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/contact-us/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/contact-us/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/send-review/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/send-review/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/send-review/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/gta-mamaia-vice/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/gta-mamaia-vice/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/gta-mamaia-vice/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/contraband-police/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/contraband-police/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/contraband-police/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/nulls-brawl/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/nulls-brawl/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/nulls-brawl/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/euro-truck-simulator-apk/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/euro-truck-simulator-apk/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/euro-truck-simulator-apk/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/tiny-glade/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/tiny-glade/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/tiny-glade/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/intro-nulls-brawl/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/intro-nulls-brawl/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/intro-nulls-brawl/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/intro-contraband-police/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/intro-contraband-police/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/intro-contraband-police/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/intro-euro-truck-simulator-apk/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/intro-euro-truck-simulator-apk/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/intro-euro-truck-simulator-apk/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/euro-truck-simulator-android/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/euro-truck-simulator-android/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/euro-truck-simulator-android/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/contraband-police-m/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/contraband-police-m/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/contraband-police-m/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/another-girl-in-the-wall/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/another-girl-in-the-wall/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/another-girl-in-the-wall/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/test-download/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/test-download/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/test-download/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/test-landing/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/test-landing/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/test-landing/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/contraband-download/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/contraband-download/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/contraband-download/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/contraband-police-2026/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/contraband-police-2026/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/contraband-police-2026/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/game-antg/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/game-antg/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/game-antg/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/nulls-brawl-cz/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/nulls-brawl-cz/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/nulls-brawl-cz/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/introduction-dm/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/introduction-dm/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/introduction-dm/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/privacy-policy-dm/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/privacy-policy-dm/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/privacy-policy-dm/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/terms-conditions-dm/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/terms-conditions-dm/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/terms-conditions-dm/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/installation-uninstallation-instructions-dm/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/installation-uninstallation-instructions-dm/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/installation-uninstallation-instructions-dm/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/contact-us-dm/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/contact-us-dm/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/contact-us-dm/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/test/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/test/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/test/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/jump-assemble-dm/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/jump-assemble-dm/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/jump-assemble-dm/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/bike-racing-dm/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/bike-racing-dm/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/bike-racing-dm/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/bike-racingdm/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/bike-racingdm/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/bike-racingdm/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/teamfight-tactics-dm/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/teamfight-tactics-dm/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/teamfight-tactics-dm/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/genshin-impact-dm/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/genshin-impact-dm/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/genshin-impact-dm/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/crossfire-legends-dm/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/crossfire-legends-dm/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/crossfire-legends-dm/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/roblox-dm/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/roblox-dm/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/roblox-dm/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/dragon-hunter-2-dm/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/dragon-hunter-2-dm/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/dragon-hunter-2-dm/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/royal-match-dm/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/royal-match-dm/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/royal-match-dm/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/beamng-drive-mobile-dm/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/beamng-drive-mobile-dm/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/beamng-drive-mobile-dm/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/green-farm-3-dm/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/green-farm-3-dm/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/green-farm-3-dm/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/street-fighter-iv-ce-dm/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/street-fighter-iv-ce-dm/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/street-fighter-iv-ce-dm/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/overwatch-rush/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/overwatch-rush/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/overwatch-rush/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/honor-of-kings-world/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/honor-of-kings-world/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/honor-of-kings-world/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/world-of-goo-2/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/world-of-goo-2/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/world-of-goo-2/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/jump-assemble/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/jump-assemble/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/jump-assemble/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/beamng-drive-mobile/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/beamng-drive-mobile/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/beamng-drive-mobile/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/lovely-craft-piston-trap/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/lovely-craft-piston-trap/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/lovely-craft-piston-trap/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/darling-touch/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/darling-touch/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/darling-touch/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/waterpark-simulator/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/waterpark-simulator/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/waterpark-simulator/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/123/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/123/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/123/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/hot-season-adventure/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/hot-season-adventure/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/hot-season-adventure/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/seki/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/seki/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/seki/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/summertime-saga/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/summertime-saga/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/summertime-saga/*.css
+  Cache-Control: public, max-age=31536000, immutable

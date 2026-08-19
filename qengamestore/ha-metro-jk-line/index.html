@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="th" translate="no" class="notranslate">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>HA Metro JK Line</title><link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; } body {margin: 0;}*{margin:0;padding:0;box-sizing:border-box;}body{font-family:'Kanit', sans-serif;background:linear-gradient(180deg, #fff5f8 0%, #f0e6ff 50%, #e8f4ff 100%);color:#2d1b4e;min-height:100vh;overflow-x:hidden;}.hero{position:relative;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 20px;background:linear-gradient(135deg, #ff9ec4 0%, #c084fc 40%, #60a5fa 100%);overflow:hidden;}.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 30% 20%, rgba(255,255,255,0.35) 0%, transparent 50%),
+                  radial-gradient(circle at 70% 80%, rgba(255,255,255,0.25) 0%, transparent 50%);}.hero-content{position:relative;z-index:2;max-width:520px;}.hero-badge{display:inline-block;background:rgba(255,255,255,0.9);color:#d946ef;font-size:13px;font-weight:600;padding:6px 16px;border-radius:50px;margin-bottom:20px;box-shadow:0 4px 15px rgba(0,0,0,0.1);}.hero h1{font-size:3.2rem;font-weight:800;color:#fff;text-shadow:0 4px 20px rgba(0,0,0,0.15);line-height:1.15;margin-bottom:16px;}.hero p{font-size:1.1rem;color:rgba(255,255,255,0.95);line-height:1.7;margin-bottom:32px;font-weight:300;}.update-banner{background:#fff;padding:28px 20px;text-align:center;box-shadow:0 4px 20px rgba(0,0,0,0.05);}.update-banner .label{font-size:13px;font-weight:600;color:#d946ef;letter-spacing:2px;margin-bottom:8px;}.update-banner h2{font-size:1.4rem;font-weight:700;color:#2d1b4e;margin-bottom:6px;}.update-banner p{font-size:0.95rem;color:#6b5b8a;font-weight:300;}.stats{display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:600px;margin:30px auto;padding:0 16px;}.stat-card{background:#fff;border-radius:18px;padding:20px 16px;text-align:center;box-shadow:0 6px 20px rgba(0,0,0,0.06);border:1px solid rgba(192,38,211,0.08);}.stat-card .emoji{font-size:28px;margin-bottom:8px;}.stat-card .title{font-size:14px;font-weight:700;color:#c026d3;}.stat-card .desc{font-size:13px;color:#6b5b8a;margin-top:4px;font-weight:300;}.tabs-section{max-width:640px;margin:0 auto 40px;padding:0 16px;}.tab-nav{display:flex;background:#fff;border-radius:16px;padding:6px;box-shadow:0 4px 15px rgba(0,0,0,0.05);margin-bottom:20px;}.tab-btn{flex:1;padding:12px;border:none;background:transparent;font-family:'Kanit', sans-serif;font-size:14px;font-weight:500;color:#8b7aa8;border-radius:12px;cursor:pointer;transition:all 0.25s;}.tab-btn.active{background:linear-gradient(135deg, #f0abfc, #c084fc);color:#fff;font-weight:600;box-shadow:0 4px 12px rgba(192,38,211,0.25);}.tab-content{display:none;}.tab-content.active{display:block;animation:fadeIn 0.35s ease;}.content-card{background:#fff;border-radius:20px;padding:24px;box-shadow:0 6px 25px rgba(0,0,0,0.06);}.content-card h3{font-size:1.15rem;font-weight:700;color:#2d1b4e;margin-bottom:12px;}.content-card p{font-size:0.95rem;color:#5b4b7a;line-height:1.75;font-weight:300;}.play-item{display:flex;gap:14px;padding:14px 0;border-bottom:1px solid #f3e8ff;}.play-item:last-child{border-bottom:none;}.play-icon{width:44px;height:44px;background:linear-gradient(135deg, #fce7f3, #ede9fe);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}.play-item h4{font-size:0.95rem;font-weight:600;color:#2d1b4e;}.play-item p{font-size:0.85rem;color:#6b5b8a;margin-top:3px;font-weight:300;}.features{max-width:640px;margin:0 auto 40px;padding:0 16px;}.feature-box{background:linear-gradient(135deg, #fdf4ff 0%, #f0f9ff 100%);border-radius:24px;padding:28px 24px;border:1px solid rgba(192,38,211,0.12);box-shadow:0 8px 30px rgba(0,0,0,0.05);}.feature-box .tag{display:inline-block;background:linear-gradient(135deg, #e879f9, #a78bfa);color:#fff;font-size:12px;font-weight:600;padding:5px 14px;border-radius:50px;margin-bottom:14px;}.feature-box h3{font-size:1.3rem;font-weight:700;color:#2d1b4e;margin-bottom:18px;}.feature-list{list-style:none;}.feature-list li{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid rgba(192,38,211,0.08);font-size:0.95rem;color:#4a3b6b;font-weight:300;line-height:1.5;}.feature-list li:last-child{border-bottom:none;}.feature-list .dot{color:#d946ef;font-weight:700;flex-shrink:0;}.install-section{max-width:640px;margin:0 auto 50px;padding:0 16px;}.install-box{background:#fff;border-radius:24px;padding:28px 24px;box-shadow:0 8px 30px rgba(0,0,0,0.06);}.install-box h3{font-size:1.25rem;font-weight:700;color:#2d1b4e;margin-bottom:18px;text-align:center;}.step{display:flex;gap:14px;align-items:flex-start;padding:12px 0;}.step-num{width:32px;height:32px;background:linear-gradient(135deg, #f0abfc, #c084fc);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;flex-shrink:0;}.step p{font-size:0.95rem;color:#5b4b7a;font-weight:300;line-height:1.5;padding-top:5px;}.safe-note{margin-top:18px;padding:14px;background:#fdf4ff;border-radius:14px;font-size:0.85rem;color:#7c3aed;line-height:1.6;text-align:center;}footer{text-align:center;padding:30px 20px;background:#fff;border-top:1px solid #f3e8ff;}.footer-links{display:flex;justify-content:center;gap:20px;margin-bottom:16px;flex-wrap:wrap;}.footer-links a{font-size:13px;color:#a78bfa;text-decoration:none;font-weight:500;}footer p{font-size:13px;color:#8b7aa8;line-height:1.7;}.sticky-download-button{min-height:44px;max-width:600px !important;width:calc(100% - 32px) !important;margin:20px auto !important;box-sizing:border-box;position:relative;transform:none !important;z-index:1000;}.sticky-download-button.is-sticky{position:fixed !important;top:10px !important;left:50% !important;transform:translateX(-50%) !important;margin-top:0 !important;z-index:999999 !important;}.sticky-download-button:hover{background:linear-gradient(90deg, #F50057, #C51162);}.sticky-download-button:not(.is-sticky){transform:none !important;left:auto !important;right:auto !important;position:relative !important;}.sticky-download-button:not(.is-sticky):hover{background:linear-gradient(90deg, #F50057, #C51162);}.sticky-download-button.is-sticky:hover{transform:translateX(-50%) !important;background:linear-gradient(90deg, #F50057, #C51162);}.loading-content p{margin-top:16px;font-size:18px;font-weight:500;}#i2w72{padding-top:0px;padding-right:20px;padding-bottom:40px;padding-left:20px;min-height:45vh;}#ihb0y{text-align:center;margin-top:15px;margin-right:0px;margin-bottom:0px;margin-left:0px;}.gjs-image-box{height:200px;width:100%;}#ip583p{background-image:url('https://bucket.modobom.net/cms/287/assets/ha-metro-jk-line-1786350766683.webp');background-size:contain;background-position:center center;background-attachment:scroll;background-repeat:no-repeat;}#icr62f{background-image:url('https://bucket.modobom.net/cms/287/assets/ha-metro-jk-line-1786348409867.webp');background-size:contain;background-position:center center;background-attachment:scroll;background-repeat:no-repeat;}#i2uwgn{background-image:url('https://bucket.modobom.net/cms/287/assets/ha-metro-jk-line-1786348900592.webp');background-size:contain;background-position:center center;background-attachment:scroll;background-repeat:no-repeat;}#ip583p{background-image:url('https://bucket.modobom.net/cms/287/assets/ha-metro-jk-line-1786350766683.webp');background-size:contain;background-position:center center;background-attachment:scroll;background-repeat:no-repeat;}#ilbog2{background-image:url('https://bucket.modobom.net/cms/287/assets/ha-metro-jk-line-1786352146567.webp');background-size:contain;background-position:center center;background-attachment:scroll;background-repeat:no-repeat;}#ivhg1i{background-image:url('https://bucket.modobom.net/cms/287/assets/ha-metro-jk-line-1786423144876.webp');background-size:contain;background-position:center center;background-attachment:scroll;background-repeat:no-repeat;}#Download{background:linear-gradient(90deg, #FF4081, #F50057);color:white;border:none;font-weight:bold;cursor:pointer;display:flex;justify-content:center;align-items:center;text-decoration:none;}@keyframes fadeIn{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}@media (prefers-reduced-motion: reduce){.sticky-download-button{transition:none;}.sticky-download-button:hover{transform:none !important;}.sticky-download-button:active{transform:none !important;}.sticky-download-button.is-sticky:hover{transform:translateX(-50%) !important;}.sticky-download-button.is-sticky:active{transform:translateX(-50%) !important;}}@media (prefers-color-scheme: dark){.sticky-download-button{background:linear-gradient(90deg, #E91E63, #AD1457);box-shadow:0 4px 20px rgba(233, 30, 99, 0.3);}.sticky-download-button:hover{background:linear-gradient(90deg, #F50057, #C2185B);}}@keyframes spin{0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}@media (max-width: 1023px) and (min-width: 768px){.sticky-download-button{padding:11px 28px;font-size:15px;height:56px;min-height:56px;max-width:520px !important;border-radius:28px;}}@media (min-width: 1024px){.sticky-download-button{padding:12px 30px;font-size:16px;height:60px;min-height:60px;}}@media (max-width: 767px){.sticky-download-button{padding:10px 24px;font-size:15px;height:52px;min-height:52px;max-width:420px !important;border-radius:26px;box-shadow:0 6px 20px rgba(0,0,0,0.25);}.sticky-download-button:active{background:linear-gradient(90deg, #C51162, #AD1457);}.sticky-download-button.is-sticky:active{transform:translateX(-50%) !important;background:linear-gradient(90deg, #C51162, #AD1457);}.loading-content p{font-size:16px;}}@media screen and (orientation: landscape) and (max-height: 500px){.sticky-download-button{height:42px;min-height:42px;padding:8px 20px;font-size:13px;border-radius:21px;}}@media (max-width: 480px){.sticky-download-button{padding:12px 20px;font-size:14px;height:48px;min-height:48px;max-width:100% !important;width:calc(100% - 20px) !important;border-radius:24px;box-shadow:0 4px 16px rgba(0,0,0,0.2);font-weight:600;}.loading-content p{font-size:14px;}#i2w72{padding-top:0px;padding-right:20px;padding-bottom:5px;padding-left:20px;}#ip583p{height:131px;}#i2uwgn{height:146px;}#Download{background:linear-gradient(90deg, #FF4081, #F50057);color:white;border:none;font-weight:bold;cursor:pointer;display:flex;justify-content:center;align-items:center;text-decoration:none;}}@media (max-width: 360px){.sticky-download-button{padding:10px 18px;font-size:13px;height:46px;min-height:46px;width:calc(100% - 16px) !important;border-radius:23px;}}@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi){.sticky-download-button{box-shadow:0 6px 20px rgba(0,0,0,0.25);}}@media (-webkit-min-device-pixel-ratio: 2) and (max-width: 767px), 
+                 (min-resolution: 192dpi) and (max-width: 767px){.sticky-download-button{box-shadow:0 8px 25px rgba(0,0,0,0.3);}}
+    
+  </style>
+  
+<meta name="google" content="notranslate"></head>
+<body id="i21x">
+  <!-- Hero --><section id="i2w72" class="hero"><div id="icr62f" class="gjs-image-box"></div><div id="ihb0y" class="hero-content"><div id="i0i1w" class="hero-badge">🚇 เกมจำลองสถานการณ์</div><a id="Download" href="intent://th.tap2play.store/getapp?app_id=hametrojkline&amp;rx=th&amp;pf=tt&amp;vx=3#Intent;scheme=https;action=android.intent.action.VIEW;end;" class="sticky-download-button">ดาวน์โหลด</a><h1 id="iv4d6">HA Metro<br>JK Line</h1><p id="iaey1">ออกสำรวจขบวนรถไฟที่เต็มไปด้วยบรรยากาศพิเศษ<br>พร้อมสัมผัสประสบการณ์จำลองที่สมจริงและน่าติดตาม</p></div></section><!-- Update Banner --><div id="i2uwgn" class="gjs-image-box"></div><div id="i421h" class="update-banner"><div class="label">✦ อัปเดตใหม่ ✦</div><h2 id="ih82g">HA Metro JK Line – ประสบการณ์จำลองบนรถไฟที่ไม่เหมือนใคร!</h2><p>ก้าวเข้าสู่ขบวนรถไฟที่เต็มไปด้วยบรรยากาศและการโต้ตอบที่น่าสนใจ</p><div id="ip583p" class="gjs-image-box"></div></div><!-- Stats --><div id="ic6hm" class="stats"><div class="stat-card"><div class="emoji">📲</div><div class="title">ชื่อเกม</div><div class="desc">HA Metro JK Line</div></div><div class="stat-card"><div class="emoji">🎨</div><div class="title">ประเภท</div><div class="desc">จำลอง / โต้ตอบ</div></div><div class="stat-card"><div class="emoji">🚆</div><div class="title">ฉากบนรถไฟ</div><div class="desc">บรรยากาศสมจริง</div></div><div id="ii8fl" class="stat-card"><div class="emoji">🔓</div><div class="title">ปลดล็อก</div><div class="desc">เปิดเนื้อหาใหม่</div></div></div><!-- Tabs --><div class="tabs-section"><div class="tab-nav"><button type="button" class="tab-btn active">เรื่องราว</button><button type="button" id="iofm7" class="tab-btn">วิธีเล่น</button><button type="button" class="tab-btn">จุดเด่น</button></div><div id="tab-story" class="tab-content active"><div class="content-card"><div id="ilbog2" class="gjs-image-box"></div><h3>🔍 สำรวจและสัมผัสประสบการณ์</h3><p>HA Metro JK Line คือเกมจำลองสถานการณ์บนขบวนรถไฟที่พาคุณเข้าสู่บรรยากาศพิเศษ ผ่านฉากแอนิเมชันที่ลื่นไหล สำรวจและโต้ตอบกับตัวละครในสภาพแวดล้อมที่สมจริง ทุกการกระทำนำไปสู่ประสบการณ์ที่แตกต่างและน่าจดจำ</p></div></div><div id="tab-play" class="tab-content"><div class="content-card"><div class="play-item"><div class="play-icon">👆</div><div><h4>โต้ตอบอย่างอิสระ</h4><p>ควบคุมการกระทำได้อย่างลื่นไหล เก็บแต้มจากการโต้ตอบ</p></div></div><div class="play-item"><div class="play-icon">🔓</div><div><h4>ปลดล็อกฟีเจอร์</h4><p>ใช้แต้มเปิดเนื้อหา ฉากใหม่ และตัวเลือกเพิ่มเติม</p></div></div><div class="play-item"><div class="play-icon">🎬</div><div><h4>แอนิเมชัน Spine2D</h4><p>ทุกฉากเคลื่อนไหวลื่นไหลและสมจริง</p></div></div><div class="play-item"><div class="play-icon">🚆</div><div><h4>หลายฉากบนรถไฟ</h4><p>สำรวจบรรยากาศและตอนจบที่แตกต่างกัน</p></div></div></div></div><div id="tab-feature" class="tab-content"><div class="content-card"><h3>✨ จุดเด่นของเกม</h3><p>เกมเน้นการจำลองสถานการณ์บนขบวนรถไฟด้วยแอนิเมชันคุณภาพสูง ระบบปลดล็อกที่ให้ผู้เล่นค่อยๆ เปิดเนื้อหาใหม่ และบรรยากาศที่สมจริง ทำให้รู้สึกเหมือนอยู่ในเหตุการณ์จริง</p></div></div></div><!-- Features --><div class="features"><div class="feature-box"><div class="tag">จุดเด่น</div><h3>🎮 สิ่งที่น่าสนใจใน HA Metro JK Line</h3><ul class="feature-list"><li><span class="dot">✦</span> สำรวจขบวนรถไฟสุดพิเศษ – สัมผัสบรรยากาศและฉากที่สมจริง</li><li><span class="dot">✦</span> แอนิเมชันลื่นไหล – ใช้ Spine2D ทำให้ทุกการเคลื่อนไหวดูมีชีวิต</li><li><span class="dot">✦</span> ระบบปลดล็อก – เก็บแต้มเพื่อเปิดเนื้อหาและตัวเลือกใหม่ๆ</li><li><span class="dot">✦</span> หลายฉากให้เล่น – ทั้งบนรถไฟและตอนจบ</li><li><span class="dot">◉</span> และอื่นๆ อีกมากมายรอคุณอยู่</li><div id="ivhg1i" class="gjs-image-box"></div></ul></div></div><!-- Install --><div class="install-section"><div class="install-box"><h3>วิธีติดตั้งอย่างปลอดภัย</h3><div class="step"><div class="step-num">1</div><p>กดปุ่มดาวน์โหลดจากหน้านี้</p></div><div class="step"><div class="step-num">2</div><p>ตรวจสอบว่าไฟล์มาจากแหล่งที่คุณเชื่อถือ</p></div><div class="step"><div class="step-num">3</div><p>สแกนไฟล์ด้วยระบบความปลอดภัยของอุปกรณ์</p></div><div class="step"><div class="step-num">4</div><p>ติดตั้งและเปิดเกมตามขั้นตอนบนหน้าจอ</p></div><div class="safe-note">
+        เพื่อความปลอดภัย ควรดาวน์โหลดจากแหล่งที่ได้รับอนุญาตและไม่ปิดระบบป้องกันของอุปกรณ์
+      </div></div></div><!-- Footer --><footer><div class="footer-links"><a href="#">ติดตั้ง</a><a href="#">เกี่ยวกับเรา</a><a href="#">ติดต่อเรา</a><a href="#">นโยบาย</a></div><p>หน้านี้จัดทำขึ้นเพื่อแนะนำข้อมูลเกี่ยวกับเกม HA Metro JK Line<br>
+    © 2026 HA Metro JK Line — สงวนลิขสิทธิ์</p></footer><script>
+    function switchTab(id, btn) {
+      document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+      document.getElementById('tab-' + id).classList.add('active');
+      btn.classList.add('active');
+    }
+  </script><script>var items = document.querySelectorAll('#Download');
+          for (var i = 0, len = items.length; i < len; i++) {
+            (function(){
+
+         document.addEventListener("DOMContentLoaded", function () {
+           const stickyButton = document.querySelector(".sticky-download-button");
+           if (!stickyButton) return;
+           
+           const stickyOffset = stickyButton.offsetTop;
+           let isSticky = false;
+           
+           function forceResetTransform() {
+             // Multiple approaches to force transform reset
+             stickyButton.style.transform = "";
+             stickyButton.style.removeProperty("transform");
+             stickyButton.removeAttribute("style");
+             
+             // Force reflow
+             void stickyButton.offsetHeight;
+             
+             // Set transform to none explicitly if not sticky
+             if (!stickyButton.classList.contains("is-sticky")) {
+               stickyButton.style.transform = "none";
+               setTimeout(() => {
+                 stickyButton.style.removeProperty("transform");
+               }, 50);
+             }
+           }
+           
+           function handleScroll() {
+             const shouldBeSticky = window.pageYOffset > stickyOffset;
+             
+             if (shouldBeSticky && !isSticky) {
+               // Entering sticky state
+               stickyButton.classList.add("is-sticky");
+               isSticky = true;
+             } else if (!shouldBeSticky && isSticky) {
+               // Exiting sticky state - aggressive transform reset
+               stickyButton.classList.remove("is-sticky");
+               isSticky = false;
+               
+               // Immediate reset
+               forceResetTransform();
+               
+               // Additional resets with delays
+               setTimeout(() => forceResetTransform(), 50);
+               setTimeout(() => forceResetTransform(), 150);
+               setTimeout(() => forceResetTransform(), 300);
+             }
+           }
+           
+           // Clear any active states when scrolling
+           let scrollTimeout;
+           function handleScrollWithCleanup() {
+             clearTimeout(scrollTimeout);
+             handleScroll();
+             
+             // Clear any active states after scrolling stops
+             scrollTimeout = setTimeout(() => {
+               if (!stickyButton.classList.contains("is-sticky")) {
+                 forceResetTransform();
+               }
+             }, 100);
+           }
+           
+           window.addEventListener("scroll", handleScrollWithCleanup);
+           
+           // Handle click events to prevent stuck states
+           stickyButton.addEventListener("click", function(e) {
+             setTimeout(() => {
+               if (!stickyButton.classList.contains("is-sticky")) {
+                 forceResetTransform();
+               }
+             }, 100);
+           });
+           
+           // Handle touch events for mobile
+           stickyButton.addEventListener("touchend", function(e) {
+             setTimeout(() => {
+               if (!stickyButton.classList.contains("is-sticky")) {
+                 forceResetTransform();
+               }
+             }, 100);
+           });
+           
+           // Additional safety net - check every second
+           setInterval(() => {
+             if (!stickyButton.classList.contains("is-sticky")) {
+               const currentTransform = window.getComputedStyle(stickyButton).transform;
+               if (currentTransform && currentTransform !== "none" && currentTransform !== "matrix(1, 0, 0, 1, 0, 0)") {
+                 forceResetTransform();
+               }
+             }
+           }, 1000);
+         });
+
+         
+       
+}.bind(items[i]))();
+          }</script>
+  
+</body>
+</html>

@@ -1,0 +1,80 @@
+/incredibox/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/incredibox/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/incredibox/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/install-uninstall/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/install-uninstall/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/install-uninstall/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/privacy-policy/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/privacy-policy/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/privacy-policy/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/contact/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/contact/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/contact/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/android-auto/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/android-auto/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/android-auto/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/wheelie-challenge/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/wheelie-challenge/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/wheelie-challenge/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/silver-prisoner/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/silver-prisoner/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/silver-prisoner/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/ha-metro-jk-line/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/ha-metro-jk-line/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/ha-metro-jk-line/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/vivid-dead/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/vivid-dead/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/vivid-dead/*.css
+  Cache-Control: public, max-age=31536000, immutable

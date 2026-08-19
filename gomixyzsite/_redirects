@@ -1,0 +1,11 @@
+/minecraft-t/ /redirect-handler?originalPath=/minecraft/ 302
+/sport-t/ /redirect-handler?originalPath=/sport/ 302
+/hytale-mobile-t/ /redirect-handler?originalPath=/hytale-mobile/ 302
+/minecraft-bedrock-edition-t/ /redirect-handler?originalPath=/minecraft-bedrock-edition/ 302
+/euro-truck-simulator-2-t/ /redirect-handler?originalPath=/euro-truck-simulator-2/ 302
+/deltarune-t/ /redirect-handler?originalPath=/deltarune/ 302
+/testing-t/ /redirect-handler?originalPath=/testing/ 302
+/euro-truck-simulator-2-mobile-t/ /redirect-handler?originalPath=/euro-truck-simulator-2-mobile/ 302
+/toca-boca-world-t/ /redirect-handler?originalPath=/toca-boca-world/ 302
+/ /brawl-stars/ 302
+/brawl-stars-t/ /redirect-handler?originalPath=/brawl-stars/ 302

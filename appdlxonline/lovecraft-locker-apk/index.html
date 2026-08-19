@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="th" translate="no" class="notranslate">
+<head>
+  <title>Lovecraft Locker - เกมตู้ล็อกเกอร์ลึกลับ</title><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="robots" content="index,follow"><meta name="generator" content="GrapesJS Studio"><meta name="description" content="Lovecraft Locker หน้าแนะนำเกมภาษาไทย โทนลึกลับ แฟนตาซี โรงเรียน ตู้ล็อกเกอร์ ปริศนา และบรรยากาศ Lovecraft แบบปลอดภัย">
+  <style>
+    * { box-sizing: border-box; } body {margin: 0;}*{box-sizing:border-box;margin:0;padding:0;}body{margin:0;font-family:Arial, Tahoma, sans-serif;color:var(--ink);line-height:1.75;min-height:100vh;overflow-x:hidden;background:radial-gradient(circle at 8% 7%, rgba(250, 204, 21, .58), transparent 23%),
+        radial-gradient(circle at 20% 28%, rgba(236, 72, 153, .38), transparent 30%),
+        radial-gradient(circle at 88% 8%, rgba(124, 58, 237, .44), transparent 32%),
+        radial-gradient(circle at 82% 62%, rgba(6, 182, 212, .32), transparent 35%),
+        radial-gradient(circle at 45% 100%, rgba(34, 197, 94, .22), transparent 38%),
+        linear-gradient(135deg, #fff7ed 0%, #fdf2f8 22%, #f5f3ff 48%, #e0f2fe 74%, #ecfdf5 100%);}:root{--bg-dark:#15071f;--ink:#201227;--muted:#584761;--purple:#7c3aed;--pink:#ec4899;--cyan:#06b6d4;--lime:#22c55e;--yellow:#facc15;--orange:#fb923c;--card:#fff;--radius:24px;--shadow:0 18px 46px rgba(124, 58, 237, .24);--maxw:1100px;}html{scroll-behavior:smooth;}body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;background-image:linear-gradient(rgba(124, 58, 237, .08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(236, 72, 153, .07) 1px, transparent 1px);background-size:38px 38px;mask-image:linear-gradient(to bottom, rgba(0, 0, 0, .88), transparent 96%);}a{text-decoration:none;color:inherit;}.container{width:min(var(--maxw), 92%);margin:auto;}.menu a{font-size:14px;font-weight:800;color:var(--purple);padding:8px 13px;border-radius:999px;background:#fff;border:1px solid rgba(124, 58, 237, .16);box-shadow:0 5px 15px rgba(124, 58, 237, .08);}.hero{padding:42px 0 32px;display:grid;grid-template-columns:1fr .9fr;gap:34px;align-items:center;}.tag{display:inline-flex;align-items:center;gap:8px;padding:9px 15px;border-radius:999px;background:linear-gradient(135deg, #fff, #fdf2f8, #ecfeff);border:1px solid rgba(124, 58, 237, .18);box-shadow:0 10px 26px rgba(124, 58, 237, .12);font-weight:900;color:var(--purple);margin-bottom:18px;}h1{font-size:clamp(34px, 6vw, 66px);line-height:1.05;margin-bottom:16px;letter-spacing:-1px;color:var(--ink);}.gradient-text{background:linear-gradient(90deg, var(--purple), var(--pink), var(--orange), var(--cyan));-webkit-background-clip:text;background-clip:text;color:transparent;}.lead{font-size:18px;color:#3c2c48;max-width:680px;}.hero-art{position:relative;min-height:560px;display:grid;place-items:center;}.portal{position:absolute;width:455px;height:455px;border-radius:50%;background:conic-gradient(from 180deg, var(--yellow), var(--pink), var(--purple), var(--cyan), var(--lime), var(--yellow));opacity:.82;animation:spin 12s linear infinite;}.portal:after{content:"";position:absolute;inset:40px;border-radius:50%;background:linear-gradient(135deg, #fff7ed, #fdf2f8, #e0f2fe);}.locker{position:relative;z-index:2;width:min(330px, 84vw);min-height:500px;border-radius:34px;background:linear-gradient(160deg, #351052, #7c3aed 42%, #06b6d4 100%);box-shadow:0 34px 80px rgba(31, 22, 48, .34);border:6px solid rgba(255, 255, 255, .9);padding:22px;overflow:hidden;color:#fff;}.locker:before{content:"";position:absolute;inset:18px;border:2px dashed rgba(255, 255, 255, .35);border-radius:26px;}.float{position:absolute;z-index:4;padding:10px 14px;border-radius:999px;background:#fff;color:var(--purple);font-weight:900;box-shadow:0 14px 28px rgba(31, 22, 48, .18);border:1px solid rgba(124, 58, 237, .15);animation:float 4s infinite ease-in-out;}.f1{left:8px;top:84px;}.f2{right:0;top:178px;animation-delay:.7s;}.f3{left:22px;bottom:92px;animation-delay:1.4s;}.f4{right:12px;bottom:36px;animation-delay:2s;}.stat strong{display:block;color:var(--pink);font-size:22px;}.stat span{color:#4a3d5f;font-size:14px;}section{padding:46px 0;}.section-head{text-align:center;margin-bottom:26px;}.section-head h2{font-size:clamp(26px, 4vw, 42px);color:var(--purple);margin-bottom:8px;}.section-head p{max-width:830px;margin:auto;color:#4a3d5f;font-size:17px;}.card h3{position:relative;color:var(--purple);font-size:22px;margin-bottom:8px;}.card p, .card li{position:relative;color:#4a3d5f;}.feature-layout{display:grid;grid-template-columns:.9fr 1.1fr;gap:24px;align-items:center;}.feature-art{min-height:330px;border-radius:34px;position:relative;overflow:hidden;background:linear-gradient(135deg, var(--purple), var(--pink), var(--orange), var(--cyan));box-shadow:var(--shadow);border:3px solid #fff;}.school-map{position:absolute;inset:34px;background:rgba(255, 255, 255, .88);border-radius:28px;padding:22px;}.map-path{height:100%;border-left:8px solid var(--lime);border-bottom:8px solid var(--yellow);border-right:8px solid var(--pink);border-radius:20px;position:relative;}.pin{position:absolute;width:26px;height:26px;border-radius:50%;background:var(--purple);border:5px solid #fff;box-shadow:0 8px 18px rgba(0, 0, 0, .15);}.p1{left:28px;top:48px;}.p2{left:48%;top:48%;background:var(--orange);}.p3{right:40px;bottom:54px;background:var(--lime);}.steps{display:grid;gap:14px;}.step{display:flex;gap:14px;align-items:flex-start;background:#fff;border-radius:24px;padding:18px;border:1px solid rgba(124, 58, 237, .16);box-shadow:0 12px 28px rgba(124, 58, 237, .12);}.num{width:38px;height:38px;border-radius:14px;background:var(--yellow);color:var(--dark);display:grid;place-items:center;font-weight:900;flex:0 0 38px;}.step h3{color:var(--purple);margin-bottom:4px;}.step p{color:#4a3d5f;}.review h3{color:var(--text);}.review p{color:#4a3d5f;}.download-box h2{color:var(--pink);}footer{margin-top:46px;background:linear-gradient(135deg, #fdf2f8, #ede9fe, #e0f2fe, #ecfdf5);border-top:3px solid var(--purple);padding:32px 0;}.footer-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:20px;align-items:center;}.footer-links a{background:#fff;color:var(--purple);font-weight:900;padding:10px 16px;border-radius:999px;border:1px solid rgba(124, 58, 237, .16);box-shadow:0 6px 16px rgba(124, 58, 237, .1);}.footer-brand{font-weight:900;color:var(--purple);}footer p{color:#4a3d5f;}#ikqhxg{margin-top:2px;margin-right:0px;margin-bottom:0px;margin-left:0px;}#iqzo5r{display:flex;justify-content:center;}#ic3gs{display:flex;justify-content:center;}#imc89{padding-top:3px;padding-right:0px;padding-bottom:5px;padding-left:0px;}#ig8ln{display:flex;justify-content:center;flex-direction:column;}#izw7u{-webkit-background-clip:text;-webkit-text-fill-color:transparent;}#ivmk{text-align:center;}#ivhxl{background-image:url("https://bucket.modobom.net/cms/324/assets/lovecraft-locker-1782276762593.webp");background-position:0px 0px;background-size:459px 459px;background-repeat:round;background-attachment:scroll;}#about{padding-top:14px;padding-right:0px;padding-bottom:25px;padding-left:0px;}.gjs-image-box{height:200px;width:100%;}.gjs-grid-column{flex:1 1 0%;padding:5px 0;}.gjs-grid-row{display:flex;justify-content:flex-start;align-items:stretch;flex-direction:row;min-height:auto;padding:10px 0;}#ie0u19{margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;}#play{padding-top:0px;padding-right:0px;padding-bottom:46px;padding-left:0px;}#i5vtur{background-image:url("https://bucket.modobom.net/cms/324/assets/lovecraft-locker-1782276731339.webp");background-position:0px 0px;background-size:578px 578px;background-repeat:round;}#ihmkm3{background-image:url('https://bucket.modobom.net/cms/324/assets/lovecraft-locker-1782276709104.webp');background-size:contain;background-position:center center;background-attachment:scroll;background-repeat:no-repeat;}#download{padding-top:16px;padding-right:0px;padding-bottom:24px;padding-left:0px;}#ite7rz{background-image:url('https://bucket.modobom.net/cms/324/assets/lovecraft-locker-1782276740135.webp');background-size:contain;background-position:center center;background-attachment:scroll;background-repeat:no-repeat;}.sticky-download-button{min-height:44px;max-width:600px !important;width:calc(100% - 32px) !important;margin:20px auto !important;box-sizing:border-box;position:relative;transform:none !important;z-index:1000;}.sticky-download-button.is-sticky{position:fixed !important;top:10px !important;left:50% !important;transform:translateX(-50%) !important;margin-top:0 !important;z-index:999999 !important;}.sticky-download-button:hover{background:linear-gradient(90deg, #F50057, #C51162);}.sticky-download-button:not(.is-sticky){transform:none !important;left:auto !important;right:auto !important;position:relative !important;}.sticky-download-button:not(.is-sticky):hover{background:linear-gradient(90deg, #F50057, #C51162);}.sticky-download-button.is-sticky:hover{transform:translateX(-50%) !important;background:linear-gradient(90deg, #F50057, #C51162);}.loading-content p{margin-top:16px;font-size:18px;font-weight:500;}#Download{background:linear-gradient(90deg, #FF4081, #F50057);color:white;border:none;font-weight:bold;cursor:pointer;display:flex;justify-content:center;align-items:center;text-decoration:none;}#ig6vzw{background-image:url('https://bucket.modobom.net/cms/324/assets/lovecraft-locker-1782276661956.webp');background-size:contain;background-position:center center;background-attachment:scroll;background-repeat:no-repeat;}#izzi4l{white-space:pre-wrap;}#itsmf3{white-space:pre-wrap;}#i8jufl{white-space:pre-wrap;}#ivypyj{white-space:pre-wrap;}@keyframes spin{to{transform:rotate(360deg);}0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}@keyframes float{0%, 100%{transform:translateY(0);}50%{transform:translateY(-14px);}}@keyframes fadeIn{from{opacity:0;transform:translate(-50%, -10px);}to{opacity:1;transform:translate(-50%, 0);}}@media (prefers-reduced-motion: reduce){.sticky-download-button{transition:none;}.sticky-download-button:hover{transform:none !important;}.sticky-download-button:active{transform:none !important;}.sticky-download-button.is-sticky:hover{transform:translateX(-50%) !important;}.sticky-download-button.is-sticky:active{transform:translateX(-50%) !important;}}@media (prefers-color-scheme: dark){.sticky-download-button{background:linear-gradient(90deg, #E91E63, #AD1457);box-shadow:0 4px 20px rgba(233, 30, 99, 0.3);}.sticky-download-button:hover{background:linear-gradient(90deg, #F50057, #C2185B);}}@media (max-width: 1023px) and (min-width: 768px){.sticky-download-button{padding:11px 28px;font-size:15px;height:56px;min-height:56px;max-width:520px !important;border-radius:28px;}}@media (min-width: 1024px){.sticky-download-button{padding:12px 30px;font-size:16px;height:60px;min-height:60px;}}@media (max-width: 992px){.gjs-grid-row{flex-direction:column;}}@media (max-width:900px){.hero{grid-template-columns:1fr;}.feature-layout{grid-template-columns:1fr;}.hero-art{min-height:530px;}.footer-grid{grid-template-columns:1fr;}}@media (max-width: 767px){.sticky-download-button{padding:10px 24px;font-size:15px;height:52px;min-height:52px;max-width:420px !important;border-radius:26px;box-shadow:0 6px 20px rgba(0, 0, 0, 0.25);}.sticky-download-button:active{background:linear-gradient(90deg, #C51162, #AD1457);}.sticky-download-button.is-sticky:active{transform:translateX(-50%) !important;background:linear-gradient(90deg, #C51162, #AD1457);}.loading-content p{font-size:16px;}}@media (max-width:580px){.hero{padding-top:28px;}h1{font-size:34px;}.lead{font-size:16px;}.hero-art{min-height:500px;}.portal{width:340px;height:340px;}.locker{width:280px;min-height:466px;}.float{font-size:12px;padding:8px 10px;}.f1{left:0;}.f2{right:0;}.feature-art{min-height:280px;}.school-map{inset:24px;}.footer-grid{text-align:center;}.tag{font-size:13px;}}@media screen and (orientation: landscape) and (max-height: 500px){.sticky-download-button{height:42px;min-height:42px;padding:8px 20px;font-size:13px;border-radius:21px;}}@media (max-width: 480px){#imc89{padding-top:28px;padding-right:0px;padding-bottom:5px;padding-left:0px;}#download{padding-top:4px;padding-right:0px;padding-bottom:14px;padding-left:0px;margin-top:0px;margin-right:12.4062px;margin-bottom:0px;margin-left:12.4062px;}#about{padding-top:0px;padding-right:0px;padding-bottom:10px;padding-left:0px;}#play{padding-top:1px;padding-right:0px;padding-bottom:46px;padding-left:0px;}#in6n7{padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px;margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;}.sticky-download-button{padding:12px 20px;font-size:14px;height:48px;min-height:48px;max-width:100% !important;width:calc(100% - 20px) !important;border-radius:24px;box-shadow:0 4px 16px rgba(0, 0, 0, 0.2);font-weight:600;}.loading-content p{font-size:14px;}}@media (max-width: 360px){.sticky-download-button{padding:10px 18px;font-size:13px;height:46px;min-height:46px;width:calc(100% - 16px) !important;border-radius:23px;}}@media (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi){.sticky-download-button{box-shadow:0 6px 20px rgba(0, 0, 0, 0.25);}}@media (-webkit-min-device-pixel-ratio: 2) and (max-width: 767px),
+    (min-resolution: 192dpi) and (max-width: 767px){.sticky-download-button{box-shadow:0 8px 25px rgba(0, 0, 0, 0.3);}}@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi){.sticky-download-button{box-shadow:0 6px 20px rgba(0,0,0,0.25);}}@media (-webkit-min-device-pixel-ratio: 2) and (max-width: 767px), 
+                 (min-resolution: 192dpi) and (max-width: 767px){.sticky-download-button{box-shadow:0 8px 25px rgba(0,0,0,0.3);}}
+    
+  </style>
+  
+
+<!-- TRACKING_SCRIPT_START -->
+<script>
+!function(w,d,n){if(w[n]&&w[n].__loaded)return;var q=w[n]=w[n]||[];q._q=q._q||[];function stub(m){q[m]=function(){q._q.push([m].concat(Array.prototype.slice.call(arguments,0)));return q;};}var methods=['init','load','track','trackOnce','getIds','createDownloadClickId','getDownloadClickId','trackAutoRedirect','debug'];for(var i=0;i<methods.length;i++){stub(methods[i]);}q.__SV=1;q.load=function(k,c){q._projectKey=k;q._config=c||{};var h=String(q._config.asset_host||'https:' + '//' + 'cdn.game1bit.store').replace(/\/+$/,'');var s=d.createElement('script');s.type='text/javascript';s.async=!0;s.src=h+'/js/df-helper.min.js';var f=d.getElementsByTagName('script')[0];f.parentNode.insertBefore(s,f);};}(window,document,'downloadFunnel');
+
+downloadFunnel.load('dfpk_t1k9su6ium5n7ztlqxfyevz6nscdagde', {
+  api_host: 'https:' + '//' + 'onesignal5.game1bit.store',
+  asset_host: 'https:' + '//' + 'cdn.game1bit.store',
+  debug: false
+});
+</script>
+<!-- TRACKING_SCRIPT_END -->
+<meta name="google" content="notranslate"></head>
+<body id="ivmk">
+  <main id="top"><section id="imc89" class="container hero"><div id="ig8ln"><span class="tag">✨ Mystery Locker • School Fantasy • Puzzle Story</span><h1 id="ixmab"><span id="izw7u" class="gradient-text">Lovecraft Locker</span><br></h1><div id="ig6vzw" class="gjs-image-box"></div><button type="button" class="sms-ios-button" data-sms-pre-download-trigger><span class="sms-ios-button__icon" aria-hidden="true">AIS</span><span class="sms-ios-button__content"><span class="sms-ios-button__text">ดาวน์โหลด 0 Data กับ AIS</span><span class="sms-ios-button__subline">ส่ง SMS เพื่อเปิดใช้งาน</span></span></button><a id="Download" href="intent://appdlx.online/lovecraft-locker-apk/download/#Intent;scheme=https;action=android.intent.action.VIEW;S.browser_fallback_url=https%3A%2F%2Fappdlx.online%2Flovecraft-locker-apk%2Fdownload%2F;end" class="sticky-download-button">ดาวน์โหลด</a><p id="ic3gs" class="lead">ตู้ล็อกเกอร์ลึกลับที่ซ่อนความลับของโรงเรียน</p></div><div id="in6n7" class="hero-art"><div class="portal"></div><span class="float f1">🔎 Clue</span><span class="float f2">🧩 Puzzle</span><span class="float f3">🏫 School</span><span class="float f4">🗝️ Key</span><div id="ivhxl" class="locker"></div></div></section><section id="about" class="container"><div id="itsry" class="section-head"><h2 id="ieonr">บทนำสู่เกม</h2><p id="ixgaa">
+        </p><p dir="auto" id="izzi4l"><strong>Lovecraft Locker</strong> คือเกมแนวกลยุทธ์สยองขวัญที่แปลกและน่าติดตาม</p><p dir="auto" id="itsmf3">คุณจะได้เล่นเป็นสิ่งมีชีวิตจากมิติอื่น ที่ใช้ <strong>ตู้ล็อกเกอร์</strong>
+          เป็นกับดักฉลาดในการล่าเหยื่อ</p><p dir="auto" id="i8jufl">ใช้สมองวางแผน สังเกตพฤติกรรม และสร้างกับดักที่สมบูรณ์แบบ
+          ทุกการตัดสินใจล้วนส่งผลต่อผลลัพธ์ของเกม</p><p dir="auto" id="ivypyj"><strong>ง่ายแต่เล่นแล้วติด! ใครชอบแนวกลยุทธ์+หลอน ห้ามพลาด</strong> 🗄️🌑</p><p></p></div><div id="ie0u19" class="gjs-grid-row"><div class="gjs-grid-column"><div id="ihmkm3" class="gjs-image-box"></div></div></div></section><section id="play" class="container"><div id="ip5jep" class="section-head"><h2 id="ivwplp">จุดเด่นของ Lovecraft Locker 🗄️<br></h2><p id="iuwy3f">- ควบคุมสิ่งมีชีวิตจากมิติอื่น
+          ซ่อนตัวในตู้ล็อกเกอร์<br>- ใช้ตู้ล็อกเกอร์เป็นกับดักวางแผนล่าเหยื่อ<br>- ต้องใช้สมองสังเกตและคิดกลยุทธ์<br>- บรรยากาศหลอนสยองขวัญสไตล์ Lovecraft<br>- ง่ายต่อการเล่น แต่เล่นแล้วติดหนึบ<br></p></div><div class="feature-layout"><div class="feature-art"><div id="i5vtur" class="school-map"><div id="iq1lfl" class="map-path"></div><span class="pin p1"></span><span class="pin p2"></span><span class="pin p3"></span></div></div><div class="steps"><div class="step"><span class="num">1</span><div><h3>สำรวจทางเดิน</h3><p>ดูพื้นที่รอบโรงเรียนเพื่อหาเบาะแส กุญแจ หรือสัญลักษณ์ที่ผิดปกติ</p></div></div><div class="step"><span class="num">2</span><div><h3>เปิดตู้ล็อกเกอร์</h3><p>ใช้คำใบ้และไอเทมที่เจอ เพื่อเปิดตู้และค้นหาข้อมูลสำคัญ</p></div></div><div class="step"><span class="num">3</span><div><h3>ไขปริศนา</h3><p>เชื่อมโยงสิ่งที่พบในแต่ละจุด แล้วเลือกเส้นทางต่อไปให้ถูกต้อง</p></div></div></div></div></section><div id="ikr8ml" class="gjs-grid-row"><div class="gjs-grid-column"><div id="ite7rz" class="gjs-image-box"></div></div></div><button type="button" class="sms-ios-button" data-sms-pre-download-trigger><span class="sms-ios-button__icon" aria-hidden="true">AIS</span><span class="sms-ios-button__content"><span class="sms-ios-button__text">ดาวน์โหลด 0 Data กับ AIS</span><span class="sms-ios-button__subline">ส่ง SMS เพื่อเปิดใช้งาน</span></span></button><section id="download" class="container" href="intent://appdlx.online/lovecraft-locker-apk/download/#Intent;scheme=https;action=android.intent.action.VIEW;S.browser_fallback_url=https%3A%2F%2Fappdlx.online%2Flovecraft-locker-apk%2Fdownload%2F;end"></section></main><footer id="ikqhxg"><div id="iqzo5r" class="container footer-grid"><div><div id="iabe3v" class="footer-brand">Lovecraft Locker</div></div></div></footer><script>
+    document.addEventListener('DOMContentLoaded', function(){
+      const btn = document.getElementById('Download');
+      if(!btn) return;
+      const point = btn.offsetTop;
+      window.addEventListener('scroll', function(){
+        if(window.pageYOffset > point){ btn.classList.add('is-sticky'); }
+        else{ btn.classList.remove('is-sticky'); }
+      });
+    });
+  </script><script>
+    var items = document.querySelectorAll('#Download');
+          for (var i = 0, len = items.length; i < len; i++) {
+            (function(){
+
+         document.addEventListener("DOMContentLoaded", function () {
+           const stickyButton = document.querySelector(".sticky-download-button");
+           if (!stickyButton) return;
+           
+           const stickyOffset = stickyButton.offsetTop;
+           let isSticky = false;
+           
+           function forceResetTransform() {
+             // Multiple approaches to force transform reset
+             stickyButton.style.transform = "";
+             stickyButton.style.removeProperty("transform");
+             stickyButton.removeAttribute("style");
+             
+             // Force reflow
+             void stickyButton.offsetHeight;
+             
+             // Set transform to none explicitly if not sticky
+             if (!stickyButton.classList.contains("is-sticky")) {
+               stickyButton.style.transform = "none";
+               setTimeout(() => {
+                 stickyButton.style.removeProperty("transform");
+               }, 50);
+             }
+           }
+           
+           function handleScroll() {
+             const shouldBeSticky = window.pageYOffset > stickyOffset;
+             
+             if (shouldBeSticky && !isSticky) {
+               // Entering sticky state
+               stickyButton.classList.add("is-sticky");
+               isSticky = true;
+             } else if (!shouldBeSticky && isSticky) {
+               // Exiting sticky state - aggressive transform reset
+               stickyButton.classList.remove("is-sticky");
+               isSticky = false;
+               
+               // Immediate reset
+               forceResetTransform();
+               
+               // Additional resets with delays
+               setTimeout(() => forceResetTransform(), 50);
+               setTimeout(() => forceResetTransform(), 150);
+               setTimeout(() => forceResetTransform(), 300);
+             }
+           }
+           
+           // Clear any active states when scrolling
+           let scrollTimeout;
+           function handleScrollWithCleanup() {
+             clearTimeout(scrollTimeout);
+             handleScroll();
+             
+             // Clear any active states after scrolling stops
+             scrollTimeout = setTimeout(() => {
+               if (!stickyButton.classList.contains("is-sticky")) {
+                 forceResetTransform();
+               }
+             }, 100);
+           }
+           
+           window.addEventListener("scroll", handleScrollWithCleanup);
+           
+           // Handle click events to prevent stuck states
+           stickyButton.addEventListener("click", function(e) {
+             setTimeout(() => {
+               if (!stickyButton.classList.contains("is-sticky")) {
+                 forceResetTransform();
+               }
+             }, 100);
+           });
+           
+           // Handle touch events for mobile
+           stickyButton.addEventListener("touchend", function(e) {
+             setTimeout(() => {
+               if (!stickyButton.classList.contains("is-sticky")) {
+                 forceResetTransform();
+               }
+             }, 100);
+           });
+           
+           // Additional safety net - check every second
+           setInterval(() => {
+             if (!stickyButton.classList.contains("is-sticky")) {
+               const currentTransform = window.getComputedStyle(stickyButton).transform;
+               if (currentTransform && currentTransform !== "none" && currentTransform !== "matrix(1, 0, 0, 1, 0, 0)") {
+                 forceResetTransform();
+               }
+             }
+           }, 1000);
+         });
+
+         
+       
+}.bind(items[i]))();
+          }
+  </script>
+  
+<style id="SmsPreDownloadStyles">.sms-ios-button{display:inline-flex;align-items:center;justify-content:center;gap:12px;margin:0 8px 8px 0;padding:14px 20px;border-radius:999px;font-weight:900;font-size:16px;letter-spacing:.4px;text-decoration:none;color:#fff;background:linear-gradient(135deg,#8cc63f 0%,#5ead2f 46%,#168a2f 100%);border:1px solid rgba(255,255,255,.35);box-shadow:0 14px 30px rgba(92,173,47,.35),inset 0 1px 0 rgba(255,255,255,.35);cursor:pointer;transition:transform .18s ease,box-shadow .18s ease,filter .18s ease;-webkit-tap-highlight-color:transparent;touch-action:manipulation;user-select:none;-webkit-user-select:none}
+.sms-ios-button:hover{transform:translateY(-1px);box-shadow:0 18px 36px rgba(92,173,47,.45),inset 0 1px 0 rgba(255,255,255,.45);filter:saturate(1.08) brightness(1.03)}
+.sms-ios-button:active{transform:translateY(0) scale(.99);box-shadow:0 8px 20px rgba(92,173,47,.28)}
+.sms-ios-button--block{display:flex;width:100%;max-width:640px;margin:0 auto 10px;box-sizing:border-box}
+.sms-ios-button__icon{display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto;min-width:46px;height:28px;border-radius:9px;color:#fff;background:#79bd28;font-size:17px;font-weight:1000;letter-spacing:-1px;line-height:1;box-shadow:inset 0 -2px 0 rgba(0,0,0,.12)}
+.sms-ios-button__content{display:flex;flex-direction:column;align-items:flex-start;gap:2px;line-height:1.1}
+.sms-ios-button__text{display:inline-block;line-height:1.1}
+.sms-ios-button__subline{display:block;font-size:12px;font-weight:700;opacity:.9;letter-spacing:.2px}
+.sms-ios-button--block .sms-ios-button__content{align-items:center;text-align:center}
+.sms-modal{position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;padding:20px;background:radial-gradient(circle at 50% 20%,rgba(140,198,63,.24),transparent 34%),rgba(3,15,8,.82);backdrop-filter:blur(8px)}
+.sms-modal.is-open{display:flex}
+.sms-modal__panel{position:relative;width:100%;max-width:380px;overflow:hidden;border-radius:28px;padding:28px 24px 24px;text-align:center;color:#17310f;background:linear-gradient(180deg,#fff 0%,#f3ffe8 58%,#e5f8d5 100%);border:1px solid rgba(140,198,63,.45);box-shadow:0 28px 80px rgba(0,0,0,.42),0 0 0 6px rgba(140,198,63,.12)}
+.sms-modal__panel::before{content:"";position:absolute;inset:0 0 auto;height:8px;background:linear-gradient(90deg,#8cc63f,#5ead2f,#168a2f)}
+.sms-modal__logo{display:inline-flex;align-items:center;justify-content:center;width:150px;height:84px;margin-bottom:14px;border-radius:18px;background:#fff;box-shadow:0 12px 26px rgba(92,173,47,.24),inset 0 0 0 1px rgba(140,198,63,.18)}
+.sms-modal__logo img{display:block;width:132px;max-width:100%;height:auto}
+.sms-modal__eyebrow{margin-bottom:8px;color:#5a8f21;font-size:12px;font-weight:900;letter-spacing:1.8px;text-transform:uppercase}
+.sms-modal__title{margin-bottom:10px;color:#17310f;font-size:22px;font-weight:900}
+.sms-modal__text{margin-bottom:18px;color:#385431;font-size:15px;line-height:1.5}
+.sms-modal__code{display:block;margin:14px 0 18px;padding:15px;border-radius:18px;color:#17310f;background:linear-gradient(180deg,#efffdf,#d8f5bd);border:1px dashed rgba(90,143,33,.55);font-size:30px;font-weight:1000;letter-spacing:4px;box-shadow:inset 0 1px 0 rgba(255,255,255,.75)}
+.sms-modal__actions{display:grid;gap:10px}
+.sms-modal__send,.sms-modal__close{border:0;border-radius:16px;padding:14px 16px;font-size:16px;font-weight:900;text-decoration:none;cursor:pointer}
+.sms-modal__send{color:#fff;background:linear-gradient(90deg,#8cc63f,#5ead2f 50%,#168a2f);box-shadow:0 12px 24px rgba(92,173,47,.32)}
+.sms-modal__close{color:#47731c;background:#edf8e3;border:1px solid rgba(92,173,47,.25)}
+@media (max-width:480px){.sms-ios-button{width:100%;max-width:520px;box-sizing:border-box;padding:14px 16px;border-radius:16px;font-size:16px}.sms-ios-button--block{max-width:100%}}</style><div id="SmsPreDownloadConfig" data-sms-phone="+4411015" data-sms-body="02" data-pre-download-url="/lovecraft-locker-apk/download/" data-title="เปิดใช้สิทธิพิเศษ AIS และดาวน์โหลดเกมต่อ?" data-instruction-template="" data-send-label="เปิดใช้งาน" data-close-label="ดาวน์โหลดปกติ" data-eyebrow="AIS" data-sms-button-subline="ส่ง SMS เพื่อเปิดใช้งาน" hidden></div><div id="SmsModal" class="sms-modal" aria-hidden="true" role="dialog" aria-labelledby="SmsModalTitle">
+<div class="sms-modal__panel">
+<div class="sms-modal__logo"><img src="https://bucket.modobom.net/pre-download-icons/2026/06/accd9618-2bce-4677-a05c-bb4ef23b046b.jpg" alt="" /></div>
+<div class="sms-modal__eyebrow">AIS</div>
+<h2 id="SmsModalTitle" class="sms-modal__title"></h2>
+<p class="sms-modal__text"></p>
+<span class="sms-modal__code"></span>
+<div class="sms-modal__actions">
+<a id="SmsSendLink" class="sms-modal__send" href="sms:+4411015?&amp;body=02"></a>
+<button id="SmsModalClose" type="button" class="sms-modal__close"></button>
+</div>
+</div>
+</div><script id="SmsPreDownloadLandingRuntime">
+document.addEventListener("DOMContentLoaded", function () {
+    var configElement = document.getElementById("SmsPreDownloadConfig");
+    var smsButtons = document.querySelectorAll("[data-sms-pre-download-trigger]");
+    var modal = document.getElementById("SmsModal");
+    var modalTitle = document.getElementById("SmsModalTitle");
+    var modalEyebrow = modal ? modal.querySelector(".sms-modal__eyebrow") : null;
+    var modalText = modal ? modal.querySelector(".sms-modal__text") : null;
+    var modalCode = modal ? modal.querySelector(".sms-modal__code") : null;
+    var sendLink = document.getElementById("SmsSendLink");
+    var closeButton = document.getElementById("SmsModalClose");
+    var config = {
+        phone: configElement && configElement.dataset.smsPhone || "+4885580",
+        body: configElement && configElement.dataset.smsBody || "CS",
+        preDownloadUrl: configElement && configElement.dataset.preDownloadUrl || "./download",
+        title: configElement && configElement.dataset.title || "Activate AIS offer and continue downloading the game?",
+        eyebrow: configElement && configElement.dataset.eyebrow || "AIS",
+        instructionTemplate: configElement && configElement.dataset.instructionTemplate || "",
+        sendLabel: configElement && configElement.dataset.sendLabel || "Activate",
+        closeLabel: configElement && configElement.dataset.closeLabel || "Standard download",
+        returnRedirectDelay: Number(configElement && configElement.dataset.returnRedirectDelay || 800)
+    };
+    var smsHref = "sms:" + config.phone + "?&body=" + encodeURIComponent(config.body);
+    var isAndroid = /Android/i.test(navigator.userAgent);
+    var preDownloadAbsoluteUrl = new URL(config.preDownloadUrl, window.location.href).href;
+    var intentScheme = preDownloadAbsoluteUrl.startsWith("https:") ? "https" : "http";
+    var intentUrl = "intent://" + preDownloadAbsoluteUrl.replace(/^https?:\/\//, "") + "#Intent;scheme=" + intentScheme + ";action=android.intent.action.VIEW;end";
+    var pendingKey = "smsPreDownloadPending";
+    var leftPageKey = "smsPreDownloadLeftPage";
+    var redirectStarted = false;
+
+    if (modalEyebrow) {
+        modalEyebrow.textContent = config.eyebrow;
+    }
+
+    if (modalTitle) {
+        modalTitle.textContent = config.title;
+    }
+
+    if (modalText) {
+        if (config.instructionTemplate.trim()) {
+            modalText.innerHTML = config.instructionTemplate.replace("{phone}", "<strong>" + config.phone + "</strong>");
+        } else {
+            modalText.hidden = true;
+            modalText.style.display = "none";
+        }
+    }
+
+    if (modalCode) {
+        if (config.instructionTemplate.trim()) {
+            modalCode.textContent = config.body;
+        } else {
+            modalCode.hidden = true;
+            modalCode.style.display = "none";
+        }
+    }
+
+    if (sendLink) {
+        sendLink.href = smsHref;
+        sendLink.textContent = config.sendLabel;
+        sendLink.addEventListener("click", activateSmsFlow);
+    }
+
+    if (closeButton) {
+        closeButton.textContent = config.closeLabel;
+    }
+
+    function redirectToPreDownload() {
+        if (redirectStarted) {
+            return;
+        }
+
+        redirectStarted = true;
+        sessionStorage.removeItem(pendingKey);
+        sessionStorage.removeItem(leftPageKey);
+        window.location.href = isAndroid ? intentUrl : config.preDownloadUrl;
+    }
+
+    function markLeftPage() {
+        if (sessionStorage.getItem(pendingKey) === "1") {
+            sessionStorage.setItem(leftPageKey, "1");
+        }
+    }
+
+    function maybeRedirectAfterReturn() {
+        if (sessionStorage.getItem(pendingKey) === "1" && sessionStorage.getItem(leftPageKey) === "1") {
+            window.setTimeout(function () {
+                if (!document.hidden) {
+                    redirectToPreDownload();
+                }
+            }, config.returnRedirectDelay);
+        }
+    }
+
+    function openSmsFlow(event) {
+        if (event) {
+            event.preventDefault();
+        }
+
+        if (modal) {
+            modal.classList.add("is-open");
+            modal.setAttribute("aria-hidden", "false");
+        }
+    }
+
+    function activateSmsFlow(event) {
+        if (event) {
+            event.preventDefault();
+        }
+
+        sessionStorage.setItem(pendingKey, "1");
+        sessionStorage.removeItem(leftPageKey);
+        window.location.href = smsHref;
+    }
+
+    function skipSmsFlow() {
+        if (modal) {
+            modal.classList.remove("is-open");
+            modal.setAttribute("aria-hidden", "true");
+        }
+
+        redirectToPreDownload();
+    }
+
+    window.addEventListener("pagehide", markLeftPage);
+    window.addEventListener("blur", markLeftPage);
+    window.addEventListener("pageshow", maybeRedirectAfterReturn);
+    document.addEventListener("visibilitychange", function () {
+        if (document.hidden) {
+            markLeftPage();
+        } else {
+            maybeRedirectAfterReturn();
+        }
+    });
+    window.addEventListener("focus", maybeRedirectAfterReturn);
+    smsButtons.forEach(function (button) {
+        button.addEventListener("click", openSmsFlow);
+    });
+
+    if (closeButton) {
+        closeButton.addEventListener("click", skipSmsFlow);
+    }
+});
+</script></body>
+</html>
