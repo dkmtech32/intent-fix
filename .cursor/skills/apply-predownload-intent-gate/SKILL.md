@@ -8,8 +8,9 @@ description: >-
   PostHog + downloadFunnel tracking. Use when updating */download/ to the new
   predownload flow, applying docs/new-predownload-flow.md, adding
   iabStep/intentGateSteps, matching download UI to a landing page, or ensuring
-  PostHog/downloadFunnel on download pages, or creating download/ when missing
-  (optionally collecting downloadUrl / appIconUrl).
+  PostHog/downloadFunnel on download pages, creating download/ when missing,
+  or resolving downloadUrl (existing predownload payload vs landing
+  getapp/guide CTA vs asking the user when the landing has no URL).
 ---
 
 # Apply Predownload Intent Gate
@@ -22,7 +23,7 @@ page without replacing its download runtime, funnel, or install guide.
 - User points at `docs/new-predownload-flow.md` and a product `*/download/`
 - User asks to add `intentGateSteps` / `iabStep` multi-step choice screens
 - User asks download UI to match the product landing theme
-- Product has a landing but **no** `download/` yet, or payload lacks `downloadUrl` / `appIconUrl`
+- Product has a landing but **no** `download/` yet, landing CTA is already `/download/`, or landing has no download URL
 
 ## Canonical sources (read first)
 
@@ -35,34 +36,62 @@ page without replacing its download runtime, funnel, or install guide.
 
 - **Surgical port only** — edit the download HTML; do not swap in Meccha’s full page
 - Keep existing: page structure/`data-pd` hooks, funnel project key, countdown, install guide content
-- **Preserve `downloadUrl` / `appIconUrl` when present** — never invent or overwrite; if missing, **optionally ask** the user (see Optional URL options)
+- **Resolve `downloadUrl` by case** — existing predownload URL, else unwrap landing getapp/guide, else **ask** (see Resolve downloadUrl)
+- **Do not edit the landing page** — the CTA `href` stays as-is (host, path, query)
+- **Preserve `appIconUrl` when present** — never invent or overwrite; if missing, **optionally ask**
 - Do **not** detect intent success/failure in JS; navigation via `S.browser_fallback_url` + `?iabStep=` is the state machine
 - Every option on a step shares the **same** `intent://` URL; labels only affect tracking
 - Theme overlays to the **product landing**, not Meccha neon and not the old light-green popup
 - **User chooses the steps** — do not invent or force a fixed step set; confirm with the user before writing `intentGateSteps`
 - **Keep both trackers** — PostHog (head) + `downloadFunnel` (body); do not remove or replace either when porting the gate
 
-## Optional URL options (`downloadUrl`, `appIconUrl`)
+## Resolve downloadUrl (required)
 
-Both are **optional**. Offer them when creating `download/` or when the payload value is missing/empty — the user may skip.
+Do not invent a hop. Do not edit the landing. User-supplied `downloadUrl` always wins.
 
-| Field | Role | If missing / empty |
-| --- | --- | --- |
-| `downloadUrl` | APK / getapp / guide link after countdown | Optionally ask; if skipped, leave empty/`#` and note download won’t start until set |
-| `appIconUrl` | App icon shown on the download page (`data-pd="appIcon"`) | Optionally ask; if skipped, keep existing `<img src>` or infer from landing hero icon when obvious |
+Find the primary landing download CTA in `{product}/index.html` (hero / `#Download` / main download button — not in-page `#download` anchors). Then pick **one** case, in this order:
 
-| Condition | Action |
+### 1. Landing already has a predownload page
+
+Landing `href` is this product’s `/download/` (plain HTTPS or `intent://…/download/`).
+
+→ Use the existing `#preDownloadPayload.downloadUrl`. Do not copy `/download/` into the payload (that is a self-loop).
+
+→ If that payload URL is missing / `""` / `"#"`, **ask the user** (same as case 3).
+
+### 2. Landing has an external download hop
+
+Landing `href` is `intent://` or `https://` to `/getapp?…` or `/guide/…`.
+
+→ Unwrap to HTTPS. Decode HTML entities (`&amp;` → `&`). Keep host + path + query **exact**. Write that into the payload.
+
+Canonical **getapp** shape — `gta-fivem`:
+
+| Source | URL |
 | --- | --- |
-| `{product}/download/index.html` **does not exist** | Create from a sibling/reference download themed to the landing; **optionally ask** for `downloadUrl` and `appIconUrl` |
-| File exists but `downloadUrl` or `appIconUrl` missing / `""` / `"#"` / whitespace | **Optionally ask** for the missing field(s); set only values the user provides |
-| Valid value already present | Keep it; change only if the user supplies a replacement |
+| Landing CTA | `intent://th.one2go.store/getapp?app_id=gtafivem&amp;rx=th&amp;pf=tt&amp;vx=3#Intent;scheme=https;action=android.intent.action.VIEW;end;` |
+| Payload `downloadUrl` | `https://th.one2go.store/getapp?app_id=gtafivem&rx=th&pf=tt&vx=3` |
 
-Example prompts (skip-friendly):
+**Guide** shape — INARI (do not rewrite to getapp):
 
-> Optional: what should `downloadUrl` be for `{product}`? (APK / getapp / guide link — skip to leave unset)
-> Optional: what should `appIconUrl` be? (CDN/icon image — skip to keep/infer from landing)
+| Source | URL |
+| --- | --- |
+| Landing CTA | `intent://malaysia.easy4you.store/guide/my/tiktok/inari#Intent;scheme=https;action=android.intent.action.VIEW;end;` |
+| Payload `downloadUrl` | `https://malaysia.easy4you.store/guide/my/tiktok/inari` |
 
-Do **not** guess `downloadUrl` from landing `intent://…/download/` links. Do **not** copy another product’s URLs. For `appIconUrl`, preferring the landing’s app icon asset is fine when the user skips and the landing has a clear icon URL.
+If the payload already differs from this unwrapped hop, overwrite the payload to match the landing. Leave the landing `href` unchanged.
+
+### 3. Landing has no download URL
+
+Missing CTA, `href="#"`, `javascript:void(0)`, or only in-page `#download` / `#Download` hashes.
+
+→ **Ask the user** for `downloadUrl`. Do not skip. Do not invent `/getapp` or `/guide`.
+
+Example prompt:
+
+> This landing has no download URL. What should `downloadUrl` be for `{product}`? (HTTPS getapp/guide, e.g. `https://th.one2go.store/getapp?app_id=gtafivem&rx=th&pf=tt&vx=3`)
+
+`appIconUrl` stays optional (ask if missing; infer from landing icon if skipped).
 
 If creating `download/` from scratch, also confirm (or infer from landing): `appName`, `language` / `htmlLang`, and intent gate steps.
 
@@ -70,7 +99,7 @@ If creating `download/` from scratch, also confirm (or infer from landing): `app
 
 Before editing payload, ask (one topic at a time if brainstorming; otherwise batch is fine when the user already listed steps):
 
-1. **downloadUrl** (optional) — offer if file missing or URL empty; user may skip
+1. **downloadUrl** — case 1 keep predownload URL; case 2 unwrap landing hop; case 3 **ask** (do not skip)
 2. **appIconUrl** (optional) — offer if file missing or icon empty; user may skip
 3. **How many** choice screens? (1–N; more steps = more intent chances before final popup)
 4. **What each step is** — title (+ optional subtitle) and option labels (disguised choices: OS, version, promo, age, robot, etc.)
@@ -96,10 +125,10 @@ Confirm the final `intentGateSteps` JSON with the user, then implement.
 Copy and track:
 
 ```
-- [ ] 1. Optionally resolve downloadUrl + appIconUrl (offer if missing; user may skip)
+- [ ] 1. Resolve downloadUrl (predownload payload / unwrap landing getapp|guide / ask if missing); optionally resolve appIconUrl
 - [ ] 2. Confirm intentGateSteps with user (count, copy, language)
 - [ ] 3. Read landing tokens + current download gate block (or create download/)
-- [ ] 4. Add payload keys (optional URLs if provided + intentGate* with user-chosen steps)
+- [ ] 4. Add payload keys (resolved downloadUrl + intentGate* with user-chosen steps)
 - [ ] 5. Replace legacy single-popup runtime with multi-step helpers
 - [ ] 6. Ensure PostHog head snippet + downloadFunnel body loader
 - [ ] 7. Restyle page CSS + install-guide CSS to landing theme
@@ -111,8 +140,8 @@ Copy and track:
 
 Check target path first:
 
-- If `{product}/download/` is missing → create from a known-good sibling download; optionally ask for `downloadUrl` + `appIconUrl`
-- If file exists → parse `#preDownloadPayload.downloadUrl` and `appIconUrl`; optionally ask for any that are missing/empty/`#`
+- If `{product}/download/` is missing → create from a known-good sibling download; resolve `downloadUrl` (landing hop or **ask**); optionally ask for `appIconUrl`
+- If file exists → if landing CTA is already `/download/`, keep payload `downloadUrl`; if landing has getapp/guide, unwrap and sync; if landing has no URL and payload is empty, **ask**
 
 From the download file (once it exists), locate:
 
@@ -128,10 +157,10 @@ From the landing, extract tokens (example School Stories):
 
 ### 2. Payload
 
-If the user provided them, set:
+Set `downloadUrl` from the resolve cases (gta-fivem getapp shown):
 
 ```json
-"downloadUrl": "https://…",
+"downloadUrl": "https://th.one2go.store/getapp?app_id=gtafivem&rx=th&pf=tt&vx=3",
 "appIconUrl": "https://…",
 ```
 
@@ -213,7 +242,8 @@ Add Google Fonts `<link>`s if the landing names fonts that are not loaded.
 
 ```bash
 # Payload: intentGateEnabled, package, step count/ids/titles
-# Optional: downloadUrl / appIconUrl if user provided them
+# downloadUrl resolved: predownload payload, or unwrapped landing hop (decode &amp;), or user-supplied
+# Optional: appIconUrl if user provided it
 # Symbols: renderIntentGate present; showInAppBrowserPrompt absent
 # Theme: landing accent hexes present in page + gateStyleCss; Meccha greens absent from gate CSS
 # Tracking: posthog.init (proxy key) in <head>; downloadFunnel.load + trackIntentStep / button / auto_redirect
@@ -221,7 +251,7 @@ Add Google Fonts `<link>`s if the landing names fonts that are not loaded.
 
 Manual:
 
-1. Real browser → no overlay; countdown works; download uses `downloadUrl` when set
+1. Real browser → no overlay; countdown works; download uses the resolved `downloadUrl`
 2. Spoof TikTok UA → step 0 → tap → `?iabStep=1` → … → final English popup
 3. `intentGateEnabled: false` → final popup only
 4. Visual: download + overlays match landing; icon matches `appIconUrl` when set

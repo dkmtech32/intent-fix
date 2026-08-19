@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <title>User flow — Landing & Predownload</title>
+  <style>
+    @page { size: A4; margin: 16mm; }
+    * { box-sizing: border-box; }
+    body {
+      font-family: "Segoe UI", system-ui, sans-serif;
+      color: #1a1a1a;
+      line-height: 1.4;
+      font-size: 11.5pt;
+      max-width: 740px;
+      margin: 0 auto;
+    }
+    h1 {
+      font-size: 17pt;
+      margin: 0 0 6px;
+      color: #173d5a;
+    }
+    .sub {
+      margin: 0 0 14px;
+      color: #555;
+      font-size: 10.5pt;
+    }
+    h2 {
+      font-size: 12.5pt;
+      margin: 16px 0 8px;
+      color: #173d5a;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 6px 0 10px;
+      font-size: 10.5pt;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 6px 8px;
+      text-align: left;
+      vertical-align: top;
+    }
+    th { background: #eef3f7; }
+    th:first-child, td:first-child { width: 28px; text-align: center; }
+    ul { margin: 4px 0 0; padding-left: 1.2em; }
+    li { margin: 3px 0; }
+    .flow {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0;
+      margin: 8px 0 4px;
+    }
+    .box {
+      border: 1.5px solid #173d5a;
+      border-radius: 8px;
+      padding: 8px 12px;
+      background: #f7fafc;
+      text-align: center;
+      font-weight: 600;
+      font-size: 10.5pt;
+    }
+    .box.alt { background: #fff8e8; border-color: #b8860b; }
+    .box.ok { background: #eefaf1; border-color: #2d6a4f; }
+    .arrow {
+      text-align: center;
+      color: #173d5a;
+      font-size: 14pt;
+      line-height: 1;
+      padding: 1px 0;
+    }
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin: 4px 0;
+    }
+    .hint {
+      font-size: 9.5pt;
+      font-weight: 500;
+      color: #555;
+      margin-top: 2px;
+    }
+  </style>
+</head>
+<body>
+  <h1>User flow — Landing & Predownload</h1>
+  <p class="sub">Luồng người dùng từ ads → tải APK. Ví dụ: TikTok Thailand · GTA FiveM</p>
+
+  <h2>Sơ đồ</h2>
+  <div class="flow">
+    <div class="box">User bấm ads TikTok</div>
+    <div class="arrow">↓</div>
+    <div class="box">Landing — akpgame.com/gta-fivem/</div>
+    <div class="arrow">↓ bấm CTA tải</div>
+    <div class="box alt">/download trong TikTok (IAB)</div>
+    <div class="arrow">↓</div>
+    <div class="box alt">Gate: xác minh robot → chọn thiết bị / HĐH<br/><span class="hint">mọi option = cùng intent thoát browser</span></div>
+    <div class="arrow">↓</div>
+    <div class="split">
+      <div class="box ok">Intent OK<br/><span class="hint">mở lại /download trong Chrome</span></div>
+      <div class="box alt">Intent fail<br/><span class="hint">sang bước kế / popup “mở browser”</span></div>
+    </div>
+    <div class="arrow">↓</div>
+    <div class="box ok">Chrome: countdown → tải downloadUrl (getapp/guide) → hướng dẫn cài</div>
+  </div>
+
+  <h2>Các màn user gặp</h2>
+  <table>
+    <thead>
+      <tr><th>#</th><th>Màn</th><th>User làm gì</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>1</td><td><strong>Landing</strong></td><td>Xem info app → bấm nút tải</td></tr>
+      <tr><td>2</td><td><strong>Predownload gate</strong> (chỉ trong TikTok/IAB)</td><td>Chọn từng bước (robot → HĐH…). Mọi option cùng link thoát browser</td></tr>
+      <tr><td>3</td><td><strong>Popup cuối</strong> (nếu vẫn trong IAB)</td><td>Bấm “Mở trong trình duyệt” / làm theo hướng dẫn ⋯</td></tr>
+      <tr><td>4</td><td><strong>Predownload thường</strong> (đã ra Chrome)</td><td>Đếm ngược → tải downloadUrl (getapp/guide đã resolve, không phải trang /download/)</td></tr>
+      <tr><td>5</td><td><strong>Hướng dẫn cài</strong></td><td>Làm theo bước cài APK trên Android</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Nhánh quan trọng</h2>
+  <ul>
+    <li><strong>Trong TikTok:</strong> không countdown ngay — phải qua các màn gate trước.</li>
+    <li><strong>Ngoài TikTok (Chrome):</strong> bỏ qua gate → countdown → download.</li>
+    <li>Gate <strong>không</strong> quyết định OS/version thật: chỉ tạo thêm lần tap để thoát IAB.</li>
+    <li><strong>downloadUrl:</strong> landing đã trỏ <code>/download/</code> → dùng URL sẵn trong payload predownload. Landing getapp/guide → unwrap HTTPS (<code>&amp;amp;</code> → <code>&amp;</code>). Không có URL → hỏi. Ví dụ getapp (gta-fivem): <code>https://th.one2go.store/getapp?app_id=gtafivem&amp;rx=th&amp;pf=tt&amp;vx=3</code>.</li>
+  </ul>
+</body>
+</html>

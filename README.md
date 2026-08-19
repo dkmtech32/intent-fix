@@ -22,6 +22,8 @@ Full contract: [`docs/new-predownload-flow.md`](docs/new-predownload-flow.md)
 Landing  →  /download/  →  [IAB gate steps…]  →  countdown  →  downloadUrl
 ```
 
+`downloadUrl` after countdown is the APK hop (not the `/download/` page). Resolve it: if the landing CTA is already `/download/`, keep the existing predownload payload URL; if the landing is getapp/guide, unwrap to HTTPS (`&amp;` → `&`); if the landing has no download URL, ask. Canonical getapp (`gta-fivem`): `https://th.one2go.store/getapp?app_id=gtafivem&rx=th&pf=tt&vx=3`.
+
 ## Hướng dẫn luồng xử lý (landing → CMS)
 
 Luồng chuẩn khi ads gửi yêu cầu landing + predownload. Ví dụ:
@@ -58,10 +60,11 @@ Trong Cursor, ví dụ:
 Apply the predownload intent gate to gta-fivem
 ```
 
-Cung cấp theo yêu cầu ads (có thể bỏ qua URL nếu chưa có):
+Cung cấp theo yêu cầu ads:
 
 - Steps: xác minh robot, chọn thiết bị / hệ điều hành (tiếng Thái nếu thị trường TH)
-- Optional: `downloadUrl`, `appIconUrl`
+- Optional: `appIconUrl`
+- `downloadUrl`: if landing CTA is already `/download/`, keep the existing predownload payload URL; if landing is getapp/guide, unwrap (`&amp;` → `&`); if landing has no download URL, **ask**. Canonical getapp (`gta-fivem`): `https://th.one2go.store/getapp?app_id=gtafivem&rx=th&pf=tt&vx=3`.
 
 Skill sẽ tạo/cập nhật `gta-fivem/download/index.html`, match theme landing, gắn PostHog + downloadFunnel.
 
@@ -70,7 +73,7 @@ Skill sẽ tạo/cập nhật `gta-fivem/download/index.html`, match theme landi
 | Check | Ghi chú |
 | --- | --- |
 | `intentGateSteps` | Đúng số bước + copy theo ads |
-| `downloadUrl` | Có URL APK/getapp (nếu đã có) |
+| `downloadUrl` | Landing đã trỏ `/download/` → giữ URL trong payload predownload. Landing getapp/guide → unwrap HTTPS (`&amp;` → `&`). Không có URL → hỏi. Ví dụ getapp: `https://th.one2go.store/getapp?app_id=gtafivem&rx=th&pf=tt&vx=3`. |
 | `appIconUrl` | Icon đúng product |
 | PostHog | Có snippet trong `<head>` |
 | downloadFunnel | Có `load` + events (`predownload_*`) |
@@ -182,8 +185,9 @@ Apply the predownload intent gate to {product}
 
 You may optionally provide:
 
-- `downloadUrl` — APK / getapp / guide URL after countdown
 - `appIconUrl` — icon image URL
+
+`downloadUrl` is required. If the landing CTA is already this product’s `/download/` page, keep the existing predownload payload URL. If the landing is getapp/guide, unwrap to HTTPS and decode `&amp;` → `&` (gta-fivem: `https://th.one2go.store/getapp?app_id=gtafivem&rx=th&pf=tt&vx=3`). If the landing has no download URL, ask — do not invent. Do not edit the landing href.
 
 You must confirm **intent gate steps** (count, titles, options, language). The download UI is restyled to match that product’s landing.
 
@@ -193,7 +197,7 @@ Important keys in `#preDownloadPayload`:
 
 | Key | Notes |
 | --- | --- |
-| `downloadUrl` | Optional until set; required for auto-download to work |
+| `downloadUrl` | Required. Keep existing predownload URL if landing is already `/download/`; else unwrap landing getapp/guide; else ask |
 | `appIconUrl` | Optional; syncs to `[data-pd="appIcon"]` |
 | `inAppBrowserGateEnabled` | Master IAB gate switch |
 | `intentGateEnabled` | Multi-step choice flow |
