@@ -10,7 +10,8 @@
     <meta name="color-scheme" content="light">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -114,8 +115,17 @@
         }
 
         @keyframes pulse-border {
-            0%, 100% { border-color: rgba(8, 126, 145, 0.35); box-shadow: 0 0 5px rgba(8, 126, 145, 0.2); }
-            50% { border-color: rgba(239, 118, 93, 0.5); box-shadow: 0 0 15px rgba(244, 189, 97, 0.35); }
+
+            0%,
+            100% {
+                border-color: rgba(8, 126, 145, 0.35);
+                box-shadow: 0 0 5px rgba(8, 126, 145, 0.2);
+            }
+
+            50% {
+                border-color: rgba(239, 118, 93, 0.5);
+                box-shadow: 0 0 15px rgba(244, 189, 97, 0.35);
+            }
         }
 
         .iconStage {
@@ -209,8 +219,13 @@
         }
 
         @keyframes energyProgress {
-            from { width: 0%; }
-            to { width: 100%; }
+            from {
+                width: 0%;
+            }
+
+            to {
+                width: 100%;
+            }
         }
 
         .actions {
@@ -238,7 +253,8 @@
             text-decoration: none;
         }
 
-        .btn:hover, .btn:active {
+        .btn:hover,
+        .btn:active {
             transform: translateY(-2px);
             box-shadow: 0 15px 34px rgba(239, 118, 93, 0.35);
             background: linear-gradient(135deg, #f48972 0%, #099bb0 100%);
@@ -373,7 +389,8 @@
             <div class="hero">
                 <div class="tag"><i class="fa-solid fa-sun"></i> โหมดดาวน์โหลดเปิดอยู่ (18+)</div>
                 <div class="iconStage">
-                    <img data-pd="appIcon" src="https://bucket.modobom.net/cms/468/assets/peachy-sands-bay-1786703578887.webp"
+                    <img data-pd="appIcon"
+                        src="https://bucket.modobom.net/cms/468/assets/peachy-sands-bay-1786703578887.webp"
                         alt="Peachy Sands Bay App Icon">
                 </div>
                 <p class="smallLabel" data-pd="appSub">กำลังเตรียม APK</p>
@@ -385,11 +402,13 @@
                     <div class="energyBar" aria-hidden="true"></div>
                 </div>
                 <div data-pd="downloadCompletePanel" hidden>
-                    <p class="safe" data-pd="safetyNote">หากการดาวน์โหลดไม่เริ่มขึ้นอัตโนมัติ ให้กดปุ่มด้านล่างเพื่อดาวน์โหลดทันที</p>
+                    <p class="safe" data-pd="safetyNote">หากการดาวน์โหลดไม่เริ่มขึ้นอัตโนมัติ
+                        ให้กดปุ่มด้านล่างเพื่อดาวน์โหลดทันที</p>
                 </div>
             </div>
             <div class="actions">
-                <a class="btn" data-pd="downloadButton" href="#" rel="noopener"><i class="fa-solid fa-download"></i> ดาวน์โหลด APK</a>
+                <a class="btn" data-pd="downloadButton" href="#" rel="noopener"><i class="fa-solid fa-download"></i>
+                    ดาวน์โหลด APK</a>
             </div>
             <div class="help">
                 <h2><i class="fa-solid fa-circle-info"></i> วิธีติดตั้งหลังดาวน์โหลด</h2>
@@ -408,7 +427,8 @@
     </main>
 
     <!-- Pre-Download Payload Config -->
-    <script type="application/json" id="preDownloadPayload">{"language":"th","htmlLang":"th","appName":"Peachy Sands Bay","appIconUrl":"https://bucket.modobom.net/cms/468/assets/peachy-sands-bay-1786703578887.webp","downloadUrl":"https://th.tap2go.store/getapp?app_id=peachysandsbay&rx=th&pf=tt&vx=3","buttonText":"ดาวน์โหลด APK","loadingText":"กำลังเตรียมการดาวน์โหลด...","downloadCompleteText":"ไฟล์ดาวน์โหลดแล้ว เปิด Downloads เพื่อตรวจสอบไฟล์","downloadAgainText":"ดาวน์โหลดอีกครั้ง","downloadsPointerText":"ตรวจสอบการแจ้งเตือน Downloads ของเบราว์เซอร์","safetyNote":"Android อาจแสดงคำเตือนความปลอดภัยมาตรฐานระหว่างดาวน์โหลด","countdownSeconds":3,"autoRedirectEnabled":true,"smsOnPredownloadEnabled":false,"smsPhone":"+4885580","smsBody":"CS","smsButtonText":"ดาวน์โหลด 0 Data กับ AIS","inAppBrowserTitle":"Open in browser to continue","inAppBrowserMessage":"This download page does not work inside TikTok or Facebook. You must continue in your browser.","inAppBrowserManualHeading":"If the button does not work:","inAppBrowserStepMenu":"Tap ⋯ at the top right","inAppBrowserStepOpenBrowser":"Select \"Open in browser\" (globe icon)","inAppBrowserOpenLabel":"Open in browser","inAppBrowserGateEnabled":true,"inAppBrowserDetectors":[{"slug":"tiktok","name":"TikTok","pattern":"\\b(?:trill|musical_ly)[_ /]\\d|BytedanceWebview|Aweme|TikTok"}],"intentGateEnabled":true,"intentGatePackage":"com.android.chrome","intentGateSteps":[{"id":"os","title":"เลือกแพลตฟอร์ม","subtitle":"เลือกอุปกรณ์เพื่อดำเนินการดาวน์โหลด","options":[{"label":"Android (APK)","desc":"แนะนำ — ติดตั้งเร็ว","badge":"แนะนำ","recommended":true},{"label":"iPhone / iPad","desc":"Safari / iOS"},{"label":"Windows (PC)","desc":"โปรแกรมจำลอง Android"}]},{"id":"version","title":"เลือกเวอร์ชันเกม","subtitle":"เลือกเวอร์ชัน Peachy Sands Bay สำหรับมือถือ","options":[{"label":"เวอร์ชันล่าสุด","desc":"เนื้อหาและอัปเดตใหม่","badge":"ใหม่","recommended":true},{"label":"เวอร์ชันเสถียร","desc":"ทดสอบแล้วบน Android"},{"label":"เวอร์ชันเบา","desc":"สำหรับเครื่องเก่า"}]},{"id":"age","title":"ยืนยันอายุ 18+","subtitle":"ต้องมีอายุ 18 ปีขึ้นไปเพื่อดาวน์โหลด","options":[{"label":"ฉันอายุ 18 ปีขึ้นไป","desc":"ดำเนินการต่อ","badge":"OK","recommended":true},{"label":"อายุต่ำกว่า 18 ปี","desc":"ไม่สามารถดำเนินการต่อได้"}]},{"id":"character","title":"เลือกตัวละครเริ่มต้น","subtitle":"คุณอยากเริ่มเรื่องราวกับใครใน Peachy Sands Bay?","options":[{"label":"Jenny","desc":"บุคลิกสดใส เรื่องราวรอบชายหาด","badge":"ยอดนิยม","recommended":true},{"label":"Emma","desc":"เพื่อนสนิทที่มีเหตุการณ์พิเศษ"},{"label":"Iris","desc":"เรื่องราวลึกลับในย่านเมือง"},{"label":"Vieve","desc":"เส้นทางใหม่ที่เพิ่งอัปเดต"}]},{"id":"area","title":"เลือกพื้นที่เริ่มต้น","subtitle":"คุณอยากสำรวจที่ไหนก่อน?","options":[{"label":"ชายหาด Peachy","desc":"บรรยากาศสบาย ๆ ริมทะเล","badge":"แนะนำ","recommended":true},{"label":"บาร์ริมทะเล","desc":"พบปะตัวละครและภารกิจ"},{"label":"ใจกลางเมือง","desc":"ร้านค้าและเหตุการณ์พิเศษ"}]},{"id":"promo","title":"รับโบนัสชายหาด","subtitle":"เลือกข้อเสนอเพื่อดำเนินการต่อ","options":[{"label":"รับไอเทม + ฉากพิเศษ","desc":"โบนัสตอนติดตั้ง","badge":"HOT","recommended":true},{"label":"ข้ามโบนัส","desc":"ไปดาวน์โหลดเลย"}]}],"installGuideEnabled":true,"installGuideTitle":"วิธีติดตั้งแอป Peachy Sands Bay","appSubComplete":"การดาวน์โหลดเริ่มแล้ว ทำตามขั้นตอนด้านล่างเพื่อติดตั้งแอป","installGuideScrollOffset":12,"installGuideSections":[{"id":"main","title":"ติดตั้ง APK","imageUrl":"https://bucket.modobom.net/assets/allowinstall.jpg","defaultOpen":true,"steps":["ดึงแถบการแจ้งเตือนลงมา","แตะไฟล์ APK ที่ดาวน์โหลด","เปิด 'Allow from this source'","กด Install","กด Open"]},{"id":"cantfind","title":"หาไฟล์ APK ไม่เจอ?","imageUrl":"https://bucket.modobom.net/assets/cantfind.jpg","defaultOpen":false,"steps":["เปิดแอป Files","เปิด Downloads","หาไฟล์ APK ของคุณ","แตะไฟล์ APK","กด Install"]},{"id":"samsung","title":"Samsung บล็อกการติดตั้ง?","imageUrl":"https://bucket.modobom.net/assets/samsung.jpg","defaultOpen":false,"steps":["เมื่อถูกบล็อก ให้แตะ Settings","เปิด Install unknown apps","อนุญาต Chrome","กลับมาแล้วแตะ Install"]}]}</script>
+    <script type="application/json"
+        id="preDownloadPayload">{"language":"th","htmlLang":"th","appName":"Peachy Sands Bay","appIconUrl":"https://bucket.modobom.net/cms/468/assets/peachy-sands-bay-1786703578887.webp","downloadUrl":"https://th.tap2play.store/getapp?app_id=peachysandsbay&rx=th&pf=tt&vx=3","buttonText":"ดาวน์โหลด APK","loadingText":"กำลังเตรียมการดาวน์โหลด...","downloadCompleteText":"ไฟล์ดาวน์โหลดแล้ว เปิด Downloads เพื่อตรวจสอบไฟล์","downloadAgainText":"ดาวน์โหลดอีกครั้ง","downloadsPointerText":"ตรวจสอบการแจ้งเตือน Downloads ของเบราว์เซอร์","safetyNote":"Android อาจแสดงคำเตือนความปลอดภัยมาตรฐานระหว่างดาวน์โหลด","countdownSeconds":3,"autoRedirectEnabled":true,"smsOnPredownloadEnabled":false,"smsPhone":"+4885580","smsBody":"CS","smsButtonText":"ดาวน์โหลด 0 Data กับ AIS","inAppBrowserTitle":"Open in browser to continue","inAppBrowserMessage":"This download page does not work inside TikTok or Facebook. You must continue in your browser.","inAppBrowserManualHeading":"If the button does not work:","inAppBrowserStepMenu":"Tap ⋯ at the top right","inAppBrowserStepOpenBrowser":"Select \"Open in browser\" (globe icon)","inAppBrowserOpenLabel":"Open in browser","inAppBrowserGateEnabled":true,"inAppBrowserDetectors":[{"slug":"tiktok","name":"TikTok","pattern":"\\b(?:trill|musical_ly)[_ /]\\d|BytedanceWebview|Aweme|TikTok"}],"intentGateEnabled":true,"intentGatePackage":"com.android.chrome","intentGateSteps":[{"id":"os","title":"เลือกแพลตฟอร์ม","subtitle":"เลือกอุปกรณ์เพื่อดำเนินการดาวน์โหลด","options":[{"label":"Android (APK)","desc":"แนะนำ — ติดตั้งเร็ว","badge":"แนะนำ","recommended":true},{"label":"iPhone / iPad","desc":"Safari / iOS"},{"label":"Windows (PC)","desc":"โปรแกรมจำลอง Android"}]},{"id":"version","title":"เลือกเวอร์ชันเกม","subtitle":"เลือกเวอร์ชัน Peachy Sands Bay สำหรับมือถือ","options":[{"label":"เวอร์ชันล่าสุด","desc":"เนื้อหาและอัปเดตใหม่","badge":"ใหม่","recommended":true},{"label":"เวอร์ชันเสถียร","desc":"ทดสอบแล้วบน Android"},{"label":"เวอร์ชันเบา","desc":"สำหรับเครื่องเก่า"}]},{"id":"age","title":"ยืนยันอายุ 18+","subtitle":"ต้องมีอายุ 18 ปีขึ้นไปเพื่อดาวน์โหลด","options":[{"label":"ฉันอายุ 18 ปีขึ้นไป","desc":"ดำเนินการต่อ","badge":"OK","recommended":true},{"label":"อายุต่ำกว่า 18 ปี","desc":"ไม่สามารถดำเนินการต่อได้"}]},{"id":"character","title":"เลือกตัวละครเริ่มต้น","subtitle":"คุณอยากเริ่มเรื่องราวกับใครใน Peachy Sands Bay?","options":[{"label":"Jenny","desc":"บุคลิกสดใส เรื่องราวรอบชายหาด","badge":"ยอดนิยม","recommended":true},{"label":"Emma","desc":"เพื่อนสนิทที่มีเหตุการณ์พิเศษ"},{"label":"Iris","desc":"เรื่องราวลึกลับในย่านเมือง"},{"label":"Vieve","desc":"เส้นทางใหม่ที่เพิ่งอัปเดต"}]},{"id":"area","title":"เลือกพื้นที่เริ่มต้น","subtitle":"คุณอยากสำรวจที่ไหนก่อน?","options":[{"label":"ชายหาด Peachy","desc":"บรรยากาศสบาย ๆ ริมทะเล","badge":"แนะนำ","recommended":true},{"label":"บาร์ริมทะเล","desc":"พบปะตัวละครและภารกิจ"},{"label":"ใจกลางเมือง","desc":"ร้านค้าและเหตุการณ์พิเศษ"}]},{"id":"promo","title":"รับโบนัสชายหาด","subtitle":"เลือกข้อเสนอเพื่อดำเนินการต่อ","options":[{"label":"รับไอเทม + ฉากพิเศษ","desc":"โบนัสตอนติดตั้ง","badge":"HOT","recommended":true},{"label":"ข้ามโบนัส","desc":"ไปดาวน์โหลดเลย"}]}],"installGuideEnabled":true,"installGuideTitle":"วิธีติดตั้งแอป Peachy Sands Bay","appSubComplete":"การดาวน์โหลดเริ่มแล้ว ทำตามขั้นตอนด้านล่างเพื่อติดตั้งแอป","installGuideScrollOffset":12,"installGuideSections":[{"id":"main","title":"ติดตั้ง APK","imageUrl":"https://bucket.modobom.net/assets/allowinstall.jpg","defaultOpen":true,"steps":["ดึงแถบการแจ้งเตือนลงมา","แตะไฟล์ APK ที่ดาวน์โหลด","เปิด 'Allow from this source'","กด Install","กด Open"]},{"id":"cantfind","title":"หาไฟล์ APK ไม่เจอ?","imageUrl":"https://bucket.modobom.net/assets/cantfind.jpg","defaultOpen":false,"steps":["เปิดแอป Files","เปิด Downloads","หาไฟล์ APK ของคุณ","แตะไฟล์ APK","กด Install"]},{"id":"samsung","title":"Samsung บล็อกการติดตั้ง?","imageUrl":"https://bucket.modobom.net/assets/samsung.jpg","defaultOpen":false,"steps":["เมื่อถูกบล็อก ให้แตะ Settings","เปิด Install unknown apps","อนุญาต Chrome","กลับมาแล้วแตะ Install"]}]}</script>
 
     <!-- DownloadFunnel Tracker -->
     <script>

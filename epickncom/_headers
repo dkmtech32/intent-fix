@@ -1,0 +1,197 @@
+/lost-life/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/lost-life/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/lost-life/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/kuukiyomi-thailand/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/kuukiyomi-thailand/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/kuukiyomi-thailand/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/dude-theft-wars/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/dude-theft-wars/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/dude-theft-wars/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/game-mobile/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/game-mobile/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/game-mobile/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/marvel-rival/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/marvel-rival/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/marvel-rival/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/efootball/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/efootball/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/efootball/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/toca-life-world/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/toca-life-world/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/toca-life-world/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/beamngdrive/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/beamngdrive/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/beamngdrive/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/mamaia-vice-city/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/mamaia-vice-city/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/mamaia-vice-city/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/test/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/test/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/test/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/room-801/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/room-801/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/room-801/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/deltarune/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/deltarune/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/deltarune/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/gta-3-mod/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/gta-3-mod/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/gta-3-mod/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/doraemon-x-game/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/doraemon-x-game/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/doraemon-x-game/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/another-wall-mystery/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/another-wall-mystery/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/another-wall-mystery/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/room-801-apk/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/room-801-apk/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/room-801-apk/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/not-a-succubus/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/not-a-succubus/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/not-a-succubus/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/another-girl/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/another-girl/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/another-girl/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/tag-after-school/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/tag-after-school/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/tag-after-school/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/room-801-android/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/room-801-android/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/room-801-android/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/tag-after-school-apk/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/tag-after-school-apk/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/tag-after-school-apk/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/self-defense-dojo/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/self-defense-dojo/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/self-defense-dojo/*.css
+  Cache-Control: public, max-age=31536000, immutable

@@ -1,0 +1,71 @@
+/goodbye-eternity/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/goodbye-eternity/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/goodbye-eternity/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/red-dead-redemption/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/red-dead-redemption/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/red-dead-redemption/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/euro-truck-simulator-2/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/euro-truck-simulator-2/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/euro-truck-simulator-2/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/wheelie-challenge/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/wheelie-challenge/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/wheelie-challenge/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/gta-fivem/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/gta-fivem/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/gta-fivem/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/free-fire-advance/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/free-fire-advance/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/free-fire-advance/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/jenny-mod-minecraft/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/jenny-mod-minecraft/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/jenny-mod-minecraft/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/ea-sports-fc-mobile/index.html
+  Cache-Control: public, max-age=31536000, immutable
+
+/ea-sports-fc-mobile/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/ea-sports-fc-mobile/*.css
+  Cache-Control: public, max-age=31536000, immutable

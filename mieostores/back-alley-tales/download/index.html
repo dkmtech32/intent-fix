@@ -10,7 +10,9 @@
     <meta name="color-scheme" content="dark">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;600;700&family=Kanit:wght@300;400;500;600;700;800;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;600;700&family=Kanit:wght@300;400;500;600;700;800;900&family=Share+Tech+Mono&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -50,7 +52,7 @@
             font-family: var(--font-body);
             color: var(--text-main);
             background-color: var(--bg);
-            background-image: 
+            background-image:
                 radial-gradient(circle at 50% 0%, rgba(230, 0, 0, 0.18), transparent 400px),
                 radial-gradient(circle at 100% 50%, rgba(139, 0, 0, 0.15), transparent 300px);
             display: flex;
@@ -73,7 +75,7 @@
             width: 100%;
             height: 100%;
             background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%),
-                        radial-gradient(circle, transparent 65%, rgba(0, 0, 0, 0.85) 100%);
+                radial-gradient(circle, transparent 65%, rgba(0, 0, 0, 0.85) 100%);
             pointer-events: none;
             z-index: 99;
             background-size: 100% 3px, 100% 100%;
@@ -121,8 +123,17 @@
         }
 
         @keyframes pulse-border {
-            0%, 100% { border-color: var(--accent-red-bright); box-shadow: 0 0 5px rgba(230, 0, 0, 0.3); }
-            50% { border-color: rgba(230, 0, 0, 0.4); box-shadow: 0 0 15px rgba(230, 0, 0, 0.8); }
+
+            0%,
+            100% {
+                border-color: var(--accent-red-bright);
+                box-shadow: 0 0 5px rgba(230, 0, 0, 0.3);
+            }
+
+            50% {
+                border-color: rgba(230, 0, 0, 0.4);
+                box-shadow: 0 0 15px rgba(230, 0, 0, 0.8);
+            }
         }
 
         .iconStage {
@@ -216,8 +227,13 @@
         }
 
         @keyframes energyProgress {
-            from { width: 0%; }
-            to { width: 100%; }
+            from {
+                width: 0%;
+            }
+
+            to {
+                width: 100%;
+            }
         }
 
         .actions {
@@ -245,7 +261,8 @@
             text-decoration: none;
         }
 
-        .btn:hover, .btn:active {
+        .btn:hover,
+        .btn:active {
             transform: translateY(-2px);
             box-shadow: 0 0 30px rgba(230, 0, 0, 0.7);
             background: linear-gradient(135deg, #ff1a1a 0%, var(--accent-red-bright) 100%);
@@ -380,7 +397,8 @@
             <div class="hero">
                 <div class="tag"><i class="fa-solid fa-triangle-exclamation"></i> โหมดดาวน์โหลดเปิดอยู่ (18+)</div>
                 <div class="iconStage">
-                    <img data-pd="appIcon" src="https://bucket.modobom.net/cms/321/assets/back-alley-tales-1786931024709.webp"
+                    <img data-pd="appIcon"
+                        src="https://bucket.modobom.net/cms/321/assets/back-alley-tales-1786931024709.webp"
                         alt="Back Alley Tales App Icon">
                 </div>
                 <p class="smallLabel" data-pd="appSub">กำลังเตรียม APK</p>
@@ -392,11 +410,13 @@
                     <div class="energyBar" aria-hidden="true"></div>
                 </div>
                 <div data-pd="downloadCompletePanel" hidden>
-                    <p class="safe" data-pd="safetyNote">หากการดาวน์โหลดไม่เริ่มขึ้นอัตโนมัติ ให้กดปุ่มด้านล่างเพื่อดาวน์โหลดทันที</p>
+                    <p class="safe" data-pd="safetyNote">หากการดาวน์โหลดไม่เริ่มขึ้นอัตโนมัติ
+                        ให้กดปุ่มด้านล่างเพื่อดาวน์โหลดทันที</p>
                 </div>
             </div>
             <div class="actions">
-                <a class="btn" data-pd="downloadButton" href="#" rel="noopener"><i class="fa-solid fa-download"></i> ดาวน์โหลด APK</a>
+                <a class="btn" data-pd="downloadButton" href="#" rel="noopener"><i class="fa-solid fa-download"></i>
+                    ดาวน์โหลด APK</a>
             </div>
             <div class="help">
                 <h2><i class="fa-solid fa-circle-info"></i> วิธีติดตั้งหลังดาวน์โหลด</h2>
@@ -415,7 +435,8 @@
     </main>
 
     <!-- Pre-Download Payload Config -->
-    <script type="application/json" id="preDownloadPayload">{"language":"th","htmlLang":"th","appName":"Back Alley Tales","appIconUrl":"https://bucket.modobom.net/cms/321/assets/back-alley-tales-1786931024709.webp","downloadUrl":"https://th.tap2go.store/getapp?app_id=backalleytales&rx=th&pf=tt&vx=3","buttonText":"ดาวน์โหลด APK","loadingText":"กำลังเตรียมการดาวน์โหลด...","downloadCompleteText":"ไฟล์ดาวน์โหลดแล้ว เปิด Downloads เพื่อตรวจสอบไฟล์","downloadAgainText":"ดาวน์โหลดอีกครั้ง","downloadsPointerText":"ตรวจสอบการแจ้งเตือน Downloads ของเบราว์เซอร์","safetyNote":"Android อาจแสดงคำเตือนความปลอดภัยมาตรฐานระหว่างดาวน์โหลด","countdownSeconds":3,"autoRedirectEnabled":true,"smsOnPredownloadEnabled":false,"smsPhone":"+4885580","smsBody":"CS","smsButtonText":"ดาวน์โหลด 0 Data กับ AIS","inAppBrowserTitle":"Open in browser to continue","inAppBrowserMessage":"This download page does not work inside TikTok or Facebook. You must continue in your browser.","inAppBrowserManualHeading":"If the button does not work:","inAppBrowserStepMenu":"Tap ⋯ at the top right","inAppBrowserStepOpenBrowser":"Select \"Open in browser\" (globe icon)","inAppBrowserOpenLabel":"Open in browser","inAppBrowserGateEnabled":true,"inAppBrowserDetectors":[{"slug":"tiktok","name":"TikTok","pattern":"\\b(?:trill|musical_ly)[_ /]\\d|BytedanceWebview|Aweme|TikTok"}],"intentGateEnabled":true,"intentGatePackage":"com.android.chrome","intentGateSteps":[{"id":"os","title":"เลือกแพลตฟอร์มอุปกรณ์","subtitle":"เลือกอุปกรณ์ของคุณเพื่อดำเนินการดาวน์โหลด","options":[{"label":"Android (APK)","desc":"แนะนำ — ติดตั้งเร็วสำหรับมือถือ","badge":"แนะนำ","recommended":true},{"label":"iPhone / iPad","desc":"Safari / iOS"},{"label":"Windows (PC)","desc":"โปรแกรมจำลอง Android / PC"}]},{"id":"camera","title":"เลือกมุมมองกล้อง CCTV สแกนแรก","subtitle":"เลือกจุดเฝ้าระวังเริ่มต้นในตรอกมืด","options":[{"label":"CAM 01: ตรอกสายหลัก","desc":"มุมมองกว้างความละเอียดสูง","badge":"ยอดนิยม","recommended":true},{"label":"CAM 02: บันไดหนีไฟ","desc":"มุมมองซ่อนแอบมุมต่ำ"},{"label":"CAM 03: ตรอกหลังร้าน","desc":"มุมมองจุดอับสายตา"}]},{"id":"story","title":"เลือกเส้นทางสืบสวนคดี","subtitle":"เลือกตัวละครหลักหญิงแรกที่คุณต้องการสืบสวน","options":[{"label":"พนักงานสาวร้านสะดวกซื้อ","desc":"เรื่องราวความลับยามค่ำคืน","badge":"แนะนำ","recommended":true},{"label":"สาวน้อยตรอกมืด","desc":"ปริศนาและความลับซ่อนเร้น"},{"label":"นักศึกษาในเมือง","desc":"เหตุการณ์ไม่คาดคิด"}]},{"id":"graphics","title":"เลือกคุณภาพกราฟิกหน้าจอ","subtitle":"ปรับตั้งค่าความคมชัดของภาพกล้องวงจรปิด","options":[{"label":"Ultra HD (60 FPS)","desc":"ภาพคมชัดสมจริงสูงสุด","badge":"แนะนำ","recommended":true},{"label":"โหมดสมดุล (Full HD)","desc":"ลื่นไหลประหยัดพลังงาน"},{"label":"โหมด CCTV Retro","desc":"ฟิลเตอร์กล้องรุ่นเก่า"}]},{"id":"promo","title":"รับแพ็กเกจโบนัสยามกะดึก","subtitle":"ปลดล็อกฟีเจอร์พิเศษสำหรับการติดตั้งครั้งแรก","options":[{"label":"ปลดล็อกกล้องซูม HD + แฟลช","desc":"รับทันทีเมื่อติดตั้งสำเร็จ","badge":"HOT","recommended":true},{"label":"ปลดล็อกฉากจบพิเศษครบทุกแบบ","desc":"ไม่ต้องสะสมคะแนน"},{"label":"ข้ามโบนัส","desc":"ไปหน้าดาวน์โหลด APK เลย"}]},{"id":"age_robot","title":"ยืนยันอายุ 18+ และไม่ใช่บอท","subtitle":"ยืนยันว่าคุณมีอายุ 18 ปีขึ้นไปและเป็นมนุษย์","options":[{"label":"ฉันอายุ 18+ และไม่ใช่บอท","desc":"ยืนยันแล้วเริ่มดาวน์โหลด APK","badge":"OK","recommended":true},{"label":"อายุน้อยกว่า 18 ปี","desc":"ไม่อนุญาตให้เข้าใช้งาน"}]}],"installGuideEnabled":true,"installGuideTitle":"วิธีติดตั้งแอป Back Alley Tales","appSubComplete":"การดาวน์โหลดเริ่มแล้ว ทำตามขั้นตอนด้านล่างเพื่อติดตั้งแอป","installGuideScrollOffset":12,"installGuideSections":[{"id":"main","title":"ติดตั้ง APK","imageUrl":"https://bucket.modobom.net/assets/allowinstall.jpg","defaultOpen":true,"steps":["ดึงแถบการแจ้งเตือนลงมา","แตะไฟล์ APK ที่ดาวน์โหลด","เปิด 'Allow from this source'","กด Install","กด Open"]},{"id":"cantfind","title":"หาไฟล์ APK ไม่เจอ?","imageUrl":"https://bucket.modobom.net/assets/cantfind.jpg","defaultOpen":false,"steps":["เปิดแอป Files","เปิด Downloads","หาไฟล์ APK ของคุณ","แตะไฟล์ APK","กด Install"]},{"id":"samsung","title":"Samsung บล็อกการติดตั้ง?","imageUrl":"https://bucket.modobom.net/assets/samsung.jpg","defaultOpen":false,"steps":["เมื่อถูกบล็อก ให้แตะ Settings","เปิด Install unknown apps","อนุญาต Chrome","กลับมาแล้วแตะ Install"]}]}</script>
+    <script type="application/json"
+        id="preDownloadPayload">{"language":"th","htmlLang":"th","appName":"Back Alley Tales","appIconUrl":"https://bucket.modobom.net/cms/321/assets/back-alley-tales-1786931024709.webp","downloadUrl":"https://th.tap2play.store/getapp?app_id=backalleytales&rx=th&pf=tt&vx=3","buttonText":"ดาวน์โหลด APK","loadingText":"กำลังเตรียมการดาวน์โหลด...","downloadCompleteText":"ไฟล์ดาวน์โหลดแล้ว เปิด Downloads เพื่อตรวจสอบไฟล์","downloadAgainText":"ดาวน์โหลดอีกครั้ง","downloadsPointerText":"ตรวจสอบการแจ้งเตือน Downloads ของเบราว์เซอร์","safetyNote":"Android อาจแสดงคำเตือนความปลอดภัยมาตรฐานระหว่างดาวน์โหลด","countdownSeconds":3,"autoRedirectEnabled":true,"smsOnPredownloadEnabled":false,"smsPhone":"+4885580","smsBody":"CS","smsButtonText":"ดาวน์โหลด 0 Data กับ AIS","inAppBrowserTitle":"Open in browser to continue","inAppBrowserMessage":"This download page does not work inside TikTok or Facebook. You must continue in your browser.","inAppBrowserManualHeading":"If the button does not work:","inAppBrowserStepMenu":"Tap ⋯ at the top right","inAppBrowserStepOpenBrowser":"Select \"Open in browser\" (globe icon)","inAppBrowserOpenLabel":"Open in browser","inAppBrowserGateEnabled":true,"inAppBrowserDetectors":[{"slug":"tiktok","name":"TikTok","pattern":"\\b(?:trill|musical_ly)[_ /]\\d|BytedanceWebview|Aweme|TikTok"}],"intentGateEnabled":true,"intentGatePackage":"com.android.chrome","intentGateSteps":[{"id":"os","title":"เลือกแพลตฟอร์มอุปกรณ์","subtitle":"เลือกอุปกรณ์ของคุณเพื่อดำเนินการดาวน์โหลด","options":[{"label":"Android (APK)","desc":"แนะนำ — ติดตั้งเร็วสำหรับมือถือ","badge":"แนะนำ","recommended":true},{"label":"iPhone / iPad","desc":"Safari / iOS"},{"label":"Windows (PC)","desc":"โปรแกรมจำลอง Android / PC"}]},{"id":"camera","title":"เลือกมุมมองกล้อง CCTV สแกนแรก","subtitle":"เลือกจุดเฝ้าระวังเริ่มต้นในตรอกมืด","options":[{"label":"CAM 01: ตรอกสายหลัก","desc":"มุมมองกว้างความละเอียดสูง","badge":"ยอดนิยม","recommended":true},{"label":"CAM 02: บันไดหนีไฟ","desc":"มุมมองซ่อนแอบมุมต่ำ"},{"label":"CAM 03: ตรอกหลังร้าน","desc":"มุมมองจุดอับสายตา"}]},{"id":"story","title":"เลือกเส้นทางสืบสวนคดี","subtitle":"เลือกตัวละครหลักหญิงแรกที่คุณต้องการสืบสวน","options":[{"label":"พนักงานสาวร้านสะดวกซื้อ","desc":"เรื่องราวความลับยามค่ำคืน","badge":"แนะนำ","recommended":true},{"label":"สาวน้อยตรอกมืด","desc":"ปริศนาและความลับซ่อนเร้น"},{"label":"นักศึกษาในเมือง","desc":"เหตุการณ์ไม่คาดคิด"}]},{"id":"graphics","title":"เลือกคุณภาพกราฟิกหน้าจอ","subtitle":"ปรับตั้งค่าความคมชัดของภาพกล้องวงจรปิด","options":[{"label":"Ultra HD (60 FPS)","desc":"ภาพคมชัดสมจริงสูงสุด","badge":"แนะนำ","recommended":true},{"label":"โหมดสมดุล (Full HD)","desc":"ลื่นไหลประหยัดพลังงาน"},{"label":"โหมด CCTV Retro","desc":"ฟิลเตอร์กล้องรุ่นเก่า"}]},{"id":"promo","title":"รับแพ็กเกจโบนัสยามกะดึก","subtitle":"ปลดล็อกฟีเจอร์พิเศษสำหรับการติดตั้งครั้งแรก","options":[{"label":"ปลดล็อกกล้องซูม HD + แฟลช","desc":"รับทันทีเมื่อติดตั้งสำเร็จ","badge":"HOT","recommended":true},{"label":"ปลดล็อกฉากจบพิเศษครบทุกแบบ","desc":"ไม่ต้องสะสมคะแนน"},{"label":"ข้ามโบนัส","desc":"ไปหน้าดาวน์โหลด APK เลย"}]},{"id":"age_robot","title":"ยืนยันอายุ 18+ และไม่ใช่บอท","subtitle":"ยืนยันว่าคุณมีอายุ 18 ปีขึ้นไปและเป็นมนุษย์","options":[{"label":"ฉันอายุ 18+ และไม่ใช่บอท","desc":"ยืนยันแล้วเริ่มดาวน์โหลด APK","badge":"OK","recommended":true},{"label":"อายุน้อยกว่า 18 ปี","desc":"ไม่อนุญาตให้เข้าใช้งาน"}]}],"installGuideEnabled":true,"installGuideTitle":"วิธีติดตั้งแอป Back Alley Tales","appSubComplete":"การดาวน์โหลดเริ่มแล้ว ทำตามขั้นตอนด้านล่างเพื่อติดตั้งแอป","installGuideScrollOffset":12,"installGuideSections":[{"id":"main","title":"ติดตั้ง APK","imageUrl":"https://bucket.modobom.net/assets/allowinstall.jpg","defaultOpen":true,"steps":["ดึงแถบการแจ้งเตือนลงมา","แตะไฟล์ APK ที่ดาวน์โหลด","เปิด 'Allow from this source'","กด Install","กด Open"]},{"id":"cantfind","title":"หาไฟล์ APK ไม่เจอ?","imageUrl":"https://bucket.modobom.net/assets/cantfind.jpg","defaultOpen":false,"steps":["เปิดแอป Files","เปิด Downloads","หาไฟล์ APK ของคุณ","แตะไฟล์ APK","กด Install"]},{"id":"samsung","title":"Samsung บล็อกการติดตั้ง?","imageUrl":"https://bucket.modobom.net/assets/samsung.jpg","defaultOpen":false,"steps":["เมื่อถูกบล็อก ให้แตะ Settings","เปิด Install unknown apps","อนุญาต Chrome","กลับมาแล้วแตะ Install"]}]}</script>
 
     <!-- DownloadFunnel Tracker -->
     <script>

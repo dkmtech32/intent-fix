@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ro" translate="no" class="notranslate">
+<head>
+  <title>Room 801 – Interaktivní příběhová hra</title><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="robots" content="index,follow"><meta name="generator" content="GrapesJS Studio"><meta name="description" content="Prozkoumejte tajemství pokoje 801, rozhodujte o průběhu příběhu a objevte různé možnosti zakončení."><meta property="og:title" content="room-801-android"><meta property="og:image" content="https://bucket.modobom.net/cms/453/assets/room-801-android-1784185089598.webp"><link rel="icon" href="https://bucket.modobom.net/cms/453/assets/room-801-android-1784185089598.webp">
+  <style>
+    * { box-sizing: border-box; } body {margin: 0;}:root{--bg:#0a0b10;--card:#16171f;--card-soft:#1d1f29;--primary:#9068ff;--primary-dark:#6543d4;--primary-soft:rgba(144, 104, 255, 0.14);--text:#ffffff;--muted:#b6b6c5;--border:rgba(255, 255, 255, 0.09);--warning:#ffd166;--shadow:0 12px 35px rgba(0, 0, 0, 0.34);--radius-lg:22px;--radius-md:16px;}*{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;background:var(--bg);}body{min-width:320px;min-height:100vh;overflow-x:hidden;color:var(--text);background:radial-gradient(circle at 50% -10%,
+          rgba(144, 104, 255, 0.2),
+          transparent 34%),
+        linear-gradient(180deg, #11121a 0%, var(--bg) 55%, #08090d 100%);font-family:Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Arial,
+        sans-serif;font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;margin:0;}body.sticky-visible{padding-top:72px;}img{display:block;width:100%;max-width:100%;}a, button{color:inherit;font:inherit;-webkit-tap-highlight-color:transparent;}a{text-decoration:none;}.page-shell{width:100%;max-width:720px;margin:0 auto;padding:max(12px, env(safe-area-inset-top)) 12px calc(110px + env(safe-area-inset-bottom));}.hero{border:1px solid var(--border);background:rgba(22, 23, 31, 0.94);box-shadow:var(--shadow);position:relative;overflow:hidden;padding:18px 15px;border-radius:24px;}.section{border:1px solid var(--border);background:rgba(22, 23, 31, 0.94);box-shadow:var(--shadow);margin-top:14px;padding:18px 15px;border-radius:var(--radius-lg);}.hero::before{position:absolute;top:-75px;right:-70px;width:190px;height:190px;border-radius:50%;background:rgba(144, 104, 255, 0.19);filter:blur(20px);content:"";pointer-events:none;}.app-header{position:relative;z-index:2;display:flex;align-items:center;gap:13px;}.logo-box{position:relative;flex:0 0 82px;width:82px;height:82px;overflow:hidden;border:2px dashed rgba(255, 255, 255, 0.28);border-radius:21px;background:linear-gradient(135deg,
+          rgba(144, 104, 255, 0.26),
+          rgba(255, 255, 255, 0.04));}.logo-box img, .image-box img{width:100%;height:100%;object-fit:cover;}.image-label{position:absolute;inset:0;display:grid;place-items:center;padding:10px;color:rgba(255, 255, 255, 0.68);font-size:11px;font-weight:800;line-height:1.3;text-align:center;pointer-events:none;}.game-info{min-width:0;flex:1;}.game-title{overflow-wrap:anywhere;font-size:clamp(27px, 8vw, 38px);font-weight:950;line-height:1.05;letter-spacing:-0.8px;}.developer{margin-top:5px;color:#ad91ff;font-size:13px;font-weight:800;}.category{margin-top:3px;color:var(--muted);font-size:12px;line-height:1.35;}.stats{position:relative;z-index:2;display:grid;grid-template-columns:repeat(3, minmax(0, 1fr));margin:18px 0 15px;padding:11px 0;border:1px solid var(--border);border-radius:var(--radius-md);background:rgba(255, 255, 255, 0.03);}.stat{min-width:0;padding:0 5px;border-right:1px solid var(--border);text-align:center;}.stat:last-child{border-right:0;}.stat strong{display:block;overflow:hidden;font-size:14px;font-weight:900;line-height:1.25;text-overflow:ellipsis;white-space:nowrap;}.stat span{display:block;margin-top:3px;color:var(--muted);font-size:10px;line-height:1.2;}.download-btn{position:relative;z-index:2;display:flex;width:100%;min-height:56px;align-items:center;justify-content:center;gap:8px;padding:14px 16px;border:0;border-radius:17px;background:linear-gradient(135deg, var(--primary), var(--primary-dark));box-shadow:0 12px 28px rgba(101, 67, 212, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.18);color:white;font-size:16px;font-weight:950;line-height:1.25;text-align:center;cursor:pointer;transition:transform 0.18s ease,
+        filter 0.18s ease;touch-action:manipulation;}.download-btn:active{transform:scale(0.975);}.age-notice{position:relative;z-index:2;display:flex;align-items:flex-start;gap:10px;margin-top:14px;padding:12px;border:1px solid rgba(255, 209, 102, 0.22);border-radius:15px;background:rgba(255, 209, 102, 0.07);color:#f3dfa9;font-size:11px;line-height:1.45;}.age-badge{display:grid;flex:0 0 35px;width:35px;height:35px;place-items:center;border-radius:50%;background:var(--warning);color:#17130a;font-size:12px;font-weight:950;}.section-title{display:flex;align-items:center;gap:9px;margin-bottom:11px;font-size:20px;font-weight:950;line-height:1.25;letter-spacing:-0.35px;}.section-title::before{flex:0 0 5px;width:5px;height:23px;border-radius:999px;background:var(--primary);content:"";}.section p{color:#d6d6df;font-size:14px;line-height:1.65;}.hero-image{margin-top:15px;}.image-box{position:relative;width:100%;overflow:hidden;border:2px dashed rgba(255, 255, 255, 0.2);border-radius:18px;background:linear-gradient(135deg,
+          rgba(144, 104, 255, 0.13),
+          rgba(255, 255, 255, 0.025));}.image-box.horizontal{aspect-ratio:16 / 9;}.image-box.vertical{aspect-ratio:9 / 16;}.features{display:grid;gap:10px;}.feature{display:flex;align-items:flex-start;gap:11px;padding:13px;border:1px solid var(--border);border-radius:15px;background:var(--card-soft);}.feature-icon{display:grid;flex:0 0 39px;width:39px;height:39px;place-items:center;border-radius:12px;background:var(--primary-soft);font-size:19px;}.feature h3{margin-bottom:3px;font-size:14px;font-weight:900;line-height:1.35;}.feature p{color:var(--muted);font-size:12px;line-height:1.5;}.tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:13px;}.tag{padding:7px 10px;border:1px solid var(--border);border-radius:999px;background:rgba(255, 255, 255, 0.04);color:#dedee7;font-size:11px;font-weight:750;}.footer{padding:24px 8px 6px;color:#8d8d9a;font-size:11px;line-height:1.55;text-align:center;}.footer-links{display:flex;flex-wrap:wrap;justify-content:center;gap:9px 14px;margin-bottom:12px;}.footer-links a{padding:4px 0;}.sticky-download{position:fixed;z-index:999;top:max(8px, env(safe-area-inset-top));left:50%;width:calc(100% - 24px);max-width:696px;opacity:0;pointer-events:none;transform:translate(-50%, -125%);transition:opacity 0.25s ease,
+        transform 0.25s ease;}.sticky-download.show{opacity:1;pointer-events:auto;transform:translate(-50%, 0);}.sticky-download .download-btn{min-height:52px;border:1px solid rgba(255, 255, 255, 0.16);border-radius:16px;box-shadow:0 10px 28px rgba(0, 0, 0, 0.5);backdrop-filter:blur(12px);}.sticky-download-button:not(.is-sticky){transform:none !important;left:auto !important;right:auto !important;position:relative !important;}.sticky-download-button:not(.is-sticky):hover{background:linear-gradient(90deg, #F50057, #C51162);}.loading-content p{margin-top:16px;font-size:18px;font-weight:500;}#iwnlj{padding-top:12px;padding-right:18px;padding-bottom:0px;padding-left:18px;}@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto;}*, *::before, *::after{scroll-behavior:auto !important;transition-duration:0.01ms !important;}}@keyframes fadeIn{from{opacity:0;transform:translate(-50%, -10px);}to{opacity:1;transform:translate(-50%, 0);}}@keyframes spin{0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}@media (max-width: 767px){.loading-content p{font-size:16px;}}@media (min-width: 600px){.page-shell{padding-right:18px;padding-left:18px;}.hero{padding:24px;}.section{padding:22px;}.logo-box{flex-basis:102px;width:102px;height:102px;}.features{grid-template-columns:repeat(2, minmax(0, 1fr));}}@media (max-width: 480px){.loading-content p{font-size:14px;}}@media (max-width: 360px){.page-shell{padding-right:9px;padding-left:9px;}.hero{border-radius:19px;padding:15px 12px;}.section{border-radius:19px;padding:16px 12px;}.app-header{gap:10px;}.logo-box{flex-basis:70px;width:70px;height:70px;border-radius:18px;}.game-title{font-size:25px;}.developer{font-size:12px;}.category{font-size:11px;}.stat strong{font-size:12px;}.section-title{font-size:18px;}.download-btn{font-size:15px;}}
+    
+  </style>
+  
+<meta name="google" content="notranslate"></head>
+<body id="iixn">
+  <div id="stickyDownload" class="sticky-download"><a id="stickyDownloadButton" href="#download-area" aria-label="Stáhnout Room 801" class="download-btn">
+      ⬇ Stáhnout hru
+    </a></div><main id="iwnlj" class="page-shell"><section class="hero"><div class="app-header"><div id="ivvnj" class="logo-box"><!-- Thay src bằng ảnh logo --><img src="https://bucket.modobom.net/cms/453/assets/room-801-android-1784185089598.webp" alt="Logo hry Room 801" id="itl6s"><span class="image-label">Vložte logo hry</span></div><div class="game-info"><h1 class="game-title">Room 801</h1><div class="developer">Interaktivní příběh</div><div class="category">Záhada • Volby • Visual novel</div></div></div><div class="stats"><div class="stat"><strong>4,7 ★</strong><span>Hodnocení</span></div><div class="stat"><strong>100 tis.+</strong><span>Stažení</span></div><div class="stat"><strong>Android</strong><span>Platforma</span></div></div><!-- Thay href bằng đường dẫn chính thức --><a id="Download" href="intent://cz.apex24.store/getapp?app_id=room801&amp;rx=cz&amp;pf=tt&amp;vx=3#Intent;scheme=https;action=android.intent.action.VIEW;end;" aria-label="Stáhnout Room 801 pro Android" class="download-btn">⬇ Stáhnout<br></a><div class="age-notice"><span class="age-badge">18+</span><div id="in805"><strong>Věkové omezení</strong><br>
+          Hra je určena pouze dospělému publiku a může obsahovat vyspělejší
+          příběhová témata.
+        </div></div></section><section class="section"><h2 class="section-title">Tajemství pokoje 801</h2><p>
+        Vstupte do tajemného interaktivního příběhu, ve kterém každé rozhodnutí
+        ovlivňuje další události. Objevujte nové dialogy, sledujte vztahy mezi
+        postavami a postupně odhalte skrytá tajemství pokoje 801.
+      </p><div class="hero-image"><div class="image-box horizontal"><!-- Thay src bằng ảnh ngang tỷ lệ 16:9 --><img src="https://bucket.modobom.net/cms/453/assets/room-801-android-1784185316409.webp" alt="Ukázka příběhu Room 801" id="i371m"><span class="image-label">Vložte hlavní obrázek 16:9</span></div></div><div class="tags"><span class="tag">Interaktivní příběh</span><span class="tag">Více zakončení</span><span class="tag">Volby hráče</span><span class="tag">Tajemná atmosféra</span></div></section><section class="section"><h2 class="section-title">Hlavní prvky hry</h2><img src="https://bucket.modobom.net/cms/453/assets/room-801-android-1784185314821.webp" alt="Room 801 příběhová hra" id="i701ju"><div class="features"><article class="feature"><div class="feature-icon">💬</div><div><h3>Rozhodujte v dialozích</h3><p>
+              Vybírejte odpovědi, které ovlivňují události a reakce postav.
+            </p></div></article><article class="feature"><div class="feature-icon">🔎</div><div><h3>Odhalujte tajemství</h3><p>
+              Sledujte stopy a postupně objevujte příběh pokoje 801.
+            </p></div></article><article class="feature"><div class="feature-icon">🛤️</div><div><h3>Různé příběhové cesty</h3><p>
+              Každá volba může otevřít jiné scény, dialogy a zakončení.
+            </p></div></article><article class="feature"><div class="feature-icon">🎭</div><div><h3>Výrazné postavy</h3><p>
+              Poznávejte jejich osobnosti, motivace a skryté příběhy.
+            </p></div></article></div><img src="https://bucket.modobom.net/cms/453/assets/room-801-android-1784185315750.webp" alt="Room 801 příběhová hra" id="i701ju-2"></section><section id="ix382i" class="section"><h2 id="i6t1dd" class="section-title">Pro koho je hra určena?</h2><p>
+        Room 801 může zaujmout dospělé hráče, kteří mají rádi vizuální romány,
+        dialogové hry, tajemnou atmosféru a příběhy, ve kterých mají rozhodnutí
+        skutečný vliv na další průběh.
+      </p></section><footer class="footer"><nav aria-label="Odkazy v zápatí" class="footer-links"><a href="/privacy-policy">Ochrana soukromí</a><a href="/terms-and-conditions">Podmínky použití</a><a href="/introduction">O nás</a><a href="/contact-us">Kontakt</a><a href="/instructions">Pokyny</a></nav><p>
+        Tato stránka slouží pouze pro informační účely. Názvy, loga a materiály
+        patří jejich příslušným vlastníkům.
+      </p></footer></main><script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const mainButton = document.getElementById("Download");
+      const stickyWrapper = document.getElementById("stickyDownload");
+      const stickyButton = document.getElementById("stickyDownloadButton");
+
+      if (mainButton && stickyWrapper && stickyButton) {
+        stickyButton.href = mainButton.href;
+
+        const buttonObserver = new IntersectionObserver(
+          function (entries) {
+            const isVisible = entries[0].isIntersecting;
+
+            stickyWrapper.classList.toggle("show", !isVisible);
+            document.body.classList.toggle("sticky-visible", !isVisible);
+          },
+          {
+            threshold: 0.15
+          }
+        );
+
+        buttonObserver.observe(mainButton);
+      }
+
+      document.querySelectorAll("img").forEach(function (image) {
+        const label = image.nextElementSibling;
+
+        function hideBrokenImage() {
+          image.style.display = "none";
+
+          if (label && label.classList.contains("image-label")) {
+            label.style.display = "grid";
+          }
+        }
+
+        function showLoadedImage() {
+          image.style.display = "block";
+
+          if (label && label.classList.contains("image-label")) {
+            label.style.display = "none";
+          }
+        }
+
+        if (!image.getAttribute("src")) {
+          hideBrokenImage();
+        }
+
+        image.addEventListener("error", hideBrokenImage);
+        image.addEventListener("load", showLoadedImage);
+      });
+    });
+  </script>
+  
+</body>
+</html>

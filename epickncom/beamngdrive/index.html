@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="ro" translate="no" class="notranslate">
+<head>
+  <title>BeamNG.drive – Simulator Auto cu Fizică Realistă</title><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="robots" content="index, follow"><meta name="generator" content="GrapesJS Studio"><meta name="description" content="Descoperă BeamNG.drive, simulatorul auto cu fizică realistă, vehicule personalizabile, accidente spectaculoase și hărți vaste pentru condus liber."><meta property="og:title" content="beamngdrive"><meta property="og:image" content="https://bucket.modobom.net/cms/453/assets/beamngdrive-1781862241025.webp"><link rel="icon" href="https://bucket.modobom.net/cms/453/assets/beamngdrive-1781862241025.webp"><meta name="theme-color" content="#090909">
+  <style>
+    * { box-sizing: border-box; } body {margin: 0;}*{box-sizing:border-box;margin:0;padding:0;}body{margin:0;min-width:320px;overflow-x:hidden;color:var(--text);background:radial-gradient(circle at 100% 5%,
+                    rgba(255, 103, 0, 0.14),
+                    transparent 28%),
+                radial-gradient(circle at 0% 50%,
+                    rgba(255, 103, 0, 0.07),
+                    transparent 27%),
+                linear-gradient(180deg,
+                    #070707 0%,
+                    #111111 45%,
+                    #080808 100%);font-family:Inter,
+                Arial,
+                Helvetica,
+                sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased;padding-bottom:calc(88px + env(safe-area-inset-bottom));text-rendering:optimizeLegibility;}:root{--orange:#ff6700;--orange-light:#ff963f;--orange-dark:#c54200;--black:#070707;--black-soft:#111111;--card:#181818;--card-light:#202020;--white:#ffffff;--gray:#b9b9b9;--gray-dark:#777777;--border:rgba(255, 255, 255, 0.09);--shadow:0 20px 55px rgba(0, 0, 0, 0.55);--radius:20px;--black-2:#0d0d0d;--black-3:#151515;--card-2:#202020;--text:#eeeeee;--muted:#aaaaaa;--muted-2:#777777;--orange-border:rgba(255, 103, 0, 0.38);--radius-small:14px;--radius-large:28px;--orange-shadow:0 14px 35px rgba(255, 103, 0, 0.27);}html{scroll-behavior:smooth;background:var(--black);}img{display:block;width:100%;max-width:100%;}a{color:inherit;text-decoration:none;}button, a{-webkit-tap-highlight-color:transparent;touch-action:manipulation;}.page{position:relative;overflow:hidden;}.container{width:min(calc(100% - 28px), 1120px);margin-inline:auto;}.brand{display:flex;align-items:center;gap:9px;font-weight:900;letter-spacing:-0.7px;min-width:0;}.brand-symbol{position:relative;width:33px;height:33px;flex:0 0 auto;}.brand-symbol span{position:absolute;width:10px;height:10px;border-radius:50%;background:var(--orange);box-shadow:0 0 16px rgba(255, 103, 0, 0.65);}.brand-symbol span:nth-child(1){top:1px;left:12px;}.brand-symbol span:nth-child(2){top:17px;left:1px;bottom:2px;}.brand-symbol span:nth-child(3){top:19px;right:1px;bottom:2px;}.brand-name em{color:var(--orange);font-style:italic;}.hero{position:relative;padding-bottom:0;min-height:0;}.hero-cover img{width:100%;height:clamp(290px, 55vw, 560px);object-fit:cover;object-position:center;}.hero-copy{position:relative;right:auto;left:auto;z-index:2;width:100%;padding-bottom:0;top:auto;}.hero h1{max-width:720px;font-size:clamp(38px, 11vw, 74px);font-weight:1000;line-height:0.94;letter-spacing:-2px;text-transform:uppercase;text-shadow:0 8px 25px rgba(0, 0, 0, 0.8);}.hero h1 span{color:var(--orange);font-style:italic;}.store-card{position:relative;z-index:4;margin-top:-18px;padding:20px;border:1px solid var(--border);border-radius:25px;background:linear-gradient(145deg,
+                    rgba(35, 35, 35, 0.98),
+                    rgba(12, 12, 12, 0.98));box-shadow:var(--shadow);overflow:hidden;backdrop-filter:blur(18px);}.app-icon{position:relative;display:grid;width:78px;height:78px;overflow:hidden;place-items:center;border:1px solid rgba(255, 255, 255, 0.13);border-radius:20px;background:linear-gradient(145deg,
+                    #ff8a2a 0%,
+                    #e44c00 44%,
+                    #391300 75%,
+                    #080808 100%);box-shadow:0 13px 28px rgba(0, 0, 0, 0.52);}.app-icon::after{position:absolute;inset:0;content:"";background:linear-gradient(135deg, rgba(255, 255, 255, 0.24), transparent 45%);z-index:2;pointer-events:none;}.app-icon strong{position:relative;z-index:1;font-size:41px;font-style:italic;font-weight:1000;letter-spacing:-3px;}.app-details h2{overflow:hidden;margin-bottom:3px;font-size:23px;line-height:1.1;text-overflow:ellipsis;white-space:nowrap;}.app-category{color:var(--orange-light);font-size:12px;font-weight:850;margin-top:4px;}.store-stats{display:grid;margin:20px 0;grid-template-columns:repeat(3, 1fr);border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin-top:18px;}.stat+.stat{border-left:1px solid var(--border);}.stat strong{display:block;color:var(--white);font-size:14px;line-height:1.2;}.stat span{display:block;margin-top:4px;color:var(--gray-dark);font-size:10px;font-weight:800;letter-spacing:0.4px;text-transform:uppercase;}.platform-warning b{color:#ededed;}.section{padding:58px 0 0;padding-top:64px;}.section-heading h2{font-size:clamp(26px, 6vw, 42px);line-height:1.08;letter-spacing:-1.2px;text-transform:uppercase;}.section-heading p{max-width:700px;margin-top:10px;color:var(--gray);font-size:14px;}.screens-slider{display:flex;overflow-x:auto;gap:12px;padding:3px 14px 18px;scroll-snap-type:x mandatory;scrollbar-width:none;overscroll-behavior-x:contain;scroll-behavior:smooth;overscroll-behavior-inline:contain;-webkit-overflow-scrolling:touch;}.screens-slider::-webkit-scrollbar{display:none;}.screen-card{position:relative;flex:0 0 87%;overflow:hidden;scroll-snap-align:center;aspect-ratio:16 / 10;border:1px solid var(--border);border-radius:20px;background:linear-gradient(145deg,
+                    #292929,
+                    #111111);box-shadow:0 15px 35px rgba(0, 0, 0, 0.4);}.screen-card img{width:100%;height:100%;object-fit:cover;transition:transform 0.45s ease;}.screen-card::after{position:absolute;inset:0;content:"";pointer-events:none;background:linear-gradient(180deg, transparent 55%, rgba(0, 0, 0, 0.85));}.feature-card{position:relative;overflow:hidden;padding:20px;border:1px solid var(--border);border-radius:20px;background:linear-gradient(145deg,
+                    #1a1a1a,
+                    #0f0f0f);min-height:185px;}.feature-card::after{position:absolute;top:-30px;right:-30px;width:100px;height:100px;border-radius:50%;content:"";background:rgba(255, 101, 0, 0.11);filter:blur(8px);}.feature-card h3{position:relative;z-index:1;margin-bottom:7px;font-size:18px;line-height:1.2;}.feature-card p{position:relative;z-index:1;color:var(--muted);font-size:12px;line-height:1.6;}.impact-content{position:relative;z-index:2;}.impact-content h2{max-width:690px;font-size:clamp(29px, 8vw, 52px);line-height:1;text-transform:uppercase;font-weight:1000;letter-spacing:-1.4px;}.impact-content h2 span{color:var(--orange);}.impact-content p{max-width:660px;margin:14px 0 20px;color:#c2c2c2;font-size:14px;}.impact-list{display:grid;gap:10px;margin-top:20px;}.mode-icon{display:grid;width:48px;height:48px;place-items:center;border-radius:14px;color:var(--orange);background:rgba(255, 103, 0, 0.1);font-size:22px;}.mode h3{font-size:15px;}.mode p{margin-top:2px;color:var(--gray);font-size:12px;}.info-row{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;padding:13px 0;border-bottom:1px solid var(--border);}.info-row:first-child{padding-top:0;}.info-row:last-child{padding-bottom:0;border-bottom:0;}.info-row span{color:var(--muted-2);font-size:10px;font-weight:900;text-transform:uppercase;flex:0 0 auto;letter-spacing:0.4px;}.info-row strong{max-width:66%;font-size:12px;text-align:right;line-height:1.45;}.faq-item.open .faq-answer{max-height:240px;}.faq-item.open .faq-plus{transform:rotate(45deg);}.final-cta h2{font-size:clamp(28px, 7vw, 47px);line-height:1.05;text-transform:uppercase;}.final-cta h2 span{color:var(--orange);}.final-cta p{max-width:620px;margin:12px auto 22px;color:var(--gray);font-size:14px;}.final-cta .main-cta{width:min(100%, 420px);margin-inline:auto;}footer{padding:34px 0 calc(95px + env(safe-area-inset-bottom));background:#050505;}.footer-brand span{color:var(--orange);font-style:italic;}.footer-links{display:flex;flex-wrap:wrap;gap:11px 17px;margin:20px 0;}.footer-links a{color:#b5b5b5;font-size:10px;font-weight:750;}.copyright{padding-top:16px;border-top:1px solid var(--border);color:#626262;font-size:9px;}.sticky-icon{flex:0 0 auto;display:block;width:42px;height:42px;place-items:center;border-radius:12px;background:#111;font-style:italic;font-weight:1000;font-size:20px;position:relative;overflow:hidden;}.sticky-text strong{display:block;overflow:hidden;font-size:13px;line-height:1.2;text-overflow:ellipsis;white-space:nowrap;}.sticky-text span{display:block;margin-top:2px;color:#999;font-size:9px;font-weight:800;text-transform:uppercase;}.sticky-button{flex:0 0 auto;padding:10px 14px;border-radius:13px;color:#ffffff;background:linear-gradient(135deg,
+                    var(--orange-light),
+                    var(--orange-dark));font-size:10px;font-weight:950;text-transform:uppercase;display:flex;min-height:44px;align-items:center;justify-content:center;letter-spacing:0.3px;box-shadow:0 8px 20px rgba(255, 103, 0, 0.25);}body.no-sticky-space{padding-bottom:0;}button{font:inherit;}section{scroll-margin-top:80px;}.speed-background{position:fixed;inset:0;z-index:-2;overflow:hidden;pointer-events:none;}.speed-background::before{position:absolute;width:180%;height:240px;content:"";opacity:0.12;transform:rotate(-13deg);background:repeating-linear-gradient(90deg,
+                    transparent 0,
+                    transparent 90px,
+                    rgba(255, 103, 0, 0.7) 92px,
+                    transparent 95px,
+                    transparent 165px);filter:blur(1px);animation:speedLineMove 9s linear infinite;top:18%;left:-45%;}.speed-background::after{position:absolute;width:180%;height:240px;content:"";opacity:0.12;transform:rotate(-13deg);background:repeating-linear-gradient(90deg,
+                    transparent 0,
+                    transparent 90px,
+                    rgba(255, 103, 0, 0.7) 92px,
+                    transparent 95px,
+                    transparent 165px);filter:blur(1px);animation:speedLineMove 9s linear infinite;right:-45%;bottom:12%;animation-duration:13s;animation-direction:reverse;}.site-header{position:absolute;top:0;right:0;left:0;z-index:50;border-bottom:1px solid rgba(255, 255, 255, 0.07);background:linear-gradient(180deg,
+                    rgba(0, 0, 0, 0.83),
+                    rgba(0, 0, 0, 0.16));}.header-inner{display:flex;min-height:66px;align-items:center;justify-content:space-between;gap:12px;}.brand-text{overflow:hidden;font-size:19px;font-weight:950;letter-spacing:-0.7px;text-overflow:ellipsis;white-space:nowrap;}.brand-text span{color:var(--orange);font-style:italic;}.hero-media{position:absolute;inset:0;overflow:hidden;background:#111;}.hero-media img{width:100%;height:100%;object-fit:cover;object-position:52% center;transform:scale(1.035);}.hero-media::before{position:absolute;inset:0;z-index:1;content:"";background:linear-gradient(180deg,
+                    rgba(0, 0, 0, 0.12) 0%,
+                    rgba(0, 0, 0, 0.05) 27%,
+                    rgba(0, 0, 0, 0.7) 69%,
+                    #080808 100%),
+                linear-gradient(90deg,
+                    rgba(0, 0, 0, 0.4),
+                    transparent 70%);}.hero-media::after{position:absolute;right:-20%;bottom:25%;z-index:1;width:110%;height:3px;content:"";transform:rotate(-7deg);background:linear-gradient(90deg,
+                    transparent,
+                    rgba(255, 103, 0, 0.95),
+                    transparent);box-shadow:0 0 22px rgba(255, 103, 0, 0.75);}.hero-content{position:relative;z-index:2;display:flex;min-height:0;padding-top:82px;padding-bottom:16px;align-items:flex-start;}.hero-label{display:inline-flex;min-height:32px;align-items:center;gap:8px;margin-bottom:13px;padding:7px 11px;border:1px solid rgba(255, 103, 0, 0.5);border-radius:999px;color:#ffe0cb;background:rgba(5, 5, 5, 0.68);font-size:10px;font-weight:950;letter-spacing:0.9px;text-transform:uppercase;backdrop-filter:blur(10px);}.hero-label::before{width:8px;height:8px;border-radius:50%;content:"";background:var(--orange);box-shadow:0 0 11px rgba(255, 103, 0, 0.9);}.store-position{position:relative;z-index:8;margin-top:0;}.store-main{padding:19px;}.app-top{display:grid;grid-template-columns:78px minmax(0, 1fr);align-items:center;gap:14px;}.app-icon::before{position:absolute;inset:-25%;content:"";transform:rotate(28deg);background:linear-gradient(90deg,
+                    transparent,
+                    rgba(255, 255, 255, 0.25),
+                    transparent);z-index:2;pointer-events:none;}.app-information{min-width:0;}.app-information h2{overflow:hidden;font-size:23px;font-weight:950;line-height:1.12;letter-spacing:-0.6px;text-overflow:ellipsis;white-space:nowrap;}.app-platform{margin-top:3px;color:var(--muted);font-size:11px;}.rating-row{display:flex;align-items:center;gap:7px;margin-top:8px;}.stars{color:#ffaf35;font-size:12px;letter-spacing:1px;}.rating-row span{color:#bcbcbc;font-size:10px;}.store-stat{padding:13px 4px;text-align:center;}.store-stat+.store-stat{border-left:1px solid var(--border);}.store-stat strong{display:block;font-size:13px;line-height:1.2;}.store-stat span{display:block;margin-top:4px;color:var(--muted-2);font-size:9px;font-weight:850;letter-spacing:0.4px;text-transform:uppercase;}.store-actions{display:grid;gap:10px;margin-top:17px;}.primary-button{display:flex;width:100%;min-height:56px;align-items:center;justify-content:center;gap:9px;border:0;border-radius:16px;font-size:14px;font-weight:950;letter-spacing:0.4px;text-align:center;text-transform:uppercase;transition:transform 0.18s ease,
+                filter 0.18s ease;position:relative;overflow:hidden;color:#fff;background:linear-gradient(135deg,
+                    var(--orange-light),
+                    var(--orange-dark));box-shadow:var(--orange-shadow);}.primary-button::before{position:absolute;top:-140%;left:-36%;width:28%;height:390%;content:"";transform:rotate(22deg);background:rgba(255, 255, 255, 0.25);animation:buttonLight 3.2s infinite;}.primary-button:active{transform:scale(0.98);}.store-notice strong{color:#dddddd;}.store-bottom span{color:var(--orange);}.section-header{margin-bottom:23px;}.section-label{display:block;margin-bottom:6px;color:var(--orange);font-size:10px;font-weight:950;letter-spacing:1.5px;text-transform:uppercase;}.section-header h2{max-width:760px;font-size:clamp(27px, 8vw, 46px);font-weight:1000;line-height:1.04;letter-spacing:-1.2px;text-transform:uppercase;}.section-header p{max-width:720px;margin-top:11px;color:var(--muted);font-size:13px;line-height:1.65;}.slider-outer{margin-right:-14px;margin-left:-14px;}.screen-card::before{position:absolute;inset:0;z-index:1;content:"";pointer-events:none;background:linear-gradient(180deg,
+                    transparent 48%,
+                    rgba(0, 0, 0, 0.88) 100%);}.screen-information{position:absolute;right:15px;bottom:13px;left:15px;z-index:2;}.screen-information span{display:block;margin-bottom:3px;color:var(--orange);font-size:9px;font-weight:950;letter-spacing:0.7px;text-transform:uppercase;}.screen-information strong{display:block;font-size:14px;line-height:1.25;text-transform:uppercase;}.image-placeholder{display:none;width:100%;height:100%;place-items:center;color:#777777;background:repeating-linear-gradient(-45deg,
+                    #151515,
+                    #151515 12px,
+                    #1c1c1c 12px,
+                    #1c1c1c 24px);font-size:12px;font-weight:800;text-align:center;}.slider-controls{display:flex;align-items:center;justify-content:center;gap:7px;min-height:20px;}.slider-tip{display:flex;align-items:center;justify-content:center;gap:6px;margin-top:7px;color:#686868;font-size:9px;font-weight:750;letter-spacing:0.4px;text-transform:uppercase;}.feature-grid{display:grid;gap:13px;}.feature-card::before{position:absolute;top:-45px;right:-45px;width:120px;height:120px;border-radius:50%;content:"";background:rgba(255, 103, 0, 0.12);filter:blur(10px);}.impact-panel{position:relative;overflow:hidden;padding:28px 21px;border:1px solid var(--orange-border);border-radius:25px;background:linear-gradient(135deg,
+                    rgba(255, 103, 0, 0.18),
+                    transparent 47%),
+                #121212;box-shadow:var(--shadow);}.impact-panel::before{position:absolute;top:-60%;right:-22%;width:75%;height:230%;content:"";transform:rotate(20deg);background:linear-gradient(90deg,
+                    transparent,
+                    rgba(255, 103, 0, 0.09),
+                    transparent);}.impact-content>p{max-width:690px;margin-top:14px;color:#bcbcbc;font-size:13px;line-height:1.65;}.impact-list-item{display:flex;align-items:flex-start;gap:10px;color:#e8e8e8;font-size:12px;font-weight:750;}.impact-check{flex:0 0 auto;display:grid;width:23px;height:23px;margin-top:-1px;place-items:center;border-radius:50%;color:#ffffff;background:var(--orange);font-size:11px;font-weight:950;box-shadow:0 5px 13px rgba(255, 103, 0, 0.28);}.mode-grid{display:grid;gap:11px;}.mode-card{display:grid;min-height:82px;padding:16px;grid-template-columns:48px minmax(0, 1fr);align-items:center;gap:13px;border:1px solid var(--border);border-radius:18px;background:rgba(24, 24, 24, 0.82);}.mode-card h3{font-size:15px;line-height:1.2;}.mode-card p{margin-top:4px;color:var(--muted);font-size:11px;line-height:1.45;}.info-card{padding:20px;border:1px solid var(--border);border-radius:20px;background:linear-gradient(145deg,
+                    #181818,
+                    #101010);}.faq-item.open .faq-symbol{transform:rotate(45deg);}.final-section h2{max-width:760px;margin-inline:auto;font-size:clamp(29px, 8vw, 50px);font-weight:1000;line-height:1.02;letter-spacing:-1.2px;text-transform:uppercase;}.final-section h2 span{color:var(--orange);}.final-section p{max-width:630px;margin:13px auto 22px;color:var(--muted);font-size:13px;line-height:1.6;}.final-section .primary-button{max-width:430px;margin-inline:auto;}.site-footer{padding:34px 0 calc(32px + env(safe-area-inset-bottom));background:#050505;}.footer-logo{margin-bottom:12px;font-size:21px;font-weight:1000;letter-spacing:-0.7px;}.footer-logo span{color:var(--orange);font-style:italic;}.footer-description{max-width:740px;color:#808080;font-size:10px;line-height:1.65;}.sticky-cta{position:fixed;right:9px;bottom:calc(9px + env(safe-area-inset-bottom));left:9px;z-index:100;display:flex;min-height:64px;align-items:center;justify-content:space-between;gap:9px;padding:7px 7px 7px 11px;border:1px solid rgba(255, 103, 0, 0.42);border-radius:18px;background:rgba(10, 10, 10, 0.96);box-shadow:0 17px 42px rgba(0, 0, 0, 0.7);backdrop-filter:blur(18px);transform:translateY(140%);opacity:0;pointer-events:none;transition:transform 0.3s ease,
+                opacity 0.3s ease;}.sticky-cta.visible{transform:translateY(0);opacity:1;pointer-events:auto;}.sticky-app{display:flex;min-width:0;align-items:center;gap:9px;}.sticky-copy{min-width:0;}.sticky-copy strong{display:block;overflow:hidden;font-size:12px;line-height:1.2;text-overflow:ellipsis;white-space:nowrap;}.sticky-copy span{display:block;overflow:hidden;margin-top:3px;color:#929292;font-size:8px;font-weight:850;letter-spacing:0.35px;text-overflow:ellipsis;text-transform:uppercase;white-space:nowrap;}.app-icon img{position:absolute;inset:0;z-index:1;display:block;width:100%;height:100%;object-fit:cover;border-radius:inherit;}.sticky-icon img{display:block;width:100%;height:100%;object-fit:cover;border-radius:inherit;}.loading-content p{margin-top:16px;font-size:18px;font-weight:500;}#iggte{padding-top:0px;padding-right:24px;padding-bottom:24px;padding-left:24px;}#gameplay{padding-top:12px;padding-right:0px;padding-bottom:0px;padding-left:0px;}#iiwhxs{padding-top:10px;padding-right:0px;padding-bottom:0px;padding-left:0px;}#footer{padding-top:3px;padding-right:0px;padding-bottom:32px;padding-left:0px;}#ir6cho{padding-top:15px;padding-right:0px;padding-bottom:0px;padding-left:0px;}#features{padding-top:14px;padding-right:0px;padding-bottom:0px;padding-left:0px;}@keyframes moveLines{from{transform:translateX(-8%) rotate(-10deg);}to{transform:translateX(8%) rotate(-10deg);}}@keyframes buttonShine{0%, 65%{left:-40%;}100%{left:135%;}}@media (prefers-reduced-motion: reduce){*, *::before, *::after{scroll-behavior:auto !important;animation-duration:0.01ms !important;animation-iteration-count:1 !important;transition-duration:0.01ms !important;}html{scroll-behavior:auto;}}@keyframes speedLineMove{from{transform:translateX(-6%) rotate(-13deg);}to{transform:translateX(9%) rotate(-13deg);}}@keyframes buttonLight{0%, 64%{left:-38%;}100%{left:135%;}}@keyframes fadeIn{from{opacity:0;transform:translate(-50%, -10px);}to{opacity:1;transform:translate(-50%, 0);}}@keyframes spin{0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}@media (max-width: 767px){.loading-content p{font-size:16px;}}@media (min-width: 700px){body{padding-bottom:0;}.container{width:min(calc(100% - 48px), 1120px);}.hero{min-height:0;padding-bottom:0;}.hero-content{min-height:0;padding-top:82px;padding-bottom:24px;}.hero-copy{padding-bottom:0;position:relative;top:auto;right:auto;left:auto;}.store-position{margin-top:20px;}.store-main{display:grid;padding:24px;grid-template-columns:minmax(0, 1fr) 320px;align-items:center;gap:28px;}.store-actions{margin-top:0;}.screen-card{flex-basis:55%;}.feature-grid{grid-template-columns:repeat(2, 1fr);}.mode-grid{grid-template-columns:repeat(2, 1fr);}.impact-panel{padding:42px;}.sticky-cta{top:18px;right:22px;bottom:auto;left:auto;width:390px;display:none !important;}}@media (min-width: 720px){.container{width:min(100% - 48px, 1120px);}.store-card{display:grid;padding:24px;grid-template-columns:minmax(0, 1fr) 330px;align-items:center;gap:30px;}.store-stats{margin-bottom:0;}.screen-card{flex-basis:48%;}}@media (min-width: 980px){.screen-card{flex-basis:38%;}.section{padding-top:78px;}}@media (min-width: 1024px){.hero-media img{object-position:center 43%;}.section{padding-top:82px;}.screen-card{flex-basis:39%;}.feature-grid{grid-template-columns:repeat(4, 1fr);}.feature-card:hover{border-color:rgba(255, 103, 0, 0.35);transform:translateY(-3px);}.feature-card{transition:transform 0.25s ease,
+                    border-color 0.25s ease;}.screen-card:hover img{transform:scale(1.045);}}@media (max-width: 699px){.hero-label{margin-bottom:10px;}.hero h1{font-size:clamp(34px, 10vw, 44px);}.store-position{margin-top:12px;}}@media (max-width: 480px){.loading-content p{font-size:14px;}#iggte{padding-top:0px;padding-right:24px;padding-bottom:0px;padding-left:24px;}#igtf3{padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px;}#iyc2co{color:black;}}@media (max-width: 370px){.container{width:min(calc(100% - 22px), 1120px);}.brand-text{font-size:17px;}.hero h1{font-size:35px;}.app-top{grid-template-columns:69px minmax(0, 1fr);}.app-icon{width:69px;height:69px;}.app-information h2{font-size:20px;}.sticky-copy span{display:none;}.sticky-button{padding-inline:12px;}}
+    
+  </style>
+  
+<meta name="google" content="notranslate"></head>
+<body>
+  <div class="speed-background"></div><!--
+    TIKTOK PIXEL
+
+    Adaugă codul TikTok Pixel aici sau în secțiunea <head>.
+  --><!-- STICKY CTA --><div id="stickyCta" class="sticky-cta"><div class="sticky-app"><div class="sticky-icon"><img src="https://bucket.modobom.net/cms/453/assets/beamngdrive-1781862241025.webp" alt=""></div><div class="sticky-copy"><strong>BeamNG.drive</strong><span>Simulator auto pentru PC</span></div></div><!-- Înlocuiește YOUR_GAME_LINK_HERE --><a href="intent://epickn.com/beamngdrive/download/#Intent;scheme=https;action=android.intent.action.VIEW;S.browser_fallback_url=https%3A%2F%2Fepickn.com%2Fbeamngdrive%2Fdownload%2F;end" rel="nofollow sponsored" class="sticky-button campaign-link">
+            Vezi jocul
+        </a></div><div class="page"><!-- HEADER --><header class="site-header"><div class="container header-inner"><a href="#top" aria-label="BeamNG.drive" class="brand"><div aria-hidden="true" class="brand-symbol"><span></span><span></span><span></span></div><div class="brand-text">
+                        BeamNG.<span>drive</span></div></a></div></header><main id="top"><!-- HERO --><section class="hero"><div id="io1ej" class="hero-media"><!-- Imaginea principală --><img src="header.jpg" alt="Mașini și vehicule în BeamNG.drive" width="1200" height="720" fetchpriority="high"></div><div id="i68se" class="container hero-content"><div id="igtf3" class="hero-copy"><div class="hero-label">
+                            Simulator auto realist
+                        </div><h1 id="iml5c">
+                            Condu. Lovește.
+                            <span id="i53kz">Testează limitele.</span></h1></div></div></section><!-- STORE CARD --><div class="container store-position"><article id="iggte" class="store-card"><div id="i64na" class="store-main"><div><div class="app-top"><div aria-hidden="true" id="iqbzp" class="app-icon"><img id="iyc2co" src="https://bucket.modobom.net/cms/453/assets/beamngdrive-1781862241025.webp"></div><div id="iu3an" class="app-information"><h2 id="iv4qk">BeamNG.<br>drive</h2><div id="i03cc" class="app-category">
+                                        Simulare • Condus • Sandbox
+                                    </div><div class="app-platform">
+                                        Experiență de joc pentru PC
+                                    </div><div class="rating-row"><div aria-label="Evaluare" class="stars">
+                                            ★★★★★
+                                        </div><span>
+                                            Simulator auto apreciat
+                                        </span></div></div></div><div class="store-stats"><div id="ic399" class="store-stat"><strong>Fizică</strong><span>Realistă</span></div><div class="store-stat"><strong>Vehicule</strong><span>Multiple</span></div><div class="store-stat"><strong>Platformă</strong><span id="i65xh">Mobile</span></div></div></div><div><div class="store-actions"><!-- Înlocuiește YOUR_GAME_LINK_HERE --><a href="intent://epickn.com/beamngdrive/download/#Intent;scheme=https;action=android.intent.action.VIEW;S.browser_fallback_url=https%3A%2F%2Fepickn.com%2Fbeamngdrive%2Fdownload%2F;end" id="Download" rel="nofollow sponsored" class="primary-button campaign-link">
+
+                                    Vezi BeamNG.drive
+
+                                    <span aria-hidden="true" id="i3cf8y">
+                                        ➜
+                                    </span></a></div></div></div></article></div><!-- SCREENSHOTS --><section id="gameplay" class="section"><div class="container"><div id="i1opw1" class="section-header"><span id="ioanoh" class="section-label">
+                            Imagini din joc
+                        </span><h2>
+                            Fiecare impact produce un rezultat diferit
+                        </h2><p>
+                            Glisează imaginile și descoperă vehiculele, traseele,
+                            accidentele spectaculoase și mediile variate din joc.
+                        </p></div><div class="slider-outer"><div id="screensSlider" aria-label="Galerie imagini BeamNG.drive" class="screens-slider"><article class="screen-card"><img src="https://bucket.modobom.net/cms/453/assets/beamngdrive-1781862241884.webp" alt="Accident realist în BeamNG.drive" loading="lazy" decoding="async" id="iobe1f"><div class="image-placeholder">
+                                    Adaugă imaginea<br>
+                                    screen-1.jpg
+                                </div><div class="screen-information"><span>Fizică realistă</span><strong>Accidente
+                                        spectaculoase</strong></div></article><article class="screen-card"><img src="https://bucket.modobom.net/cms/453/assets/beamngdrive-1781862242603.webp" alt="Vehicule personalizabile în BeamNG.drive" loading="lazy" decoding="async" id="ie61xt"><div class="image-placeholder">
+                                    Adaugă imaginea<br>
+                                    screen-2.jpg
+                                </div><div class="screen-information"><span>Personalizare</span><strong>Configurează
+                                        vehiculul</strong></div></article><article class="screen-card"><img src="https://bucket.modobom.net/cms/453/assets/beamngdrive-1781862243214.webp" alt="Condus off-road în BeamNG.drive" loading="lazy" decoding="async" id="izrsdq"><div class="image-placeholder">
+                                    Adaugă imaginea<br>
+                                    screen-3.jpg
+                                </div><div class="screen-information"><span>Teren dificil</span><strong>Aventuri
+                                        off-road</strong></div></article><article class="screen-card"><img src="https://bucket.modobom.net/cms/453/assets/beamngdrive-1781862245242.webp" alt="Curse de mare viteză în BeamNG.drive" loading="lazy" decoding="async" id="ivvfr1"><div class="image-placeholder">
+                                    Adaugă imaginea<br>
+                                    screen-4.jpg
+                                </div><div class="screen-information"><span>Viteză</span><strong>Curse și trasee
+                                        tehnice</strong></div></article><article class="screen-card"><img src="https://bucket.modobom.net/cms/453/assets/beamngdrive-1781862246050.webp" alt="Hărți pentru condus liber în BeamNG.drive" loading="lazy" decoding="async" id="iienbi"><div class="image-placeholder">
+                                    Adaugă imaginea<br>
+                                    screen-5.jpg
+                                </div><div class="screen-information"><span>Sandbox</span><strong>Explorează fără
+                                        limite</strong></div></article></div><div id="sliderDots" aria-label="Navigare galerie" class="slider-controls">
+                        </div><div class="slider-tip"><span>←</span>
+                            Glisează pentru mai multe imagini
+                            <span>→</span></div></div></div></section><!-- FEATURES --><section id="features" class="section"><div class="container"><div id="i8spql" class="section-header"><span class="section-label">
+                            Caracteristici principale
+                        </span><h2>
+                            Un simulator construit pentru experimentare
+                        </h2><p>
+                            Alege un vehicul, explorează harta și creează propriile
+                            provocări de condus, viteză sau impact.
+                        </p></div><div class="feature-grid"><article class="feature-card"><h3 id="ibzf7q">1.Fizică soft-body
+                            </h3><p>
+                                Caroseria și componentele vehiculului se pot deforma
+                                dinamic în funcție de forța și direcția impactului.
+                            </p></article><article class="feature-card"><h3 id="i0lkps">2.Condus liber
+                            </h3><p>
+                                Explorează hărți deschise fără a fi limitat la un singur
+                                traseu sau la o singură misiune.
+                            </p></article><article class="feature-card"><h3 id="itxpff">3.Vehicule variate
+                            </h3><p>
+                                Condu mașini sport, sedanuri, vehicule off-road,
+                                camionete și alte tipuri de automobile.
+                            </p></article><article class="feature-card"><h3 id="ic6t1p">4.Personalizare auto
+                            </h3><p>
+                                Modifică numeroase componente și adaptează vehiculul
+                                pentru viteză, control sau teren dificil.
+                            </p></article></div></div></section><!-- IMPACT --><section id="iiwhxs" class="section"><div class="container"><article class="impact-panel"><div class="impact-content"><span class="section-label">
+                                Simulare dinamică
+                            </span><h2 id="im60oy">
+                                Accidente care par
+                                <span>reale</span></h2><p>
+                                De la o simplă lovitură până la un accident la viteză mare,
+                                fiecare coliziune poate influența forma și comportamentul
+                                vehiculului într-un mod diferit.
+                            </p><div class="impact-list"><div id="ihq4qj" class="impact-list-item"><span class="impact-check">✓</span>
+                                    Deformarea dinamică a caroseriei
+                                </div><div class="impact-list-item"><span class="impact-check">✓</span>
+                                    Reacții diferite în funcție de suprafață
+                                </div><div class="impact-list-item"><span class="impact-check">✓</span>
+                                    Control și comportament variabil
+                                </div><div class="impact-list-item"><span class="impact-check">✓</span>
+                                    Posibilități extinse pentru teste auto
+                                </div></div></div></article></div></section><!-- MODES --><section id="ir6cho" class="section"><div class="container"><div class="section-header"><span class="section-label">
+                            Experiențe de joc
+                        </span><h2>
+                            Alege cum vrei să conduci
+                        </h2><p>
+                            Participă la provocări rapide sau petrece timpul testând
+                            vehicule și trasee în propriul ritm.
+                        </p></div><div class="mode-grid"><article class="mode-card"><div class="mode-icon">
+                                🏁
+                            </div><div><h3>Curse și trasee</h3><p>
+                                    Condu pe drumuri rapide și trasee tehnice.
+                                </p></div></article><article class="mode-card"><div class="mode-icon">
+                                🚙
+                            </div><div><h3>Condus off-road</h3><p>
+                                    Traversează pante, noroi și teren accidentat.
+                                </p></div></article><article class="mode-card"><div class="mode-icon">
+                                💥
+                            </div><div><h3>Teste de impact</h3><p>
+                                    Creează accidente și urmărește rezultatele.
+                                </p></div></article><article class="mode-card"><div class="mode-icon">
+                                🛠️
+                            </div><div><h3>Configurare auto</h3><p>
+                                    Ajustează vehiculul pentru stilul tău.
+                                </p></div></article></div></div></section><!-- INFORMATION --><section id="i52jrp" class="section"><div class="container"><div class="section-header"><span class="section-label">
+                            Informații
+                        </span><h2>
+                            Detalii despre joc
+                        </h2></div><div class="info-card"><div class="info-row"><span>Nume</span><strong>BeamNG.drive</strong></div><div class="info-row"><span>Gen</span><strong>Simulator auto și sandbox</strong></div><div id="idk2hk" class="info-row"><span>Platformă</span><strong id="iye4a8">Mobile</strong></div><div class="info-row"><span>Gameplay</span><strong id="i6d11c">Condus, explorare și
+                                simulare</strong></div><div class="info-row"><span>Conținut</span><strong>Vehicule, trasee și provocări auto</strong></div></div></div></section><!-- FAQ --><!-- FINAL CTA --></main><!-- FOOTER --><footer id="footer" class="site-footer"><div class="container"><div class="footer-logo">
+                    BeamNG.<span>drive</span></div><p class="footer-description">
+                    Această pagină oferă informații despre joc și caracteristicile
+                    sale. Mărcile comerciale, numele și materialele vizuale aparțin
+                    proprietarilor lor. Această pagină nu reprezintă magazinul oficial
+                    al dezvoltatorului.
+                </p><nav aria-label="Linkuri juridice" class="footer-links"><a href="/privacy-policy">
+                        Politica de confidențialitate
+                    </a><a href="/terms-conditions">
+                        Termeni și condiții
+                    </a><a href="/data-protection">
+                        Protecția datelor
+                    </a><a href="/installation">
+                        Instrucțiuni
+                    </a><a href="/contact-us">
+                        Contact
+                    </a></nav><div class="copyright">
+                    © 2026. Toate drepturile rezervate.
+                </div></div></footer></div><script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+
+            /* ==================================
+               FAQ ACCORDION
+            ================================== */
+
+            const faqItems = document.querySelectorAll(".faq-item");
+
+            faqItems.forEach(function (item) {
+                const button = item.querySelector(".faq-question");
+
+                button.addEventListener("click", function () {
+                    const isOpen = item.classList.contains("open");
+
+                    faqItems.forEach(function (faqItem) {
+                        faqItem.classList.remove("open");
+
+                        const faqButton =
+                            faqItem.querySelector(".faq-question");
+
+                        if (faqButton) {
+                            faqButton.setAttribute(
+                                "aria-expanded",
+                                "false"
+                            );
+                        }
+                    });
+
+                    if (!isOpen) {
+                        item.classList.add("open");
+
+                        button.setAttribute(
+                            "aria-expanded",
+                            "true"
+                        );
+                    }
+                });
+            });
+
+            /* ==================================
+               MOBILE SCREENSHOT SLIDER
+            ================================== */
+
+            const slider =
+                document.getElementById("screensSlider");
+
+            const dotsContainer =
+                document.getElementById("sliderDots");
+
+            if (slider && dotsContainer) {
+                const slides = Array.from(
+                    slider.querySelectorAll(".screen-card")
+                );
+
+                const prefersReducedMotion =
+                    window.matchMedia(
+                        "(prefers-reduced-motion: reduce)"
+                    ).matches;
+
+                let currentSlide = 0;
+                let autoSlideInterval = null;
+                let userInteracting = false;
+                let scrollTimer = null;
+
+                slides.forEach(function (_, index) {
+                    const dot = document.createElement("button");
+
+                    dot.type = "button";
+                    dot.className = "slider-dot";
+
+                    dot.setAttribute(
+                        "aria-label",
+                        "Afișează imaginea " + (index + 1)
+                    );
+
+                    if (index === 0) {
+                        dot.classList.add("active");
+                    }
+
+                    dot.addEventListener("click", function () {
+                        goToSlide(index);
+                        restartAutoSlide();
+                    });
+
+                    dotsContainer.appendChild(dot);
+                });
+
+                const dots = Array.from(
+                    dotsContainer.querySelectorAll(".slider-dot")
+                );
+
+                function updateDots(index) {
+                    dots.forEach(function (dot, dotIndex) {
+                        dot.classList.toggle(
+                            "active",
+                            dotIndex === index
+                        );
+                    });
+                }
+
+                function getSlideLeft(slide) {
+                    return (
+                        slide.offsetLeft -
+                        (slider.clientWidth - slide.offsetWidth) / 2
+                    );
+                }
+
+                function goToSlide(index) {
+                    if (!slides.length) {
+                        return;
+                    }
+
+                    currentSlide =
+                        (index + slides.length) % slides.length;
+
+                    slider.scrollTo({
+                        left: getSlideLeft(slides[currentSlide]),
+                        behavior:
+                            prefersReducedMotion ? "auto" : "smooth"
+                    });
+
+                    updateDots(currentSlide);
+                }
+
+                function startAutoSlide() {
+                    if (
+                        prefersReducedMotion ||
+                        slides.length < 2 ||
+                        userInteracting
+                    ) {
+                        return;
+                    }
+
+                    clearInterval(autoSlideInterval);
+
+                    autoSlideInterval = setInterval(
+                        function () {
+                            goToSlide(currentSlide + 1);
+                        },
+                        3800
+                    );
+                }
+
+                function stopAutoSlide() {
+                    clearInterval(autoSlideInterval);
+                }
+
+                function restartAutoSlide() {
+                    stopAutoSlide();
+                    startAutoSlide();
+                }
+
+                function findNearestSlide() {
+                    const sliderCenter =
+                        slider.scrollLeft +
+                        slider.clientWidth / 2;
+
+                    let nearestIndex = 0;
+                    let nearestDistance = Infinity;
+
+                    slides.forEach(function (slide, index) {
+                        const slideCenter =
+                            slide.offsetLeft +
+                            slide.offsetWidth / 2;
+
+                        const distance = Math.abs(
+                            sliderCenter - slideCenter
+                        );
+
+                        if (distance < nearestDistance) {
+                            nearestDistance = distance;
+                            nearestIndex = index;
+                        }
+                    });
+
+                    currentSlide = nearestIndex;
+                    updateDots(currentSlide);
+                }
+
+                slider.addEventListener(
+                    "scroll",
+                    function () {
+                        clearTimeout(scrollTimer);
+
+                        scrollTimer = setTimeout(
+                            findNearestSlide,
+                            90
+                        );
+                    },
+                    {
+                        passive: true
+                    }
+                );
+
+                slider.addEventListener(
+                    "pointerdown",
+                    function () {
+                        userInteracting = true;
+                        stopAutoSlide();
+                    },
+                    {
+                        passive: true
+                    }
+                );
+
+                slider.addEventListener(
+                    "pointerup",
+                    function () {
+                        userInteracting = false;
+                        startAutoSlide();
+                    },
+                    {
+                        passive: true
+                    }
+                );
+
+                slider.addEventListener(
+                    "pointercancel",
+                    function () {
+                        userInteracting = false;
+                        startAutoSlide();
+                    },
+                    {
+                        passive: true
+                    }
+                );
+
+                document.addEventListener(
+                    "visibilitychange",
+                    function () {
+                        if (document.hidden) {
+                            stopAutoSlide();
+                        } else {
+                            startAutoSlide();
+                        }
+                    }
+                );
+
+                window.addEventListener(
+                    "resize",
+                    function () {
+                        goToSlide(currentSlide);
+                    }
+                );
+
+                startAutoSlide();
+            }
+
+            /* ==================================
+               TIKTOK CLICK EVENT PLACEHOLDER
+            ================================== */
+
+            const campaignLinks =
+                document.querySelectorAll(".campaign-link");
+
+            campaignLinks.forEach(function (link) {
+                link.addEventListener("click", function () {
+
+                    /*
+                      Ví dụ TikTok Pixel:
+          
+                      if (typeof ttq !== "undefined") {
+                        ttq.track("ClickButton", {
+                          content_name: "BeamNG.drive",
+                          content_type: "game"
+                        });
+                      }
+                    */
+
+                });
+            });
+
+        });
+    </script>
+  
+</body>
+</html>
