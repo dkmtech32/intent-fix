@@ -4,7 +4,7 @@
 
 | Key | Type | Purpose |
 | --- | --- | --- |
-| `downloadUrl` | string | APK / getapp / guide URL after countdown — **optional**; offer if missing |
+| `downloadUrl` | string | APK hop after countdown — **required**; resolve from existing predownload payload, else unwrap landing getapp/guide, else **ask** |
 | `appIconUrl` | string | App icon image URL — **optional**; offer if missing; sync to `[data-pd="appIcon"]` |
 | `inAppBrowserGateEnabled` | boolean | Master switch (already present on most pages) |
 | `inAppBrowserDetectors` | array | UA regex detectors (e.g. tiktok) |
@@ -13,22 +13,28 @@
 | `intentGateSteps` | array | Ordered choice screens — **chosen by the user** per product |
 | `inAppBrowserTitle` / `Message` / `ManualHeading` / `StepMenu` / `StepOpenBrowser` / `OpenLabel` | string | **Final** manual popup copy (often left English) |
 
-### Optional URL resolution (`downloadUrl`, `appIconUrl`)
+### Resolve `downloadUrl`
 
-Both fields are **optional**. Offer when creating `download/` or when a value is missing/empty; the user may skip.
+Do not invent. Do not edit the landing. User-supplied URL always wins.
 
-| Field | Runtime use | If skipped |
+| Case | Landing | Action |
 | --- | --- | --- |
-| `downloadUrl` | Button href + auto-redirect | Leave unset/`#`; download won’t start until set later |
-| `appIconUrl` | Icon `src` via payload / `data-pd="appIcon"` | Keep existing img src, or use landing hero icon if obvious |
+| 1. Already predownload | CTA is this product’s `/download/` (`https` or `intent://`) | Keep existing payload `downloadUrl`. If empty/`#`, **ask**. Never write `/download/` into the payload. |
+| 2. External hop | `intent://` / `https://` to `/getapp?…` or `/guide/…` | Unwrap to HTTPS; decode `&amp;` → `&`; keep host/path/query exact; overwrite payload if it differs |
+| 3. No URL | `#`, empty, in-page hash only | **Ask**. Do not skip. Do not invent getapp/guide. |
 
-| Situation | What to do |
+Canonical **getapp** (`gta-fivem`):
+
+| Source | URL |
 | --- | --- |
-| No `{product}/download/` | Create page from sibling reference; optionally ask for both URLs |
-| Payload lacks either field or value is `""` / `"#"` | Optionally ask for that field; write only what the user provides |
-| Valid value already set | Leave unchanged unless user gives a new one |
+| Landing CTA | `intent://th.one2go.store/getapp?app_id=gtafivem&amp;rx=th&amp;pf=tt&amp;vx=3#Intent;scheme=https;…` |
+| Payload `downloadUrl` | `https://th.one2go.store/getapp?app_id=gtafivem&rx=th&pf=tt&vx=3` |
 
-Never invent `downloadUrl` or reuse another product’s links. Landing `intent://…/download/` hrefs are **not** `downloadUrl`. Inferring `appIconUrl` from the landing icon is OK when the user skips.
+**Guide** (INARI): `intent://malaysia.easy4you.store/guide/my/tiktok/inari#Intent;…` → `https://malaysia.easy4you.store/guide/my/tiktok/inari` (do not rewrite to getapp).
+
+Never copy another product’s links.
+
+`appIconUrl` stays optional: offer when missing; infer from the landing icon when the user skips.
 
 ### `intentGateSteps` item
 
@@ -198,7 +204,7 @@ Payload:
 ```js
 // node: parse #preDownloadPayload JSON
 // require intentGateEnabled, intentGatePackage, intentGateSteps length/ids/titles
-// optional: downloadUrl, appIconUrl (only assert if user supplied them)
+// require downloadUrl from resolve cases (predownload payload / unwrapped landing hop with &amp; decoded / user-supplied)
 ```
 
 Symbols:

@@ -77,6 +77,7 @@ All behavior is driven by the JSON in the `#preDownloadPayload` script tag. Rele
 
 | Key | Type | Purpose |
 | --- | --- | --- |
+| `downloadUrl` | string | APK hop after countdown. If the landing CTA is already this product’s `/download/` page, keep the existing payload URL. If the landing is getapp/guide, unwrap `intent://` to HTTPS and decode `&amp;` → `&`. If the landing has no download URL, ask. Canonical getapp (`gta-fivem`): `https://th.one2go.store/getapp?app_id=gtafivem&rx=th&pf=tt&vx=3`. Do not edit the landing href. |
 | `inAppBrowserGateEnabled` | boolean | Master switch for the whole gate. If `false`, the page never gates. |
 | `inAppBrowserDetectors` | array | UA regex detectors, e.g. the `tiktok` pattern. Unchanged from before. |
 | `intentGateEnabled` | boolean | Enables the multi-step choice flow. If `false` (or `intentGateSteps` empty), it falls back to the single manual popup (legacy behavior). |

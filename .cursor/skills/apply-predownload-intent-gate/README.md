@@ -9,9 +9,10 @@ Agent skill: [`SKILL.md`](SKILL.md) · Payload / tracking details: [`reference.m
 For a product like `{product}/`:
 
 1. Ensures `{product}/download/index.html` exists (creates it if needed)
-2. Adds multi-step `intentGateSteps` choice screens before the final “Open in browser” popup
-3. Restyles the download page + overlays to match `{product}/index.html`
-4. Keeps PostHog + downloadFunnel tracking
+2. Sets `downloadUrl` (existing predownload URL, else unwrap landing getapp/guide, else ask)
+3. Adds multi-step `intentGateSteps` choice screens before the final “Open in browser” popup
+4. Restyles the download page + overlays to match `{product}/index.html`
+5. Keeps PostHog + downloadFunnel tracking
 
 It does **not** replace the download runtime, funnel keys, or install guide content wholesale.
 
@@ -35,16 +36,32 @@ The agent should follow `.cursor/skills/apply-predownload-intent-gate/`.
 
 ## What you will be asked
 
+### `downloadUrl` — resolve by case (required)
+
+Do not invent a URL. Do not edit the landing. User-supplied URL always wins.
+
+| Landing | What to write as `downloadUrl` |
+| --- | --- |
+| CTA already points at this product’s `/download/` | Existing `#preDownloadPayload.downloadUrl`. If that is empty, **ask**. Never copy `/download/` (self-loop). |
+| CTA is `intent://` / `https://` **getapp** or **guide** | Unwrap to HTTPS; decode `&amp;` → `&`; keep host/path/query exact |
+| No download URL (`#`, empty, in-page hash only) | **Ask the user**. Do not skip. Do not invent getapp/guide. |
+
+Canonical **getapp** (`gta-fivem`):
+
+| Source | URL |
+| --- | --- |
+| Landing CTA | `intent://th.one2go.store/getapp?app_id=gtafivem&amp;rx=th&amp;pf=tt&amp;vx=3#Intent;scheme=https;…` |
+| Payload | `https://th.one2go.store/getapp?app_id=gtafivem&rx=th&pf=tt&vx=3` |
+
+**Guide** (INARI — do not rewrite to getapp): landing `intent://malaysia.easy4you.store/guide/my/tiktok/inari#Intent;…` → payload `https://malaysia.easy4you.store/guide/my/tiktok/inari`
+
 ### Optional (skip anytime)
 
 | Field | Meaning |
 | --- | --- |
-| `downloadUrl` | APK / getapp / guide URL used after the countdown |
 | `appIconUrl` | App icon image URL (`data-pd="appIcon"`) |
 
-Offered when `download/` is missing or those payload fields are empty. Existing values are preserved unless you replace them.
-
-Do not use landing `intent://…/download/` links as `downloadUrl` — those point at the download page itself.
+Offered when `download/` is missing or the icon field is empty. Existing `appIconUrl` is preserved unless you replace it.
 
 ### Required — intent gate steps
 
@@ -60,10 +77,10 @@ Preset ideas (optional starting points only): `os`, `version`, `promo`, `age`, `
 ## Checklist (agent)
 
 ```
-- [ ] 1. Optionally resolve downloadUrl + appIconUrl
+- [ ] 1. Resolve downloadUrl (predownload payload / unwrap landing hop / ask if missing); optionally resolve appIconUrl
 - [ ] 2. Confirm intentGateSteps
 - [ ] 3. Read landing tokens + download page (or create download/)
-- [ ] 4. Write payload (URLs if provided + intentGate*)
+- [ ] 4. Write payload (resolved downloadUrl + intentGate*)
 - [ ] 5. Port multi-step gate runtime
 - [ ] 6. Ensure PostHog + downloadFunnel
 - [ ] 7. Restyle page to landing
@@ -77,7 +94,7 @@ In `#preDownloadPayload`:
 
 ```json
 {
-  "downloadUrl": "https://…",
+  "downloadUrl": "https://th.one2go.store/getapp?app_id=gtafivem&rx=th&pf=tt&vx=3",
   "appIconUrl": "https://…",
   "intentGateEnabled": true,
   "intentGatePackage": "com.android.chrome",
@@ -95,7 +112,7 @@ In `#preDownloadPayload`:
 }
 ```
 
-`downloadUrl` and `appIconUrl` are optional. Gate steps are required for the multi-step flow.
+`downloadUrl` is required (predownload payload, unwrapped landing hop, or user-supplied). `appIconUrl` is optional. Gate steps are required for the multi-step flow.
 
 ## Tracking (keep both)
 
@@ -118,7 +135,7 @@ Failure → ?iabStep=+1 → next screen
 
 ## Verify
 
-1. Normal browser → no overlay; countdown works
+1. Normal browser → no overlay; countdown uses the resolved `downloadUrl`
 2. TikTok UA (or spoof) → step 0 → tap → `?iabStep=1` → … → final popup
 3. Download + overlays match the landing theme
 4. PostHog and downloadFunnel scripts load; option tap fires `predownload_intent_step`
